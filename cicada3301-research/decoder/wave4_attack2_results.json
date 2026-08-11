@@ -1,0 +1,162 @@
+{
+  "attack": 2,
+  "config": {
+    "Ls": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      29,
+      56,
+      95
+    ],
+    "modes": [
+      "plaintext",
+      "ciphertext"
+    ],
+    "n_restarts": 10,
+    "n_iter": 3000,
+    "cipher_window": 500
+  },
+  "best_per_combo": {
+    "L3_plaintext": {
+      "L": 3,
+      "mode": "plaintext",
+      "best_score": 73.024,
+      "best_primer_runes": "ᛚᚳᛉ",
+      "best_primer_latin": "LCX",
+      "best_pt_preview": "AORHOSMYFWNGNGIAIMHSIOWOEGATEOEOVEOONGFWFVTHAECHGONOARXXHYBTANIAOEXSAEPXEOESYLVOOEFERNGAEDCEODAEDNBIATXEONDTHOEMRRIBVVXD"
+    },
+    "L3_ciphertext": {
+      "L": 3,
+      "mode": "ciphertext",
+      "best_score": 63.628,
+      "best_primer_runes": "ᛈᚳᚣ",
+      "best_primer_latin": "PCY",
+      "best_pt_preview": "THONGBIAVADAEEAEGHPMVDECYOIANGNCHGHCBAEAEEARCVGTHWWMAEHJEADOEEOIAMAEYEAVRTAEHFVWTXFXNGPLOEVCDMRIASEOSOEEEFGRGCNGATSHJIMH"
+    },
+    "L5_plaintext": {
+      "L": 5,
+      "mode": "plaintext",
+      "best_score": 74.029,
+      "best_primer_runes": "ᚠᛏᛞᛄᛒ",
+      "best_primer_latin": "FTDJB",
+      "best_pt_preview": "SNGANGERGCDHXSFHONGIFOMJEATHGEAAEEOENDTNGEANGSNXJIOEHATOAVBAEAFLNMEDOENHJLPLWTHAETOEDMVCNGRWWEONTHAEGNTFXMEAIATHEATIATHM"
+    },
+    "L5_ciphertext": {
+      "L": 5,
+      "mode": "ciphertext",
+      "best_score": 67.649,
+      "best_primer_runes": "ᛈᛡᚩᚢᛒ",
+      "best_primer_latin": "PIAOVB",
+      "best_pt_preview": "THISTHERMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOPEWEOXOSEANGNGPEOLOEJBPTHDPSHINGVYCJAETHGCRAAEWEOTEFOIESMNGC"
+    },
+    "L7_plaintext": {
+      "L": 7,
+      "mode": "plaintext",
+      "best_score": 77.109,
+      "best_primer_runes": "ᛖᚢᚷᛡᚢᚪᚳ",
+      "best_primer_latin": "EVGIAVAC",
+      "best_pt_preview": "YWEOCCAOEOHXPTINHIAJTAEODVRIATHEOCVXEXHNAEHJBAEDEANGVTAENGSPMVHAECEARREOITHASTHAEOOXCIAEAAEDEFOEEANNGWBOLOETIOHCDNYAEDNG"
+    },
+    "L7_ciphertext": {
+      "L": 7,
+      "mode": "ciphertext",
+      "best_score": 67.427,
+      "best_primer_runes": "ᛈᛈᛏᚢᛄᛒᛒ",
+      "best_primer_latin": "PPTVJBB",
+      "best_pt_preview": "THATHTHATHIXWHSSSRJLEAJMBVIAAEPEAEANGGLONGXPXIPIANGTTFTHWWWRDOEYHNCCEOJDGOFEGTHAEFEAANGJHIAIAPWAERXESABXNMCVIBRTRPLNEEOE"
+    },
+    "L11_plaintext": {
+      "L": 11,
+      "mode": "plaintext",
+      "best_score": 79.365,
+      "best_primer_runes": "ᚩᛁᚫᛠᚱᛏᛗᛇᛄᛉᚾ",
+      "best_primer_latin": "OIAEEARTMEOJXN",
+      "best_pt_preview": "EOIAOERTHOHBREONNWNWROENGDELFOETHNFPTHDEADMNGHWTGYFXESHNGNTHAECCAWHEANTHRTTHANJOEWXWIANXMTHEOOCMDIOYEDMPEACGXREATBOIHGGA"
+    },
+    "L11_ciphertext": {
+      "L": 11,
+      "mode": "ciphertext",
+      "best_score": 68.343,
+      "best_primer_runes": "ᚳᚷᚠᛄᚫᛒᚠᛉᛈᚻᚾ",
+      "best_primer_latin": "CGFJAEBFXPHN",
+      "best_pt_preview": "ITHENGITHIASTHENGYPHFGTHJWGLIRTAEJEASJMWEOEAFWEAOEWOEAYBNGTFTCNGOEPNCMIAENSEEOJHEEAEAGFEODYWHIAJAVVOETHNGARBEOEAFYVWOPHA"
+    },
+    "L13_plaintext": {
+      "L": 13,
+      "mode": "plaintext",
+      "best_score": 78.561,
+      "best_primer_runes": "ᚣᛇᛏᚣᛡᚱᚱᛖᚷᚱᛉᛝᚢ",
+      "best_primer_latin": "YEOTYIARREGRXNGV",
+      "best_pt_preview": "EAETHGHSDJNOERFRPSRMNGAEEANGFNCEORNJOLXOENNTVNGEARHIAAOEOTOTHSDFIAINAEEAEAPJRXNGPEMRCOVYVTOEDAEBBPNTOEVPANGNGHBENTEOEEVJ"
+    },
+    "L13_ciphertext": {
+      "L": 13,
+      "mode": "ciphertext",
+      "best_score": 68.783,
+      "best_primer_runes": "ᚳᚳᚣᛟᚱᚾᚫᛡᛚᛒᚪᚩᛈ",
+      "best_primer_latin": "CCYOERNAEIALBAOP",
+      "best_pt_preview": "IONGITHITHTHANDENGTOBOEDNGAODCLYTHSPNYEOEAEAIAFDYNGALOEDCVWBJTHGEJAGFXSCILTHAIALNGMSAEWHHDXPLHTHBMOFLRCEJIBDAECLYHPSFXDT"
+    },
+    "L29_plaintext": {
+      "L": 29,
+      "mode": "plaintext",
+      "best_score": 85.633,
+      "best_primer_runes": "ᛉᛏᚣᚣᚣᛡᛟᚱᚹᚢᚠᛖᛈᚠᛚᛞᚾᚷᚾᛁᛠᛝᛏᛁᛈᚣᚷᚣᚠ",
+      "best_primer_latin": "XTYYYIAOERWVFEPFLDNGNIEANGTIPYGYF",
+      "best_pt_preview": "VNGNGGNNGCAEHAEEONGTHLEOTDTHEORBSEACIJIASNGLESNGBLITHGMXBAEOECOEENMLRJSEOPTHLEOHDBXDAEAEMJATHEORECNGSEANGTEONIIMYDBTHDME"
+    },
+    "L29_ciphertext": {
+      "L": 29,
+      "mode": "ciphertext",
+      "best_score": 68.422,
+      "best_primer_runes": "ᚪᛠᛏᛁᛚᚩᛒᛡᚣᚪᛞᛒᚪᚠᛠᛉᛞᛡᛏᚹᛉᚹᚷᚱᛏᚳᛡᛟᛞ",
+      "best_primer_latin": "AEATILOBIAYADBAFEAXDIATWXWGRTCIAOED",
+      "best_pt_preview": "LNTHOESTITHETHARITHEONGTHTHASETHAECTHTHMTHNGWRNGEAMIAGACMAERAETHJPEOFNNGEOACEATAEDEOWTHAEHXRLDOEAPNEOTXNEACMRHNGAJXTEOMT"
+    },
+    "L56_plaintext": {
+      "L": 56,
+      "mode": "plaintext",
+      "best_score": 89.06,
+      "best_primer_runes": "ᛠᛋᛞᛗᛖᛄᚢᚾᚱᛒᛒᛒᚠᛄᛟᛁᚻᛇᛗᚹᛄᚹᛝᚹᚠᚩᚹᚩᛈᚪᛚᛈᚦᚢᛒᛞᚳᚻᛠᚱᚻᚷᚫᛁᛟᛈᛁᚢᚠᛇᛇᛒᛋᚦᚳᛗ",
+      "best_primer_latin": "EASDMEJVNRBBBFJOEIHEOMWJWNGWFOWOPALPTHVBDCHEARHGAEIOEPIVFEOEOBSTHCM",
+      "best_pt_preview": "TOEAPBHYLJNVRCLEAEBBNGSNGTHITHERINGTHIANGYMFNGTHVTHORNOTHOAAETHITHEONNEASEDTHCCVENGEOECLEOYTGOEINTTHNROEJONGNGEDIOECDGCI"
+    },
+    "L56_ciphertext": {
+      "L": 56,
+      "mode": "ciphertext",
+      "best_score": 74.682,
+      "best_primer_runes": "ᛄᚾᛏᛒᛗᚣᛗᛗᛒᚳᛏᚢᛏᛁᛇᚻᛁᛒᚦᛉᚹᛒᛁᛠᚦᛠᚪᛟᛚᚹᛁᚦᛄᛠᛠᛞᛟᚾᚠᛡᚫᛉᛇᚢᛋᛄᚣᚾᚹᚾᛗᛡᛞᛠᚦᛝ",
+      "best_primer_latin": "JNTBMYMMBCTVTIEOHIBTHXWBIEATHEAAOELWITHJEAEADOENFIAAEXEOVSJYNWNMIADEATHNG",
+      "best_pt_preview": "REATHSTOEHIIANGTHLENGEAIASEONHAENGNGITHOETHASTHHITHITHPVTHINGASEOTHIASTHASTHEALENGNGOMJJFIBPVOANTAIHTHYYAIAYVROEXSISTHNG"
+    },
+    "L95_plaintext": {
+      "L": 95,
+      "mode": "plaintext",
+      "best_score": 89.268,
+      "best_primer_runes": "ᛇᚱᛏᚱᛉᚣᛟᛇᛞᛏᚣᛟᚱᚷᛟᛇᚾᚣᛄᚾᛚᚷᛉᛄᚾᛈᛖᚪᛈᛇᛁᛄᛒᛚᚪᛗᚫᛒᛋᛗᚦᚹᚳᛄᛡᚻᚪᛝᚩᚻᛄᚪᚩᚢᛏᚳᛞᚦᛈᛏᛉᛡᛗᛗᚻᛇᚱᚹᛡᛞᛋᛇᛈᚾᛗᚫᛠᛖᚾᛗᛈᛇᚩᚪᛈᛈᛁᛞᛏᛏᛞᚠᛖᛞᚷ",
+      "best_primer_latin": "EORTRXYOEEODTYOERGOEEONYJNLGXJNPEAPEOIJBLAMAEBSMTHWCJIAHANGOHJAOVTCDTHPTXIAMMHEORWIADSEOPNMAEEAENMPEOOAPPIDTTDFEDG",
+      "best_pt_preview": "ORTHEANGOECBNGINGEAVAEEDTOFPEOOBIANDEAFTHITHEARIXGIOETESTHOETHMVBMEATITHJTWHAAETIANGTHAEDHBNDDOGTHXBENGTHBDDHPEASEOARHYM"
+    },
+    "L95_ciphertext": {
+      "L": 95,
+      "mode": "ciphertext",
+      "best_score": 73.585,
+      "best_primer_runes": "ᛇᛠᚷᚢᚻᛒᚾᚷᛈᛖᚻᛡᛞᚩᚪᛡᛈᛗᚻᚢᛁᚳᚹᚹᚠᚣᚫᛟᛚᛁᚩᛚᛒᛖᚠᛝᚫᚦᚱᚹᚦᛚᛖᛄᛇᚾᛗᛟᛁᛗᛈᛠᛠᛏᚳᚱᚦᚫᚳᛟᚹᛡᛄᚩᚣᛇᛏᛡᛗᚳᛗᛗᛠᚪᛗᛒᚷᚱᛁᚾᛄᚩᛡᛒᚹᛒᛠᛝᚪᛚᚪᚣᛒᚷᚦ",
+      "best_primer_latin": "EOEAGVHBNGPEHIADOAIAPMHVICWWFYAEOELIOLBEFNGAETHRWTHLEJEONMOEIMPEAEATCRTHAECOEWIAJOYEOTIAMCMMEAAMBGRINJOIABWBEANGALAYBGTH",
+      "best_pt_preview": "ONEOTHIATHEDTHHIDJEATHEOIONGOERATHEINGTHAEONMREONRIHIAVSENTHCFOEENGCHIASVENTTHANGEATHRIMBYOTHNGTHAEATHEFATHOERIOEROEELSI"
+    }
+  },
+  "overall_best": {
+    "L": 95,
+    "mode": "plaintext",
+    "best_score": 89.268,
+    "best_primer_runes": "ᛇᚱᛏᚱᛉᚣᛟᛇᛞᛏᚣᛟᚱᚷᛟᛇᚾᚣᛄᚾᛚᚷᛉᛄᚾᛈᛖᚪᛈᛇᛁᛄᛒᛚᚪᛗᚫᛒᛋᛗᚦᚹᚳᛄᛡᚻᚪᛝᚩᚻᛄᚪᚩᚢᛏᚳᛞᚦᛈᛏᛉᛡᛗᛗᚻᛇᚱᚹᛡᛞᛋᛇᛈᚾᛗᚫᛠᛖᚾᛗᛈᛇᚩᚪᛈᛈᛁᛞᛏᛏᛞᚠᛖᛞᚷ",
+    "best_primer_latin": "EORTRXYOEEODTYOERGOEEONYJNLGXJNPEAPEOIJBLAMAEBSMTHWCJIAHANGOHJAOVTCDTHPTXIAMMHEORWIADSEOPNMAEEAENMPEOOAPPIDTTDFEDG",
+    "best_pt_preview": "ORTHEANGOECBNGINGEAVAEEDTOFPEOOBIANDEAFTHITHEARIXGIOETESTHOETHMVBMEATITHJTWHAAETIANGTHAEDHBNDDOGTHXBENGTHBDDHPEASEOARHYM"
+  },
+  "all_results_count": 160,
+  "any_above_80": true
+}

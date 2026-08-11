@@ -1,0 +1,465 @@
+TITLE: GitHub - ralphatobe/cicada-3301: Repository for decoding the remaining Liber Primus pages
+URL: https://github.com/ralphatobe/cicada-3301
+DESC: Repository for decoding the remaining Liber Primus pages - ralphatobe/cicada-3301
+PUB: 
+LEN: 4658
+===
+
+
+ GitHub - ralphatobe/cicada-3301: Repository for decoding the remaining Liber Primus pages · GitHub
+
+ Skip to content
+
+Navigation Menu
+
+Sign in
+
+Appearance settings
+
+Platform
+
+AI CODE CREATION
+
+GitHub CopilotWrite better code with AI
+
+GitHub Copilot appDirect agents from issue to merge
+
+MCP RegistryIntegrate external tools
+
+DEVELOPER WORKFLOWS
+
+ActionsAutomate any workflow
+
+CodespacesInstant dev environments
+
+IssuesPlan and track work
+
+Code ReviewManage code changes
+
+Code QualityEnforce quality at merge
+
+APPLICATION SECURITY
+
+GitHub Advanced SecurityFind and fix vulnerabilities
+
+Code securitySecure your code as you build
+
+Secret protectionStop leaks before they start
+
+EXPLORE
+Why GitHub
+
+Documentation
+
+Blog
+
+Changelog
+
+Marketplace
+
+View all features
+
+Solutions
+
+BY COMPANY SIZE
+Enterprises
+
+Small and medium teams
+
+Startups
+
+Nonprofits
+
+BY USE CASE
+App Modernization
+
+DevSecOps
+
+DevOps
+
+CI/CD
+
+View all use cases
+
+BY INDUSTRY
+Healthcare
+
+Financial services
+
+Manufacturing
+
+Government
+
+View all industries
+
+View all solutions
+
+Resources
+
+EXPLORE BY TOPIC
+AI
+
+Software Development
+
+DevOps
+
+Security
+
+View all topics
+
+EXPLORE BY TYPE
+Customer stories
+
+Events & webinars
+
+Ebooks & reports
+
+Business insights
+
+GitHub Skills
+
+SUPPORT & SERVICES
+Documentation
+
+Customer support
+
+Community forum
+
+Trust center
+
+Partners
+
+View all resources
+
+Open Source
+
+COMMUNITY
+
+GitHub SponsorsFund open source developers
+
+PROGRAMS
+Security Lab
+
+Maintainer Community
+
+Accelerator
+
+GitHub Stars
+
+Archive Program
+
+REPOSITORIES
+Topics
+
+Trending
+
+Collections
+
+Enterprise
+
+ENTERPRISE SOLUTIONS
+
+Enterprise platformAI-powered developer platform
+
+AVAILABLE ADD-ONS
+
+GitHub Advanced SecurityEnterprise-grade security features
+
+Copilot for BusinessEnterprise-grade AI features
+
+Premium SupportEnterprise-grade 24/7 support
+
+Pricing
+
+Type / to search
+
+Sign in
+Sign up
+
+Appearance settings
+
+ You signed in with another tab or window. Reload to refresh your session.
+ You signed out in another tab or window. Reload to refresh your session.
+ You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+ ralphatobe
+ 
+ /
+ 
+ cicada-3301
+
+ Public
+
+Notifications
+ You must be signed in to change notification settings
+
+Fork
+ 2
+
+ Star
+ 1
+
+ Code
+
+ Issues
+ 0
+
+ Pull requests
+ 0
+
+ Actions
+
+ Projects
+
+ Security and quality
+ 0
+
+ Insights
+
+Additional navigation options
+
+ Code
+
+ Issues
+
+ Pull requests
+
+ Actions
+
+ Projects
+
+ Security and quality
+
+ Insights
+
+master
+
+1 Branch
+
+0 Tags
+
+Go to file
+
+Code
+
+Open more actions menu
+
+Folders and files
+
+NameName
+Last commit message
+
+Last commit date
+
+Latest commit
+
+ralphatobe
+
+Update index.md
+
+Aug 10, 2018
+
+39954e6 · Aug 10, 2018
+
+History
+
+75 Commits
+
+Open commit details
+
+75 Commits
+
+docs
+
+docs
+
+Update index.md
+
+Aug 10, 2018
+
+.gitignore
+
+.gitignore
+
+remove unnecessary images and add new md
+
+Aug 1, 2018
+
+README.md
+
+README.md
+
+reorganize, comment, write english cipher stats script
+
+Jul 23, 2018
+
+Vocabulary.zip
+
+Vocabulary.zip
+
+update repo to current progress
+
+Jul 22, 2018
+
+_config.yml
+
+_config.yml
+
+Set theme jekyll-theme-cayman
+
+Jul 26, 2018
+
+chapter_stats.py
+
+chapter_stats.py
+
+reorganize, comment, write english cipher stats script
+
+Jul 23, 2018
+
+decrypt_text.py
+
+decrypt_text.py
+
+reorganize, comment, write english cipher stats script
+
+Jul 23, 2018
+
+english_stats.py
+
+english_stats.py
+
+reorganize, comment, write english cipher stats script
+
+Jul 23, 2018
+
+process_characters.py
+
+process_characters.py
+
+reorganize, comment, write english cipher stats script
+
+Jul 23, 2018
+
+process_images.py
+
+process_images.py
+
+add dbscan image
+
+Aug 10, 2018
+
+utils.py
+
+utils.py
+
+reorganize, comment, write english cipher stats script
+
+Jul 23, 2018
+
+View all files
+
+Repository files navigation
+
+README
+
+More items
+
+cicada-3301
+
+Repository for decoding the remaining Liber Primus pages.
+
+Unsolved Liber Primus pages
+
+Liber Primus cipher (Gematria Primus)
+
+Packages:
+
+OpenCV
+
+numpy
+
+scipy
+
+matplotlib
+
+Running the repo:
+
+Download the unsolved Liber Primus pages
+
+Unzip vocabulary.zip
+
+Run 
+python process_characters.py
+ to uniformly crop vocabulary images
+
+Run 
+python process_images.py
+ to extract transcripts from Liber Primus pages
+
+About
+
+Repository for decoding the remaining Liber Primus pages
+
+Resources
+
+Readme
+
+Activity
+
+Stars
+
+1 star
+
+Watchers
+
+2 watching
+
+Forks
+
+2 forks
+
+Report repository
+
+Releases
+
+No releases published
+
+Contributors1 (1)
+
+ralphatobe
+
+Languages
+
+Python100%
+
+Footer
+
+ © 2026 GitHub, Inc.
+
+Footer navigation
+
+ Terms
+
+ Privacy
+
+ Security
+
+ Status
+
+ Community
+
+ Docs
+
+ Contact
+
+ Manage cookies
+
+ Do not share my personal information
+
+ You can’t perform that action at this time.
+

@@ -1,0 +1,788 @@
+     1→TITLE: The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4
+     2→URL: https://connortumbleson.com/2024/12/23/the-cicada-3301-mystery-puzzle-3-solve-part-4
+     3→DESC: We pick up where we left off in the January 2014 puzzle - this is Part 4
+     4→PUB: 2024-12-23T03:30:38.000Z
+     5→LEN: 32103
+     6→===
+     7→
+     8→
+     9→ The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4
+    10→
+    11→ Home
+    12→
+    13→ Tags
+    14→
+    15→ About
+    16→
+    17→ Slides
+    18→
+    19→Dark
+    20→
+    21→Search
+    22→
+    23→Ramblings of a Tampa engineer
+    24→
+    25→ Cicada 3301
+    26→
+    27→The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4
+    28→
+    29→ 2 years ago
+    30→
+    31→ 22 min read
+    32→
+    33→ Photo by Deb Dowd / Unsplash
+    34→We pick up where we left off in the January 2014 puzzle - this is Part 4.
+    35→
+    36→💡
+    37→
+    38→If you missed Part 1, Part 2 or Part 3 of the 2014 Puzzle - head on back to catch up.
+    39→
+    40→We ended the last part after a long process of discovering a book & associated book code from a collection of compressed nested images within another image. Once done with that we landed on a new onion (
+    41→ut3qtzbrvs7dtvzp.onion
+    42→) which gave us a rather large output of hexadecimal characters.
+    43→
+    44→<!--761-->
+    45→ffd8ffe000104a46494600010100000100010000ffdb0043000806060706
+    46→05080707070909080a0c140d0c0b0b0c1912130f141d1a1f1e1d1a1c1c20
+    47→242e2720222c231c1c2837292c30313434341f27393d38323c2e333432ff
+    48→// snipped
+    49→
+    50→full file (GitHub)
+    51→
+    52→What was odd about this page is we didn't see the common 512 character tiny string prior to this one. Either way - we know what to do at this point. Lets dump the hexadecimal characters - convert to binary and run binwalk.
+    53→
+    54→➜ xxd -p -r file.hex file.bin
+    55→➜ binwalk file.bin 
+    56→
+    57→DECIMAL HEXADECIMAL DESCRIPTION
+    58→-----------------------------------------
+    59→0 0x0 JPEG image data, JFIF standard 1.01
+    60→754662 0xB83E6 JPEG image data, JFIF standard 1.01
+    61→1467395 0x166403 JPEG image data, JFIF standard 1.01
+    62→2170823 0x211FC7 JPEG image data, JFIF standard 1.01
+    63→
+    64→This seems a bit too easy - there appears to be 4 images in sequential order. With all the confusion we've had in prior puzzles with backward images, reversed images, etc I expected something a bit more complex.
+    65→
+    66→If we were to visualize this packed data - it would resemble this image.
+    67→
+    68→I've recently started appreciating foremost as a tool (over binwalk) recently, so we can ask foremost to extract these 4 images.
+    69→
+    70→➜ foremost file.bin
+    71→Processing: file.bin
+    72→|*|
+    73→
+    74→Now it appears we have 4 more pages of this Liber Primus book extracted.
+    75→
+    76→Pages 10, 11, 12 and 13 of the Liber Primus
+    77→
+    78→Of course we should immediately run outguess over these 4 new images to see if we find anything.
+    79→
+    80→➜ for file in *.jpg; do outguess -r $file $file.out; done;
+    81→Reading 10.jpg....
+    82→Extracting usable bits: 677059 bits
+    83→Steg retrieve: seed: 99, len: 1234
+    84→
+    85→Reading 11.jpg....
+    86→Extracting usable bits: 627884 bits
+    87→Steg retrieve: seed: 166, len: 1234
+    88→
+    89→Reading 12.jpg....
+    90→Extracting usable bits: 623058 bits
+    91→Steg retrieve: seed: 150, len: 1234
+    92→
+    93→Reading 13.jpg....
+    94→Extracting usable bits: 1433292 bits
+    95→Steg retrieve: seed: 129, len: 1234
+    96→
+    97→Sure enough all 4 decoded messages have some variation of this new challenge.
+    98→
+    99→-----BEGIN PGP SIGNED MESSAGE-----
+   100→Hash: SHA1
+   101→
+   102→Create one Tor hidden service that can accept CGI file uploads.
+   103→
+   104→When this hidden service returns and can accept input, post the 
+   105→three magic squares and the URL to your Tor hidden service here.
+   106→
+   107→Work alone.
+   108→
+   109→3333333333333333
+   110→310 12 103
+   111→3 3
+   112→312 14 123
+   113→3 3
+   114→310 12 103
+   115→3333333333333333
+   116→
+   117→Good luck.
+   118→
+   119→3301
+   120→
+   121→Full File(s) - Page 10, Page 11, Page 12, Page 13
+   122→
+   123→So before we go refresh on our magic squares from previous puzzles - we should go figure out what these 4 pages of the book say. We have quite a collection of scripts to run on runes now - so we will try each of the following and look for a successful decoding.
+   124→
+   125→Direct Translation
+   126→
+   127→Reversed Translation
+   128→
+   129→XOR with Puzzle 2
+   130→
+   131→Brute-force Vigenère Key
+   132→
+   133→Brute-force Column Key
+   134→
+   135→As we go down the list - it doesn't take long as this is a direct translation of runes to English.
+   136→
+   137→ᚦᛖ ᛚᚩᛋᛋ ᚩᚠ ᛞᛁᚢᛁᚾᛁᛏᚣ --> THE LO[S|Z][S|Z] OF DIUINITY
+   138→
+   139→As you can see a direct translation started spelling out "The loss of divinity". Now we have to remind ourselves of why this translation looks a bit odd.
+   140→
+   141→The 
+   142→ᛋ
+   143→ rune has either S or Z as a valid letter value.
+   144→
+   145→The letter 
+   146→v
+   147→ has no corresponding rune.
+   148→
+   149→Remember in Part 1 the book called out
+   150→
+   151→DO NOT EDIT OR CHANGE THIS BOOK
+   152→OR THE MESSAGE CONTAINED WITHIN
+   153→EITHER THE WORDS OR THEIR NUMBERS
+   154→FOR ALL IS SACRED
+   155→
+   156→So as we go forward we probably have to treat the messages exactly as they are decoded even if it doesn't look exactly like perfect English. As we continue going through these 4 pages they all are a simple direct translation which ends up forming a story titled "The Loss of Divinity" which we will correct into proper spelling for the sake of reading it.
+   157→
+   158→The Loss of Divinity (Full)
+   159→
+   160→A Loss of Divinity
+   161→The Circumference practices three behaviors which cause the loss of divinity
+   162→
+   163→Consumption
+   164→We consume too much because we believe the following two errors within the deception:
+   165→
+   166→We do not have enough or there is not enough
+   167→
+   168→We have what we have now by luck
+   169→
+   170→and we will not be strong enough later to obtain what we need.
+   171→Most things are not worth consuming.
+   172→
+   173→Preservation
+   174→We preserve things because we believe we are weak.
+   175→If we lose them, we will not be strong enough to gain them again.
+   176→This is the deception.
+   177→Most things are not worth preserving.
+   178→
+   179→Adherence
+   180→We follow dogma so that we can belong and be right
+   181→or we follow reason so we can belong and be right.
+   182→There is nothing to be right about
+   183→to belong is death
+   184→it is the behaviors of consumption
+   185→
+   186→Preservation and Adherence that have us lose our Primality
+   187→and thus our Divinity
+   188→
+   189→Some wisdom
+   190→Amass great wealth
+   191→Never become attached to what you own
+   192→Be prepared to destroy all that you own
+   193→
+   194→An instruction
+   195→Program your mind
+   196→Program reality
+   197→
+   198→Source - GitHub (A Loss of Divinity Page 10-13)
+   199→
+   200→Now remember we don't have a letter 
+   201→V
+   202→ in the translation, so the proper spelling would be "Diuinity" which may or may not become relevant.
+   203→
+   204→While we discovered the meaning behind those 4 pages - the onion we originally obtained those images from updated. This had become a pattern at this point where an onion was discovered, would go offline for 5-7 days and come back online changed.
+   205→ut3qtzbrvs7dtvzp.onion source
+   206→The website had a few instructions attached.
+   207→
+   208→Please paste the magic squares into the appropriate textareas below, then
+   209→provide the URL to your Tor hidden service.
+   210→
+   211→The path to your CGI script which accepts uploads should be '/cgi-bin/upload' and the HTML form input which accepts file uploads should be named 'file'.
+   212→
+   213→Additionally, please generate a GnuPG key pair, and place the public key
+   214→in the location '/key.asc'.
+   215→
+   216→💡
+   217→
+   218→A magic square is a square grid of numbers where the sum of the numbers in each row, column, and both main diagonals is the same.
+   219→
+   220→So there is a lot going on here we have to breakdown.
+   221→
+   222→We have to generate 3 different magic squares with values 1033 (twice) and 3301 at either a 7x7 or 5x5 grid. Thankfully I recently blogged about magic squares and our previous weird images from Part 3 had some numbers hidden, which may be related.
+   223→
+   224→We have to host & build a Tor website that supports file uploads (under name 
+   225→file
+   226→) at the location of 
+   227→/cgi-bin/upload
+   228→.
+   229→Additionally serving our respective public key at 
+   230→/key.asc
+   231→
+   232→Starting with the magic squares - we have to make/find each of the following:
+   233→
+   234→A 5x5 magic square of value 3301.
+   235→
+   236→A 7x7 magic square of value 1103.
+   237→
+   238→A 5x5 magic square of value 1103.
+   239→
+   240→So the question is whether we have to painfully generate these or discover them within the previous puzzles. We know way back in Part 2 (Puzzle 3) we found a magic square that was utilized for decoding a page of the book (Page 5).
+   241→
+   242→272 138 341 131 151
+   243→366 199 130 320 18
+   244→226 245 91 245 226
+   245→18 320 130 199 366
+   246→151 131 341 138 272
+   247→
+   248→magic square from Part 2 - Puzzle 3.
+   249→
+   250→This is a perfectly valid magic square that sums to 1103 on every row/column/diagonal. So I'm leaning towards going back through all media/assets from the previous puzzles to discover more squares. We know from Part 3 that some numbers were hidden in the portrait, but we gave up fully understanding what numbers.
+   251→
+   252→Thankfully with a few weeks between blog posts - a bit of renewed energy to try again and it didn't take long. I just popped the image into Forensically Beta and messed with the JPEG error/correction scale. Once I started seeing the cicada logo and person (Rasputin?) come into focus, I just messed with the sliders until numbers appeared.
+   253→67% JPEG Quality + 98 Error Scale @ 0.95 Opacity on Forensically
+   254→This resulted in an image that was quite readable with numbers on left and right side.
+   255→The raw image from above effort
+   256→This resulted in a left column of 181, 7, 15, 16, 456, 351, 7 and a right column of 966, 1071, 626, 204 and 434. Sadly this does not appear to be a full magic square and no more numbers could be discovered.
+   257→
+   258→However if you sum the left column and right column:
+   259→
+   260→181 + 7 + 15 + 16 + 456 + 351 + 7 = 1033
+   261→
+   262→966 + 1071 + 626 + 204 + 434 = 3301
+   263→
+   264→We know we already have a 5x5 magic square that sums to 1033. This left column could be a single column (or row) of the 7x7 magic square and likewise the right column sums to 3301 and could represent the 5x5 magic square that sums to 3301. So now I'm under the belief we don't need any magic square - we need these specific magic squares.
+   265→
+   266→So if we look back at all the assets from that puzzle we had:
+   267→
+   268→An image of Godel's incompleteness theorem
+   269→
+   270→An eye (M.C Escher)
+   271→
+   272→A 3 second audio clip of Bach's Trio Sonata
+   273→
+   274→The photo above
+   275→
+   276→An mp3 song (Interconnectedness by 3301)
+   277→
+   278→The first 3 assets are so tiny and were already packed in an image, so there is probably not much luck of finding some hidden magic squares within those. We've already ripped apart the photo above, so I believe we are missing something in the audio file.
+   279→
+   280→With this lets try out stego-toolkit and see if we can detect anything, so knowing we have an audio file that leaves the following tools to check:
+   281→
+   282→AudioStego - CLI Tool, October 2017
+   283→
+   284→mp3stego - CLI Tool, August 1998
+   285→
+   286→spectrology - CLI Tool, October 2015
+   287→
+   288→Steghide - CLI Tool, November 2001
+   289→
+   290→stegpy - CLI Tool, August 2018
+   291→
+   292→SonicVisualiser - UI Tool, May 2007
+   293→
+   294→OpenPuff - UI Tool, April 2011
+   295→
+   296→DeepSound - UI Tool, October 2023
+   297→
+   298→With the initial release date included I tossed out any tool that was built after the 3rd Puzzle was released (January 2014). It wouldn't make sense to use a stenography tool that didn't exist at time of Cicada puzzles. I'll attempt to use the latest version and version that existed at January 2014 time for each remaining tool.
+   299→
+   300→So with 4 tools left - there was nothing left to do but hammer some testing in hopes to find some hidden answers. Very quickly I learned that most of these tools require a password to decode any possible information within. With no idea what our password could be I started with our existing word-lists that have been collected from the puzzles thus far. Knowing Cicada though - if a password is in-use its probably in front of our face somehow. I'm guessing since we had hints of the squares in the portrait image - it probably has something to do with those numbers.
+   301→
+   302→💡
+   303→
+   304→I always think about the first puzzle where I struggled to find two numbers and they were simply the height/width of the image the entire time. 
+   305→
+   306→With the remaining 4 tools lets look at the latest version compared to the version that existed in late 2013 or early 2014.
+   307→
+   308→ Tool
+   309→ 2014 Release
+   310→ Current Release
+   311→
+   312→ mp3stego
+   313→ 1.1.18 (June 13, 2006)
+   314→ 1.1.19 (November 3, 2018)
+   315→
+   316→ Steghide
+   317→ 0.5.1 (October 15, 2003)
+   318→ 0.5.1 (October 15, 2003)
+   319→
+   320→ SonicVisualizer
+   321→ 2.3.0 (December 12, 2013)
+   322→ 5.0.1 (October 1, 2024)
+   323→
+   324→ OpenPuff
+   325→ 4.0.0 (July 10, 2012)
+   326→ 4.0.1 (July 19, 2018)
+   327→
+   328→With two tools that are executed via command - we can wire up a quick script to iterate our word-lists, attempt an extraction from each word and alert if a match was found. Of course before doing that, I want to make sure this actually works with the script I've designed. So for each line item I'm going to test encrypt something so I can be positive my extraction is working.
+   329→
+   330→Using stego-toolkit it commonly encrypts using password "abcd" for a demo. So feeding my script an example mp3 encrypted with "abcd" and stored with a hidden message led to a successful extraction.
+   331→GitHub Script Link
+   332→So with that test case completed - I immediately fed it my collected words and this time gave it the Interconnected song. This execution took quite a while (1 hour and 11 minutes) iterating every single word from our custom word lists, but ultimately failed with no discovered messages. I was going to try again on an older version of mp3stego, but all the versions report as 1.1.17 so its a bit difficult to know if I'm using the right old/new version.
+   333→
+   334→So onward to Steghide I went repeating this same exercise, which was immediately way easier due to already having a previously built infrastructure to handle the automation. 
+   335→GitHub Script Link
+   336→In a quick test I had it working with a sample file to prove extraction of a secret. However when I fed it the Interconnected song it failed to find a match. Thankfully steghide only had one version (0.5.1) between past and now so it was time to move onto SonicVisualiser.
+   337→
+   338→Sonic Visualiser was an interface based tool, so I had to quickly spawn a VNC session which Dominic Breuker made incredibly easy with the stego-toolkit project. However, the downside meant I no longer had a powerful automation script system to leverage.
+   339→
+   340→ 0:00
+   341→
+   342→ /0:14
+   343→
+   344→ 1×
+   345→
+   346→I loaded up the song into Sonic Visualiser and was personally lost beyond belief. My knowledge using wave-forms, spectrograms and melodic/frequency graphing was next to zero so I had to spend some time learning techniques for discovering information hidden within a song.
+   347→
+   348→With a bit more research I went through the following:
+   349→
+   350→Spectrogram Analysis - I was looking for some message/code hidden within the spectrogram.
+   351→
+   352→Waveform Analysis - I was looking for anomalies in the waveform that might suggest some data within.
+   353→
+   354→Success thrives in the world of Sonic Visualiser when you have an original audio file and one you think is modified to compare against. This song produced by Cicada as far as I can tell is an original creation so we have nothing to compare against.
+   355→
+   356→The more I research the audio via Sonic the more I realize Cicada 3301 would not have made something so easy to spot in a tool. Cicada puzzles are resistant to brute-forcing generally so my guess if anything is packed in this file we haven't found it. This tool (Sonic) has gone through nearly 20 versions since 2013, but I'm under the belief tools visualizing data have only improved so I'll ignore the older versions and just move on.
+   357→OpenPuff creation screen.
+   358→With only one tool left I opened up OpenPuff which is another interface-only based tool. Like our other tools I need to pack a secret to learn how this works. Quickly I learned this is a complex tool with many different possible passwords (A, B and C) and each password has a minimum of 8 characters.
+   359→
+   360→In addition to 3 different passwords (Only A is required) I also need to specify a bit selection option between (12%, 14%, 17%, 20%, 25%, 33%, 50%) so I have my work cut out for me in order to brute-force some guesses.
+   361→
+   362→I first wrote an extension to my Cicada tool to spit out relevant Cicada 3301 words greater or equal to 8 characters.
+   363→
+   364→php cicada app:wordlists 8
+   365→
+   366→certainty
+   367→circumference
+   368→circumferences
+   369→contained
+   370→contraries
+   371→discerned
+   372→discover
+   373→distinct
+   374→divinity
+   375→energies
+   376→eternity
+   377→existing
+   378→experience
+   379→following
+   380→illusions
+   381→innocence
+   382→knowledge
+   383→necessary
+   384→principles
+   385→struggle
+   386→suffering
+   387→tunneling
+   388→ultimately
+   389→
+   390→So every morning before work I started a little boring process where I picked a bit percent and went down the list above of words to see if anything would be discovered. This was a painful process that ended every single morning with an error like this.
+   391→OpenPuff failure
+   392→After about a month of daily attempts I decided to put the project on hold once I exhausted all my passwords/percent pairs to attempt. I had tried every single tool with a wide variety of passwords and came up empty. I still had older version of tools to use, but I couldn't muster up the energy to painfully go through all those passwords again.
+   393→
+   394→A few months later I picked this up again and started fresh on retracing all my steps. One thing that caught my eye was the numbers of both sides of the photo that accompanied the audio file. When you summed those you got 1033 or 3301.
+   395→
+   396→181 + 7 + 15 + 16 + 456 + 351 + 7 = 1033
+   397→966 + 1071 + 626 + 204 + 434 = 3301
+   398→
+   399→After spending so long with OpenPuff and realizing the minimum password count was 8 - I saw I could combine 1033 & 3301 into an 8 letter password. So I built an iteration for every single combination of 1033 and 3301 and made a new word-list. It was very easy to test, but unfortunately had no luck with any of the previous tools.
+   400→
+   401→I did a bit of research on the state of stenography in 2014 and research kept going back to Embedded SW which was a company that specialized in stenography and security in the early years and growth of online puzzle hunts. I started thinking that most of the tools above were created around the time the 3rd puzzle was released. The author(s) of the Cicada puzzles probably grew up with an older piece of software like anything produced by Embedded SW which started way back in 2004.
+   402→https://embeddedsw.net
+   403→So I decided to try again with an older version of OpenPuff (v4.0) and run through my possible passwords again. To my surprise when I hit 33011033 with a 50% bit selection I saw a different message than ever before. I couldn't believe the password was in front of my face the entire time.
+   404→pass: 33011033, bit selection: 50%, OpenPuff v4.0.0
+   405→As I hit "Ok" another dialogue popped up with details on what it discovered.
+   406→
+   407→*** Begin of Report ***
+   408→
+   409→Hidden file:
+   410→Name <- magicsquares.txt
+   411→Size <- 745 byte(s)
+   412→CRC32 <- 0x6A8C41E3
+   413→
+   414→*** End of Report ***
+   415→
+   416→output from OpenPuff
+   417→
+   418→Success was finally here - a hidden file called "magicsquares.txt" was hidden within interconnected.mp3. This file contained 3 magic squares.
+   419→
+   420→434 1311 312 278 966
+   421→204 812 934 280 1071
+   422→626 620 809 620 626
+   423→1071 280 934 812 204
+   424→966 278 312 1311 434
+   425→
+   426→7 375 236 190 27 17 181
+   427→351 223 14 47 293 98 7
+   428→456 232 121 114 72 23 15
+   429→16 65 270 331 270 65 16
+   430→15 23 72 114 121 232 456
+   431→7 98 293 47 14 223 351
+   432→181 17 27 190 236 375 7
+   433→
+   434→272 138 341 131 151
+   435→366 199 130 320 18
+   436→226 245 91 245 226
+   437→18 320 130 199 366
+   438→151 131 341 138 272
+   439→
+   440→Immediately I recognized the 3rd magic square as it matched exactly to what was discovered in a previous part of the puzzle. Not only that, but the hidden numbers we found in the image corresponded to the puzzles above.
+   441→
+   442→181, 7, 15, 16, 456, 351 and 7 was the last column in the 2nd magic square.
+   443→
+   444→966, 1071, 626, 204 and 434 was the first column reversed in the 1st magic square.
+   445→
+   446→So now that we had the magic squares discovered we had to build a TOR website that Cicada would presumably communicate with us through.
+   447→
+   448→We have to host & build a Tor website that supports file uploads (under name 
+   449→file
+   450→) at the location of 
+   451→/cgi-bin/upload
+   452→.
+   453→ Additionally serving our respective public key at 
+   454→/key.asc
+   455→
+   456→It didn't take long to build a pretty dumb PHP script that would capture files (and other inputs) while hosting my public key. With one simple default nginx change all I had to do was configure a server for TOR hosting. Which wasn't hard at all - just had to tell tor where to access my web server (nginx) and once I had that working I locked down my nginx to only listen on a socket and no longer port 80. This script was going to log nearly everything sent to it in preparation for a possible Cicada contact.
+   457→
+   458→if (!empty($_GET)) {
+   459→ file_put_contents($logFile, 'GET: ' . print_r($_GET, true) . PHP_EOL, FILE_APPEND);
+   460→}
+   461→
+   462→if (!empty($_POST)) {
+   463→ file_put_contents($logFile, 'POST: ' . print_r($_POST, true) . PHP_EOL, FILE_APPEND);
+   464→}
+   465→
+   466→if (!empty($_FILES)) {
+   467→ foreach ($_FILES as $file) {
+   468→ $fileLocation = $fileLocation . '/' . $file['name'];
+   469→ move_uploaded_file($file['tmp_name'], $fileLocation);
+   470→ file_put_contents($logFile, 'FILE: ' . $fileLocation . PHP_EOL, FILE_APPEND);
+   471→ }
+   472→}
+   473→
+   474→Carefully the magic squares were pasted into their respective box, the URL to the created onion was added and "submit" was clicked. Instead of the generic unsuccessful page - we were presented with a simple response page with 3 more book pages!
+   475→
+   476→<html><head></head><body>
+   477→<p> Thank you for you submission. </p>
+   478→<img src="/107.jpg" /><br />
+   479→<img src="/167.jpg" /><br />
+   480→<img src="/229.jpg" /><br />
+   481→
+   482→GitHub Source
+   483→
+   484→Pages 14, 15 and 16 of Liber Primus
+   485→
+   486→So I had to quickly run outguess over these new book pages, but came up empty with no messages packed within.
+   487→
+   488→It was time to get to work to decode these pages, but first I had to laugh as the magic square I spent months on to find was now just given to us on the 3rd page. After the slow painful process of converting these book pages to runic characters I had a single string that represented each page.
+   489→
+   490→ᚪ ᛋᚹᚪᛁ ᛈᚢᛟᚫ ᛈ ᚠᛖᚱᛋᛈᛈ ᚦᛗ ᚾᚪᚱᛚᚹᛈ ᛖᚩᛈᚢᛠᛁᛁᚻᛞ ᛚᛟ ᛠ ᛄᛖ ᛠ ᛁᚫ ᚷᛖ ᚦᛟᛁᛞᛟ ᛝᚠ ᛄᛖ ᛞᛁᛉᚾᚢᛚᚠᚻᚱᚹᛈᛞᛡ ᚻᚹ ᛋᚳᛉᛞ ᚻᛡᛖᛡ ᛠᚱᛉᛖᛇ ᛒᚹ ᛠ ᛋᛒᛚᛞᚹᛈᚳ ᚫᚩ ᚹᛉᛞᚪᚪᛄᛠ ᚹᚣᛠᚳ ᛄᚪᚳ ᛗᚾᛈᛏ ᚩᚻ ᛗᛈᛗᚳᛡᚱ ᚱᚪᛚᛡ ᛁᛒ ᚠᛋ ᛈ ᚳᛝᛗᚳᚹ ᛁᛗᛗᛁᚪᚻ ᚣᛝᚳᛟ ᛒᛠᛇ ᛁ ᚱᚹᚾᛒ ᛡᚪᛗᛟ ᛈ ᛁᚩᛠᚳᛠ ᛉᚾ ᛚᛏ ᚻᛒᛡ ᛚᛇᚢᚪᚻᚣ ᚷᛖ ᛏᚷᚢᛇᛟᛡᚫ ᚪᛡᛞ ᛖᛟ ᚱᚫᚠᛋᚹᛡ ᚣᛗᛋ ᚣᚪᛗᛡ ᛏᚱ ᚷᛖᚾᚪ ᛚᛡ ᛗᛈᛋᚣᛟᚱ ᚩᚻ ᛗᛈᛗᚳᛡᚱ ᚱᛏᛈᛒ
+   491→
+   492→ᛈᛗᛈ ᚦᚹ ᛗᚳᛁᛞᚹᚾᚣ ᛠᚾᚪ ᚳᚪᛠᛡ ᛚᛡ ᚢᛝᛁᛋᛟ ᚦᚫᚷ ᛄᛗᛗᚳ ᚪᚪᛠᛞ ᚹᚹᚢ ᚾᛉᚢᚹ ᛈᛝ ᛁᚩᛠᚳᛠ ᛉᚾ ᛡᛟᚢᛟ ᛇᛒᚩ ᛁᚱ ᚦᛠ ᛉ ᚪᛁᛈ ᚦᚹ ᛗᚳᛁᛞᚹᚾᚣᛗ ᚹᛗᛞᛖ ᚹᛈᚾᛗᚷᚣᛏᛠᛈᛖᚪ
+   493→
+   494→ᚪᚾ ᛁᚾᛋᛏᚱᚢᚳᛏᛡᚾ ᚳᚹᛖᛋᛏᛡᚾ ᚪᛚᛚ ᚦᛝᛋ ᛞᛁᛋᚳᚩᚢᛖᚱ ᛏᚱᚢᚦ ᛁᚾᛋᛁᛞᛖ ᚣᚩᚢᚱᛋᛖᛚᚠ ᚠᚩᛚᛚᚩᚹ ᚣᚩᚢᚱ ᛏᚱᚢᚦ ᛁᛗᛈᚩᛋᛖ ᚾᚩᚦᛝ ᚩᚾ ᚩᚦᛖᚱᛋ ᚳᚾᚩᚹ ᚦᛁᛋ 434 1311 312 278 966 204 812 934 280 1071 626 620 809 620 626 1071 280 934 812 204 966 278 312 1311 434
+   495→
+   496→I ran each string through a basic translate/reverse and surprisingly the last page decoded successfully.
+   497→
+   498→AN IN[S|Z]TRU[C|K]T[IA|IO]N [C|K]WE[S|Z]T[IA|IO]N ALL TH[NG|ING][S|Z] DI[S|Z][C|K]OUER TRUTH IN[S|Z]IDE YOUR[S|Z]ELF FOLLOW YOUR TRUTH IMPO[S|Z]E NOTH[NG|ING] ON OTHER[S|Z] [C|K]NOW THI[S|Z] 
+   499→
+   500→434 1311 312 278 966
+   501→204 812 934 280 1071
+   502→626 620 809 620 626
+   503→1071 280 934 812 204
+   504→966 278 312 1311 434
+   505→
+   506→The oddity occurs with what is clearly "Question All Things". You can see the only options we have is C or K, when we expected Q.
+   507→
+   508→[C|K]WE[S|Z]T[IA|IO]N ALL TH[NG|ING][S|Z]
+   509→
+   510→However, we know from the Gematria Primus that we don't have the letter Q as a possibility. So the last page (Page 16) breaks down to:
+   511→
+   512→AN INSTRUCTION 
+   513→KWESTION ALL THINGS
+   514→DISCOUER TRUTH INSIDE YOURSELF
+   515→FOLLOW YOUR TRUTH
+   516→IMPOSE NOTHING ON OTHERS
+   517→
+   518→KNOW THIS
+   519→434 1311 312 278 966
+   520→204 812 934 280 1071
+   521→626 620 809 620 626
+   522→1071 280 934 812 204
+   523→966 278 312 1311 434
+   524→
+   525→Now I was back to the other 2 pages that didn't seem to decode in that same manner. So I began running some brute-force little scripts I wrote. I took the first few characters (
+   526→ᚪ ᛋᚹᚪᛁ ᛈᚢᛟᚫ ᛈ
+   527→) of the 1st page and used it to test some column shifts, rotation shifts and vigenere shifts.
+   528→
+   529→ 0:00
+   530→
+   531→ /0:17
+   532→
+   533→ 1×
+   534→
+   535→As I was scrolling the output on the vigenere shift I saw something interesting.
+   536→
+   537→| Word | Translation |
+   538→| circumference | M [C|K]OMN DUR[NG|ING] A |
+   539→
+   540→This appeared to spell the word "During" with a vigenere key of "circumference", but it didn't look perfect. In one of the earlier parts (Part 3) of this puzzle we spent a lot of time on decoding a koan. As I look at this failed decoding - the phrase looks pretty close to "A Koan - During a"
+   541→
+   542→So now we have a problem - I'm fairly sure the key is circumference, but not spelled exactly that way. So if we take the original runic to human letter conversion we get this:
+   543→
+   544→A [S|Z]WAI PUOEAE P
+   545→
+   546→Which suggests the first character is already correct. However, by the time we move down the key (circumference) we fix the word of PUOEAE to DURING. So this suggests if we examine the key in detail the 1st character (
+   547→c
+   548→) is affecting the shift, but the 2nd and 3rd seems fine. We also know the 4th character (
+   549→c
+   550→) is also breaking the decoding, so I believe we have a pattern.
+   551→
+   552→I believe the leading 
+   553→c
+   554→'s in circumference (or maybe all) need to be changed. This is classic behavior of Cicada puzzles to thwart basic automation. So there are 2 paths to take with this - we can assume a single character (
+   555→a
+   556→|
+   557→ᚪ
+   558→) shouldn't be shifted or we record the runic indexes to skip.
+   559→
+   560→Neither of these options worked.
+   561→
+   562→If you ignore a specific letter - decoding falls apart into unreadable text.
+   563→
+   564→If you skip specific indexes you break the string as it shifts the key into phrases that we previously correct.
+   565→
+   566→We basically need to change the key to something that won't break our parser and there is one special character in the Gemetria Primus. The first character (0 index) in the translation guide is the letter 
+   567→f
+   568→. So if we adapt our vigenere key to "firfumference" we may have better luck as that letter in a key will cause the character to not shift any direction.
+   569→
+   570→➜ php cicada app:vigenere 
+   571→
+   572→ Enter a sentence to translate:
+   573→ > ᚪ ᛋᚹᚪᛁ ᛈᚢᛟᚫ ᛈ
+   574→
+   575→ Enter the key.:
+   576→ > firfumference
+   577→
+   578→ Enter the indexes to skip.:
+   579→ > 
+   580→
+   581→Translation: A [C|K]OAN DUR[NG|ING] A
+   582→
+   583→https://github.com/iBotPeaches/cicada_3301/blob/master/tool/app/Commands/TranslateVigenere.php
+   584→
+   585→This seemed to work but I was only decoding 15~ characters so time would tell if that was the full string. To help understand how this worked it may help to first visualize how this algorithm was working for the original key of "circumference".
+   586→A visual understanding of runic vigenere cipher with key "circumfer" to plaintext.
+   587→As you can see above - we take the original runic character and identify its index starting at 0. We take our key and convert/translate it to runes in order to find its index (also 0 based) in the Gematria Primus. Once we have a numeric for both the string and key - we do a simple subtraction. If we happen to go into the negatives we add the amount of runes (29) to the value to wrap it back into positive values. This gives you the shifted numbers which can be easily translated into letters.
+   588→
+   589→Now visually you can see that the letter F above represents 0 which means the value did not shift from its original numeric index. So we can remake the image above with the corrected key to see the impact.
+   590→A visual understanding of runic vigenere cipher with key "firfumfer" to plaintext.
+   591→Now you can see how the string decodes correctly without affecting the other characters. So I grabbed the entire single line runic string and attempted a decoding and it quickly fell apart after "During". However, I saw another letter "c" towards the end of the word circumference, so I tried using 
+   592→firfumferenfe
+   593→ where I changed all letter C's to F's.
+   594→
+   595→This had more success, but then fell apart a bit into the sentence.
+   596→
+   597→Translation: A [C|K]OAN DUR[NG|ING] A LE[S|Z][S|Z]ON THE MA[S|Z]TER EXPLAINED THE I THE I I[S|Z] THE UOI[C|K]E OL JF DFINFUFMFERDN
+   598→
+   599→Thankfully a few onions ago we had developed indexes to skip as an optional extension to the vigenere cipher, so I carefully started recording indexes where the decoded string fell apart. It only took two indexes (65, 76) skipped and the entire page decoded into something readable.
+   600→
+   601→A [C|K]OAN
+   602→DUR[NG|ING] A LE[S|Z][S|Z]ON
+   603→THE MA[S|Z]TER EXPLAINED THE I
+   604→THE I I[S|Z] THE UOI[C|K]E OF THE [C|K]IR[C|K]UMFEREN[C|K]E HE [S|Z]AID
+   605→WHEN A[S|Z][C|K]ED BY A [S|Z]TUDENT TO EXPLAIN WHAT THAT MEANT
+   606→THE MA[S|Z]TER [S|Z]AID IT I[S|Z] A UOI[C|K]E IN[S|Z]IDE YOUR HEAD
+   607→I DONT HAUE A UOI[C|K]E IN MY HEAD THOUGHT THE [S|Z]TUDENT
+   608→AND HE RAI[S|Z]ED HI[S|Z] HAND TO TELL THE MA[S|Z]TER THE MA[S|Z]TER [S|Z]TOP...
+   609→
+   610→So I quickly had to check if the next page (Page 15) stood on its own or had to be decoded with the same key alongside the previous page. The next page had to be decoded after it was added to the end of the previous page. This added the following snippet.
+   611→
+   612→[S|Z]TOPPED THE [S|Z]TUDENT AND [S|Z]AID THE UOI[C|K]E THAT JU[S|Z]T [S|Z]AID YOU HAUE NO UOI[C|K]E IN YOUR HEAD I[S|Z] THE I AND THE [S|Z]TUDENT[S|Z] WERE ENLIGHTENED
+   613→
+   614→So with a bit of cleanup. I could clean up the entire 3 pages into a one solid story.
+   615→
+   616→A Koan
+   617→During a lesson the master explained the I:
+   618→
+   619→"The I is the voice of the circumference" he said.
+   620→
+   621→When asked by a student to explain what that meant,
+   622→the master said, "It is a voice inside your head."
+   623→
+   624→"I don't have a voice in my head," thought the student
+   625→and he raised his hand to tell the master.
+   626→
+   627→The master stopped the student and said: "The voice
+   628→that just said you have no voice in your head is the I."
+   629→and the students were enlightened.
+   630→
+   631→An Instruction
+   632→Question all things
+   633→Discover truth inside yourself
+   634→Follow your truth
+   635→Impose nothing on others
+   636→
+   637→Know this:
+   638→434 1311 312 278 966
+   639→204 812 934 280 1071
+   640→626 620 809 620 626
+   641→1071 280 934 812 204
+   642→966 278 312 1311 434
+   643→
+   644→It seemed we successfully understood these 3 pages - now we were just waiting for Cicada to utilize our onion service we uploaded. For some in early May 2014 (and others a bit earlier) Cicada triggered 3 web requests to your onion server.
+   645→
+   646→GET /key.asc
+   647→ with 
+   648→Cicada/33.01 CicaDOS 1.033 E Edition
+   649→ User Agent.
+   650→
+   651→GET /
+   652→ with 
+   653→Cicada/33.01 CicaDOS 1.033 E Edition
+   654→ User Agent.
+   655→
+   656→POST /cgi-bin/upload
+   657→ with 
+   658→Cicada/33.01 CicaDOS 1.033 S Edition
+   659→ User Agent.
+   660→
+   661→Cicada obtained your public key to be able to encrypt communication solely to you and then confirmed your onion was accessible before uploading a signed message to your host. For some their journey was over and instead a welcome questionnaire message was uploaded which awaited their results. For the majority of folks - the puzzle was not yet over as they received a message to another onion.
+   662→
+   663→-----BEGIN PGP SIGNED MESSAGE-----
+   664→Hash: SHA1
+   665→
+   666→Hello. Your enlightenment awaits you.
+   667→
+   668→ ky2khlqdf7qdznac.onion
+   669→
+   670→We look forward to hearing from you.
+   671→
+   672→Good luck.
+   673→
+   674→3301
+   675→
+   676→-----BEGIN PGP SIGNATURE-----
+   677→Version: GnuPG v1.4.11 (GNU/Linux)
+   678→
+   679→iQIcBAEBAgAGBQJTO88vAAoJEBgfAeV6NQkPEfsQAI0jGcmBaQr2AGGr1/ic839I
+   680→fc58EyVNLgWs6Aox0/Dc2Tj8dXOxc0sBNWY98tICIy2T0Vbpf1VF65nFs+cVcxXI
+   681→pXIU5X0O3XKRfxequIZQQUnt4elLIfFAIgrXbE9N7K5qkD47xg4kaYkPQh7/mDBa
+   682→NBVHsLkw8bbLUo7lBtv5VFHTeTikSnT3m7FsoSHl5WlsY9WvITO5VcYd48jFbBSS
+   683→P9Uk7v7cg1ohWpDB0BiYUTfOVxXYuZpnFiR6vAADP5KkY/qrFF7wrpYbhSmageId
+   684→Qcxyc/dajUTlwK7dl+OwAJn4XRPceBPMjW9SbCr33y1C3ijCuxn06penu0KnUyge
+   685→yYjyedXg11UPb/B6eT+hwAOPg/DLDTQ57QOQlGOX19lB56iZbHKuglQZUZ5kJq54
+   686→dTobWhi6FBtwu+QLnJCz2SASLCuKDIWFkwSoYro/F9Zlo7b0UUO2IOkcKw7tKzq9
+   687→uyPtBDQayCSIIHJhVjAtNiVFjNe+TcBf1VppAGY/7jfUfwxJ7Sfbv5Jwll+6MDYr
+   688→YdsnJBZjhLuoxFyr9g4TF0OTXmxT+TyAZ4qoItu4C0bcEncBcfLJz+J74X1upsZl
+   689→DMq7On1paQAkXvzr6ywDBpMJbDZETkl9gZbzHn1Ji+9f3fANrqU+5kZ1su2OReQf
+   690→++CO13gAUF4WohKip4mC
+   691→=VAo/
+   692→-----END PGP SIGNATURE-----
+   693→
+   694→GitHub Source
+   695→
+   696→As folks quickly arrived at a new onion they were left with an alarming sight. Which can best be captured with this little video below.
+   697→
+   698→ 0:00
+   699→
+   700→ /0:15
+   701→
+   702→ 1×
+   703→
+   704→scrolling "ky2khlqdf7qdznac.onion" at 30% zoom.
+   705→
+   706→It seemed we now had the full book titled Liber Primus in front of us, which was a daunting 75 pages of runic characters. Sure we had probably already decoded 17 of those, but there was nearly 60 remaining. At this point with a huge book and no clear path on the direction to take - things slowed down massively among the public Cicada researchers. We can only assume those really progressing the puzzle succeeded enough to go silent, but surely most folks just worked in private not sharing their success as Cicada recommended.
+   707→
+   708→So Part 4 comes to an end and our next post will be less of a linear journey in parts, but a deep dive into a group/single page of the Liber Primus.
+   709→
+   710→Puzzle 1 (2012)
+   711→
+   712→Puzzle 1 - 2nd Chance (2012)
+   713→
+   714→Puzzle 2 (2013)
+   715→
+   716→Puzzle 3 - Part 1 (2014)
+   717→
+   718→Puzzle 3 - Part 2 (2014)
+   719→
+   720→Puzzle 3 - Part 3 (2014)
+   721→
+   722→Puzzle 3 - Part 4 (2014) - You are here.
+   723→
+   724→ Read more posts by this author
+   725→
+   726→Connor Tumbleson
+   727→
+   728→ The link has been copied!
+   729→
+   730→Newer Post
+   731→
+   732→A Year of Blogging (2024)
+   733→
+   734→Older Post
+   735→
+   736→Olive Oil & Vinegar
+   737→
+   738→ © 2026 Connor Tumbleson. All Right Reserved.
+   739→ Published with Ghost.
+   740→
+   741→You’ve successfully subscribed to Connor Tumbleson
+   742→
+   743→Welcome back! You’ve successfully signed in.
+   744→
+   745→Great! You’ve successfully signed up.
+   746→
+   747→Success! Your email is updated.
+   748→
+   749→Your link has expired
+   750→
+   751→Success! Check your email for magic link to sign-in.
+   752→
+   753→ Please enter at least 3 characters
+   754→ 
+   755→ 0
+   756→ Results for your search
+   757→
+   758→May we suggest a tag?
+   759→
+   760→ Personal
+   761→ Apktool
+   762→ Travel
+   763→ Technology
+   764→ Random
+   765→ Tampa
+   766→ Food
+   767→ Developer
+   768→ Security
+   769→ Health
+   770→ Halo
+   771→ Ingress
+   772→ Sports
+   773→ History
+   774→ Coronavirus
+   775→ Pi-hole
+   776→ Video Games
+   777→ Movies
+   778→ Ghost Blog
+   779→ Scam
+   780→
+   781→May we suggest an author?
+   782→
+   783→ Connor Tumbleson
+   784→
+   785→ Connor Tumbleson.
+   786→ Ramblings of a Tampa engineer
+   787→
+   788→

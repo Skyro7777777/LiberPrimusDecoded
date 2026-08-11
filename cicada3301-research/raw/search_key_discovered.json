@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://connortumbleson.com/2024/12/23/the-cicada-3301-mystery-puzzle-3-solve-part-4",
+    "name": "The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4",
+    "snippet": "Dec 22, 2024 — We take our key and convert/translate it to runes in order to find its index (also 0 based) in the Gematria Primus . Once we have a numeric for ... Read more",
+    "host_name": "connortumbleson.com",
+    "rank": 0,
+    "date": "Dec 22, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/How_the_solved_pages_of_the_Liber_Primus_were_solved",
+    "name": "How the solved pages of the Liber Primus were solved",
+    "snippet": "The Vigenere cipher uses a specific key , and shifts each value according to the key . In this case it can be reversed by subtracting the key values from the ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/krisyotam/cicada3301",
+    "name": "krisyotam/cicada3301: Complete Cicada 3301 archive —",
+    "snippet": "Approximately 17 pages have been decoded using Gematria Primus with various key phrases.",
+    "host_name": "github.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.boxentriq.com/guides/cicada-3301-liber-primus",
+    "name": "Cicada 3301 Liber Primus Guide",
+    "snippet": "Open the Vigenere Cipher tool, choose autosolver mode, and select Gematria Primus . Paste only the first three lines of the page transcription, where the key ... Read more",
+    "host_name": "www.boxentriq.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://connortumbleson.com/2024/02/05/the-cicada-3301-mystery-puzzle-3-solve-part-2",
+    "name": "The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 2",
+    "snippet": "Feb 4, 2024 — We are basically discovering pages of a book known as the Liber Primus - this post will dive into the discovery of more of those pages. Due to ... Read more",
+    "host_name": "connortumbleson.com",
+    "rank": 4,
+    "date": "Feb 4, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/nonmurdermysteries/comments/151vqlw/what_ever_happened_to_the_cicada_mystery",
+    "name": "What ever Happened to the Cicada Mystery?",
+    "snippet": "Ever wondered what happened to the mystery that has captivated the Internet for the past two years - the Cicada 3301. This cryptic message first surfaced ...",
+    "host_name": "www.reddit.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/Gematria_Primus",
+    "name": "Gematria Primus - Uncovering Cicada Wiki - Fandom",
+    "snippet": "Gematria Primus, found during the 2013 puzzle , is an alphabet with 29 runes, A common theory is that 3301 found a prime number-length alphabet and decided to ...",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.60out.com/blog/unsolved-mystery-cicada-3301-cypher",
+    "name": "Unsolved Mystery: Cicada 3301 Cypher",
+    "snippet": "Apr 25, 2025 — Many believe the Liber Primus holds the final key to understanding Cicada 3301's true purpose. After 2014, no new verified puzzles were ...",
+    "host_name": "www.60out.com",
+    "rank": 7,
+    "date": "Apr 25, 2025",
+    "favicon": ""
+  }
+]

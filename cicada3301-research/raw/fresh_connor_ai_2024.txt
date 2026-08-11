@@ -1,0 +1,221 @@
+TITLE: AI & Cicada 3301
+URL: https://connortumbleson.com/2024/01/29/ai-cicada-3301
+DESC: In 2024 we take a look at the Cicada puzzle again - this time with the lens of AI.
+PUB: 2024-01-29T03:30:07.000Z
+LEN: 10147
+===
+
+
+ AI & Cicada 3301
+
+ Home
+
+ Tags
+
+ About
+
+ Slides
+
+Dark
+
+Search
+
+Ramblings of a Tampa engineer
+
+ Cicada 3301
+
+AI & Cicada 3301
+
+ 3 years ago
+
+ 6 min read
+
+A few weeks ago I got the urge to work on some Cicada 3301 things, but the test of time has caused a good deal of research and sources to vanish. The 2014 puzzle remains unsolved, but every once in awhile a YouTube video, podcast or news article attracts some old/new faces back to the puzzle.
+
+I've been reworking the puzzles one by one - slowly getting to the point that I'm in unsolved territory. I find solving previously solved puzzles, but forcing myself to just use the source material and attempt solves myself are the most rewarding. Lots of guides jump rather quickly or go from one step to another with no description on why.
+
+When you work to solve them without just following an older guide - you understand the puzzles far better. So I've started working on the puzzles again, but wanted to leverage the type of technology available in this day in age.
+
+So I decided to build my own tools for understanding the Liber Primus as well as leveraging AI models to help me in this journey. This post is describing some of that success.
+
+While I wrote this post - a good deal of the graphics and quotes were generated from OpenAI GPT4 between December 2023 and January 2024. This was an experiment to see how AI could help Cicada 3301 research and not an attempt to move towards AI for future blog content generation.
+
+At first I wanted to refresh my AI prompt handling and start small with the magic square available in the 2014 puzzle.
+
+AI Prompt: Magic Square
+
+272 138 341 131 151
+366 199 130 320 18
+226 245 91 245 226
+18 320 130 199 366
+151 131 341 138 272
+
+Can you determine anything from these numbers? What makes them important?
+
+A simple warm up and it excelled perfectly on 1st try.
+
+The numbers you've presented form a 5x5 grid. This arrangement and the specific numbers could imply several things, such as being part of a puzzle, a mathematical problem, or a coded message. Let's analyze a few possibilities:
+
+1) Magic Square: A magic square is a grid where the sum of numbers in each row, column, and sometimes diagonals is the same. We can check if this grid forms a magic square.
+
+2) Pattern or Sequence: There might be a numerical pattern or sequence within the grid, such as arithmetic or geometric sequences, or some other mathematical relationship between the numbers.
+
+Encoded Message: It could be a form of coded message where numbers represent letters or other symbols, commonly used in cryptography.
+
+Let's first check if this is a magic square by summing the rows, columns, and diagonals. If the sums are equal, it's a magic square. If not, we'll consider other possibilities. I'll calculate the sums now.
+
+The sums of the rows, columns, and both diagonals in your grid are all equal to 1033. This indicates that the grid is a magic square. A magic square is a square grid of numbers where the sum of the numbers in each row, column, and both main diagonals is the same. This particular property makes your grid of numbers significant and interesting from a mathematical perspective. Magic squares have been studied for centuries and are often associated with mathematical puzzles and recreational mathematics.
+
+Of course I knew this was a magic square before asking, but I was wondering if OpenAI could deliver with one simple prompt. So I went onward to see how well it could recap what Cicada 3301 even is.
+
+AI Prompt: What is Cicada 3301
+
+What is Cicada 3301?
+
+Cicada 3301 is a name given to an enigmatic organization that, on three occasions between 2012 and 2014, posted a series of complex puzzles and alternate reality games online, ostensibly to recruit highly intelligent individuals. The puzzles utilized a wide range of knowledge areas including cryptography, stenography, data security, and internet anonymity.
+
+The first puzzle appeared on January 4, 2012, on a message board, inviting participants to find a hidden message within an image. This led to a series of other challenges, involving code-breaking, book references, hidden websites, and physical clues placed in various locations around the globe. The puzzles often led to more questions than answers, with many participants collaborating online to try to solve them.
+
+The true purpose and the organization behind Cicada 3301 remain shrouded in mystery. Speculation about its nature ranges from it being a recruitment tool for a spy agency, to a private think tank, to a sophisticated alternate reality game created simply for the challenge. The organization itself stated that its goal was to find "intelligent individuals" and that it was not connected to any commercial interests, but these claims have not been verified.
+
+Despite extensive interest and investigation, the identities of the creators or the participants who successfully completed the puzzles have not been publicly revealed, nor has the nature of the organization been definitively established. This has added to the allure and enduring mystery of Cicada 3301.
+
+So at this point I wanted to work on its skills given a page of the Liber Primus. While it knew the book was runic in nature - it suffered badly at attempting OCR based transcriptions. So I started working on a little open source project to help automate my prompt building.
+
+So I started with at first copying runes (in their Unicode component).
+
+AI Prompt: Translate Runes
+
+ᛋᚩᛗᛖ•ᚹᛁᛋᛞᚩᛗ
+ᚦᛖ•ᛈᚱᛁᛗᛖᛋ•ᚪᚱᛖ•ᛋᚪᚳᚱᛖᛞ
+ᚦᛖ•ᛏᚩᛏᛁᛖᚾᛏ•ᚠᚢᚾᚳᛏᛡᚾ•ᛁᛋ•ᛋᚪᚳᚱᛖᛞ
+ᚪᛚᛚ•ᚦᛝᛋ•ᛋᚻᚩᚢᛚᛞ•ᛒᛖ•ᛖᚾᚳᚱᚣᛈᛏᛖᛞ
+
+ᚳᚾᚩᚹ•ᚦᛁᛋ 
+
+what does this say?
+
+The text you've provided is written in the Elder Futhark runic alphabet, which was used in ancient Germanic languages before the adoption of the Latin alphabet. Here's the transliteration and translation of the text:
+
+ᛋᚩᛗᛖ (some) •ᚹᛁᛋᛞᚩᛗ (wisdom)
+
+ᚦᛖ (the) •ᛈᚱᛁᛗᛖᛋ (primes) •ᚪᚱᛖ (are) •ᛋᚪᚳᚱᛖᛞ (sacred)
+
+ᚦᛖ (the) •ᛏᚩᛏᛁᛖᚾᛏ (totient) •ᚠᚢᚾᚳᛏᛡᚾ (function) •ᛁᛋ (is) •ᛋᚪᚳᚱᛖᛞ (sacred)
+
+ᚪᛚᛚ (all) •ᚦᛝᛋ (things) •ᛋᚻᚩᚢᛚᛞ (should) •ᛒᛖ (be) •ᛖᚾᚳᚱᚣᛈᛏᛖᛞ (encrypted)
+
+ᚳᚾᚩᚹ (know) •ᚦᛁᛋ (this)
+
+In modern English, this can be translated as:
+
+"Some wisdom: The primes are sacred, The totient function is sacred, All things should be encrypted.
+
+Know this."
+
+This message seems to be referencing mathematical concepts like prime numbers and the Euler's totient function, both of which are fundamental in number theory and cryptography. The emphasis on encryption suggests a theme of data security or cryptographic wisdom.
+
+I was quite amazed by this, but the more I thought about it the less impressed I became. I gave the AI the Unicode components of the runes - that meant it probably had the entire Unicode character library catalogued. At that point it was probably a simple lookup table to turn runes to letters and spelling it out.
+
+It would be more crazy if I could just give the AI the image of a page and see how it handled. This did not work in any shape in form in a few hours of prompt engineering.
+
+I started with an image like so
+
+It started off just failing to OCR.
+
+It appears that the OCR process did not return any text, which can happen if the characters are not recognized or are outside the expected character set for the OCR engine.
+
+So I provided the rune set (U+16A0..U+16FF) in play and AI converted it to black and white and still failed.
+
+Given that the runes fall within the Unicode range U+16A0 to U+16FF, a different approach would be to use a rune recognition tool or software specifically designed for this purpose, or to manually map the image against a chart of rune characters within that Unicode block.
+
+As my capabilities are based on general OCR technology, I'm unable to directly transcribe these runes. However, if you have a reference for the runes, I could assist.
+
+So I started working on a little extension to my Cicada repository to formulate prompts to aid these discussions. It worked well with output like so:
+
+As I give you images - please return the transcription in a short reply. I'm basically looking for the
+unicode runes that are represented in the image. Please keep the spacing as I have it in the image, which may be
+represented by dots between runes - consider those spaces.
+ᚠ - F
+ᚢ - U
+ᚦ - TH
+// ...
+
+However, even doing that - it was wrong.
+
+The transcription of the runes from the provided image is as follows:
+
+ᛖᛗᚢᚱᛞ-ᛈᚱᛁᛗᚢᛋ-ᛈᚾᛖᚢᛗᛖᚱᚩᛏᛇᛝᚳᛖᚹᚾᛗᚫᚳᛚᛚᚹᛗ-ᚾᚹᛗ-ᚹᚦᚳ.
+
+There was only 7 runes in that, but it generated way more. As I pushed the machine to refine the results - it ended with giving up. Perhaps trying to hammer OCR behavior into AI without a solid amount of training isn't worth it.
+
+It seems that the runes box size (size each character takes up) is wildly different for each runic character. I'm not well versed in the OCR process or tools, but it seems one author has been spending time on just that - refining an OCR process to review the pages.
+
+So as I spent more time with GPT4 - I realized I wasn't really gaining anything in regards to progressing with Cicada research. However, it did excel massively in helping me remember the exact parameters to utilize when working with Perl and dd.
+
+So while a bit of training and effort may prove to have a helpful Cicada 3301 AI helper - at the moment it only knows what is a quite search away.
+
+ Read more posts by this author
+
+Connor Tumbleson
+
+ The link has been copied!
+
+Newer Post
+
+The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 2
+
+Older Post
+
+Crowd Funding Products
+
+ © 2026 Connor Tumbleson. All Right Reserved.
+ Published with Ghost.
+
+You’ve successfully subscribed to Connor Tumbleson
+
+Welcome back! You’ve successfully signed in.
+
+Great! You’ve successfully signed up.
+
+Success! Your email is updated.
+
+Your link has expired
+
+Success! Check your email for magic link to sign-in.
+
+ Please enter at least 3 characters
+ 
+ 0
+ Results for your search
+
+May we suggest a tag?
+
+ Personal
+ Apktool
+ Travel
+ Technology
+ Random
+ Tampa
+ Food
+ Developer
+ Security
+ Health
+ Halo
+ Ingress
+ Sports
+ History
+ Coronavirus
+ Pi-hole
+ Video Games
+ Movies
+ Ghost Blog
+ Scam
+
+May we suggest an author?
+
+ Connor Tumbleson
+
+ Connor Tumbleson.
+ Ramblings of a Tampa engineer
+

@@ -1,0 +1,731 @@
+
+
+ cicada-solvers · GitHub
+
+ Skip to content
+
+Navigation Menu
+
+Sign in
+
+Appearance settings
+
+Platform
+
+AI CODE CREATION
+
+GitHub Copilot
+
+Write better code with AI
+
+GitHub Copilot app
+
+Direct agents from issue to merge
+
+MCP Registry
+
+Integrate external tools
+
+DEVELOPER WORKFLOWS
+
+Actions
+
+Automate any workflow
+
+Codespaces
+
+Instant dev environments
+
+Issues
+
+Plan and track work
+
+Code Review
+
+Manage code changes
+
+Code Quality
+
+Enforce quality at merge
+
+APPLICATION SECURITY
+
+GitHub Advanced Security
+
+Find and fix vulnerabilities
+
+Code security
+
+Secure your code as you build
+
+Secret protection
+
+Stop leaks before they start
+
+EXPLORE
+
+Why GitHub
+
+Documentation
+
+Blog
+
+Changelog
+
+Marketplace
+
+View all features
+
+Solutions
+
+BY COMPANY SIZE
+
+Enterprises
+
+Small and medium teams
+
+Startups
+
+Nonprofits
+
+BY USE CASE
+
+App Modernization
+
+DevSecOps
+
+DevOps
+
+CI/CD
+
+View all use cases
+
+BY INDUSTRY
+
+Healthcare
+
+Financial services
+
+Manufacturing
+
+Government
+
+View all industries
+
+View all solutions
+
+Resources
+
+EXPLORE BY TOPIC
+
+AI
+
+Software Development
+
+DevOps
+
+Security
+
+View all topics
+
+EXPLORE BY TYPE
+
+Customer stories
+
+Events & webinars
+
+Ebooks & reports
+
+Business insights
+
+GitHub Skills
+
+SUPPORT & SERVICES
+
+Documentation
+
+Customer support
+
+Community forum
+
+Trust center
+
+Partners
+
+View all resources
+
+Open Source
+
+COMMUNITY
+
+GitHub Sponsors
+
+Fund open source developers
+
+PROGRAMS
+
+Security Lab
+
+Maintainer Community
+
+Accelerator
+
+GitHub Stars
+
+Archive Program
+
+REPOSITORIES
+
+Topics
+
+Trending
+
+Collections
+
+Enterprise
+
+ENTERPRISE SOLUTIONS
+
+Enterprise platform
+
+AI-powered developer platform
+
+AVAILABLE ADD-ONS
+
+GitHub Advanced Security
+
+Enterprise-grade security features
+
+Copilot for Business
+
+Enterprise-grade AI features
+
+Premium Support
+
+Enterprise-grade 24/7 support
+
+Pricing
+
+Type / to search
+
+Sign in
+Sign up
+
+Appearance settings
+
+You signed in with another tab or window. Reload to refresh your session.
+
+You signed out in another tab or window. Reload to refresh your session.
+
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers
+
+Cicada Solvers community resources and tools. See also the sister-project on gitlab: 
+
+138
+
+ followers
+
+ https://gitlab.com/cicadasolvers
+
+ Overview
+
+ Repositories
+
+ Projects
+
+ Packages
+
+ People
+
+More
+
+ Overview
+
+ Repositories
+
+ Projects
+
+ Packages
+
+ People
+
+ Popular repositories
+
+Loading
+
+ The-Complete-Cicada3301-Archive
+ 
+ The-Complete-Cicada3301-Archive
+
+Public
+
+ Forked from cijhho123/cicada3301
+
+HTML
+
+ 106
+
+ 17
+
+ isitcicada
+ 
+ isitcicada
+
+Public
+
+ PGP web-app that verifies signed ascii armor messages automatically.
+
+JavaScript
+
+ 12
+
+ 4
+
+ GematriaPrimusTool
+ 
+ GematriaPrimusTool
+
+Public
+
+ A translator tool based off of JXlate for use with the Cicada 3301 Gematria Primus table.
+
+JavaScript
+
+ 7
+
+ 4
+
+ iddqd
+ 
+ iddqd
+
+Public
+
+ Forked from rtkd/iddqd
+
+ 3301 - Unmodified files, transcription and other assets.
+
+ 6
+
+ documenting-cicada3301-scream314
+ 
+ documenting-cicada3301-scream314
+
+Public
+
+ Forked from scream314/cicada3301
+
+HTML
+
+ 6
+
+ 3301chef
+ 
+ 3301chef
+
+Public archive
+
+ Clone of 3301chef. Redistributed in compliance with the Apache License requirements. Credit goes to Onecool for their modifications of CyberChef, as well as other relevant authors.
+
+HTML
+
+ 5
+
+ 1
+
+ Repositories
+
+ -->
+
+Loading
+
+Type
+
+Select type
+
+All
+
+Public
+
+Sources
+
+Forks
+
+Archived
+
+Mirrors
+
+Templates
+
+Language
+
+Select language
+
+All
+
+C
+
+C#
+
+C++
+
+Dart
+
+Go
+
+HTML
+
+JavaScript
+
+Python
+
+Sort
+
+Select order
+
+Last updated
+
+Name
+
+Stars
+
+Showing 10 of 54 repositories
+
+ aldegonde
+
+ Public
+
+ Forked from
+ micheloosterhof/aldegonde
+
+ Aldegonde
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/aldegonde's past year of commit activity
+
+Python
+
+ 0
+
+ISC
+
+ 2
+
+ 0
+
+ 1
+
+ Updated Aug 10, 2026
+
+ neuroretransmit-cicada
+
+ Public
+
+ Forked from
+ neuroretransmit/cicada
+
+ Solves/recreation and archive of pieces so you don't have to. Stay away from this puzzle.
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/neuroretransmit-cicada's past year of commit activity
+
+HTML
+
+ 2
+
+ 2
+
+ 0
+
+ 3
+
+ Updated Jul 22, 2026
+
+ cmbcidada3301
+
+ Public
+
+ Forked from
+ cmbsolver/cmbcidada3301
+
+ Cidada 3301 Liber Primus Tool.
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/cmbcidada3301's past year of commit activity
+
+C#
+
+ 0
+
+Apache-2.0
+
+ 1
+
+ 0
+
+ 2
+
+ Updated Feb 24, 2026
+
+ libergo
+
+ Public
+
+ Forked from
+ cmbsolver/libergo
+
+ Tools written for the command line in Go. I had originally written stuff in C#, but it was getting a bit slow. Go performs better.
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/libergo's past year of commit activity
+
+Go
+
+ 0
+
+Apache-2.0
+
+ 1
+
+ 0
+
+ 2
+
+ Updated Dec 23, 2025
+
+ cmbsolverwp
+
+ Public
+
+ Forked from
+ cmbsolver/cmbsolverwp
+
+ Wordpress plugins for Cicada and other puzzle solving utilities
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/cmbsolverwp's past year of commit activity
+
+JavaScript
+
+ 0
+
+Apache-2.0
+
+ 1
+
+ 0
+
+ 0
+
+ Updated Nov 24, 2025
+
+ lp-decrypter
+
+ Public
+
+ Forked from
+ mortlach/lp-decrypter
+
+ generic LP decrypter 1: functions of two runes
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/lp-decrypter's past year of commit activity
+
+Python
+
+ 0
+
+ 5
+
+ 0
+
+ 0
+
+ Updated Nov 1, 2025
+
+ LiberPrimusSolver
+
+ Public
+
+ Forked from
+ r4nd0mD3v3l0p3r/LiberPrimusSolver
+
+ an attempt at solving Cicada 3301 Liber Primus
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/LiberPrimusSolver's past year of commit activity
+
+JavaScript
+
+ 0
+
+GPL-3.0
+
+ 2
+
+ 0
+
+ 0
+
+ Updated Nov 1, 2025
+
+ miteo-3301tools
+
+ Public
+
+ Forked from
+ miteo761/3301tools
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/miteo-3301tools's past year of commit activity
+
+Python
+
+ 0
+
+ 1
+
+ 0
+
+ 0
+
+ Updated Nov 1, 2025
+
+ lphelper
+
+ Public
+
+ Forked from
+ mavicmed/lphelper
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/lphelper's past year of commit activity
+
+Python
+
+ 0
+
+ 1
+
+ 0
+
+ 0
+
+ Updated Nov 1, 2025
+
+ WPCH-3301
+
+ Public
+
+ Forked from
+ defalt-x/WPCH-3301
+
+ Web page content hasher-3301
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ cicada-solvers/WPCH-3301's past year of commit activity
+
+Python
+
+ 0
+
+ 1
+
+ 0
+
+ 0
+
+ Updated Nov 1, 2025
+
+ View all repositories
+
+People
+
+ This organization has no public members. You must be a member to see who’s a part of this organization.
+
+Top languages
+
+Loading…
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+Most used topics
+
+Loading…
+
+ Uh oh!
+
+There was an error while loading. Please reload this page.
+
+Footer
+
+ © 2026 GitHub, Inc.
+
+Footer navigation
+
+ Terms
+
+ Privacy
+
+ Security
+
+ Status
+
+ Community
+
+ Docs
+
+ Contact
+
+ Manage cookies
+
+ Do not share my personal information
+
+ You can’t perform that action at this time.
+

@@ -1,0 +1,1846 @@
+{
+  "attack1_chacha20": [
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=zeros16",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 67.468,
+          "latin_preview": "ENVINGJSOFFTHDBIANGFIIAFYNEANDCGAMEJBVGEOAGAEJAVEOMWFAEEALJTCPIWJMCMXEADHSXTHSBT",
+          "runes_preview": "ᛖᚾᚢᛁᛝᛄᛋᚩᚠᚠᚦᛞᛒᛡᛝᚠᛁᛡᚠᚣᚾᛠᚾᛞᚳᚷᚪᛗᛖᛄᛒᚢᚷᛇᚪᚷᚫᛄᚪᚢ"
+        },
+        "1000": {
+          "score": 66.425,
+          "latin_preview": "ENVINGJSOFFTHDBIANGFIIAFYNEANDCGAMEJBVGEOAGAEJAVEOMWFAEEALJTCPIWJMCMXEADHSXTHSBT",
+          "runes_preview": "ᛖᚾᚢᛁᛝᛄᛋᚩᚠᚠᚦᛞᛒᛡᛝᚠᛁᛡᚠᚣᚾᛠᚾᛞᚳᚷᚪᛗᛖᛄᛒᚢᚷᛇᚪᚷᚫᛄᚪᚢ"
+        }
+      },
+      "ks_preview_hex": "1aca11169f7c4671daabdb382e21a406bd1ff3c7e29be149815816ed37f3c69a",
+      "top_score": 67.468
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=zeros16",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.395,
+          "latin_preview": "NGLONGHAGYIOIATXGVFMTHTGOEVAGTHHWPIAYEAEADMWDRCNEAMEATFWONAPIAYOENGEMYBNVYRXXGXE",
+          "runes_preview": "ᛝᛚᚩᛝᚻᚪᚷᚣᛁᚩᛡᛏᛉᚷᚢᚠᛗᚦᛏᚷᛟᚢᚪᚷᚦᚻᚹᛈᛡᚣᛠᛠᛞᛗᚹᛞᚱᚳᚾᛠ"
+        },
+        "1000": {
+          "score": 66.27,
+          "latin_preview": "NGLONGHAGYIOIATXGVFMTHTGOEVAGTHHWPIAYEAEADMWDRCNEAMEATFWONAPIAYOENGEMYBNVYRXXGXE",
+          "runes_preview": "ᛝᛚᚩᛝᚻᚪᚷᚣᛁᚩᛡᛏᛉᚷᚢᚠᛗᚦᛏᚷᛟᚢᚪᚷᚦᚻᚹᛈᛡᚣᛠᛠᛞᛗᚹᛞᚱᚳᚾᛠ"
+        }
+      },
+      "ks_preview_hex": "1aca11169f7c4671daabdb382e21a406bd1ff3c7e29be149815816ed37f3c69a",
+      "top_score": 66.27
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=zeros16",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 67.468,
+          "latin_preview": "ENVINGJSOFFTHDBIANGFIIAFYNEANDCGAMEJBVGEOAGAEJAVEOMWFAEEALJTCPIWJMCMXEADHSXTHSBT",
+          "runes_preview": "ᛖᚾᚢᛁᛝᛄᛋᚩᚠᚠᚦᛞᛒᛡᛝᚠᛁᛡᚠᚣᚾᛠᚾᛞᚳᚷᚪᛗᛖᛄᛒᚢᚷᛇᚪᚷᚫᛄᚪᚢ"
+        },
+        "1000": {
+          "score": 66.425,
+          "latin_preview": "ENVINGJSOFFTHDBIANGFIIAFYNEANDCGAMEJBVGEOAGAEJAVEOMWFAEEALJTCPIWJMCMXEADHSXTHSBT",
+          "runes_preview": "ᛖᚾᚢᛁᛝᛄᛋᚩᚠᚠᚦᛞᛒᛡᛝᚠᛁᛡᚠᚣᚾᛠᚾᛞᚳᚷᚪᛗᛖᛄᛒᚢᚷᛇᚪᚷᚫᛄᚪᚢ"
+        }
+      },
+      "ks_preview_hex": "1aca11169f7c4671daabdb382e21a406bd1ff3c7e29be149815816ed37f3c69a",
+      "top_score": 67.468
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=hash[32:48]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 65.718,
+          "latin_preview": "SOEDWEOEXJEOOEPWXCPTWEAFPAEAEVTJMIEOCIPOAECAESSYTHOCWEAIAAETHTHANTHTAERGJIAVTMLE",
+          "runes_preview": "ᛋᛟᛞᚹᛇᛖᛉᛄᛖᚩᛟᛈᚹᛉᚳᛈᛏᚹᛠᚠᛈᚫᚫᚢᛏᛄᛗᛁᛇᚳᛁᛈᚩᚫᚳᚫᛋᛋᚣᚦ"
+        },
+        "1000": {
+          "score": 66.013,
+          "latin_preview": "SOEDWEOEXJEOOEPWXCPTWEAFPAEAEVTJMIEOCIPOAECAESSYTHOCWEAIAAETHTHANTHTAERGJIAVTMLE",
+          "runes_preview": "ᛋᛟᛞᚹᛇᛖᛉᛄᛖᚩᛟᛈᚹᛉᚳᛈᛏᚹᛠᚠᛈᚫᚫᚢᛏᛄᛗᛁᛇᚳᛁᛈᚩᚫᚳᚫᛋᛋᚣᚦ"
+        }
+      },
+      "ks_preview_hex": "cb496f19511ebba337c519d3e6bf23fe09a7f4e1870d4025cd70c9d9778502ab",
+      "top_score": 66.013
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=hash[32:48]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 67.195,
+          "latin_preview": "OEWNYFPSEIALJAASJTTOEDSTRHSLOPMRTHXTHRPNEEWIAFJTORGGECDGBHVGENNGPOENGBFCMRWOOECN",
+          "runes_preview": "ᛟᚹᚾᚣᚠᛈᛋᛖᛡᛚᛄᚪᚪᛋᛄᛏᛏᛟᛞᛋᛏᚱᚻᛋᛚᚩᛈᛗᚱᚦᛉᛏᚻᚱᛈᚾᛖᛖᚹᛡ"
+        },
+        "1000": {
+          "score": 67.029,
+          "latin_preview": "OEWNYFPSEIALJAASJTTOEDSTRHSLOPMRTHXTHRPNEEWIAFJTORGGECDGBHVGENNGPOENGBFCMRWOOECN",
+          "runes_preview": "ᛟᚹᚾᚣᚠᛈᛋᛖᛡᛚᛄᚪᚪᛋᛄᛏᛏᛟᛞᛋᛏᚱᚻᛋᛚᚩᛈᛗᚱᚦᛉᛏᚻᚱᛈᚾᛖᛖᚹᛡ"
+        }
+      },
+      "ks_preview_hex": "cb496f19511ebba337c519d3e6bf23fe09a7f4e1870d4025cd70c9d9778502ab",
+      "top_score": 67.195
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=hash[32:48]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 65.718,
+          "latin_preview": "SOEDWEOEXJEOOEPWXCPTWEAFPAEAEVTJMIEOCIPOAECAESSYTHOCWEAIAAETHTHANTHTAERGJIAVTMLE",
+          "runes_preview": "ᛋᛟᛞᚹᛇᛖᛉᛄᛖᚩᛟᛈᚹᛉᚳᛈᛏᚹᛠᚠᛈᚫᚫᚢᛏᛄᛗᛁᛇᚳᛁᛈᚩᚫᚳᚫᛋᛋᚣᚦ"
+        },
+        "1000": {
+          "score": 66.013,
+          "latin_preview": "SOEDWEOEXJEOOEPWXCPTWEAFPAEAEVTJMIEOCIPOAECAESSYTHOCWEAIAAETHTHANTHTAERGJIAVTMLE",
+          "runes_preview": "ᛋᛟᛞᚹᛇᛖᛉᛄᛖᚩᛟᛈᚹᛉᚳᛈᛏᚹᛠᚠᛈᚫᚫᚢᛏᛄᛗᛁᛇᚳᛁᛈᚩᚫᚳᚫᛋᛋᚣᚦ"
+        }
+      },
+      "ks_preview_hex": "cb496f19511ebba337c519d3e6bf23fe09a7f4e1870d4025cd70c9d9778502ab",
+      "top_score": 66.013
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[32:64] nonce=hash[0:16]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 66.017,
+          "latin_preview": "OEIANGXIROECOEGTOEGLNPGIAYBTITVDWAEEWTHTVIABMWNGEAIADAJIAOELJEOPJPDLSYGHBGWTTHVD",
+          "runes_preview": "ᚩᛖᛡᛝᛉᛁᚱᛟᚳᛟᚷᛏᛟᚷᛚᚾᛈᚷᛡᚣᛒᛏᛁᛏᚢᛞᚹᚫᛖᚹᚦᛏᚢᛡᛒᛗᚹᛝᛠᛡ"
+        },
+        "1000": {
+          "score": 65.674,
+          "latin_preview": "OEIANGXIROECOEGTOEGLNPGIAYBTITVDWAEEWTHTVIABMWNGEAIADAJIAOELJEOPJPDLSYGHBGWTTHVD",
+          "runes_preview": "ᚩᛖᛡᛝᛉᛁᚱᛟᚳᛟᚷᛏᛟᚷᛚᚾᛈᚷᛡᚣᛒᛏᛁᛏᚢᛞᚹᚫᛖᚹᚦᛏᚢᛡᛒᛗᚹᛝᛠᛡ"
+        }
+      },
+      "ks_preview_hex": "9d4ddfd615b75198273ed722d719318ef45147e4f7e115c485640a1cabdaf2e2",
+      "top_score": 66.017
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[32:64] nonce=hash[0:16]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 63.945,
+          "latin_preview": "VJTHIMMTWJWDYWIAFLCDEIEOFDTHGEOIARMVOEFEATHVEOCACEJWJEAWJYDLHAYNMHIEAXDNBIAVHSEO",
+          "runes_preview": "ᚢᛄᚦᛁᛗᛗᛏᚹᛄᚹᛞᚣᚹᛡᚠᛚᚳᛞᛖᛁᛇᚠᛞᚦᚷᛇᛡᚱᛗᚢᛟᚠᛠᚦᚢᛇᚳᚪᚳᛖ"
+        },
+        "1000": {
+          "score": 66.458,
+          "latin_preview": "VJTHIMMTWJWDYWIAFLCDEIEOFDTHGEOIARMVOEFEATHVEOCACEJWJEAWJYDLHAYNMHIEAXDNBIAVHSEO",
+          "runes_preview": "ᚢᛄᚦᛁᛗᛗᛏᚹᛄᚹᛞᚣᚹᛡᚠᛚᚳᛞᛖᛁᛇᚠᛞᚦᚷᛇᛡᚱᛗᚢᛟᚠᛠᚦᚢᛇᚳᚪᚳᛖ"
+        }
+      },
+      "ks_preview_hex": "9d4ddfd615b75198273ed722d719318ef45147e4f7e115c485640a1cabdaf2e2",
+      "top_score": 66.458
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[32:64] nonce=hash[0:16]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 66.017,
+          "latin_preview": "OEIANGXIROECOEGTOEGLNPGIAYBTITVDWAEEWTHTVIABMWNGEAIADAJIAOELJEOPJPDLSYGHBGWTTHVD",
+          "runes_preview": "ᚩᛖᛡᛝᛉᛁᚱᛟᚳᛟᚷᛏᛟᚷᛚᚾᛈᚷᛡᚣᛒᛏᛁᛏᚢᛞᚹᚫᛖᚹᚦᛏᚢᛡᛒᛗᚹᛝᛠᛡ"
+        },
+        "1000": {
+          "score": 65.674,
+          "latin_preview": "OEIANGXIROECOEGTOEGLNPGIAYBTITVDWAEEWTHTVIABMWNGEAIADAJIAOELJEOPJPDLSYGHBGWTTHVD",
+          "runes_preview": "ᚩᛖᛡᛝᛉᛁᚱᛟᚳᛟᚷᛏᛟᚷᛚᚾᛈᚷᛡᚣᛒᛏᛁᛏᚢᛞᚹᚫᛖᚹᚦᛏᚢᛡᛒᛗᚹᛝᛠᛡ"
+        }
+      },
+      "ks_preview_hex": "9d4ddfd615b75198273ed722d719318ef45147e4f7e115c485640a1cabdaf2e2",
+      "top_score": 66.017
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=hash[48:64]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 68.158,
+          "latin_preview": "NTHAEXTYDVIOEJAETCFRTHEANGIIRAYVDTHTRFLEADIATHOHNXPAETFXYFGPPIANGRIIACBEAJFEAAEG",
+          "runes_preview": "ᚾᚦᚫᛉᛏᚣᛞᚢᛁᛟᛄᚫᛏᚳᚠᚱᛏᚻᛠᛝᛁᛁᚱᚪᚣᚢᛞᚦᛏᚱᚠᛚᛠᛞᛡᚦᚩᚻᚾᛉ"
+        },
+        "1000": {
+          "score": 66.482,
+          "latin_preview": "NTHAEXTYDVIOEJAETCFRTHEANGIIRAYVDTHTRFLEADIATHOHNXPAETFXYFGPPIANGRIIACBEAJFEAAEG",
+          "runes_preview": "ᚾᚦᚫᛉᛏᚣᛞᚢᛁᛟᛄᚫᛏᚳᚠᚱᛏᚻᛠᛝᛁᛁᚱᚪᚣᚢᛞᚦᛏᚱᚠᛚᛠᛞᛡᚦᚩᚻᚾᛉ"
+        }
+      },
+      "ks_preview_hex": "5d065086dea7cf56d0ec417086abb9939ae046e9feca1b82155dc51690122913",
+      "top_score": 68.158
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=hash[48:64]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.661,
+          "latin_preview": "AXHBPGNEALXAEXSARRSNGMDNGNGAEDWONXXRHAEJGLBYEOLSTGPIBMTEOTMPIAROETMMHERVRRIBIAOE",
+          "runes_preview": "ᚪᛉᚻᛒᛈᚷᚾᛠᛚᛉᚫᛉᛋᚪᚱᚱᛋᛝᛗᛞᛝᛝᚫᛞᚹᚩᚾᛉᛉᚱᚻᚫᛄᚷᛚᛒᚣᛇᛚᛋ"
+        },
+        "1000": {
+          "score": 68.38,
+          "latin_preview": "AXHBPGNEALXAEXSARRSNGMDNGNGAEDWONXXRHAEJGLBYEOLSTGPIBMTEOTMPIAROETMMHERVRRIBIAOE",
+          "runes_preview": "ᚪᛉᚻᛒᛈᚷᚾᛠᛚᛉᚫᛉᛋᚪᚱᚱᛋᛝᛗᛞᛝᛝᚫᛞᚹᚩᚾᛉᛉᚱᚻᚫᛄᚷᛚᛒᚣᛇᛚᛋ"
+        }
+      },
+      "ks_preview_hex": "5d065086dea7cf56d0ec417086abb9939ae046e9feca1b82155dc51690122913",
+      "top_score": 68.38
+    },
+    {
+      "attack": 1,
+      "cipher": "ChaCha20",
+      "variant": "key=hash[0:32]  nonce=hash[48:64]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 68.158,
+          "latin_preview": "NTHAEXTYDVIOEJAETCFRTHEANGIIRAYVDTHTRFLEADIATHOHNXPAETFXYFGPPIANGRIIACBEAJFEAAEG",
+          "runes_preview": "ᚾᚦᚫᛉᛏᚣᛞᚢᛁᛟᛄᚫᛏᚳᚠᚱᛏᚻᛠᛝᛁᛁᚱᚪᚣᚢᛞᚦᛏᚱᚠᛚᛠᛞᛡᚦᚩᚻᚾᛉ"
+        },
+        "1000": {
+          "score": 66.482,
+          "latin_preview": "NTHAEXTYDVIOEJAETCFRTHEANGIIRAYVDTHTRFLEADIATHOHNXPAETFXYFGPPIANGRIIACBEAJFEAAEG",
+          "runes_preview": "ᚾᚦᚫᛉᛏᚣᛞᚢᛁᛟᛄᚫᛏᚳᚠᚱᛏᚻᛠᛝᛁᛁᚱᚪᚣᚢᛞᚦᛏᚱᚠᛚᛠᛞᛡᚦᚩᚻᚾᛉ"
+        }
+      },
+      "ks_preview_hex": "5d065086dea7cf56d0ec417086abb9939ae046e9feca1b82155dc51690122913",
+      "top_score": 68.158
+    }
+  ],
+  "attack2_aes_ctr": [
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES128  key=hash[0:16]  IV=hash[16:32]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 64.692,
+          "latin_preview": "RNYSATNGLVHAIAJBRJJLPBPPNYFGGOGBMOENGVDMLTHIANHTHTIAEHEDNGEAAEOHFWGLDEACOEEAJRWA",
+          "runes_preview": "ᚱᚾᚣᛋᚪᛏᛝᛚᚢᚻᚪᛡᛄᛒᚱᛄᛄᛚᛈᛒᛈᛈᚾᚣᚠᚷᚷᚩᚷᛒᛗᛟᛝᚢᛞᛗᛚᚦᛡᚾ"
+        },
+        "1000": {
+          "score": 65.353,
+          "latin_preview": "RNYSATNGLVHAIAJBRJJLPBPPNYFGGOGBMOENGVDMLTHIANHTHTIAEHEDNGEAAEOHFWGLDEACOEEAJRWA",
+          "runes_preview": "ᚱᚾᚣᛋᚪᛏᛝᛚᚢᚻᚪᛡᛄᛒᚱᛄᛄᛚᛈᛒᛈᛈᚾᚣᚠᚷᚷᚩᚷᛒᛗᛟᛝᚢᛞᛗᛚᚦᛡᚾ"
+        }
+      },
+      "ks_preview_hex": "7f1ca6f9d65ab4b782fa1751510e988c659aac054de4330cc0750b4f435c8a68",
+      "top_score": 65.353
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES128  key=hash[0:16]  IV=hash[16:32]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.13,
+          "latin_preview": "AELGECSVNAENGCIYEOTHOEHNOEMLCLCWIAYFETEJHVGTHNTHTHLNGTTXWDMEOEORBPFTHHEONNVEAJVL",
+          "runes_preview": "ᚫᛚᚷᛖᚳᛋᚢᚾᚫᛝᚳᛁᚣᛇᚦᛟᚻᚾᛟᛗᛚᚳᛚᚳᚹᛡᚣᚠᛖᛏᛖᛄᚻᚢᚷᚦᚾᚦᚦᛚ"
+        },
+        "1000": {
+          "score": 67.156,
+          "latin_preview": "AELGECSVNAENGCIYEOTHOEHNOEMLCLCWIAYFETEJHVGTHNTHTHLNGTTXWDMEOEORBPFTHHEONNVEAJVL",
+          "runes_preview": "ᚫᛚᚷᛖᚳᛋᚢᚾᚫᛝᚳᛁᚣᛇᚦᛟᚻᚾᛟᛗᛚᚳᛚᚳᚹᛡᚣᚠᛖᛏᛖᛄᚻᚢᚷᚦᚾᚦᚦᛚ"
+        }
+      },
+      "ks_preview_hex": "7f1ca6f9d65ab4b782fa1751510e988c659aac054de4330cc0750b4f435c8a68",
+      "top_score": 67.156
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES128  key=hash[0:16]  IV=hash[16:32]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 64.692,
+          "latin_preview": "RNYSATNGLVHAIAJBRJJLPBPPNYFGGOGBMOENGVDMLTHIANHTHTIAEHEDNGEAAEOHFWGLDEACOEEAJRWA",
+          "runes_preview": "ᚱᚾᚣᛋᚪᛏᛝᛚᚢᚻᚪᛡᛄᛒᚱᛄᛄᛚᛈᛒᛈᛈᚾᚣᚠᚷᚷᚩᚷᛒᛗᛟᛝᚢᛞᛗᛚᚦᛡᚾ"
+        },
+        "1000": {
+          "score": 65.353,
+          "latin_preview": "RNYSATNGLVHAIAJBRJJLPBPPNYFGGOGBMOENGVDMLTHIANHTHTIAEHEDNGEAAEOHFWGLDEACOEEAJRWA",
+          "runes_preview": "ᚱᚾᚣᛋᚪᛏᛝᛚᚢᚻᚪᛡᛄᛒᚱᛄᛄᛚᛈᛒᛈᛈᚾᚣᚠᚷᚷᚩᚷᛒᛗᛟᛝᚢᛞᛗᛚᚦᛡᚾ"
+        }
+      },
+      "ks_preview_hex": "7f1ca6f9d65ab4b782fa1751510e988c659aac054de4330cc0750b4f435c8a68",
+      "top_score": 65.353
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES256  key=hash[0:32]  nonce=hash[32:44]+ctr0",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 68.877,
+          "latin_preview": "CTHETHCRTHYTHPWATHPGEOYCFBRIATOEBAEPEANGNEALEOSSOELTHDMBRDFEATHJHIAASYAYNSEAJHNX",
+          "runes_preview": "ᚳᚦᛖᚦᚳᚱᚦᚣᚦᛈᚹᚪᚦᛈᚷᛇᚣᚳᚠᛒᚱᛡᛏᛟᛒᚫᛈᛠᛝᚾᛠᛚᛇᛋᛋᛟᛚᚦᛞᛗ"
+        },
+        "1000": {
+          "score": 65.877,
+          "latin_preview": "CTHETHCRTHYTHPWATHPGEOYCFBRIATOEBAEPEANGNEALEOSSOELTHDMBRDFEATHJHIAASYAYNSEAJHNX",
+          "runes_preview": "ᚳᚦᛖᚦᚳᚱᚦᚣᚦᛈᚹᚪᚦᛈᚷᛇᚣᚳᚠᛒᚱᛡᛏᛟᛒᚫᛈᛠᛝᚾᛠᛚᛇᛋᛋᛟᛚᚦᛞᛗ"
+        }
+      },
+      "ks_preview_hex": "0a063a1eccbd8d94d89e628eeba3ed343918f35cadd6bd8458b9048d510d2afb",
+      "top_score": 68.877
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES256  key=hash[0:32]  nonce=hash[32:44]+ctr0",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 63.615,
+          "latin_preview": "CXJFEAFCOEOTAEIGTIANGOATTFLBAETTNGRWIANNVTVWNGTHGIBIANAGIACEOGAXGAEGLOERDNGMSAMW",
+          "runes_preview": "ᚳᛉᛄᚠᛠᚠᚳᚩᛇᛏᚫᛁᚷᛏᛡᛝᚩᚪᛏᛏᚠᛚᛒᚫᛏᛏᛝᚱᚹᛡᚾᚾᚢᛏᚢᚹᛝᚦᚷᛁ"
+        },
+        "1000": {
+          "score": 64.858,
+          "latin_preview": "CXJFEAFCOEOTAEIGTIANGOATTFLBAETTNGRWIANNVTVWNGTHGIBIANAGIACEOGAXGAEGLOERDNGMSAMW",
+          "runes_preview": "ᚳᛉᛄᚠᛠᚠᚳᚩᛇᛏᚫᛁᚷᛏᛡᛝᚩᚪᛏᛏᚠᛚᛒᚫᛏᛏᛝᚱᚹᛡᚾᚾᚢᛏᚢᚹᛝᚦᚷᛁ"
+        }
+      },
+      "ks_preview_hex": "0a063a1eccbd8d94d89e628eeba3ed343918f35cadd6bd8458b9048d510d2afb",
+      "top_score": 64.858
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES256  key=hash[0:32]  nonce=hash[32:44]+ctr0",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 68.877,
+          "latin_preview": "CTHETHCRTHYTHPWATHPGEOYCFBRIATOEBAEPEANGNEALEOSSOELTHDMBRDFEATHJHIAASYAYNSEAJHNX",
+          "runes_preview": "ᚳᚦᛖᚦᚳᚱᚦᚣᚦᛈᚹᚪᚦᛈᚷᛇᚣᚳᚠᛒᚱᛡᛏᛟᛒᚫᛈᛠᛝᚾᛠᛚᛇᛋᛋᛟᛚᚦᛞᛗ"
+        },
+        "1000": {
+          "score": 65.877,
+          "latin_preview": "CTHETHCRTHYTHPWATHPGEOYCFBRIATOEBAEPEANGNEALEOSSOELTHDMBRDFEATHJHIAASYAYNSEAJHNX",
+          "runes_preview": "ᚳᚦᛖᚦᚳᚱᚦᚣᚦᛈᚹᚪᚦᛈᚷᛇᚣᚳᚠᛒᚱᛡᛏᛟᛒᚫᛈᛠᛝᚾᛠᛚᛇᛋᛋᛟᛚᚦᛞᛗ"
+        }
+      },
+      "ks_preview_hex": "0a063a1eccbd8d94d89e628eeba3ed343918f35cadd6bd8458b9048d510d2afb",
+      "top_score": 68.877
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES256  key=hash[32:64] IV=hash[0:16]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 66.338,
+          "latin_preview": "THITAECWEAPAAMJANGIAJEAOEEAHMAENEGRBCIAYOSRRESFAEDHDMOAEHCGOEAEAFLVWWIAOOEXYPIAN",
+          "runes_preview": "ᚦᛁᛏᚫᚳᚹᛠᛈᚪᚪᛗᛄᚪᛝᛡᛄᛠᛟᛠᚻᛗᚫᚾᛖᚷᚱᛒᚳᛡᚣᚩᛋᚱᚱᛖᛋᚠᚫᛞᚻ"
+        },
+        "1000": {
+          "score": 66.2,
+          "latin_preview": "THITAECWEAPAAMJANGIAJEAOEEAHMAENEGRBCIAYOSRRESFAEDHDMOAEHCGOEAEAFLVWWIAOOEXYPIAN",
+          "runes_preview": "ᚦᛁᛏᚫᚳᚹᛠᛈᚪᚪᛗᛄᚪᛝᛡᛄᛠᛟᛠᚻᛗᚫᚾᛖᚷᚱᛒᚳᛡᚣᚩᛋᚱᚱᛖᛋᚠᚫᛞᚻ"
+        }
+      },
+      "ks_preview_hex": "9e381f073b4690f8fcea5661442781c61a989d48f56450c2297757c1dc709ae3",
+      "top_score": 66.338
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES256  key=hash[32:64] IV=hash[0:16]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 64.872,
+          "latin_preview": "FMPROIADTJHIFWHOEEOWCWXOEAFVAEEOXHSCVIAAEIAGFHGNGHEORVYJENNLOEAMOEHRFDSOTTHNTWIA",
+          "runes_preview": "ᚠᛗᛈᚱᚩᛡᛞᛏᛄᚻᛁᚠᚹᚻᛟᛖᚩᚹᚳᚹᛉᛟᚪᚠᚢᚫᛇᛉᚻᛋᚳᚢᛡᚫᛡᚷᚠᚻᚷᛝ"
+        },
+        "1000": {
+          "score": 64.462,
+          "latin_preview": "FMPROIADTJHIFWHOEEOWCWXOEAFVAEEOXHSCVIAAEIAGFHGNGHEORVYJENNLOEAMOEHRFDSOTTHNTWIA",
+          "runes_preview": "ᚠᛗᛈᚱᚩᛡᛞᛏᛄᚻᛁᚠᚹᚻᛟᛖᚩᚹᚳᚹᛉᛟᚪᚠᚢᚫᛇᛉᚻᛋᚳᚢᛡᚫᛡᚷᚠᚻᚷᛝ"
+        }
+      },
+      "ks_preview_hex": "9e381f073b4690f8fcea5661442781c61a989d48f56450c2297757c1dc709ae3",
+      "top_score": 64.872
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES256  key=hash[32:64] IV=hash[0:16]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 66.338,
+          "latin_preview": "THITAECWEAPAAMJANGIAJEAOEEAHMAENEGRBCIAYOSRRESFAEDHDMOAEHCGOEAEAFLVWWIAOOEXYPIAN",
+          "runes_preview": "ᚦᛁᛏᚫᚳᚹᛠᛈᚪᚪᛗᛄᚪᛝᛡᛄᛠᛟᛠᚻᛗᚫᚾᛖᚷᚱᛒᚳᛡᚣᚩᛋᚱᚱᛖᛋᚠᚫᛞᚻ"
+        },
+        "1000": {
+          "score": 66.2,
+          "latin_preview": "THITAECWEAPAAMJANGIAJEAOEEAHMAENEGRBCIAYOSRRESFAEDHDMOAEHCGOEAEAFLVWWIAOOEXYPIAN",
+          "runes_preview": "ᚦᛁᛏᚫᚳᚹᛠᛈᚪᚪᛗᛄᚪᛝᛡᛄᛠᛟᛠᚻᛗᚫᚾᛖᚷᚱᛒᚳᛡᚣᚩᛋᚱᚱᛖᛋᚠᚫᛞᚻ"
+        }
+      },
+      "ks_preview_hex": "9e381f073b4690f8fcea5661442781c61a989d48f56450c2297757c1dc709ae3",
+      "top_score": 66.338
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES128  key=hash[32:48] IV=hash[48:64]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 66.021,
+          "latin_preview": "NHBBTEAEAIEAALIACAEDDOESHNGIATXYRTHCFJBEOPDIBYVLHPAOEYNHNGHSLWSXEAWTHIANGYXCIEDP",
+          "runes_preview": "ᚾᚻᛒᛒᛏᛠᛠᛁᛠᚪᛚᛡᚳᚫᛞᛞᛟᛋᚻᛝᛡᛏᛉᚣᚱᚦᚳᚠᛄᛒᛇᛈᛞᛁᛒᚣᚢᛚᚻᛈ"
+        },
+        "1000": {
+          "score": 64.291,
+          "latin_preview": "NHBBTEAEAIEAALIACAEDDOESHNGIATXYRTHCFJBEOPDIBYVLHPAOEYNHNGHSLWSXEAWTHIANGYXCIEDP",
+          "runes_preview": "ᚾᚻᛒᛒᛏᛠᛠᛁᛠᚪᛚᛡᚳᚫᛞᛞᛟᛋᚻᛝᛡᛏᛉᚣᚱᚦᚳᚠᛄᛒᛇᛈᛞᛁᛒᚣᚢᛚᚻᛈ"
+        }
+      },
+      "ks_preview_hex": "d1ae1eda876bcac167cde651cb5d2e63942b773b221685630e3fd78c780591e5",
+      "top_score": 66.021
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES128  key=hash[32:48] IV=hash[48:64]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.237,
+          "latin_preview": "MNGEOXPRGMBEOEOIOHHXAEXHTRTHMMEAIAAOOMEOWGNGEOHJFAEOHNGBAHNGENAEMOEBOEWIJDSDTHJA",
+          "runes_preview": "ᛗᛝᛇᛉᛈᚱᚷᛗᛒᛇᛇᛁᚩᚻᚻᛉᚫᛉᚻᛏᚱᚦᛗᛗᛠᛡᚪᚩᚩᛗᛇᚹᚷᛝᛇᚻᛄᚠᚫᚩ"
+        },
+        "1000": {
+          "score": 66.428,
+          "latin_preview": "MNGEOXPRGMBEOEOIOHHXAEXHTRTHMMEAIAAOOMEOWGNGEOHJFAEOHNGBAHNGENAEMOEBOEWIJDSDTHJA",
+          "runes_preview": "ᛗᛝᛇᛉᛈᚱᚷᛗᛒᛇᛇᛁᚩᚻᚻᛉᚫᛉᚻᛏᚱᚦᛗᛗᛠᛡᚪᚩᚩᛗᛇᚹᚷᛝᛇᚻᛄᚠᚫᚩ"
+        }
+      },
+      "ks_preview_hex": "d1ae1eda876bcac167cde651cb5d2e63942b773b221685630e3fd78c780591e5",
+      "top_score": 66.428
+    },
+    {
+      "attack": 2,
+      "cipher": "AES-CTR",
+      "variant": "AES128  key=hash[32:48] IV=hash[48:64]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 66.021,
+          "latin_preview": "NHBBTEAEAIEAALIACAEDDOESHNGIATXYRTHCFJBEOPDIBYVLHPAOEYNHNGHSLWSXEAWTHIANGYXCIEDP",
+          "runes_preview": "ᚾᚻᛒᛒᛏᛠᛠᛁᛠᚪᛚᛡᚳᚫᛞᛞᛟᛋᚻᛝᛡᛏᛉᚣᚱᚦᚳᚠᛄᛒᛇᛈᛞᛁᛒᚣᚢᛚᚻᛈ"
+        },
+        "1000": {
+          "score": 64.291,
+          "latin_preview": "NHBBTEAEAIEAALIACAEDDOESHNGIATXYRTHCFJBEOPDIBYVLHPAOEYNHNGHSLWSXEAWTHIANGYXCIEDP",
+          "runes_preview": "ᚾᚻᛒᛒᛏᛠᛠᛁᛠᚪᛚᛡᚳᚫᛞᛞᛟᛋᚻᛝᛡᛏᛉᚣᚱᚦᚳᚠᛄᛒᛇᛈᛞᛁᛒᚣᚢᛚᚻᛈ"
+        }
+      },
+      "ks_preview_hex": "d1ae1eda876bcac167cde651cb5d2e63942b773b221685630e3fd78c780591e5",
+      "top_score": 66.021
+    }
+  ],
+  "attack3_blake2b": [
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "seed=full_hash(64B)",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 65.103,
+          "latin_preview": "WSFOEBXBSPJFNGDTHSOEMPGNHHJMIEMOENOIAIWNWRNMAECTNGTFVSSFEOOEEACEIAVMVLOEFWMNGYNN",
+          "runes_preview": "ᚹᛋᚠᛟᛒᛉᛒᛋᛈᛄᚠᛝᛞᚦᛋᛟᛗᛈᚷᚾᚻᚻᛄᛗᛁᛖᛗᛟᚾᚩᛡᛁᚹᚾᚹᚱᚾᛗᚫᚳ"
+        },
+        "1000": {
+          "score": 65.246,
+          "latin_preview": "WSFOEBXBSPJFNGDTHSOEMPGNHHJMIEMOENOIAIWNWRNMAECTNGTFVSSFEOOEEACEIAVMVLOEFWMNGYNN",
+          "runes_preview": "ᚹᛋᚠᛟᛒᛉᛒᛋᛈᛄᚠᛝᛞᚦᛋᛟᛗᛈᚷᚾᚻᚻᛄᛗᛁᛖᛗᛟᚾᚩᛡᛁᚹᚾᚹᚱᚾᛗᚫᚳ"
+        }
+      },
+      "ks_preview_hex": "b650fa6186969bd9b00f6974451d70475df85c4752e9c24dd32fe6b023300e00",
+      "top_score": 65.246
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "seed=full_hash(64B)",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.212,
+          "latin_preview": "JVFJEOBEOXBNGWIGTHWWITFDDNGEIMJSDSNTHIIAOEJEOOXRAPHMITHXXEBDOIAIAWGYTHCWAVITPLHA",
+          "runes_preview": "ᛄᚢᚠᛄᛇᛒᛇᛉᛒᛝᚹᛁᚷᚦᚹᚹᛁᛏᚠᛞᛞᛝᛖᛁᛗᛄᛋᛞᛋᚾᚦᛁᛡᛟᛄᛇᚩᛉᚱᚪ"
+        },
+        "1000": {
+          "score": 65.153,
+          "latin_preview": "JVFJEOBEOXBNGWIGTHWWITFDDNGEIMJSDSNTHIIAOEJEOOXRAPHMITHXXEBDOIAIAWGYTHCWAVITPLHA",
+          "runes_preview": "ᛄᚢᚠᛄᛇᛒᛇᛉᛒᛝᚹᛁᚷᚦᚹᚹᛁᛏᚠᛞᛞᛝᛖᛁᛗᛄᛋᛞᛋᚾᚦᛁᛡᛟᛄᛇᚩᛉᚱᚪ"
+        }
+      },
+      "ks_preview_hex": "b650fa6186969bd9b00f6974451d70475df85c4752e9c24dd32fe6b023300e00",
+      "top_score": 66.212
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "seed=full_hash(64B)",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 65.103,
+          "latin_preview": "WSFOEBXBSPJFNGDTHSOEMPGNHHJMIEMOENOIAIWNWRNMAECTNGTFVSSFEOOEEACEIAVMVLOEFWMNGYNN",
+          "runes_preview": "ᚹᛋᚠᛟᛒᛉᛒᛋᛈᛄᚠᛝᛞᚦᛋᛟᛗᛈᚷᚾᚻᚻᛄᛗᛁᛖᛗᛟᚾᚩᛡᛁᚹᚾᚹᚱᚾᛗᚫᚳ"
+        },
+        "1000": {
+          "score": 65.246,
+          "latin_preview": "WSFOEBXBSPJFNGDTHSOEMPGNHHJMIEMOENOIAIWNWRNMAECTNGTFVSSFEOOEEACEIAVMVLOEFWMNGYNN",
+          "runes_preview": "ᚹᛋᚠᛟᛒᛉᛒᛋᛈᛄᚠᛝᛞᚦᛋᛟᛗᛈᚷᚾᚻᚻᛄᛗᛁᛖᛗᛟᚾᚩᛡᛁᚹᚾᚹᚱᚾᛗᚫᚳ"
+        }
+      },
+      "ks_preview_hex": "b650fa6186969bd9b00f6974451d70475df85c4752e9c24dd32fe6b023300e00",
+      "top_score": 65.246
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "personal=full_hash(64B→trunc32B)",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 66.368,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        },
+        "1000": {
+          "score": 65.787,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        }
+      },
+      "ks_preview_hex": "7d7ed0974b2c1ce87073780b0b4cda1271ff896d95addaf35304a63cda19b018",
+      "top_score": 66.368
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "personal=full_hash(64B→trunc32B)",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 69.19,
+          "latin_preview": "IATHLOMCWFJEMVXLGLBDXWCMPEWONWISXEHWAEWHOGTTHAEAEIAOCBXRTHOEBOEMOETEATNOECRNPWCM",
+          "runes_preview": "ᛡᚦᛚᚩᛗᚳᚹᚠᛄᛖᛗᚢᛉᛚᚷᛚᛒᛞᛉᚹᚳᛗᛈᛖᚹᚩᚾᚹᛁᛋᛉᛖᚻᚹᚫᚹᚻᚩᚷᛏ"
+        },
+        "1000": {
+          "score": 67.457,
+          "latin_preview": "IATHLOMCWFJEMVXLGLBDXWCMPEWONWISXEHWAEWHOGTTHAEAEIAOCBXRTHOEBOEMOETEATNOECRNPWCM",
+          "runes_preview": "ᛡᚦᛚᚩᛗᚳᚹᚠᛄᛖᛗᚢᛉᛚᚷᛚᛒᛞᛉᚹᚳᛗᛈᛖᚹᚩᚾᚹᛁᛋᛉᛖᚻᚹᚫᚹᚻᚩᚷᛏ"
+        }
+      },
+      "ks_preview_hex": "7d7ed0974b2c1ce87073780b0b4cda1271ff896d95addaf35304a63cda19b018",
+      "top_score": 69.19
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "personal=full_hash(64B→trunc32B)",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 66.368,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        },
+        "1000": {
+          "score": 65.787,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        }
+      },
+      "ks_preview_hex": "7d7ed0974b2c1ce87073780b0b4cda1271ff896d95addaf35304a63cda19b018",
+      "top_score": 66.368
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "salt=full_hash(64B→trunc32B)",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 66.368,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        },
+        "1000": {
+          "score": 65.787,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        }
+      },
+      "ks_preview_hex": "7d7ed0974b2c1ce87073780b0b4cda1271ff896d95addaf35304a63cda19b018",
+      "top_score": 66.368
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "salt=full_hash(64B→trunc32B)",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 69.19,
+          "latin_preview": "IATHLOMCWFJEMVXLGLBDXWCMPEWONWISXEHWAEWHOGTTHAEAEIAOCBXRTHOEBOEMOETEATNOECRNPWCM",
+          "runes_preview": "ᛡᚦᛚᚩᛗᚳᚹᚠᛄᛖᛗᚢᛉᛚᚷᛚᛒᛞᛉᚹᚳᛗᛈᛖᚹᚩᚾᚹᛁᛋᛉᛖᚻᚹᚫᚹᚻᚩᚷᛏ"
+        },
+        "1000": {
+          "score": 67.457,
+          "latin_preview": "IATHLOMCWFJEMVXLGLBDXWCMPEWONWISXEHWAEWHOGTTHAEAEIAOCBXRTHOEBOEMOETEATNOECRNPWCM",
+          "runes_preview": "ᛡᚦᛚᚩᛗᚳᚹᚠᛄᛖᛗᚢᛉᛚᚷᛚᛒᛞᛉᚹᚳᛗᛈᛖᚹᚩᚾᚹᛁᛋᛉᛖᚻᚹᚫᚹᚻᚩᚷᛏ"
+        }
+      },
+      "ks_preview_hex": "7d7ed0974b2c1ce87073780b0b4cda1271ff896d95addaf35304a63cda19b018",
+      "top_score": 69.19
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "salt=full_hash(64B→trunc32B)",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 66.368,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        },
+        "1000": {
+          "score": 65.787,
+          "latin_preview": "GIAPYEREAFMIAXIDPAEBEAGMFEAITIAOEOAEOEFYISOAOEEOAEBDPIAGPLEAYEABAEBEOGJPTNGRNLGA",
+          "runes_preview": "ᚷᛡᛈᚣᛖᚱᛠᚠᛗᛡᛉᛁᛞᛈᚫᛒᛠᚷᛗᚠᛠᛁᛏᛡᛟᚩᚫᛟᚠᚣᛁᛋᚩᚪᛟᛇᚫᛒᛞᛈ"
+        }
+      },
+      "ks_preview_hex": "7d7ed0974b2c1ce87073780b0b4cda1271ff896d95addaf35304a63cda19b018",
+      "top_score": 66.368
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "seed=hash[0:32]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 67.528,
+          "latin_preview": "ILONJEOIAEPJJNAENGOEOOSTHEATHMOLISCNGAENGIARTHACXIAANGYIOECDTXCRSJGSIAMXMOEOVPSE",
+          "runes_preview": "ᛁᛚᚩᚾᛄᛇᛡᛖᛈᛄᛄᚾᚫᛝᚩᛇᚩᛋᚦᛠᚦᛗᚩᛚᛁᛋᚳᛝᚫᛝᛡᚱᚦᚪᚳᛉᛡᚪᛝᚣ"
+        },
+        "1000": {
+          "score": 67.57,
+          "latin_preview": "ILONJEOIAEPJJNAENGOEOOSTHEATHMOLISCNGAENGIARTHACXIAANGYIOECDTXCRSJGSIAMXMOEOVPSE",
+          "runes_preview": "ᛁᛚᚩᚾᛄᛇᛡᛖᛈᛄᛄᚾᚫᛝᚩᛇᚩᛋᚦᛠᚦᛗᚩᛚᛁᛋᚳᛝᚫᛝᛡᚱᚦᚪᚳᛉᛡᚪᛝᚣ"
+        }
+      },
+      "ks_preview_hex": "054ba06e8c0700d63c665e809a61f0e2c465f18b3b13addd7c15f42030926523",
+      "top_score": 67.57
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "seed=hash[0:32]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 64.912,
+          "latin_preview": "INROEOELIAJOEHERXEOMAEEXEEOIAYVNDEYIACTEEOOCJRINHOOEAEEOPBMEEHYNGOEPAEWIOEAWXJVV",
+          "runes_preview": "ᛁᚾᚱᛟᛟᛚᛡᛄᛟᚻᛖᚱᛉᛇᛗᚫᛖᛉᛖᛇᛡᚣᚢᚾᛞᛖᚣᛡᚳᛏᛖᛇᚩᚳᛄᚱᛁᚾᚻᚩ"
+        },
+        "1000": {
+          "score": 66.388,
+          "latin_preview": "INROEOELIAJOEHERXEOMAEEXEEOIAYVNDEYIACTEEOOCJRINHOOEAEEOPBMEEHYNGOEPAEWIOEAWXJVV",
+          "runes_preview": "ᛁᚾᚱᛟᛟᛚᛡᛄᛟᚻᛖᚱᛉᛇᛗᚫᛖᛉᛖᛇᛡᚣᚢᚾᛞᛖᚣᛡᚳᛏᛖᛇᚩᚳᛄᚱᛁᚾᚻᚩ"
+        }
+      },
+      "ks_preview_hex": "054ba06e8c0700d63c665e809a61f0e2c465f18b3b13addd7c15f42030926523",
+      "top_score": 66.388
+    },
+    {
+      "attack": 3,
+      "cipher": "BLAKE2b-XOF",
+      "variant": "seed=hash[0:32]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 67.528,
+          "latin_preview": "ILONJEOIAEPJJNAENGOEOOSTHEATHMOLISCNGAENGIARTHACXIAANGYIOECDTXCRSJGSIAMXMOEOVPSE",
+          "runes_preview": "ᛁᛚᚩᚾᛄᛇᛡᛖᛈᛄᛄᚾᚫᛝᚩᛇᚩᛋᚦᛠᚦᛗᚩᛚᛁᛋᚳᛝᚫᛝᛡᚱᚦᚪᚳᛉᛡᚪᛝᚣ"
+        },
+        "1000": {
+          "score": 67.57,
+          "latin_preview": "ILONJEOIAEPJJNAENGOEOOSTHEATHMOLISCNGAENGIARTHACXIAANGYIOECDTXCRSJGSIAMXMOEOVPSE",
+          "runes_preview": "ᛁᛚᚩᚾᛄᛇᛡᛖᛈᛄᛄᚾᚫᛝᚩᛇᚩᛋᚦᛠᚦᛗᚩᛚᛁᛋᚳᛝᚫᛝᛡᚱᚦᚪᚳᛉᛡᚪᛝᚣ"
+        }
+      },
+      "ks_preview_hex": "054ba06e8c0700d63c665e809a61f0e2c465f18b3b13addd7c15f42030926523",
+      "top_score": 67.57
+    }
+  ],
+  "attack4_shake256": [
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=full_hash(64B)",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 64.92,
+          "latin_preview": "PJAETSPEGJRJVJYEOTHPJIAXNGEAEOOEOJEPJNGJMDOETYVNGEFBFFIWIAOEEOVXEOIBRFIACSOEHGEA",
+          "runes_preview": "ᛈᛄᚫᛏᛋᛈᛖᚷᛄᚱᛄᚢᛄᚣᛇᛏᚻᛈᛄᛡᛉᛝᛠᛇᚩᛇᛄᛖᛈᛄᛝᛄᛗᛞᛟᛏᚣᚢᛝᛖ"
+        },
+        "1000": {
+          "score": 65.796,
+          "latin_preview": "PJAETSPEGJRJVJYEOTHPJIAXNGEAEOOEOJEPJNGJMDOETYVNGEFBFFIWIAOEEOVXEOIBRFIACSOEHGEA",
+          "runes_preview": "ᛈᛄᚫᛏᛋᛈᛖᚷᛄᚱᛄᚢᛄᚣᛇᛏᚻᛈᛄᛡᛉᛝᛠᛇᚩᛇᛄᛖᛈᛄᛝᛄᛗᛞᛟᛏᚣᚢᛝᛖ"
+        }
+      },
+      "ks_preview_hex": "ea8efe844e7a60515b332431e25caddedc2d576f86115ac883e39723b0f31456",
+      "top_score": 65.796
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=full_hash(64B)",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 64.464,
+          "latin_preview": "YERMXEWDYEOAEWEAWNGPDTCCBAVMFAEEVBYACDHNTSSHIACVLINGOEEAENGSDLIBEATCEXJFDCNGGTMW",
+          "runes_preview": "ᚣᛖᚱᛗᛉᛖᚹᛞᚣᛇᚫᚹᛠᚹᛝᛈᛞᛏᚳᚳᛒᚪᚢᛗᚠᚫᛖᚢᛒᚣᚪᚳᛞᚻᚾᛏᛋᛋᚻᛡ"
+        },
+        "1000": {
+          "score": 64.854,
+          "latin_preview": "YERMXEWDYEOAEWEAWNGPDTCCBAVMFAEEVBYACDHNTSSHIACVLINGOEEAENGSDLIBEATCEXJFDCNGGTMW",
+          "runes_preview": "ᚣᛖᚱᛗᛉᛖᚹᛞᚣᛇᚫᚹᛠᚹᛝᛈᛞᛏᚳᚳᛒᚪᚢᛗᚠᚫᛖᚢᛒᚣᚪᚳᛞᚻᚾᛏᛋᛋᚻᛡ"
+        }
+      },
+      "ks_preview_hex": "ea8efe844e7a60515b332431e25caddedc2d576f86115ac883e39723b0f31456",
+      "top_score": 64.854
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=full_hash(64B)",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 64.92,
+          "latin_preview": "PJAETSPEGJRJVJYEOTHPJIAXNGEAEOOEOJEPJNGJMDOETYVNGEFBFFIWIAOEEOVXEOIBRFIACSOEHGEA",
+          "runes_preview": "ᛈᛄᚫᛏᛋᛈᛖᚷᛄᚱᛄᚢᛄᚣᛇᛏᚻᛈᛄᛡᛉᛝᛠᛇᚩᛇᛄᛖᛈᛄᛝᛄᛗᛞᛟᛏᚣᚢᛝᛖ"
+        },
+        "1000": {
+          "score": 65.796,
+          "latin_preview": "PJAETSPEGJRJVJYEOTHPJIAXNGEAEOOEOJEPJNGJMDOETYVNGEFBFFIWIAOEEOVXEOIBRFIACSOEHGEA",
+          "runes_preview": "ᛈᛄᚫᛏᛋᛈᛖᚷᛄᚱᛄᚢᛄᚣᛇᛏᚻᛈᛄᛡᛉᛝᛠᛇᚩᛇᛄᛖᛈᛄᛝᛄᛗᛞᛟᛏᚣᚢᛝᛖ"
+        }
+      },
+      "ks_preview_hex": "ea8efe844e7a60515b332431e25caddedc2d576f86115ac883e39723b0f31456",
+      "top_score": 65.796
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=hash[0:32]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 63.904,
+          "latin_preview": "SMDNGGTEOEODSYDEOOBNFAAEOOTHEOTNGNGCDNEEYEAEIRYEONGOEJGLRVVFVCSLAEATHGICTHAEFFVE",
+          "runes_preview": "ᛋᛗᛞᛝᚷᛏᛇᛇᛞᛋᚣᛞᛇᚩᛒᚾᚠᚪᚪᛇᚩᚦᛖᚩᛏᛝᛝᚳᛞᚾᛖᛖᚣᛖᚫᛁᚱᚣᛇᛝ"
+        },
+        "1000": {
+          "score": 65.745,
+          "latin_preview": "SMDNGGTEOEODSYDEOOBNFAAEOOTHEOTNGNGCDNEEYEAEIRYEONGOEJGLRVVFVCSLAEATHGICTHAEFFVE",
+          "runes_preview": "ᛋᛗᛞᛝᚷᛏᛇᛇᛞᛋᚣᛞᛇᚩᛒᚾᚠᚪᚪᛇᚩᚦᛖᚩᛏᛝᛝᚳᛞᚾᛖᛖᚣᛖᚫᛁᚱᚣᛇᛝ"
+        }
+      },
+      "ks_preview_hex": "e8fa6f45ae3d66dca67ffdac6d90a81a3696104400240d4093a0704d32d8e289",
+      "top_score": 65.745
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=hash[0:32]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.659,
+          "latin_preview": "EAINEODBNBAXWJBVEEAECIAAOTSSPOEIIAOOGSPPGNRWNGANWMNIAEASFOJTEAFROIOEPIALRFMFGTHP",
+          "runes_preview": "ᛠᛁᚾᛇᛞᛒᚾᛒᚪᛉᚹᛄᛒᚢᛖᛠᛖᚳᛡᚪᚩᛏᛋᛋᛈᛟᛁᛡᚩᚩᚷᛋᛈᛈᚷᚾᚱᚹᛝᚪ"
+        },
+        "1000": {
+          "score": 66.795,
+          "latin_preview": "EAINEODBNBAXWJBVEEAECIAAOTSSPOEIIAOOGSPPGNRWNGANWMNIAEASFOJTEAFROIOEPIALRFMFGTHP",
+          "runes_preview": "ᛠᛁᚾᛇᛞᛒᚾᛒᚪᛉᚹᛄᛒᚢᛖᛠᛖᚳᛡᚪᚩᛏᛋᛋᛈᛟᛁᛡᚩᚩᚷᛋᛈᛈᚷᚾᚱᚹᛝᚪ"
+        }
+      },
+      "ks_preview_hex": "e8fa6f45ae3d66dca67ffdac6d90a81a3696104400240d4093a0704d32d8e289",
+      "top_score": 66.795
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=hash[0:32]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 63.904,
+          "latin_preview": "SMDNGGTEOEODSYDEOOBNFAAEOOTHEOTNGNGCDNEEYEAEIRYEONGOEJGLRVVFVCSLAEATHGICTHAEFFVE",
+          "runes_preview": "ᛋᛗᛞᛝᚷᛏᛇᛇᛞᛋᚣᛞᛇᚩᛒᚾᚠᚪᚪᛇᚩᚦᛖᚩᛏᛝᛝᚳᛞᚾᛖᛖᚣᛖᚫᛁᚱᚣᛇᛝ"
+        },
+        "1000": {
+          "score": 65.745,
+          "latin_preview": "SMDNGGTEOEODSYDEOOBNFAAEOOTHEOTNGNGCDNEEYEAEIRYEONGOEJGLRVVFVCSLAEATHGICTHAEFFVE",
+          "runes_preview": "ᛋᛗᛞᛝᚷᛏᛇᛇᛞᛋᚣᛞᛇᚩᛒᚾᚠᚪᚪᛇᚩᚦᛖᚩᛏᛝᛝᚳᛞᚾᛖᛖᚣᛖᚫᛁᚱᚣᛇᛝ"
+        }
+      },
+      "ks_preview_hex": "e8fa6f45ae3d66dca67ffdac6d90a81a3696104400240d4093a0704d32d8e289",
+      "top_score": 65.745
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=hash_reversed",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 61.799,
+          "latin_preview": "JIANGIAIAJBTJEGOEOEFXMAETHPXREAYOEIDJATMTHXTMPWACBNGXFTIAJYSSMIAVREWHHOEEATHBSMN",
+          "runes_preview": "ᛄᛡᛝᛡᛡᛄᛒᛏᛄᛖᚷᛟᛟᚠᛉᛗᚫᚦᛈᛉᚱᛠᚣᛟᛁᛞᛄᚪᛏᛗᚦᛉᛏᛗᛈᚹᚪᚳᛒᛝ"
+        },
+        "1000": {
+          "score": 64.435,
+          "latin_preview": "JIANGIAIAJBTJEGOEOEFXMAETHPXREAYOEIDJATMTHXTMPWACBNGXFTIAJYSSMIAVREWHHOEEATHBSMN",
+          "runes_preview": "ᛄᛡᛝᛡᛡᛄᛒᛏᛄᛖᚷᛟᛟᚠᛉᛗᚫᚦᛈᛉᚱᛠᚣᛟᛁᛞᛄᚪᛏᛗᚦᛉᛏᛗᛈᚹᚪᚳᛒᛝ"
+        }
+      },
+      "ks_preview_hex": "5bd57196f042b80d5bb69dca0c1f8e4a748fc97ce7b8d0f87c0d7a91cab19b53",
+      "top_score": 64.435
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=hash_reversed",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.096,
+          "latin_preview": "YEEORXDEPYIAIALNFBEOEIALMAEOWNDILNGDOEGTHNGICEOBJEOHLETRLOOEVICEOMTHIAOEWCIALEIV",
+          "runes_preview": "ᚣᛖᛇᚱᛉᛞᛖᛈᚣᛡᛡᛚᚾᚠᛒᛖᛟᛡᛚᛗᚫᚩᚹᚾᛞᛁᛚᛝᛞᛟᚷᚦᛝᛁᚳᛇᛒᛄᛇᚻ"
+        },
+        "1000": {
+          "score": 66.02,
+          "latin_preview": "YEEORXDEPYIAIALNFBEOEIALMAEOWNDILNGDOEGTHNGICEOBJEOHLETRLOOEVICEOMTHIAOEWCIALEIV",
+          "runes_preview": "ᚣᛖᛇᚱᛉᛞᛖᛈᚣᛡᛡᛚᚾᚠᛒᛖᛟᛡᛚᛗᚫᚩᚹᚾᛞᛁᛚᛝᛞᛟᚷᚦᛝᛁᚳᛇᛒᛄᛇᚻ"
+        }
+      },
+      "ks_preview_hex": "5bd57196f042b80d5bb69dca0c1f8e4a748fc97ce7b8d0f87c0d7a91cab19b53",
+      "top_score": 66.02
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=hash_reversed",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 61.799,
+          "latin_preview": "JIANGIAIAJBTJEGOEOEFXMAETHPXREAYOEIDJATMTHXTMPWACBNGXFTIAJYSSMIAVREWHHOEEATHBSMN",
+          "runes_preview": "ᛄᛡᛝᛡᛡᛄᛒᛏᛄᛖᚷᛟᛟᚠᛉᛗᚫᚦᛈᛉᚱᛠᚣᛟᛁᛞᛄᚪᛏᛗᚦᛉᛏᛗᛈᚹᚪᚳᛒᛝ"
+        },
+        "1000": {
+          "score": 64.435,
+          "latin_preview": "JIANGIAIAJBTJEGOEOEFXMAETHPXREAYOEIDJATMTHXTMPWACBNGXFTIAJYSSMIAVREWHHOEEATHBSMN",
+          "runes_preview": "ᛄᛡᛝᛡᛡᛄᛒᛏᛄᛖᚷᛟᛟᚠᛉᛗᚫᚦᛈᛉᚱᛠᚣᛟᛁᛞᛄᚪᛏᛗᚦᛉᛏᛗᛈᚹᚪᚳᛒᛝ"
+        }
+      },
+      "ks_preview_hex": "5bd57196f042b80d5bb69dca0c1f8e4a748fc97ce7b8d0f87c0d7a91cab19b53",
+      "top_score": 64.435
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=shake256(hash,64)",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 64.012,
+          "latin_preview": "FNODIOMAEDWVWWLFIHYRVIADNGEOEAAEHPNDRLEOAEESCFHIAYYFMLYNIAMEAASBXSHLRPSCBRNAPOEY",
+          "runes_preview": "ᚠᚾᚩᛞᛁᚩᛗᚫᛞᚹᚢᚹᚹᛚᚠᛁᚻᚣᚱᚢᛡᛞᛝᛇᛠᚫᚻᛈᚾᛞᚱᛚᛇᚫᛖᛋᚳᚠᚻᛡ"
+        },
+        "1000": {
+          "score": 64.498,
+          "latin_preview": "FNODIOMAEDWVWWLFIHYRVIADNGEOEAAEHPNDRLEOAEESCFHIAYYFMLYNIAMEAASBXSHLRPSCBRNAPOEY",
+          "runes_preview": "ᚠᚾᚩᛞᛁᚩᛗᚫᛞᚹᚢᚹᚹᛚᚠᛁᚻᚣᚱᚢᛡᛞᛝᛇᛠᚫᚻᛈᚾᛞᚱᛚᛇᚫᛖᛋᚳᚠᚻᛡ"
+        }
+      },
+      "ks_preview_hex": "a0ada043364a42044f6aa22bc945628d85ce5ea6d0da7ec8de9c26457a1c994d",
+      "top_score": 64.498
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=shake256(hash,64)",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 64.176,
+          "latin_preview": "VLRGMTHTHRGAETHRVPEDJOIATHHHHMVIYGVIRPMRPXWRNGTHHCGYEONGEAHIBTVJETNGTVTPWEOXWHTN",
+          "runes_preview": "ᚢᛚᚱᚷᛗᚦᚦᚱᚷᚫᚦᚱᚢᛈᛖᛞᛄᚩᛡᚦᚻᚻᚻᛗᚢᛁᚣᚷᚢᛁᚱᛈᛗᚱᛈᛉᚹᚱᛝᚦ"
+        },
+        "1000": {
+          "score": 65.759,
+          "latin_preview": "VLRGMTHTHRGAETHRVPEDJOIATHHHHMVIYGVIRPMRPXWRNGTHHCGYEONGEAHIBTVJETNGTVTPWEOXWHTN",
+          "runes_preview": "ᚢᛚᚱᚷᛗᚦᚦᚱᚷᚫᚦᚱᚢᛈᛖᛞᛄᚩᛡᚦᚻᚻᚻᛗᚢᛁᚣᚷᚢᛁᚱᛈᛗᚱᛈᛉᚹᚱᛝᚦ"
+        }
+      },
+      "ks_preview_hex": "a0ada043364a42044f6aa22bc945628d85ce5ea6d0da7ec8de9c26457a1c994d",
+      "top_score": 65.759
+    },
+    {
+      "attack": 4,
+      "cipher": "SHAKE256-XOF",
+      "variant": "seed=shake256(hash,64)",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 64.012,
+          "latin_preview": "FNODIOMAEDWVWWLFIHYRVIADNGEOEAAEHPNDRLEOAEESCFHIAYYFMLYNIAMEAASBXSHLRPSCBRNAPOEY",
+          "runes_preview": "ᚠᚾᚩᛞᛁᚩᛗᚫᛞᚹᚢᚹᚹᛚᚠᛁᚻᚣᚱᚢᛡᛞᛝᛇᛠᚫᚻᛈᚾᛞᚱᛚᛇᚫᛖᛋᚳᚠᚻᛡ"
+        },
+        "1000": {
+          "score": 64.498,
+          "latin_preview": "FNODIOMAEDWVWWLFIHYRVIADNGEOEAAEHPNDRLEOAEESCFHIAYYFMLYNIAMEAASBXSHLRPSCBRNAPOEY",
+          "runes_preview": "ᚠᚾᚩᛞᛁᚩᛗᚫᛞᚹᚢᚹᚹᛚᚠᛁᚻᚣᚱᚢᛡᛞᛝᛇᛠᚫᚻᛈᚾᛞᚱᛚᛇᚫᛖᛋᚳᚠᚻᛡ"
+        }
+      },
+      "ks_preview_hex": "a0ada043364a42044f6aa22bc945628d85ce5ea6d0da7ec8de9c26457a1c994d",
+      "top_score": 64.498
+    }
+  ],
+  "attack5_hash_iteration": [
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "1033",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 67.714,
+          "latin_preview": "WBGXBSEASGNHSJDNGEABFRINHOELYGSFEANGMRIAYRWGHEHSEOLEOIATENGPAFLNPSAMFIAPMEAAAAEN",
+          "runes_preview": "ᚹᛒᚷᛉᛒᛋᛠᛋᚷᚾᚻᛋᛄᛞᛝᛠᛒᚠᚱᛁᚾᚻᛟᛚᚣᚷᛋᚠᛠᛝᛗᚱᛡᚣᚱᚹᚷᚻᛖᚻ"
+        },
+        "1000": {
+          "score": 67.468,
+          "latin_preview": "WBGXBSEASGNHSJDNGEABFRINHOELYGSFEANGMRIAYRWGHEHSEOLEOIATENGPAFLNPSAMFIAPMEAAAAEN",
+          "runes_preview": "ᚹᛒᚷᛉᛒᛋᛠᛋᚷᚾᚻᛋᛄᛞᛝᛠᛒᚠᚱᛁᚾᚻᛟᛚᚣᚷᛋᚠᛠᛝᛗᚱᛡᚣᚱᚹᚷᚻᛖᚻ"
+        }
+      },
+      "ks_preview_hex": "7cdf804c2f5bca9f9a2e44408b5fc1ef7ccbef9d8b929aa38958b0e3673b8ad1",
+      "top_score": 67.714
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "1033",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.805,
+          "latin_preview": "EAEOVNGEOXGXRDEAIAYGEAVXFAEDLIWAEIHTMBTETCCAEXGNGSHTGEAMTHTHJALNGCFMTLTHXETHTXVM",
+          "runes_preview": "ᛠᛇᚢᛝᛇᛉᚷᛉᚱᛞᛠᛡᚣᚷᛠᚢᛉᚠᚫᛞᛚᛁᚹᚫᛁᚻᛏᛗᛒᛏᛖᛏᚳᚳᚫᛉᚷᛝᛋᚻ"
+        },
+        "1000": {
+          "score": 66.511,
+          "latin_preview": "EAEOVNGEOXGXRDEAIAYGEAVXFAEDLIWAEIHTMBTETCCAEXGNGSHTGEAMTHTHJALNGCFMTLTHXETHTXVM",
+          "runes_preview": "ᛠᛇᚢᛝᛇᛉᚷᛉᚱᛞᛠᛡᚣᚷᛠᚢᛉᚠᚫᛞᛚᛁᚹᚫᛁᚻᛏᛗᛒᛏᛖᛏᚳᚳᚫᛉᚷᛝᛋᚻ"
+        }
+      },
+      "ks_preview_hex": "7cdf804c2f5bca9f9a2e44408b5fc1ef7ccbef9d8b929aa38958b0e3673b8ad1",
+      "top_score": 66.805
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "1033",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 67.714,
+          "latin_preview": "WBGXBSEASGNHSJDNGEABFRINHOELYGSFEANGMRIAYRWGHEHSEOLEOIATENGPAFLNPSAMFIAPMEAAAAEN",
+          "runes_preview": "ᚹᛒᚷᛉᛒᛋᛠᛋᚷᚾᚻᛋᛄᛞᛝᛠᛒᚠᚱᛁᚾᚻᛟᛚᚣᚷᛋᚠᛠᛝᛗᚱᛡᚣᚱᚹᚷᚻᛖᚻ"
+        },
+        "1000": {
+          "score": 67.468,
+          "latin_preview": "WBGXBSEASGNHSJDNGEABFRINHOELYGSFEANGMRIAYRWGHEHSEOLEOIATENGPAFLNPSAMFIAPMEAAAAEN",
+          "runes_preview": "ᚹᛒᚷᛉᛒᛋᛠᛋᚷᚾᚻᛋᛄᛞᛝᛠᛒᚠᚱᛁᚾᚻᛟᛚᚣᚷᛋᚠᛠᛝᛗᚱᛡᚣᚱᚹᚷᚻᛖᚻ"
+        }
+      },
+      "ks_preview_hex": "7cdf804c2f5bca9f9a2e44408b5fc1ef7ccbef9d8b929aa38958b0e3673b8ad1",
+      "top_score": 67.714
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "3301",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 63.235,
+          "latin_preview": "HPHWPTLLMBVHXOEXOEMPEOLYLEOEAFEEOBEOYXNICWDREOEOTGDRXPTHBFGICPIAYLMEAGJEATWFAEOE",
+          "runes_preview": "ᚻᛈᚻᚹᛈᛏᛚᛚᛗᛒᚢᚻᛉᛟᛉᛟᛗᛈᛇᛚᚣᛚᛇᛠᚠᛖᛇᛒᛇᚣᛉᚾᛁᚳᚹᛞᚱᛇᛇᛏ"
+        },
+        "1000": {
+          "score": 64.407,
+          "latin_preview": "HPHWPTLLMBVHXOEXOEMPEOLYLEOEAFEEOBEOYXNICWDREOEOTGDRXPTHBFGICPIAYLMEAGJEATWFAEOE",
+          "runes_preview": "ᚻᛈᚻᚹᛈᛏᛚᛚᛗᛒᚢᚻᛉᛟᛉᛟᛗᛈᛇᛚᚣᛚᛇᛠᚠᛖᛇᛒᛇᚣᛉᚾᛁᚳᚹᛞᚱᛇᛇᛏ"
+        }
+      },
+      "ks_preview_hex": "418c6119e194d226c7094bd8140971f5b4109093d169fb614c12b37bb119acaf",
+      "top_score": 64.407
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "3301",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.012,
+          "latin_preview": "LTEAYEAMIANYMTHTHBJGJEATIBWNBBWNGBEOTSSLMANGAERBPDOEVDEFEAFDOEFIGHLLHIAEGCPPTRWN",
+          "runes_preview": "ᛚᛏᛠᚣᛠᛗᛡᚾᚣᛗᚦᚦᛒᛄᚷᛄᛠᛏᛁᛒᚹᚾᛒᛒᚹᛝᛒᛇᛏᛋᛋᛚᛗᚪᚾᚷᚫᚱᛒᛈ"
+        },
+        "1000": {
+          "score": 65.352,
+          "latin_preview": "LTEAYEAMIANYMTHTHBJGJEATIBWNBBWNGBEOTSSLMANGAERBPDOEVDEFEAFDOEFIGHLLHIAEGCPPTRWN",
+          "runes_preview": "ᛚᛏᛠᚣᛠᛗᛡᚾᚣᛗᚦᚦᛒᛄᚷᛄᛠᛏᛁᛒᚹᚾᛒᛒᚹᛝᛒᛇᛏᛋᛋᛚᛗᚪᚾᚷᚫᚱᛒᛈ"
+        }
+      },
+      "ks_preview_hex": "418c6119e194d226c7094bd8140971f5b4109093d169fb614c12b37bb119acaf",
+      "top_score": 65.352
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "3301",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 63.235,
+          "latin_preview": "HPHWPTLLMBVHXOEXOEMPEOLYLEOEAFEEOBEOYXNICWDREOEOTGDRXPTHBFGICPIAYLMEAGJEATWFAEOE",
+          "runes_preview": "ᚻᛈᚻᚹᛈᛏᛚᛚᛗᛒᚢᚻᛉᛟᛉᛟᛗᛈᛇᛚᚣᛚᛇᛠᚠᛖᛇᛒᛇᚣᛉᚾᛁᚳᚹᛞᚱᛇᛇᛏ"
+        },
+        "1000": {
+          "score": 64.407,
+          "latin_preview": "HPHWPTLLMBVHXOEXOEMPEOLYLEOEAFEEOBEOYXNICWDREOEOTGDRXPTHBFGICPIAYLMEAGJEATWFAEOE",
+          "runes_preview": "ᚻᛈᚻᚹᛈᛏᛚᛚᛗᛒᚢᚻᛉᛟᛉᛟᛗᛈᛇᛚᚣᛚᛇᛠᚠᛖᛇᛒᛇᚣᛉᚾᛁᚳᚹᛞᚱᛇᛇᛏ"
+        }
+      },
+      "ks_preview_hex": "418c6119e194d226c7094bd8140971f5b4109093d169fb614c12b37bb119acaf",
+      "top_score": 64.407
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "761",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 61.979,
+          "latin_preview": "WFOYBVOEROIATCEAIFNXHMNNOEFDFVGCXTHHJVATIIADAEJXDEYTFEONNGHLMIALVIAWIBBXCEAEXOGT",
+          "runes_preview": "ᚹᚠᚩᚣᛒᚢᛟᚱᚩᛡᛏᚳᛠᛁᚠᚾᛉᚻᛗᚾᚾᛟᚠᛞᚠᚢᚷᚳᛉᚦᚻᛄᚢᚪᛏᛁᛡᛞᚫᛄ"
+        },
+        "1000": {
+          "score": 64.011,
+          "latin_preview": "WFOYBVOEROIATCEAIFNXHMNNOEFDFVGCXTHHJVATIIADAEJXDEYTFEONNGHLMIALVIAWIBBXCEAEXOGT",
+          "runes_preview": "ᚹᚠᚩᚣᛒᚢᛟᚱᚩᛡᛏᚳᛠᛁᚠᚾᛉᚻᛗᚾᚾᛟᚠᛞᚠᚢᚷᚳᛉᚦᚻᛄᚢᚪᛏᛁᛡᛞᚫᛄ"
+        }
+      },
+      "ks_preview_hex": "2542daeedd862219f456cddb5d89f3e50bc315478b8493dac07af34dcc31b239",
+      "top_score": 64.011
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "761",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 64.997,
+          "latin_preview": "PTYCTREAAEMELOVDTAENGVDLAEFHWNDIANGITOEEOCPNGTHYREBOEROETAEOEHNGNRTHXGEOEMEOOIAA",
+          "runes_preview": "ᛈᛏᚣᚳᛏᚱᛠᚫᛗᛖᛚᚩᚢᛞᛏᚪᛖᛝᚢᛞᛚᚫᚠᚻᚹᚾᛞᛡᛝᛁᛏᛟᛇᚳᛈᛝᚦᚣᚱᛖ"
+        },
+        "1000": {
+          "score": 66.676,
+          "latin_preview": "PTYCTREAAEMELOVDTAENGVDLAEFHWNDIANGITOEEOCPNGTHYREBOEROETAEOEHNGNRTHXGEOEMEOOIAA",
+          "runes_preview": "ᛈᛏᚣᚳᛏᚱᛠᚫᛗᛖᛚᚩᚢᛞᛏᚪᛖᛝᚢᛞᛚᚫᚠᚻᚹᚾᛞᛡᛝᛁᛏᛟᛇᚳᛈᛝᚦᚣᚱᛖ"
+        }
+      },
+      "ks_preview_hex": "2542daeedd862219f456cddb5d89f3e50bc315478b8493dac07af34dcc31b239",
+      "top_score": 66.676
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "761",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 61.979,
+          "latin_preview": "WFOYBVOEROIATCEAIFNXHMNNOEFDFVGCXTHHJVATIIADAEJXDEYTFEONNGHLMIALVIAWIBBXCEAEXOGT",
+          "runes_preview": "ᚹᚠᚩᚣᛒᚢᛟᚱᚩᛡᛏᚳᛠᛁᚠᚾᛉᚻᛗᚾᚾᛟᚠᛞᚠᚢᚷᚳᛉᚦᚻᛄᚢᚪᛏᛁᛡᛞᚫᛄ"
+        },
+        "1000": {
+          "score": 64.011,
+          "latin_preview": "WFOYBVOEROIATCEAIFNXHMNNOEFDFVGCXTHHJVATIIADAEJXDEYTFEONNGHLMIALVIAWIBBXCEAEXOGT",
+          "runes_preview": "ᚹᚠᚩᚣᛒᚢᛟᚱᚩᛡᛏᚳᛠᛁᚠᚾᛉᚻᛗᚾᚾᛟᚠᛞᚠᚢᚷᚳᛉᚦᚻᛄᚢᚪᛏᛁᛡᛞᚫᛄ"
+        }
+      },
+      "ks_preview_hex": "2542daeedd862219f456cddb5d89f3e50bc315478b8493dac07af34dcc31b239",
+      "top_score": 64.011
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "11570",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 66.147,
+          "latin_preview": "IAWOWEOAEMIATHSDBEAOFOECNGAEEHTHDIAHSTHCEOJMLPPDFBCPSIAPLRLIAOERAWEAIGNCLNGNGHNG",
+          "runes_preview": "ᛡᚹᚩᚹᛇᚫᛗᛡᚦᛋᛞᛒᛠᚩᚠᛟᚳᛝᚫᛖᚻᚦᛞᛡᚻᛋᛏᚻᚳᛇᛄᛗᛚᛈᛈᛞᚠᛒᚳᛈ"
+        },
+        "1000": {
+          "score": 65.252,
+          "latin_preview": "IAWOWEOAEMIATHSDBEAOFOECNGAEEHTHDIAHSTHCEOJMLPPDFBCPSIAPLRLIAOERAWEAIGNCLNGNGHNG",
+          "runes_preview": "ᛡᚹᚩᚹᛇᚫᛗᛡᚦᛋᛞᛒᛠᚩᚠᛟᚳᛝᚫᛖᚻᚦᛞᛡᚻᛋᛏᚻᚳᛇᛄᛗᛚᛈᛈᛞᚠᛒᚳᛈ"
+        }
+      },
+      "ks_preview_hex": "bf92bdaa34c57ccd81b96f95d1ca62bb14f0bd95a97bb6b9614f01dbb86192c2",
+      "top_score": 66.147
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "11570",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.784,
+          "latin_preview": "THNVANGJTTHYENEONYESPHHSAEIAGTHEAXTNGNOPYLTEAFOEAOXLAEAEIAIATHWFHOEHDEATHOTAHHEA",
+          "runes_preview": "ᚦᚾᚢᚪᛝᛄᛏᚦᚣᛖᚾᛇᚾᚣᛖᛋᛈᚻᚻᛋᚫᛡᚷᚦᛠᛉᛏᛝᚾᚩᛈᚣᛚᛏᛖᚪᚠᚩᛠᚩ"
+        },
+        "1000": {
+          "score": 65.956,
+          "latin_preview": "THNVANGJTTHYENEONYESPHHSAEIAGTHEAXTNGNOPYLTEAFOEAOXLAEAEIAIATHWFHOEHDEATHOTAHHEA",
+          "runes_preview": "ᚦᚾᚢᚪᛝᛄᛏᚦᚣᛖᚾᛇᚾᚣᛖᛋᛈᚻᚻᛋᚫᛡᚷᚦᛠᛉᛏᛝᚾᚩᛈᚣᛚᛏᛖᚪᚠᚩᛠᚩ"
+        }
+      },
+      "ks_preview_hex": "bf92bdaa34c57ccd81b96f95d1ca62bb14f0bd95a97bb6b9614f01dbb86192c2",
+      "top_score": 66.784
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "11570",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 66.147,
+          "latin_preview": "IAWOWEOAEMIATHSDBEAOFOECNGAEEHTHDIAHSTHCEOJMLPPDFBCPSIAPLRLIAOERAWEAIGNCLNGNGHNG",
+          "runes_preview": "ᛡᚹᚩᚹᛇᚫᛗᛡᚦᛋᛞᛒᛠᚩᚠᛟᚳᛝᚫᛖᚻᚦᛞᛡᚻᛋᛏᚻᚳᛇᛄᛗᛚᛈᛈᛞᚠᛒᚳᛈ"
+        },
+        "1000": {
+          "score": 65.252,
+          "latin_preview": "IAWOWEOAEMIATHSDBEAOFOECNGAEEHTHDIAHSTHCEOJMLPPDFBCPSIAPLRLIAOERAWEAIGNCLNGNGHNG",
+          "runes_preview": "ᛡᚹᚩᚹᛇᚫᛗᛡᚦᛋᛞᛒᛠᚩᚠᛟᚳᛝᚫᛖᚻᚦᛞᛡᚻᛋᛏᚻᚳᛇᛄᛗᛚᛈᛈᛞᚠᛒᚳᛈ"
+        }
+      },
+      "ks_preview_hex": "bf92bdaa34c57ccd81b96f95d1ca62bb14f0bd95a97bb6b9614f01dbb86192c2",
+      "top_score": 66.147
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "1595277641",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 64.663,
+          "latin_preview": "XJNGIAJIVTAEXOEHAIAOEVINFXEOHDTMESWENGBXTHJMCIAJEAAEPTRNTHOFPGAAEIAOEMTAYWXRIAOE",
+          "runes_preview": "ᛉᛄᛝᛡᛄᛁᚢᛏᚫᛉᛟᚻᚪᛡᛟᚢᛁᚾᚠᛉᛇᚻᛞᛏᛗᛖᛋᚹᛖᛝᛒᛉᚦᛄᛗᚳᛡᛄᛠᚫ"
+        },
+        "1000": {
+          "score": 66.135,
+          "latin_preview": "XJNGIAJIVTAEXOEHAIAOEVINFXEOHDTMESWENGBXTHJMCIAJEAAEPTRNTHOFPGAAEIAOEMTAYWXRIAOE",
+          "runes_preview": "ᛉᛄᛝᛡᛄᛁᚢᛏᚫᛉᛟᚻᚪᛡᛟᚢᛁᚾᚠᛉᛇᚻᛞᛏᛗᛖᛋᚹᛖᛝᛒᛉᚦᛄᛗᚳᛡᛄᛠᚫ"
+        }
+      },
+      "ks_preview_hex": "7571ab968cb75481132936f5b878a396bd6bf3f01401d3fe1c69cda2c83b8caa",
+      "top_score": 66.135
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "1595277641",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.444,
+          "latin_preview": "GCJROEMNGPEAOEWNGSGDEAMLTIADHGSXDBEOAETEOSGEEAJXEVRMSTNVEAATIAHEOCIAEOSPOIASAEDC",
+          "runes_preview": "ᚷᚳᛄᚱᛟᛗᛝᛈᛠᛟᚹᛝᛋᚷᛞᛠᛗᛚᛏᛡᛞᚻᚷᛋᛉᛞᛒᛇᚫᛏᛇᛋᚷᛖᛠᛄᛉᛖᚢᚱ"
+        },
+        "1000": {
+          "score": 65.446,
+          "latin_preview": "GCJROEMNGPEAOEWNGSGDEAMLTIADHGSXDBEOAETEOSGEEAJXEVRMSTNVEAATIAHEOCIAEOSPOIASAEDC",
+          "runes_preview": "ᚷᚳᛄᚱᛟᛗᛝᛈᛠᛟᚹᛝᛋᚷᛞᛠᛗᛚᛏᛡᛞᚻᚷᛋᛉᛞᛒᛇᚫᛏᛇᛋᚷᛖᛠᛄᛉᛖᚢᚱ"
+        }
+      },
+      "ks_preview_hex": "7571ab968cb75481132936f5b878a396bd6bf3f01401d3fe1c69cda2c83b8caa",
+      "top_score": 66.444
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "1595277641",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 64.663,
+          "latin_preview": "XJNGIAJIVTAEXOEHAIAOEVINFXEOHDTMESWENGBXTHJMCIAJEAAEPTRNTHOFPGAAEIAOEMTAYWXRIAOE",
+          "runes_preview": "ᛉᛄᛝᛡᛄᛁᚢᛏᚫᛉᛟᚻᚪᛡᛟᚢᛁᚾᚠᛉᛇᚻᛞᛏᛗᛖᛋᚹᛖᛝᛒᛉᚦᛄᛗᚳᛡᛄᛠᚫ"
+        },
+        "1000": {
+          "score": 66.135,
+          "latin_preview": "XJNGIAJIVTAEXOEHAIAOEVINFXEOHDTMESWENGBXTHJMCIAJEAAEPTRNTHOFPGAAEIAOEMTAYWXRIAOE",
+          "runes_preview": "ᛉᛄᛝᛡᛄᛁᚢᛏᚫᛉᛟᚻᚪᛡᛟᚢᛁᚾᚠᛉᛇᚻᛞᛏᛗᛖᛋᚹᛖᛝᛒᛉᚦᛄᛗᚳᛡᛄᛠᚫ"
+        }
+      },
+      "ks_preview_hex": "7571ab968cb75481132936f5b878a396bd6bf3f01401d3fe1c69cda2c83b8caa",
+      "top_score": 66.135
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "hash_rev",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 63.38,
+          "latin_preview": "YFBIAEAPFAENMSONGHBBIAAXOEWIABHGXEOYTHHHEONPAEVJNGEOGOXOOECPHEADWTRIEALEARADJEAO",
+          "runes_preview": "ᚣᚠᛒᛡᛠᛈᚠᚫᚾᛗᛋᚩᛝᚻᛒᛒᛡᚪᛉᛟᚹᛡᛒᚻᚷᛉᛇᚣᚦᚻᚻᛇᚾᛈᚫᚢᛄᛝᛇᚷ"
+        },
+        "1000": {
+          "score": 64.378,
+          "latin_preview": "YFBIAEAPFAENMSONGHBBIAAXOEWIABHGXEOYTHHHEONPAEVJNGEOGOXOOECPHEADWTRIEALEARADJEAO",
+          "runes_preview": "ᚣᚠᛒᛡᛠᛈᚠᚫᚾᛗᛋᚩᛝᚻᛒᛒᛡᚪᛉᛟᚹᛡᛒᚻᚷᛉᛇᚣᚦᚻᚻᛇᚾᛈᚫᚢᛄᛝᛇᚷ"
+        }
+      },
+      "ks_preview_hex": "8625e9794197e67897d2eb69bb518b86c93fc8cbc7b9bc3b80160555640e5b38",
+      "top_score": 64.378
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "hash_rev",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 64.189,
+          "latin_preview": "NGTMGPTNGRWYBHTAEEOEOCCNGEOETHTNGVBLMLAFNGRTLLVABDTHSTDFOFDINSEOMGMBAEIGOEPYIAPV",
+          "runes_preview": "ᛝᛏᛗᚷᛈᛏᛝᚱᚹᚣᛒᚻᛏᚫᛇᛇᚳᚳᛝᛖᛟᚦᛏᛝᚢᛒᛚᛗᛚᚪᚠᛝᚱᛏᛚᛚᚢᚪᛒᛞ"
+        },
+        "1000": {
+          "score": 65.683,
+          "latin_preview": "NGTMGPTNGRWYBHTAEEOEOCCNGEOETHTNGVBLMLAFNGRTLLVABDTHSTDFOFDINSEOMGMBAEIGOEPYIAPV",
+          "runes_preview": "ᛝᛏᛗᚷᛈᛏᛝᚱᚹᚣᛒᚻᛏᚫᛇᛇᚳᚳᛝᛖᛟᚦᛏᛝᚢᛒᛚᛗᛚᚪᚠᛝᚱᛏᛚᛚᚢᚪᛒᛞ"
+        }
+      },
+      "ks_preview_hex": "8625e9794197e67897d2eb69bb518b86c93fc8cbc7b9bc3b80160555640e5b38",
+      "top_score": 65.683
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "hash_rev",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 63.38,
+          "latin_preview": "YFBIAEAPFAENMSONGHBBIAAXOEWIABHGXEOYTHHHEONPAEVJNGEOGOXOOECPHEADWTRIEALEARADJEAO",
+          "runes_preview": "ᚣᚠᛒᛡᛠᛈᚠᚫᚾᛗᛋᚩᛝᚻᛒᛒᛡᚪᛉᛟᚹᛡᛒᚻᚷᛉᛇᚣᚦᚻᚻᛇᚾᛈᚫᚢᛄᛝᛇᚷ"
+        },
+        "1000": {
+          "score": 64.378,
+          "latin_preview": "YFBIAEAPFAENMSONGHBBIAAXOEWIABHGXEOYTHHHEONPAEVJNGEOGOXOOECPHEADWTRIEALEARADJEAO",
+          "runes_preview": "ᚣᚠᛒᛡᛠᛈᚠᚫᚾᛗᛋᚩᛝᚻᛒᛒᛡᚪᛉᛟᚹᛡᛒᚻᚷᛉᛇᚣᚦᚻᚻᛇᚾᛈᚫᚢᛄᛝᛇᚷ"
+        }
+      },
+      "ks_preview_hex": "8625e9794197e67897d2eb69bb518b86c93fc8cbc7b9bc3b80160555640e5b38",
+      "top_score": 64.378
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "parable",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 65.054,
+          "latin_preview": "GMPWWHXCIAOEHMPWINTHRNGWEYOWEOXBMIADANGTHOOEEVCNGICXNIHTREARYANOIAYNGYSXEOTEOOED",
+          "runes_preview": "ᚷᛗᛈᚹᚹᚻᛉᚳᛡᛟᚻᛗᛈᚹᛁᚾᚦᚱᛝᚹᛖᚣᚩᚹᛇᛉᛒᛗᛡᛞᚪᛝᚦᚩᛟᛖᚢᚳᛝᛁ"
+        },
+        "1000": {
+          "score": 65.598,
+          "latin_preview": "GMPWWHXCIAOEHMPWINTHRNGWEYOWEOXBMIADANGTHOOEEVCNGICXNIHTREARYANOIAYNGYSXEOTEOOED",
+          "runes_preview": "ᚷᛗᛈᚹᚹᚻᛉᚳᛡᛟᚻᛗᛈᚹᛁᚾᚦᚱᛝᚹᛖᚣᚩᚹᛇᛉᛒᛗᛡᛞᚪᛝᚦᚩᛟᛖᚢᚳᛝᛁ"
+        }
+      },
+      "ks_preview_hex": "f1dd3fc790d6d88cbf3ef20289183babe236302c0e469076d16d5779a21cbf2f",
+      "top_score": 65.598
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "parable",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 68.027,
+          "latin_preview": "OEITOECDNGATHWNGDAYMEAMAEVFPNGVJNGMEOIEAICHFEAAEJEASHMYRIAIANGSLMAEOSDNTHHCGGSBA",
+          "runes_preview": "ᛟᛁᛏᛟᚳᛞᛝᚪᚦᚹᛝᛞᚪᚣᛗᛠᛗᚫᚢᚠᛈᛝᚢᛄᛝᛗᛇᛁᛠᛁᚳᚻᚠᛠᚫᛄᛠᛋᚻᛗ"
+        },
+        "1000": {
+          "score": 65.784,
+          "latin_preview": "OEITOECDNGATHWNGDAYMEAMAEVFPNGVJNGMEOIEAICHFEAAEJEASHMYRIAIANGSLMAEOSDNTHHCGGSBA",
+          "runes_preview": "ᛟᛁᛏᛟᚳᛞᛝᚪᚦᚹᛝᛞᚪᚣᛗᛠᛗᚫᚢᚠᛈᛝᚢᛄᛝᛗᛇᛁᛠᛁᚳᚻᚠᛠᚫᛄᛠᛋᚻᛗ"
+        }
+      },
+      "ks_preview_hex": "f1dd3fc790d6d88cbf3ef20289183babe236302c0e469076d16d5779a21cbf2f",
+      "top_score": 68.027
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "parable",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 65.054,
+          "latin_preview": "GMPWWHXCIAOEHMPWINTHRNGWEYOWEOXBMIADANGTHOOEEVCNGICXNIHTREARYANOIAYNGYSXEOTEOOED",
+          "runes_preview": "ᚷᛗᛈᚹᚹᚻᛉᚳᛡᛟᚻᛗᛈᚹᛁᚾᚦᚱᛝᚹᛖᚣᚩᚹᛇᛉᛒᛗᛡᛞᚪᛝᚦᚩᛟᛖᚢᚳᛝᛁ"
+        },
+        "1000": {
+          "score": 65.598,
+          "latin_preview": "GMPWWHXCIAOEHMPWINTHRNGWEYOWEOXBMIADANGTHOOEEVCNGICXNIHTREARYANOIAYNGYSXEOTEOOED",
+          "runes_preview": "ᚷᛗᛈᚹᚹᚻᛉᚳᛡᛟᚻᛗᛈᚹᛁᚾᚦᚱᛝᚹᛖᚣᚩᚹᛇᛉᛒᛗᛡᛞᚪᛝᚦᚩᛟᛖᚢᚳᛝᛁ"
+        }
+      },
+      "ks_preview_hex": "f1dd3fc790d6d88cbf3ef20289183babe236302c0e469076d16d5779a21cbf2f",
+      "top_score": 65.598
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "page56_hash",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 68.504,
+          "latin_preview": "NMXAEFBYONEAJOSTHCGOECTJETHDAOEEPXTHYNGGODPEAAEYNWIAIAITHBNDXMNIYAEEODTGTHEAEOFG",
+          "runes_preview": "ᚾᛗᛉᚫᚠᛒᚣᚩᚾᛠᛄᚩᛋᚦᚳᚷᛟᚳᛏᛄᛖᚦᛞᚪᛟᛖᛈᛉᚦᚣᛝᚷᚩᛞᛈᛠᚫᚣᚾᚹ"
+        },
+        "1000": {
+          "score": 66.969,
+          "latin_preview": "NMXAEFBYONEAJOSTHCGOECTJETHDAOEEPXTHYNGGODPEAAEYNWIAIAITHBNDXMNIYAEEODTGTHEAEOFG",
+          "runes_preview": "ᚾᛗᛉᚫᚠᛒᚣᚩᚾᛠᛄᚩᛋᚦᚳᚷᛟᚳᛏᛄᛖᚦᛞᚪᛟᛖᛈᛉᚦᚣᛝᚷᚩᛞᛈᛠᚫᚣᚾᚹ"
+        }
+      },
+      "ks_preview_hex": "97fa04efee9358e5d11b4186c1914057b1353562f67b7c6553fa78f22a36fc21",
+      "top_score": 68.504
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "page56_hash",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 68.674,
+          "latin_preview": "WIOERFEONYMVAETHOETHBDDARFPIAINGWNGETHHOHXTHHOMEOWLNTHRDTBWGNGXIVMHBENGYOVTHDWJM",
+          "runes_preview": "ᚹᛁᛟᚱᚠᛇᚾᚣᛗᚢᚫᚦᛟᚦᛒᛞᛞᚪᚱᚠᛈᛡᛁᛝᚹᛝᛖᚦᚻᚩᚻᛉᚦᚻᚩᛗᛇᚹᛚᚾ"
+        },
+        "1000": {
+          "score": 65.776,
+          "latin_preview": "WIOERFEONYMVAETHOETHBDDARFPIAINGWNGETHHOHXTHHOMEOWLNTHRDTBWGNGXIVMHBENGYOVTHDWJM",
+          "runes_preview": "ᚹᛁᛟᚱᚠᛇᚾᚣᛗᚢᚫᚦᛟᚦᛒᛞᛞᚪᚱᚠᛈᛡᛁᛝᚹᛝᛖᚦᚻᚩᚻᛉᚦᚻᚩᛗᛇᚹᛚᚾ"
+        }
+      },
+      "ks_preview_hex": "97fa04efee9358e5d11b4186c1914057b1353562f67b7c6553fa78f22a36fc21",
+      "top_score": 68.674
+    },
+    {
+      "attack": 5,
+      "cipher": "SHA512-iter",
+      "seed": "page56_hash",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 68.504,
+          "latin_preview": "NMXAEFBYONEAJOSTHCGOECTJETHDAOEEPXTHYNGGODPEAAEYNWIAIAITHBNDXMNIYAEEODTGTHEAEOFG",
+          "runes_preview": "ᚾᛗᛉᚫᚠᛒᚣᚩᚾᛠᛄᚩᛋᚦᚳᚷᛟᚳᛏᛄᛖᚦᛞᚪᛟᛖᛈᛉᚦᚣᛝᚷᚩᛞᛈᛠᚫᚣᚾᚹ"
+        },
+        "1000": {
+          "score": 66.969,
+          "latin_preview": "NMXAEFBYONEAJOSTHCGOECTJETHDAOEEPXTHYNGGODPEAAEYNWIAIAITHBNDXMNIYAEEODTGTHEAEOFG",
+          "runes_preview": "ᚾᛗᛉᚫᚠᛒᚣᚩᚾᛠᛄᚩᛋᚦᚳᚷᛟᚳᛏᛄᛖᚦᛞᚪᛟᛖᛈᛉᚦᚣᛝᚷᚩᛞᛈᛠᚫᚣᚾᚹ"
+        }
+      },
+      "ks_preview_hex": "97fa04efee9358e5d11b4186c1914057b1353562f67b7c6553fa78f22a36fc21",
+      "top_score": 68.504
+    }
+  ],
+  "attack6_rc4": [
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=full_hash(64B)",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 67.074,
+          "latin_preview": "SRBIHAEEAACANTHVJEADNGXXEXWMOEAOANFOENLIFAWYNGEYVMLLNGJTNROVCTHOHVGFVHHTOTHDOEIR",
+          "runes_preview": "ᛋᚱᛒᛁᚻᚫᛠᚪᚳᚪᚾᚦᚢᛄᛠᛞᛝᛉᛉᛖᛉᚹᛗᚩᛠᚩᚪᚾᚠᛟᚾᛚᛁᚠᚪᚹᚣᛝᛖᚣ"
+        },
+        "1000": {
+          "score": 67.567,
+          "latin_preview": "SRBIHAEEAACANTHVJEADNGXXEXWMOEAOANFOENLIFAWYNGEYVMLLNGJTNROVCTHOHVGFVHHTOTHDOEIR",
+          "runes_preview": "ᛋᚱᛒᛁᚻᚫᛠᚪᚳᚪᚾᚦᚢᛄᛠᛞᛝᛉᛉᛖᛉᚹᛗᚩᛠᚩᚪᚾᚠᛟᚾᛚᛁᚠᚪᚹᚣᛝᛖᚣ"
+        }
+      },
+      "ks_preview_hex": "1decaffe386ee73f6176093004fc0cd7cf66e578a3cd9d2387041683f7913da4",
+      "top_score": 67.567
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=full_hash(64B)",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 66.044,
+          "latin_preview": "EAESNGRNLCDNGIAHVOEWGJSGDSOEXPROWITMLFOETHDASEAJMVEOEAJHCFNFTWTHTHTHAEBIAOEAAEFP",
+          "runes_preview": "ᛖᚫᛋᛝᚱᚾᛚᚳᛞᛝᛡᚻᚢᛟᚹᚷᛄᛋᚷᛞᛋᛟᛉᛈᚱᚩᚹᛁᛏᛗᛚᚠᛟᚦᛞᚪᛋᛠᛄᛗ"
+        },
+        "1000": {
+          "score": 66.779,
+          "latin_preview": "EAESNGRNLCDNGIAHVOEWGJSGDSOEXPROWITMLFOETHDASEAJMVEOEAJHCFNFTWTHTHTHAEBIAOEAAEFP",
+          "runes_preview": "ᛖᚫᛋᛝᚱᚾᛚᚳᛞᛝᛡᚻᚢᛟᚹᚷᛄᛋᚷᛞᛋᛟᛉᛈᚱᚩᚹᛁᛏᛗᛚᚠᛟᚦᛞᚪᛋᛠᛄᛗ"
+        }
+      },
+      "ks_preview_hex": "1decaffe386ee73f6176093004fc0cd7cf66e578a3cd9d2387041683f7913da4",
+      "top_score": 66.779
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=full_hash(64B)",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 67.074,
+          "latin_preview": "SRBIHAEEAACANTHVJEADNGXXEXWMOEAOANFOENLIFAWYNGEYVMLLNGJTNROVCTHOHVGFVHHTOTHDOEIR",
+          "runes_preview": "ᛋᚱᛒᛁᚻᚫᛠᚪᚳᚪᚾᚦᚢᛄᛠᛞᛝᛉᛉᛖᛉᚹᛗᚩᛠᚩᚪᚾᚠᛟᚾᛚᛁᚠᚪᚹᚣᛝᛖᚣ"
+        },
+        "1000": {
+          "score": 67.567,
+          "latin_preview": "SRBIHAEEAACANTHVJEADNGXXEXWMOEAOANFOENLIFAWYNGEYVMLLNGJTNROVCTHOHVGFVHHTOTHDOEIR",
+          "runes_preview": "ᛋᚱᛒᛁᚻᚫᛠᚪᚳᚪᚾᚦᚢᛄᛠᛞᛝᛉᛉᛖᛉᚹᛗᚩᛠᚩᚪᚾᚠᛟᚾᛚᛁᚠᚪᚹᚣᛝᛖᚣ"
+        }
+      },
+      "ks_preview_hex": "1decaffe386ee73f6176093004fc0cd7cf66e578a3cd9d2387041683f7913da4",
+      "top_score": 67.567
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:32]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 64.78,
+          "latin_preview": "PMTHVALGIAMHNTHTNPWRNAERWAOVGMJMRTJIALIVIANGJAEYYTHEAHDHWYTIAVFOEAEOCOEBOOEEAOEG",
+          "runes_preview": "ᛈᛗᚦᚢᚪᛚᚷᛡᛗᚻᚾᚦᛏᚾᛈᚹᚱᚾᚫᚱᚹᚪᚩᚢᚷᛗᛄᛗᚱᛏᛄᛡᛚᛁᚢᛡᛝᛄᚫᚣ"
+        },
+        "1000": {
+          "score": 65.334,
+          "latin_preview": "PMTHVALGIAMHNTHTNPWRNAERWAOVGMJMRTJIALIVIANGJAEYYTHEAHDHWYTIAVFOEAEOCOEBOOEEAOEG",
+          "runes_preview": "ᛈᛗᚦᚢᚪᛚᚷᛡᛗᚻᚾᚦᛏᚾᛈᚹᚱᚾᚫᚱᚹᚪᚩᚢᚷᛗᛄᛗᚱᛏᛄᛡᛚᛁᚢᛡᛝᛄᚫᚣ"
+        }
+      },
+      "ks_preview_hex": "1fc084594590a6b08da3b7de1250e639a64e0f128d82ca089d2e06d07f7a75d7",
+      "top_score": 65.334
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:32]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.665,
+          "latin_preview": "TYCONSSTHXJLFDACCBLRRYDYVIAEODYAENGCELMSDTOEHOCIACEGNGVWPCVOPGAECXGYWPWTBHNLFEOT",
+          "runes_preview": "ᛏᚣᚳᚩᚾᛋᛋᚦᛉᛄᛚᚠᛞᚪᚳᚳᛒᛚᚱᚱᚣᛞᚣᚢᛡᛇᛞᚣᚫᛝᚳᛖᛚᛗᛋᛞᛏᛟᚻᚩ"
+        },
+        "1000": {
+          "score": 66.378,
+          "latin_preview": "TYCONSSTHXJLFDACCBLRRYDYVIAEODYAENGCELMSDTOEHOCIACEGNGVWPCVOPGAECXGYWPWTBHNLFEOT",
+          "runes_preview": "ᛏᚣᚳᚩᚾᛋᛋᚦᛉᛄᛚᚠᛞᚪᚳᚳᛒᛚᚱᚱᚣᛞᚣᚢᛡᛇᛞᚣᚫᛝᚳᛖᛚᛗᛋᛞᛏᛟᚻᚩ"
+        }
+      },
+      "ks_preview_hex": "1fc084594590a6b08da3b7de1250e639a64e0f128d82ca089d2e06d07f7a75d7",
+      "top_score": 66.378
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:32]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 64.78,
+          "latin_preview": "PMTHVALGIAMHNTHTNPWRNAERWAOVGMJMRTJIALIVIANGJAEYYTHEAHDHWYTIAVFOEAEOCOEBOOEEAOEG",
+          "runes_preview": "ᛈᛗᚦᚢᚪᛚᚷᛡᛗᚻᚾᚦᛏᚾᛈᚹᚱᚾᚫᚱᚹᚪᚩᚢᚷᛗᛄᛗᚱᛏᛄᛡᛚᛁᚢᛡᛝᛄᚫᚣ"
+        },
+        "1000": {
+          "score": 65.334,
+          "latin_preview": "PMTHVALGIAMHNTHTNPWRNAERWAOVGMJMRTJIALIVIANGJAEYYTHEAHDHWYTIAVFOEAEOCOEBOOEEAOEG",
+          "runes_preview": "ᛈᛗᚦᚢᚪᛚᚷᛡᛗᚻᚾᚦᛏᚾᛈᚹᚱᚾᚫᚱᚹᚪᚩᚢᚷᛗᛄᛗᚱᛏᛄᛡᛚᛁᚢᛡᛝᛄᚫᚣ"
+        }
+      },
+      "ks_preview_hex": "1fc084594590a6b08da3b7de1250e639a64e0f128d82ca089d2e06d07f7a75d7",
+      "top_score": 65.334
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:16]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 63.178,
+          "latin_preview": "IAOEAJVMCCIAEPIEOOEBTTMMEAORSBXAOEAEOCVYJLEEALEAOPRTHLDSNGODTHAEMOCIAEAPJOEJEOGN",
+          "runes_preview": "ᛡᚩᛠᛄᚢᛗᚳᚳᛁᚫᛈᛁᛇᛟᛒᛏᛏᛗᛗᛠᚩᚱᛋᛒᛉᚪᛟᚪᛖᚩᚳᚢᚣᛄᛚᛖᛠᛚᛠᚩ"
+        },
+        "1000": {
+          "score": 65.778,
+          "latin_preview": "IAOEAJVMCCIAEPIEOOEBTTMMEAORSBXAOEAEOCVYJLEEALEAOPRTHLDSNGODTHAEMOCIAEAPJOEJEOGN",
+          "runes_preview": "ᛡᚩᛠᛄᚢᛗᚳᚳᛁᚫᛈᛁᛇᛟᛒᛏᛏᛗᛗᛠᚩᚱᛋᛒᛉᚪᛟᚪᛖᚩᚳᚢᚣᛄᛚᛖᛠᛚᛠᚩ"
+        }
+      },
+      "ks_preview_hex": "a2ed30a6b374e15296013fb933b7e26af17e1534cb05dbe021ba6f91e5de9860",
+      "top_score": 65.778
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:16]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.529,
+          "latin_preview": "EAYCLWTEAHIATIAAEWVNGFIVCYEOXVOESINGTHYOMXENJNFVYTEOXNJTOPIVWXYFTBLXWNBDATHGTNOE",
+          "runes_preview": "ᛠᚣᚳᛚᚹᛏᛖᚪᚻᛡᛏᛡᚫᚹᚢᛝᚠᛁᚢᚳᚣᛇᛉᚢᛟᛋᛁᛝᚦᚣᚩᛗᛉᛖᚾᛄᚾᚠᚢᚣ"
+        },
+        "1000": {
+          "score": 66.086,
+          "latin_preview": "EAYCLWTEAHIATIAAEWVNGFIVCYEOXVOESINGTHYOMXENJNFVYTEOXNJTOPIVWXYFTBLXWNBDATHGTNOE",
+          "runes_preview": "ᛠᚣᚳᛚᚹᛏᛖᚪᚻᛡᛏᛡᚫᚹᚢᛝᚠᛁᚢᚳᚣᛇᛉᚢᛟᛋᛁᛝᚦᚣᚩᛗᛉᛖᚾᛄᚾᚠᚢᚣ"
+        }
+      },
+      "ks_preview_hex": "a2ed30a6b374e15296013fb933b7e26af17e1534cb05dbe021ba6f91e5de9860",
+      "top_score": 66.086
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:16]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 63.178,
+          "latin_preview": "IAOEAJVMCCIAEPIEOOEBTTMMEAORSBXAOEAEOCVYJLEEALEAOPRTHLDSNGODTHAEMOCIAEAPJOEJEOGN",
+          "runes_preview": "ᛡᚩᛠᛄᚢᛗᚳᚳᛁᚫᛈᛁᛇᛟᛒᛏᛏᛗᛗᛠᚩᚱᛋᛒᛉᚪᛟᚪᛖᚩᚳᚢᚣᛄᛚᛖᛠᛚᛠᚩ"
+        },
+        "1000": {
+          "score": 65.778,
+          "latin_preview": "IAOEAJVMCCIAEPIEOOEBTTMMEAORSBXAOEAEOCVYJLEEALEAOPRTHLDSNGODTHAEMOCIAEAPJOEJEOGN",
+          "runes_preview": "ᛡᚩᛠᛄᚢᛗᚳᚳᛁᚫᛈᛁᛇᛟᛒᛏᛏᛗᛗᛠᚩᚱᛋᛒᛉᚪᛟᚪᛖᚩᚳᚢᚣᛄᛚᛖᛠᛚᛠᚩ"
+        }
+      },
+      "ks_preview_hex": "a2ed30a6b374e15296013fb933b7e26af17e1534cb05dbe021ba6f91e5de9860",
+      "top_score": 65.778
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:8]",
+      "decrypt_mode": "subtract_mod29",
+      "scores": {
+        "300": {
+          "score": 63.952,
+          "latin_preview": "SAHGGEABXOEOEMBTHVBJWDDOILDBTAISNPIAAEPFEOHNGRWEATHRAEOESEOEFFIAOETHECIABGOOJBNG",
+          "runes_preview": "ᛋᚪᚻᚷᚷᛖᚪᛒᛉᛟᛟᛗᛒᚦᚢᛒᛄᚹᛞᛞᚩᛁᛚᛞᛒᛏᚪᛁᛋᚾᛈᛡᚫᛈᚠᛇᚻᛝᚱᚹ"
+        },
+        "1000": {
+          "score": 65.957,
+          "latin_preview": "SAHGGEABXOEOEMBTHVBJWDDOILDBTAISNPIAAEPFEOHNGRWEATHRAEOESEOEFFIAOETHECIABGOOJBNG",
+          "runes_preview": "ᛋᚪᚻᚷᚷᛖᚪᛒᛉᛟᛟᛗᛒᚦᚢᛒᛄᚹᛞᛞᚩᛁᛚᛞᛒᛏᚪᛁᛋᚾᛈᛡᚫᛈᚠᛇᚻᛝᚱᚹ"
+        }
+      },
+      "ks_preview_hex": "3a810a1aae3b7729015b36ea68916112bcfe113957ad7f83584efe481d81caf4",
+      "top_score": 65.957
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:8]",
+      "decrypt_mode": "xor_mod29",
+      "scores": {
+        "300": {
+          "score": 65.011,
+          "latin_preview": "ANGAAEDJNGEOXWWDOETHMLLOEYEYMNOETSWOEEGAOEEOTTHRAEAFOEGXEARNTBPRMRWGXITHMSYNYEOH",
+          "runes_preview": "ᚪᛝᚪᚫᛞᛄᛝᛇᛉᚹᚹᛞᛟᚦᛗᛚᛚᛟᚣᛖᚣᛗᚾᛟᛏᛋᚹᛟᛖᚷᚪᛟᛇᛏᚦᚱᚫᚪᚠᛟ"
+        },
+        "1000": {
+          "score": 66.153,
+          "latin_preview": "ANGAAEDJNGEOXWWDOETHMLLOEYEYMNOETSWOEEGAOEEOTTHRAEAFOEGXEARNTBPRMRWGXITHMSYNYEOH",
+          "runes_preview": "ᚪᛝᚪᚫᛞᛄᛝᛇᛉᚹᚹᛞᛟᚦᛗᛚᛚᛟᚣᛖᚣᛗᚾᛟᛏᛋᚹᛟᛖᚷᚪᛟᛇᛏᚦᚱᚫᚪᚠᛟ"
+        }
+      },
+      "ks_preview_hex": "3a810a1aae3b7729015b36ea68916112bcfe113957ad7f83584efe481d81caf4",
+      "top_score": 66.153
+    },
+    {
+      "attack": 6,
+      "cipher": "RC4",
+      "variant": "key=hash[0:8]",
+      "decrypt_mode": "subtract_byte_mod29",
+      "scores": {
+        "300": {
+          "score": 63.952,
+          "latin_preview": "SAHGGEABXOEOEMBTHVBJWDDOILDBTAISNPIAAEPFEOHNGRWEATHRAEOESEOEFFIAOETHECIABGOOJBNG",
+          "runes_preview": "ᛋᚪᚻᚷᚷᛖᚪᛒᛉᛟᛟᛗᛒᚦᚢᛒᛄᚹᛞᛞᚩᛁᛚᛞᛒᛏᚪᛁᛋᚾᛈᛡᚫᛈᚠᛇᚻᛝᚱᚹ"
+        },
+        "1000": {
+          "score": 65.957,
+          "latin_preview": "SAHGGEABXOEOEMBTHVBJWDDOILDBTAISNPIAAEPFEOHNGRWEATHRAEOESEOEFFIAOETHECIABGOOJBNG",
+          "runes_preview": "ᛋᚪᚻᚷᚷᛖᚪᛒᛉᛟᛟᛗᛒᚦᚢᛒᛄᚹᛞᛞᚩᛁᛚᛞᛒᛏᚪᛁᛋᚾᛈᛡᚫᛈᚠᛇᚻᛝᚱᚹ"
+        }
+      },
+      "ks_preview_hex": "3a810a1aae3b7729015b36ea68916112bcfe113957ad7f83584efe481d81caf4",
+      "top_score": 65.957
+    }
+  ],
+  "attack7_hash_checksum": {
+    "n_candidates": 43,
+    "n_hashes_tested": 2150,
+    "matches": [],
+    "sample_candidates": [
+      {
+        "source": "wave4_attack2",
+        "combo": "L3_plaintext",
+        "score": 73.024,
+        "preview": "AORHOSMYFWNGNGIAIMHSIOWOEGATEOEOVEOONGFWFVTHAECHGONOARXXHYBTANIAOEXSAEPXEOESYLVOOEFERNGAEDCEODAEDNBIATXEONDTHOEMRRIBVVXD"
+      },
+      {
+        "source": "wave4_attack2",
+        "combo": "L3_ciphertext",
+        "score": 63.628,
+        "preview": "THONGBIAVADAEEAEGHPMVDECYOIANGNCHGHCBAEAEEARCVGTHWWMAEHJEADOEEOIAMAEYEAVRTAEHFVWTXFXNGPLOEVCDMRIASEOSOEEEFGRGCNGATSHJIMH"
+      },
+      {
+        "source": "wave4_attack2",
+        "combo": "L5_plaintext",
+        "score": 74.029,
+        "preview": "SNGANGERGCDHXSFHONGIFOMJEATHGEAAEEOENDTNGEANGSNXJIOEHATOAVBAEAFLNMEDOENHJLPLWTHAETOEDMVCNGRWWEONTHAEGNTFXMEAIATHEATIATHM"
+      },
+      {
+        "source": "wave4_attack2",
+        "combo": "L5_ciphertext",
+        "score": 67.649,
+        "preview": "THISTHERMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOPEWEOXOSEANGNGPEOLOEJBPTHDPSHINGVYCJAETHGCRAAEWEOTEFOIESMNGC"
+      },
+      {
+        "source": "wave4_attack2",
+        "combo": "L7_plaintext",
+        "score": 77.109,
+        "preview": "YWEOCCAOEOHXPTINHIAJTAEODVRIATHEOCVXEXHNAEHJBAEDEANGVTAENGSPMVHAECEARREOITHASTHAEOOXCIAEAAEDEFOEEANNGWBOLOETIOHCDNYAEDNG"
+      }
+    ]
+  },
+  "attack8_delim_channel": {
+    "meta": {
+      "counts": {
+        ".": 72,
+        "-": 23,
+        "\n": 205,
+        "*": 56,
+        "•": 719
+      },
+      "total_delims": 1075,
+      "per_page": [
+        {
+          "page_id": "17.jpg",
+          "n_delims": 96
+        },
+        {
+          "page_id": "20.jpg",
+          "n_delims": 99
+        },
+        {
+          "page_id": "23.jpg",
+          "n_delims": 98
+        },
+        {
+          "page_id": "25.jpg",
+          "n_delims": 93
+        },
+        {
+          "page_id": "32.jpg",
+          "n_delims": 23
+        },
+        {
+          "page_id": "32.jpg",
+          "n_delims": 102
+        },
+        {
+          "page_id": "40.jpg",
+          "n_delims": 97
+        },
+        {
+          "page_id": "44.jpg",
+          "n_delims": 97
+        },
+        {
+          "page_id": "50.jpg",
+          "n_delims": 39
+        },
+        {
+          "page_id": "50.jpg",
+          "n_delims": 102
+        },
+        {
+          "page_id": "56.jpg",
+          "n_delims": 45
+        },
+        {
+          "page_id": "57.jpg",
+          "n_delims": 94
+        },
+        {
+          "page_id": "71.jpg",
+          "n_delims": 90
+        }
+      ]
+    },
+    "dstream_hex_preview": "0d170d170d170d0a0a0a0a0a0a171717170d0d0d0a0a0a0a0a0a0a0a0a0a0a0a",
+    "dstream_as_text": "\r\u0017\r\u0017\r\u0017\r\n\n\n\n\n\n\u0017\u0017\u0017\u0017\r\r\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\u0017\r\u0017\r\n\n\n\n\n\n\u0017\u0017\u0017\u0017\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u0017\u0017\u0017\u0017\r\r\r\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\r\u0017\r\u0017",
+    "decrypt_scores": {
+      "subtract_mod29": {
+        "300": {
+          "score": 65.648,
+          "latin_preview": "THXCNOEAEXMCTHJAHBEOTHTIANOEEANGEAHYWXCEOTHFJLEASAEFNGIAWEABOWEATHVNGXJTRWPOHBMR",
+          "runes_preview": "ᚦᛉᚳᚾᛟᚫᛉᛗᚳᛏᚻᛄᚪᚻᛒᛇᚦᛏᛡᚾᛟᛠᛝᛠᚻᚣᚹᛉᚳᛇᚦᚠᛄᛚᛠᛋᚫᚠᛝᛡ"
+        },
+        "1000": {
+          "score": 66.971,
+          "latin_preview": "THXCNOEAEXMCTHJAHBEOTHTIANOEEANGEAHYWXCEOTHFJLEASAEFNGIAWEABOWEATHVNGXJTRWPOHBMR",
+          "runes_preview": "ᚦᛉᚳᚾᛟᚫᛉᛗᚳᛏᚻᛄᚪᚻᛒᛇᚦᛏᛡᚾᛟᛠᛝᛠᚻᚣᚹᛉᚳᛇᚦᚠᛄᛚᛠᛋᚫᚠᛝᛡ"
+        }
+      },
+      "xor_mod29": {
+        "300": {
+          "score": 68.975,
+          "latin_preview": "THTHTHLJROEICTATHSNGEABXPGIANOHOAPIAECEAGFTHJOMEOFHTHIAOBWIAOGVHETHTRIAFWABIREOI",
+          "runes_preview": "ᚦᚦᚦᛚᛄᚱᛟᛁᚳᛏᚪᚦᛋᛝᛠᛒᛉᛈᚷᛡᚾᚩᚻᚩᚪᛈᛡᛖᚳᛠᚷᚠᚦᛄᚩᛗᛇᚠᚻᚦ"
+        },
+        "1000": {
+          "score": 66.677,
+          "latin_preview": "THTHTHLJROEICTATHSNGEABXPGIANOHOAPIAECEAGFTHJOMEOFHTHIAOBWIAOGVHETHTRIAFWABIREOI",
+          "runes_preview": "ᚦᚦᚦᛚᛄᚱᛟᛁᚳᛏᚪᚦᛋᛝᛠᛒᛉᛈᚷᛡᚾᚩᚻᚩᚪᛈᛡᛖᚳᛠᚷᚠᚦᛄᚩᛗᛇᚠᚻᚦ"
+        }
+      },
+      "subtract_byte_mod29": {
+        "300": {
+          "score": 65.648,
+          "latin_preview": "THXCNOEAEXMCTHJAHBEOTHTIANOEEANGEAHYWXCEOTHFJLEASAEFNGIAWEABOWEATHVNGXJTRWPOHBMR",
+          "runes_preview": "ᚦᛉᚳᚾᛟᚫᛉᛗᚳᛏᚻᛄᚪᚻᛒᛇᚦᛏᛡᚾᛟᛠᛝᛠᚻᚣᚹᛉᚳᛇᚦᚠᛄᛚᛠᛋᚫᚠᛝᛡ"
+        },
+        "1000": {
+          "score": 66.971,
+          "latin_preview": "THXCNOEAEXMCTHJAHBEOTHTIANOEEANGEAHYWXCEOTHFJLEASAEFNGIAWEABOWEATHVNGXJTRWPOHBMR",
+          "runes_preview": "ᚦᛉᚳᚾᛟᚫᛉᛗᚳᛏᚻᛄᚪᚻᛒᛇᚦᛏᛡᚾᛟᛠᛝᛠᚻᚣᚹᛉᚳᛇᚦᚠᛄᛚᛠᛋᚫᚠᛝᛡ"
+        }
+      }
+    },
+    "dstream_len": 1075,
+    "dstream_sha512_prefix": "a8b68c3b521e536d34b3eead50de22936d9a1d952669eda9510352f524478d8a",
+    "dstream_sha512_matches_page56": false,
+    "dstream_contains_hash": false,
+    "byte_distribution": {
+      "0xa": 924,
+      "0x17": 79,
+      "0xd": 72
+    }
+  }
+}

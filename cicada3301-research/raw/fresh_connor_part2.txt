@@ -1,0 +1,689 @@
+TITLE: The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 2
+URL: https://connortumbleson.com/2024/02/05/the-cicada-3301-mystery-puzzle-3-solve-part-2
+DESC: We pick up where we left off in the January 2014 puzzle - this is Part 2.
+
+💡If you missed Puzzle 3 (Part 1) - head here.
+
+We ended Part 1 on an onion after solving a transposition cipher. At this point knowing what we know - the puzzle begins to fracture into
+PUB: 2024-02-05T03:30:40.000Z
+LEN: 26957
+===
+
+
+ The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 2
+
+ Home
+
+ Tags
+
+ About
+
+ Slides
+
+Dark
+
+Search
+
+Ramblings of a Tampa engineer
+
+ Cicada 3301
+
+The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 2
+
+ 3 years ago
+
+ 18 min read
+
+ Photo by Tony Stoddard / Unsplash
+We pick up where we left off in the January 2014 puzzle - this is Part 2.
+
+💡
+
+If you missed Puzzle 3 (Part 1) - head here.
+
+We ended Part 1 on an onion after solving a transposition cipher. At this point knowing what we know - the puzzle begins to fracture into various different paths.
+
+We haven't really dug into the Liber Primus yet, but as you can probably imagine from the last part or your own research. We are basically discovering pages of a book known as the Liber Primus - this post will dive into the discovery of more of those pages. Due to the size of this post - we may end requiring a few parts to finish this.
+
+So as we ended the last it was off to another onion (
+fv7lyucmeozzd5j4.onion
+) which was a little page that seemed to grow in characters every so often. When the growing stop it resembled the string below at exactly 512 characters.
+
+<!--1033-->
+87de5b7fa26ab85d2256c453e7f5bc3ac7f25ee743297817febd7741ededf07ca0c7e8b1788ea4131441a8f71c63943d8b56aea6a45159e2f59f9a194af23eaabf9de0f3123c041c882d5b7e03e17ac49be67cef29fbc7786e3bda321a176498835f6198ef22e81c30d44281cd217f7a46f58c84dd7b29b941403ecd75c0c735d20266121f875aa8dec28f32fc153b1393e143fc71616945eea3c10d6820bd631cf775cf3c1f27925b4a2da655f783f7616f3359b23cff6fb5cb69bcb745c55dff439f7eb6a4094bd302b65a84360a62f94c8b010250fcc431c190d6ed8cc8a3bfce37dddb24b93f502ad83c5fa21923189d8be7a6127c4105fcf0e5275286f2
+
+fv7lyucmeozzd5j4.onion - Onion 3
+
+Seeing the comment of 1033 reminds of the past puzzles involving a filesystem. Those were normally hints to the files needed to XOR together. In this case though a quick method to utilize this data was not found.
+
+However - this was quickly ignored as a more interesting discovery was found. Researchers discovered that the Apache status page was enabled and visible to anyone at 
+/server-status
+. This was tempting as it appeared to be accidental and leaked the Linode host in use (
+li676-224.members.linode.com
+). This was a different host than used in Puzzle 2, which was 
+li528-4
+.
+
+This initially looked like a regular status page showing internal details about the state of the Apache server.
+
+Apache Server Status for fv7lyucmeozzd5j4.onion
+
+Server Version: Apache/2.2.22 (Ubuntu)
+Server Built: Jul 12 2013 13:37:15
+
+Current Time: Thursday, 09-Jan-2014 03:01:25 UTC
+Restart Time: Tuesday, 07-Jan-2014 02:13:02 UTC
+Parent Server Generation: 2
+Server uptime: 2 days 48 minutes 23 seconds
+Total accesses: 548166 - Total Traffic: 6.5 GB
+CPU Usage: u64.83 s85.99 cu0 cs0 - .0858% CPU load
+3.12 requests/sec - 38.8 kB/second - 12.4 kB/request
+6 requests currently being processed, 69 idle workers
+
+_R_______________K___K___.......................................
+_____R________________W__.......................................
+
+full file
+
+The more this discovery was passed around it became apparent that Cicada 3301 knew this was being accessed as well. An additional visit to the page led to a far more larger page size than prior. It appeared some data was packed in between the page, which had to be quite the interesting Substitute method for the amount of data injected.
+
+<dt>5.09 requests/sec - 37.6 kB/second - 7.4 kB/request</dt>
+<dt>10 requests currently being processed, 40 idle workers</dt>
+</dl><pre>ffd8ffe000104a46494600010101019001900000ffdb0043000302020202
+02030202020303030304060404040404080606050609080a0a090809090a
+
+full file
+
+Now at this point you should be able to spot the magic of a JPEG - you can see 
+ff d8 ff e0
+ which is the header. So we know there is an image hiding in this status page. No need for any fancy tools - this is a relatively small file, so lets isolate the payload in the middle.
+
+ffd8ffe000104a46494600010101019001900000ffdb0043000302020202
+02030202020303030304060404040404080606050609080a0a090809090a
+0c0f0c0a0b0e0b09090d110d0e0f101011100a0c12131210130f101010ff
+db00430103030304030408040408100b090b101010101010101010101010
+101010101010101010101010101010101010101010101010101010101010
+
+full file
+
+So one quick conversion back to binary with xxd and we detect one image with binwalk.
+
+➜ xxd -r -p payload payload.bin
+➜ binwalk payload.bin 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+----------------------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01
+
+However, there has to be another image because the ending of the file is 
+e0 ff d8 ff
+, which as you can tell is the JPEG magic reversed. Thankfully in Part 1 we learned about 
+tac
+ (reverse of cat) so we can easily flip the file if we keep it in the plaintext state. However it won't be that easy this time because there appears to be some data in between the images.
+ghex view of payload.bin
+We can tell the JPEG header doesn't have the size embedded so we must have the trailer bytes of 
+ff d9
+ which help denote the end of the image. You can even tell after what appears to be a random blob of characters we have 
+d9 ff
+ which is the reversed JPEG trailer. So this binary blob appears to be structured as 
+[jpeg][characters][reversed jpeg]
+.
+
+So to make this easier - we can leverage dd to extract a chunk of the file. We know from the above screenshot that the first image ends at offset: 
+0x521e1
+, so a little quick command to extract that chunk.
+
+➜ dd if=payload.bin of=slimmed.bin bs=1 skip=$((0x521e1))
+336713+0 records in
+336713+0 records out
+336713 bytes (337 kB, 329 KiB) copied, 1.31176 s, 257 kB/s
+
+We keep our block size at 1 to work byte by byte and skip the full size of the initial image. Our file is now just the random characters and reversed JPEG. At this point since the file is already binary - we can't use tools like rev and tac as they work best on text. Thankfully Perl is pretty good at reversing even binary blobs.
+
+➜ perl -0777pe '$_=reverse' slimmed.bin > reversed.bin
+
+We use 
+0777
+ to read the entire file at once without splitting.
+
+We use 
+-p
+ to loop each line.
+
+-e
+ just executes the upcoming Perl code.
+
+$_=reverse
+ reverses the argument (the file content) and since no output variable will reverse the argument
+
+So basically we read the entire 
+slimmed.bin
+ file, reverse its contents and write to 
+reversed.bin
+.
+
+So now we have 2 images and a set of 358 characters we extracted from between the images.
+
+a02373230202020202833313020202020213433302020202021333130202020202135313a06363330202020202939313020202020203331302020202020323330202020202028313a06323230202020202534323020202020202139302020202025343230202020202632323a083130202020202032333020202020203331302020202029393130202020202636333a01353130202020202133313020202020213433302020202028333130202020202237323
+
+The 358 characters
+
+With the two images being:
+
+At first I thought I made a mistake, but after a few replications I confirmed both images are the same. We have some runes, then a little matrix of numbers/runes. Neither appear to have any outguess data embedded within.
+
+Our goal now is to decode these runes. Crazily enough these puzzles are connecting as we had a little decoding table in Puzzle 2 known as the Gematria Primus. So we spend a bit of time reversing runes to characters and we start to understand this page:
+
+ᛋᚩᛗᛖ (some) •ᚹᛁᛋᛞᚩᛗ (wisdom)
+
+ᚦᛖ (the) •ᛈᚱᛁᛗᛖᛋ (primes) •ᚪᚱᛖ (are) •ᛋᚪᚳᚱᛖᛞ (sacred)
+
+ᚦᛖ (the) •ᛏᚩᛏᛁᛖᚾᛏ (totient) •ᚠᚢᚾᚳᛏᛡᚾ (function) •ᛁᛋ (is) •ᛋᚪᚳᚱᛖᛞ (sacred)
+
+ᚪᛚᛚ (all) •ᚦᛝᛋ (things) •ᛋᚻᚩᚢᛚᛞ (should) •ᛒᛖ (be) •ᛖᚾᚳᚱᚣᛈᛏᛖᛞ (encrypted)
+
+ᚳᚾᚩᚹ (know) •ᚦᛁᛋ (this)
+
+Or in plain English:
+
+"Some wisdom: The primes are sacred, The totient function is sacred, All things should be encrypted.
+
+Know this."
+
+So now we have to make sense of this matrix of numbers. Using the Gematria Primus we can take runes to words/numbers.
+
+Shadows (ᛋᚻᚪᛞᚩᚹᛋ): 341
+
+Aetheral (ᚫᚦᛖᚱᛠᛚ): 366
+
+Buffers (ᛒᚢᚠᚠᛖᚱᛋ): 199
+
+Void (ᚢᚩᛁᛞ): 130
+
+Carnal (ᚳᚪᚱᚾᚪᛚ): 320
+
+Obscura (ᚩᛒᛋᚳᚢᚱᚪ): 245
+
+Form (ᚠᚩᚱᛗ): 91
+
+Mobius (ᛗᚩᛒᛁᚢᛋ): 226
+
+Analog (ᚪᚾᚪᛚᚩᚷ): 320
+
+Mournful (ᛗᚩᚢᚱᚾᚠᚢᛚ): 199
+
+Cabal (ᚳᚪᛒᚪᛚ): 341
+
+Now we replace runes with numbers and get this matrix.
+
+272 138 341 131 151
+366 199 130 320 18
+226 245 91 245 226
+18 320 130 199 366
+151 131 341 138 272
+
+5x5 Matrix
+
+So it appears we have a 5x5 matrix - one quick Google search on that has "risk matrix" and "magic square". It's clearly not a risk matrix and if we add all columns, all rows and the diagonal they all oddly sum to 1033.
+
+So this is a magic square with all values of course being 1033. At this point we might have to head back to the random set of characters discovered in between the images, because we've hit a dead end.
+
+So knowing this random blob of data was in between two images - we aren't really sure what direction its intended to be. It appears to be hexadecimal as I don't see a single character higher than 
+f
+ and the rest is numeric. So before we do anything complex - lets just take it back to binary. Back to the power of xxd.
+
+➜ cat 358chars | xxd -p -r 
+�#s#�3C33S�cc3��3#3��c##SC#�SC#c##��#33��cc3�S3C3�3#s#%
+
+➜ cat 358chars | rev | xxd -p -r
+272 138 341 131 151
+366 199 130 320 18
+226 245 91 245 226
+18 320 130 199 366
+151 131 341 138 272
+
+It turns out it did have to be reversed to make human readable text, but sadly appears to be the same exact magic square we just decoded from the images. Maybe something has to do with the totient function we extracted from the hints in the runes? Without a discovery in a short period of time, but before additional research could continue the Apache status page updated.
+
+It appeared that the embedded data had changed. We were now looking at a page that was just bluntly a dump of data.
+
+HTTP/1.1 200 OK
+Date: Sat, 11 Jan 2014 22:19:20 GMT
+Server: Apache
+Last-Modified: Sat, 11 Jan 2014 22:07:12 GMT
+ETag: "d3e7-41a795-4efb910854400"
+Accept-Ranges: bytes
+Content-Length: 4302741
+Vary: Accept-Encoding
+Content-Type: text/html
+
+<!--3301-->
+ffd8ffe000104a46494600010100000100010000ffdb0043000806060706
+
+full file
+
+If we take this blob of characters back to binary (
+xxd -p -r
+) and we find once again a JPEG then a JPEG in reverse.
+
+Updating our graphic above - it resembles this setup. So lets find the end point and rip out the images. We can probably search for 
+ff d9 d9 ff
+ and find the end points of both images squished together.
+
+➜ dd if=data.bin of=2.bin bs=1 skip=$((0xD9F57))
+1223337+0 records in
+1223337+0 records out
+1223337 bytes (1.2 MB, 1.2 MiB) copied, 4.67677 s, 262 kB/s
+➜ perl -0777pe '$_=reverse' 2.bin > 2.jpg 
+➜ dd if=data.bin of=1.jpg bs=1 count=$((0xD9F57))
+892759+0 records in
+892759+0 records out
+892759 bytes (893 kB, 872 KiB) copied, 3.42165 s, 261 kB/s
+
+So what we did here is first skip the entire first image - then reversed that output to get the reversed JPEG into regular format. Once that was done we just adapted one parameter on dd to extract the first image instead.
+
+Page 3 & 4 from Liber Primus
+
+It seems we are getting more and more pages of this book. With more images we always have to check if outguess can detect data - sure enough this time it did.
+
+➜ outguess -r 1.jpg 1.txt
+Reading 1.jpg....
+Extracting usable bits: 811192 bits
+Steg retrieve: seed: 127, len: 31809
+➜ outguess -r 2.jpg 2.txt
+Reading 2.jpg....
+Extracting usable bits: 1164245 bits
+Steg retrieve: seed: 38370, len: 7524
+➜ file 1.txt
+1.txt: PGP signed message
+➜ file 2.txt 
+2.txt: data
+
+The 1st image appears to be another valid PGP message with some data contained within. The 2nd image is a blob of data that presently doesn't have any known magic header/footer so we will ignore that one for now.
+
+So lets start with decrypting these runes on the above two pages. If we start with the first image we don't get anything on first glance that converts easily to English.
+
+ᚢᛠᛝᛋᛇᚠᚳ ᚱᛇᚢᚷᛈᛠᛠ ᚠᚹᛉ
+ -> 
+UEA[NG|ING][S|Z]EOF[C|K] REOUGPEAEA FWX
+
+As you can tell - since Gematria Primus can decode a rune to a variety of characters for 
+NG/ING
+ , 
+S/Z
+ and 
+C/K
+ we don't know exactly what it should be. When we went strictly from runes to English it was pretty obvious what letter it was intended to me in Part 1. So at this point we are probably missing some form of transformation.
+
+I always like to start with a rotation (ROT) for any type of string that looks vaguely already like text. At this point rotating through every possible rotation results in nothing.
+
+ROT 0-26 of "UEA" String
+
+ROT-0: UEA[NG|ING][S|Z]EOF[C|K] REOUGPEAEA FWX
+ROT-1: VFB[OH|JOH][T|A]FPG[D|L] SFPVHQFBFB GXY
+ROT-2: WGC[PI|KPI][U|B]GQH[E|M] TGQWIRGCGC HYZ
+ROT-3: XHD[QJ|LQJ][V|C]HRI[F|N] UHRXJSHDHD IZA
+ROT-4: YIE[RK|MRK][W|D]ISJ[G|O] VISYKTIEIE JAB
+ROT-5: ZJF[SL|NSL][X|E]JTK[H|P] WJTZLUJFJF KBC
+ROT-6: AKG[TM|OTM][Y|F]KUL[I|Q] XKUAMVKGKG LCD
+ROT-7: BLH[UN|PUN][Z|G]LVM[J|R] YLVBNWLHLH MDE
+ROT-8: CMI[VO|QVO][A|H]MWN[K|S] ZMWCOXMIMI NEF
+ROT-9: DNJ[WP|RWP][B|I]NXO[L|T] ANXDPYNJNJ OFG
+ROT-10: EOK[XQ|SXQ][C|J]OYP[M|U] BOYEQZOKOK PGH
+ROT-11: FPL[YR|TYR][D|K]PZQ[N|V] CPZFRAPLPL QHI
+ROT-12: GQM[ZS|UZS][E|L]QAR[O|W] DQAGSBQMQM RIJ
+ROT-13: HRN[AT|VAT][F|M]RBS[P|X] ERBHTCRNRN SJK
+ROT-14: ISO[BU|WBU][G|N]SCT[Q|Y] FSCIUDSOSO TKL
+ROT-15: JTP[CV|XCV][H|O]TDU[R|Z] GTDJVETPTP ULM
+ROT-16: KUQ[DW|YDW][I|P]UEV[S|A] HUEKWFUQUQ VMN
+ROT-17: LVR[EX|ZEX][J|Q]VFW[T|B] IVFLXGVRVR WNO
+ROT-18: MWS[FY|AFY][K|R]WGX[U|C] JWGMYHWSWS XOP
+ROT-19: NXT[GZ|BGZ][L|S]XHY[V|D] KXHNZIXTXT YPQ
+ROT-20: OYU[HA|CHA][M|T]YIZ[W|E] LYIOAJYUYU ZQR
+ROT-21: PZV[IB|DIB][N|U]ZJA[X|F] MZJPBKZVZV ARS
+ROT-22: QAW[JC|EJC][O|V]AKB[Y|G] NAKQCLAWAW BST
+ROT-23: RBX[KD|FKD][P|W]BLC[Z|H] OBLRDMBXBX CTU
+ROT-24: SCY[LE|GLE][Q|X]CMD[A|I] PCMSENCYCY DUV
+ROT-25: TDZ[MF|HMF][R|Y]DNE[B|J] QDNTFODZDZ EVW
+
+So probably not rotation like the first ever Cicada puzzle. The next puzzles used shifting even to the point of having a different shift of each character depending on some key (like we saw in the midi solve). However, we don't really have a obvious key thus far in this puzzle. We have however had reversed/rotated images quite often.
+
+We can reverse these strings and nothing makes sense as proven by another rot cipher on the reversed string, but there is a large difference of rotating a character after translation and prior.
+
+We should try reversing the Gematria Primus and then try our rotation/shifts.
+
+➜ php cicada app:translate
+
+ Enter a sentence to translate:
+ > ᚢᛠᛝᛋᛇᚠᚳ ᚱᛇᚢᚷᛈᛠᛠ ᚠᚹᛉ
+
+ Reverse the translation? (y/n) [n]:
+ > y
+
+[IA|IO]FWPTEAD AT[IA|IO]OE[S|Z]FF EA[NG|ING]X
+
+However, sadly even after reversing the Gematria Primus and shifting the string in every possible way - no go. At this point we must have a key - we just don't know what it is. That would open us up to many different types of ciphers much like the Vigenère cipher used in the first puzzle.
+
+The problem we face is our string is in runes - not text. We can't assume that our translation from runes to text is the right one. We know from the book codes that jump around to a variety of different characters - our code may not be as easy as straight forward or reverse.
+
+We should build a script that takes a runic word and uses it to shift characters. Remember in the very first puzzle we shifted each letter increasing throughout the key wrapping around when done. The problem is we are either blind and missing the key to attempt shifting or we are meant to brute force it.
+
+Lets collect all the words used in some recent Cicada things and start to build a word list. To start I've extracted the Instar Emergence poem from the song, then one of the books (Voice of Devil) from a previous puzzle.
+
+Now lets run this through all the words we extracted and attempt a translation on the first rune line (
+ᚢᛠᛝᛋᛇᚠᚳ ᚱᛇᚢᚷᛈᛠᛠ ᚠᚹᛉ
+) we see above.
+app:bruteforce-vigenere (GitHub)
+In the first output of this brute-force we see something interesting - towards the bottom 
+divinity
+ looks to spell something in English. So guess we got a hit from the song used in an earlier puzzle. It reads as 
+WELCOME WELCOME PIL
+ which appears to be the start of a valid sentence. It seems we've found the key, even if brute-forcing felt a bit sour. Maybe we missed something with the magic square that resulted in "divinity".
+
+So lets start decoding this line by line.
+
+ᚢᛠᛝᛋᛇᚠᚳ ᚱᛇᚢᚷᛈᛠᛠ ᚠᚹᛉ
+ -> 
+WEL[C|K]OME WEL[C|K]OME PIL
+
+ᛏᚳᛚᛠ ᚣᛗ ᛠᛇ ᛏᚳᚾᚫ ᛝᛗᛡ
+ -> 
+OEAME BN EO[S|Z] OEAH[S|Z] EONJ
+
+We've already missed something - the 2nd line doesn't appear to be valid. However, I broke the lines based visually on the book above. Maybe we need to break to a newline on a specific rune (2 dots, 4 dots, etc).
+
+ᚢᛠᛝᛋᛇᚠᚳ ᚱᛇᚢᚷᛈᛠᛠ ᚠᚹᛉᛏᚳᛚᛠ ᚣᛗ ᛠᛇ ᛏᚳᚾᚫ ᛝᛗᛡᛡᛗᛗᚹ ᚫᛈᛞᛝᛡᚱ ᚩᛠ ᛡᛗᛁ ᚠᚠ ᛖᚢᛝ ᛇᚢᚫ
+WEL[C|K]OME WEL[C|K]OME PILGRIM TO THE GREAT JOURNEY TOWARD THE END OG HFJ OLN
+
+That looks to work much better, but we oddly fail decoding somewhere around the 62nd character. We don't have any permutations left with the spacing so time for some research on the cipher. A few Google searches and we discover that a ciphertext can contain a manual reset that occurs at seemingly random points in the string.
+debugging tool
+So if we set a break point on the character that looks bugged - we see something interesting. Our shifted character becomes (
+G
+) which is invalid, but the original character prior to shift was (
+F
+) which seems correct. However, if we make an exception for 
+F
+ the decryption falls apart badly.
+
+WEL[C|K]OFA B[S|Z]WAEEOEM FY[IA|IO]MJI[IA|IO]
+
+As you can see - this time since we made an exception for 
+F
+ it crashed way earlier. Now we know its the 62nd character by the time we've converted out of runes, but runes can decrypt to multiple characters. Therefore instead I think its safer for a test to use the runic index (
+59
+) for this test instead of the output character number.
+
+WEL[C|K]OME WEL[C|K]OME PILGRIM TO THE GREAT JOURNEY TOWARD THE END OF ALL TH[NG|ING][S|Z]
+
+Sure enough that appeared to work. We can make sense of the string in its entirety. Sadly this appears to be a time consuming task, as we paste the entire string into our decoder and we only get a bit further until the string falls apart.
+
+WEL[C|K]OME WEL[C|K]OME PILGRIM TO THE GREAT JOURNEY TOWARD THE END OF ALL TH[NG|ING][S|Z] IT I[S|Z] NOT AN EA[S|Z]Y TRIP BUT MMEA
+
+It appears we might have more than one index to skip our decoding. Each time the string looks to fall apart - we will add that runic index to our list. The 2nd time it appeared to be index (
+95
+). When we are done setting break points and developing a list of indexes we get all the runic indexes to skip and string of:
+
+💡
+
+These indexes are based on the spacing of the runes in this file.
+
+59, 95, 108, 170, 204, 205, 312
+
+WEL[C|K]OME WEL[C|K]OME PILGRIM TO THE GREAT JOURNEY TOWARD THE END OF ALL TH[NG|ING][S|Z] IT I[S|Z] NOT AN EA[S|Z]Y TRIP BUT FOR THO[S|Z]E WHO FIND THEIR WAY HERE IT I[S|Z] A NE[C|K]E[S|Z][S|Z]ARY ONE ALO[NG|ING] THE WAY YOU WILL FIND AN END TO ALL [S|Z]TRUGGLE AND [S|Z]UFFER[NG|ING] YOUR INNO[C|K]EN[C|K]E YOUR ILLU[S|Z][IA|IO]N[S|Z] YOUR [C|K]ERTAINTY AND YOUR REALITY ULTIMATELY YOU WILL DI[S|Z][C|K]OUER AN END TO [S|Z]ELF
+
+We don't really need to run this through our permutation code because its pretty clear what its supposed to say.
+
+Welcome
+Welcome pilgrim to the great journey towards the end of all things.
+It is not an easy trip, but for those who find their way here it is a necessary one.
+Along the way you will find an end to all the struggle and suffering.
+Your innocence, your illusions, your certainty, and your reality.
+Ultimately you will discover an end to self.
+
+Now remember back in Part 1 it called out - 
+DO NOT EDIT OR CHANGE THIS BOOK
+, which we did here. When I wrote the brute-force code - it crashed immediately because we had no translation for the letter V. I just treated it as the same rune as letter U. So I am seriously doubting the only way to obtain the key 
+divinity
+ was brute-force - we must be missing something.
+
+Onward to the 2nd page above - lets hope that its the same key and cipher we just discovered. Sadly in one quick test of the first line you can see below it didn't.
+
+ᛗᚣ ᚣᛇ ᚫᛉᚱᛄᛋᛖ ᛖᚹᚾ ᛞᛄᚢᛋᛉᚣᛏ
+ -> 
+AET AETH TRBX[NG|ING]H BYF PAR[NG|ING]RAEG
+
+However, the 4th page starts with the 4 dot runic symbol. It appears like a book to just be a continuation of the last page. We should try and add these runic symbols at the end of page 3 - perhaps the shift continues as-is into page 4.
+
+ᛗᚣ ᚣᛇ ᚫᛉᚱᛄᛋᛖ ᛖᚹᚾ ᛞᛄᚢᛋᛉᚣᛏ
+ -> 
+IT I[S|Z] THROUGH THI[S|Z] PILGRIM
+
+This appeared to be the solution. Page 3 and 4 continue (perhaps even more pages) on the same shift of 
+divinity
+ with presumably more indexes to skip. So lets start with combining all the runes in one solid line and go back to the slog of running through this decryption and manually flagging indexes to skip when the translation appears to break.
+
+ᚢᛠᛝᛋᛇᚠᚳ ᚱᛇᚢᚷᛈᛠᛠ ᚠᚹᛉᛏᚳᛚᛠ ᚣᛗ ᛠᛇ ᛏᚳᚾᚫ ᛝᛗᛡᛡᛗᛗᚹ ᚫᛈᛞᛝᛡᚱ ᚩᛠ ᛡᛗᛁ ᚠᚠ ᛖᚢᛝ ᛇᚢᚫ ᚣᛈ ᚱᚫ ᛁᛈᚫ ᚳᚫ ᚫᚾᚹ ᛒᛉᛗᛞ ᚱᛡᛁ ᚠᛈᚳ ᛇᛇᚫᚳ ᚱᚦᛈ ᚠᛄᛗᚩ ᛇᚳᚹᛡ ᛒᚫᚹ ᛒᛠᛚᛋ ᚱᚣ ᛄᚫ ᚱ ᛗᚳᚦᛇᚫᛏᚳᛈᚹ ᛗᚷᛇ ᚳᛝᛈᚢ ᛇᚳ ᚱᛖᚹ ᛡᛈᛁ ᛒᚣᛒᛉ ᚠᛚᛁᚱ ᚱᛗ ᚳᚷᛒ ᚣᚱ ᚳᚠᚢ ᚦᛈᛡᛄᚹᛏᚠᛠ ᛄᚷᛒ ᚫᚦᚠᚠᛠᛈᚦ ᛈᚠᚪᛉ ᛄᛗᛖᛈᛝᛋᚩᛋᛗ ᚹᛇᛄᛚ ᚹᛉᚢᚦᚫᚹᛗᚦ ᛞᚣᛄᚳ ᛋᛡᛉᚩᛝᚱᛗᛒᚹ ᚱᛗᛁ ᛞᚣᛄᚳ ᛉᚻᚢᚣᛈᛚ ᛄᛝᚣᛗᚠᛄᛈᛇᚢᛡ ᚹᛇᛄ ᛞᚹᛉᚢ ᚪᛚᚪᛋᛗᛡᛇᛉ ᚫᛗ ᛡᛗᛁ ᛈᚣ ᚫᛗᚢᚠ ᛗᚣ ᚣᛇ ᚫᛉᚱᛄᛋᛖ ᛖᚹᚾ ᛞᛄᚢᛋᛉᚣᛏᛖᛏᛗ ᛇᚱᚣ ᛞᛋ ᚾᛖᚫᛞᛡ ᛈᛒᚢᚾᛠᛝᛄᛡᚫ ᛄᚷᛒ ᛈᚦᛉ ᛈᚾᚹᚹᛁᛚᛗᚫ ᛚᛈᛒᚢᚩᛠᛡ ᚱᛡᛠᚠ ᚱᚱᛇᛄᛗ ᚱᛗᛁ ᛞᚣᛄ ᚻᛚᚠᚢ ᛄᚢᛡᛚᚦᛠ ᛇᛄᚩᛇᚱᚱᛗ ᚢᛗᛋᚳ ᛠᛇ ᛚᛁᚫᚫᚳᛚ ᚹᛁ ᛚᛏ ᛈᛖᚢᛈ ᛠᛡᛈᚦᛏᛒ ᛏᛗᛖ ᚢᛚᚩᛚᛖ ᛇᛄᛈ ᚢᛠ ᛚᚳᚷ ᛠᚷᛋᛡᛏᛗ ᛒᛗᚱᚦᚠᛈ ᚹᚱᛄ ᚱᛉᚳ ᛝ ᛄᛠᛟ ᛄᛖᚣᛗ ᛞᚣᛄᚳᚫᛡᚢᚠ ᛈᚠᚪ ᚳᚳᛠ ᚱ ᚢᛄᚱ ᚪᛗᛒᛈ ᚷᛈᛒᚢᚾᛠᛝᚠ ᚾᛉᛖ ᚣᚷᛁᛠᛝᚢᛗᛏᚳᚷᛠᛠ ᛄᚫ ᛒᛈᚹᛞ ᚠᚣᛉ ᚫᚢᚠ ᛇᛄᛈ ᛉᛚᚦᛠᚪ ᛚᚦ ᚳᚣᚢᛡ ᚳᛖ ᛚᚫᛇᛁᛉᚦᛋᚫᚻᚫ ᚦᚣᚠᛚᚳᛖᚱ ᛈᚠᚪᛉ ᚱᛒᛖ ᚫᚳᛒᚠ
+
+This time we expand our indexes to skip shifting of the following:
+
+59, 95, 108, 170, 204, 205, 312, 523, 551, 578, 638
+
+Which now generates the additional block of:
+
+IT I[S|Z] THROUGH THI[S|Z] PILGRIMAGE THAT WE [S|Z]HAPE OUR[S|Z]ELUE[S|Z] AND OUR REALITIE[S|Z] JOURNEY DEEP WITHIN AND YOU WILL ARRIUE OUT[S|Z]IDE LI[C|K]E THE IN[S|Z]TAR IT I[S|Z] ONLY THROUGH GO[NG|ING] WITHIN THAT WE MAY EMERGE WID[S|Z]OM YOU ARE A BE[NG|ING] UNTO YOUR[S|Z]ELF YOU ARE A LAW UNTO YOUR[S|Z]ELF EA[C|K]H INTELLIGEN[C|K]E I[S|Z] HOLY FOR ALL THAT LIUE[S|Z] I[S|Z] HOLY AN IN[S|Z]TRU[C|K]T[IA|IO]N [C|K]OMMAND YOUR OWN [S|Z]ELF
+
+Or cleaned up into:
+
+It is through this pilgrimage that we shape ourselves and our realities
+Journey deep within and you will arrive outside
+Like the Instar it is only through going within that we may emerge.
+
+Wisdom
+You are a being onto yourself
+You are a law onto yourself
+Each intelligence is holy
+For all that lives is holy
+An instruction: Command your own self
+
+It was nice for this page to call out the Instar Emergence which helps solidify our key (
+divinity
+) - remember this key came from that song:
+
+The Instar Emergence
+
+Parable 1,595,277,641 
+Like the instar, tunneling to the surface
+We must shed our own circumferences;
+Find the divinity within and emerged
+
+Puzzle 2
+
+However saying all of that - we finally understand these two pages and haven't appeared to discover anything to progress this puzzle forward. So lets jump back to the data embedded in the images themselves. The 1st page (Page 3 of Liber Primus) had a PGP message contained within the payload. 
+
+If we examine that payload - we get a message and payload.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Let the text guide you.
+
+Good luck.
+
+3301
+
+ffd8ffe000104a46494600010101019001900000ffdb0043000302020202
+// snipped
+
+full file (GitHub)
+
+So we pull that snippet of hex out of the signed message and proceed to run our basic test - convert to binary, run binwalk.
+
+➜ xxd -r -p payload payload.bin
+➜ binwalk payload.bin 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+----------------------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01
+
+Sure enough we have an image. Once extracted it becomes:
+Page 4 Liber Primus outguess data
+Now we have a runic short string - lets get this into text and run it through our translation code.
+
+ᚦᛗᛞᛇᚠᛗᚪᚱ5ᚢᚫᛝᚱᛝ3 ᛠᛗᛇᚠᛡ
+
+Unfortunately in the following tests - all failed.
+
+Pure translation
+
+Pure reversed translation
+
+Vigenere cipher with 
+divinity
+ key.
+
+Vigenere reversed cipher with 
+divinity
+ key.
+
+Brute force with existing word lists.
+
+The last few pages decoded though had some very interesting Cicada 3301 words. Lets load those pages into our word lists. This is a useless endeavor as we are presumably based on the string size looking for 
+{random}.onion
+ so we can't really tell whats right or wrong unless we see "onion" at end.
+
+However, the hint is "let the text guide you" - does that mean the runic text we just translated? What if the key is the entire decoded text? It couldn't possibly be that because the ciphertext isn't that long and the Vigenere cipher can't leverage a key that is larger than the decrypted text.
+
+So lets start with just the first few words like - 
+welcomewelcomepilgrimtothegreat
+. This fails miserably, but we duplicated 
+welcome
+ and included red words.
+
+There is only one red word on this page, so perhaps we skip it. Lets try using 
+welcomepilgrimtothegreat
+.
+
+➜ php cicada app:vigenere
+
+ Enter a sentence to translate:
+ > ᚦᛗᛞᛇᚠᛗᚪᚱ5ᚢᚫᛝᚱᛝ3 ᛠᛗᛇᚠᛡ
+
+ Enter the key.:
+ > welcomepilgrimtothegreat
+
+Translation: AUOWYFGL5L[C|K][S|Z]FJ3 NON[IA|IO]N
+
+This looks very promising, we can see 
+ONION
+ at the end of the string. We probably don't need a key that long, but it worked. Lets run our permutation code and toss out any that don't result in 
+.onion
+.
+
+AUOWYFGL5LCSFJ3N ONION
+AUOWYFGL5LCZFJ3N ONION
+AUOWYFGL5LKSFJ3N ONION
+AUOWYFGL5LKZFJ3N ONION
+
+With only 4 chances this won't be hard. However, none of them worked. What interests me in this string though is we have both 
+U
+ and 
+F
+, both of which have acted weirdly throughout this puzzle.
+
+U
+ is what we mapped 
+V
+ towards in our word list code.
+
+F
+ is what normally caused the decoding to skip a shift.
+
+So lets go again and do a ton more permutations on this until the domain is valid. We will swap 
+[U/V]
+ for another set of permutations. Sure enough it was the 
+U/V
+ switch as one of those domains resolved correctly.
+
+ᚦᛗᛞᛇᚠᛗᚪᚱ5ᚢᚫᛝᚱᛝ3 ᛠᛗᛇᚠᛡ
+ -> 
+avowyfgl5lkzfj3n.onion
+
+We finally had a new onion, but we will discuss the 4th onion (and more) in Part 3.
+
+Puzzle 1 (2012)
+
+Puzzle 1 - 2nd Chance (2012)
+
+Puzzle 2 (2013)
+
+Puzzle 3 - Part 1 (2014)
+
+Puzzle 3 - Part 2 (2014) - You are here.
+
+Puzzle 3 - Part 3 (2014)
+
+Puzzle 3 - Part 4 (2014)
+
+ Read more posts by this author
+
+Connor Tumbleson
+
+ The link has been copied!
+
+Newer Post
+
+Derek Cardigan 7003
+
+Older Post
+
+AI & Cicada 3301
+
+ © 2026 Connor Tumbleson. All Right Reserved.
+ Published with Ghost.
+
+You’ve successfully subscribed to Connor Tumbleson
+
+Welcome back! You’ve successfully signed in.
+
+Great! You’ve successfully signed up.
+
+Success! Your email is updated.
+
+Your link has expired
+
+Success! Check your email for magic link to sign-in.
+
+ Please enter at least 3 characters
+ 
+ 0
+ Results for your search
+
+May we suggest a tag?
+
+ Personal
+ Apktool
+ Travel
+ Technology
+ Random
+ Tampa
+ Food
+ Developer
+ Security
+ Health
+ Halo
+ Ingress
+ Sports
+ History
+ Coronavirus
+ Pi-hole
+ Video Games
+ Movies
+ Ghost Blog
+ Scam
+
+May we suggest an author?
+
+ Connor Tumbleson
+
+ Connor Tumbleson.
+ Ramblings of a Tampa engineer
+

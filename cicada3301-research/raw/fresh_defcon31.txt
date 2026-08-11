@@ -1,0 +1,590 @@
+TITLE: Free Video: Cracking Cicada 3301: A Journey Through the Liber Primus Cryptographic Challenge from DEFCONConference | Class Central
+URL: https://www.classcentral.com/course/youtube-def-con-31-war-stories-cracking-cicada-3301-taiiwo-artorias-puck-theclockworkbird-360580
+DESC: Delve into the fascinating journey of cryptographers attempting to solve Cicada3301's Liber Primus, exploring collaborative puzzle-solving techniques, community persistence, and cryptographic challenges since 2014.
+PUB: 
+LEN: 7238
+===
+
+
+ Free Video: Cracking Cicada 3301: A Journey Through the Liber Primus Cryptographic Challenge from DEFCONConference | Class Central
+
+ Coursera Bets $100 Million That Andrew Ng Can Do What Coursera Can’t
+
+ View
+
+ Close
+
+ Class Central
+
+ Courses
+
+Class Central
+
+ Rankings
+
+ Career Certificates
+
+Subjects
+
+ View all
+
+ Technology
+
+ Business
+
+ Creative
+
+ STEM
+
+ Health & Wellness
+
+ People & Society
+
+ Personal Growth & Lifestyle
+
+ View all Subjects
+
+ Universities
+
+ The Report
+
+ Courses from 1000+ universities
+
+Rankings
+
+Best Courses
+
+ Best of All Time
+
+ Best of the Year
+
+Most Popular Courses
+
+ Most Popular of All Time
+
+ Most Popular of the Year
+
+Career Certificates
+
+ Generative AI
+
+ UX Design
+
+ Data Science
+
+ Finance
+
+ DevOps
+
+ Project Management
+
+ View all Career Certificates
+
+Technology
+
+ Computer Science
+
+ Artificial Intelligence
+
+ Data Science
+
+ Web Development
+
+ Programming
+
+ Databases
+
+ IT & Networking
+
+ DevOps
+
+ UX/UI Design
+
+ Blockchain & Cryptocurrency
+
+ Extended Reality (XR)
+
+ Generative AI
+
+ Cloud Computing
+
+ Cybersecurity
+
+ Game Development
+
+ Product Management
+
+ View all Technology
+
+Business
+
+ Management & Leadership
+
+ Finance
+
+ Entrepreneurship
+
+ Marketing
+
+ Strategic Management
+
+ Project Management
+
+ Sales
+
+ Business Software
+
+ Real Estate
+
+ Professional Development
+
+ Accounting
+
+ Supply Chain Management
+
+ Business Strategy
+
+ Human Resources
+
+ View all Business
+
+Creative
+
+ Music
+
+ Digital Media
+
+ Visual Arts
+
+ Design
+
+ Crafts
+
+ Performing Arts
+
+ AI Art
+
+ View all Creative
+
+STEM
+
+ Mathematics
+
+ Engineering
+
+ Science
+
+ Statistics & Probability
+
+ Chemistry
+
+ Physics
+
+ Environmental Science
+
+ Astronomy
+
+ Biology
+
+ Agriculture
+
+ View all STEM
+
+Health & Wellness
+
+ Disease & Disorders
+
+ Public Health
+
+ Health Care
+
+ Nursing
+
+ Mental Health
+
+ Continuing Medical Education (CME)
+
+ Medicine
+
+ Wellness
+
+ Nutrition
+
+ View all Health & Wellness
+
+People & Society
+
+ Humanities
+
+ Education & Teaching
+
+ Social Sciences
+
+ History
+
+ Literature
+
+ Sociology
+
+ Economics
+
+ Psychology
+
+ Anthropology
+
+ Political Science
+
+ Law
+
+ Language Learning
+
+ Writing
+
+ Philosophy
+
+ Religion
+
+ View all People & Society
+
+Personal Growth & Lifestyle
+
+ Personal Development
+
+ Sports & Recreation
+
+ Personal Finance
+
+ Parenting & Family
+
+ Food & Drink
+
+ Self-Defense & Martial Arts
+
+ Gardening
+
+ Productivity & Time Management
+
+ Games
+
+ Study Skills
+
+ Travel
+
+ Pets & Pet Care
+
+ Beauty & Makeup
+
+ Home & Living
+
+ Critical Thinking
+
+ View all Personal Growth & Lifestyle
+
+ The Report
+
+ Banning Telegram Can’t Stop Paper Leaks: Inside India’s NEET Exam Scandal
+
+India banned Telegram after the NEET paper leak led to a retest for 2.28 million students. Class Central studied the scam, the money trail, and other platforms the leaks could move to. 
+
+ Manoj Sharma
+ 
+ Jul 29, 2026
+
+Latest
+
+ [2026] 20+ Back to School Discounts & Online Learning Deals
+
+ [2026] 300 Free Robotics Courses to Upgrade Your Intelligence
+
+ [2026] 300+ Cursos Online da FGV com Certificado Gratuito
+
+ 8 Best Climate Change Courses for 2026: From the Science to Taking Action
+
+ 8 Best Zig Courses for 2026: Systems Programming, Simplified
+
+ Write for The Report
+
+ Visit
+ The Report
+
+600 Free Google Certifications
+
+ Trending
+
+Most common
+
+ marketing
+
+ trading
+
+ html
+
+Popular courses
+
+Python and Statistics for Financial Analysis
+
+ The Hong Kong University of Science and Technology
+
+Lean Production
+
+ edX
+
+Terrorism and Counterterrorism: Comparing Theory and Practice
+
+ Leiden University
+
+Organize and share your learning with Class Central Lists.
+
+View our Lists Showcase
+
+ Sign up
+
+ Log in
+ or
+ 
+ Sign up
+
+ Log in
+
+ Sign up
+
+ 0 Reviews
+
+ Share
+
+ Start learning
+
+Class Central is learner-supported. When you buy through links on our site, we may earn an affiliate commission.
+
+ Technology
+
+ Cybersecurity
+
+ Cryptography
+
+ Technology
+
+ Cybersecurity
+
+ Cryptography
+
+Cracking Cicada 3301: A Journey Through the Liber Primus Cryptographic Challenge
+
+ DEFCONConference
+
+ via YouTube
+ 
+ Help
+
+ 0 reviews
+
+ Add to list
+
+ Mark complete
+
+ Write review
+
+ Start learning
+
+ Write review
+
+ Affiliate notice
+
+ About
+
+ Related
+
+ Reviews
+
+Details
+
+ Play Course Trailer
+
+ Start learning
+
+ Provider
+
+ YouTube
+
+ Help
+
+ Pricing
+
+ Free Video
+
+ Languages
+
+ English
+
+ Effort
+
+ 42 minutes
+
+ Sessions
+
+ Self-Paced
+
+ Level
+
+ Advanced
+
+ Share
+
+Found in
+
+ Cryptography Courses
+
+ Ad
+
+Learn AI, Data Science & Business — Earn Certificates That Get You Hired
+
+ Learn More →
+
+ Ad
+
+Learn the Skills Netflix, Meta, and Capital One Actually Hire For
+
+ Learn More →
+
+Overview
+
+Google, IBM & Meta Certificates – 40% Off
+
+One plan covers every Professional Certificate on Coursera.
+
+Unlock All Certificates
+
+ Join a fascinating conference talk from DEF CON 31 where four community leaders from CicadaSolvers share their nine-year journey attempting to crack one of the most challenging cryptographic puzzles ever created - the Cicada 3301 Liber Primus. Dive into the cultural impact of this mysterious book of elder futhark runes and codes that has stumped cryptographers since 2014. Learn about the various decryption strategies, technical approaches, and collaborative efforts employed by the community in their persistent quest to solve this enigma. Gain valuable insights into the future of collaborative puzzle-solving and understand how the Liber Primus continues to challenge modern cryptography. Whether interested in cryptography, puzzle-solving, internet mysteries, or the power of community persistence, discover the compelling story behind this ongoing cryptographic challenge that requires no prior technical knowledge to appreciate.
+
+Syllabus
+
+DEF CON 31 War Stories - Cracking Cicada 3301 - Taiiwo, Artorias, Puck, TheClockworkBird
+
+Taught by
+
+DEFCONConference
+
+Related Articles
+
+Free courses from frontend to fullstack and AI Ad
+
+[2026] Massive List of Thousands of Free Certificates and Badges
+
+450+ Free Google Certifications, Courses & Badges [2026]
+
+7 Best YouTube Marketing Courses for Business in 2026
+
+A Free Tool to Learn Languages Through Netflix and YouTube: Language Reactor Review
+
+6 Best SOC Analyst Courses in 2026
+
+Reviews
+
+Select rating
+
+ Start your review of Cracking Cicada 3301: A Journey Through the Liber Primus Cryptographic Challenge
+
+ Start learning
+
+ Home
+
+ Technology
+
+ Cybersecurity
+
+ Cryptography
+
+ Career Certificates
+
+ Generative AI
+
+ UX Design
+
+ Data Science
+
+ Finance
+
+ DevOps
+
+ Project Management
+
+ All Subjects
+
+ Providers
+
+ Coursera
+
+ Udemy
+
+ Noble Desktop
+
+ Simplilearn
+
+ CodeSignal
+
+ Boot.dev
+
+ All Universities
+
+ The Report by Class Central
+
+ RSS Feed
+
+ Series Finale of Online Education
+
+ Udemy Earns More, Pays Less
+
+ Duolingo's 2026 Strategy
+
+ 1000s of Free Certificates
+
+ Best Courses Guides
+
+ Best of All Time
+
+ Most Popular of All Time
+
+ About Class Central
+
+Class Central aggregates courses from many providers to help you find the best courses on almost any subject, wherever they exist.
+
+Facebook
+
+Twitter
+
+LinkedIn
+
+YouTube
+
+Bluesky
+
+Class Central © 2011-2026 Privacy Policy
+
+ About Us
+
+ Join Us
+
+ Write for Us
+
+ Help Center
+
+ Contact Us
+
+Share
+
+ Facebook
+
+ Twitter
+
+ Bluesky
+
+ Email
+
+ Copy link
+
+ Never Stop Learning.
+
+ Get personalized course recommendations, track subjects and courses with reminders, and more.
+
+ Sign up for free
+

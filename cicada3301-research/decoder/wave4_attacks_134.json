@@ -1,0 +1,456 @@
+{
+  "attack1": {
+    "attack": 1,
+    "variants": [
+      {
+        "variant": "a_hexpair_byte_mod29_64runes",
+        "key_len": 64,
+        "s300": {
+          "label": "a_hexpair_byte_mod29_64runes_s300",
+          "key_runes": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝᚾᛏᚻᛝᚩᚫᛟᛄᛇᛝᛋᚾᛏᛏᚹᚹᚹᛝᛠᛞᚳᚠᛠᛝᚾᛗᛉᚷᛇᛞᛝᛚᛞᚷ",
+          "key_preview": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝ",
+          "key_len": 64,
+          "vigenere_score": 67.947,
+          "autokey_pt_score": 67.46,
+          "autokey_ct_score": 68.335,
+          "best_mode": "autokey_ct",
+          "best_score": 68.335,
+          "best_latin_preview": "MEOSLNLDIANTTHJPFEASWESTDEOFVXCFAEVODPNGFPEAMTTHFJYITHCMOVTYSAEXDRNGBLXNNGWVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCGEOE"
+        },
+        "s1000": {
+          "label": "a_hexpair_byte_mod29_64runes_s1000",
+          "key_runes": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝᚾᛏᚻᛝᚩᚫᛟᛄᛇᛝᛋᚾᛏᛏᚹᚹᚹᛝᛠᛞᚳᚠᛠᛝᚾᛗᛉᚷᛇᛞᛝᛚᛞᚷ",
+          "key_preview": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝ",
+          "key_len": 64,
+          "vigenere_score": 66.054,
+          "autokey_pt_score": 65.853,
+          "autokey_ct_score": 67.259,
+          "best_mode": "autokey_ct",
+          "best_score": 67.259,
+          "best_latin_preview": "MEOSLNLDIANTTHJPFEASWESTDEOFVXCFAEVODPNGFPEAMTTHFJYITHCMOVTYSAEXDRNGBLXNNGWVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCGEOE"
+        }
+      },
+      {
+        "variant": "b_hexpair_byte_mod29_64runes_dup",
+        "key_len": 64,
+        "s300": {
+          "label": "b_hexpair_byte_mod29_64runes_dup_s300",
+          "key_runes": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝᚾᛏᚻᛝᚩᚫᛟᛄᛇᛝᛋᚾᛏᛏᚹᚹᚹᛝᛠᛞᚳᚠᛠᛝᚾᛗᛉᚷᛇᛞᛝᛚᛞᚷ",
+          "key_preview": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝ",
+          "key_len": 64,
+          "vigenere_score": 67.947,
+          "autokey_pt_score": 67.46,
+          "autokey_ct_score": 68.335,
+          "best_mode": "autokey_ct",
+          "best_score": 68.335,
+          "best_latin_preview": "MEOSLNLDIANTTHJPFEASWESTDEOFVXCFAEVODPNGFPEAMTTHFJYITHCMOVTYSAEXDRNGBLXNNGWVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCGEOE"
+        },
+        "s1000": {
+          "label": "b_hexpair_byte_mod29_64runes_dup_s1000",
+          "key_runes": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝᚾᛏᚻᛝᚩᚫᛟᛄᛇᛝᛋᚾᛏᛏᚹᚹᚹᛝᛠᛞᚳᚠᛠᛝᚾᛗᛉᚷᛇᛞᛝᛚᛞᚷ",
+          "key_preview": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝ",
+          "key_len": 64,
+          "vigenere_score": 66.054,
+          "autokey_pt_score": 65.853,
+          "autokey_ct_score": 67.259,
+          "best_mode": "autokey_ct",
+          "best_score": 67.259,
+          "best_latin_preview": "MEOSLNLDIANTTHJPFEASWESTDEOFVXCFAEVODPNGFPEAMTTHFJYITHCMOVTYSAEXDRNGBLXNNGWVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCGEOE"
+        }
+      },
+      {
+        "variant": "c_hexdigit_mod29_128runes",
+        "key_len": 128,
+        "s300": {
+          "label": "c_hexdigit_mod29_128runes_s300",
+          "key_runes": "ᚩᚷᚩᚷᚹᚹᚷᚩᛁᛄᚹᚩᚹᚻᚩᛇᚹᛁᛋᚦᚻᚱᚱᚱᚷᛇᚳᚾᚱᚷᚷᛄᚱᛇᛈᚷᚳᚩᚦᚩᚾᛁᚩᚢᚢᛇᛄᚹᚢᚢᚷᛈᚱᚷᚢᚻᛈᛉᛉᚠᚾᛁᚻᚱᚦᚳᚻᚾᚩᛈᛇᚹᚳᚠᚠᛄᚱᚷᚱᛋᛈᛁᛋᚢᚷᚹᚦᛈᚹᛄᛉᛋᚳᛉᚻᚾᚢᛇᚷᛉᚦᚦᚹᚱᚳᚷᚻᚾᚦᚷᛁᚱᚾᛋᛄᚱᛋᚱᚳᚢᚩᚦᛇᚦᛁᚻᛄᚱ",
+          "key_preview": "ᚩᚷᚩᚷᚹᚹᚷᚩᛁᛄᚹᚩᚹᚻᚩᛇᚹᛁᛋᚦᚻᚱᚱᚱᚷᛇᚳᚾᚱᚷ",
+          "key_len": 128,
+          "vigenere_score": 60.92,
+          "autokey_pt_score": 64.822,
+          "autokey_ct_score": 61.973,
+          "best_mode": "autokey_pt",
+          "best_score": 64.822,
+          "best_latin_preview": "EOTHSYEAEONGYCSJEIADHDEMAELACIACEOAEOSJTGEABEAEMVWFCHEAAEOTYVRVDSPIJOECCPSXYMWNXACNGEPNWOEYHGYFEAIAHSTNMVEOEGAEOXTLOOEDW"
+        },
+        "s1000": {
+          "label": "c_hexdigit_mod29_128runes_s1000",
+          "key_runes": "ᚩᚷᚩᚷᚹᚹᚷᚩᛁᛄᚹᚩᚹᚻᚩᛇᚹᛁᛋᚦᚻᚱᚱᚱᚷᛇᚳᚾᚱᚷᚷᛄᚱᛇᛈᚷᚳᚩᚦᚩᚾᛁᚩᚢᚢᛇᛄᚹᚢᚢᚷᛈᚱᚷᚢᚻᛈᛉᛉᚠᚾᛁᚻᚱᚦᚳᚻᚾᚩᛈᛇᚹᚳᚠᚠᛄᚱᚷᚱᛋᛈᛁᛋᚢᚷᚹᚦᛈᚹᛄᛉᛋᚳᛉᚻᚾᚢᛇᚷᛉᚦᚦᚹᚱᚳᚷᚻᚾᚦᚷᛁᚱᚾᛋᛄᚱᛋᚱᚳᚢᚩᚦᛇᚦᛁᚻᛄᚱ",
+          "key_preview": "ᚩᚷᚩᚷᚹᚹᚷᚩᛁᛄᚹᚩᚹᚻᚩᛇᚹᛁᛋᚦᚻᚱᚱᚱᚷᛇᚳᚾᚱᚷ",
+          "key_len": 128,
+          "vigenere_score": 64.05,
+          "autokey_pt_score": 65.013,
+          "autokey_ct_score": 64.517,
+          "best_mode": "autokey_pt",
+          "best_score": 65.013,
+          "best_latin_preview": "EOTHSYEAEONGYCSJEIADHDEMAELACIACEOAEOSJTGEABEAEMVWFCHEAAEOTYVRVDSPIJOECCPSXYMWNXACNGEPNWOEYHGYFEAIAHSTNMVEOEGAEOXTLOOEDW"
+        }
+      },
+      {
+        "variant": "d_rawbyte_mod29_64runes_dup",
+        "key_len": 64,
+        "s300": {
+          "label": "d_rawbyte_mod29_64runes_dup_s300",
+          "key_runes": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝᚾᛏᚻᛝᚩᚫᛟᛄᛇᛝᛋᚾᛏᛏᚹᚹᚹᛝᛠᛞᚳᚠᛠᛝᚾᛗᛉᚷᛇᛞᛝᛚᛞᚷ",
+          "key_preview": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝ",
+          "key_len": 64,
+          "vigenere_score": 67.947,
+          "autokey_pt_score": 67.46,
+          "autokey_ct_score": 68.335,
+          "best_mode": "autokey_ct",
+          "best_score": 68.335,
+          "best_latin_preview": "MEOSLNLDIANTTHJPFEASWESTDEOFVXCFAEVODPNGFPEAMTTHFJYITHCMOVTYSAEXDRNGBLXNNGWVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCGEOE"
+        },
+        "s1000": {
+          "label": "d_rawbyte_mod29_64runes_dup_s1000",
+          "key_runes": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝᚾᛏᚻᛝᚩᚫᛟᛄᛇᛝᛋᚾᛏᛏᚹᚹᚹᛝᛠᛞᚳᚠᛠᛝᚾᛗᛉᚷᛇᛞᛝᛚᛞᚷ",
+          "key_preview": "ᚫᚫᚩᛇᚣᛠᚱᚦᚷᛁᛏᛁᛝᚦᛇᛚᛖᛄᚫᚷᚾᛚᛠᚾᛒᛟᛇᚪᛗᛝ",
+          "key_len": 64,
+          "vigenere_score": 66.054,
+          "autokey_pt_score": 65.853,
+          "autokey_ct_score": 67.259,
+          "best_mode": "autokey_ct",
+          "best_score": 67.259,
+          "best_latin_preview": "MEOSLNLDIANTTHJPFEASWESTDEOFVXCFAEVODPNGFPEAMTTHFJYITHCMOVTYSAEXDRNGBLXNNGWVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCGEOE"
+        }
+      },
+      {
+        "variant": "e_sha512_of_hash_64runes",
+        "key_len": 64,
+        "s300": {
+          "label": "e_sha512_of_hash_64runes_s300",
+          "key_runes": "ᚷᛖᚱᚹᚷᚦᚢᚣᚷᛡᚹᛖᛗᚠᚷᚠᚩᚪᚪᛄᛉᚹᚻᛉᚫᛖᚱᛁᛈᚫᛚᚱᛖᚹᚫᚣᛁᛈᛟᚢᛗᛄᛒᛄᚠᚠᛖᚣᛇᛋᛄᚠᛖᚳᚠᚣᛇᚫᚢᚦᚷᛞᚷᚠ",
+          "key_preview": "ᚷᛖᚱᚹᚷᚦᚢᚣᚷᛡᚹᛖᛗᚠᚷᚠᚩᚪᚪᛄᛉᚹᚻᛉᚫᛖᚱᛁᛈᚫ",
+          "key_len": 64,
+          "vigenere_score": 63.914,
+          "autokey_pt_score": 65.37,
+          "autokey_ct_score": 67.189,
+          "best_mode": "autokey_ct",
+          "best_score": 67.189,
+          "best_latin_preview": "NMXAEFBYONEAJOSTHCGOECTJETHDAOEEPXTHYNGGODPEAAEYNWIAIAITHBNDXMNIYAEEODTGTHEAEOFGNPVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAE"
+        },
+        "s1000": {
+          "label": "e_sha512_of_hash_64runes_s1000",
+          "key_runes": "ᚷᛖᚱᚹᚷᚦᚢᚣᚷᛡᚹᛖᛗᚠᚷᚠᚩᚪᚪᛄᛉᚹᚻᛉᚫᛖᚱᛁᛈᚫᛚᚱᛖᚹᚫᚣᛁᛈᛟᚢᛗᛄᛒᛄᚠᚠᛖᚣᛇᛋᛄᚠᛖᚳᚠᚣᛇᚫᚢᚦᚷᛞᚷᚠ",
+          "key_preview": "ᚷᛖᚱᚹᚷᚦᚢᚣᚷᛡᚹᛖᛗᚠᚷᚠᚩᚪᚪᛄᛉᚹᚻᛉᚫᛖᚱᛁᛈᚫ",
+          "key_len": 64,
+          "vigenere_score": 66.13,
+          "autokey_pt_score": 65.247,
+          "autokey_ct_score": 66.913,
+          "best_mode": "autokey_ct",
+          "best_score": 66.913,
+          "best_latin_preview": "NMXAEFBYONEAJOSTHCGOECTJETHDAOEEPXTHYNGGODPEAAEYNWIAIAITHBNDXMNIYAEEODTGTHEAEOFGNPVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAE"
+        }
+      },
+      {
+        "variant": "f_hash_reversed_hexpair_64runes",
+        "key_len": 64,
+        "s300": {
+          "label": "f_hash_reversed_hexpair_64runes_s300",
+          "key_runes": "ᚷᛞᛚᛝᛞᛇᚷᛉᛗᚾᛝᛠᚠᚳᛞᛠᛝᚹᚹᚹᛏᛏᚾᛋᛝᛇᛄᛟᚫᚩᛝᚻᛏᚾᛝᛗᚪᛇᛟᛒᚾᛠᛚᚾᚷᚫᛄᛖᛚᛇᚦᛝᛁᛏᛁᚷᚦᚱᛠᚣᛇᚩᚫᚫ",
+          "key_preview": "ᚷᛞᛚᛝᛞᛇᚷᛉᛗᚾᛝᛠᚠᚳᛞᛠᛝᚹᚹᚹᛏᛏᚾᛋᛝᛇᛄᛟᚫᚩ",
+          "key_len": 64,
+          "vigenere_score": 65.069,
+          "autokey_pt_score": 65.856,
+          "autokey_ct_score": 66.801,
+          "best_mode": "autokey_ct",
+          "best_score": 66.801,
+          "best_latin_preview": "NXIAJEOWNGSAEBYOECYBWROERSTOEOEDYAGTHMMLTHCNGBGJIANLHIWRJPVOEJEOMCRVPWTDVBDYMBVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCG"
+        },
+        "s1000": {
+          "label": "f_hash_reversed_hexpair_64runes_s1000",
+          "key_runes": "ᚷᛞᛚᛝᛞᛇᚷᛉᛗᚾᛝᛠᚠᚳᛞᛠᛝᚹᚹᚹᛏᛏᚾᛋᛝᛇᛄᛟᚫᚩᛝᚻᛏᚾᛝᛗᚪᛇᛟᛒᚾᛠᛚᚾᚷᚫᛄᛖᛚᛇᚦᛝᛁᛏᛁᚷᚦᚱᛠᚣᛇᚩᚫᚫ",
+          "key_preview": "ᚷᛞᛚᛝᛞᛇᚷᛉᛗᚾᛝᛠᚠᚳᛞᛠᛝᚹᚹᚹᛏᛏᚾᛋᛝᛇᛄᛟᚫᚩ",
+          "key_len": 64,
+          "vigenere_score": 64.436,
+          "autokey_pt_score": 66.093,
+          "autokey_ct_score": 66.794,
+          "best_mode": "autokey_ct",
+          "best_score": 66.794,
+          "best_latin_preview": "NXIAJEOWNGSAEBYOECYBWROERSTOEOEDYAGTHMMLTHCNGBGJIANLHIWRJPVOEJEOMCRVPWTDVBDYMBVNGAIASWDXEOFMAEAERNGWAEAELBOEEAEOOEAEANCG"
+        }
+      },
+      {
+        "variant": "g_atbash_of_hash_runes_64runes",
+        "key_len": 64,
+        "s300": {
+          "label": "g_atbash_of_hash_runes_64runes_s300",
+          "key_runes": "ᚩᚩᚫᛏᚦᚠᚪᚣᛟᛖᛇᛖᚹᚣᛏᚻᛁᛒᚩᛟᛗᚻᚠᛗᛄᚷᛏᚱᚾᚹᛗᛇᛚᚹᚫᚩᚷᛒᛏᚹᛈᛗᛇᛇᛝᛝᛝᚹᚠᚳᛞᛠᚠᚹᛗᚾᛉᛟᛏᚳᚹᚻᚳᛟ",
+          "key_preview": "ᚩᚩᚫᛏᚦᚠᚪᚣᛟᛖᛇᛖᚹᚣᛏᚻᛁᛒᚩᛟᛗᚻᚠᛗᛄᚷᛏᚱᚾᚹ",
+          "key_len": 64,
+          "vigenere_score": 62.586,
+          "autokey_pt_score": 66.849,
+          "autokey_ct_score": 65.866,
+          "best_mode": "autokey_pt",
+          "best_score": 66.849,
+          "best_latin_preview": "EOCOETRMOOOEHGOIACAIASEOHFPVTHMWVVLGSOEIAVDPOEFOESVRMSVAEBLRTHMIAIAXIRRRCPNEANGILRALXBWEJCETHXOVHSGPDIEOWEOEOGCAENSMERDA"
+        },
+        "s1000": {
+          "label": "g_atbash_of_hash_runes_64runes_s1000",
+          "key_runes": "ᚩᚩᚫᛏᚦᚠᚪᚣᛟᛖᛇᛖᚹᚣᛏᚻᛁᛒᚩᛟᛗᚻᚠᛗᛄᚷᛏᚱᚾᚹᛗᛇᛚᚹᚫᚩᚷᛒᛏᚹᛈᛗᛇᛇᛝᛝᛝᚹᚠᚳᛞᛠᚠᚹᛗᚾᛉᛟᛏᚳᚹᚻᚳᛟ",
+          "key_preview": "ᚩᚩᚫᛏᚦᚠᚪᚣᛟᛖᛇᛖᚹᚣᛏᚻᛁᛒᚩᛟᛗᚻᚠᛗᛄᚷᛏᚱᚾᚹ",
+          "key_len": 64,
+          "vigenere_score": 65.523,
+          "autokey_pt_score": 67.257,
+          "autokey_ct_score": 66.507,
+          "best_mode": "autokey_pt",
+          "best_score": 67.257,
+          "best_latin_preview": "EOCOETRMOOOEHGOIACAIASEOHFPVTHMWVVLGSOEIAVDPOEFOESVRMSVAEBLRTHMIAIAXIRRRCPNEANGILRALXBWEJCETHXOVHSGPDIEOWEOEOGCAENSMERDA"
+        }
+      },
+      {
+        "variant": "h_caesar_shift_best_k_of_hash_64runes",
+        "best_k": 19,
+        "best_sample": "s300",
+        "result": {
+          "label": "hash_caesar_k19_s300",
+          "key_runes": "ᚷᚷᛈᛟᚹᚾᛉᛇᛏᛚᚣᛚᚦᛇᛟᚢᛠᛝᚷᛏᛗᚢᚾᛗᛡᚩᛟᚳᚠᚦᛗᚣᛖᚦᛈᚷᚩᛝᛟᚦᚫᛗᚣᚣᛒᛒᛒᚦᚾᚱᛋᛁᚾᚦᛗᚠᚪᛏᛟᚱᚦᚢᚱᛏ",
+          "key_preview": "ᚷᚷᛈᛟᚹᚾᛉᛇᛏᛚᚣᛚᚦᛇᛟᚢᛠᛝᚷᛏᛗᚢᚾᛗᛡᚩᛟᚳᚠᚦ",
+          "key_len": 64,
+          "vigenere_score": 66.704,
+          "autokey_pt_score": 69.768,
+          "autokey_ct_score": 67.028,
+          "best_mode": "autokey_pt",
+          "best_score": 69.768,
+          "best_latin_preview": "NTHCIEAIPBEAGNGVOMECYHCGPHOEMLRAMSLOEPOEAAEMOENGNGMVTFNGANOELGTCSRPDJWIREAJYWIAHLOETHYEALTTIATXHABYREOFNGEOOETHTHIGXEENG",
+          "caesar_k": 19
+        }
+      }
+    ],
+    "any_above_80": false
+  },
+  "attack3": {
+    "attack": 3,
+    "variants": [
+      {
+        "variant": "page16_ms_mod29_rowmajor",
+        "key_len": 25,
+        "s300": {
+          "label": "page16_ms_mod29_rowmajor_s300",
+          "key_runes": "ᛠᚷᛟᛒᚾᚢᚠᚷᛗᛡᛒᛄᚣᛄᛒᛡᛗᚷᚠᚢᚾᛒᛟᚷᛠ",
+          "key_preview": "ᛠᚷᛟᛒᚾᚢᚠᚷᛗᛡᛒᛄᚣᛄᛒᛡᛗᚷᚠᚢᚾᛒᛟᚷᛠ",
+          "key_len": 25,
+          "vigenere_score": 68.543,
+          "autokey_pt_score": 67.301,
+          "autokey_ct_score": 67.296,
+          "best_mode": "vigenere",
+          "best_score": 68.543,
+          "best_latin_preview": "TTHAESYEIADAEEAVIHLDHGDJNGDNGNOMHJTHIAPJISJJHAPLLMMNGPTFAEAEAEOELNGFXEOENGITEEETHEATHDANGAEEOYCLNEAPSRLAEAELIALOCTHEEAIS"
+        },
+        "s1000": {
+          "label": "page16_ms_mod29_rowmajor_s1000",
+          "key_runes": "ᛠᚷᛟᛒᚾᚢᚠᚷᛗᛡᛒᛄᚣᛄᛒᛡᛗᚷᚠᚢᚾᛒᛟᚷᛠ",
+          "key_preview": "ᛠᚷᛟᛒᚾᚢᚠᚷᛗᛡᛒᛄᚣᛄᛒᛡᛗᚷᚠᚢᚾᛒᛟᚷᛠ",
+          "key_len": 25,
+          "vigenere_score": 68.069,
+          "autokey_pt_score": 66.445,
+          "autokey_ct_score": 65.109,
+          "best_mode": "vigenere",
+          "best_score": 68.069,
+          "best_latin_preview": "TTHAESYEIADAEEAVIHLDHGDJNGDNGNOMHJTHIAPJISJJHAPLLMMNGPTFAEAEAEOELNGFXEOENGITEEETHEATHDANGAEEOYCLNEAPSRLAEAELIALOCTHEEAIS"
+        }
+      },
+      {
+        "variant": "page16_ms_mod29_colmajor",
+        "key_len": 25,
+        "s300": {
+          "label": "page16_ms_mod29_colmajor_s300",
+          "key_runes": "ᛠᚢᛒᛡᚾᚷᚠᛄᛗᛒᛟᚷᚣᚷᛟᛒᛗᛄᚠᚷᚾᛡᛒᚢᛠ",
+          "key_preview": "ᛠᚢᛒᛡᚾᚷᚠᛄᛗᛒᛟᚷᚣᚷᛟᛒᛗᛄᚠᚷᚾᛡᛒᚢᛠ",
+          "key_len": 25,
+          "vigenere_score": 65.14,
+          "autokey_pt_score": 65.558,
+          "autokey_ct_score": 66.914,
+          "best_mode": "autokey_ct",
+          "best_score": 66.914,
+          "best_latin_preview": "TWVCYPIAEAENAESHAEEEGEJTDJXHMNGNGEOTOEEONGSEOWXCFYJPIATHAGONOEGXNMTHVVHGEACIDCJHEOROHNEOTHTAPAERNGSMHWRIJTHXTFMYTLPXIING"
+        },
+        "s1000": {
+          "label": "page16_ms_mod29_colmajor_s1000",
+          "key_runes": "ᛠᚢᛒᛡᚾᚷᚠᛄᛗᛒᛟᚷᚣᚷᛟᛒᛗᛄᚠᚷᚾᛡᛒᚢᛠ",
+          "key_preview": "ᛠᚢᛒᛡᚾᚷᚠᛄᛗᛒᛟᚷᚣᚷᛟᛒᛗᛄᚠᚷᚾᛡᛒᚢᛠ",
+          "key_len": 25,
+          "vigenere_score": 66.127,
+          "autokey_pt_score": 66.243,
+          "autokey_ct_score": 65.0,
+          "best_mode": "autokey_pt",
+          "best_score": 66.243,
+          "best_latin_preview": "TWVCYPIAEAENAESHAEEEGEJTDJXHMLIDIAEEAEOOCFFLTHGMEAONTHVSVYDCVTLWIAXGAAXGNPWYVINGMAEGPVOOTXSAESWMWSJTHCEGNAEMFSSAEJEWEDPJ"
+        }
+      },
+      {
+        "variant": "page5_ms_mod29_rowmajor",
+        "key_len": 25,
+        "s300": {
+          "label": "page5_ms_mod29_rowmajor_s300",
+          "key_runes": "ᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞᚱᛖᚫᚢᛟᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞ",
+          "key_preview": "ᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞᚱᛖᚫᚢᛟᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞ",
+          "key_len": 25,
+          "vigenere_score": 64.577,
+          "autokey_pt_score": 67.731,
+          "autokey_ct_score": 67.872,
+          "best_mode": "autokey_ct",
+          "best_score": 67.872,
+          "best_latin_preview": "RSAEBFDPEATHOXONVEAOWAETWAVAEANGNGEOTOEEONGSEOWXCFYJPIATHAGONOEGXNMTHVVHGEACIDCJHEOROHNEOTHTAPAERNGSMHWRIJTHXTFMYTLPXIIN"
+        },
+        "s1000": {
+          "label": "page5_ms_mod29_rowmajor_s1000",
+          "key_runes": "ᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞᚱᛖᚫᚢᛟᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞ",
+          "key_preview": "ᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞᚱᛖᚫᚢᛟᛄᛟᛟᛋᚷᚫᛉᚢᛈᛞ",
+          "key_len": 25,
+          "vigenere_score": 65.508,
+          "autokey_pt_score": 68.345,
+          "autokey_ct_score": 65.336,
+          "best_mode": "autokey_pt",
+          "best_score": 68.345,
+          "best_latin_preview": "RSAEBFDPEATHOXONVEAOWAETWAVAEAOTHEAIAOEEYOEEAGJOVVMOEGLBVTHBIGFEASMVANGCVHAYXEOYWWIRAEMYBLHEAGLPEOYRYNBPBBVNMOEJVSEOIATH"
+        }
+      },
+      {
+        "variant": "page5_ms_mod29_colmajor",
+        "key_len": 25,
+        "s300": {
+          "label": "page5_ms_mod29_colmajor_s300",
+          "key_runes": "ᛄᚫᚱᛄᚫᛟᛉᛖᛟᛉᛟᚢᚫᛟᚢᛋᛈᚢᛋᛈᚷᛞᛟᚷᛞ",
+          "key_preview": "ᛄᚫᚱᛄᚫᛟᛉᛖᛟᛉᛟᚢᚫᛟᚢᛋᛈᚢᛋᛈᚷᛞᛟᚷᛞ",
+          "key_len": 25,
+          "vigenere_score": 63.824,
+          "autokey_pt_score": 66.775,
+          "autokey_ct_score": 67.149,
+          "best_mode": "autokey_ct",
+          "best_score": 67.149,
+          "best_latin_preview": "REOXNGIYPJOEEOAELNNILEOEAAENYSNOANGNGEOTOEEONGSEOWXCFYJPIATHAGONOEGXNMTHVVHGEACIDCJHEOROHNEOTHTAPAERNGSMHWRIJTHXTFMYTLPX"
+        },
+        "s1000": {
+          "label": "page5_ms_mod29_colmajor_s1000",
+          "key_runes": "ᛄᚫᚱᛄᚫᛟᛉᛖᛟᛉᛟᚢᚫᛟᚢᛋᛈᚢᛋᛈᚷᛞᛟᚷᛞ",
+          "key_preview": "ᛄᚫᚱᛄᚫᛟᛉᛖᛟᛉᛟᚢᚫᛟᚢᛋᛈᚢᛋᛈᚷᛞᛟᚷᛞ",
+          "key_len": 25,
+          "vigenere_score": 65.135,
+          "autokey_pt_score": 66.767,
+          "autokey_ct_score": 65.15,
+          "best_mode": "autokey_pt",
+          "best_score": 66.767,
+          "best_latin_preview": "REOXNGIYPJOEEOAELNNILEOEAAENYSNOAOCIDEOSYIHYFSVOEIAYYEABHEOYTHEAFENGRDJIANGBNGBGXXLEOTTHRENBAEIAHEANTHNTHDRXEHTHFBOEBDPM"
+        }
+      },
+      {
+        "variant": "page16_zeckendorf_indices_mod29",
+        "key_len": 89,
+        "s300": {
+          "label": "page16_zeckendorf_indices_mod29_s300",
+          "key_runes": "ᛈᚾᚦᛋᛇᛁᚦᛇᚾᚹᚩᛇᚻᚳᚩᛉᛇᛁᚻᛄᚾᚱᛉᛄᚾᚩᛉᛇᛁᚦᛇᚻᚷᛋᚾᚹᚳᛉᚷᚩᛉᚳᚦᛉᛄᚾᛉᚳᚦᛉᚷᚩᛋᚾᚹᚳᛇᚻᚷᛉᛇᛁᚦᛉᛄᚾᚩᛄᚾᚱᛉᛇᛁᚻᛇᚻᚳᚩᛇᚾᚹᚩᛋᛇᛁᚦᛈᚾᚦ",
+          "key_preview": "ᛈᚾᚦᛋᛇᛁᚦᛇᚾᚹᚩᛇᚻᚳᚩᛉᛇᛁᚻᛄᚾᚱᛉᛄᚾᚩᛉᛇᛁᚦ",
+          "key_len": 89,
+          "vigenere_score": 69.2,
+          "autokey_pt_score": 65.191,
+          "autokey_ct_score": 65.51,
+          "best_mode": "vigenere",
+          "best_score": 69.2,
+          "best_latin_preview": "THEATBDNAEBGMSNYYHNGPMOJDCBIANROEOCLFTHSSFEVAEAECORAEEAGFIAGFISDEAHTHGMDFDMPEACLIMEOOEWTHBEAENAEOLRXOETIASGVOEJOEBIAGOEV"
+        },
+        "s1000": {
+          "label": "page16_zeckendorf_indices_mod29_s1000",
+          "key_runes": "ᛈᚾᚦᛋᛇᛁᚦᛇᚾᚹᚩᛇᚻᚳᚩᛉᛇᛁᚻᛄᚾᚱᛉᛄᚾᚩᛉᛇᛁᚦᛇᚻᚷᛋᚾᚹᚳᛉᚷᚩᛉᚳᚦᛉᛄᚾᛉᚳᚦᛉᚷᚩᛋᚾᚹᚳᛇᚻᚷᛉᛇᛁᚦᛉᛄᚾᚩᛄᚾᚱᛉᛇᛁᚻᛇᚻᚳᚩᛇᚾᚹᚩᛋᛇᛁᚦᛈᚾᚦ",
+          "key_preview": "ᛈᚾᚦᛋᛇᛁᚦᛇᚾᚹᚩᛇᚻᚳᚩᛉᛇᛁᚻᛄᚾᚱᛉᛄᚾᚩᛉᛇᛁᚦ",
+          "key_len": 89,
+          "vigenere_score": 67.589,
+          "autokey_pt_score": 64.863,
+          "autokey_ct_score": 66.205,
+          "best_mode": "vigenere",
+          "best_score": 67.589,
+          "best_latin_preview": "THEATBDNAEBGMSNYYHNGPMOJDCBIANROEOCLFTHSSFEVAEAECORAEEAGFIAGFISDEAHTHGMDFDMPEACLIMEOOEWTHBEAENAEOLRXOETIASGVOEJOEBIAGOEV"
+        }
+      },
+      {
+        "variant": "page5_zeckendorf_indices_mod29",
+        "key_len": 95,
+        "s300": {
+          "label": "page5_zeckendorf_indices_mod29_s300",
+          "key_runes": "ᛇᚻᚱᛁᚻᚷᚦᛇᛁᚷᚱᚢᛁᚻᚳᛄᚱᚦᛄᚾᛁᚻᚱᚦᛇᚾᚹᚳᚩᛇᚳᚩᚢᛄᚾᚹᚱᚢᛁᚦᛇᛁᚻᚳᚦᛄᚾᛇᚾᚹᚳᚩᛇᛁᚷᚱᚢᛇᚻᚱᛁᚻᚷᚦᛇᛁᚷᚱᚢᛁᚻᚳᛄᚱᚦᛄᚾᛁᚻᚱᚦᛇᚾᚹᚳᚩᛇᚳᚩᚢᛄᚾᚹᚱᚢ",
+          "key_preview": "ᛇᚻᚱᛁᚻᚷᚦᛇᛁᚷᚱᚢᛁᚻᚳᛄᚱᚦᛄᚾᛁᚻᚱᚦᛇᚾᚹᚳᚩᛇ",
+          "key_len": 95,
+          "vigenere_score": 60.627,
+          "autokey_pt_score": 65.804,
+          "autokey_ct_score": 65.398,
+          "best_mode": "autokey_pt",
+          "best_score": 65.804,
+          "best_latin_preview": "OFXOEIAPAEBCLXLADGANGIAFPOEVIAWGIAIMEOIWWLMFETHNNGGCEAMHSIAOEAOEBTDTHWBNBSNGIAENGNJRMWYLTPNTOEGGNGAEANMPOEOLCTHYICSLXVIE"
+        },
+        "s1000": {
+          "label": "page5_zeckendorf_indices_mod29_s1000",
+          "key_runes": "ᛇᚻᚱᛁᚻᚷᚦᛇᛁᚷᚱᚢᛁᚻᚳᛄᚱᚦᛄᚾᛁᚻᚱᚦᛇᚾᚹᚳᚩᛇᚳᚩᚢᛄᚾᚹᚱᚢᛁᚦᛇᛁᚻᚳᚦᛄᚾᛇᚾᚹᚳᚩᛇᛁᚷᚱᚢᛇᚻᚱᛁᚻᚷᚦᛇᛁᚷᚱᚢᛁᚻᚳᛄᚱᚦᛄᚾᛁᚻᚱᚦᛇᚾᚹᚳᚩᛇᚳᚩᚢᛄᚾᚹᚱᚢ",
+          "key_preview": "ᛇᚻᚱᛁᚻᚷᚦᛇᛁᚷᚱᚢᛁᚻᚳᛄᚱᚦᛄᚾᛁᚻᚱᚦᛇᚾᚹᚳᚩᛇ",
+          "key_len": 95,
+          "vigenere_score": 66.206,
+          "autokey_pt_score": 66.667,
+          "autokey_ct_score": 64.655,
+          "best_mode": "autokey_pt",
+          "best_score": 66.667,
+          "best_latin_preview": "OFXOEIAPAEBCLXLADGANGIAFPOEVIAWGIAIMEOIWWLMFETHNNGGCEAMHSIAOEAOEBTDTHWBNBSNGIAENGNJRMWYLTPNTOEGGNGAEANMPOEOLCTHYICSLXVIE"
+        }
+      }
+    ],
+    "any_above_80": false
+  },
+  "attack4": {
+    "attack": 4,
+    "variants": [
+      {
+        "variant": "cookie_167_xor",
+        "key_len": 32,
+        "method": "xor_byte",
+        "s300_score": 64.171,
+        "s1000_score": 66.103,
+        "s300_preview": "SSYRBPIATHHLOAHIANAPTXIAEODEAEYFMTAYRRHGOEVBOECDGRIOBLTHNGJAETHBSWFYVCGSSWOCWEGTHGAEFAELOELRTHBTHNEOCECOEVEFEAAHVIOAEYAN",
+        "s1000_preview": "SSYRBPIATHHLOAHIANAPTXIAEODEAEYFMTAYRRHGOEVBOECDGRIOBLTHNGJAETHBSWFYVCGSSWOCWEGTHGAEFAELOELRTHBTHNEOCECOEVEFEAAHVIOAEYAN"
+      },
+      {
+        "variant": "cookie_761_xor",
+        "key_len": 32,
+        "method": "xor_byte",
+        "s300_score": 66.509,
+        "s1000_score": 66.421,
+        "s300_preview": "FIAPSOBTAEONGTHPBETWMSGNGFEOAOSXBFLDXWDEGHODOETSGOEHCPSTHBIONPBOWSETHSPTPFLMTHPSITHOENGNGCBNGXAAEDNPAEYPEAEOJSEOCVPNEAEO",
+        "s1000_preview": "FIAPSOBTAEONGTHPBETWMSGNGFEOAOSXBFLDXWDEGHODOETSGOEHCPSTHBIONPBOWSETHSPTPFLMTHPSITHOENGNGCBNGXAAEDNPAEYPEAEOJSEOCVPNEAEO"
+      },
+      {
+        "variant": "cookie_both_xor",
+        "key_len": 64,
+        "method": "xor_byte",
+        "s300_score": 64.089,
+        "s1000_score": 66.192,
+        "s300_preview": "SSYRBPIATHHLOAHIANAPTXIAEODEAEYFMTAYRRDEGHODOETSGOEHCPSTHBIONPBOWSETHSPTPFCWEGTHGAEFAELOELRTHBTHNEOCECOEVEFEAAHVIOAEEOWC",
+        "s1000_preview": "SSYRBPIATHHLOAHIANAPTXIAEODEAEYFMTAYRRDEGHODOETSGOEHCPSTHBIONPBOWSETHSPTPFCWEGTHGAEFAELOELRTHBTHNEOCECOEVEFEAAHVIOAEEOWC"
+      },
+      {
+        "variant": "onion_512_xor",
+        "key_len": 256,
+        "method": "xor_byte",
+        "s300_score": 68.69,
+        "s1000_score": 68.238,
+        "s300_preview": "LJSHMCEGTEJEODSNTHMIIANGOGVREOSTHDMLTHWAOEDITNGIACXCEPMWAENGLPXAEGLWEATNDEILOEVEOCIWNBETHYAEATHEACIAYDIYMJIAGEOOENGSEANI",
+        "s1000_preview": "LJSHMCEGTEJEODSNTHMIIANGOGVREOSTHDMLTHWAOEDITNGIACXCEPMWAENGLPXAEGLWEATNDEILOEVEOCIWNBETHYAEATHEACIAYDIYMJIAGEOOENGSEANI"
+      },
+      {
+        "variant": "ps2012_first100digits_vigenere_stream",
+        "key_len": 100,
+        "method": "subtract_mod29",
+        "s300_score": 64.153,
+        "s1000_score": 65.574,
+        "s300_preview": "XHXTHREOEFNNGIEOROETHIALYGPAWAVNEAINGGBOGEFVTVRIAHPCAEHTNGTHYMSMNJMIJALEORDGHXYGEASEMIAEDFEOEAYIARNGBVOOEEAGEANOBFEIAJEA",
+        "s1000_preview": "XHXTHREOEFNNGIEOROETHIALYGPAWAVNEAINGGBOGEFVTVRIAHPCAEHTNGTHYMSMNJMIJALEORDGHXYGEASEMIAEDFEOEAYIARNGBVOOEEAGEANOBFEIAJEA"
+      },
+      {
+        "variant": "ps2012_first100digits_xor",
+        "key_len": 100,
+        "method": "xor_byte",
+        "s300_score": 65.228,
+        "s1000_score": 68.063,
+        "s300_preview": "XHOETHRLEFNTHYEARJTHXEAOXTHJJCVIASOEIAGMCXOEFVTOEOGHNGPAEHTNITHWFMFJDMXNGANEORGGHEOIOMEDIAEAEFLOSGRNGBOPYVGVNCMFOETHJVTH",
+        "s1000_preview": "XHOETHRLEFNTHYEARJTHXEAOXTHJJCVIASOEIAGMCXOEFVTOEOGHNGPAEHTNITHWFMFJDMXNGANEORGGHEOIOMEDIAEAEFLOSGRNGBOPYVGVNCMFOETHJVTH"
+      }
+    ],
+    "any_above_80": false
+  }
+}

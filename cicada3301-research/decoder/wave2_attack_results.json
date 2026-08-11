@@ -1,0 +1,588 @@
+{
+  "attack1_parable": [
+    {
+      "variant": "forward",
+      "mode": "plaintext",
+      "primer_len": 95,
+      "primer_latin": "PARABLELICETHEINSTARTVNNELNGTOTHESVRFACEWEMVSTSHEDOVROWNCIRC",
+      "score": 65.057,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIANLEHVLEMCEOPNPYIXBAEYRJJIAVJBIAEONOIATLYOEYOEN"
+    },
+    {
+      "variant": "forward",
+      "mode": "ciphertext",
+      "primer_len": 95,
+      "primer_latin": "PARABLELICETHEINSTARTVNNELNGTOTHESVRFACEWEMVSTSHEDOVROWNCIRC",
+      "score": 65.717,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIANLEHVLEMCEOPNPYIXBAEYRJJIAVJBIAEONOIATLYOEYOEN"
+    },
+    {
+      "variant": "reversed",
+      "mode": "plaintext",
+      "primer_len": 95,
+      "primer_latin": "EGREMEDNANITHIWETINIVIDETHDNIFSECNEREFMVCRICNWORVODEHSTSVMEW",
+      "score": 63.97,
+      "snippet": "YTHXXTVRLLBHMAAOEMSLVNGOESPWAIAWAFRWVOYLAETNYRWREGXCJHHGPJIATHOEDFLJNJFJEOVJJIACCVAEEBWVYJTIAEOSPHWO"
+    },
+    {
+      "variant": "reversed",
+      "mode": "ciphertext",
+      "primer_len": 95,
+      "primer_latin": "EGREMEDNANITHIWETINIVIDETHDNIFSECNEREFMVCRICNWORVODEHSTSVMEW",
+      "score": 64.711,
+      "snippet": "YTHXXTVRLLBHMAAOEMSLVNGOESPWAIAWAFRWVOYLAETNYRWREGXCJHHGPJIATHOEDFLJNJFJEOVJJIACCVAEEBWVYJTIAEOSPHWO"
+    },
+    {
+      "variant": "atbash",
+      "mode": "plaintext",
+      "primer_len": 95,
+      "primer_latin": "SRARJHIHEDIYIEMPEORAEOIAMMIHWEOAEYIPIAAEARDINGINIAPEOPLICAEI",
+      "score": 66.718,
+      "snippet": "FRDEAAJBNGYOHAAPNGOEPAETICMEOEAIFCEAEEOEAEOYTHCTHAEENGEAMAESFYEAWSRFAECADCEAFLSAECCDOEMFTHOWTBBNGMME"
+    },
+    {
+      "variant": "atbash",
+      "mode": "ciphertext",
+      "primer_len": 95,
+      "primer_latin": "SRARJHIHEDIYIEMPEORAEOIAMMIHWEOAEYIPIAAEARDINGINIAPEOPLICAEI",
+      "score": 65.8,
+      "snippet": "FRDEAAJBNGYOHAAPNGOEPAETICMEOEAIFCEAEEOEAEOYTHCTHAEENGEAMAESFYEAWSRFAECADCEAFLSAECCDOEMFTHOWTBBNGMME"
+    },
+    {
+      "variant": "prime_mod29",
+      "mode": "plaintext",
+      "primer_len": 95,
+      "primer_latin": "XIJIOSNSTHPNCNTHFAVIJVOFFNSNGVWCNAOJTHIPNMNPOAVADNTHWOJWMFPT",
+      "score": 64.699,
+      "snippet": "VIAWOEOREXPPNTAEFJJAMFNGFNTHFOSTBIPBWIEAEAEOYLOEAXXYEDFIREAPXWXRNGTHCATEOYEGPOLEEAMYMNEAGXEAGVEOEOGF"
+    },
+    {
+      "variant": "prime_mod29",
+      "mode": "ciphertext",
+      "primer_len": 95,
+      "primer_latin": "XIJIOSNSTHPNCNTHFAVIJVOFFNSNGVWCNAOJTHIPNMNPOAVADNTHWOJWMFPT",
+      "score": 65.7,
+      "snippet": "VIAWOEOREXPPNTAEFJJAMFNGFNTHFOSTBIPBWIEAEAEOYLOEAXXYEDFIREAPXWXRNGTHCATEOYEGPOLEEAMYMNEAGXEAGVEOEOGF"
+    }
+  ],
+  "attack2_longtext": [
+    {
+      "primer_name": "wisdom_05",
+      "mode": "ciphertext",
+      "primer_len": 157,
+      "score": 69.017,
+      "snippet": "FCEAXEANEOGEOWTONGIAVTWXTEXDWRXEDOEYGNDJEOFNGNOEOVJEOTHDBGIAGIATHDYNGNGOEONGJCNNGAEIAJRAEBFHIANOOHIA"
+    },
+    {
+      "primer_name": "lossofdiv_10",
+      "mode": "plaintext",
+      "primer_len": 629,
+      "score": 67.774,
+      "snippet": "PMIAFLRAFNGTBJAENGANDJGEOEARVMEEPGGBDYBGRNAECPOESCNAFLRTVYBJWNPHIOECPLJPAAEYIASEYIARYTEAWXNIAIEOIVLE"
+    },
+    {
+      "primer_name": "lossofdiv_10",
+      "mode": "ciphertext",
+      "primer_len": 629,
+      "score": 67.774,
+      "snippet": "PMIAFLRAFNGTBJAENGANDJGEOEARVMEEPGGBDYBGRNAECPOESCNAFLRTVYBJWNPHIOECPLJPAAEYIASEYIARYTEAWXNIAIEOIVLE"
+    },
+    {
+      "primer_name": "wisdom2_13",
+      "mode": "ciphertext",
+      "primer_len": 125,
+      "score": 67.24,
+      "snippet": "FCEAXEANEOGEOWDTHITAEFNGVASREFFFGEALIARWWTHEOXNMSYFEASJIIVBACNGLDWHGACDJVJAEYMFYMEOGIBJVTHBYEAJTTEAE"
+    },
+    {
+      "primer_name": "instr_16",
+      "mode": "plaintext",
+      "primer_len": 89,
+      "score": 67.192,
+      "snippet": "LEAHDLODEAIILEOFAOELNTHTHIAEOEFBOPWNIMJNGBXCARFOEOEWSNTXHHAEPRNGYJYOIJVYPTHPJEOXMDBEJOCAATXNGOVABIYV"
+    },
+    {
+      "primer_name": "koan1_06",
+      "mode": "plaintext",
+      "primer_len": 742,
+      "score": 67.176,
+      "snippet": "HJMAEPEOSOEOEECAPDIAIAIVSDAETDOEOGNMLVEOONDOEIOEEOHAOEAECIATHIEOIADAEOEEASSDFGLPEAOETHLMBOESBTIALMRI"
+    },
+    {
+      "primer_name": "koan1_06",
+      "mode": "ciphertext",
+      "primer_len": 742,
+      "score": 67.176,
+      "snippet": "HJMAEPEOSOEOEECAPDIAIAIVSDAETDOEOGNMLVEOONDOEIOEEOHAOEAECIATHIEOIADAEOEEASSDFGLPEAOETHLMBOESBTIALMRI"
+    },
+    {
+      "primer_name": "wisdom_05",
+      "mode": "plaintext",
+      "primer_len": 157,
+      "score": 66.889,
+      "snippet": "FCEAXEANEOGEOWTONGIAVTWXTEXDWRXEDOEYGNDJEOFNGNOEOVJEOTHDBGIAGIATHDYNGNGOEONGJCNNGAEIAJRAEBFHIANOOHIA"
+    },
+    {
+      "primer_name": "welcome_03_04",
+      "mode": "plaintext",
+      "primer_len": 515,
+      "score": 66.579,
+      "snippet": "XNYBDMOEAEOAEEOHGOJEAJPGTHREOEOIGLEOSMVOEEODJMEIYHTMCAXMMTHJTHGLCTHTIATCDRROERIBLLGPWWIAIFTHRAEDLBTN"
+    },
+    {
+      "primer_name": "welcome_03_04",
+      "mode": "ciphertext",
+      "primer_len": 515,
+      "score": 66.579,
+      "snippet": "XNYBDMOEAEOAEEOHGOJEAJPGTHREOEOIGLEOSMVOEEODJMEIYHTMCAXMMTHJTHGLCTHTIATCDRROERIBLLGPWWIAIFTHRAEDLBTN"
+    },
+    {
+      "primer_name": "koan2_14",
+      "mode": "plaintext",
+      "primer_len": 319,
+      "score": 66.515,
+      "snippet": "LOEJHAEGYWMPEOVTIAOEDITHIAEAEAAEFRRDTEOTHTHIAITYANGOIANGONJAEAEEIAIHLWNRBWFGTHOETHMENGGSTEOIAGFHIEYN"
+    },
+    {
+      "primer_name": "koan2_14",
+      "mode": "ciphertext",
+      "primer_len": 319,
+      "score": 65.719,
+      "snippet": "LOEJHAEGYWMPEOVTIAOEDITHIAEAEAAEFRRDTEOTHTHIAITYANGOIANGONJAEAEEIAIHLWNRBWFGTHOETHMENGGSTEOIAGFHIEYN"
+    },
+    {
+      "primer_name": "parable_74",
+      "mode": "ciphertext",
+      "primer_len": 95,
+      "score": 65.717,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIANLEHVLEMCEOPNPYIXBAEYRJJIAVJBIAEONOIATLYOEYOEN"
+    },
+    {
+      "primer_name": "wisdom2_13",
+      "mode": "plaintext",
+      "primer_len": 125,
+      "score": 65.527,
+      "snippet": "FCEAXEANEOGEOWDTHITAEFNGVASREFFFGEALIARWWTHEOXNMSYFEASJIIVBACNGLDWHGACDJVJAEYMFYMEOGIBJVTHBYEAJTTEAE"
+    },
+    {
+      "primer_name": "instr_16",
+      "mode": "ciphertext",
+      "primer_len": 89,
+      "score": 65.329,
+      "snippet": "LEAHDLODEAIILEOFAOELNTHTHIAEOEFBOPWNIMJNGBXCARFOEOEWSNTXHHAEPRNGYJYOIJVYPTHPJEOXMDBEJOCAATXNGOVABIYV"
+    },
+    {
+      "primer_name": "welcome_03",
+      "mode": "ciphertext",
+      "primer_len": 394,
+      "score": 65.127,
+      "snippet": "XNYBDMOEAEOAEEOHGOJEAJPGTHREOEOIGLEOSMVOEEODJMEIYHTMCAXMMTHJTHGLCTHTIATCDRROERIBLLGPWWIAIFTHRAEDLBTN"
+    },
+    {
+      "primer_name": "parable_74",
+      "mode": "plaintext",
+      "primer_len": 95,
+      "score": 65.057,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIANLEHVLEMCEOPNPYIXBAEYRJJIAVJBIAEONOIATLYOEYOEN"
+    },
+    {
+      "primer_name": "welcome_03",
+      "mode": "plaintext",
+      "primer_len": 394,
+      "score": 64.814,
+      "snippet": "XNYBDMOEAEOAEEOHGOJEAJPGTHREOEOIGLEOSMVOEEODJMEIYHTMCAXMMTHJTHGLCTHTIATCDRROERIBLLGPWWIAIFTHRAEDLBTN"
+    },
+    {
+      "primer_name": "welcome_04",
+      "mode": "ciphertext",
+      "primer_len": 121,
+      "score": 64.171,
+      "snippet": "IAEXVGGLAEROERTPLEOPXJXONEOLROENTATHOEBCTTHCAAGWEFAENGFFHOEOIAEOEOAELBOMGEAAMANXBEBPHMIAXVEOEOTVDNGF"
+    },
+    {
+      "primer_name": "welcome_04",
+      "mode": "plaintext",
+      "primer_len": 121,
+      "score": 63.653,
+      "snippet": "IAEXVGGLAEROERTPLEOPXJXONEOLROENTATHOEBCTTHCAAGWEFAENGFFHOEOIAEOEOAELBOMGEAAMANXBEBPHMIAXVEOEOTVDNGF"
+    }
+  ],
+  "attack3_numeric": [
+    {
+      "primer_name": "missing_primes_mod29",
+      "mode": "plaintext",
+      "primer_len": 180,
+      "score": 71.433,
+      "snippet": "FTOEVAECJNOEFWGPHWFPJEDIATHXMAJNRLAEJOEOJPDIAFSBAGINGDJFOEODTSANGNGWGWCJOEXMSEONGEAHAIAEEAREATHWXWTH"
+    },
+    {
+      "primer_name": "ps2012_first100",
+      "mode": "plaintext",
+      "primer_len": 100,
+      "score": 68.01,
+      "snippet": "XHXTHREOEFNNGIEOROETHIALYGPAWAVNEAINGGBOGEFVTVRIAHPCAEHTNGTHYMSMNJMIJALEORDGHXYGEASEMIAEDFEOEAYIARNG"
+    },
+    {
+      "primer_name": "cookie_both",
+      "mode": "ciphertext",
+      "primer_len": 64,
+      "score": 66.825,
+      "snippet": "YVOAEEOLLIANGFRSFTHLNGPRXNGHSOEWIEOTGWLEOXJIPVGJPTDXIYEXTHTNILJEOYOEEIANTPYTVNGAIASWDXEOFMAEAERNGWAE"
+    },
+    {
+      "primer_name": "cookie_167",
+      "mode": "ciphertext",
+      "primer_len": 32,
+      "score": 66.73,
+      "snippet": "YVOAEEOLLIANGFRSFTHLNGPRXNGHSOEWIEOTGWLEOGOELOEFLRHTHEONNGEOWVCGAIRJHNGRFLEOMLWOOAEARCSTMGIBIRPYLTHM"
+    },
+    {
+      "primer_name": "prod_1595277641",
+      "mode": "plaintext",
+      "primer_len": 10,
+      "score": 66.703,
+      "snippet": "XONIAREOLDJAEREAERWDCGFYEALGCJPEOESAEPMSAEIAEODNGTEORMEOBMYEMSEOBWTHFRTFHXTHEOEPPEOPPOEWAONGXPAERBPA"
+    },
+    {
+      "primer_name": "11570_decimal",
+      "mode": "ciphertext",
+      "primer_len": 5,
+      "score": 66.546,
+      "snippet": "XWPAEGRMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOPEWEOXOSEANGNGPEOLOEJBPTHDPSHINGVYCJAETHG"
+    },
+    {
+      "primer_name": "cookie_761",
+      "mode": "ciphertext",
+      "primer_len": 32,
+      "score": 66.209,
+      "snippet": "HEMLVSWCXJCEXJPYIXFTFRCEAEIASMAEGDPGOELOEFLRHTHEONNGEOWVCGAIRJHNGRFLEOMLWOOAEARCSTMGIBIRPYLTHMVIPJLL"
+    },
+    {
+      "primer_name": "cookie_both",
+      "mode": "plaintext",
+      "primer_len": 64,
+      "score": 65.768,
+      "snippet": "YVOAEEOLLIANGFRSFTHLNGPRXNGHSOEWIEOTGWLEOXJIPVGJPTDXIYEXTHTNILJEOYOEEIANTPYTMEAICNGVTGYRTHVREORSEOIA"
+    },
+    {
+      "primer_name": "cookie_167",
+      "mode": "plaintext",
+      "primer_len": 32,
+      "score": 65.684,
+      "snippet": "YVOAEEOLLIANGFRSFTHLNGPRXNGHSOEWIEOTGWLEOAFGFDMJIAENDIABWNGTHAEJBEOOENHLJBBIAFOEAVNGFWVIAWIRTHBXMPEA"
+    },
+    {
+      "primer_name": "missing_primes_mod29",
+      "mode": "ciphertext",
+      "primer_len": 180,
+      "score": 65.683,
+      "snippet": "FTOEVAECJNOEFWGPHWFPJEDIATHXMAJNRLAEJOEOJPDIAFSBAGINGDJFOEODTSANGNGWGWCJOEXMSEONGEAHAIAEEAREATHWXWTH"
+    },
+    {
+      "primer_name": "761_decimal",
+      "mode": "plaintext",
+      "primer_len": 3,
+      "score": 65.462,
+      "snippet": "HTHBARTHOAEPDOEHJNOATYTGGOEAEOAEJXEARHPGPBOEOEWMMIMHOIAVNPVSHAEEANIAXNFSCGXIWTHMGEATHLOEEOWRAEIYIOET"
+    },
+    {
+      "primer_name": "ps2012_full154",
+      "mode": "plaintext",
+      "primer_len": 131,
+      "score": 65.222,
+      "snippet": "XHXTHREOEFNNGIEOROETHIALYGPAWAVNEAINGGBOGEFVTVRIAHPCAEHTNGTHYMSMNJMIJALEORDGHXYGEASEMIAEDFEOEAYIARNG"
+    },
+    {
+      "primer_name": "1033_decimal",
+      "mode": "ciphertext",
+      "primer_len": 4,
+      "score": 64.898,
+      "snippet": "XHSFLJNYNWLNGMCOEXLIAFTWNLTSIASSYSASGHYSXNOEEOJEAAECFFXIAXSNSEOOETHTRIGVBTHSEAIFIABCYHPGFTOONAAELMEA"
+    },
+    {
+      "primer_name": "1033_decimal",
+      "mode": "plaintext",
+      "primer_len": 4,
+      "score": 64.75,
+      "snippet": "XHSFNGJEOFDSGNGJTCXXPGHEAEAEVFJNGDSJLTGMENFLPEABEXXFLIAYTHRDFEOPFPGXFVFSSEOTXIAECEODAEOEXXNGHNGENGPR"
+    },
+    {
+      "primer_name": "ps2012_full154",
+      "mode": "ciphertext",
+      "primer_len": 131,
+      "score": 64.747,
+      "snippet": "XHXTHREOEFNNGIEOROETHIALYGPAWAVNEAINGGBOGEFVTVRIAHPCAEHTNGTHYMSMNJMIJALEORDGHXYGEASEMIAEDFEOEAYIARNG"
+    },
+    {
+      "primer_name": "prod_1595277641",
+      "mode": "ciphertext",
+      "primer_len": 10,
+      "score": 64.681,
+      "snippet": "XONIAREOLDJAEOPTEACTIAFAEAEXBYWWVNGARFNVMNGLEESTSCEAGEOHPGVFTRBTRGRGTIAMXOVAEOETAONGEOSXEOPNGBBCJTFJ"
+    },
+    {
+      "primer_name": "cookie_761",
+      "mode": "plaintext",
+      "primer_len": 32,
+      "score": 63.971,
+      "snippet": "HEMLVSWCXJCEXJPYIXFTFRCEAEIASMAEGDPPEOMCCAAOOIAOEAOIAEAXNGINGIXPEXFFXAIDNGFOBDAETTHYJAEASOEIAHREAFSI"
+    },
+    {
+      "primer_name": "11570_decimal",
+      "mode": "plaintext",
+      "primer_len": 5,
+      "score": 63.714,
+      "snippet": "XWPAEGCLTMLPVEEOLOEAJEATHIXLITYORCGSWBAEOIEAOEGCWICWEOTHTHGAEOMAHOEJDDMWOEOGAEGPBWCSPRWOEJAPDPNGEHTH"
+    },
+    {
+      "primer_name": "ps2012_first100",
+      "mode": "ciphertext",
+      "primer_len": 100,
+      "score": 63.596,
+      "snippet": "XHXTHREOEFNNGIEOROETHIALYGPAWAVNEAINGGBOGEFVTVRIAHPCAEHTNGTHYMSMNJMIJALEORDGHXYGEASEMIAEDFEOEAYIARNG"
+    },
+    {
+      "primer_name": "761_decimal",
+      "mode": "ciphertext",
+      "primer_len": 3,
+      "score": 63.151,
+      "snippet": "HTHBBIAVADAEEAEGHPMVDECYOIANGNCHGHCBAEAEEARCVGTHWWMAEHJEADOEEOIAMAEYEAVRTAEHFVWTXFXNGPLOEVCDMRIASEOS"
+    }
+  ],
+  "attack4_playfair": [
+    {
+      "primer_name": "FIRFUMFERENFE",
+      "primer_len": 13,
+      "score": 68.371,
+      "snippet": "HTHCTHEOFAERXIANLONHEOLAEHDTHENENGEOBHSWMDIEYWFRTHXCAESXCJHCOEXNGPTLTTHAEIPEAEXBPVTFXNGXWYAEEOSFJETL"
+    },
+    {
+      "primer_name": "PARABLE",
+      "primer_len": 95,
+      "score": 68.048,
+      "snippet": "NGFNSEOFAEMTAETHSICGOEGSGXNLCTHIFRPOGJCVTEEAJEBNGLTHAERLTHJGIBTEAHEAFLCAEHGFSEAESWRSTEATHHYAENGEASEO"
+    },
+    {
+      "primer_name": "1033_AS_RUNES",
+      "primer_len": 4,
+      "score": 66.709,
+      "snippet": "ECBTHNTYOTAETDHVGFYVEONGRWRHBHMOEBLJXLFCEACJEATHMWEAEOMWJIRDTNGEOMEHBEARJFYEIJYITHTNGAJYAEWEFCTHEOLY"
+    },
+    {
+      "primer_name": "EMERGENCE",
+      "primer_len": 9,
+      "score": 65.208,
+      "snippet": "XINCREYVXIAMLOVTHEAYCIDNEAOGAECEOBISJHOEFEEARJFJEOEAAESEOEAJIODXNGPTLTRAEMHMTHXBXTHSCXNGXHYAEEOXTHRC"
+    },
+    {
+      "primer_name": "TOTIENT",
+      "primer_len": 7,
+      "score": 65.164,
+      "snippet": "HTHITEOPAETHXIAODRVHEOLTHDTECIOJMDHSHNXOTEAHTITHMEAESMEJHCOEXNGPSLBIEAVPFTXMAETXFXNGXWYAEJSFWTXLYIIA"
+    },
+    {
+      "primer_name": "WELCOME",
+      "primer_len": 7,
+      "score": 63.741,
+      "snippet": "PIWCMWYVPEAYPEACIJYMNALJVIWOADXDSGOEFGIAJNFIOEGYXOEGTGRDPNGEOOENGSLYVPHMXEOPRXFPNGOEPYAEGNGMNETBYCTH"
+    },
+    {
+      "primer_name": "DIVINITY",
+      "primer_len": 8,
+      "score": 62.793,
+      "snippet": "HONGYFPAETHEOOOELWYHCMIRBNEAOVLCEOEABNGPDLNIEAFAEOWSTAEXSTBCYIAEOPSIEOLATHPFIXEOIRXIEOLSATHJSIWFSMEA"
+    },
+    {
+      "primer_name": "INSTAR",
+      "primer_len": 6,
+      "score": 62.071,
+      "snippet": "TWJACLYVNIAXDHRHCYRHDFAFTXJETTNGCAEXSIYCNTTHPTYXPTECOTLIAPXLEXEAVPFNNXNTHXFLIAXWYAETHHFWFEMIARTEACBV"
+    },
+    {
+      "primer_name": "DJUBEI",
+      "primer_len": 6,
+      "score": 61.296,
+      "snippet": "HOBRCLYTHPEAVAWIYFYIBLRHRWVNEOEHSCDXIACEACFOWEHYXEHPDRNGLIASVJEOVEATHPFJXEOPRXJLIAXWYAEOEAJWFSMIAFRE"
+    }
+  ],
+  "attack5_kasiski": {
+    "n_gram_repeats_count": {
+      "4": 127,
+      "5": 6,
+      "6": 1,
+      "7": 0,
+      "8": 0
+    },
+    "top_gcd_values": [
+      [
+        6395,
+        6
+      ],
+      [
+        6553,
+        3
+      ],
+      [
+        1031,
+        3
+      ],
+      [
+        4992,
+        3
+      ],
+      [
+        2093,
+        3
+      ],
+      [
+        11121,
+        1
+      ],
+      [
+        8278,
+        1
+      ],
+      [
+        10898,
+        1
+      ],
+      [
+        9164,
+        1
+      ],
+      [
+        8532,
+        1
+      ],
+      [
+        7591,
+        1
+      ],
+      [
+        3621,
+        1
+      ],
+      [
+        2303,
+        1
+      ],
+      [
+        5177,
+        1
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    "top5_key_lengths": [
+      6395,
+      6553,
+      1031,
+      4992,
+      2093
+    ],
+    "top10_combos": [
+      {
+        "key_len": 6395,
+        "primer": "WELCOME",
+        "vigenere_score": 69.29,
+        "autokey_pt_score": 69.29,
+        "autokey_ct_score": 69.29,
+        "best_score": 69.29,
+        "best_mode": "vigenere",
+        "snippet": "HMIAIAOFNOEYGPESPRBCAHOXTHPEPRIAGHRNGCEJLEBMYCIALLAYRNNGPBOG"
+      },
+      {
+        "key_len": 6553,
+        "primer": "WELCOME",
+        "vigenere_score": 69.29,
+        "autokey_pt_score": 69.29,
+        "autokey_ct_score": 69.29,
+        "best_score": 69.29,
+        "best_mode": "vigenere",
+        "snippet": "HMIAIAOFNOEYGPESPRBCAHOXTHPEPRIAGHRNGCEJLEBMYCIALLAYRNNGPBOG"
+      },
+      {
+        "key_len": 1031,
+        "primer": "WELCOME",
+        "vigenere_score": 69.29,
+        "autokey_pt_score": 69.29,
+        "autokey_ct_score": 69.29,
+        "best_score": 69.29,
+        "best_mode": "vigenere",
+        "snippet": "HMIAIAOFNOEYGPESPRBCAHOXTHPEPRIAGHRNGCEJLEBMYCIALLAYRNNGPBOG"
+      },
+      {
+        "key_len": 4992,
+        "primer": "WELCOME",
+        "vigenere_score": 69.29,
+        "autokey_pt_score": 69.29,
+        "autokey_ct_score": 69.29,
+        "best_score": 69.29,
+        "best_mode": "vigenere",
+        "snippet": "HMIAIAOFNOEYGPESPRBCAHOXTHPEPRIAGHRNGCEJLEBMYCIALLAYRNNGPBOG"
+      },
+      {
+        "key_len": 2093,
+        "primer": "WELCOME",
+        "vigenere_score": 69.29,
+        "autokey_pt_score": 69.29,
+        "autokey_ct_score": 69.29,
+        "best_score": 69.29,
+        "best_mode": "vigenere",
+        "snippet": "HMIAIAOFNOEYGPESPRBCAHOXTHPEPRIAGHRNGCEJLEBMYCIALLAYRNNGPBOG"
+      },
+      {
+        "key_len": 6395,
+        "primer": "3301_AS_RUNES",
+        "vigenere_score": 68.561,
+        "autokey_pt_score": 68.561,
+        "autokey_ct_score": 68.561,
+        "best_score": 68.561,
+        "best_mode": "vigenere",
+        "snippet": "EOCETHOTIAEAEODELTHEAJCOEYJNGFGTHHSRBDEOMEONEIANAOWTHWXGIAEO"
+      },
+      {
+        "key_len": 6553,
+        "primer": "3301_AS_RUNES",
+        "vigenere_score": 68.561,
+        "autokey_pt_score": 68.561,
+        "autokey_ct_score": 68.561,
+        "best_score": 68.561,
+        "best_mode": "vigenere",
+        "snippet": "EOCETHOTIAEAEODELTHEAJCOEYJNGFGTHHSRBDEOMEONEIANAOWTHWXGIAEO"
+      },
+      {
+        "key_len": 1031,
+        "primer": "3301_AS_RUNES",
+        "vigenere_score": 68.561,
+        "autokey_pt_score": 68.561,
+        "autokey_ct_score": 68.561,
+        "best_score": 68.561,
+        "best_mode": "vigenere",
+        "snippet": "EOCETHOTIAEAEODELTHEAJCOEYJNGFGTHHSRBDEOMEONEIANAOWTHWXGIAEO"
+      },
+      {
+        "key_len": 4992,
+        "primer": "3301_AS_RUNES",
+        "vigenere_score": 68.561,
+        "autokey_pt_score": 68.561,
+        "autokey_ct_score": 68.561,
+        "best_score": 68.561,
+        "best_mode": "vigenere",
+        "snippet": "EOCETHOTIAEAEODELTHEAJCOEYJNGFGTHHSRBDEOMEONEIANAOWTHWXGIAEO"
+      },
+      {
+        "key_len": 2093,
+        "primer": "3301_AS_RUNES",
+        "vigenere_score": 68.561,
+        "autokey_pt_score": 68.561,
+        "autokey_ct_score": 68.561,
+        "best_score": 68.561,
+        "best_mode": "vigenere",
+        "snippet": "EOCETHOTIAEAEODELTHEAJCOEYJNGFGTHHSRBDEOMEONEIANAOWTHWXGIAEO"
+      }
+    ]
+  }
+}

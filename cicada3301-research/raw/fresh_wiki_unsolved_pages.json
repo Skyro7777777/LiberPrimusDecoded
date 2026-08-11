@@ -1,0 +1,20 @@
+{
+  "code": 200,
+  "data": {
+    "description": "",
+    "html": "<html style=\"height: 100%;\"><head><meta name=\"viewport\" content=\"width=device-width, minimum-scale=0.1\"><title>https://cm.g.doubleclick.net/pixel</title></head><body style=\"margin: 0px; height: 100%; background-color: rgb(14, 14, 14);\"><p>A 1x1 image, likely be a tacker probe</p></body></html>",
+    "httpStatus": 200,
+    "httpStatusText": "OK",
+    "title": "https://cm.g.doubleclick.net/pixel",
+    "url": "https://uncovering-cicada.fandom.com/wiki/Liber_Primus_Unsolved_Pages",
+    "usage": {
+      "tokens": 94
+    }
+  },
+  "meta": {
+    "usage": {
+      "tokens": 94
+    }
+  },
+  "status": 200
+}

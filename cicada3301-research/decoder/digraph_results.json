@@ -1,0 +1,706 @@
+{
+  "meta": {
+    "corpus_total_runes": 12956,
+    "n_input_runes": 200,
+    "n_pairs": 100,
+    "english_score_baseline_random": 65.0,
+    "english_score_threshold_english": 110.0,
+    "wave1_autokey_top_score": 69.62
+  },
+  "playfair": {
+    "n_input_runes": 200,
+    "n_pairs": 100,
+    "results": [
+      {
+        "key_name": "FIRFUMFERENFE",
+        "key_runes": "ᚠᛁᚱᚠᚢᛗᚠᛖᚱᛖᚾᚠᛖ",
+        "key_len": 13,
+        "score": 68.9969,
+        "filler_count": 2,
+        "plaintext_latin": "HTHCTHEOFAERXIANLONHEOLAEHDTHENENGEOBHSWMDIEYWFRTHXCAESXCJHCOEXNGPTLTTHAEIPEAEXBPVTFXNGXWYAEEOSFJETLYNRIAGSNGEAEIANHOBYXRYIAWJBGIAYSAENIDEMCWOHRNESNGXIAAEECEANGWXEOXNBATMVXOOAEWOPETPHENGYOEDLWVEOVTHAGEAXXFOOEHDGOEAEVPYGEPINGGJBLAEWECNGEAIMI",
+        "matrix": "ᚠ ᛁ ᚱ ᚢ ᛗ\nᛖ ᚾ ᚦ ᚩ ᚳ\nᚷ ᚹ ᚻ ᛄ ᛇ\nᛈ ᛉ ᛋ ᛏ ᛒ\nᛚ ᛝ ᛟ ᛞ ᚪ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "PRIMESACRED",
+        "key_runes": "ᛈᚱᛁᛗᛖᛋᚪᚳᚱᛖᛞ",
+        "key_len": 11,
+        "score": 68.5481,
+        "filler_count": 11,
+        "plaintext_latin": "PVIWDEACAAEMOEAOEOOSXLTHJATHFNRFTJMTGHYOMVNNTHAEINTHJNARBEANOESMIEWWDPAEOESAESBEAOEEOYAENTWOVITEAORTVNWMVALDNODRMLIALAENHNGVTJRGTADHJONROVREABIAAEXREAAEOOETHOEFJANGDEBHMNHNGOOENOVIARCSEODIEOITHNGJAEBERGAXLJTDHMVWEOEOHNGSTHEOEAGBJEOEAAE",
+        "matrix": "ᛈ ᚱ ᛁ ᛗ ᛖ\nᛋ ᚪ ᚳ ᛞ ᚠ\nᚢ ᚦ ᚩ ᚷ ᚹ\nᚻ ᚾ ᛄ ᛇ ᛉ\nᛏ ᛒ ᛚ ᛝ ᛟ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "PARABLE_TEXT_FULL",
+        "key_runes": "ᛈᚪᚱᚪᛒᛚᛖᛚᛁᚳᛖᚦᛖᛁᚾᛋᛏᚪᚱᛏᚢᚾᚾᛖᛚᛝᛏᚩᚦᛖᛋᚢᚱᚠᚪᚳᛖᚹᛖᛗᚢᛋᛏᛋᚻᛖᛞᚩᚢᚱᚩᚹᚾᚳᛁᚱᚳᚢᛗᚠᛖᚱᛖᚾᚳᛖᛋᚠᛁᚾᛞᚦᛖᛞᛁᚢᛁᚾᛁᛏᛖᚹᛁᚦᛁᚾᚪᚾᛞᛖᛗᛖᚱᚷᛖ",
+        "key_len": 95,
+        "score": 67.8057,
+        "filler_count": 3,
+        "plaintext_latin": "NGFNSEOFAEMTAETHSICGOEGSGXNLCTHIFRPOGJCVTEJEBNGLTHAERLTHJGIBTEAHEAFLCAEHGFSEAESWRSTEATHHYAENGEASEOSLSEACEEAFHBAEFAEWVTHXIRWTHTCYEAWJVFEAEAEOAEITVEMCOEIXECEBEATIAAETHNWHTHHATHEOHLDWOITHAEOEIPOEEAHXEJAWLSXWEOLVROEJIAENHGXDBAEHGEAAEFGHADJVGSOEEVMLVHMP",
+        "matrix": "ᛈ ᚪ ᚱ ᛒ ᛚ\nᛖ ᛁ ᚳ ᚦ ᚾ\nᛋ ᛏ ᚢ ᛝ ᚩ\nᚠ ᚹ ᛗ ᚻ ᛞ\nᚷ ᛄ ᛇ ᛉ ᛟ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "PARABLE",
+        "key_runes": "ᛈᚪᚱᚪᛒᛚᛖ",
+        "key_len": 7,
+        "score": 66.6947,
+        "filler_count": 4,
+        "plaintext_latin": "XNOTHFJYVJVTHEGFYEXMLOOHVCRPXDJSEORCCJBTHLHAERLHJIFBMIAHEATLVAETHJFAILMEREMIAOEEOYAETHEAFWELTIAEXEACHBACMATWXFYJEOTEOAEEAGINGCEAEAEOAEFREOGEWSFXXEEBIAMIAAECOMEOOEHRHIOELAJDCTHAESGANEAHHFAEJMLMWJGLVRSAEMAECOOEXMNBYTHIEAACJTHRNINGYECHNGJOMTVA",
+        "matrix": "ᛈ ᚪ ᚱ ᛒ ᛚ\nᛖ ᚠ ᚢ ᚦ ᚩ\nᚳ ᚷ ᚹ ᚻ ᚾ\nᛁ ᛄ ᛇ ᛉ ᛋ\nᛏ ᛗ ᛝ ᛟ ᛞ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "MS16_ROW5",
+        "key_runes": "ᚾᛒᛟᚷᛠ",
+        "key_len": 5,
+        "score": 66.4476,
+        "filler_count": 4,
+        "plaintext_latin": "XINGFBNGAOXIADLHFIEAAVHEAFGFOEMCNAEXGSCMOBAIAOOETHNEAAESNEATCFYLIAPOEMTNGATHEONOXEOEORWBLIALSYAEWOEOBVSMIAOHYWHOESBATHEIHRAEEOSONGLTHTSWYYSALOMFNACRHHOVXIALOEAEOLSLVAEHEOMEAVEEOEADNCEANGOEOEPOEOIAHESIADWOTHEXXSWRLHEATHXNRPYSBEOTHMHTSAVOEEAEPEOELERO",
+        "matrix": "ᚾ ᛒ ᛟ ᚷ ᛠ\nᚠ ᚢ ᚦ ᚩ ᚱ\nᚳ ᚹ ᚻ ᛁ ᛄ\nᛇ ᛈ ᛉ ᛋ ᛏ\nᛖ ᛗ ᛚ ᛝ ᛞ\nᚪ ᚫ ᚣ ᛡ ᛥ"
+      },
+      {
+        "key_name": "MS5_ROW1",
+        "key_runes": "ᛄᛟᛟᛋᚷ",
+        "key_len": 5,
+        "score": 66.2031,
+        "filler_count": 9,
+        "plaintext_latin": "OENTCJDSOEIATARVFSJFJSOOHPEOEDOEJINMOWIAEAROETHTIAETTIWFCLLIAPTMBTOEESGJTESWJLIALTYAEIXRJVTMIARHYWHOEBJOEAOOEVDANDNEALTHNEWYYTXOMFHIVOEHRVXIALIAAEEOTEALTLIPTHEBIJANOBSWDOETPOEREAHNGDDSPAEOTHAHIAXBWRLFJTHXGPYBJEOEMHNEJSIAWNGHLAGC",
+        "matrix": "ᛄ ᛟ ᛋ ᚷ ᚠ\nᚢ ᚦ ᚩ ᚱ ᚳ\nᚹ ᚻ ᚾ ᛁ ᛇ\nᛈ ᛉ ᛏ ᛒ ᛖ\nᛗ ᛚ ᛝ ᛞ ᚪ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "MS16_ROW1",
+        "key_runes": "ᛠᚷᛟᛒᚾ",
+        "key_len": 5,
+        "score": 65.6641,
+        "filler_count": 6,
+        "plaintext_latin": "XINGFAEPAOXIADLHFWNAVHNRBROEMCEAIAXBSCMOGBWOETHOEBAESOEBTCFYLIASOEMTNGATHEOEAVXEOEORWGLIALSYAEIOEGAEVSMIAOHYWHOEWAEATHEIHRAEEOSONGLTHTSWYYSALOMFEAEATRHHOVXIALOEAEADLSLIGHEONGNVEJEOARMOEOESOEVIAHEMBDWOTHEXXSWRLHNTHXAEAPYWAEEOTHMHTSAVEABEPDOELERO",
+        "matrix": "ᛠ ᚷ ᛟ ᛒ ᚾ\nᚠ ᚢ ᚦ ᚩ ᚱ\nᚳ ᚹ ᚻ ᛁ ᛄ\nᛇ ᛈ ᛉ ᛋ ᛏ\nᛖ ᛗ ᛚ ᛝ ᛞ\nᚪ ᚫ ᚣ ᛡ ᛥ"
+      },
+      {
+        "key_name": "CIRCUMFERENCE",
+        "key_runes": "ᚳᛁᚱᚳᚢᛗᚠᛖᚱᛖᚾᚳᛖ",
+        "key_len": 13,
+        "score": 65.607,
+        "filler_count": 2,
+        "plaintext_latin": "HNFTHEOCAENXIAIXVFHEOLCHDTHENEIEEOBHSWMDIFIAWCNJSOAESSOJHODXNGPTLTNYEPFCXBPTHTCXNGXWYAEEOSCJFBLYEVIAGTEGFAEELITHVBYXRYIAWJBGIAYSNGIIDAECOHVTHVEFTNGXIAAEEFEANGWXEOXIPATOCSTHTHYHTHPFTPJFNGYOEDLWVEOMNAGEAXXCVTHDGOEAETHPYGFPENGGJBLCHFOOEFAINC",
+        "matrix": "ᚳ ᛁ ᚱ ᚢ ᛗ\nᚠ ᛖ ᚾ ᚦ ᚩ\nᚷ ᚹ ᚻ ᛄ ᛇ\nᛈ ᛉ ᛋ ᛏ ᛒ\nᛚ ᛝ ᛟ ᛞ ᚪ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "MS16_FULL_FLAT",
+        "key_runes": "ᛠᚷᛟᛒᚾᚢᚠᚷᛗᛡᛒᛄᚣᛄᛒᛡᛗᚷᚠᚢᚾᛒᛟᚷᛠ",
+        "key_len": 25,
+        "score": 64.2763,
+        "filler_count": 6,
+        "plaintext_latin": "HTHTROEFMVXTHXAERYFNDIAMNCOECGXEOOEAETGIHXEABOEHFTHOEBJEOOEBPIAODXVEEAHEOBVSDGLHSMWJXVXWVREOGFEACIAOHDEOSYHNTHVYFCTOEWAEOMTHWIEEODVERXEAXTHJBPCFHOCHVXNGVBLTHNGWXEOEAYLAEGVFLOEXBNSNEAEDFOWNGDDEAFIAOTHEPOXEOHFSMNPSGVENGHNSVXPIEDIAEABIAIPAVIATH",
+        "matrix": "ᛠ ᚷ ᛟ ᛒ ᚾ\nᚢ ᚠ ᛗ ᛡ ᛄ\nᚣ ᚦ ᚩ ᚱ ᚳ\nᚹ ᚻ ᛁ ᛇ ᛈ\nᛉ ᛋ ᛏ ᛖ ᛚ\nᛝ ᛞ ᚪ ᚫ ᛥ"
+      },
+      {
+        "key_name": "MS16_ROW4",
+        "key_runes": "ᛡᛗᚷᚠᚢ",
+        "key_len": 5,
+        "score": 64.2133,
+        "filler_count": 3,
+        "plaintext_latin": "PILTHMIAVGINGDLRWIFEAMCTMOOHDTHPTNGJNDGOLYRIATHXEOAHXEOJIIAESNGPTEBPAMTMGXBJEABIASNGLSGAEOPFMTHXLYRHANPOSIAEAGOERHCAEIARSHGAIJBNAMPANGGDFEAHJCHHRIAHNGSYAEHLNGSLVEOOTBEOGIAXJOEAIHNGMTPIARNGRESYFNOTHDNEASSHWECTNEOEEANLSIATMDOJBEAMMIVNXOLGGC",
+        "matrix": "ᛡ ᛗ ᚷ ᚠ ᚢ\nᚦ ᚩ ᚱ ᚳ ᚹ\nᚻ ᚾ ᛁ ᛄ ᛇ\nᛈ ᛉ ᛋ ᛏ ᛒ\nᛖ ᛚ ᛝ ᛟ ᛞ\nᚪ ᚫ ᚣ ᛠ ᛥ"
+      },
+      {
+        "key_name": "MS16_ROW2",
+        "key_runes": "ᚢᚠᚷᛗᛡ",
+        "key_len": 5,
+        "score": 63.9083,
+        "filler_count": 4,
+        "plaintext_latin": "PILTHFGMVINGDLRWIMLAECTFOOHDTHPTNGJNEGOLYRVTHXEOVBXEOJIVESNGPTEBDVAENFVXBXMHASNGLSGEOPIAFTHXLYRHANPOSVAEGOERHCEAVRSEOGAIJBNAFBANGGEOMHJCHHRVHNGSYAEHLNGSLIAEOOTBEOVGXJOEAIHNGFTPVRNGRESYEACOTHDNEASSHWECTNEAEMNLSVNAEDOJBLAEFIIAJXOOEGGO",
+        "matrix": "ᚢ ᚠ ᚷ ᛗ ᛡ\nᚦ ᚩ ᚱ ᚳ ᚹ\nᚻ ᚾ ᛁ ᛄ ᛇ\nᛈ ᛉ ᛋ ᛏ ᛒ\nᛖ ᛚ ᛝ ᛟ ᛞ\nᚪ ᚫ ᚣ ᛠ ᛥ"
+      },
+      {
+        "key_name": "WELCOME",
+        "key_runes": "ᚹᛖᛚᚳᚩᛗᛖ",
+        "key_len": 7,
+        "score": 63.8699,
+        "filler_count": 2,
+        "plaintext_latin": "PIWCMWYVPEAYPEACIJYMNALJVIWOADXDSGOEFGIAJNFIOEGYXOEGTGRDPNGEOOENGSLYVPHMXEOPRXFPNGOEPYAEGNGMNETBYCTHYGSVEOHNGEDEIRBRHDNEANGFTSGYOENNGYFOEETHGXRITHCFSNGPIAAEHLEANGPOEAEEOLSOEAMRXJCYIHWNOEEOIMEAHOEDBHRGOWXPSHCSNANEYTHEOIAEOHPVEOTSYMJHWGIAVBFMTH",
+        "matrix": "ᚹ ᛖ ᛚ ᚳ ᚩ\nᛗ ᚠ ᚢ ᚦ ᚱ\nᚷ ᚻ ᚾ ᛁ ᛄ\nᛇ ᛈ ᛉ ᛋ ᛏ\nᛒ ᛝ ᛟ ᛞ ᚪ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "MS16_ROW3",
+        "key_runes": "ᛒᛄᚣᛄᛒ",
+        "key_len": 5,
+        "score": 63.6713,
+        "filler_count": 4,
+        "plaintext_latin": "XNXGTHDEAYNIASDRGVOEAJFLRHRWPEOAMTNGINDYHIACEOOWYWASYWHVBMSIAPJMESJTCVXEIEAEBSIALSNGIAWJVTHXLIACWLOPOETHJYOERBOMPNOENEAJNIEOLAESVSYDFEAHIOBWCBWIASIAFEOSVNGSLTHAOTMVBOESITYHDOJPCGFNMDRLBOTHDHFSTWGMFLOXOEEAHLETHTJMHIEEAJREODWNGHLDYC",
+        "matrix": "ᛒ ᛄ ᚣ ᚠ ᚢ\nᚦ ᚩ ᚱ ᚳ ᚷ\nᚹ ᚻ ᚾ ᛁ ᛇ\nᛈ ᛉ ᛋ ᛏ ᛖ\nᛗ ᛚ ᛝ ᛟ ᛞ\nᚪ ᚫ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "INSTAREMERGENCE",
+        "key_runes": "ᛁᚾᛋᛏᚪᚱᛖᛗᛖᚱᚷᛖᚾᚳᛖ",
+        "key_len": 15,
+        "score": 63.399,
+        "filler_count": 4,
+        "plaintext_latin": "IEOGVMEAETHNIAMLMWPEBRPLVTVSCVDITNGHSLTHIYRTFEOLIEAEOLIJHWSLIAHDOEXMYWHROTEOIOJOLIADEOYAEFHOEGOBIAFSBFEOWOTAEVDMEOVSCSBSAEAEJPSFBEOLNTHLRWSJVEOSFOEOIALIAAEYNLEODFDAWOEDTHRSIGYVYOEEDHMOAENXOEMEEOGFNGJEANHTWNGPLJBAEOHOTHWDVPSBRETSTHJYEOSRI",
+        "matrix": "ᛁ ᚾ ᛋ ᛏ ᚪ\nᚱ ᛖ ᛗ ᚷ ᚳ\nᚠ ᚢ ᚦ ᚩ ᚹ\nᚻ ᛄ ᛇ ᛈ ᛉ\nᛒ ᛚ ᛝ ᛟ ᛞ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "DIVINITY",
+        "key_runes": "ᛞᛁᚢᛁᚾᛁᛏᚣ",
+        "key_len": 8,
+        "score": 62.8517,
+        "filler_count": 1,
+        "plaintext_latin": "HONGYFPAETHEOOOELWYHCMIRBNEAOVLCEOBNGPDLNIEAFAEOWSTAEXSTBCYIAEOPSIEOLATHPFIXEOIRXIEOLSATHJSIWFSMEAFVEAGWVGFRYEHWRAEENMVAEOCBDGEALWDEONLGYDSRWVFFXOEAODNGDASLJXWEOTEOIPNVNGAHTMWSPWFFDAEMHOEGOTHEXRDGAEYVRBWNGAEOPIAGFPTHXTHBDMIHIEPNGVLEYO",
+        "matrix": "ᛞ ᛁ ᚢ ᚾ ᛏ\nᚣ ᚠ ᚦ ᚩ ᚱ\nᚳ ᚷ ᚹ ᚻ ᛄ\nᛇ ᛈ ᛉ ᛋ ᛒ\nᛖ ᛗ ᛚ ᛝ ᛟ\nᚪ ᚫ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "PARABLE_BODY",
+        "key_runes": "ᛚᛁᚳᛖᚦᛖᛁᚾᛋᛏᚪᚱᛏᚢᚾᚾᛖᛚᛝᛏᚩᚦᛖᛋᚢᚱᚠᚪᚳᛖᚹᛖᛗᚢᛋᛏᛋᚻᛖᛞᚩᚢᚱᚩᚹᚾᚳᛁᚱᚳᚢᛗᚠᛖᚱᛖᚾᚳᛖᛋᚠᛁᚾᛞᚦᛖᛞᛁᚢᛁᚾᛁᛏᛖᚹᛁᚦᛁᚾᚪᚾᛞᛖᛗᛖᚱᚷᛖ",
+        "key_len": 88,
+        "score": 62.7961,
+        "filler_count": 2,
+        "plaintext_latin": "INGCFDJEAOIPIFIEGDEAVWJVTLRTHFGERPPLVWLEOHEIJEOAYXEOAOEMERSPPXHXCEAOBFAIHAOEONGSPOPYAEGPFMNGXVYELYMOECBHEANGOIWNGYSCYPNGXNMYXDEAIWVEOLMWLEIOEPSIAAEALIAHPOFOEIADGXVGSREABMREMXPJEPYGTFHJGTWAEMIASHYCJWJMIBAEOIABHBOTHVXNEAVMAVMAELVHWA",
+        "matrix": "ᛚ ᛁ ᚳ ᛖ ᚦ\nᚾ ᛋ ᛏ ᚪ ᚱ\nᚢ ᛝ ᚩ ᚠ ᚹ\nᛗ ᚻ ᛞ ᚷ ᛄ\nᛇ ᛈ ᛉ ᛒ ᛟ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      },
+      {
+        "key_name": "INSTAR_EMERGENCE",
+        "key_runes": "ᛚᛁᚳᛖᚦᛖᛁᚾᛋᛏᚪᚱᛏᚢᚾᚾᛖᛚᛝᛏᚩᚦᛖᛋᚢᚱᚠᚪᚳᛖᚹᛖᛗᚢᛋᛏᛋᚻᛖᛞᚩᚢᚱᚩᚹᚾᚳᛁᚱᚳᚢᛗᚠᛖᚱᛖᚾᚳᛖᛋᚠᛁᚾᛞᚦᛖᛞᛁᚢᛁᚾᛁᛏᛖᚹᛁᚦᛁᚾᚪᚾᛞᛖᛗᛖᚱᚷᛖ",
+        "key_len": 88,
+        "score": 62.7961,
+        "filler_count": 2,
+        "plaintext_latin": "INGCFDJEAOIPIFIEGDEAVWJVTLRTHFGERPPLVWLEOHEIJEOAYXEOAOEMERSPPXHXCEAOBFAIHAOEONGSPOPYAEGPFMNGXVYELYMOECBHEANGOIWNGYSCYPNGXNMYXDEAIWVEOLMWLEIOEPSIAAEALIAHPOFOEIADGXVGSREABMREMXPJEPYGTFHJGTWAEMIASHYCJWJMIBAEOIABHBOTHVXNEAVMAVMAELVHWA",
+        "matrix": "ᛚ ᛁ ᚳ ᛖ ᚦ\nᚾ ᛋ ᛏ ᚪ ᚱ\nᚢ ᛝ ᚩ ᚠ ᚹ\nᛗ ᚻ ᛞ ᚷ ᛄ\nᛇ ᛈ ᛉ ᛒ ᛟ\nᚫ ᚣ ᛡ ᛠ ᛥ"
+      }
+    ]
+  },
+  "hill": {
+    "n_input_runes": 200,
+    "n_pairs": 100,
+    "magic_square_subblocks": [
+      {
+        "name": "MS16[2,2]",
+        "matrix": [
+          [
+            26,
+            11
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "det": 21,
+        "score": 71.4358,
+        "plaintext": "JWSJHHFPXNGEAEIMVAEFYDTHTTHTDGIARFDCNGLCIANIANGVJMTIAWWTIAYARAEXJIAGWRMLEOIAFMWIAFEOCNGXJEONGXVIATVOWENWNGIAJFIRVEOFCAEXINHWEMMXJHOESNMEOJOMECFJTHRYTHIVWIETHXNOEAEAIEOEIAHEONIALHETMAATHVIEOEIIANGTRMVEYOESSTHCOEJNGEAEANGDTHPEAFNGNNVEOFAEGXOESFYTYTHYTOEHEOLT"
+      },
+      {
+        "name": "MS16[3,3]",
+        "matrix": [
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            28
+          ]
+        ],
+        "det": 23,
+        "score": 70.3171,
+        "plaintext": "EASEENGMIATHSNGEGCIAJNAELJTHOYTHNETHBJSDEODNGAENOEGNGTHXBYIAXBEAEOXTHONGIXGDOEEEOFVGASOETEOPONGVNGRIANHGVOEOIANGTHTHLAEOEXHPXYXNGWJEOAIIJIAEYAEOLHTHIABYDVAECENWTHTHIBTHOYNEAMNPYVXRWHCYDHFNTIAEPJXLIBJGGYODMNGCMGRSLWYEAPNTHLJAHAEANGXHPEOXMLAEONAEBGIMFLYNGLF"
+      },
+      {
+        "name": "MS16_botleft",
+        "matrix": [
+          [
+            27,
+            1
+          ],
+          [
+            9,
+            28
+          ]
+        ],
+        "det": 22,
+        "score": 68.9093,
+        "plaintext": "ACOATNHXIGEAEVWMLTEAPHIDXVTNGIHYNEAIEAMNIADDENEOEOXYEOEOATHEOYSOENGIAVAEDGTHRCTRDDRTHBSOECTHLNTJVODLMVIOEPOEDTHJGEONGEOTGDTHEANGDYRNSRLPCIEIAOEEAEANDOSGXIVIAIASIATTHHAEWJCALEJIAXOEJOETMMIAWAEEOSNGVYFVEASAHHAEJVGBAEGNAOTCPHRTRWENGJGTHEHWRLTEAIATHNGOFLXLPY"
+      },
+      {
+        "name": "MS16_toprite",
+        "matrix": [
+          [
+            22,
+            9
+          ],
+          [
+            6,
+            27
+          ]
+        ],
+        "det": 18,
+        "score": 68.2027,
+        "plaintext": "RHJBXEYLAVTHINGREADDJLLFIPLNNEAXYNPCTHLVCRWEAOENGSCDNGSIAOLMREAIAFEACEAIAOEVNIATIAAXMPREAIDPYETHPWIATHMVIAEMALVTHOIVFEOVTHEOEOMOTLGXIOEXSMNGVDLGOEHOETHEOTXEOJEOXBFTMMPPAENGTHEOSNYYCLCAEPAEEOBIALRCHDCIHEOXIDLMEOAHTHIAFAGNGLLTHAEPIDPTHONGCEOEIOEDJMNHEJXOEPIANG"
+      },
+      {
+        "name": "MS16[2,0]",
+        "matrix": [
+          [
+            17,
+            11
+          ],
+          [
+            27,
+            19
+          ]
+        ],
+        "det": 26,
+        "score": 67.7178,
+        "plaintext": "THOEPFOEXOJIWNGXAALWGOEJPXCVAEETMBCLNOGMAEWEWWNGOESEOCOESOWIAIAVOOELEIAXNOIALAEVPCEAECVOSPNGEATHAGRMNGWEAAFTAEAEEBAEMTHJGSLATHRFYAFCTHIAEOIAGNIATOGWTTPERTHJGEONEACHNHYWIAWESIXDXTHENGHPTHMNGVNGGHRBPIPCIWEOCMXAEIHOEEORDJPPWTLODBAEHISCTHIAGOEAOVTOPXRCT"
+      },
+      {
+        "name": "MS16[0,1]",
+        "matrix": [
+          [
+            6,
+            22
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "det": 7,
+        "score": 67.4597,
+        "plaintext": "AEJGSLHMFXXAEIAIOVNFMDATMTIGOERIDEONGMCEONJNGEJWTOWWTPYCRSXFIAEOWVMXEOVFVWOEFHCSXOEOTXEAIAJVEAWXNLNGBJXIPVXFDAEEAIDHPEMMOEJEOEWNREOOOYEAEFEATHNGYDIDWGENGXCOHEAREDIAIEOTIAMHTHTTHAGTMVEOEOOIANGDRAVMYDSAETHVOEBNGREAMDTHPAFHNPVEOFLGEOENFITLTHOETHHRL"
+      },
+      {
+        "name": "MS16[3,0]",
+        "matrix": [
+          [
+            27,
+            19
+          ],
+          [
+            9,
+            17
+          ]
+        ],
+        "det": 27,
+        "score": 67.4536,
+        "plaintext": "NGOGYEABBLENGOSLIWEOCJXEATHHAEESVJEANBOEGCDTOESHVBEAPIREAPBWHRAEMEAOESSTHNGBXWIAAEHNXSTAEMIAWOBNGACAEJEOVELMDMTWMNGJVXIAIAHLJPHEOXFNNGEOIOCCHMBJVHDNSLNGECOEOEOENWOESEOAHYSCEOEAMNGMOEDYOENGSONOEYFMJEYNEAVANNGTHSEBEAAEPOXEAGIADIBVMNGYCIAINGEOCJLWAEAEBEOTHEONR"
+      },
+      {
+        "name": "MS16[3,1]",
+        "matrix": [
+          [
+            19,
+            6
+          ],
+          [
+            17,
+            22
+          ]
+        ],
+        "det": 26,
+        "score": 67.3507,
+        "plaintext": "OESMAEDLCHFBYIAGGEACITTHIAEEPOEIAMLEONGDMAOETPEACMJNMLTHOMLNGHXXXOEEALEOMNEEAHXCOOEEDPMXOEMJEAIAXSATREOEONSGYRIAEADYOEEOVILJWGBVFNGNFTHSVORTFXAEHTHNTRBMHSNGTGAJDEAAINGWXTHMVBLPNSWAJTHCSLIAFIAETHPYCBODENAEDOEAEBTHLEOVTHILAEBRSHDYDTHOEJTHSITOGLOEYHFEHD"
+      },
+      {
+        "name": "MS16[1,0]",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            17,
+            11
+          ]
+        ],
+        "det": 11,
+        "score": 67.2464,
+        "plaintext": "SAEEEOGOIAJSAEJCOJTHAEOEJXOEOTHOESBYSNGEOXNGDNLGETHABOEIAEABOEEOOETHWNGLXVDNGEVFAEGAESWTEAPNNGLNGJIATHCVEAOSNGEOTHJAEEAXYPLYTHNGYJEAALIYITYHEORHJIAWYVVOCTNOTHMIMTHGYAEEAAENOEYEOXRWAECEODAFWTPENJYLAEBRGEOYADOENGCMIARTHLSYXPDTHEAJXHFEALXWPLXILREORAEOEGIMGLLNGOEFO"
+      },
+      {
+        "name": "MS16_botrite",
+        "matrix": [
+          [
+            6,
+            27
+          ],
+          [
+            22,
+            28
+          ]
+        ],
+        "det": 9,
+        "score": 66.5558,
+        "plaintext": "PBETIIAYNGBFOEEATTHPMDPDLNGECXGNYYFWBTXBJXHNGHDPTTLPTXWEAYAEAMIRROTMNAIAVAGTHXYARTGMMAIAHNJFRTHCEAEASNTIAIBTHIAEYHEOIAENGFSOEALAIPJXFJEOELNGSEAAENOEOEWCTHOEDOMEAPTEOOLNIIAYVOYEOVDRNGEOYIAFOGNXGNGEAVIGYEDVLERLNGRDLIYPAERCTIANGIANBEALDPJVWYOEAEFBOE"
+      },
+      {
+        "name": "MS16_topleft",
+        "matrix": [
+          [
+            28,
+            9
+          ],
+          [
+            27,
+            1
+          ]
+        ],
+        "det": 17,
+        "score": 66.3212,
+        "plaintext": "EOOHMNGOCIJMWGENGEILEFNGOENIAJFMRHNNGDEAEAEOWAVISIOEEASIFJPNGAEEXTOMYNGAEGXEADVEWMIAEETBIBFBTHIAOBVBSTJIOEVHOESTHNOHCFIABBOEAGJNGHVTNGTHGRTHRVXAEOLPEOHTAOEEOLFOFBYBOEIAIGFWROSCNVJIATHYHVRSJROIYYCXTHBBCYRECREFAIBCLWVHDBGMJNILEAWCOEOEAIASOI"
+      },
+      {
+        "name": "MS16[0,0]",
+        "matrix": [
+          [
+            28,
+            6
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "det": 23,
+        "score": 65.6243,
+        "plaintext": "HEAOEMNFMYTHNGNGTHGGIAFNOELNTHNYWNATHOEJIDVDAEAEIOEHNGNXPYNXJEAAXYOBIPGIAOEXEOFVPAFOEVEOYOXVYRBNGGPOEAEIAITHHLTHOEGHFXCXTHWMEONGIIAJHAETAAELXTHEBNGDFAEEOEJWTHTHPBNGOYNEMDPNGVBRXHBYMHNNEAIANPGXXITHJIGAOGMJCOGEOSTWIEADNOELLAFAAENGGHFEOWMTAFNNBEOINFMYRL"
+      },
+      {
+        "name": "MS16[1,2]",
+        "matrix": [
+          [
+            6,
+            19
+          ],
+          [
+            26,
+            11
+          ]
+        ],
+        "det": 7,
+        "score": 65.2111,
+        "plaintext": "GCTTHLDVAJHNGCMHVXTHMEAWVNTNGVOEOOYBFOEOEXAEBOWIATDSOTHDSEIAAENHDNRCNGPGLEOYSNVNGJYDHDANGCNEOEGESFMECYVVFTFMTWWCTDJIAEXBSSENGDJFNGWNGISGEOIADIDTHTHGVEOBAEMYSJAGDAIAVOIMEODHNIATHJYFJOEYJRAEOEEAFEAEIFVDAEODXFXIWREAWHRSEOHSFMOEGFIANGDTHMXTHEGWHIABXL"
+      },
+      {
+        "name": "MS16[1,1]",
+        "matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            11,
+            26
+          ]
+        ],
+        "det": 21,
+        "score": 64.7841,
+        "plaintext": "HBNOTHVNGMWBHOWAECYPNBYYSOEIEOOEAIARBEOTHCERTBVXIAIANMAIALTHYITHEEEOOEEAIAOAEFAVMBGOETHWTHEOEEYMDJDCFSDEVIMNXEOPWBXHETHYTRCNGANGDXTHTHFJBMTXIACLAETTNIIANGAEIJXVAGTIAXNGEOMGTAEAEEAWFLOEGOFYEOPGIAJVIXDEATEMHJLTHPFXTWEIBYEJAEAAEOPWIAEOLPTHTHPNNVIAHWPREOF"
+      },
+      {
+        "name": "MS16[1,3]",
+        "matrix": [
+          [
+            19,
+            27
+          ],
+          [
+            11,
+            17
+          ]
+        ],
+        "det": 26,
+        "score": 64.6964,
+        "plaintext": "TXEOENGHNGEORTFLNAEJEOPAIBGEOTHEMEODWYOEOEFGOFIIAWOECRSOEWRSTHPNGIEANGNGGTHAEJIHAOEONGGLOOEEANWIADTHJEAFXPGMAEJTHIAEOTFMFBEPYREGTYIOEVTHGELAETTHLCLMGLEAEASLSFANEOOVIAAEAGNGIAPSWCVWPAEYSFNGCANOEETLOEPMLOEFOEIVFXSXWTDYDEOYIBNNAEGLNMFIAOIAFELPAEDIPTYDCWD"
+      },
+      {
+        "name": "MS16[0,2]",
+        "matrix": [
+          [
+            22,
+            17
+          ],
+          [
+            6,
+            19
+          ]
+        ],
+        "det": 26,
+        "score": 63.8936,
+        "plaintext": "EIMXTHHOAERDCIAEACOWGNGYAEOIAMAEORNOLRFEAHAEBEANTDPJYNWJYAEJBTHAGIAFSEAIEOTHDLEOIAEOCOLNAGXWSEWBETTBEADSHOVFDFJMDNGSMBRSBJOEAETOCPRYCMCWTOEWIJBJLGSOSOEXEALTTHXNJMDSNREAEJAEIAAGALXRAELEAEOWHIAFSBIAFAEJSNIPEOPVNGMYAEAATIAANFJHEAFHCPGNGPRAEHNGODNPM"
+      },
+      {
+        "name": "MS16[0,3]",
+        "matrix": [
+          [
+            17,
+            9
+          ],
+          [
+            19,
+            27
+          ]
+        ],
+        "det": 27,
+        "score": 63.6516,
+        "plaintext": "OETHBSMYIAITDJWXTNIAELDMFIEASGINVIAEAEAFJBLEOEVNNXIAPVXIAEGDEOEOEEONNGNXCYGEAVOTWOEAOEOEYHEANGEOREATHECOTENGOIDFJFYSFEOLSHDOEVAERCYWMDOWLWDCCRCIAHIAMLBIMAEFTOCEAHWIAJNIVIATPIAPOEALHEAEDOEEASJPBSFMEAEFOIATVJAFAREODMJOEEACAEOEJFXBHFYWAELOASGBEOCNEA"
+      },
+      {
+        "name": "MS16[3,2]",
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            22,
+            6
+          ]
+        ],
+        "det": 7,
+        "score": 63.4546,
+        "plaintext": "BYORVXMIABFOWAESYEONAEYCSMIEOAIANGBNTHREYTEVIAIPIARMCIARTHNIGEGEOEOEAVOHFEOVGBOEOETWEEGERMEOJGCTHSIEVIDNWEOAWXXYEBYNGRONGEANGFXHTHCJBMIXFCMAECTJIEANGLINXSAPTEOXAEEOOGCAEBEANGFHOEOOPYIAPNGIAFVTXEEAIAEOEHTLMPOEXMWCIVYCJNGAEAEODWXEOXPYTHCNAEVOEHNGPWEFFL"
+      },
+      {
+        "name": "MS16[2,1]",
+        "matrix": [
+          [
+            11,
+            26
+          ],
+          [
+            19,
+            6
+          ]
+        ],
+        "det": 7,
+        "score": 63.1395,
+        "plaintext": "HCAEECYMOEAAEEONVTHEONGNSDPDGEBGTFRXIAIAHGSGMYTVOGYHVGYSOEEOAAEBJYBTIAGGOEVNGGBOEIAATAEBADYNICLSRRHOGTHFJBMOEEAXRTPTHDHTHVITWCFPCVVAESVAXOEAEOBJDTYCEASDHTHIAOHEAWNGACTTHAEIAXRCVHSLCCEANRNGLIEAVAERIANGOPIAXGAEAEOYAIDPOEAJTHOEOEEAEOLTDPCNSNTHNBNGOEOEGIIA"
+      },
+      {
+        "name": "MS16[2,3]",
+        "matrix": [
+          [
+            11,
+            17
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "det": 11,
+        "score": 62.0862,
+        "plaintext": "EHYOTMPFGYXNGFTHYGYFAEOEENINRWRAEAOEEOIOVWAEOEIVHXNXPXNNGJFAAEYRBJPIIAIXMFCPEOFYVAEYRXSYXBRGAEPTAEMIJHXTHPGCFICMTHSMHNGRIAMHHTEAAEDXOEEDNGJFGEOEAJJTHBPLNGDYTHENDJNGGBNGXEBYMGNMEAANJGVXHTHHIDAMGMJVOWEORTLILDAEOEEOLNGFEAEPGAEFLWHTYFPNEAEONNLMWR"
+      }
+    ],
+    "brute_force": {
+      "sample_size": null,
+      "n_matrices_tested": 707281,
+      "elapsed_seconds": 99.58,
+      "top": [
+        {
+          "matrix": [
+            [
+              0,
+              13
+            ],
+            [
+              22,
+              11
+            ]
+          ],
+          "score": 79.3961,
+          "plaintext": "HMEBLAENJOEMOBFTEEOEOEAEOHIAIAECBCHGMSNGJSTDPAEDEOHOJOHMNGFEASCINGRIABIAFTHAEEAMSEAEVASCSYJOXCNAIALSTHENGOEOINVEATHIASTHEOYPIOCOTHTHINGGXWJPTHWNNGTOEDGENGOXEAETHWLBDRTHNGIOECMTHREFOEEATHBVEONGGDHIAEITHWRTHSTHYDWTGCTHAEVAEEAEOSXMLHINVAIAEGINGEOENAEGYRGAESTF"
+        },
+        {
+          "matrix": [
+            [
+              7,
+              9
+            ],
+            [
+              9,
+              9
+            ]
+          ],
+          "score": 77.5557,
+          "plaintext": "JGWONGDVEALEATAEPPEOHTHIALCOIAEEONAEREWEASMDHIATHEOOXAECOETHAECXPJJBTHTTHAFMPWVYOEAAENGHDMBTHJYXCMEABOCMTHRRIGJDOJNTPNGSITEOOLNGDNLYTHODEOHFAEGITHEOBTAMHAEVLREOFEALMEOPAEEDCPMEYNGALJMCJEATHOEIAPAIAEANGOESWWPAETHXAEAESAIPVAEPLCGOESXLSJNOEWHAETHOTHIATXJFNNGEATTHNG"
+        },
+        {
+          "matrix": [
+            [
+              13,
+              0
+            ],
+            [
+              3,
+              11
+            ]
+          ],
+          "score": 77.532,
+          "plaintext": "MXBOEAETJYMPBNGTNEONGOEDEORIAREBBAEHFMINGJSAEDAEAETHENHAEJXHAENGMENGSOEIEORHBJFAEAENMAEEAAVPSOESPJTHXONGIAWSXEAEOEFIHVATHISEAEOEPXONOEATHTNGVXNJOETHNNITOEDHEROTHELTHRLEDIATHLISCTTERJFWEANBMEOTGLHWAEAETHORNSWYSWVGITHOEVIAEPEORXIALPIEVAINGGEANGVOEDAEDYDGSSAFO"
+        },
+        {
+          "matrix": [
+            [
+              24,
+              8
+            ],
+            [
+              7,
+              11
+            ]
+          ],
+          "score": 77.5254,
+          "plaintext": "YFFAGMPYOJGGTHLOAEYDENIAIMDJLEATNGSOEHRTOOOEANADTHIAPDTHOWAHOELNGRAWHFASMNEAEOAIAROELEOEOFTHAIINGEONGFOEMSTMMEACISEONGFCBFDTHBIATHATHATHEOJNGSAJOEETINGPPVMEOELTLIOTOFDHGHGOTISSEEAROEBASYIWEFEAEAEJVOROMELDVAXNENONGNGPXAEMEAAENGIADATHYDOEFJTHENGIIAJAE"
+        },
+        {
+          "matrix": [
+            [
+              17,
+              3
+            ],
+            [
+              24,
+              0
+            ]
+          ],
+          "score": 77.4275,
+          "plaintext": "ITJNGTHIFNEMMABTHOEAFEPBRBRWTEOVFPEAIAAEDEOAEOIADITHREONTREONGVVAENGXOENCEOAEOEOFTHNEOFSDMENGOMEDXLOEJNHATIAEOIFBCOESFEAEAOBRTHTMTHEOOIILYATHONGHTHMEAFNGSCNGBBDNIAMBERHGWIAMPXIORXAETHHRTHGVRIOEIAOHBEOIALVTHOEHNGPJYSEALNGIAGWMPBAEGFMAROESFATOLYFERESERPTHSCL"
+        },
+        {
+          "matrix": [
+            [
+              20,
+              26
+            ],
+            [
+              28,
+              14
+            ]
+          ],
+          "score": 77.2581,
+          "plaintext": "JLFDWGLEEEAWTHEOVEIJWNGVBGIASHEADOEIDTGAHEVETHAENGOEAEBIAOEAEEFEAEOTOIREACMAEAOIARNGMXVBOETONGBXWEOFTHPAEJXNFNIABNWIANGVIAOPICVEFTEONBHEAEAEAIMNGHGOIHPNGNGTHOLXGLXBRIARXECENOENWTWINTHOCNGEANGSTOATHNGNGAENGYCWGAARIANREGYYENGVEJINYXIANGCMBIEAEAJWTHHENGIATHTHC"
+        },
+        {
+          "matrix": [
+            [
+              6,
+              16
+            ],
+            [
+              16,
+              22
+            ]
+          ],
+          "score": 77.2464,
+          "plaintext": "JAFEOWCLAEEAEWPEODEOJNGNGLBNGIAMHNDTIEATTHACENGEMAEIAOELBHOELEDEASTHIHEAFMDEARIAEONGPXOBETHNGBXLEOAETHEOAEEXTFJIASNEOIAWVDOTHIGVEOFYEOWBBEAEOEAMMFHAOHHINGNTHOLRGTXFROERMEPECOEDWXWYNOEOENGSAHSNGONTHAENGVNGEACDGHAPIATHRJGRYDNGLEVIIAYTHIAWCEABPEAEOJNGTIAHFNGYTHGHY"
+        },
+        {
+          "matrix": [
+            [
+              2,
+              23
+            ],
+            [
+              10,
+              14
+            ]
+          ],
+          "score": 77.1573,
+          "plaintext": "YJNFAWVLEEVWAEOTETHJAENGNBAIARHCDDIAETIASEEAEEAETHOENGBTHOETHEIAEASTHIDEAHMYEAYIAIANGNGXXBSTVNGEOXJEONGTHRAENXVFNGIACNSIATVCONGISVCFEOEOGBOEAVEAIAMHHAOEOHANGWTHWLMGYXYRTHRNEOEYOENWEWIANBOXNGCAYSOONTHENGTHNGJCPGTARIAAERIGNGYAENGFESIIAYSIAOECOBOEATHJOETMHSNGTHTHAH"
+        },
+        {
+          "matrix": [
+            [
+              0,
+              24
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "score": 77.1288,
+          "plaintext": "FYNGHPOEVEOGYIAHOEAJNGTHAYNGTJTHBOHXXAYWSXMEARIOENGBNXSEONXBSWBOMEOBWFHAFYOENGYNGLENOMEAMFEONGITDIAJOEMEOBAAPOINTEAEMFNGRVTHIARIANENSXIAEEOOEENGDEOEAXROEBSIAPBDEXGTRXEFOWTWEAEAWTFALIHEONGNGAEVXBOEFEJWGMEATHEACDAETHENGNYBYNGOEISGJOINOEOTHAENSTHAFOENTHOEAELMJF"
+        },
+        {
+          "matrix": [
+            [
+              23,
+              14
+            ],
+            [
+              28,
+              10
+            ]
+          ],
+          "score": 77.0635,
+          "plaintext": "HMYFWLHATICLYYWITMIATHNGOAESTHIALTJEOHAEYDBIOITHVDNBODNTHIOEOENGAETEOROEIABOOECSWTHDJFONGAEGTHYJJYEXYVIAJMFYSMCEASEOWTHNGTHEOOEWHFVYOEOVOENGOEJBLIASNGNIAHTHPXGAVPTHJOEEAVEAMINGISNEOLNLTHCIANGNGTHEDFEOENGOEXITHAETHAEGOPADOESOEARPEAHIATHOEIREOYHEASTHGDOVOETMNAEYIAJTHCXCIA"
+        }
+      ]
+    },
+    "hill_climbing": {
+      "n_starts": 50,
+      "n_iters": 500,
+      "elapsed_seconds": 3.3,
+      "best_matrix": [
+        [
+          16,
+          15
+        ],
+        [
+          12,
+          6
+        ]
+      ],
+      "best_score": 75.7495,
+      "best_plaintext": "MTHNGTHRFAEHTJEJFINGBNGTEAAEMWBJVRVTHWNOSHENLLIOEAEENEFENIAVFREATVAEITBXBWEOCDMODNGNGEATVIJNGELVEAEANRVEOYILEOAENDEOBLEOSJSTHXVBEOTTHEWAPSLNGPNGINTEAWEOIMYPCHPBSTHANIIATAIATMENGATPEOFGRIIOEYTHGTHBPWEOGEOTHOEFNPVLCJCEEAAEOWIARMFAENEATHCAETHENGTAEAWBAYCIANTH"
+    }
+  },
+  "two_rune_functions": {
+    "n_input_runes": 200,
+    "n_pairs": 100,
+    "n_output_runes": 100,
+    "results": [
+      {
+        "function": "sub_rev",
+        "score": 69.9683,
+        "plaintext": "OEXPTHJOYARJGWEWWIANTRGNGSNGEAOECOMNXDIAPBCOEEANCIRHEOBOEOPLAJBJRBTNGLAONNGJAIANYWINDMOEIIASYAEPVXNGEANGMYNGJEOVJOESTRROOEEIAR"
+      },
+      {
+        "function": "add",
+        "score": 66.8603,
+        "plaintext": "DNGAEIAEOIWBAEREOJAEEOHOEOECTIYJYDYETHWTXGEATXEGAAEWTBEORTMYYPXTHHCEAREOSOECNGPEOSEAEIALGAMJMAEBLYTHHWEIAVWOPDAEREAEAIMXIAEAAESTHFJR"
+      },
+      {
+        "function": "sub",
+        "score": 66.799,
+        "plaintext": "WSTIAEYOCAEEDOEJOEOETHLPAEDHXHVWAYILSGTHTEOAWVLAMAENGBEOWYTNCEEOEAEEOPHNCYLHECTHLOOEMLGIWMTHXORTEASHVHIOHEBEAEWXPAEAEYWJTHAE"
+      },
+      {
+        "function": "add_2r2",
+        "score": 66.1355,
+        "plaintext": "THASIANTHNDAEYNGLOWVODVYEGAGCNGSMLXEAGEOTSSLNGPPFPOEEOEAEYTHSRDGPSFYRXCRAXEAIOETXIAEOREANCTFOTIBPREOISFRMYMEAGAEXCSAEAXNVH"
+      },
+      {
+        "function": "2r1_add",
+        "score": 65.0514,
+        "plaintext": "NITHAEIAEAEOEANGSSPXFDCXXOEEOXNXGEAITVCXEOXOIAIIAOERHMNXFVODEANEOETHJEOIEODIVSOEBSAWBLTHACMEOGTHBMXREOMLJDIWIASWIAAOEAEJNGNGNGLOR"
+      },
+      {
+        "function": "mul",
+        "score": 65.0026,
+        "plaintext": "RAEIAFPVIHFIIAEITHJRNGOETHTHOHTMAGNOEFFNGFPARGLGIOLYEALFEOENGWNCEYVRNGFNGOELYAOBEROEOXFEAJEORGEOEAVIGEOHIXBISFTHLFAEFAEAEGOEF"
+      },
+      {
+        "function": "xor_mod29",
+        "score": 64.3441,
+        "plaintext": "WBNGIANGWWPAEFIJNGNAEGLTEOIAOEAWYSTHYNXGTHTEOSIAVAEWXEOHBEOJYTNJTHBEEABNGHLCCNHSSGIAPIAOEJGMAEXTHETHRTSMAWAIWNGFEAEADJXMEAAESTHFGR"
+      },
+      {
+        "function": "xor_strict",
+        "score": 60.1302,
+        "plaintext": "WBNGIANGWWPAEFIJNGNAEGLTEOIAOEAWYSFYNXGTHTEOSIAVAEWXEOHBEOJYTNJFBEEABNGHLCCNHSSGIAPIAOEJGMAEXTHEFRTSMAWAIWNGFEAEADJXMEAAESFFGR"
+      }
+    ]
+  }
+}
