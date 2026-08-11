@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.60out.com/blog/unsolved-mystery-cicada-3301-cypher",
+    "name": "Unsolved Mystery: Cicada 3301 Cypher",
+    "snippet": "Apr 25, 2025 — One of the earliest puzzles used steganography, Solvers used steganography tools like OutGuess — Prime numbers (numbers only divisible by 1 and ...",
+    "host_name": "www.60out.com",
+    "rank": 0,
+    "date": "Apr 25, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.boxentriq.com/guides/cicada-3301-first-puzzle-walkthrough",
+    "name": "Cicada 3301 First Puzzle Walkthrough",
+    "snippet": "To solve this, you need to break an RSA key. You will need to factorize the big number ( with 112 digits), n, into two prime numbers. This is far from easy ... Read more",
+    "host_name": "www.boxentriq.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://grantland.com/hollywood-prospectus/a-wild-bug-chase-cracking-cicada-3301-the-internets-biggest-puzzle",
+    "name": "Cracking Cicada 3301, the Internet's Biggest Puzzle",
+    "snippet": "Jan 9, 2014 — The message, a text image signed “ 3301 ,” read, “Hello. We are looking for highly intelligent individuals. To find them, we have devised a test. Read more",
+    "host_name": "grantland.com",
+    "rank": 2,
+    "date": "Jan 9, 2014",
+    "favicon": ""
+  },
+  {
+    "url": "https://gist.github.com/VRSEx/5eafc41aef7e31ad1737d011ada1c6e6",
+    "name": "A detailed breakdown of the Cicada 3301 puzzles, their  - Gist",
+    "snippet": "The first Cicada 3301 puzzle was posted on 4chan in January 2012. It involved an image that contained a message hidden using steganography .",
+    "host_name": "gist.github.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://shsredhawktalk.wordpress.com/2021/03/17/mysteries-online-cicada-3301",
+    "name": "Mysteries Online: Cicada 3301 - redhawk talk - WordPress.com",
+    "snippet": "Mar 17, 2021 — The second sentence contained the words “guess” and “out” which pointed solvers towards steganography tool OutGuess as a possible solution . The ...",
+    "host_name": "shsredhawktalk.wordpress.com",
+    "rank": 4,
+    "date": "Mar 17, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://connortumbleson.com/2024/12/23/the-cicada-3301-mystery-puzzle-3-solve-part-4",
+    "name": "The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4",
+    "snippet": "Dec 22, 2024 — This seems a bit too easy - there appears to be 4 images in sequential order . With all the confusion we've had in prior puzzles with backward ... Read more",
+    "host_name": "connortumbleson.com",
+    "rank": 5,
+    "date": "Dec 22, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/What_Happened_Part_1_(2013)",
+    "name": "What Happened Part 1 (2013) - Uncovering Cicada Wiki",
+    "snippet": "the numbers to be found in \"Value\" are all ascending primes , building the sequences of the first 29 prime numbers . masked via OutGuess .",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.cybereason.com/blog/malicious-life-podcast-the-mystery-of-cicada-3301",
+    "name": "Malicious Life Podcast: The Mystery of Cicada 3301",
+    "snippet": "This was a clue to use OutGuess , a free steganographic software. Stenography , from the Greek word steganos – to conceal – is a technique for hiding data in pre- ... Read more",
+    "host_name": "www.cybereason.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

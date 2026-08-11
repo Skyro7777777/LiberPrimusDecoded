@@ -1,0 +1,732 @@
+Cicada 3301 Liber Primus Guide | Boxentriq 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Navigation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ My Saved Items 
+ 0 
+ 
+ 
+ 
+ 
+ 
+ Colors: 
+ System theme 
+ 
+ 
+ 
+ 
+ 
+ System theme 
+ 
+ 
+ 
+ 
+ 
+ Light theme 
+ 
+ 
+ 
+ 
+ 
+ Dark theme 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Featured Links 
+ 
+ 
+ 
+ Contact 
+ 
+ 
+ 
+ 
+ About 
+ 
+ 
+ 
+ 
+ Categories 
+ 
+ 
+ 
+ 
+ 
+ Guides 
+ 
+ 
+ 
+ 
+ 
+ Overview 
+ Cicada 3301 Liber Primus 
+ Beginner's Guide to Ciphers and Code-Breaking 
+ Cicada 3301 First Puzzle Walkthrough 
+ Cryptic Crosswords 
+ Kryptos Cipher Solutions 
+ Resources for Puzzle Solvers 
+ The Zodiac Ciphers 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Alphabets & Symbols 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Analysis 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Audio Tools 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Ciphers 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Encodings 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Hash Functions 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Image Tools 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Math 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Steganography 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Text & Word Tools 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Puzzles 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Site Info 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Navigation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Search results 
+ 0 results 
+ 
+ Back 
+ 
+ No matching pages found. 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Boxentriq logo 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ ← Guides 
+ 
+ 
+ 
+ 
+ Home 
+ 
+ 
+ Guides 
+ 
+ Liber Primus 
+ 
+ 
+ 
+ Cicada 3301 Liber Primus 
+
+ Explains Liber Primus, Gematria Primus, known clues, and Boxentriq workflows for solving Cicada 3301 runes. 
+ 
+
+ 
+ 
+ On this page 
+ Start 
+ Introduction 
+ What Is Liber Primus? 
+ How the Pages Were Found 
+ Gematria Primus Alphabet 
+ Solving Liber Primus With Boxentriq 
+ Known Clues 
+ Rune Transcription 
+ Resources and Further Reading 
+ 
+
+ 
+
+ 
+ 
+ #Cicada 3301 
+ #Cryptanalysis 
+ 
+
+ Introduction 
+ 
+ Cicada 3301 was the signature used for a series of public cryptographic puzzle rounds in 2012, 2013, and 2014.
+ The puzzles mixed classical cryptography, steganography, books, music, physical clues, Tor hidden services, and
+ OpenPGP-signed messages. The stated theme was the search for highly intelligent individuals, but the identity and
+ purpose of the group remain unverified.
+ SPONSORED VIDEOS next stay CC Settings Off Arabic Chinese English French German Hindi Portuguese Spanish Font Color white Font Opacity 100% Font Size 100% Font Family Arial Text Shadow none Background Color black Background Opacity 50% Window Color black Window Opacity 0% White Black Red Green Blue Yellow Magenta Cyan 100% 75% 50% 25% 200% 175% 150% 125% 100% 75% 50% Arial Georgia Garamond Courier New Tahoma Times New Roman Trebuchet MS Verdana None Raised Depressed Uniform Drop Shadow White Black Red Green Blue Yellow Magenta Cyan 100% 75% 50% 25% 0% White Black Red Green Blue Yellow Magenta Cyan 100% 75% 50% 25% 0% Video Muted 
+ 
+ Liber Primus , "First Book", is the central unresolved artifact from the later Cicada 3301 material. It is
+ a book of Gematria Primus runes, with some pages solved and many pages still unsolved. Community sources differ in
+ page numbering, but modern solver summaries often split the material into LP1, where 17 pages are solved, and LP2,
+ where 2 of 58 pages are solved and 56 remain unsolved.
+ 
+ 
+ Cicada material should be treated carefully. The last verified public warning says to beware false paths and verify
+ OpenPGP signatures from key ID 7A35090F . This guide distinguishes verified Cicada messages from
+ community analysis and uses source links for reproduced transcriptions and known solve methods.
+ 
+ 
+ Most of Boxentriq's cipher tools can be used with Liber Primus. When a tool has a language selector, choose
+ Gematria Primus ; it is available at the bottom of the language list. This switches compatible
+ tools from the Latin alphabet to the 29-rune Gematria Primus alphabet, so you can test Caesar, Atbash, Vigenere,
+ and autosolver workflows directly against rune text.
+ 
+ 
+ 
+ Choose Gematria Primus at the bottom of the language list for compatible Boxentriq tools. 
+ 
+ 
+ When a tool result is still shown as runes, Boxentriq can also expose a Translate runes button.
+ Use it to translate Gematria Primus runes in the output into Latin letter values without leaving the tool workflow.
+ 
+ 
+ 
+ Use Translate runes when a tool produces Gematria Primus runes and you want the Latin letter values. 
+ 
+
+ What Is Liber Primus? 
+ 
+ Liber Primus is a rune manuscript written with the 29-symbol Gematria Primus alphabet. Some pages are
+ direct rune-to-Latin transliterations, while others use shifts, reversed alphabets, Vigenere-style keys, prime
+ streams, or unknown methods. That mix makes the book useful for both learning and active cryptanalysis: solved pages
+ are reproducible examples, and unsolved pages still offer frequency patterns, repeated fragments, spacing, and
+ mathematical constraints to test.
+ 
+
+ How the Pages Were Found 
+ 
+ The 2014 Cicada path began with a public image and again relied on layered extraction. Solvers used OutGuess and
+ OpenPGP verification, followed a book-cipher path, reached Tor onion pages, and encountered a William Blake collage
+ tied to the next stages. Later material involved RSA clues, a growing hex string, and XOR/JPEG recovery before the
+ first Liber Primus-related images appeared.
+ 
+ 
+ More runic pages were later released as a larger dump. This is why source names can be confusing: one source may
+ call a page 56.jpg , while another "complete set" view may refer to the same content as
+ 73.jpg . In the examples below, page identifiers follow the
+ scream314/cicada3301 transcription and asset layout unless
+ stated otherwise.
+ 
+
+ Gematria Primus Alphabet 
+ 
+ Boxentriq supports Gematria Primus in the
+ Gematria Primus Translator . The same 29-rune alphabet is also
+ available as a Gematria Primus language for compatible autosolver workflows, so rune-looking candidate plaintexts
+ can be decoded back to Latin values while preserving ambiguities such as NG/ING and IA/IO .
+ 
+ 
+ 
+ 
+ 
+ Rune 
+ Letter value 
+ Decimal value 
+ Prime value 
+ 
+ 
+ 
+ ᚠ F 0 2 
+ ᚢ V(U) 1 3 
+ ᚦ TH 2 5 
+ ᚩ O 3 7 
+ ᚱ R 4 11 
+ ᚳ C(K) 5 13 
+ ᚷ G 6 17 
+ ᚹ W 7 19 
+ ᚻ H 8 23 
+ ᚾ N 9 29 
+ ᛁ I 10 31 
+ ᛄ J 11 37 
+ ᛇ EO 12 41 
+ ᛈ P 13 43 
+ ᛉ X 14 47 
+ ᛋ S(Z) 15 53 
+ ᛏ T 16 59 
+ ᛒ B 17 61 
+ ᛖ E 18 67 
+ ᛗ M 19 71 
+ ᛚ L 20 73 
+ ᛝ NG(ING) 21 79 
+ ᛟ OE 22 83 
+ ᛞ D 23 89 
+ ᚪ A 24 97 
+ ᚫ AE 25 101 
+ ᚣ Y 26 103 
+ ᛡ IA(IO) 27 107 
+ ᛠ EA 28 109 
+ 
+ 
+ 
+
+ Solving Liber Primus With Boxentriq 
+ 
+ Start by transcribing runes or pasting existing transcription into the
+ Gematria Primus Translator . For unknown pages, use
+ Frequency Analysis and
+ Text Analysis to inspect rune distribution, repeated fragments, word lengths,
+ and likely separators. When testing shifts or keyed polyalphabetic ideas, try the
+ Caesar Cipher , Atbash Cipher , and
+ Vigenere Cipher pages with the Gematria Primus alphabet or its Latin value
+ sequence. Earlier Cicada stages also make OutGuess Extractor and
+ Binary Analysis useful for checking images and recovered byte streams.
+ 
+ 
+ The examples below reproduce known community methods. They are useful as calibrations: if your transcription,
+ alphabet order, or shift direction is wrong, these examples will fail before you ever reach the unsolved pages.
+ 
+
+ Some Wisdom 
+ 
+ Source identifier: 05.jpg . This page uses the Gematria Primus alphabet and includes a number square
+ that matches earlier Cicada material. It is a good first start because the text is not encrypted
+ beyond the rune alphabet.
+ 
+ 
+ Open the Gematria Primus Translator . 
+ Select Gematria Primus to Latin . 
+ Paste the page's rune transcription. 
+ Confirm the heading and the prime/totient statements. 
+ 
+ Ciphertext 
+ ᛋᚩᛗᛖ-ᚹᛁᛋᛞᚩᛗ.ᚦᛖ-ᛈᚱᛁᛗᛖᛋ-ᚪᚱᛖ-ᛋᚪᚳ/
+ᚱᛖᛞ.ᚦᛖ-ᛏᚩᛏᛁᛖᚾᛏ-ᚠᚢᚾᚳᛏᛡᚾ-ᛁᛋ-ᛋᚪ/
+ᚳᚱᛖᛞ.ᚪᛚᛚ-ᚦᛝᛋ-ᛋᚻᚩᚢᛚᛞ-ᛒᛖ-ᛖᚾᚳᚱᚣ/
+ᛈᛏᛖᛞ./
+&
+ᚳᚾᚩᚹ-ᚦᛁᛋ./
+272 138 ᛋᚻᚪᛞᚩᚹᛋ 131 151./
+ᚫᚦᛖᚱᛠᛚ ᛒᚢᚠᚠᛖᚱᛋ ᚢᚩᛁᛞ ᚳᚪᚱᚾᚪᛚ 18./
+226 ᚩᛒᛋᚳᚢᚱᚪ ᚠᚩᚱᛗ 245 ᛗᚩᛒᛁᚢᛋ./
+18 ᚪᚾᚪᛚᚩᚷ ᚢᚩᛁᛞ ᛗᚩᚢᚱᚾᚠᚢᛚ ᚫᚦᛖᚱᛠᛚ./
+151 131 ᚳᚪᛒᚪᛚ 138 272./
+ 
+ 
+ 
+ The Some Wisdom page decoded with Gematria Primus to Latin in Boxentriq's translator. 
+ 
+ SOME WISDOM
+SOME WISDOM
+THE PRIMES ARE SACRED
+THE TOTIENT FVNCTIAN IS SACRED
+ALL THNGS SHOVLD BE ENCRYPTED
+
+CNOW THIS
+272 138 SHADOWS 131 151
+AETHEREAL BVFFERS VOID CARNAL 18
+226 OBSCVRA FORM 245 MOBIVS
+18 ANALOG VOID MOVRNFVL AETHEREAL
+151 131 CABAL 138 272 
+
+ A Warning 
+ 
+ Source identifier: 01.jpg . The page uses reversed Gematria,
+ an Atbash-style reversal of the 29-rune alphabet, so it can be solved directly with Boxentriq's
+ Atbash Cipher tool.
+ 
+ 
+ Open the Atbash Cipher tool and select Gematria Primus in the language list. 
+ Paste the rune transcription into the input field and run the Atbash transformation. 
+ Verify that the plaintext begins with A WARNING . 
+ 
+ Ciphertext 
+ ᚱ-ᛝᚱᚪᛗᚹ.ᛄᛁᚻᛖᛁᛡᛁ-ᛗᚫᚣᚹ-ᛠᚪᚫᚾ-/
+ᚣᛖᛈ-ᛄᚫᚫᛞ.ᛁᛉᛞᛁᛋᛇ-ᛝᛚᚱᛇ-ᚦᚫᛡ/
+-ᛞᛗᚫᛝ-ᛇᚫ-ᛄᛁ-ᛇᚪᛡᛁ.ᛇᛁᛈᛇ-ᚣᛁ-ᛞ/
+ᛗᚫᛝᚻᛁᚳᛟᛁ.ᛠᛖᛗᚳ-ᚦᚫᛡᚪ-ᛇᚪᛡᚣ.ᛁᛉ/
+ᛋᛁᚪᛖᛁᛗᛞᛁ-ᚦᚫᛡᚪ-ᚳᚠᚣ.ᚳᚫ-ᛗᚫᛇ-ᛁᚳᛖᛇ-ᚫ/
+ᚪ-ᛞᛚᚱᚹᛁ-ᚣᛖᛈ-ᛄᚫᚫᛞ.ᚫᚪ-ᚣᛁ-ᚾᛁᛈᛈᚱᛟᛁ-/
+ᛞᚫᛗᛇᚱᛖᛗᛁᚳ-ᛝᛖᚣᛖᛗ.ᛁᛖᚣᛁᚪ-ᚣᛁ-ᛝᚫ/
+ᚪᚳᛈ-ᚫᚪ-ᚣᛁᛖᚪ-ᛗᛡᚾᛄᛁᚪᛈ.ᛠᚫᚪ-ᚱᚻᚻ-ᛖ/
+ᛈ-ᛈᚱᛞᚪᛁᚳ./
+ 
+ 
+ 
+ Solving the A Warning page with Boxentriq's Atbash Cipher tool and the Gematria Primus language. 
+ 
+ 
+ 
+ The Atbash output after clicking "Translate runes". 
+ 
+ A WARNNG
+BELIEVE NOTHNG FROM THIS BOOC
+EXCEPT WHAT YOV CNOW TO BE TRVE
+TEST THE CNOWLEDGE
+FIND YOVR TRVTH
+EXPERIENCE YOVR DEATH
+DO NOT EDIT OR CHANGE THIS BOOC
+OR THE MESSAGE CONTAINED WITHIN
+EITHER THE WORDS OR THEIR NVMBERS
+FOR ALL IS SACRED 
+
+ Welcome 
+ 
+ Source identifiers: 03.jpg and 04.jpg . This page can be worked through with the
+ Vigenere Cipher tool, but it is not ordinary Vigenere across the full page.
+ Liber Primus skips advancing the key position at certain ciphertext indices having the letter ᚠ, known as the F(ᚠ)-skip rule. Those skips
+ break the regular repeating-key rhythm, so start the autosolver with a block that has no F-skips. The first three
+ lines work well for that calibration and recover the key DIVINITY ( ᛞᛁᚢᛁᚾᛁᛏᚣ ).
+ 
+ 
+ Open the Vigenere Cipher tool, choose autosolver mode, and select Gematria Primus . 
+ Paste only the first three lines of the page transcription, where the key stream is still regular, and run the autosolver to recover the key ᛞᛁᚢᛁᚾᛁᛏᚣ . 
+ Switch to manual mode, enter the full rune transcription in Input and the rune key ᛞᛁᚢᛁᚾᛁᛏᚣ , select decrypt. 
+ To compensate for the Liber Primus F-skip rule, remove the letter ᚠ at those ciphertext positions where the decryption gets out of sync (for instance change ᚠᚠ on line 3 to ᚠ ). 
+ 
+ Ciphertext 
+ ᚢᛠᛝᛋᛇᚠᚳ.ᚱᛇᚢᚷᛈᛠᛠ-ᚠᚹᛉ/
+ᛏᚳᛚᛠ-ᚣᛗ-ᛠᛇ-ᛏᚳᚾᚫ-ᛝᛗᛡ/
+ᛡᛗᛗᚹ-ᚫᛈᛞᛝᛡᚱ-ᚩᛠ-ᛡᛗᛁ-ᚠᚠ-/
+ᛖᚢᛝ-ᛇᚢᚫ.ᚣᛈ-ᚱᚫ-ᛁᛈᚫ-ᚳᚫ-ᚫᚾᚹ-ᛒᛉᛗᛞ/
+-ᚱᛡᛁ-ᚠᛈᚳ-ᛇᛇᚫᚳ-ᚱᚦᛈ-ᚠᛄᛗᚩ-ᛇᚳᚹᛡ-ᛒᚫᚹ-/
+ᛒᛠᛚᛋ-ᚱᚣ-ᛄᚫ-ᚱ-ᛗᚳᚦᛇᚫᛏᚳᛈᚹ-ᛗᚷᛇ.ᚳ/
+ᛝᛈᚢ-ᛇᚳ-ᚱᛖᚹ-ᛡᛈᛁ-ᛒᚣᛒᛉ-ᚠᛚᛁᚱ-ᚱᛗ-ᚳᚷ/
+ᛒ-ᚣᚱ-ᚳᚠᚢ-ᚦᛈᛡᛄᚹᛏᚠᛠ-ᛄᚷᛒ-ᚫᚦᚠᚠᛠ/
+ᛈᚦ-ᛈᚠᚪᛉ-ᛄᛗᛖᛈᛝᛋᚩᛋᛗ-ᚹᛇᛄᛚ-ᚹᛉᚢᚦ/
+ᚫᚹᛗᚦ-ᛞᚣᛄᚳ-ᛋᛡᛉᚩᛝᚱᛗᛒᚹ-ᚱᛗᛁ-ᛞᚣᛄ/
+ᚳ-ᛉᚻᚢᚣᛈᛚ.ᛄᛝᚣᛗᚠᛄᛈᛇᚢᛡ-ᚹᛇᛄ-ᛞ/
+ᚹᛉᚢ-ᚪᛚᚪᛋᛗᛡᛇᛉ-ᚫᛗ-ᛡᛗᛁ-ᛈᚣ-ᚫᛗᚢᚠ/
+%
+.ᛗᚣ-ᚣᛇ-ᚫᛉᚱᛄᛋᛖ-ᛖᚹᚾ-ᛞᛄᚢᛋᛉᚣᛏ/
+ᛖᛏᛗ-ᛇᚱᚣ-ᛞᛋ-ᚾᛖᚫᛞᛡ-ᛈᛒᚢᚾᛠᛝᛄᛡ/
+ᚫ-ᛄᚷᛒ-ᛈᚦᛉ-ᛈᚾᚹᚹᛁᛚᛗᚫ.ᛚᛈᛒᚢᚩᛠᛡ-ᚱ/
+ᛡᛠᚠ-ᚱᚱᛇᛄᛗ-ᚱᛗᛁ-ᛞᚣᛄ-ᚻᛚᚠᚢ-ᛄᚢᛡᛚᚦ/
+ᛠ-ᛇᛄᚩᛇᚱᚱᛗ.ᚢᛗᛋᚳ-ᛠᛇ-ᛚᛁᚫᚫᚳᛚ-ᚹᛁ-ᛚ/
+ᛏ-ᛈᛖᚢᛈ-ᛠᛡᛈᚦᛏᛒ-ᛏᛗᛖ-ᚢᛚᚩᛚᛖ-ᛇᛄ/
+ᛈ-ᚢᛠ-ᛚᚳᚷ-ᛠᚷᛋᛡᛏᛗ./
+&
+ᛒᛗᚱᚦᚠᛈ.ᚹᚱᛄ-ᚱᛉᚳ-ᛝ-ᛄᛠᛟ-ᛄᛖ/
+ᚣᛗ-ᛞᚣᛄᚳᚫᛡᚢᚠ.ᛈᚠᚪ-ᚳᚳᛠ-ᚱ-/
+ᚢᛄᚱ-ᚪᛗᛒᛈ-ᚷᛈᛒᚢᚾᛠᛝᚠ.ᚾᛉᛖ-/
+ᚣᚷᛁᛠᛝᚢᛗᛏᚳᚷᛠᛠ-ᛄᚫ-ᛒᛈᚹᛞ.ᚠᚣ/
+ᛉ-ᚫᚢᚠ-ᛇᛄᛈ-ᛉᛚᚦᛠᚪ-ᛚᚦ-ᚳᚣᚢᛡ./
+ᚳᛖ-ᛚᚫᛇᛁᛉᚦᛋᚫᚻᚫ-ᚦᚣᚠᛚᚳᛖᚱ-ᛈᚠᚪᛉ-ᚱᛒᛖ-ᚫᚳᛒᚠ./
+ 
+ 
+ 
+ The Vigenere autosolver finds the DIVINITY key from the first three lines of the Welcome page. 
+ 
+ WELCOME
+WELCOME PILGRIM TO THE GREAT JOVRNEY TOWARD THE END OF ALL THNGS
+IT IS NOT AN EASY TRIP BVT FOR THOSE WHO FIND THEIR WAY HERE IT IS A NECESSARY ONE
+ALONG THE WAY YOV WILL FIND AN END TO ALL STRVGGLE AND SVFFERNG YOVR INNOCENCE YOVR ILLVSIANS YOVR CERTAINTY AND YOVR REALITY
+VLTIMATELY YOV WILL DISCOVER AN END TO SELF
+IT IS THROVGH THIS PILGRIMAGE THAT WE SHAPE OVRSELVES AND OVR REALITIES
+JOVRNEY DEEP WITHIN AND YOV WILL ARRIVE OVTSIDE
+LICE THE INSTAR IT IS ONLY THROVGH GONG WITHIN THAT WE MAY EMERGE
+
+WIDSOM
+YOV ARE A BENG VNTO YOVRSELF
+YOV ARE A LAW VNTO YOVRSELF
+EACH INTELLIGENCE IS HOLY
+FOR ALL THAT LIVES IS HOLY
+AN INSTRVCTIAN COMMAND YOVR OWN SELF 
+
+ An End 
+ 
+ Source identifier: 56.jpg in LP2, shown as complete-set page 73.jpg in
+ scream314/cicada3301 . The known stream is phi(prime) , equivalent to prime-minus-one for
+ each prime, applied modulo 29 as a forward Gematria shift. This is not a simple Vigenere autosolve; it is a custom
+ numerical stream that Boxentriq helps inspect and verify.
+ 
+ 
+ Use the Cicada 3301 Totient Cipher tool to reproduce this
+ prime-minus-one workflow directly with the Liber Primus F-skip rule.
+ 
+ 
+ Convert runes to Gematria positions. 
+ Generate the prime-minus-one stream and reduce each value modulo 29. 
+ Shift down in the forward Gematria alphabet and verify the result. 
+ 
+ Ciphertext 
+ ᚫᛄ-ᛟᛋᚱ.ᛗᚣᛚᚩᚻ-ᚩᚫ-ᚳᚦᚷᚹ-ᚹᛚᚫ.ᛉ/
+ᚩᚪᛈ-ᛗᛞᛞᚢᚷᚹ-ᛚ-ᛞᚾᚣᛄ-ᚳᚠᛡ-ᚫᛏ/
+ᛈᛇᚪᚦ-ᚳᚫ./
+&
+36367763ab73783c7af284446c/
+59466b4cd653239a311cb7116/
+d4618dee09a8425893dc7500b/
+464fdaf1672d7bef5e891c6e227/
+4568926a49fb4f45132c2a8b4/
+&
+ᚳᛞ-ᚠᚾ-ᛡᛖ-ᚠᚾᚳᛝ-ᚱᚠ-ᚫᛁᚱᛞᛖ-ᛋᚣᛄᛠᚢ/
+ᛝᚹ-ᛉᚩ-ᛗᛠᚹᚠ-ᚱᚷᛡ-ᛝᚱᛒ-ᚫᚾᚢᛋ./
+ 
+ 
+ 
+ Solving the Liber Primus An End page with Boxentriq's Cicada 3301 Totient Cipher tool. 
+ 
+ AN END
+WITHIN THE DEEP WEB
+THERE EXISTS A PAGE THAT HASHES TO
+36367763ab73783c7af284446c59466b4cd653239a311cb7116d4618dee09a8425893dc7500b464fdaf1672d7bef5e891c6e2274568926a49fb4f45132c2a8b4
+IT IS THE DVTY OF EVERY PILGRIM TO SEEC OVT THIS PAGE 
+
+ Known Clues 
+ 
+ The verified 2016 message says that Liber Primus is the way, its words are the map, their meaning is the road, and their numbers are the direction. 
+ Cicada's warning to verify OpenPGP signatures from 7A35090F is essential because many public claims are unsigned or impersonated. 
+ Modulo 29 matters because Gematria Primus has 29 runes. Shifts, key streams, and prime-derived methods often reduce values into that alphabet. 
+ Prime and totient patterns appear in solved material. The An End method uses phi(prime) , which is prime-minus-one, as its stream. 
+ Gematria sums and prime/emirp observations are useful checks, but they are supporting evidence, not a complete decryption method by themselves. 
+ The An End page points to a deep-web page by hash, which keeps the unsolved work tied to both text and external retrieval. 
+ Rune values are ambiguous: U/V , C/K , S/Z , NG/ING , and IA/IO has to be interpreted. 
+ Unverified public solutions should be treated as proposed or community analysis until the method is reproducible and source-framed. 
+ 
+
+ Resources and Further Reading 
+ 
+ 
+ Uncovering Cicada Wiki: Liber Primus -
+ community background on the book and solved pages.
+ 
+ 
+ scream314/cicada3301 -
+ community archive of Cicada files, notes, and source material.
+ 
+ 
+ scream314/cicada3301: liber_primus.md -
+ companion notes and page walkthrough material.
+ 
+ 
+ scream314/cicada3301: pages_and_ciphers.md -
+ source for the reproduced transcription table.
+ 
+ 
+ scream314/cicada3301: Liber Primus assets -
+ image files for the complete source set.
+ 
+ 
+ rtkd/iddqd -
+ archive-oriented repository of Cicada 3301 files, transcriptions, and related assets.
+ 
+ 
+ CicadaSolvers: Liber Primus Cryptanalysis Briefing -
+ current solver briefing and LP1/LP2 status overview.
+ 
+ 
+ Boxentriq tools:
+ Gematria Primus Translator ,
+ Vigenere Cipher ,
+ Frequency Analysis ,
+ Text Analysis ,
+ OutGuess Extractor .
+ 
+ 
+
+ 
+ See also: 
+ Guides | Cipher identifier | Cicada totient | Pattern to letters | Code-breaking guide | Binary analysis | Binary signature scanner 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ © 2026 Johan Åhlén AB. All rights reserved. 
+ 
+ Boxentriq Version 2.0.238 · Last update Jul 30, 2026
+ 
+ 
+ 
+ Resources |
+ Cookie Policy |
+ Privacy Policy |
+ Sitemap |
+ Contact |
+ About 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ ✕ Do not sell or share my personal information. You have chosen to opt-out of the sale or sharing of your information from this site and any of its affiliates. To opt back in please click the "Reenable Personalization" link. 
+ This site collects information through the use of cookies and other tracking tools. Cookies and these tools do not contain any information that personally identifies a user, but personal information that would be stored about you may be linked to the information stored in and obtained from them. This information would be used and shared for Analytics, Ad Serving, Interest Based Advertising, among other purposes. 
+ For more information please visit this site's Privacy Policy. CANCEL CONTINUE × Information from your device can be used to personalize your ad experience. Do not sell or share my personal information. A Raptive Partner Site

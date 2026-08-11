@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/Frequency_Analysis_Unsolved_Pages",
+    "name": "Frequency Analysis Unsolved Pages - Uncovering Cicada Wiki",
+    "snippet": "Frequency analysis and IOC can be effective against substitution ciphers such as Caesar and Vigenere , where each letter is replaced by another letter or symbol,",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/How_the_solved_pages_of_the_Liber_Primus_were_solved",
+    "name": "How the solved pages of the Liber Primus were solved",
+    "snippet": "The Vigenere cipher uses a specific key , and shifts each value according to the key. In this case it can be reversed by subtracting the key values from the ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/Liber_Primus",
+    "name": "Liber Primus - Uncovering Cicada Wiki - Fandom",
+    "snippet": "How the solved pages of the Liber Primus were solved . Pages Frequency Analysis Unsolved Pages. How the solved pages of the Liber Primus were solved Possible ...",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/cicada/comments/n1tdsq/liber_primus_pages",
+    "name": "Liber Primus Pages : r/cicada",
+    "snippet": "the wiki includes previously released pages , the 56 remaining pages have gone unsolved because the method in which they were encrypted is ...",
+    "host_name": "www.reddit.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.boxentriq.com/guides/cicada-3301-liber-primus",
+    "name": "Cicada 3301 Liber Primus Guide",
+    "snippet": "Explains Liber Primus , Gematria Primus, known clues, and Boxentriq workflows for solving Cicada 3301 runes.",
+    "host_name": "www.boxentriq.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.60out.com/blog/unsolved-mystery-cicada-3301-cypher",
+    "name": "Unsolved Mystery: Cicada 3301 Cypher",
+    "snippet": "Apr 25, 2025 — Explore the mystery of Cicada 3301 — an elaborate internet puzzle that blends cryptography, hidden clues, and real-world scavenger hunts.",
+    "host_name": "www.60out.com",
+    "rank": 5,
+    "date": "Apr 25, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.scribd.com/document/990121748/Cryptanalysis-Task",
+    "name": "Cryptanalysis Task | PDF",
+    "snippet": "The document analyzes an unsolved segment of the Liber Primus from the Cicada 3301 organization, focusing on page 71, which has not been decrypted. Read more",
+    "host_name": "www.scribd.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://forums.atlas-65.com/t/cicada-3301-an-older-crypto-puzzle/5334",
+    "name": "Cicada 3301 - An older crypto-puzzle - ETARC Community",
+    "snippet": "Jul 9, 2018 — Liber Primus is painstakingly hard , with only 17 of the 57 pages solved. It will not easily be solved any time soon. It has been several ... Read more",
+    "host_name": "forums.atlas-65.com",
+    "rank": 7,
+    "date": "Jul 9, 2018",
+    "favicon": ""
+  }
+]

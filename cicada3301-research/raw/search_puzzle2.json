@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=I2O7blSSzpI&vl=en",
+    "name": "Cicada 3301: An Internet Mystery",
+    "snippet": "In this video I explore an elaborate cryptographic internet puzzle orchestrated by a mysterious individual or group known as Cicada 3301 .",
+    "host_name": "www.youtube.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Cicada_3301",
+    "name": "Cicada 3301",
+    "snippet": "Cicada 3301 are three sets of puzzles . A second round began on January 4, 2013, and a third round was posted on Twitter on January 4, 2014. Marcus Wanner.",
+    "host_name": "en.wikipedia.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.businessinsider.com/cicada-3301-returns-after-year-of-silence-with-cryptic-tweet-2016-1",
+    "name": "Cicada 3301 Returns After Year of Silence With Cryptic",
+    "snippet": "Jan 13, 2016 — A Twitter account known to be associated with 3301 tweeted out this image , which contains a cryptographic signature hidden inside the file. Read more",
+    "host_name": "www.businessinsider.com",
+    "rank": 2,
+    "date": "Jan 13, 2016",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CrTgK-K00W4",
+    "name": "2013 Cicada 3301 Solutions Part 2",
+    "snippet": "Share your videos with friends, family, and the world.",
+    "host_name": "www.youtube.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/nonmurdermysteries/comments/151vqlw/what_ever_happened_to_the_cicada_mystery",
+    "name": "What ever Happened to the Cicada Mystery?",
+    "snippet": "Ever wondered what happened to the mystery that has captivated the Internet for the past two years - the Cicada 3301. This cryptic message first surfaced ...",
+    "host_name": "www.reddit.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/What_Happened_Part_1_(2013)",
+    "name": "What Happened Part 1 (2013) - Uncovering Cicada Wiki",
+    "snippet": "After a day of fruitless searching, an IRC user did the impossible and solved the next puzzle . This user took the 761.mp3 file, and XORed it with the file ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.theguardian.com/technology/2014/jan/10/cicada-3301-i-tried-the-hardest-puzzle-on-the-internet-and-failed-spectacularly",
+    "name": "Cicada 3301: I tried the hardest puzzle on the internet and",
+    "snippet": "Jan 10, 2014 — No one knows who sets it or what the prize is at the end, but Cicada 3301 is back for its third year , and the internet has gone wild.",
+    "host_name": "www.theguardian.com",
+    "rank": 6,
+    "date": "Jan 10, 2014",
+    "favicon": ""
+  },
+  {
+    "url": "https://gist.github.com/VRSEx/5eafc41aef7e31ad1737d011ada1c6e6",
+    "name": "A detailed breakdown of the Cicada 3301 puzzles, their  - Gist",
+    "snippet": "The message \"Call us at telephone number 214 390 9608\" was the solution to the second Cicada 3301 puzzle . Puzzle 3: The third Cicada 3301 puzzle was posted ... Read more",
+    "host_name": "gist.github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://connortumbleson.com/2021/01/25/the-cicada-3301-mystery-puzzle-2",
+    "name": "The Cicada 3301 Mystery (Puzzle 2 Solve)",
+    "snippet": "Jan 24, 2021 — In 2012 the Cicada 3301 mystery began and 2013 kicked off another puzzle to solve . This is puzzle 2 ( 2013 ).",
+    "host_name": "connortumbleson.com",
+    "rank": 8,
+    "date": "Jan 24, 2021",
+    "favicon": ""
+  }
+]
