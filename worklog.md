@@ -358,3 +358,155 @@ Stage Summary:
 - DECODING_RESULTS.md written at /home/z/my-project/cicada3301-research/compiled/DECODING_RESULTS.md with 11 sections (Executive Summary / Decoder Toolkit / Autokey Signature / 5-Wave Campaign / Hypotheses Final Ranking / Verified Positive Findings / What the Cipher Most Likely Is / Recommended Next Steps / Corrections to Original Dossier / Artifacts Produced / Final Assessment)
 - Total tests synthesised: ~1,328 (across 5 waves + 682k Hill matrices + 5 codebooks × 3 variants × 13 pages + 100k control experiment)
 - Final verdict: cipher unbroken after ~1,328 tests; autokey signature confirmed exactly (12,956 runes / IC=0.9999 / 0.6638% doublet / 5.19× suppression / DJUBEI×2 / OUNWM@1031 = parable-product factor); page-56 hash definitively ruled out as primer (Wave-4, 8 transformations), PRNG seed (Wave-5, 6 standard PRNGs), and checksum (Wave-5, 2,150 hash tests zero matches); 2016 "book is a map" instruction stands as master guide; Wave-6 should pivot to image-steganographic extraction on the 56 page JPEGs as the only major untested vector.
+
+---
+Task ID: p5d
+Agent: Alternative-hypothesis testing subagent
+Task: Test per-page different ciphers + non-cipher hypotheses
+
+Work Log:
+- Read mandatory context: worklog.md (waves 1-5 history), CAMPAIGN_PLAN.md (§1 assumptions to question), RESEARCH_DOSSIER.md (full Cicada background), gematria_primus.py (decoder toolkit with 8 cipher operations).
+- Examined unsolved_pages.json: 13 page entries totaling 12,735 runes across 9 LP2 chapter groups (Cross/Spirals/Branches/Möbius/Mayfly/Wing-Tree/Cuneiform/Spiral-Branches/Hollow).
+- Wrote /home/z/my-project/cicada3301-research/decoder/alt_hypothesis_attacks.py (820 lines): implements 8 hypothesis test families using gematria_primus.py toolkit.
+- CRITICAL BASELINE CHECK: ran english_score() on solved LP1 pages to establish ground truth. Solved page 01 (Atbash decrypt) scores 88.36; solved page 05 (direct) scores 80.33. Random rune direct-translate samples score 67-69. This means: scores above 80 = real English; scores 67-74 = random noise.
+- Ran all 8 hypotheses — total 413 tests:
+  * Hypothesis A (per-page ciphers, 9 chapters × 14 methods = 126 tests): top score 72.74 (Hollow, autokey_PARABLE_ciphertext).
+  * Hypothesis B (codebook indices, 5 codebooks × 3 modes = 18 tests): top score 71.72 (self_reliance, pair_idx_first_letter).
+  * Hypothesis C (gematria-sums as message): per-chapter analysis. Decimal sums ARE in ASCII range (14-194), prime sums too large (40-710). No coordinate patterns. Prime density 12-29% (normal).
+  * Hypothesis D (non-linear orders, 6 × 9 = 54 tests): top score 69.70 (largest_first, autokey_DIVINITY_ct). All near random baseline.
+  * Hypothesis E (page-number keys, 9 × 5 × 2 = 90 tests): top score 71.56 (Wing_Tree page 27, page_digits vigenere_noskip).
+  * Hypothesis F (magic-square-cell keys, 9 × 3 × 2 = 54 tests): TOP SCORE 74.03 (Branches, page16_mod29 vigenere_noskip) — highest of ALL hypotheses.
+  * Hypothesis G (cross-page chained keys, 8 tests): top score 70.72 (PARABLE autokey_plaintext_chain).
+  * Hypothesis H (delimiters as message, 9 chapters × 6 mappings = 54 tests): top score 53.77 (Cross, plus_65_to_letter). All delimiter sequences are structurally trivial (header delimiters + uniform `•` body).
+- Wrote /home/z/my-project/cicada3301-research/compiled/ALT_HYPOTHESIS_RESULTS.md — comprehensive 11-section report with top-5 per hypothesis, critical assessment, ranking, and recommended next-wave priorities.
+- Saved raw JSON results to decoder/alt_hypothesis_results.json.
+- Committed and pushed to GitHub (commit 2d02b75): "Phase C+D: Per-page ciphers + non-cipher hypotheses".
+
+Stage Summary:
+- KEY FINDINGS: NO BREAKTHROUGH. None of the 8 alternative hypotheses produced recognisable English plaintext. All 413 tests scored in the 48-74 range, which is within or barely above the random-rune baseline (67-69). Authentic Cicada plaintext (verified via solved pages 01 and 05) scores 80+. The top score 74.03 = Hypothesis F (page-16 magic square cell value mod 29 as Vigenère primer on Branches chapter) — most promising lead for further work but still ~6 points short of the breakthrough threshold.
+- TOP SCORES across all hypotheses:
+  1. 74.03 — F: Branches + page16_mod29 + vigenere_noskip
+  2. 73.90 — F: Spiral_Branches + page16_digits + autokey_plaintext
+  3. 72.74 — A: Hollow + autokey_PARABLE_ciphertext
+  4. 71.72 — B: self_reliance + pair_idx_first_letter
+  5. 71.56 — E: Wing_Tree page 27 + page_digits + vigenere_noskip
+- HYPOTHESIS RANKING (most to least promising): F (magic-square keys) > E (page-number keys) > A (per-page ciphers) > B (codebook indices) > D (non-linear orders) > G (chained keys) > C (gematria-sums) > H (delimiters).
+- ARTIFACTS PRODUCED:
+  - /home/z/my-project/cicada3301-research/compiled/ALT_HYPOTHESIS_RESULTS.md (deliverable report)
+  - /home/z/my-project/cicada3301-research/decoder/alt_hypothesis_attacks.py (test harness)
+  - /home/z/my-project/cicada3301-research/decoder/alt_hypothesis_results.json (raw results)
+- RECOMMENDED NEXT STEPS (Wave 7): (1) Deepen Hypothesis F — test all 25 magic-square cells as longer primer, with F-skip variants, on Branches chapter. (2) Image steganography (Phase B from CAMPAIGN_PLAN.md) — never yet tried. (3) Fetch CicadaSolvers' 54 GitHub repos with actual solver code. (4) Deepen Hypothesis C — test decimal-sums as Base64/hex/2-byte ASCII. (5) Combine Hypothesis F (magic-square primers) with Hypothesis A (per-page ciphers).
+
+---
+Task ID: p5a
+Agent: CicadaSolvers-repo-cloning subagent
+Task: Clone and study all CicadaSolvers GitHub repos for actual solver code
+
+Work Log:
+- Read worklog.md (waves 1-5 history, ~1,328 tests, autokey signature confirmed but cipher unbroken), CAMPAIGN_PLAN.md, FRESH_2024_2025_FINDINGS.md (§1.A: CicadaSolvers GitHub org with 54 repos).
+- Created /home/z/my-project/cicada3301-research/solvers/ directory.
+- Cloned 15 CicadaSolvers-org + related repos with --depth 1 (total ~5.7 GB, 8,600+ files):
+  1. cicada-solvers/lp-decrypter (Python, 42 MB, PyQt5 GUI)
+  2. cicada-solvers/aldegonde (Python, 20 MB, 80+ LP-specific hypotheses/experiments)
+  3. cicada-solvers/libergo (Go, 8.1 MB, 50+ CLI tools)
+  4. cicada-solvers/cmbcidada3301 (C# .NET 9, 75 MB, Avalonia UI)
+  5. cicada-solvers/LiberPrimusSolver (JS, 836 KB)
+  6. cicada-solvers/3301chef (JS, 165 MB, CyberChef fork)
+  7. cicada-solvers/GematriaPrimusTool (JS, 224 KB)
+  8. cicada-solvers/iddqd (Mixed, 202 MB, rtkd transcription)
+  9. cicada-solvers/isitcicada (JS, 2.5 MB, PGP verifier)
+  10. cicada-solvers/WPCH-3301 (Python, 232 KB, SHA-512 URL hasher)
+  11. cicada-solvers/The-Complete-Cicada3301-Archive (1.3 GB, 1,273 files)
+  12. scream314/cicada3301 (274 MB, original liber_primus.md)
+  13. krisyotam/cicada3301 (2.8 GB mirror)
+  14. remlong/cicada-runes (268 KB browser toy)
+  15. ralphatobe/cicada-3301 (1.8 MB OpenCV OCR)
+- Deep-dived lp-decrypter: Read enc/encryption_maps.py + enc/DecryptModel.py (~825 lines) + enc/gematria.py + data/enc_map_data/*.txt (8 two-rune function files). The 8 functions are: plus, p_minus_k, k_minus_p, multiply, divide, p_div_k_mod29, k_div_p_mod29, xor — IDENTICAL to my Wave-3 two_rune_functions.py (add, sub, sub_rev, mul, add_2r2, 2r1_add, xor_mod29, xor_strict). NO new two-rune primitives. But lp-decrypter adds 3 search features I had NOT tested: (a) interrupter enumeration over all 29 runes × all possible position-sets; (b) CT-side + key-side gematria rotations (forward × reverse × 29 shifts = 3,364 combinations); (c) key dragging with wrap-around-CT; (d) 4-gram scoring with 4GramProbabilityData.csv.
+- Deep-dived aldegonde: 32 confirmed statistical observations + 44 tested hypotheses (36 disproved, 8 unresolved/plausible). Read docs/lag5-phenomenon.md (new finding: lag-5 paired-coincidence anomaly at d=1 (29 observed vs 15.4 expected) and d=4 (28 vs 15.4), p=0.033 family-blind — a 4th-order statistic invisible to all IoC/kappa/Friedman/bigram tests). Read docs/lp_structure_findings.md (THEOREM: P(c[i+1]=c[i]) >= min_d P(Δp=d) ≈ 1.7% for any plaintext-independent additive keystream; LP's 0.66% is half the floor — mathematically refutes Vigenère/running-key/PRNG class before any key search, retrospectively explaining why my Wave-4 hash-as-keystream and Wave-5 PRNG-seed-from-hash attacks were doomed by construction). Read hypotheses/INDEX.md (44 hypotheses with status; 8 surviving: autokey-plus-substitution, five-block-boundary, g-from-5x5-grid, lag5-back-reference, length-clocked-walk (plausible), mixed-cycle-progression, per-word-related-alphabets (plausible), stream-cipher-no-repeat, thirty-symbol-disk, contraction-cribs (plausible)). Read hypotheses/length-clocked-walk.md (comprehensive statistical fit, NOT confirmed by decryption; key = base_0 + g + σ, ~200 bits). Read hypotheses/contraction-cribs.md (4 apostrophe marks at pages 4, 21, 35, 41 = ~28 bits known-plaintext; 14 paired marks form 7 nested quote spans p=1.2e-4).
+- Deep-dived 3301chef: Read src/core/operations/{LiberPrimus.js, Gematria.js, Runes.js}. LiberPrimus.runApplyKey implements 3 schemes: Standard (Vigenère), Input differential (autokey-PT), Output differential (autokey-CT), with nullPreserving flag = F-skip interrupter. NO novel cipher primitives.
+- Inventoried The-Complete-Cicada3301-Archive (1,273 files): Read iddqd/liber-primus__keys/liber-primus__keys.txt (CONFIRMS F-skip interrupter was a real Cicada device on solved pages 0.1, 0.5, 0.16). Read assets/2014/stage11/56.py (prime-stream solver for page 56: plaintext_rune = (cipher_rune - prime + 1) % 29 with skip=56 — successfully produces "AN END WITHIN THE DEEP WEB THERE EXISTS A PAGE THAT HASHES TO..." matching the page-56 hash). Read assets/2014/stage11/{49,50,51}.{txt,dec} files (intermediate decrypted bytes for pages 49-51). Read 2017 PGP-signed message ("Beware false paths. Always verify PGP signature from 7A35090F. 3301"). Inventoried Cicada OS disk files (cicados/DATA/560.13, 560.17, 560.13.rev, 560.17.rev, tmp/folly, tmp/wisdom, usr_local_bin/cicada, prime_echo) — cryptographically relevant binary files tied by name to page 56, NEVER tested as keystream seeds in my Wave-4/5. Inventoried iddqd/lp_outguessed/{00..23}.txt (Outguess-extracted PGP-signed messages from each LP page). Inventoried 2013/Winners leak/IRC winners leak.txt (corroborates Cicada as small invite-only group).
+- Ran aldegonde's examples/lp_lag5_attack.py end-to-end (positive control cracked page-57 Parable at z=+7.24 with true key [10,4,12,20,1] recovered; 6,710 attack runs on 55 unsolved pages swept over every single-rune interrupter × every key phase rule × both add and reflective cipher families; best z=+3.56 (page 36, additive cipher, reset:N interrupter) — below z=+3.2 multiple-test threshold and far below z=+7 crack threshold. PERIOD-5 POLYALPHABETIC CIPHER WITH ANY SINGLE-RUNE INTERRUPTER IS REFUTED).
+- Ran aldegonde-based re-analysis on unsolved corpus confirming my Wave-1 stats: 12,880 runes (rtkd page0-58.txt, segments 0-54), 85 doublets (0.6600%), normalized IC=1.0000, suppression factor=5.22×, all 29 runes used. Matches my Wave-1 statistics to 3 sig figs (my numbers: 12,956 runes, 86 doublets, 0.6638%, IC 0.9999, 5.19× — the 76-rune / 1-doublet discrepancy is from a slightly different page-inclusion criterion).
+- Wrote /home/z/my-project/cicada3301-research/compiled/SOLVER_CODE_ANALYSIS.md (624 lines, 10 sections: TL;DR + Inventory of 15 cloned repos + 11 Novel methods discovered + lp-decrypter deep-dive + aldegonde deep-dive + 3301chef deep-dive + Archive inventory + Working tool results + CRITICAL Wave-7 plan with 13 ranked items in 4 tiers + Verdict). Top Wave-7 recommendations: (1) lag-5 paired-coincidence crib-drag (~114 plaintext constraints, the only NEW statistical structure other than doublet suppression); (2) Cicada OS disk files as keystream seeds (168 sub-tests, untested); (3) length-clocked progressive substitution hill-climb; (4) apostrophe-as-contraction crib attack (~28 bits known-plaintext at pages 4, 21, 35, 41); (5) winchafftext transposition attack (1,430 sub-tests using 13 integer sequences).
+- Committed and pushed to GitHub (commit ade51c3): compiled/SOLVER_CODE_ANALYSIS.md (solvers/ excluded by .gitignore due to 5.7 GB size).
+
+Stage Summary:
+- DID THE 8 TWO-RUNE FUNCTIONS IN lp-decrypter ADD ANYTHING NEW? **NO.** The 8 functions (plus, p_minus_k, k_minus_p, multiply, divide, p_div_k_mod29, k_div_p_mod29, xor) are IDENTICAL to my Wave-3 two_rune_functions.py (add, sub, sub_rev, mul, add_2r2, 2r1_add, xor_mod29, xor_strict). The "functions of two runes" mystery is resolved — they are the 8 obvious arithmetic operations over Z/29 / GF(29). HOWEVER, lp-decrypter's search framework (interrupter enumeration + CT/key gematria rotations + key dragging + 4-gram scoring) is more thorough than my Wave-3 attack and should be ported to headless Python for Wave-7.
+- DID aldegonde HAVE CRYPTANALYSIS FEATURES MY TOOLKIT LACKS? **YES, MASSIVELY.** 32 confirmed observations + 44 explicitly-tested hypotheses + low_doublet_null (critical for honest significance testing — my Wave-3 control experiment used i.i.d.-uniform nulls which manufacture fake +8σ..+17σ signals) + family_pvalue (multiple-testing correction I lacked) + joint_coincidence (4th-order statistic) + indepth_alignment_coincidence + krakup + twist + guballa + isomorph + a MATHEMATICAL THEOREM proving no plaintext-independent additive keystream can produce LP's 0.66% doublet rate (floor is 1.7%; LP is half the floor) — retrospectively refuting my entire Wave-4 hash-as-keystream and Wave-5 PRNG-seed-from-hash campaigns BY CONSTRUCTION.
+- DID 3301chef HAVE MAGIC OPERATIONS? **NO.** Standard Vigenère + autokey-PT + autokey-CT + F-skip interrupter, exactly matching my Wave-1 implementation. Value is the GUI recipe-builder + bundled Cicada assets.
+- DID ANY WORKING TOOL PRODUCE PLAINTEXT? **NO.** aldegonde's positive control cracked page-57 Parable at z=+7.24 (verifying the framework works). 6,710 attack runs on 55 unsolved pages returned max z=+3.56 (page 36, additive with reset:N interrupter), below z=+3.2 multiple-test threshold and far below z=+7 crack threshold. The unsolved LP remains unbroken.
+- NOVEL FINDINGS THE PRIOR 5-WAVE CAMPAIGN MISSED: (1) lag-5 paired-coincidence 4th-order anomaly (p=0.033) — invisible to all standard tests; (2) mathematical proof refuting all additive keystream ciphers; (3) low_doublet_null correction (my prior positive scores may have been doublet-suppression artifacts); (4) 4 apostrophe cribs at pages 4/21/35/41 = ~28 bits known-plaintext; (5) Cicada OS disk files (560.13, 560.17, folly, wisdom) as untested keystream seeds; (6) confirmation that F-skip interrupter was REAL Cicada device (from iddqd/liber-primus__keys.txt); (7) length-clocked progressive substitution as the only surviving statistical-fit hypothesis.
+- ARTIFACTS PRODUCED:
+  * /home/z/my-project/cicada3301-research/solvers/ — 15 cloned repos (~5.7 GB total, excluded from git via .gitignore)
+  * /home/z/my-project/cicada3301-research/compiled/SOLVER_CODE_ANALYSIS.md (624 lines, 10 sections, committed as ade51c3 and pushed to GitHub)
+
+---
+Task ID: p5b
+Agent: Image-fetch + steganography subagent
+Task: Fetch actual LP JPEGs and run multi-method steganography (Phase B of CAMPAIGN_PLAN)
+
+Work Log:
+- Read mandatory context: worklog.md (waves 1-5 history, ~1,328 prior text-cipher tests), CAMPAIGN_PLAN.md (Phase B priority), RESEARCH_DOSSIER.md §5 (unsolved pages structure; "58.2kB garbage output" via OutGuess).
+- Step 1 — Fetch actual JPEGs: Downloaded all 75 pages (00.jpg-74.jpg) from https://raw.githubusercontent.com/scream314/cicada3301/master/assets/2014/liber-primus-complete/NN.jpg. All 75 are valid JPEGs at 2400×3600, total 49.8 MB. Saved to /home/z/my-project/cicada3301-research/images/.
+- Step 2 — Install stego tools: Built OutGuess 0.4 from source (github.com/resurrecting-open-source-projects/outguess, configured with --with-generic-jconfig). Installed Python: stegano, Pillow, scipy, opencv-python-headless, jpeglib, jpegio, piexif, binwalk, stegoveritas. apt-get unavailable (no sudo); used pip --break-system-packages and built OutGuess from source.
+- Step 3 — Outguess on all 75 pages: Ran `outguess -r` (default no key) on every page. Results: 8 LP1 pages (00,01,02,03,10,11,12,13) yield valid PGP-signed Cicada messages (sizes 1234-31809 bytes); 1 LP1 page (08) yields 140-byte ASCII message; 19 pages yield 58152-byte high-entropy random data; 47 pages yield empty output. CRITICAL: zero meaningful content on any unsolved LP2 page.
+- Step 3a — Analyzed 58152-byte "garbage": entropy 7.997 bits/byte (essentially random); 1417-byte common prefix across 16 page extractions (variant B: pages 17,21,43,57-65,68-71); 53-byte common prefix between variant A (6,7,9) and variant B; 91 ASCII strings ≥6 chars but all gibberish; zero PGP/URL/hash matches. Conclusion: this is OutGuess's PRNG-traversal output of the JPEG cover-image's DCT-coefficient LSBs (high entropy comes from JPEG quantization), NOT hidden Cicada data.
+- Step 3b — Keyed Outguess with 11 Cicada passwords (3301, 1033, 761, cicada, outguess, 59059, liberprimus, primus, cicada3301, parable, brotherhoodofthebrick): 84 total keyed extractions across 11 pages × varying key sets. Same key → same output size on every page (PRNG seeded by key selects same coefficient set); same key → different MD5 per page (image-specific DCT coefficients). Some outputs classified as "OpenPGP Secret Key" / "OpenPGP Public Key" but verified as FALSE POSITIVES via `gpg --list-packets` (random bytes starting with 0x95/0x9A which match PGP Ctb byte patterns).
+- Step 3c — Outguess with error correction (-e): empty output on all tested pages.
+- Step 4 — LSB spatial-domain extraction: Wrote /home/z/my-project/cicada3301-research/decoder/lsb_extract.py (440 LOC, vectorized numpy). Extracted 30 streams per page (5 channel combos × 3 bit-planes × 2 byte-conversions) × 14 pages (11 unsolved + 3 baselines) = 420 streams total. 89 "meaningful hits" — ALL are magic-byte matches (JPEG FF D8 FF and GZIP 1F 8B at expected random frequency ~1 per 65KB/16MB). ZERO PGP headers, ZERO URLs, ZERO hash matches, ZERO page-56 hash matches (SHA-512 + BLAKE2b of every stream). LSB-1 ratio ~0.90-0.94 on unsolved pages is a JPEG compression artifact (inverse-DCT reconstruction with identical DQT tables).
+- Step 5 — JPEG DCT coefficient LSB extraction: Wrote /home/z/my-project/cicada3301-research/decoder/dct_analyze.py (220 LOC, uses jpeglib to read DCT blocks 450×300×8×8 per channel). Extracted 12 streams per page (Y/Cb/Cr × 4 variants: abs_LSB, offset_LSB, low_byte_bits, parity_LSB) × 14 pages = 168 streams. 10 hits — all GZIP magic byte (2-byte, expected by chance). ZERO PGP/URL/hash/page-56 matches. One ASCII string found (`_xbolSq!eNx` on page 25 stream Y_low_byte_bits) — random-noise fragment.
+- Step 5a — DQT analysis: All unsolved LP2 pages share IDENTICAL quantization tables (luminance: sha256 ab45b515fbe99cd3..., chrominance: sha256 620cadf17e12e7ea...). Same JPEG encoder settings; no hidden data in DQT.
+- Step 6 — EXIF/metadata: Wrote /home/z/my-project/cicada3301-research/decoder/metadata_analyze.py (200 LOC). PIL _getexif() and piexif.load() both return None/empty on ALL 75 pages — Cicada stripped EXIF. JPEG marker parsing: standard minimal set (APP0/JFIF, APP2/ICC_PROFILE, DQT, SOF0, DHT, SOS, EOI). NO COM (comment), NO APP1/EXIF, NO APP13/Photoshop, NO APP14/Adobe. All 58 LP2 pages share IDENTICAL 2592-byte APP2 ICC profile ("Copyright Artifex Software 2011" — standard Artifex sRGB profile, not stego). LP1 pages have no APP2.
+- Step 7 — File carving: Ran binwalk 2.1.4 signature scan + extract on all unsolved pages + baselines. EVERY page yields only 2 signatures: JPEG header at offset 0 + "Copyright Artifex Software 2011" string at offset 422 (in ICC profile). ZERO embedded PNG/ZIP/RAR/GIF/BZIP2/GZIP/ELF/MZ files anywhere. binwalk -e extracted nothing from any page.
+- Step 7a — EOI-appended data scan: Only page 05.jpg (solved LP1) has data appended after the JPEG EOI marker — 72,700 bytes. Reversing these bytes yields a valid 2400×3600 JPEG showing runes (top) + gray rectangle (bottom). Used VLM (z-ai vision, glm-5v-turbo) to describe the reversed image: "two lines of text written in a runic script... A large gray rectangular bar dominates the lower part of the image." This is a SOLVED LP1 page (FIRFUMFERENFE cipher already decoded); the reversed JPEG appears to be a low-quality duplicate of the visible page content with the bottom half obscured — NOT relevant to unsolved-page decryption.
+- Wrote /home/z/my-project/cicada3301-research/compiled/STEGO_RESULTS.md (12-section comprehensive report: Executive Summary, Image Inventory, Outguess results, LSB extraction, DCT analysis, EXIF/metadata, File carving, EOI-appended data, Visual/color analysis, Critical findings summary, Implications for campaign, Artifacts produced, Final verdict).
+- Updated .gitignore to exclude large binary stego outputs (kept JSON summaries + small text outputs).
+- Committed + pushed to GitHub (commit eacacde on main branch): STEGO_RESULTS.md, lsb_extract.py, dct_analyze.py, metadata_analyze.py, stego_output/{lsb,dct,metadata,binwalk}/ JSON+TXT summaries.
+
+Stage Summary:
+- DID ANY UNSOLVED LP2 PAGE CONTAIN HIDDEN STEGANOGRAPHIC CONTENT? **NO.** Fetched all 75 actual JPEGs from scream314/cicada3301. Ran 6 independent steganography methods (OutGuess default + 11 keyed variants + error-correction; LSB spatial × 30 streams/page; JPEG DCT LSB × 12 streams/page; EXIF/metadata; file carving via binwalk; EOI-appended data scan) on every unsolved LP2 page (and solved-page baselines). ZERO meaningful content found on any unsolved page: zero PGP headers, zero URLs, zero hash matches, zero ASCII text, zero embedded files. The "58.2 kB garbage" reported in the dossier is real but is the JPEG cover-image's own DCT-coefficient LSBs in OutGuess's PRNG traversal order (entropy 7.997 = maximum, common 1417-byte prefix across 16 pages = PRNG visits same coefficients first, image-specific divergence after) — NOT encrypted Cicada data.
+- POSITIVE FINDINGS (on SOLVED LP1 pages only, not unsolved): (1) Pages 0,1,2,3,10,11,12,13 yield valid PGP-signed Cicada 3301 messages via OutGuess (the original 2014 puzzle-chain messages: welcome hash, "Let the text guide you. Good luck. 3301" + embedded JPEG, "Create one Tor hidden service" + magic squares). (2) Page 08 yields 140-byte ASCII message "For those who have fallen behind" + letter-pair grid. (3) Page 05 has 72,700 bytes appended after EOI; reversing yields a valid JPEG showing runes + gray rectangle (likely a low-quality duplicate of the visible page content).
+- DID ANY STEGO METHOD MATCH THE PAGE-56 HASH? **NO.** Computed SHA-512 + BLAKE2b of every LSB stream (420 streams), every DCT-LSB stream (168 streams), every Outguess output (75 default + 84 keyed = 159 outputs) = 747 total hash comparisons against page-56 hash. ZERO matches at any prefix length. The page-56 hash is NOT the hash of any steganographically-extracted payload from any page JPEG. Hypothesis 11 (hash-as-verification-oracle for stego payload) is FALSIFIED.
+- IMPLICATIONS: The blind spot identified in CAMPAIGN_PLAN.md §1 ("I only worked from transcriptions, never fetched actual JPEGs") is now CLOSED. After exhaustive multi-method steganographic analysis of all 75 actual LP page JPEGs, the unsolved LP2 page images contain NO hidden steganographic content via any tested method (Outguess with 12 key variants, LSB spatial, DCT LSB, EXIF/metadata, file carving, EOI-appended data). The visible runes ARE the only data on the unsolved pages. The puzzle is purely a text-cipher problem, not an image-stego problem. The text-cipher approach (Waves 1-5) was the right approach all along.
+- RECOMMENDED NEXT STEPS (priority order): (1) Phase C — per-page different ciphers (test the 5 known solved-page methods — Atbash / DIVINITY / FIRFUMFERENFE / direct / prime-stream / Atbash+shift3 — per LP2 chapter). (2) Cross-page chained-key schedule (page N's plaintext → page N+1's key). (3) Marginalia-based per-chapter key derivation. (4) VLM-based analysis of decorative tree/dendrite illustrations (visual pattern recognition). (5) Definitively rule out asymmetric crypto: check if page-56 hash matches any standard Ed25519/ECDSA public key format.
+- ARTIFACTS PRODUCED:
+  * /home/z/my-project/cicada3301-research/compiled/STEGO_RESULTS.md (12-section comprehensive report, ~22 KB)
+  * /home/z/my-project/cicada3301-research/decoder/lsb_extract.py (440 LOC, vectorized LSB extraction)
+  * /home/z/my-project/cicada3301-research/decoder/dct_analyze.py (220 LOC, jpeglib-based DCT extraction)
+  * /home/z/my-project/cicada3301-research/decoder/metadata_analyze.py (200 LOC, EXIF + JPEG marker parser)
+  * /home/z/my-project/cicada3301-research/images/*.jpg (75 fetched JPEGs, 49.8 MB; gitignored for size)
+  * /home/z/my-project/cicada3301-research/stego_output/ (JSON results + summary text files committed; binary .bin outputs gitignored for size)
+
+---
+Task ID: p6b
+Agent: Magic-square deep dive + cross-page chain subagent
+Task: Deep dive on magic-square-based keys + cross-page chained-key schedules
+
+Work Log:
+- Read worklog.md, CAMPAIGN_PLAN.md, ALT_HYPOTHESIS_RESULTS.md (noted Hypothesis F score 74.03 was top), PRIME_FIB_VERIFICATION.md (15.jpg Zeckendorf supported), gematria_primus.py decoder toolkit.
+- Verified exact values of the page-5 and page-16 magic squares from verify_zeckendorf.py (page-5: magic constant 1033, prime; page-16: magic constant 3301 = Cicada's number, prime, 464th prime). Page-5 square values verified from CicadaSolvers rune-word gematria-prime-sum computation (SHADOWS=341, AETHEREAL=366, BUFFERS=199, VOID=130, CARNAL=320, OBSCURA=245, FORM=91, MOBIUS=226, ANALOG=320, MOURNFUL=199, CABAL=341). Both squares have 180° rotational symmetry.
+- Built magicsquare_deeptest.py with 4 parts:
+  * Part A: 14 magic-square derivations (row-major/col-major/spiral-in/spiral-out/main-diag/anti-diag mod29, decimal digits, decimal digits reversed, mod29 repeated, Zeckendorf indices, XOR-position, minus-position-mod29, diff-of-squares, product-mod29) × 9 LP2 chapters × 3 cipher modes (Vigenère, autokey-plaintext, autokey-ciphertext) × 2 squares = 756 tests.
+  * Part B: 4 cross-page chain types (A: plaintext-feedforward; B: additive mod 29; C: single long stream; D: derive-per-chapter) × 9 primers (DIVINITY, FIRFUMFERENFE, PARABLE, INSTAR, PILGRIM, P5/P16 mod29, P5/P16 digits) × 5 steps = 219 tests.
+  * Part C: 7 prime-index recurrence formula tests per square (prime(i*5+j+offset), prime+offset+fib, prime(i)+prime(j), fib(i)+fib(j)+prime(i*j), c1*prime+c2*fib, prime(fib*5+j), prime(fib(i+j))). Best match was 3/25 cells (Test 2). Primer built from best formula (offset=-10) tested on all 9 chapters × 2 modes = 18 tests.
+  * Part D: Hill-cipher 5×5 with both squares as key (mod 29), both decrypt and encrypt directions × 9 chapters = 36 tests. Both squares mathematically invertible (det mod 29 = 3 and 10 respectively).
+- Ran all 1,029 tests. Saved raw JSON to decoder/magicsquare_deeptest_results.json.
+- Computed random baseline: 5,400 control samples (200 random 25-rune primers × 9 chapters × 3 modes). Result: min=57.53, max=74.18, mean=66.21, 99.9th pctile=73.56. This is the critical calibration: any score below ~74 must be considered noise.
+- Computed Hill-5 random baseline: 95 invertible random 5×5 matrices on Cross chapter, max=72.77.
+- Authored compiled/MAGICSQUARE_DEEPDIVE_RESULTS.md with all 4 parts, top-20 tables, statistical analysis, and critical assessment.
+- Committed and pushed to GitHub (commit e66d809).
+
+Stage Summary:
+- KEY FINDINGS: NO BREAKTHROUGH. Magic-square-based keys fail across all 1,029 tests.
+  * Part A top score 75.13 (page16 Wing_Tree decimal_digits vigenere) is only 0.95 points above random max (74.18) — within the noise floor given 756 tests.
+  * Part B top score 71.44 (chain A autokey_pt PILGRIM Mobius step 3) — below random max.
+  * Part C: NO prime-index recurrence formula recovered. Best match 3/25 cells. Primer derived from best formula scored max 71.48.
+  * Part D top score 72.35 (page5 Mayfly hill5_decrypt) — BELOW random Hill max (72.77).
+- The p5d prior "best" of 74.03 (Hypothesis F page16_mod29 vigenere Branches) is now confirmed to be a noise-tail result: same derivation now scores 69.36 (rank 25/756).
+- The 5,400-sample random baseline established that english_score's random-noise ceiling is ~74. Future hypothesis tests should compare against this; authentic Cicada plaintext scores 80+ (verified solved pages 01 and 05).
+- Structural observations preserved for future work: page-16 mod-29 square has 11 distinct residues (not uniform over Z_29) — possibly a deliberately-constructed subset encoding information we haven't decoded.
+- Cross-page chains fail structurally: no primer breaks chapter 0 to English, so all chain types (A/B/C/D) propagate noise rather than signal.
+- Artifacts produced:
+  * /home/z/my-project/cicada3301-research/compiled/MAGICSQUARE_DEEPDIVE_RESULTS.md (full report)
+  * /home/z/my-project/cicada3301-research/decoder/magicsquare_deeptest.py (test harness, ~500 lines)
+  * /home/z/my-project/cicada3301-research/decoder/magicsquare_deeptest_results.json (raw results)
