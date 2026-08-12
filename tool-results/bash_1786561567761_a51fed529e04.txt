@@ -1,0 +1,1025 @@
+===== aldegonde_structure_findings.json =====
+Markdown chars: 22618
+# Structural analysis of the unsolved Liber Primus (data/page0-58.txt)
+
+Analysis of the rune ciphertext in `data/page0-58.txt`, assuming English
+plaintext written in runes (runeglish) and genuine word boundaries
+(`-` = word break, `/` = line break within word stream, `%` = page break,
+`.` = sentence break).
+
+Corpus after parsing: 57 pages, 13,136 runes, 3,367 words. Pages 55 and 56
+of the file are the two *known* pages — page 55 decrypts with
+`c − totient(prime_n)` to "AN END WITHIN THE DEEP WEB THERE EXISTS A PAGE
+THAT HASHES TO IT …" and page 56 is the unencrypted Parable
+(nIoC 1.82). Both were re-derived from scratch by the test battery, which
+validates the pipeline. All conclusions below are for the **clean unsolved
+corpus: pages 0–54, 12,956 runes**.
+
+All IoC values are normalized (×29): 1.0 = uniform random,
+≈ 1.78 = runeglish plaintext.
+
+## 1. The ciphertext is flat in every channel except one
+
+| Test | Result |
+|---|---|
+| Unigram distribution | chi² 25.9 (28 df) — uniform |
+| Global nIoC | 0.9999 |
+| Periodic IoC, periods 2–80 | all ≈ 1.00, no period |
+| Kappa autocorrelation, lags 2–6000 | flat; nothing survives multiple-test correction |
+| Digram IoC at distances 2–20 | ≈ 1.00 |
+| `(c[i+d] − c[i]) mod 29` distribution, d = 2–40 | uniform |
+| IoC by position-in-word (incl. first/last letters, per word length) | uniform |
+| Sentence-initial, line-initial, page-aligned, word-aligned coincidence | uniform |
+| Same-length word pairs, consecutive words/pages aligned | uniform |
+| Repeated whole ciphertext words | zero of length ≥ 4 in 3,367 words; lengths 1–3 at chance level |
+| Repeated n-grams (Kasiski) | at chance level (1 six-gram pair vs 0.14 expected; n.s.) |
+| Per-page and per-`$`-segment IoC | homogeneous, all ≈ 1.0 |
+| Index/prime/totient/π/e/Fibonacci/squares/2^i/3^i keystreams, ± , corpus-wide and restarted per page | nothing |
+| Prefix attack (first 15/25 runes of every page vs those keystreams, LL-scored) | nothing |
+| Drift-tolerant Viterbi attack (keystream + plaintext-dependent skips) | nothing (solved page 55 lights up; pages 0–54 do not) |
+| Running key with the book itself (page j vs page j−1) | nothing |
+| Word gematria-prime sums mod 28/29/30/59 vs Monte-Carlo null | nothing |
+| Within-word isomorph shape census vs shuffled null | only doublet-containing shapes deviate (see §2) |
+
+The word-length distribution (mean 3.90) and its small negative lag-1/lag-2
+autocorrelation are consistent with genuine English-in-runes word
+boundaries, i.e. the word lengths look like real language even though the
+runes look like noise.
+
+## 2. The single robust anomaly: doublet suppression
+
+`P(c[i+1] = c[i])` = 86/12,955 = **0.66 %** against 3.45 % expected
+(**z = −17.4**). Properties, each established directly:
+
+- **Uniform over rune identity**: every one of the 29 runes is suppressed
+  (per-rune z between −1.9 and −4.0, no outliers).
+- **Uniform over the corpus**: all 8 corpus chunks and essentially all
+  pages show the deficit; no trend.
+- **Boundary-transparent**: the same suppression holds within words
+  (0.63 %), across word breaks (0.84 %), across line breaks and across
+  sentence breaks. A 2×28 homogeneity test of the lag-1 difference
+  distribution within-word vs cross-word gives chi² 28.5 (27 df): the
+  cipher state passes through word boundaries untouched — no space
+  symbol, no key advance at breaks.
+- **Memory length exactly 1**: lag-2 coincidence is perfectly normal
+  (z = −0.3), ABA patterns are normal, and the doublet gap distribution is
+  geometric. Only the immediately preceding glyph matters.
+- **Otherwise uniform transition matrix**: a 29×29 independence test gives
+  chi² 796.6 on 784 df (z = +0.3); the digram IoC excess (1.0254) is fully
+  predicted by the diagonal deficit alone (1.0229). Off the diagonal the
+  residual structure is chi² 41.4 on 27 df — noise.
+
+Model that fits everything: **c[i+1] is uniform over the 28 runes other
+than c[i]; the no-repeat rule lapses (or is overridden) ~19 % of the
+candidate times, leaving 86 doublets.**
+
+## 3. What this excludes (the strongest result)
+
+For any additive cipher `c = p + k (mod 29)` whose keystream is generated
+independently of the plaintext — periodic Vigenère/Beaufort, running key,
+Gronsfeld, any PRNG or mathematical stream, *regardless of key length* —
+
+```
+P(c[i+1]=c[i]) = Σ_d P(Δp = −d)·P(Δk = d)  ≥  min_d P(Δp = d) ≈ 1.7 %
+```
+
+using the runeglish lag-1 difference distribution (whose smallest bin is
+≈ 1.7 %, and which is ≈ 3.2 % at d = 0). The observed 0.66 % is **half the
+theoretical floor**. Hence:
+
+1. **No plaintext-independent additive keystream can produce this
+   ciphertext** (assuming English/runeglish plaintext) — the entire class
+   the community keeps sweeping is mathematically excluded by one
+   statistic, before any key search.
+2. General mixed-alphabet polyalphabetics (quagmires) with independent key
+   could in principle dip lower only by exploiting rare English bigrams,
+   but that would imprint structure on specific off-diagonal transition
+   cells. The observed suppression is exactly diagonal and otherwise
+   perfectly uniform — a rule about the *ciphertext glyphs*, not about
+   plaintext bigrams.
+3. Ciphertext autokey with any fixed tabula recta is excluded separately:
+   it forces digram-IoC(distance 1) ≈ plaintext IoC (≈ 1.78); observed
+   1.0254.
+4. Simulated always-advancing disk machines (Wheatstone-style, geared
+   variants) do *not* reproduce the deficit; simulated OTP-with-rejection
+   reproduces it exactly except it yields 0 doublets instead of 86.
+5. Since lag-1 structure survives in reading order, **there is no
+   post-encryption transposition**: the carving order is the encryption
+   order.
+6. No keystream re-alignment anywhere: no repeated cipher word of length
+   ≥ 4, n-gram repeats at chance, autocorrelation flat to lag 6000 —
+   the effective keystream never repeats within the 12,956 runes.
+
+## 4. Interpretation and attack surface
+
+The cipher behaves like a one-time / strong
+--- more ---
+-PRNG stream **plus a
+deliberate anti-repetition step applied at encryption time** (e.g. "if the
+output glyph equals the previous one, advance the key/disk one extra step"
+or "choose the alternative output"), applied with ~80 % consistency — the
+inconsistency itself looks human. Such a rule makes the key alignment
+drift in a plaintext-dependent way, which would defeat keystream
+subtraction even if the underlying stream were guessable (tested here with
+a drift-tolerant Viterbi decoder for the known Cicada streams — negative).
+
+What information remains exploitable:
+
+- **The 86 doublet positions** are the only plaintext-correlated marks in
+  the corpus. Under "skip-on-collision" mechanics each doublet marks a
+  position where the rule lapsed or was inapplicable; under
+  full-revolution mechanics they mark plaintext doubled runes. Any future
+  candidate scheme can be tested first against the doublet statistic
+  (0.66 %, diagonal-only, memory-1, boundary-transparent) — it instantly
+  falsifies most proposals at zero search cost.
+- Word boundaries are real but cryptographically inert: attacks should
+  treat the rune stream as continuous.
+- All 55 pages are statistically identical: one scheme, one continuous or
+  per-page-unique keying; solving any page likely solves all.
+
+## 5. Mechanism kill-table (simulated fingerprints)
+
+Every candidate mechanism was simulated on Markov-1 runeglish plaintext at
+the corpus length and fingerprinted on the same seven statistics measured
+on the LP. The target row is the LP itself. A mechanism is viable only if
+it matches **all** columns, the decisive one being the doublet rate.
+
+| mechanism | nIoC | uni-χ² | dbl % | off-χ² | digIoC | lag2 z | maxPeriod |
+|---|---|---|---|---|---|---|---|
+| **LP unsolved corpus (target)** | 1.000 | 26 | **0.66** | 41 | 1.026 | −0.3 | 1.009 |
+| plaintext itself | 1.759 | 9860 | 3.27 | 1544 | 4.92 | +19.7 | 1.765 |
+| OTP (control) | 0.999 | 20 | 3.70 | 27 | 1.003 | +0.5 | 1.008 |
+| no-repeat-key OTP (k[i]≠k[i−1]) | 1.001 | 36 | 3.55 | 35 | 0.998 | −1.2 | 1.009 |
+| running key (Vigenère) | 1.048 | 650 | 3.69 | 47 | 1.109 | +1.1 | 1.053 |
+| running key (quagmire s(p)+t(k)) | 1.016 | 231 | 3.44 | 42 | 1.040 | −0.5 | 1.022 |
+| running key (Beaufort) | 1.051 | 686 | 3.62 | 32 | 1.116 | +1.7 | 1.057 |
+| plaintext autokey L=1/3/7 | 1.05–1.11 | 646–1493 | 3.5–6.6 | 48–496 | 1.13–1.48 | +0.8…+3.2 | 1.05–1.12 |
+| key autokey (k += p) | 1.000 | 24 | 2.68 | 9757 | 1.752 | −7.1 | 1.005 |
+| c = p + c_prev + random k | 1.000 | 31 | 3.45 | 28 | 1.001 | +0.2 | 1.005 |
+| ciphertext autokey (mixed TR) | 1.000 | 31 | 4.02 | 455 | 1.762 | −0.8 | 1.012 |
+| progressive quagmire perm(p)+i | 0.999 | 21 | 3.98 | 1144 | 1.084 | −0.5 | 1.752 |
+| Gromark (chain-addition digits) | 1.124 | 1635 | 3.74 | 95 | 1.272 | +3.1 | 1.188 |
+| Hill 2×2 | 1.032 | 439 | 3.73 | 285 | 2.013 | −0.2 | 1.075 |
+| Chaocipher-29 | 1.000 | 22 | 3.53 | 26 | 1.004 | −1.4 | 1.005 |
+| **S1 skip-key-on-collision** | 1.000 | 24 | 0.20 | 46 | 1.031 | +0.3 | 1.005 |
+| **S2 stream + reroll, 19 % lapse** | 1.000 | 25 | **0.70** | 35 | 1.021 | −0.2 | 1.006 |
+| S3 two-stream choice | 1.000 | 22 | 0.07 | 22 | 1.033 | +0.9 | 1.003 |
+| **post-encryption deletion 81 %** | 1.000 | 31 | **0.59** | 36 | 1.023 | +1.3 | 1.007 |
+
+Reading the table:
+
+- Anything with **digIoC ≫ 1.03 or off-χ² ≫ 50** is dead: ciphertext
+  autokey, plaintext autokey, key-autokey, Hill, progressive quagmire,
+  running keys. These all leak adjacent-pair structure the LP does not have.
+- Anything with **uni-χ² in the hundreds/thousands or nIoC > 1.02** is
+  dead: running keys, Gromark, autokey — they leave a unigram bias.
+- Everything with a clean fingerprint (OTP, no-repeat-key OTP, Chaocipher,
+  c=p+c_prev+random) still has a **~3.5 % doublet rate** and is therefore
+  excluded by the one statistic the LP fails by 5×.
+- **Only three mechanisms reproduce the sub-1 % doublet rate**, and of
+  those only two hit the *exact* 0.66 % naturally rather than driving it to
+  ~0: a strong stream with a **probabilistic anti-doublet lapse (~19–25 %)**
+  and **post-encryption deletion of ~81 % of doublets**. S1/S3 (strict
+  skip) over-suppress to near zero, so whatever rule is in play is
+  *deliberately inconsistent* — consistent with a human carver applying it
+  by hand, or with the rule only firing under a secondary condition.
+
+## 6. The difference-domain reframing (the strongest remaining lead)
+
+Because the only structure is exactly the suppressed diagonal, the cipher
+is equivalent to a **first-difference stream**: define
+`d[i] = (c[i] − c[i−1]) mod 29`. Then the LP is `d` uniform over {1..28}
+with the value 0 suppressed. So the *real* message channel is `d`, and the
+86 doublets are the 86 surviving `d = 0` events.
+
+Attacking `d` directly (`lp_battery12.py`):
+
+- The **nonzero-d stream is uniform over its 28 values** (base-28
+  nIoC 1.0011; χ² 41.4 on 27 df — a single ~p=0.04 result among dozens of
+  tests, i.e. noise).
+- **No periodicity** in `d` at any period 2–60, and **no short-key
+  Vigenère** on `d` (per-column χ² never significant, periods 2–29).
+- **No keystream correlation** in `d`: primes, totient, index, Fibonacci,
+  π, primes-mod-29, both signs — best nIoC 1.002.
+
+So the plaintext is OTP-grade *even in the difference domain*. This is the
+sharpest statement of the problem: there is no additive layer to peel in
+either the value domain or the difference domain.
+
+## 7. Provenance of the doublets: residue, not plaintext
+
+Tested against Cicada's *own* solved plaintext (the plain/mono `$`-segments
+of the master transcription, 2,058 runes, `lp_battery10.py`):
+
+- Cicada plaintext doubles at **2.33 %**, concentrated on specific runes
+  (ᛚ ᛏ ᛋ dominate, matching English ll/tt/ss), **62 % interior / 38 %
+  cross-word / 0 % word-initial**.
+- The LP's 86 doublets are **uniform over all 29 runes** and their
+  position mix (17 % first-pair / 52 % interior / 30 % cross-word) is
+  statistically identical to the by-opportunity null (χ² 1.95, 2 df
+
+===== aldegonde_lag5.json =====
+Markdown chars: 16971
+# A Fourth-Order Statistical Anomaly in the Unsolved Liber Primus: Paired Lag-5 Coincidences
+
+*Research note, June 2026. Analysis code: the `experiments/` directory of
+this repository. Corpus: `data/page0-58.txt` (the rtkd/iddqd master
+transcription; rune content verified byte-identical to that source).*
+
+## TL;DR
+
+In the unsolved Liber Primus corpus (12,956 runes; the 55 unsolved pages,
+excluding the solved AN END and parable pages), positions where a rune
+equals the rune five places later — "lag-5 coincidences" — occur in
+**pairs at separations of exactly 1 and exactly 4**, about 85% above
+chance, while separations 2, 3, and 5+ are exactly at chance. Equivalently:
+consecutive five-rune windows agree in their (1st, 2nd) positions or in
+their (1st, 5th) positions more often than they should, and in no other
+configuration. The effect replicates in both halves of the corpus, survives
+removal of its largest single cluster, is verified glyph-by-glyph against
+the page scans, and is invisible to every standard cryptanalytic statistic
+(IoC, kappa, Friedman, bigram tables, mutual information) because it is a
+fourth-order correlation with an almost-zero second-order footprint.
+
+Honest significance: **p ≈ 0.03** under the fairest pre-registered-style
+test, degrading to non-significance if you widen the search family far
+enough. This is a lead, not a proof. We publish it because its *shape* is
+mechanistically diagnostic, and because it is the only statistical
+departure from randomness in this ciphertext other than the well-known
+doublet suppression.
+
+## 1. Definitions and data
+
+- Corpus: concatenated runes of the 55 unsolved pages of
+  `liber-primus__transcription--master` (the `page0-58` segment minus its
+  two solved tail pages). N = 12,956 runes over the 29-rune Futhorc
+  alphabet. Word/line/sentence/page delimiters are tracked but the
+  statistics below are over the continuous rune stream.
+- Define the lag-5 match indicator **M[i] = 1 iff C[i] = C[i+5]**,
+  for i = 0..12,950.
+- A "**d1 event**" is a pair M[i] = M[i+1] = 1: the digraph C[i..i+1]
+  repeats verbatim 5 positions later (`X Y · · · X Y`).
+- A "**d4 event**" is a pair M[i] = M[i+4] = 1: consecutive 5-grams agree
+  in their first and last runes (`A · · · B A · · · B`).
+
+## 2. The observation
+
+| statistic | observed | uniform expectation |
+|---|---|---|
+| Σ M (mono lag-5 matches) | 479 | 446.6 (+1.5σ — unremarkable) |
+| pairs at separation d=1 | **29** | 15.4 |
+| pairs at separation d=2 | 15 | 15.4 |
+| pairs at separation d=3 | 14 | 15.4 |
+| pairs at separation d=4 | **28** | 15.4 |
+| pairs at separation d=5 | 19 | 15.4 |
+| separations 6–25 | all flat | 15.4 |
+
+Key decomposition facts:
+
+- The monographic excess (+32) is **entirely inside the paired events**:
+  excluding positions that belong to d1/d4 pairs, mono matches are at
+  chance (422 vs 444.6, z = −1.1).
+- The full delta histogram at lag 5 is uniform (χ² = 24.2, df 28); the
+  delta = 0 bin (479) literally *ties* with delta = 23 (479). Nothing
+  first- or second-order is special about lag 5.
+- Cluster structure: 59 two-match clusters (null ≈ 50), 8 three-match
+  clusters (null ≈ 7 — at chance), and one six-match cluster. Removing
+  the six-match cluster leaves d1 = 27, d4 = 26: the signal is not one
+  passage.
+- Split-half: d1 splits 15+14, d4 splits 13+15.
+- No phase: event positions are uniform mod 5; the pattern is translation
+  invariant (this excludes any fixed-grid/blocked reading).
+- Spatially: corpus-wide with a concentration in transcription section 4
+  (8 d1-events vs 2.2 expected, z = +3.8 alone); excluding section 4
+  entirely the joint statistic still stands at z = +3.7.
+- Events CAN cross word boundaries, sentence boundaries (one verified
+  event straddles a `:` sentence mark), and page boundaries — but they are
+  not boundary-blind: the joint decomposition
+  (`experiments/lag5_word_boundary.py`) shows paired matches sit inside
+  single words significantly more often than shuffled boundaries allow
+  (27 vs 16.9 ± 4.1, p = 0.014); 9 of the 29 d1 events are entire in-word
+  digraph repeats. This corrects an earlier claim of no word-structure
+  correlation (see §6). Events remain uncorrelated with the positions of
+  the 86 doublets.
+
+## 3. Verified examples (in Cicada's ink)
+
+All of the following were checked glyph-by-glyph against the 2400×3600
+page scans (`liber-primus__images--unsolved`); an automated forced-
+alignment OCR comparison additionally verified ~83% of the whole corpus
+against the images with **zero transcription errors found**.
+
+- **Page index 50, lines 11–12** (image `51.jpg`): line 11 ends
+  `... T OE M · S D`, line 12 begins `NG G L S D NG · OE · S J D ...`
+  — the trigram **S-D-NG repeats at distance exactly 5**, entirely inside
+  the 8-rune word `ᛋᛞᛝᚷᛚᛋᛞᛝ` spanning the line break. This single
+  cluster contains 2 d1-events and 2 d4-events.
+- **Page index 16, line 1** (image `16.jpg`):
+  `E D A AE T O EA E EA X C EA T O D C EA N C TH` — the digraph **C-EA**
+  at positions 11–12 repeats at 16–17 (d1), overlapping an EA···C /
+  EA···C frame (d4).
+- **Page index 16, line 4**: `... H G L OE F H G ...` — digraph **H-G**
+  repeats 5 later (d1).
+- **Page index 0, line 12**: `... M R NG D A M R ...` — digraph **M-R**
+  repeats 5 later (d1).
+
+The complete list of all 57 events with page/line/column coordinates is in
+`hypotheses/transcription-verification.md`.
+
+## 4. Honest statistical assessment
+
+Three levels of test, in increasing fairness:
+
+1. **Local**: the joint statistic T = (d1 pairs) + (d4 pairs) = 57 vs a
+   doublet-suppressed-null expectation of 30.7 ± 6.5 → local z ≈ +4.1.
+2. **Family-blind scan**: over all 174 cells (lag L = 2..30 × separation
+   d = 1..6), the top two cells of the entire grid are (5,1) = 29 and
+   (5,4) = 28 — both at lag 5. Monte Carlo for "any single lag carries two
+   cells jointly ≥ (29, 28)": **p ≈ 0.033**. This is the fairest figure.
+3. **Wide dragnet**: over a 399-template family of 4-point statistics
+   (paired equal-lag, s
+--- more ---
+hared-vertex, cross-lag), the two strongest
+   templates are still exactly the lag-5 components, but the global
+   maximum is reached by noise in ~43% of trials. Searching wide enough
+   dissolves the signal, as it dissolves any p ≈ 0.03 effect.
+
+So: roughly a 1-in-30 chance of being a fluke under the fair test, with
+two qualitative facts that pure noise does not owe us — the two top cells
+of the family-blind scan landing on the *same lag*, and the excesses
+landing on the structurally complementary separations 1 and 5−1 = 4.
+
+**Null-model warning.** All quoted significances use a doublet-suppressed
+null (uniform random except reproducing the corpus's 0.664% adjacent-repeat
+rate). This matters enormously: against naive uniform nulls, this corpus
+manufactures large fake signals — we documented +8σ (bigram IoC), −4σ
+(trigram repeat counts), and +6σ (isomorph duplicates) artifacts, all of
+which vanish under the corrected null. Anyone reproducing this work must
+include the doublet rate in their null or they will "discover" structure
+that is not there.
+
+## 5. Why a decade of analysis missed it
+
+The anomaly is a **four-point correlation**: it relates two *coincidence
+events* at adjacent offsets, i.e. four text positions jointly. Its entire
+two-point footprint is the +1.5σ mono kappa at lag 5 — as a contribution
+to the full 29×29 contingency χ² at lag 5, that is ≈ 38 against a noise
+floor of ±41 (df = 840). Standard tooling — IoC, kappa, Friedman, bigram
+tables, mutual information, autocorrelation, spectral tests — is all
+1st/2nd-order machinery and is mathematically incapable of seeing it. We
+verified the corpus is flat at 1st order (distribution, positions), 2nd
+order (full 29×29 tables at every lag 1–60; kappa to lag 6,400), and 3rd
+order (zero triplets; trigraphic kappa flat). The complete order
+hierarchy of this ciphertext is:
+
+| order | result |
+|---|---|
+| 1-point | flat |
+| 2-point | flat except the lag-1 diagonal (doublet suppression, 17σ) |
+| 3-point | flat |
+| 4-point | the lag-5 pairing — and nothing else (399-template scan) |
+
+Precedent: Zodiac-340 was cracked starting from the same statistic family
+(repeated two-symbol sequences at trial offsets, peaking at 19), the only
+handle its 340 symbols offered. At LP's length, we additionally verified
+the Z-340 mechanism class (homophones + transposition) is *excluded* here:
+it would leak at 2nd order at this sample size, and LP does not.
+
+## 6. What it is not (eliminated explanations)
+
+Each item below was tested directly; scripts in `experiments/`,
+write-ups in `hypotheses/`.
+
+- **Transcription error**: events verified on the page scans; full-corpus
+  OCR comparison found zero errors in the ~83% it could align (the rest
+  are decorative section-start pages, where the key events were verified
+  manually).
+- **Period-5 polyalphabetic** (any 5 alphabets): would put mono lag-5
+  kappa at ~1.7× flat; observed 1.073×.
+- **Period-5 shift cipher under any ciphertext-computable interruptor
+  schedule** (the loophole a plain kappa test leaves open — the solved
+  "AN END" page used exactly this trick): a per-page chi-square attack over
+  61 key schedules (every single-rune skip:R and reset:R interruptor, plus
+  word- and sentence-restart schedules; 6,710 runs; positive control cracks
+  a 95-rune synthetic at z ≈ +7) finds no page decrypting under any of
+  them, and a corpus-wide coset-IoC sweep excludes period-5 polyalphabetic
+  (incl. Quagmire) under the same schedules. Scripts:
+  `examples/lp_lag5_attack.py`, `examples/lp_lag5_analysis.py`.
+- **Plaintext/ciphertext autokey** with feedback depth 1–8, either text
+  direction, any tabula recta: preceding-rune split tests flat.
+- **Fixed-width-5 blocks/seriation/bifid** (including GF(29)-native
+  constructions and binary 5-bit fractionation): excluded by missing mod-5
+  phase, residual IoC, or wrong pair-shape (broad d=1..4 elevation instead
+  of selective {1,4}).
+- **Lag-5-tapped LFSR/lagged-Fibonacci keystreams**: no pair structure
+  (key reuse alone produces no ciphertext coincidences without plaintext
+  coincidences — an information-theoretic point, see §7).
+- **Line/sentence/page structure**: no correlation; no per-line key reset.
+  **Word structure is the exception — resolved July 2026.** An independent
+  decomposition of the same +32 lag-5 excess found it concentrated within
+  words (4.92% within-word vs cross-word exactly at chance,
+  boundary-permutation p = 0.0014; `within-word-d5-coincidence.md`), which
+  contradicted this document's original boundary-blindness claim. The joint
+  test both analyses had skipped (`experiments/lag5_word_boundary.py`;
+  classify all 479 matches by paired/isolated x within/across, word-length
+  permutation null per cell) settles it: **paired matches are
+  word-boundary-aware** (27 within vs null 16.9 ± 4.1, p = 0.014) and so
+  are isolated matches (75 vs 59.5 ± 6.8, p = 0.018). Boundary-blindness is
+  falsified; the pairing and the within-word excess are two faces of one
+  word-aware phenomenon. The overlap is concrete: the 9 in-word digraph
+  repeats (`XY···XY` words) are simultaneously 9 of the 29 d1 pair events
+  and the core of the within-word signal. Geometry note: a d4 event spans
+  10 positions, so it can almost never sit inside one word (1 of 28 does);
+  the d4 face necessarily reaches across boundaries, which is what made the
+  original "events freely cross boundaries" reading look plausible.
+- **Shared grid with the doublets**: under "doublets mark group
+  boundaries", close doublet-event distances should be {5,6}-expressible;
+  observed consistency 4/22 = 18% vs 47% chance — *rejected* (the two
+  phenomena do not co-tile).
+- **Marker-rune or value-driven blocking rules**: runes adjacent to events
+  and doublets are corpus-typical; capacity-accumulation scans flat.
+- **Homophones + transposition** (Zodiac class): would show 2nd-order
+  structure at this corpus length; LP is 2nd-order flat everywhere.
+
+## 7. The information-theoretic constraint
+
+The veri
+
+===== aldegonde_doublet.json =====
+Markdown chars: 12016
+# Liber Primus Doublet Suppression Analysis
+
+## Observed Properties
+
+1. **29-symbol alphabet** (Gematria Primus / Elder Futhark)
+2. **Near-random statistics** (flat distribution, IoC ≈ 1/29 ≈ 0.0345)
+3. **Doublets suppressed 5-6×** (expected ~3.45%, observed ~0.6%)
+4. **Zero triplets** in the corpus
+5. **KRAKUP analysis**: highly nonhomogeneous (score ~0.4-0.5), suggesting mixed material or changing periods
+
+## Hypotheses
+
+### Hypothesis 1: Simple Ciphertext Autokey (RULED OUT)
+
+**Mechanism**: Beaufort or Vigenère ciphertext autokey with standard tableau.
+
+```
+C₀ = K₀ - P₀  (primer)
+Cᵢ = Cᵢ₋₁ - Pᵢ  (Beaufort)
+```
+
+**Doublet condition**: Cᵢ = Cᵢ₋₁ ⟺ Pᵢ = 0
+
+**Why it fails**:
+- Trying all 29 single-rune primers produces no recognizable plaintext
+- The decrypted text remains random with high IoC
+- If this were the cipher, at least one primer should reveal patterns
+
+**Status**: RULED OUT for simple case, but see Hypothesis 1b.
+
+---
+
+### Hypothesis 1b: Custom Alphabet Autokey (Quagmire-style)
+
+**Mechanism**: Autokey cipher using a keyed/scrambled tableau instead of standard Vigenère/Beaufort tableau.
+
+```
+C₀ = T[K₀][P₀]  (keyed tableau T, primer K₀)
+Cᵢ = T[Cᵢ₋₁][Pᵢ]  (ciphertext autokey with custom tableau)
+```
+
+**Doublet condition analysis**:
+
+In a standard tableau, row k has identity at column 0: T[k][0] = k for all k.
+
+In a scrambled tableau:
+- Each row is a permutation of 0-28
+- For row k, the identity element (where T[k][p] = k) varies
+- Let I(k) = the identity element for row k
+
+Doublet Cᵢ = Cᵢ₋₁ occurs when Pᵢ = I(Cᵢ₋₁)
+
+**Key insight**: If the tableau is constructed such that all identity elements are the SAME value (say, all rows have identity at column 7), then:
+- Doublet rate = frequency of symbol 7 in plaintext
+- If that symbol is rare in plaintext → doublets are rare
+
+**Properties of custom alphabet autokey ciphertext**:
+1. IoC remains near random (autokey destroys patterns)
+2. Doublet rate depends on tableau structure and plaintext distribution
+3. Without the keyword, the tableau is unknown → 29! possible permutations per row
+4. Standard attacks (trying 29 primers) fail because the tableau is wrong
+5. Frequency analysis fails because autokey + scrambling destroys patterns
+
+**Why this is promising**:
+- Explains why trying 29 primers doesn't work (wrong tableau)
+- Explains doublet suppression (if tableau has consistent identity structure)
+- Explains near-random statistics (autokey property)
+- Matches known Cicada use of Beaufort + keywords
+
+**Open question**: What tableau structure would give consistent identity elements while remaining a valid Latin square?
+
+---
+
+### Hypothesis 2: Plaintext Autokey / Running Key (EQUIVALENT TO 1)
+
+**Mechanism**: Running key where key is the plaintext shifted by some offset.
+
+This is mathematically equivalent to plaintext autokey:
+```
+Cᵢ = Pᵢ - Pᵢ₋ₙ (mod 29)
+```
+
+For n=1, this is first-difference encoding.
+
+**Doublet condition**: Pᵢ - Pᵢ₋ₙ = Pᵢ₊₁ - Pᵢ₊₁₋ₙ
+
+**Status**: Subsumed by Hypothesis 1/1b analysis.
+
+---
+
+### Hypothesis 3: Progressive Counter Element (TESTED, INCONCLUSIVE)
+
+**Mechanism**:
+```
+Cᵢ = Pᵢ + Kᵢ + i·c (mod 29)
+```
+
+Where c is a constant increment (tried c=1).
+
+**Doublet condition**:
+```
+Pᵢ + Kᵢ + i·c = Pᵢ₊₁ + Kᵢ₊₁ + (i+1)·c
+Pᵢ - Pᵢ₊₁ + Kᵢ - Kᵢ₊₁ = c
+```
+
+**Status**: Tested with c=1, no patterns emerged. Could test c=2..28.
+
+---
+
+### Hypothesis 4: Explicit Anti-Doublet Rule (RULED OUT)
+
+**Mechanism**: "If next ciphertext would repeat, add 1"
+
+**Status**: RULED OUT - inelegant and would create detectable statistical anomalies.
+
+---
+
+### Hypothesis 5: Monoalphabetic Layer on Autokey
+
+**Mechanism**: Two-layer encryption:
+1. First layer: Autokey (produces few doublets due to plaintext property)
+2. Second layer: Monoalphabetic substitution (MASC)
+
+```
+C = MASC(Autokey(P, primer), substitution_key)
+```
+
+**Why this works**:
+- MASC preserves doublet relationships perfectly (if A→X, then AA→XX)
+- Autokey creates few doublets if some plaintext symbol is rare
+- MASC scrambles everything else, making frequency analysis fail
+- Combined: random-looking output with suppressed doublets
+
+**Properties**:
+- Doublet rate = frequency of identity element in autokey output
+- MASC adds 29! complexity on top of autokey
+- Explains why standard attacks fail
+
+---
+
+### Hypothesis 6: Polygraphic Element (Digraphic Cipher)
+
+**Mechanism**: What if the cipher operates on pairs?
+
+A Playfair-like or Hill-like cipher on rune pairs:
+- Input: digraphs (pairs of runes)
+- Output: digraphs
+- If the cipher maps (A,A) to rare outputs, or has structure that avoids adjacent identical symbols
+
+**Properties of Playfair that suppress doublets**:
+- Playfair explicitly handles doubles by inserting nulls
+- Could a similar mechanism be at play?
+
+**Status**: Worth investigating if the text length is even and digraph analysis shows structure.
+
+---
+
+### Hypothesis 7: Interrupted Key with Phase Shifts
+
+**KRAKUP analysis** shows:
+- Homogeneity score ~0.4-0.5 (highly nonhomogeneous)
+- Multiple stable regions with different dominant periods
+- Phase slips detected at specific positions
+- Period changes throughout the text
+
+This suggests the cipher might:
+1. Change key/method at certain points
+2. Have interruptions or resets
+3. Be a mix of different sections with different encryption
+
+**Implication**: The doublet suppression might be a property of the OVERALL construction, not a single cipher.
+
+---
+
+## Key Questions to Investigate
+
+1. **Custom tableau structure**: What Quagmire-style tableau would have all identity elements at the same column? Is this possible while maintaining invertibility?
+
+2. **MASC + Autokey testing**: Can we detect if there's a MASC layer by analyzing digraph patterns or other second-order statistics?
+
+3. **Segment-by-segment analysis**: Do different LP segments have different doublet rates? This would support the nonhomogeneous hypothesis.
+
+4. **Known plaintexts**: In solved LP pages, what is the frequency of the identity element? Does it match the observed doublet rat
+--- more ---
+e?
+
+5. **Digraphic patterns**: Even with suppressed doublets, are there patterns in the digraph distribution that could reveal structure?
+
+---
+
+---
+
+## CRITICAL FINDING: Runeglish Frequencies Match Doublet Rate!
+
+**CORRECTION**: I initially confused CIPHERTEXT frequencies with PLAINTEXT frequencies.
+
+- **CIPHERTEXT** has flat frequencies (3.05% - 3.75%) - this is EXPECTED from autokey
+- **PLAINTEXT** (Runeglish from English) has very different frequencies!
+
+Actual LP ciphertext statistics:
+- Total runes: 13,136
+- Doublets: 89 (0.678%)
+- Suppression: 5.09x
+- Triplets: 0
+
+**Runeglish frequencies from English text (2M+ characters):**
+```
+ᛟ (OE   ):  0.08%  <-- extremely rare
+ᛄ (J    ):  0.15%  <-- very rare
+ᛇ (EO   ):  0.18%  <-- very rare
+ᚫ (AE   ):  0.18%  <-- very rare
+ᛉ (X    ):  0.32%  <-- very rare
+ᛠ (EA   ):  0.45%  <-- rare
+ᚦ (TH   ):  0.56%  <-- CLOSE TO 0.68%!
+ᛝ (NG   ):  0.60%  <-- MATCHES 0.68%! ✓
+ᚹ (W    ):  0.64%  <-- MATCHES 0.68%! ✓
+ᚠ (F    ):  1.11%
+ᛡ (IA/IO):  1.41%
+...
+ᛖ (E    ):  9.94%  <-- most common
+```
+
+**The doublet rate of 0.68% matches NG (0.60%) or W (0.64%) almost exactly!**
+
+---
+
+## CONFIRMED: Simple Quagmire Autokey IS Consistent
+
+For ciphertext autokey: `doublet_rate = frequency(identity_char_in_PLAINTEXT)`
+
+If the Quagmire keyword starts with:
+- **ᛝ (NG)**: plaintext frequency 0.60% → expect ~0.60% doublets ✓
+- **ᚹ (W)**: plaintext frequency 0.64% → expect ~0.64% doublets ✓
+- **ᚦ (TH)**: plaintext frequency 0.56% → expect ~0.56% doublets ✓
+
+The observed 0.68% is within statistical noise of these values!
+
+**Per-segment doublet rates vary:**
+```
+Segments 0-4: 0.52-0.55% (6.3-6.6x suppression) ← more suppressed
+Segments 5-9: 0.60-1.08% (3.2-5.8x suppression) ← less suppressed
+```
+
+This variation could indicate:
+1. Different keywords per segment (different identity characters)
+2. Different plaintext content (more/fewer NG/W/TH occurrences)
+3. Or different encryption methods entirely
+
+**All 29 runes appear as doublets** (1-7 occurrences each), which IS consistent with autokey (the doublet symbol depends on previous ciphertext, not on the identity character).
+
+---
+
+## Primary Hypothesis: Quagmire III Autokey with Rare Digraph Identity
+
+The cipher is likely:
+1. **Quagmire III** (keyed Beaufort) with **ciphertext autokey**
+2. **Keyword starts with NG, W, or TH** (or letter that maps to position 0)
+3. This makes the identity character one with ~0.6% frequency in Runeglish
+
+Why this explains everything:
+- ✓ Flat ciphertext distribution (autokey property)
+- ✓ Suppressed doublets (rare identity character)
+- ✓ Zero triplets (probability ≈ 0.006² ≈ 0.004%)
+- ✓ No pattern in single-key decryption (wrong tableau without keyword)
+- ✓ Matches known Cicada use of Beaufort + keywords
+
+---
+
+## Alternative Hypotheses (Lower Probability)
+
+---
+
+## Experimental Confirmation
+
+Ran `experiments/custom_autokey_analysis.py` on 10,000 characters of English-like text:
+
+```
+Keyword: DIVINITY  → Identity: D (4.3% in text) → Doublet rate: 4.3%  (0.9x suppression)
+Keyword: FIRFUMFER → Identity: F (2.4% in text) → Doublet rate: 2.4%  (1.6x suppression)
+Keyword: PRIMUS    → Identity: P (1.9% in text) → Doublet rate: 1.9%  (2.0x suppression)
+Keyword: A         → Identity: A (8.6% in text) → Doublet rate: 8.6%  (0.4x suppression)
+```
+
+**KEY FINDING**: In Quagmire III ciphertext autokey:
+- **Doublet rate = frequency of identity character in plaintext**
+- Identity character = first letter of mixed alphabet = first letter of keyword
+- Ciphertext IoC is ALWAYS near-random (~1/n) regardless of keyword
+
+---
+
+## Implications for Liber Primus
+
+For LP with 5-6x doublet suppression:
+- Expected random doublet rate: 1/29 ≈ 3.45%
+- Observed doublet rate: ~0.6%
+- Therefore: **identity character appears ~0.6% of the time in plaintext**
+
+This is VERY rare. In a uniform 29-symbol distribution, each symbol would be ~3.45%.
+
+**Possible explanations**:
+
+### A. Keyword starts with a rare character
+If the keyword starts with a rune that maps to a letter rare in the plaintext (like Q, X, Z in English), we'd see suppression. But 5-6x is extreme—even Z at 0.07% wouldn't quite work.
+
+### B. Plaintext avoids the identity character
+The plaintext (before encryption) might have been preprocessed to avoid a specific character. This could be:
+- A stylistic choice (avoid certain words/letters)
+- A deliberate obfuscation layer
+- A property of an intermediate encoding
+
+### C. MASC layer on top of autokey
+```
+Plaintext → Autokey encrypt → MASC → Ciphertext
+```
+- The MASC scrambles the alphabet but preserves doublet relationships
+- Combined with autokey: explains random statistics + doublet suppression
+- Adds 29! complexity to the MASC layer alone
+- Standard attacks (29 primers) fail because MASC is unknown
+
+### D. Multiple keywords/segments
+KRAKUP shows nonhomogeneous material. Different sections might use:
+- Different keywords (different identity characters)
+- Different primers
+- Different cipher modes entirely
+
+The average effect could produce the observed 0.6% doublet rate if the identities vary but all are moderately rare.
+
+---
+
+## Critical Insight
+
+**To achieve 5-6x doublet suppression in ciphertext autokey:**
+
+The identity character (first letter of keyword in mixed alphabet) must appear at ~1/6 of its expected random frequency in the plaintext.
+
+For a 29-symbol alphabet:
+- Expected: 3.45%
+- Observed: 0.6%
+- Ratio: 5.75x
+
+This is a VERY strong constraint on either:
+1. The keyword choice (must start with something rare)
+2. The plaintext content (must avoid that character)
+3. An additional layer (MASC, encoding, etc.)
+
+---
+
+## Next Steps
+
+1. ~~Implement custom alphabet autokey encryption/decryption~~ DONE
+2. Analyze doublet rates per segment
+3. Compare with solved LP pages
+4. Search for tableau structures with consistent identity elements
+5. Test MASC + autokey hypothesis
+6. **NEW**: Calculate which Gematria Primus character at ~0.6% frequency would explain doublet rate
+7. **NEW**: Test if solved pages show this same identity ch
+
+===== aldegonde_wordlen.json =====
+Markdown chars: 8028
+# Liber Primus Word Length and Doublet Position Analysis
+
+## Parsing Method
+
+The Liber Primus transcription uses three delimiters:
+
+| Delimiter | Meaning | Parsing Action |
+|-----------|---------|----------------|
+| `-` | Word boundary | Split into separate words |
+| `.` | Sentence boundary | Split into separate words |
+| `/` | Line break (visual only) | **Join** — does NOT break words |
+
+**Naive parsing** treats every non-rune character (including `/` and `\n`) as a word
+boundary. **Proper parsing** joins rune fragments across line breaks, only splitting
+on `-` and `.`. This distinction matters because some words are split across lines in
+the transcription.
+
+## Impact on Word Count
+
+| Parse Method | Word Count |
+|-------------|------------|
+| Naive       | 4,139      |
+| Proper      | 3,671      |
+
+The difference of 468 words comes from line-broken fragments that were incorrectly
+counted as separate words under naive parsing.
+
+## Word Length Distribution
+
+### Full Corpus: Naive vs Proper Parse
+
+| Length | Naive | % | Proper | % | Shift |
+|--------|-------|------|--------|------|-------|
+| 1 | 401 | 9.69% | 128 | 3.49% | -6.2pp |
+| 2 | 828 | 20.00% | 645 | 17.57% | -2.4pp |
+| 3 | 980 | 23.68% | 902 | 24.57% | +0.9pp |
+| 4 | 689 | 16.65% | 646 | 17.60% | +1.0pp |
+| 5 | 414 | 10.00% | 374 | 10.19% | +0.2pp |
+| 6 | 302 | 7.30% | 317 | 8.64% | +1.3pp |
+| 7 | 216 | 5.22% | 261 | 7.11% | +1.9pp |
+| 8 | 155 | 3.74% | 184 | 5.01% | +1.3pp |
+| 9 | 63 | 1.52% | 92 | 2.51% | +1.0pp |
+| 10 | 46 | 1.11% | 60 | 1.63% | +0.5pp |
+| 11 | 27 | 0.65% | 32 | 0.87% | +0.2pp |
+| 12 | 14 | 0.34% | 20 | 0.54% | +0.2pp |
+| 13 | 2 | 0.05% | 6 | 0.16% | +0.1pp |
+| 14 | 2 | 0.05% | 4 | 0.11% | +0.1pp |
+
+| Statistic | Naive | Proper |
+|-----------|-------|--------|
+| Mean word length | 3.85 | 4.34 |
+
+The biggest change is the collapse of single-rune "words" from 9.69% to 3.49%. These
+were artifacts of line breaks splitting words and leaving isolated rune fragments.
+
+### Solved vs Unsolved vs English
+
+Solved sections (7 sections, 249 words): `SOME WISDOM`, `CNOW THIS`, `THE LOSS OF
+DIUINITY`, `AN INSTRUCTIAN`, etc.
+
+Unsolved sections (22 sections, 3,418 words): all remaining.
+
+| Length | Solved | % | Unsolved | % | English ~ |
+|--------|--------|-------|----------|-------|-----------|
+| 1 | 0 | 0.00% | 128 | 3.74% | 3.5% |
+| 2 | 65 | 26.10% | 580 | 16.97% | 9.0% |
+| 3 | 47 | 18.88% | 854 | 24.99% | 17.0% |
+| 4 | 43 | 17.27% | 601 | 17.58% | 18.0% |
+| 5 | 21 | 8.43% | 352 | 10.30% | 15.0% |
+| 6 | 26 | 10.44% | 291 | 8.51% | 11.0% |
+| 7 | 20 | 8.03% | 241 | 7.05% | 9.0% |
+| 8 | 15 | 6.02% | 169 | 4.94% | 6.0% |
+| 9 | 4 | 1.61% | 88 | 2.57% | 4.0% |
+| 10+ | 8 | 3.21% | 114 | 3.34% | 7.0% |
+
+| Statistic | Solved | Unsolved | English |
+|-----------|--------|----------|---------|
+| Mean length | 4.37 | 4.34 | ~4.7 |
+
+**Key observations:**
+
+1. **Solved sections are heavy on 2-rune words** (26.1% vs 9% in English). This is
+   because Runeglish encodes digraphs (TH, EA, OE, NG, etc.) as single runes, so
+   common short English words like "the" (2 runes: TH-E) and "of" (2 runes) become
+   very short.
+
+2. **Unsolved sections also have short words** (mean 4.34), tracking the solved
+   sections closely. This is consistent with the unsolved text also being Runeglish
+   — the word boundary structure (`-` and `.`) is preserved through encryption if the
+   cipher operates within words.
+
+3. **Single-rune words** appear only in unsolved sections (128 instances, 3.74%).
+   The solved sections have zero single-rune words. In Runeglish, the only common
+   single-rune words would be `I` and `A` (~3.5% in English). The 3.74% in unsolved
+   sections is consistent with this expectation, but these could also be artifacts of
+   section/paragraph boundaries or encryption padding.
+
+## Doublet Position Analysis
+
+### Effect of Proper Parsing
+
+| Position | Naive | % | Proper | % | Change |
+|----------|-------|-------|--------|-------|--------|
+| Initial | 21 | 19.3% | 18 | 15.5% | -3 |
+| Final | 35 | 32.1% | 35 | 30.2% | 0 |
+| Middle | 53 | 48.6% | 63 | 54.3% | +10 |
+| **Total** | **109** | | **116** | | **+7** |
+
+Proper parsing reveals 7 doublets that were hidden at line-break boundaries:
+
+| Fragment 1 | Fragment 2 | Joined | Doublet |
+|-----------|-----------|--------|---------|
+| ...NGMIA | IAMMW... | NGMIAIAMMW | IA-IA |
+| ...YWJ | JPH... | YWJJPH | J-J |
+| ...NGIA | IANGSWSPH... | NGIAIANGSWSPH | IA-IA |
+| ...THRE | E... | THREE | E-E |
+| ...FR | RIXUTHH... | FRRIXUTHH | R-R |
+| ...HIAREA | EAXS... | EAHIAREAEAXS | EA-EA |
+| ...THRE | EYSN... | THREEYSN | E-E |
+
+Three word-initial doublets in the naive parse were actually mid-word doublets that
+appeared initial only because the real word start was on the previous line.
+
+### Solved vs Unsolved Doublet Positions
+
+| Metric | Solved | Unsolved |
+|--------|--------|----------|
+| Total doublets | 20 | 96 |
+| Total runes | 1,089 | 14,828 |
+| Doublet rate | 2.38% | 0.84% |
+| Suppression vs random (3.45%) | 1.5x | 4.1x |
+| Word-initial | 0 (0%) | 18 (18.8%) |
+| Word-final | 11 (55%) | 24 (25.0%) |
+| Word-middle | 9 (45%) | 54 (56.2%) |
+
+**Critical finding: zero word-initial doublets in solved sections.** This is expected
+for English plaintext — virtually no English words begin with double letters.
+
+The unsolved sections have 18 word-initial doublets (18.8% of all doublets), which is
+strong evidence that these sections are encrypted. In a cipher that operates on
+individual runes within words, the position of doublets within words becomes
+essentially random.
+
+### Word-Initial Doublets in Unsolved Sections
+
+All 18 word-initial doublets from unsolved sections:
+
+| Word (Gematria) | Starting Doublet |
+|-----------------|-----------------|
+| FF | F-F |
+| EOEOAEC | EO-EO |
+| RREOJM | R-R |
+| CCEA | C-C |
+| AAEAD | A-A |
+| WWU | W-W |
+| AEAEIEFNGTHH | AE-AE |
+| SSEA | S-S |
+| RRNGM | R-R |
+| FFGF | F-F |
+| THTH | TH-TH |
+| OEOECTJ | OE-OE |
+| WWYLEO | W-W |
+| NNYIA | N-N |
+| XXMNAES | X-X |
+| EEW | E-E |
+| WWOEO
+--- more ---
+BO | W-W |
+| WWP | W-W |
+
+W is notably over-represented (4 of 18), but the sample is too small to draw
+distributional conclusions.
+
+### Word-Final Doublets in Solved Sections
+
+The 11 word-final doublets from solved sections are all legitimate English patterns:
+
+| Word | Final Doublet | English Pattern |
+|------|--------------|-----------------|
+| ALL | L-L | Common (-LL) |
+| ALL | L-L | Common (-LL) |
+| ALL | L-L | Common (-LL) |
+| WILL | L-L | Common (-LL) |
+| WILL | L-L | Common (-LL) |
+| LOSS | S-S | Common (-SS) |
+| LOSS | S-S | Common (-SS) |
+| AMASS | S-S | Common (-SS) |
+| TOO | O-O | Common (-OO) |
+| THREE | E-E | Common (-EE) |
+| FF | F-F | Common (-FF, e.g. "off") |
+
+These match the expected English word-final double-letter patterns: LL, SS, EE, OO, FF.
+
+## Summary of Findings
+
+1. **Proper parsing matters.** Joining across line breaks changes mean word length
+   from 3.85 to 4.34 and eliminates ~270 spurious single-rune fragments.
+
+2. **Word length distribution is consistent between solved and unsolved sections**
+   (mean 4.37 vs 4.34), suggesting the cipher preserves word boundaries and the
+   underlying Runeglish encoding.
+
+3. **Word-initial doublets are a cipher signature.** Solved sections have zero;
+   unsolved sections have 18. English does not produce word-initial doublets, so
+   their presence confirms encryption.
+
+4. **Word-final doublets in solved sections are normal English** (ALL, WILL, LOSS,
+   AMASS, TOO, THREE). This validates that the Gematria Primus encoding preserves
+   natural doublet patterns.
+
+5. **Unsolved doublet rate (0.84%) is heavily suppressed** compared to both random
+   expectation (3.45%) and the solved sections (2.38%). This is consistent with the
+   autokey cipher hypothesis described in `lp_doublet_hypotheses.md`.
+
+6. **The cipher operates within word boundaries.** Word delimiters (`-` and `.`) are
+   in plaintext, not encrypted. This rules out full-text stream ciphers and points
+   toward word-level or rune-level encryption with preserved structure.

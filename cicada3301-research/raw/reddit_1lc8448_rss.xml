@@ -1,0 +1,23 @@
+{
+  "code": 200,
+  "data": {
+    "description": "",
+    "external": {},
+    "html": "<html><head></head><body></body></html>",
+    "httpStatus": 429,
+    "httpStatusText": "",
+    "metadata": {},
+    "title": "",
+    "url": "https://www.reddit.com/r/mystery/comments/1lc8448/update_also_solved_the_cicada_3301_page_16/.rss",
+    "usage": {
+      "tokens": 12
+    },
+    "warning": "Target URL returned error 429: Too Many Requests"
+  },
+  "meta": {
+    "usage": {
+      "tokens": 12
+    }
+  },
+  "status": 200
+}

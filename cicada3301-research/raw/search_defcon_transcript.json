@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.classcentral.com/course/youtube-def-con-31-war-stories-cracking-cicada-3301-taiiwo-artorias-puck-theclockworkbird-360580",
+    "name": "Cracking Cicada 3301: A Journey Through the Liber",
+    "snippet": "Join a fascinating conference talk from DEF CON 31 where four community leaders from CicadaSolvers share their nine-year journey attempting to crack one of the ...",
+    "host_name": "www.classcentral.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://infocondb.org/con/def-con/def-con-31/cracking-cicada-3301-the-future-of-collaborative-puzzle-solving",
+    "name": "Cracking Cicada 3301: The Future of Collaborative Puzzle-",
+    "snippet": "Aug 10, 2023 — This talk will explore the ongoing efforts of the CicadaSolvers community to solve Cicada3301's Liber Primus , a book of elder futhark runes and ...",
+    "host_name": "infocondb.org",
+    "rank": 1,
+    "date": "Aug 10, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/How_the_solved_pages_of_the_Liber_Primus_were_solved",
+    "name": "How the solved pages of the Liber Primus were solved",
+    "snippet": "The ciphertext is from rtkd's transcription , in the order given on this page. From the Gematria Primus , each rune can be converted to a decimal value ...",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/cicada",
+    "name": "Cicada 3301 Mystery",
+    "snippet": "DEF CON 31 War Stories - Cracking Cicada 3301 - Taiiwo, Artorias, Puck, Current progress: 56 pages remaining out of 58 in the current step of  ...",
+    "host_name": "www.reddit.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/krisyotam/cicada3301",
+    "name": "krisyotam/cicada3301: Complete Cicada 3301 archive —",
+    "snippet": "Comprehensive archive of all known Cicada 3301 materials: three puzzle rounds (2012–2014, 2016), the complete Liber Primus , all PGP-signed communications, ... Read more",
+    "host_name": "github.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.infosecurity.us/blog/2023/12/2/def-con-31-war-stories-taiiwos-artorias-pucks-theclockworkbirds-cracking-cicada-3301",
+    "name": "DEF CON 31 - War Stories - Taiiwo's, Artorias', Puck's",
+    "snippet": "Dec 2, 2023 — DEF CON 31 - War Stories - Taiiwo's, Artorias', Puck's, TheClockworkBird's 'Cracking Cicada 3301' → · December 02, 2023 by Marc Handelman in ... Read more",
+    "host_name": "www.infosecurity.us",
+    "rank": 5,
+    "date": "Dec 2, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://connortumbleson.com/2024/02/05/the-cicada-3301-mystery-puzzle-3-solve-part-2",
+    "name": "The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 2",
+    "snippet": "Feb 4, 2024 — The 1st page (Page 3 of Liber Primus ) had a PGP message contained within the payload. If we examine that payload - we get a message and ... Read more",
+    "host_name": "connortumbleson.com",
+    "rank": 6,
+    "date": "Feb 4, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.boxentriq.com/guides/cicada-3301-liber-primus",
+    "name": "Cicada 3301 Liber Primus Guide",
+    "snippet": "Select Gematria Primus to Latin . Paste the page's rune transcription. Confirm the heading and the prime/totient statements. Ciphertext ᛋᚩᛗᛖ-ᚹᛁᛋᛞᚩᛗ. Read more",
+    "host_name": "www.boxentriq.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

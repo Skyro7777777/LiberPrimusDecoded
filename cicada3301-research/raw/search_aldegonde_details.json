@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://forum.d5render.com/t/issues-with-the-scatter/61519",
+    "name": "Issues with the scatter - Get Help",
+    "snippet": "Aug 6, 2025 — I'm having issues with the scanner . There are uncovered areas remaining, and it's unclear what's causing this. Before the last update, ...",
+    "host_name": "forum.d5render.com",
+    "rank": 0,
+    "date": "Aug 6, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://support.google.com/webmasters/answer/7489871?hl=en",
+    "name": "CAD",
+    "snippet": "No information is available for this page. Learn why",
+    "host_name": "support.google.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.facebook.com/groups/ChiefGoodies/posts/3697199120295394",
+    "name": "D5Render issues with curved surfaces in Collada files",
+    "snippet": "One of the many problems with #D5render not able to open Collada files directly can be seen in this rendering, curved surfaces not being smooth. Read more",
+    "host_name": "www.facebook.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/wende/cicada",
+    "name": "wende/cicada: AI Coders search blindly. Be their guide.",
+    "snippet": "AI Coders search blindly. Be their guide. Contribute to wende/ cicada development by creating an account on GitHub .",
+    "host_name": "github.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/bytedance-seed/depth-anything-3",
+    "name": "ByteDance-Seed/Depth-Anything-3",
+    "snippet": "This work presents Depth Anything 3 (DA3), a model that predicts spatially consistent geometry from arbitrary visual inputs, with or without known camera poses.",
+    "host_name": "github.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://fargo3d.bitbucket.io/boundaries.html",
+    "name": "Boundaries - FARGO3D 2.0 documentation",
+    "snippet": "Boundary conditions in FARGO3D can be selected only for the Y and Z directions, This file is taken as a template for building automatic boundary condition C ...",
+    "host_name": "fargo3d.bitbucket.io",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/radix-ai/agoro-field-boundary-detector",
+    "name": "superlinear-ai/agoro-field-boundary-detector",
+    "snippet": "Detect field boundaries using satellite imagery. This class provides an interface on top of the field boundary detector model. This script allows you to easily ...",
+    "host_name": "github.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/selimanac/defold-depth-of-field",
+    "name": "selimanac/defold-depth-of-field - DoF",
+    "snippet": "Open your game.project file, select Project and add a Dependencies field: Set the depth difference range for blur effect. Controls the number of samples taken ...",
+    "host_name": "github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
