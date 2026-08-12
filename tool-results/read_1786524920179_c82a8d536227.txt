@@ -1,0 +1,641 @@
+     1→#!/usr/bin/env python3
+     2→"""
+     3→wave4_attacks.py — Wave-4: hash-keystream + hill-climbing + magic-square + stream-cipher attacks
+     4→on Cicada 3301's unsolved Liber Primus pages.
+     5→
+     6→Four attacks:
+     7→  1. Page-56 deep-web 512-bit hash as Vigenère/autokey keystream (8 variants × 3 cipher modes × 2 lengths).
+     8→  2. Hill-climbing autokey primer discovery (8 L × 2 modes × 10 restarts = 160 climbs).
+     9→  3. Magic-square-derived keystreams (page-16, page-5) + Zeckendorf indices.
+    10→  4. Stream-cipher / OTP hypothesis: cookie XOR, 512-char hex XOR, P.S. number keystream.
+    11→
+    12→Foundation: Wave-1 (autokey signature confirmed) + Wave-2 (372 tests, no English) + Wave-3
+    13→(432 layered attacks, no English). The autokey cryptanalytic signature is intact but the
+    14→primer is unknown. IC=1.0 may suggest OTP/stream-cipher rather than classical autokey.
+    15→"""
+    16→from __future__ import annotations
+    17→import json, sys, os, hashlib, random, time
+    18→from typing import List, Dict, Tuple, Optional
+    19→
+    20→sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    21→from gematria_primus import (
+    22→    RUNES, N_RUNES, MOD, LETTERS, PRIMES,
+    23→    RUNE_TO_DEC, DEC_TO_RUNE, DEC_TO_LETTER,
+    24→    clean_runes, runes_to_decimals, decimals_to_runes,
+    25→    runes_to_latin, decimals_to_latin,
+    26→    vigenere, _vigenere_decrypt_no_skip,
+    27→    autokey_vigenere, atbash, caesar,
+    28→    english_score,
+    29→)
+    30→
+    31→# ============================================================================
+    32→# LOAD UNSOLVED CORPUS
+    33→# ============================================================================
+    34→with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'unsolved_pages.json')) as f:
+    35→    UNSOLVED_PAGES = json.load(f)
+    36→
+    37→# Concatenate all unsolved rune sequences in page order
+    38→UNSOLVED_FULL = "".join(clean_runes(p.get('runes', '')) for p in UNSOLVED_PAGES)
+    39→assert len(UNSOLVED_FULL) == 12956, f"Expected 12956, got {len(UNSOLVED_FULL)}"
+    40→
+    41→SAMPLE_300 = UNSOLVED_FULL[:300]
+    42→SAMPLE_1000 = UNSOLVED_FULL[:1000]
+    43→
+    44→# ============================================================================
+    45→# KEY CONSTANTS
+    46→# ============================================================================
+    47→# Page-56 deep-web hash (the explicit "next-step target" Cicada emitted)
+    48→PAGE56_HASH_HEX = (
+    49→    "36367763ab73783c7af284446c59466b4cd653239a311cb7116d4618dee09a8425"
+    50→    "893dc7500b464fdaf1672d7bef5e891c6e2274568926a49fb4f45132c2a8b4"
+    51→)
+    52→assert len(PAGE56_HASH_HEX) == 128, f"Hash must be 128 hex chars, got {len(PAGE56_HASH_HEX)}"
+    53→
+    54→# Two onion cookies from p7amjopgric7dfdi.onion (2013)
+    55→COOKIE_167 = "6941f707ff39d259ff71657a79cb6b54c184d2f0455810109c1a960860bde0e6"  # 32 bytes
+    56→COOKIE_761 = "7bc1e7805ccfa518920f0d94fc4e8f7dbd83287a03b337b89109cd2287befae5"  # 32 bytes
+    57→assert len(COOKIE_167) == 64 and len(COOKIE_761) == 64
+    58→
+    59→# 512-char hex string from fv7lyucmeozzd5j4.onion (Connor Part 2, <!--1033-->)
+    60→ONION_512_HEX = (
+    61→    "87de5b7fa26ab85d2256c453e7f5bc3ac7f25ee743297817febd7741ededf07ca"
+    62→    "0c7e8b1788ea4131441a8f71c63943d8b56aea6a45159e2f59f9a194af23eaabf"
+    63→    "9de0f3123c041c882d5b7e03e17ac49be67cef29fbc7786e3bda321a176498835"
+    64→    "f6198ef22e81c30d44281cd217f7a46f58c84dd7b29b941403ecd75c0c735d20"
+    65→    "266121f875aa8dec28f32fc153b1393e143fc71616945eea3c10d6820bd631cf"
+    66→    "775cf3c1f27925b4a2da655f783f7616f3359b23cff6fb5cb69bcb745c55dff4"
+    67→    "39f7eb6a4094bd302b65a84360a62f94c8b010250fcc431c190d6ed8cc8a3bfc"
+    68→    "e37dddb24b93f502ad83c5fa21923189d8be7a6127c4105fcf0e5275286f2"
+    69→)
+    70→assert len(ONION_512_HEX) == 512, f"Onion 512 must be 512 hex chars, got {len(ONION_512_HEX)}"
+    71→
+    72→# 131-digit P.S. number from 2012 vjuNp.jpg (Wave-2 verified length)
+    73→PS_NUMBER = "10412790658919985359827898739594318956404425106955675643739226952372682423852959081739834390370374475764863415203423499357108713631"
+    74→assert len(PS_NUMBER) == 131, f"P.S. number should be 131 digits, got {len(PS_NUMBER)}"
+    75→
+    76→# Page-16 magic square (5x5, magic constant 3301) — verified values
+    77→PAGE16_MS = [434, 1311, 312, 278, 966,
+    78→             204, 812, 934, 280, 1071,
+    79→             626, 620, 809, 620, 626,
+    80→             1071, 280, 934, 812, 204,
+    81→             966, 278, 312, 1311, 434]
+    82→assert len(PAGE16_MS) == 25
+    83→assert sum(PAGE16_MS[:5]) == 3301  # row 1
+    84→
+    85→# Page-5 magic square (5x5, magic constant 1033) — task-provided values
+    86→PAGE5_MS  = [272, 138, 341, 131, 151,
+    87→             199, 130, 320, 245, 226,
+    88→             91, 366, 199, 320, 341,
+    89→             272, 138, 341, 131, 151,   # actually page 5 has only 11 unique numbers per dossier — but task provides 15
+    90→             199, 130, 320, 245, 226]
+    91→# NOTE: actual page 5 has only 11 numbers (see solved_pages.json). The task provides
+    92→# these 15 values; we treat as a 3x5 grid (or 5x3). We'll test both row-major & col-major.
+    93→assert len(PAGE5_MS) == 25 or len(PAGE5_MS) == 15  # accept either
+    94→
+    95→# ============================================================================
+    96→# UTILITY FUNCTIONS
+    97→# ============================================================================
+    98→
+    99→def hex_pairs_to_bytes(hex_str: str) -> bytes:
+   100→    """Convert a hex string to bytes (must be even length)."""
+   101→    if len(hex_str) % 2: hex_str = "0" + hex_str
+   102→    return bytes.fromhex(hex_str)
+   103→
+   104→
+   105→def bytes_to_rune_key(b: bytes, mod: int = MOD) -> str:
+   106→    """Convert bytes to a rune-key (each byte mod 29 → rune)."""
+   107→    return "".join(DEC_TO_RUNE[byte % mod] for byte in b)
+   108→
+   109→
+   110→def hex_digits_to_rune_key(hex_str: str, mod: int = MOD) -> str:
+   111→    """Convert each hex digit (0-15) to a rune (mod 29 = identity)."""
+   112→    return "".join(DEC_TO_RUNE[int(c, 16) % mod] for c in hex_str)
+   113→
+   114→
+   115→def dec_digits_to_rune_key(dec_str: str, mod: int = MOD) -> str:
+   116→    """Convert each decimal digit (0-9) to a rune (mod 29 = identity)."""
+   117→    return "".join(DEC_TO_RUNE[int(c) % mod] for c in dec_str if c.isdigit())
+   118→
+   119→
+   120→def score_pt(pt_runes: str) -> Tuple[float, str]:
+   121→    """Score a plaintext (in runes) — convert to Latin then english_score."""
+   122→    latin = runes_to_latin(pt_runes)
+   123→    score = english_score(latin)
+   124→    return score, latin
+   125→
+   126→
+   127→def test_vigenere_no_skip(cipher_runes: str, key_runes: str) -> Tuple[float, str, str]:
+   128→    """Pure Vigenère decrypt (no F-skip), score, return (score, latin, runes)."""
+   129→    pt = _vigenere_decrypt_no_skip(cipher_runes, key_runes)
+   130→    s, latin = score_pt(pt)
+   131→    return s, latin, pt
+   132→
+   133→
+   134→def test_autokey(cipher_runes: str, primer_runes: str, mode: str) -> Tuple[float, str, str]:
+   135→    """Autokey decrypt (plaintext or ciphertext mode), score."""
+   136→    pt = autokey_vigenere(cipher_runes, primer_runes, mode=mode, decrypt=True)
+   137→    s, latin = score_pt(pt)
+   138→    return s, latin, pt
+   139→
+   140→
+   141→def best_of_three(cipher_runes: str, key_runes: str, label: str) -> Dict:
+   142→    """Test key as Vigenère, autokey_pt, autokey_ct. Return best."""
+   143→    s_v, l_v, r_v = test_vigenere_no_skip(cipher_runes, key_runes)
+   144→    s_ap, l_ap, r_ap = test_autokey(cipher_runes, key_runes, "plaintext")
+   145→    s_ac, l_ac, r_ac = test_autokey(cipher_runes, key_runes, "ciphertext")
+   146→    results = [
+   147→        ("vigenere", s_v, l_v),
+   148→        ("autokey_pt", s_ap, l_ap),
+   149→        ("autokey_ct", s_ac, l_ac),
+   150→    ]
+   151→    best = max(results, key=lambda x: x[1])
+   152→    return {
+   153→        "label": label,
+   154→        "key_runes": key_runes,
+   155→        "key_preview": key_runes[:30],
+   156→        "key_len": len(key_runes),
+   157→        "vigenere_score": round(s_v, 3),
+   158→        "autokey_pt_score": round(s_ap, 3),
+   159→        "autokey_ct_score": round(s_ac, 3),
+   160→        "best_mode": best[0],
+   161→        "best_score": round(best[1], 3),
+   162→        "best_latin_preview": best[2][:120],
+   163→    }
+   164→
+   165→
+   166→# ============================================================================
+   167→# ATTACK 1 — PAGE-56 HASH AS KEYSTREAM (8 VARIANTS × 2 LENGTHS)
+   168→# ============================================================================
+   169→
+   170→def run_attack1() -> Dict:
+   171→    print("\n" + "="*70)
+   172→    print("ATTACK 1: PAGE-56 DEEP-WEB HASH AS KEYSTREAM")
+   173→    print("="*70)
+   174→    print(f"Hash (128 hex = 64 bytes = 512 bits):")
+   175→    print(f"  {PAGE56_HASH_HEX}")
+   176→
+   177→    raw_bytes = hex_pairs_to_bytes(PAGE56_HASH_HEX)
+   178→    print(f"Raw bytes len: {len(raw_bytes)}")
+   179→
+   180→    # Variant a: hex-pair → byte → mod 29 → rune (64 runes)
+   181→    key_a = bytes_to_rune_key(raw_bytes)
+   182→    # Variant b: same as a — explicitly requested (redundant but documented)
+   183→    key_b = key_a
+   184→    # Variant c: each hex digit (0-15) → rune (128 runes)
+   185→    key_c = hex_digits_to_rune_key(PAGE56_HASH_HEX)
+   186→    # Variant d: raw bytes → mod 29 → rune (same as a; verify)
+   187→    key_d = bytes_to_rune_key(raw_bytes)
+   188→    # Variant e: SHA-512 of the hash → 64 more bytes → runes (in case hash is seed, not key)
+   189→    sha512_bytes = hashlib.sha512(raw_bytes).digest()
+   190→    key_e = bytes_to_rune_key(sha512_bytes)
+   191→    # Variant f: hash reversed → hex-pair → rune
+   192→    key_f = bytes_to_rune_key(raw_bytes[::-1])
+   193→    # Variant g: atbash of each rune derived from hash
+   194→    key_g = atbash(key_a)
+   195→    # Variant h: caesar shift by k=1..28 of hash-derived runes — pick best k
+   196→    # We test all k and pick best per sample
+   197→    best_h = None
+   198→    for k in range(1, MOD):
+   199→        caesar_key = caesar(key_a, k, decrypt=True)  # shift down by k
+   200→        res = best_of_three(SAMPLE_300, caesar_key, f"hash_caesar_k{k}_s300")
+   201→        if best_h is None or res["best_score"] > best_h["best_score"]:
+   202→            res["caesar_k"] = k
+   203→            best_h = res
+   204→        res2 = best_of_three(SAMPLE_1000, caesar_key, f"hash_caesar_k{k}_s1000")
+   205→        if best_h is None or res2["best_score"] > best_h["best_score"]:
+   206→            res2["caesar_k"] = k
+   207→            best_h = res2
+   208→
+   209→    variants = [
+   210→        ("a_hexpair_byte_mod29_64runes",     key_a),
+   211→        ("b_hexpair_byte_mod29_64runes_dup", key_b),
+   212→        ("c_hexdigit_mod29_128runes",        key_c),
+   213→        ("d_rawbyte_mod29_64runes_dup",      key_d),
+   214→        ("e_sha512_of_hash_64runes",         key_e),
+   215→        ("f_hash_reversed_hexpair_64runes",  key_f),
+   216→        ("g_atbash_of_hash_runes_64runes",   key_g),
+   217→    ]
+   218→
+   219→    results = []
+   220→    for name, key in variants:
+   221→        r300 = best_of_three(SAMPLE_300, key, name + "_s300")
+   222→        r1000 = best_of_three(SAMPLE_1000, key, name + "_s1000")
+   223→        results.append({"variant": name, "key_len": len(key), "s300": r300, "s1000": r1000})
+   224→
+   225→    # variant h — already computed best across k=1..28 and 2 sample lengths
+   226→    results.append({
+   227→        "variant": "h_caesar_shift_best_k_of_hash_64runes",
+   228→        "best_k": best_h.get("caesar_k"),
+   229→        "best_sample": "s300" if "s300" in best_h["label"] else "s1000",
+   230→        "result": best_h,
+   231→    })
+   232→
+   233→    # Print summary table
+   234→    print(f"\n{'Variant':<45} {'KeyLen':>6} {'S300':>8} {'S1000':>8} {'BestMode':<12} {'BestScore':>10}")
+   235→    print("-"*100)
+   236→    for r in results:
+   237→        if r["variant"].startswith("h_"):
+   238→            print(f"{r['variant']:<45} {'64':>6} {r['result']['best_score']:>8.3f} {'(best)':>8} "
+   239→                  f"{r['result']['best_mode']:<12} {r['result']['best_score']:>10.3f} (k={r['best_k']})")
+   240→        else:
+   241→            print(f"{r['variant']:<45} {r['key_len']:>6} {r['s300']['best_score']:>8.3f} "
+   242→                  f"{r['s1000']['best_score']:>8.3f} {r['s1000']['best_mode']:<12} {r['s1000']['best_score']:>10.3f}")
+   243→
+   244→    # HIGHLIGHT any > 80
+   245→    print("\nHighlights (score > 80):")
+   246→    any_high = False
+   247→    for r in results:
+   248→        if r["variant"].startswith("h_"):
+   249→            if r["result"]["best_score"] > 80:
+   250→                any_high = True
+   251→                print(f"  ⭐ {r['variant']} k={r['best_k']} score={r['result']['best_score']:.3f}")
+   252→                print(f"     preview: {r['result']['best_latin_preview']}")
+   253→        else:
+   254→            for sample_key in ["s300", "s1000"]:
+   255→                if r[sample_key]["best_score"] > 80:
+   256→                    any_high = True
+   257→                    print(f"  ⭐ {r['variant']} ({sample_key}) {r[sample_key]['best_mode']} "
+   258→                          f"score={r[sample_key]['best_score']:.3f}")
+   259→                    print(f"     preview: {r[sample_key]['best_latin_preview']}")
+   260→    if not any_high:
+   261→        print("  (none — all scores in noise band)")
+   262→
+   263→    return {"attack": 1, "variants": results, "any_above_80": any_high}
+   264→
+   265→
+   266→# ============================================================================
+   267→# ATTACK 2 — HILL-CLIMBING AUTOKEY PRIMER DISCOVERY
+   268→# ============================================================================
+   269→
+   270→def hill_climb_autokey(L: int, mode: str, cipher_runes: str, n_iter: int = 5000,
+   271→                       t_start: float = 2.0, t_end: float = 0.1, rng=None,
+   272→                       verbose: bool = False) -> Dict:
+   273→    """
+   274→    Simulated-annealing hill-climb on an autokey primer of length L.
+   275→
+   276→    Decrypt first len(cipher_runes) runes with autokey_vigenere(mode).
+   277→    Score with english_score on Latin output.
+   278→    Mutate 1 rune in primer; accept if better, or worse with prob exp((new-old)/T).
+   279→    """
+   280→    if rng is None: rng = random.Random()
+   281→    n = len(cipher_runes)
+   282→    # Random initial primer
+   283→    primer_decs = [rng.randint(0, MOD-1) for _ in range(L)]
+   284→    primer_runes = "".join(DEC_TO_RUNE[d] for d in primer_decs)
+   285→    pt = autokey_vigenere(cipher_runes, primer_runes, mode=mode, decrypt=True)
+   286→    cur_score = english_score(runes_to_latin(pt))
+   287→    best_score = cur_score
+   288→    best_primer = primer_decs[:]
+   289→    best_pt = pt
+   290→
+   291→    # Temperature schedule: linear in 1/T for smoother cooling
+   292→    inv_t_start = 1.0 / t_start
+   293→    inv_t_end = 1.0 / t_end
+   294→    for it in range(n_iter):
+   295→        # Linear interpolation in inverse-T (geometric cooling equivalent)
+   296→        frac = it / max(1, n_iter - 1)
+   297→        inv_t = inv_t_start + frac * (inv_t_end - inv_t_start)
+   298→        T = 1.0 / inv_t
+   299→
+   300→        # Mutate 1 random position to a random new rune
+   301→        pos = rng.randint(0, L-1)
+   302→        old_val = primer_decs[pos]
+   303→        new_val = rng.randint(0, MOD-1)
+   304→        if new_val == old_val:
+   305→            new_val = (new_val + 1) % MOD
+   306→        primer_decs[pos] = new_val
+   307→        primer_runes = "".join(DEC_TO_RUNE[d] for d in primer_decs)
+   308→        pt = autokey_vigenere(cipher_runes, primer_runes, mode=mode, decrypt=True)
+   309→        new_score = english_score(runes_to_latin(pt))
+   310→
+   311→        delta = new_score - cur_score
+   312→        if delta >= 0 or rng.random() < pow(2.718281828459045, delta / max(T, 1e-6)):
+   313→            # Accept
+   314→            cur_score = new_score
+   315→            if new_score > best_score:
+   316→                best_score = new_score
+   317→                best_primer = primer_decs[:]
+   318→                best_pt = pt
+   319→        else:
+   320→            # Reject — revert
+   321→            primer_decs[pos] = old_val
+   322→
+   323→    best_primer_runes = "".join(DEC_TO_RUNE[d] for d in best_primer)
+   324→    best_latin = runes_to_latin(best_pt)
+   325→    if verbose:
+   326→        print(f"  L={L:3d} mode={mode:9s} best_score={best_score:.3f} primer={best_primer_runes[:30]}")
+   327→        print(f"    pt[:80]: {best_latin[:80]}")
+   328→    return {
+   329→        "L": L, "mode": mode, "best_score": round(best_score, 3),
+   330→        "best_primer_runes": best_primer_runes,
+   331→        "best_primer_latin": decimals_to_latin(best_primer),
+   332→        "best_pt_preview": best_latin[:120],
+   333→    }
+   334→
+   335→
+   336→def run_attack2() -> Dict:
+   337→    print("\n" + "="*70)
+   338→    print("ATTACK 2: HILL-CLIMBING AUTOKEY PRIMER DISCOVERY")
+   339→    print("="*70)
+   340→    # Test window: first 500 runes (per task spec)
+   341→    cipher_500 = UNSOLVED_FULL[:500]
+   342→    Ls = [3, 5, 7, 11, 13, 29, 56, 95]
+   343→    modes = ["plaintext", "ciphertext"]
+   344→    n_restarts = 10
+   345→    n_iter = 3000
+   346→
+   347→    all_results = []
+   348→    best_per_combo = {}
+   349→    overall_best = None
+   350→    t_start = time.time()
+   351→    for L in Ls:
+   352→        for mode in modes:
+   353→            combo_best = None
+   354→            for r in range(n_restarts):
+   355→                rng = random.Random(20250101 + L * 1000 + (1 if mode=="plaintext" else 2) * 100000 + r)
+   356→                res = hill_climb_autokey(L, mode, cipher_500, n_iter=n_iter,
+   357→                                         t_start=2.0, t_end=0.1, rng=rng)
+   358→                all_results.append(res)
+   359→                if combo_best is None or res["best_score"] > combo_best["best_score"]:
+   360→                    combo_best = res
+   361→                if overall_best is None or res["best_score"] > overall_best["best_score"]:
+   362→                    overall_best = res
+   363→            best_per_combo[f"L{L}_{mode}"] = combo_best
+   364→            elapsed = time.time() - t_start
+   365→            print(f"  L={L:3d} mode={mode:9s} best={combo_best['best_score']:.3f}  "
+   366→                  f"primer={combo_best['best_primer_runes'][:30]}  ({elapsed:.0f}s elapsed)",
+   367→                  flush=True)
+   368→
+   369→    print("\nBest per (L, mode):")
+   370→    print(f"{'L':>5} {'Mode':>11} {'Best':>8} {'Primer (latin)':<35} {'pt preview':<60}")
+   371→    print("-"*120)
+   372→    for key, r in best_per_combo.items():
+   373→        L = r["L"]; mode = r["mode"]
+   374→        print(f"{L:>5} {mode:>11} {r['best_score']:>8.3f} {r['best_primer_latin'][:33]:<35} {r['best_pt_preview'][:60]:<60}")
+   375→
+   376→    print(f"\nOverall best: L={overall_best['L']} mode={overall_best['mode']} "
+   377→          f"score={overall_best['best_score']:.3f}")
+   378→    print(f"  primer runes: {overall_best['best_primer_runes']}")
+   379→    print(f"  primer latin: {overall_best['best_primer_latin']}")
+   380→    print(f"  pt preview  : {overall_best['best_pt_preview']}")
+   381→
+   382→    any_high = overall_best["best_score"] > 80
+   383→    return {
+   384→        "attack": 2,
+   385→        "config": {"Ls": Ls, "modes": modes, "n_restarts": n_restarts, "n_iter": n_iter,
+   386→                   "cipher_window": 500},
+   387→        "best_per_combo": best_per_combo,
+   388→        "overall_best": overall_best,
+   389→        "all_results_count": len(all_results),
+   390→        "any_above_80": any_high,
+   391→    }
+   392→
+   393→
+   394→# ============================================================================
+   395→# ATTACK 3 — MAGIC-SQUARE KEYSTREAMS (Zeckendorf-reconstructed)
+   396→# ============================================================================
+   397→
+   398→def zeckendorf_decomp(n: int) -> List[int]:
+   399→    """Return Fibonacci indices (1-indexed) in the Zeckendorf decomposition of n.
+   400→    Uses Fibonacci numbers F(1)=1, F(2)=2, F(3)=3, F(4)=5, F(5)=8, ... (avoid the duplicate 1)."""
+   401→    if n <= 0: return []
+   402→    # Build Fibonacci list with no leading 1 (start F(2)=2 to avoid the 1,1 ambiguity)
+   403→    fibs = [1, 2]
+   404→    while fibs[-1] < n:
+   405→        fibs.append(fibs[-1] + fibs[-2])
+   406→    # Greedy from largest
+   407→    indices = []
+   408→    remaining = n
+   409→    for i in range(len(fibs)-1, -1, -1):
+   410→        if fibs[i] <= remaining:
+   411→            indices.append(i+1)  # 1-indexed
+   412→            remaining -= fibs[i]
+   413→        if remaining == 0:
+   414→            break
+   415→    return indices
+   416→
+   417→
+   418→def run_attack3() -> Dict:
+   419→    print("\n" + "="*70)
+   420→    print("ATTACK 3: MAGIC-SQUARE KEYSTREAMS (Zeckendorf-reconstructed)")
+   421→    print("="*70)
+   422→    print(f"Page-16 magic square (5x5, magic sum 3301): {PAGE16_MS}")
+   423→    print(f"Page-5  magic square (5x5, magic sum 1033): {PAGE5_MS}")
+   424→
+   425→    # Variant a: page-16 values mod 29 → rune (row-major)
+   426→    key16_row = "".join(DEC_TO_RUNE[v % MOD] for v in PAGE16_MS)
+   427→    # Variant b: page-16 values mod 29 → rune (column-major)
+   428→    # 5x5 grid: index = col*5 + row
+   429→    key16_col = "".join(DEC_TO_RUNE[PAGE16_MS[c*5 + r] % MOD] for r in range(5) for c in range(5))
+   430→    # Variant c: page-5 values mod 29 → rune (row-major)
+   431→    key5_row = "".join(DEC_TO_RUNE[v % MOD] for v in PAGE5_MS)
+   432→    # Variant d: page-5 values mod 29 → rune (column-major) — treat as 5x5
+   433→    key5_col = "".join(DEC_TO_RUNE[PAGE5_MS[c*5 + r] % MOD] for r in range(5) for c in range(5))
+   434→    # Variant e: page-16 Zeckendorf decomposition indices as keystream
+   435→    zk16_indices = []
+   436→    for v in PAGE16_MS:
+   437→        zk16_indices.extend(zeckendorf_decomp(v))
+   438→    key16_zk = "".join(DEC_TO_RUNE[i % MOD] for i in zk16_indices)
+   439→    # Variant f: page-5 Zeckendorf decomposition indices
+   440→    zk5_indices = []
+   441→    for v in PAGE5_MS:
+   442→        zk5_indices.extend(zeckendorf_decomp(v))
+   443→    key5_zk = "".join(DEC_TO_RUNE[i % MOD] for i in zk5_indices)
+   444→
+   445→    variants = [
+   446→        ("page16_ms_mod29_rowmajor", key16_row),
+   447→        ("page16_ms_mod29_colmajor", key16_col),
+   448→        ("page5_ms_mod29_rowmajor",  key5_row),
+   449→        ("page5_ms_mod29_colmajor", key5_col),
+   450→        ("page16_zeckendorf_indices_mod29", key16_zk),
+   451→        ("page5_zeckendorf_indices_mod29",  key5_zk),
+   452→    ]
+   453→
+   454→    print(f"\n{'Variant':<40} {'KeyLen':>6} {'Key (latin)':<40}")
+   455→    print("-"*90)
+   456→    for name, k in variants:
+   457→        kl = decimals_to_latin([RUNE_TO_DEC[c] for c in k])
+   458→        print(f"{name:<40} {len(k):>6} {kl[:38]:<40}")
+   459→
+   460→    print(f"\n{'Variant':<40} {'S300 vigenere':>13} {'S300 ak_pt':>10} {'S300 ak_ct':>10} "
+   461→          f"{'S1000 vigenere':>14} {'S1000 ak_pt':>11} {'S1000 ak_ct':>11}")
+   462→    print("-"*120)
+   463→    results = []
+   464→    for name, k in variants:
+   465→        r300 = best_of_three(SAMPLE_300, k, name + "_s300")
+   466→        r1000 = best_of_three(SAMPLE_1000, k, name + "_s1000")
+   467→        results.append({"variant": name, "key_len": len(k), "s300": r300, "s1000": r1000})
+   468→        print(f"{name:<40} {r300['vigenere_score']:>13.3f} {r300['autokey_pt_score']:>10.3f} "
+   469→              f"{r300['autokey_ct_score']:>10.3f} {r1000['vigenere_score']:>14.3f} "
+   470→              f"{r1000['autokey_pt_score']:>11.3f} {r1000['autokey_ct_score']:>11.3f}")
+   471→
+   472→    print("\nBest per variant (S1000):")
+   473→    for r in results:
+   474→        b = r["s1000"]
+   475→        print(f"  {r['variant']:<40} best={b['best_score']:.3f} ({b['best_mode']}) "
+   476→              f"pt: {b['best_latin_preview'][:80]}")
+   477→
+   478→    any_high = any(r["s300"]["best_score"] > 80 or r["s1000"]["best_score"] > 80 for r in results)
+   479→    print(f"\nAny score > 80? {any_high}")
+   480→    return {"attack": 3, "variants": results, "any_above_80": any_high}
+   481→
+   482→
+   483→# ============================================================================
+   484→# ATTACK 4 — STREAM CIPHER / OTP HYPOTHESIS
+   485→# ============================================================================
+   486→
+   487→def xor_stream_decrypt(cipher_runes: str, key_bytes: bytes) -> str:
+   488→    """XOR each rune-decimal (0-28, treated as 1 byte) with the key (cycled).
+   489→    Result mod 29 → rune."""
+   490→    cipher_decs = runes_to_decimals(cipher_runes)
+   491→    out = []
+   492→    for i, cd in enumerate(cipher_decs):
+   493→        kb = key_bytes[i % len(key_bytes)]
+   494→        pd = (cd ^ kb) % MOD
+   495→        out.append(DEC_TO_RUNE[pd])
+   496→    return "".join(out)
+   497→
+   498→
+   499→def add_stream_decrypt(cipher_runes: str, key_decs: List[int]) -> str:
+   500→    """Subtract each key value from cipher-dec (mod 29) — pure Vigenère-style keystream."""
+   501→    cipher_decs = runes_to_decimals(cipher_runes)
+   502→    out = []
+   503→    for i, cd in enumerate(cipher_decs):
+   504→        kd = key_decs[i % len(key_decs)]
+   505→        pd = (cd - kd) % MOD
+   506→        out.append(DEC_TO_RUNE[pd])
+   507→    return "".join(out)
+   508→
+   509→
+   510→def run_attack4() -> Dict:
+   511→    print("\n" + "="*70)
+   512→    print("ATTACK 4: STREAM CIPHER / OTP HYPOTHESIS (XOR & numeric keystream)")
+   513→    print("="*70)
+   514→    results = []
+   515→
+   516→    # Variant a: onion cookies XORed with rune-bytes (cycled)
+   517→    cookie_167_bytes = bytes.fromhex(COOKIE_167)  # 32 bytes
+   518→    cookie_761_bytes = bytes.fromhex(COOKIE_761)  # 32 bytes
+   519→    cookie_both_bytes = cookie_167_bytes + cookie_761_bytes  # 64 bytes
+   520→
+   521→    for name, key in [("cookie_167_xor", cookie_167_bytes),
+   522→                      ("cookie_761_xor", cookie_761_bytes),
+   523→                      ("cookie_both_xor", cookie_both_bytes)]:
+   524→        pt300 = xor_stream_decrypt(SAMPLE_300, key)
+   525→        pt1000 = xor_stream_decrypt(SAMPLE_1000, key)
+   526→        s300 = english_score(runes_to_latin(pt300))
+   527→        s1000 = english_score(runes_to_latin(pt1000))
+   528→        results.append({
+   529→            "variant": name, "key_len": len(key), "method": "xor_byte",
+   530→            "s300_score": round(s300, 3), "s1000_score": round(s1000, 3),
+   531→            "s300_preview": runes_to_latin(pt300)[:120],
+   532→            "s1000_preview": runes_to_latin(pt1000)[:120],
+   533→        })
+   534→        print(f"  {name:<25} keylen={len(key):>3}  s300={s300:.3f}  s1000={s1000:.3f}")
+   535→        print(f"     s300 pt: {runes_to_latin(pt300)[:80]}")
+   536→        print(f"     s1000 pt[:80]: {runes_to_latin(pt1000)[:80]}")
+   537→
+   538→    # Variant b: 512-char hex string (256 bytes) XORed with rune-bytes
+   539→    onion_bytes = bytes.fromhex(ONION_512_HEX)
+   540→    print(f"  Onion 512-char hex = {len(onion_bytes)} bytes")
+   541→    pt300 = xor_stream_decrypt(SAMPLE_300, onion_bytes)
+   542→    pt1000 = xor_stream_decrypt(SAMPLE_1000, onion_bytes)
+   543→    s300 = english_score(runes_to_latin(pt300))
+   544→    s1000 = english_score(runes_to_latin(pt1000))
+   545→    results.append({
+   546→        "variant": "onion_512_xor", "key_len": len(onion_bytes), "method": "xor_byte",
+   547→        "s300_score": round(s300, 3), "s1000_score": round(s1000, 3),
+   548→        "s300_preview": runes_to_latin(pt300)[:120],
+   549→        "s1000_preview": runes_to_latin(pt1000)[:120],
+   550→    })
+   551→    print(f"  onion_512_xor            keylen={len(onion_bytes):>3}  s300={s300:.3f}  s1000={s1000:.3f}")
+   552→    print(f"     s300 pt: {runes_to_latin(pt300)[:80]}")
+   553→    print(f"     s1000 pt[:80]: {runes_to_latin(pt1000)[:80]}")
+   554→
+   555→    # Variant c: first 100 digits of P.S. number as numeric keystream mod 29
+   556→    # Two sub-interpretations: (i) direct subtract (Vigenère stream),
+   557→    # (ii) as autokey primer (already tested in Wave-2, score 68.010, refuted)
+   558→    ps_first100 = PS_NUMBER[:100]
+   559→    ps_key_decs = [int(c) for c in ps_first100]  # 100 digits 0-9
+   560→    pt300_v = add_stream_decrypt(SAMPLE_300, ps_key_decs)
+   561→    pt1000_v = add_stream_decrypt(SAMPLE_1000, ps_key_decs)
+   562→    s300 = english_score(runes_to_latin(pt300_v))
+   563→    s1000 = english_score(runes_to_latin(pt1000_v))
+   564→    results.append({
+   565→        "variant": "ps2012_first100digits_vigenere_stream", "key_len": 100, "method": "subtract_mod29",
+   566→        "s300_score": round(s300, 3), "s1000_score": round(s1000, 3),
+   567→        "s300_preview": runes_to_latin(pt300_v)[:120],
+   568→        "s1000_preview": runes_to_latin(pt1000_v)[:120],
+   569→    })
+   570→    print(f"  ps2012_first100digits_vigenere  keylen=100  s300={s300:.3f}  s1000={s1000:.3f}")
+   571→    print(f"     s300 pt: {runes_to_latin(pt300_v)[:80]}")
+   572→    print(f"     s1000 pt[:80]: {runes_to_latin(pt1000_v)[:80]}")
+   573→
+   574→    # Bonus: also test (iii) P.S. as XOR keystream (each digit 0-9 XORed with rune-dec)
+   575→    # digit-as-byte XOR
+   576→    pt300_x = xor_stream_decrypt(SAMPLE_300, bytes(ps_key_decs))
+   577→    pt1000_x = xor_stream_decrypt(SAMPLE_1000, bytes(ps_key_decs))
+   578→    s300 = english_score(runes_to_latin(pt300_x))
+   579→    s1000 = english_score(runes_to_latin(pt1000_x))
+   580→    results.append({
+   581→        "variant": "ps2012_first100digits_xor", "key_len": 100, "method": "xor_byte",
+   582→        "s300_score": round(s300, 3), "s1000_score": round(s1000, 3),
+   583→        "s300_preview": runes_to_latin(pt300_x)[:120],
+   584→        "s1000_preview": runes_to_latin(pt1000_x)[:120],
+   585→    })
+   586→    print(f"  ps2012_first100digits_xor       keylen=100  s300={s300:.3f}  s1000={s1000:.3f}")
+   587→    print(f"     s300 pt: {runes_to_latin(pt300_x)[:80]}")
+   588→    print(f"     s1000 pt[:80]: {runes_to_latin(pt1000_x)[:80]}")
+   589→
+   590→    any_high = any(r["s300_score"] > 80 or r["s1000_score"] > 80 for r in results)
+   591→    print(f"\nAny score > 80? {any_high}")
+   592→    return {"attack": 4, "variants": results, "any_above_80": any_high}
+   593→
+   594→
+   595→# ============================================================================
+   596→# MAIN
+   597→# ============================================================================
+   598→def main():
+   599→    print("="*70)
+   600→    print("WAVE-4 ATTACKS — Cicada 3301 Liber Primus (unsolved LP2 pages)")
+   601→    print("="*70)
+   602→    print(f"Unsolved corpus: {len(UNSOLVED_FULL)} runes total")
+   603→    print(f"Sample windows: 300 + 1000 runes for Attacks 1,3,4; 500 runes for Attack 2")
+   604→
+   605→    all_results = {}
+   606→    all_results["attack1"] = run_attack1()
+   607→    all_results["attack2"] = run_attack2()
+   608→    all_results["attack3"] = run_attack3()
+   609→    all_results["attack4"] = run_attack4()
+   610→
+   611→    # Save raw JSON
+   612→    out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'wave4_attack_results.json')
+   613→    # JSON-serialize (convert keys to strings)
+   614→    def to_jsonable(obj):
+   615→        if isinstance(obj, dict): return {str(k): to_jsonable(v) for k, v in obj.items()}
+   616→        if isinstance(obj, list): return [to_jsonable(x) for x in obj]
+   617→        if isinstance(obj, (str, int, float, bool)) or obj is None: return obj
+   618→        return str(obj)
+   619→    with open(out_path, 'w') as f:
+   620→        json.dump(to_jsonable(all_results), f, indent=2, ensure_ascii=False)
+   621→    print(f"\nRaw JSON saved to: {out_path}")
+   622→
+   623→    # Final overall summary
+   624→    print("\n" + "="*70)
+   625→    print("FINAL WAVE-4 SUMMARY")
+   626→    print("="*70)
+   627→    any_breakthrough = False
+   628→    for k, v in all_results.items():
+   629→        if v.get("any_above_80"):
+   630→            any_breakthrough = True
+   631→            print(f"  ⭐ {k}: SCORE > 80 detected — investigate!")
+   632→    if not any_breakthrough:
+   633→        print("  No score > 80 across any attack. All results in noise band (60-75).")
+   634→    print("  Real English threshold ~110; random-noise band mean=65.93, P99=74.36 (per Wave-3).")
+   635→
+   636→    return all_results
+   637→
+   638→
+   639→if __name__ == "__main__":
+   640→    main()
+   641→

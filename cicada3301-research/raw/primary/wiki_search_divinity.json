@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/How_the_solved_pages_of_the_Liber_Primus_were_solved",
+    "name": "How the solved pages of the Liber Primus were solved",
+    "snippet": "The Vigenere cipher uses a specific key, and shifts each value according to the key. ... Vigenere with key \" DIVINITY \" (\"ᛞᛁᚢᛁᚾᛁᛏᚣ\") Skip indices 48, 74, 84 ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/CICADA_3301_2014_PUZZLE_FACTS_PART_4",
+    "name": "CICADA 3301 2014 PUZZLE FACTS PART 4",
+    "snippet": "Jan 12, 2014 — It was discovered the encryption used in. Vigenère cipher \"DIUINITY\" results from using 6, 19, 28, 19, 20, 19, 13, 3 shifts in the reversed \" ...",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 1,
+    "date": "Jan 12, 2014",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/What_Happened_Part_1_(2014)",
+    "name": "What Happened Part 1 (2014) - Uncovering Cicada Wiki",
+    "snippet": "Decoding the runes on the page using a Vigenere cipher and key FIRFUMFERENFE (from CIRCUMFERENCE) yields ... How the solved pages of the Liber Primus were solved ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/Liber_Primus_Ideas_and_Suggestions",
+    "name": "Liber Primus Ideas and Suggestions - Uncovering Cicada Wiki",
+    "snippet": "After a lot of analyzing of runes in unsolved pages of LP only conclusion we figured out is that LP is not coded by simple short key Vigenere cipher (or ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  }
+]

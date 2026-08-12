@@ -1,0 +1,371 @@
+URL: https://davidkushner.com/article/cicada-solving-the-webs-deepest-mystery
+TITLE: Solving the Web’s Deepest Mystery – David Kushner
+DESCRIPTION: 
+
+Cicada: Solving the Web’s Deepest Mystery – David Kushner
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+Skip to content
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Bio
+
+Books
+
+Articles
+
+Podcasts
+
+Film & TV
+
+Contact
+
+ 
+
+ 
+ 
+
+ 
+ Bio
+
+Books
+
+Articles
+
+Podcasts
+
+Film & TV
+
+Contact
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Cicada: Solving the Web’s Deepest Mystery
+ 
+
+ 
+
+ 
+ 
+ Written by David Kushner, Rolling Stone
+ 
+
+ 
+ 
+ 
+ Thursday, January 29, 2015
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ How one teenage whiz kid found himself in a world of international intrigue
+ 
+
+ 
+
+ 
+ 
+ Marcus Wanner needed a little adventure in his life. A skinny 15-year-old brainiac with wire-frame glasses and wavy brown hair, he was the eldest of five, home-schooled by their mother, a devout Catholic, near Roanoke, Virginia. Shuttling Marcus between home, church and the Boy Scouts seemed like the best way to keep him away from trouble (and girls). “I missed out on a lot,” he recalls with a sigh. “I didn’t get out much.”
+
+Though Marcus was gifted with computers, his mom and dad, an electrical engineer, also locked him down online. He couldn’t send an e-mail or register on a website without their permission. To make sure he was abiding, he was restricted to the living-room computer, which they could see. “It was the Big-Brother-eye-over-the-shoulder thing,” he says. But his parents only had so much power. “There was no way we could check what he was up to if he covered his tracks,” his mother admits. “He’s light-years ahead of us.” Marcus was a good kid, dependable, hardworking, the leader of his Boy Scout troop, just a project away from Eagle Scout. But he could only take so much. “Until a point, I tried to go with the flow,” he says. “And then I was like, ‘Aw, fuck it.’?”
+
+Fuck It Day came January 7th, 2012. His parents had recently caved in and let him get a laptop. Dressed in a T-shirt and his green Boy Scout cargo shorts (the only kind he wore), he was sitting on his bed, surreptitiously surfing the science and math board on 4chan, the notorious underground forum, when he came across a strange image that had appeared on the site three days earlier. It contained a message written in a thin white font against a black background. “Hello,” it read. “We are looking for highly intelligent individuals. To find them, we have devised a test. There is a message hidden in this image. Find it, and it will lead you on the road to finding us. We look forward to meeting the few that will make it all the way through. Good luck.” It was signed “3301.”
+
+For all Marcus knew, it could have been another dumb 4chan prank. He’d never been one for games like this. With the exception of the Rubik’s Cube, which he could solve in under a minute, puzzles were dull. But it was late and he was bored. Someone on 4chan had created an Internet Relay Chat channel where people were logging in to discuss the bizarre message. Marcus tried to imagine himself asking his parents for permission to chat with strangers on a site that had made a picture of a guy stretching open his asshole the Net’s grossest meme. Then again, he thought, maybe it was time he didn’t ask permission. With one click on the IRC link, Marcus said fuck it and went inside – not knowing what or whom he’d find.
+
+Tekk doesn’t want to give his real name. Or his full handle. Or where he grew up. Or the name of the university where he recently started as a freshman, or where we meet for pizza one night this past fall. He’s been feeling paranoid ever since he stumbled upon 3301, which is how he met Marcus. This is clear when someone accidentally drops a plate nearby us and Tekk, a pasty, scruffy 18-year-old with thick black hair and glasses, whips around in a panic. “Sorry,” he tells me. “I’m still a bit twitchy.”
+
+“With Cicada, no one knows what the goal is,” says one cipher expert, “or how you know when you won.”
+
+The twitchiness began January 5th, 2012. At the time, he was just another sheltered 15-year-old nerd in suburbia, webmaster for his high school paper, and an earnestly goofy coder (one of his sites allows visitors to send virtual fruit to one another). But his life took an unexpected turn that day when a friend in robotics lab showed him a mysterious image he’d seen on 4chan. “Dude, you can’t be on 4chan on school computers – that’s not wise!” Tekk recalls saying. “That’s like the chamber pot of the Internet.”
+
+But the challenge to find what was hidden in this picture intrigued him. He stared intently at the image. Someone on the IRC had heard rumors that terrorist groups encrypt secret notes in image files, ones that could be retrieved by opening the file in a different format. Running a text–editing program called Notepad, he opened the image and, sure enough, saw a strange string of words and garbage characters at the end: “TIBERIVS CLAVDIVS CAESAR says ‘lxxt>33m2mqkyv2gsq3q=w]O2ntk.’?”
+
+ Marcus Wanner in his Virginia Tech dorm room. Jeremy M. Lange 
+Tekk harrumphed with satisfaction. Caesar, he knew, was one of the most ancient forms of encryption, dating back to Julius Caesar, who used the cipher to safeguard military secrets. It works by taking the alphabet and then counting down each letter based on a designated number (say, replacing letters with ones three letters down the alphabet). When Tekk Googled Tiberius Claudius Caesar, he learned this was the fourth Roman emperor. Moving each character down four spots, the string of letters and numbers became a website address. When he clicked the link, it took him to a page with an image of a wooden duck and another cryptic message: “WOOPS just decoys this way. Looks like you can’t guess how to get the message out.”
+
+When I ask Tekk how he felt upon seeing this riddle, he laughs and says, “It kind of rhymes with ‘what the duck?’?” He joined the conversation among the puzzle solvers on the IRC. To Tekk, many seemed like the usual 4chan miscreants. But one guy totally knew his shit: Marcus.
+
+Marcus and Tekk had a lot in common. They were both 15, savvy online and self-reliant. “He was a leader and, like myself, a bit of a control freak,” Marcus says. And they were both already hooked on cracking the mystery. “We just kind of figured, ‘OK, we’re in this together,’?” Tekk says. “And other people just weren’t doing as well as we were.”
+
+Splitting off from the 4chan scrum, they formed their own private IRC channel, and cherry-picked other bright solvers to join them. They called their team #decipher. It consisted of about 10 like-minded 4channers around the world. There was Wakeen, a 16-year-old Chilean-born math prodigy, who, as he puts it, “obsesses about cryptography.” There was John Henrik Guttorm, a 26-year-old hacker in the Arctic circle of Norway, who did sound and lights for local concerts during the long sunless days. “If you ask someone here what he does, he says, ‘Fishing and fucking,’?” Guttorm tells me. “?’And in the winter, less fishing.’?”
+
+As Team #decipher knew, cryptographic mind-benders have been around for centuries. The most legendary is the Voynich manuscript (a handwritten codex carbon-dated to the 15th century and thought to have originated in Central Europe), which cryptographers have still yet to solve. In the past decade, so-called alternate-reality games – which took players on elaborate scavenger hunts online and off – had been used to market The Dark Knight, Halo 2 and the Nine Inch Nails record Year Zero.
+
+More romantically, spy masters have used riddles and puzzles as a recruitment technique going back at least to World War II, when British cryptographer Alan Turing used an extremely challenging crossword to help find agents who could crack Nazi codes. Recently, corporations have also found ciphers useful for scouting. In 2004, a billboard appeared in Silicon Valley with just the cryptic phrase “{first 10-digit prime found in consecutive digits of e}.com.” The answer, 7,427,466,391 – with the .com added – led to a Web page with another mind-numbing math problem, which ultimately landed on the homepage of Google Labs, the testing wing of the online behemoth. “One thing we learned while building Google is that it’s easier to find what you’re looking for if it comes looking for you,” the message on the site read. “What we’re looking for are the best engineers in the world. And here you are.”
+
+In 2011 and 2013, one of Britain’s intelligence agencies, the Government Communications Headquarters, carried on Turing’s tradition and posted complicated cryptographic puzzles online to attract young talent. “The aim was to appeal to a wider and different audience than the more traditional campaigns, in order to reach individuals with technical, analytical and mathematical skills,” a GCHQ spokesperson told me in a statement. “Both campaigns were successful.”
+
+Perhaps 3301 was Google, the solvers speculated, or some other corporation, or government, or hacker group – they had no idea. The meta-mystery of 3301’s identity made this riddle all the more compelling. “Usually with puzzles in a book or on a website, you know the driving force behind it,” says Kenny Paterson, a cryptographer and professor of Information Security at the University of London. “But here no one knows what the goal is, what you get, how you know when you won.”
+
+But whatever it was, the #decipher crew wanted to master it. As they discussed the duck-decoy clue in IRC, they realized that the message – “looks like you can’t guess how to get the message out” – contained the words “out” and “guess,” which, when combined, formed the word outguess, the name of a steganography program. Steganography dates back to around 440 B.C. Greece, and entails hiding a message or image within another one. When they ran the duck-decoy image through OutGuess, they rejoiced in unearthing another clue. “Here is a book code,” it read, and listed 75 combinations of numbers: 1:20, 2:3, 3:5, etc.
+
+Book ciphers have been around since at least 1586, when the French diplomat Blaise de Vigenere devised a way to send hidden messages. Using a coordinate system similar to 3301’s, he was able to spell out almost any missive using virtually any text. For this clue, 3301 included a link to a Reddit page, where the solvers expected to find the book’s text. But when they clicked the link, the team was only more confounded. There was a long subreddit page filled with nonsensical lines of jumbled letters and strange dashes and dots in the header.
+
+Tekk recognized the dashes and dots as Mayan numerals. “I learned that in, like, fourth grade,” he says with a sniff. As they scrolled down the lines of alphabet soup below, they found the word “welcome” linked to a picture of a welcome mat. Running it through OutGuess revealed a Pretty Good Privacy encryption key used to sign and verify messages. Based on the key’s text, Marcus derived what he thought to be the full name of the group: Cicada 3301. Further down, they found the question “problems?” which linked to a repeating distorted image of what appeared to be a medieval painting or tapestry. Within that, a hidden OutGuess message: “The key has always been right in front of your eyes. This isn’t the quest for the Holy Grail. Stop making it more difficult than it is. Good luck. 3301.”
+
+The new clues initially baffled Marcus and Tekk, but they knew there had to be something buried within them. Taking the Mayan numerals along with others on the page, they derived a sequence of numbers and set about seeing how it might be applied to the garbage letters on the page. It was a tedious and time-consuming process. Up in the pitch-black daytime of the Arctic winter, Guttorm trudged through the work while Marcus and Tekk toiled through the night. “I have a gift to find patterns where there aren’t obvious patterns,” Guttorm says. “So you could almost call me a schizophrenic.” He sat in the glow of four computer monitors, staring into the screens until he literally went cockeyed (and had to later go to an ophthalmologist).
+
+But the team eventually found a pattern. The first letter of the code became a K, the second, I, the third, N, the fourth, G. The second word was Arthur. The dozens of successive words formed a story. The #decipher team ran the text through Google and found it was a medieval Welsh romance, “The Lady of the Fountain.” Part of The Mabinogion, it concerned a knight who loses his love when he spends too much time pursuing his adventures.
+
+Using the book code from the decoy image to analyze “The Lady of the Fountain,” they found another hidden message. Marcus had become the secretary of #decipher and described it in his notes. “The first code is ‘1:20,’?” he typed. “Taking the 20th character of the first line of decoded text, we get ‘C.’ Continuing with the second line (2:3), an ‘A’ is found.” By the end, he had stitched together another message: “Call us at telephone number two one four three nine oh nine six oh eight.” One thought flashed through Marcus’ mind as he sat on his bed in his Boy Scout shorts, and it rhymed with “what the duck?”
+
+Tekk was already feeling out of sorts. The puzzle, which the #decipher team was now calling Cicada, had become all-consuming. “Solving things is kind of addictive,” he says. “It kind of felt like National Treasure.” He was staying up until four in the morning, dragging himself to school, all the while hiding his secret digital life from his parents. “If I had delved into what he was solving and known it was from an unknown source, it would have caused me much more stress at the time,” his mother tells me. “It would have freaked them out,” Tekk says. “Meeting with strangers on the Internet to solve puzzles sounds a little sketch.”
+
+It got sketchier when the solvers called the mysterious telephone number with a Dallas area code. “Very good. You have done well,” said the computerized voice on the recording. Then it doled out another clue. “There are three prime numbers associated with the original final.jpg image. 3301 is one of them,” the message went on. “You will have to find the other two. Multiply all three of these numbers together and add a .com to find the next step. Good luck. Goodbye.”
+
+The final.jpg image referred to the first one in the puzzle – the white-font message against the black background. The group struggled to figure out what other two numbers could be gleaned, until eventually someone tried looking at the height and width: 509 by 503 pixels, both prime. When multiplied with 3301, they got 845,145,127, and added a .com, which led them to another website, with a picture of a cicada, wings unfurled. Beneath the picture was a countdown clock. Running the image through OutGuess revealed a message: “You have done well to come this far,” it read. “Patience is a virtue. Check back at 17:00 on Monday, 9 January 2012 UTC.”
+
+ 
+Inside his bedroom, Marcus checked his chunky black watch: one day to go, noon Roanoke time. He had a Boy Scout meeting on the night of January 9th, but spent that morning in his room anxiously awaiting zero hour. As 12 p.m. struck, he hit refresh on his Web browser and then saw 13 pairs of numbers fill his screen:
+
+52.216802, 21.018334
+
+48.85057059876962,
+
+2.406892329454422
+
+And so on.
+
+Marcus scribbled the numbers and their prime factors on a stray piece of cardboard, and felt coldness creep across his chest. Until now, this mystery had been confined to the Internet, an invisible journey with a faceless troop across the ether. But Cicada had just broken the fourth wall and flown into the real world. “Find our symbol at the location nearest you,” the message concluded. The numbers were coordinates.
+
+When the Cicada coordinates hit the Web, it set off a furious scavenger hunt as solvers punched the locations into Google maps. There was no way of knowing exactly how many people were on the case, but scores now filled the active Cicada discussion forums. To the astonishment of the solvers, 3301 had somehow planted clues around the world. There were more than a dozen, spread over four continents. The Street View images seemed random: a narrow street near the University of Warsaw, a parking lot on a busy intersection of Seoul, a country road on the North Shore of Oahu. One location came up in front of a prominent doctor’s house in a wealthy section of Seattle. (When RS called the doctor, he said that he had never heard of Cicada 3301.)
+
+“You’ve shared too much to this point,” the note from Cicada 3301 read. “We want the best, not followers.”
+
+Solvers mobbed the IRC, crowd-sourcing anyone close to the locations who could head to the spots. Tekk, increasingly spooked, found the whole thing “creepy,” he says, and his imagination ran wild. “They could have been, like, sitting there with knives at night,” he says. “Just waiting to stab someone who went out. We had no idea what we were doing.” Marcus, however, was less concerned, and game. After a childhood feeling isolated, he identified with the intellectual breadth and depth of 3301. “I saw a kindred spirit in whomever made the puzzles,” he says. “I didn’t have any fear of it.” Unfortunately, he didn’t have any way to travel. “I didn’t have car privileges,” he says. “And it wasn’t like I could say, ‘Mom, the Internet told me to drive to Seattle.’?”
+
+Instead, his teenage routine continued, and the next day his mom drove him to his piano class as usual, unaware of the extent of her son’s online pursuits. But his mind was on the puzzle. Cicada had become his obsession. Since he’d been working on the puzzle, Marcus had begun to forego sleep, homework, food – much to his mother’s consternation. “She got sick of me not showing up for meals because I was passed out from exhaustion,” he says. He hadn’t slept the night before. During his piano lesson, he kept sneaking peeks at his torn cardboard piece with the scribbled coordinates and his calculations. Prime numbers seemed to have some unknown significance to 3301, and he wondered if that somehow dictated the logic of posting these locations. His piano teacher noticed his poor performance and later reprimanded him. “I haven’t slept in 30 hours,” he explained.
+
+“Why on Earth?” his piano teacher asked.
+
+“Oh, don’t worry about it,” Marcus replied.
+
+While Marcus looked for deeper meaning in the coordinates, Tekk had news of his own. One of the guys in #decipher had a brother, Bongo, who lived in Sydney and was heading out to the Australia coordinates. Bongo arrived on a leafy, residential street, where he found a poster with a cryptic black drawing taped to a telephone pole: a cicada. Below it was the square black matrix of a QR code (often used in advertising to quickly link to websites and product info). Before long, similar posters were found around the world: Warsaw, Poland; Fayetteville, Arkansas; Paris; Seoul; Seattle; Miami.
+
+When scanned with a QR reader, the codes led to one of two different riddles, each with a book cipher. The first was the Encyclopedia Britannica 11th Edition. The other correlated to “Agrippa,” a 1992 poem by sci-fi novelist William Gibson, which was distributed on a floppy disk and coded to encrypt itself after one read so that it could never be accessed again. Both clues included a somewhat chilling note from 3301 that suggested they were both aware of and not keen on the solvers’ collaboration. “You’ve shared too much to this point,” the note read. “We want the best, not the followers. Thus, the first few there will receive the prize.”
+
+As the solvers busied themselves with the new puzzles, paranoia spread. “Cicada attracts a fair bunch of loonies and paranoid people,” says Martin Wehrmeyer, a solver who helps run the Uncovering Cicada forum. This wasn’t feeling like just a game anymore. How much information had they given away? How closely were they being tracked? And who was doing the tracking? Some thought it was the CIA, the NSA or even William Gibson himself (although when I ask Gibson if he’s the one, he laughs, shakes his head no and says, “I would hope that if I were doing something like that, it would be funnier”).
+
+Others wondered if it was a criminal hacker group, looking for pawns in some nefarious plan. Wakeen, the Chilean prodigy, got frightened after receiving a call at 2 a.m. that just had an emergency test tone on the other line. On the Cicada forums, he and the others began noticing that active members seemed to be dropping out of the action. “That got me paranoid,” he says, “so I had a contingency plan with a friend where, if I disappeared, I would try to leave behind evidence.”
+
+Even the more math-minded skeptics who never considered themselves part of the tinfoil-hat crowd couldn’t help feeling freaked. The competitive aspect of solving the puzzle first also increased, heightening everyone’s tension. To throw others off the 3301 trail, the #decipher team began planting false clues online.
+
+No one seemed more rattled than Tekk. He and others began questioning people in the #decipher IRC to see if they were moles. They adopted the motto “Everyone except you is Cicada.” Marcus was among those who got fed up with Tekk’s drama. “Tekk was really secretive,” he recalls. “At one point, it felt like too much.” One afternoon, Tekk logged on to find that someone had unearthed his true identity and posted pictures of his family along with his home address. Tekk was shattered. “It just made me more wary of the Internet in general,” he says.
+
+As more complicated puzzles came their way and more rumors mounted, the number of solvers in the forums dwindled – from frustration, boredom and fear. But there was one of them who was still fully committed: Marcus. “It was my only life,” he says. And since he was home-schooled, he had the luxury and curse of being able to spend as much time on Cicada as he wanted. “That was all I did,” he says.
+
+ A Cicada 3301 clue discovered in Warsaw. 
+On February 6th, one long month after seeing the first clue, he received an e-mail from 3301. “Congratulations,” it read. “Your month of testing has come to an end. Out of the thousands who attempted it, you are one of only a few who have succeeded. There is one last step, although there will not be any hidden codes or secret messages or physical treasure hunts. This last step is only honesty. We have always been honest with you, and we expect you to be honest with us in return.
+
+“You have all wondered who we are, and so we shall now tell you we are an
+
+international group. We have no name. We have no symbol. We have no membership rosters. We do not have a public website, and we do not advertise ourselves. We are a group of individuals who have proven ourselves much like you have by completing this recruitment contest, and we are drawn together by common beliefs. A careful reading of the texts used in the contest would have revealed some of these beliefs, that tyranny and oppression of any kind must end, that censorship is wrong and that privacy is an inalienable right.
+
+“We are not a hacker group, nor are we a warez group [who trade music and movies online]. We do not engage in illegal activity, nor do our members. If you are engaged in illegal activity, we ask that you cease any and all illegal activities or decline membership at this time. We will not ask questions if you decline. However, if you lie to us, we will find out.
+
+“You are undoubtedly wondering what it is that we do. We are much like a think tank, in that our primary focus is on researching and developing techniques to aid the ideas we advocate: liberty, privacy, security.” It ended with a short questionnaire: “Do you believe that every human being has a right to privacy and anonymity?”
+
+Marcus typed, “Yes.”
+
+“Do you believe that information should be free?”
+
+“Seriously?” Marcus replied. “You guys are badass. I’m with you all the way!”
+
+“Do you believe that censorship harms humanity?”
+
+“Without a doubt,” he wrote. “Count me in, but with one reservation. You have presented two conflicting ideas: resistance of censorship and a requirement to refrain from illegal behavior. What of the people who would censor certain aspects of culture? What of the ‘pirates’? I believe that there should be no restriction on the sharing of information. Do you ask me and the other ‘chosen ones’ to?.?.?.?cease sharing of copyrighted material?” He concluded respectfully, “Thank you for a life-changing experience.” Then he hit send, and waited to see if 3301 would take him in.
+
+On February 28th, Marcus received an e-mail signed with 3301’s PGP key. “Hello,” it read. “The next step is finally here.” The message included specific instructions for visiting a secret site on the darknet, the hidden part of the Web, along with a username and password. The message concluded with one powerful word, ushering Marcus into 3301. “Welcome,” it read.
+
+Marcus wasn’t the only solver to receive the message. So did, by Marcus’ and Tekk’s estimates, at least 20 others. Tekk was still very wary. “I wasn’t sure what I was getting into,” he recalls. The darknet address led them to a page where they found themselves in a chat forum with the other recruits – as well as a handful of people who claimed to be part of 3301. It felt thrilling to have finally arrived.
+
+The solvers wanted answers. Who were 3301? What were their goals? How did they start? They received some circumspect answers from the elders, though of course they had no idea what was really true or if they were being played. 3301, the story went, had been started by a few friends who shared like-minded imperatives – anonymity, privacy, encryption – and wanted a way to pool their talents to create useful software that ensured these ideals. As friends recruited friends, 3301 grew internationally. The group, as they understood it, had no official affiliation with any one government or military. “They insinuated they were a part of a bunch of different organizations,” Tekk recalls. “It was some kind of secret society.” They shared a common goal: to increase privacy and security in the Digital Age, and ensure the freedom of information.
+
+In many ways, the Cicada group reminded Marcus of the Boy Scouts, except “they didn’t have a handbook,” he says. “They had an ideology.” 3301 took inspiration from cicadas, creatures who are, in a sense, masters of encryption. In particular, the inner circle referenced the so-called periodical cicadas whose populations, called “broods,” only emerge from the underground every 13 or 17 years, prime-number years at that. (In fact, the handle of one of the mentors was Magicicada, the genus name for the periodical bugs.) Evolutionary biologist Stephen Jay Gould has speculated that the prime-number emergences serve to protect the cicadas from predators who might otherwise come to rely on them as a regular food source.
+
+“I was part of Cicada for more than a decade,” the anonymous author wrote. “I’m here to warn you: stay away.”
+
+3301 (chosen because it’s a compelling prime number, a twin prime forward and backward), they were told, was organized into decentralized cells – also called broods – each with its own area of research. They were told that the group is compartmentalized so that individual cells had no knowledge of each other. Marcus, Tekk and the other recruits were told they were Brood b.0h. Puzzles were not always used for recruitment but had been, in this case, because the group was seeking new members with coding and cryptography skills.
+
+Now that the new brood had been taken in, the 3301 members told them, they would be tasked with creating software that fit the ideology of the group. In discussions on the darknet site that ran for weeks, the recruits decided to create software to protect whistle-blowers like Chelsea Manning, who was facing trial at the time. Together, they came up with an idea they called the Cicada Anonymous Key Escrow System, or CAKES. In short, it would trigger the automatic publication of sensitive data online if and when the whistle-blower or researcher was indisposed for a designated period of time (due to, say, death or incarceration).
+
+For months, Marcus and the others collaborated on CAKES, working on their own and sharing notes on 3301’s hidden site. The mentors from 3301 would drop in and share their comments and thoughts on the progress. This kind of secret collaborative process was unusual but not without precedent. Bitcoin, the cryptocurrency, had been developed in secrecy as well. But, for Brood b.0h, the buzz of acceptance soon gave way to the drudgery of what felt like homework. Marcus would log on to see that fewer and fewer of the others were completing their tasks. Even Tekk, who had to deal with the real-world task of a summer job, had stopped visiting the forum early on. “I had other work to focus on,” he says. “I just faded away.”
+
+By the end of 2012, Marcus was the last one still coding. But after months at his laptop, he was stuck. Part of his enthusiasm for solving Cicada and joining 3301 was to collaborate with others, to get out of his box in Roanoke and be part of something larger, something powerful, something world-changing. But now here he was sort of full circle, the last scout on the trail. With CAKES only partially done, he appealed to the elders in 3301 to recruit new members with the skills to help him complete the programming. His mentors communicated that they would be looking for new recruits. Despite all his time in 3301, he still didn’t know much more about the group other than what he had been initially told. And, for fear of being excommunicated, he didn’t discuss it with family or friends.
+
+On January 4th, 2013, the anniversary of the first Cicada puzzle, solvers crowded their IRC channel, anticipating when and how the new puzzle from 3301 would drop. Amid the fervor, an anonymous person posted a mysterious confessional. “I was part of what you call 3301/Cicada for more than a decade,” the anonymous author wrote, “and I’m here to warn you: Stay away.”
+
+Any portentously dire and anonymous message on the Internet could be bullshit or trolling. But as the skeptical solvers read the screed, the author seemed knowledgeable enough about 3301 to give them pause. The author said he had been a military officer in an unnamed, non-English speaking country when, after a year of being unknowingly vetted in person, he was recruited by a member of 3301. He described them as “a group of like-minded individuals, all incredibly talented and connected, [working] together for the common good: the good of mankind.” But over several paragraphs, he cautioned about their cultish beliefs, a conviction, for example, in “the Global Brain as another kind of ‘God’?” – 3301 was nothing more, he wrote, than a “religion disguised as a progressive scientific organization.” He concluded by saying he had since found Jesus.
+
+“The Warning,” as the post became known among Cicada obsessives, only added to the mythology and conspiracy theories – particularly since the author of the post could not be reached, and disappeared. Some wrote it off as the rant of some crazy troll or 4chan punk messing with their heads. For insiders like Marcus, though, the details in the Warning rang true – the military origins, the ideology behind the work. He believed it could have come from someone in the group. But it was also, perhaps, purposeful misinformation to deter anyone naive enough to believe it. “I think it was meant to keep people away,” he says.
+
+In fact, the Warning proved suspiciously well-timed. Hours after it appeared, an image was posted to 4chan, written in the familiar thin white font. “Hello again,” it read. “Our search for intelligent individuals now continues. The first clue is hidden within this image. Find it, and it will lead you on the road to finding us. We look forward to meeting the few that will make it all the way through. Good luck. 3301.”
+
+As solvers swarmed to the puzzle, Marcus had grown weary of laboring away on CAKES alone and awaited what he hoped would be the influx of fresh recruits to help him.
+
+The 2013 version of Cicada offered up more extremely complicated riddles. There was a cipher based on a book by occultist Aleister Crowley. There was another riddle embedded in a song, an amplified guitar instrumental that, upon spectral analysis, revealed a humming sound at a frequency of 15.4 to 16.1 kilohertz, and an analysis of the mp3 file uncovered a hidden message: “Like the instar, tunneling to the surface, we must shed our own circumferences; find the divinity within and emerge.” There were more coordinates, more Cicada images tacked to telephone poles. Since he was already inside the group, Marcus hadn’t been spending too much time trying to solve the new puzzles, but a friend in Japan sent him a Cicada poster he’d found on a street corner in Okinawa.
+
+Yet within weeks, solvers hit a dead end. Some, claiming to have completed the puzzle, returned to the forums complaining they’d never received the final invites from 3301 to join the group. Others speculated that perhaps those who had been recruited this year simply refused to reveal themselves. All Marcus knew was that, if there was a new brood selected, they were nowhere to be found on the darknet site. He had no idea what was happening behind the scenes. Perhaps the brood hadn’t lived up to 3301’s expectations. Perhaps there’d been an infiltration by the authorities. Perhaps 3301 were the authorities and this all was some weird honey pot. In March, Marcus received a message from another solver, nicknamed Sage, who’d made it into the 2012 brood. “We’ve been laid off,” Sage told him, but had no further information. When Marcus tried to log back on to the darknet site, it was gone.
+
+On April 28th, 2014, a strange puzzle appeared on Twitter. It was an encrypted message supposedly sent by a military cryptographer who claimed to have hidden on a submarine, which was being commandeered by a “mysterious enemy” who’d stolen plans for high-grade military weapons. The cryptographer was sending messages that, when cracked, would reveal her location so others could swoop in.
+
+But this wasn’t another clue from 3301. It was from the United States Navy, which, after studying Cicada 3301, thought it’d be cool to launch a promotional puzzle of its own. “We knew about Cicada and were inspired by it,” says Sean Forbes, spokesman for Navy Recruitment Command. The puzzle, called Project Architeuthis, required solvers to decipher the coded messages from the fictional cryptographer – with the prize of proving their prowess to military recruiters. The 10 solvers received certificates of completion from the Navy. It was a pure PR move to make the Navy appeal to young cryptographers. “We know that’s where our audience lives,” Forbes says. “They live online.”
+
+The Navy isn’t the only government organization pulling a Cicada. In May, the National Security Agency, using its @NSACareers handle, posted a strange jumble of letters on its Twitter feed. When decrypted, the letters spelled a message: “Want to know what it takes to work at NSA? Check back each Monday in May as we explore career essentials to protect our nation.” NSA spokeswoman Marci Green Miller tells me the puzzle was an effort to lure “the best and the brightest” young minds into the NSA.
+
+Ron Patrick, the head of recruitment for the Central Intelligence Agency, tells me the agency is discussing development of a Cicada-style puzzle of its own. Patrick first learned of Cicada from his college-age kids, who wanted to know if the CIA had created it, as conspiracy theorists on the Internet suspected. “They thought for sure we were the ones behind it,” he tells me, “but it’s definitely not us.” Patrick, like the erudite solvers, doubts 3301 is affiliated with a government or corporation. But from what he can gather, he says, it’s difficult to really know. “I would hope it’s not a hacking group looking to get talent,” he says, “and turn that talent against us.”
+
+ Agencies like the NSA and Britain’s GCHQ have used online puzzles as a tool for recruitment. GCHQ 
+Across the world, cryptographers, scholars, Feds and geeks are speculating as to what the real story is behind 3301. Alan Woodward, a professor at the University of Surrey who specializes in computer security, first suspected that the NSA or the GCHQ was pulling the strings, but he now thinks that the breadth of the puzzle could “point to a large corporation” recruiting skilled cryptographers. Game developer and cryptography expert Elonka Dunin thinks it “just may be one group of people in a chat room giggling,” but adds, “I put word out to my crypto friends about Cicada and came back with a big blank.”
+
+Given the complexity of the puzzles, most believe that 3301 can’t be an individual and has to be at least a small group. Whether or not it has military origins, no one really knows. It could just be one big nerdy head game, engineered by some wayward puzzle masters who simply get off on the pleasures of their own mythmaking. Or it could be, as the Warning suggested, something more high-minded, some missive from a vast conspiracy in the ether. Or maybe it really is the product of some like-minded geeks out to better the world. At the moment, no one really knows for sure – which, of course, is exactly what keeps it intriguing in the first place.
+
+As for Cicada, the mystery didn’t end in 2013 after all. On January 6th, 2014, a Twitter account under the handle @1231507051321 posted another cryptic message in a white font against a black background: “Hello,” it read. “Epiphany is upon you. Your pilgrimage has begun. Enlightenment awaits.” Solvers, however, have spent the better part of a year stuck in the Cicada hole, trying to decipher 58 pages of runes. So far, there’s no word of any solvers completing it. As of this writing in early January – on what would be the fourth anniversary of Cicada’s beginning – die-hards are waiting anxiously to see if or when the 2015 puzzle begins.
+
+But there is one former 3301 member who has decided to surface regardless, Marcus Wanner. For two years, he remained silent and anonymous. He wonders why 3301 had stopped reaching out to him – and wondered if perhaps his brood had done something to annoy them, or somehow not proved its worth. But enough time has passed without word that he figures that now – in the spirit of free information, in which 3301 so staunchly believe – he should share his story and work. “It’s time to go public,” he tells me, in his dorm at Virginia Tech, where he’s studying computer science.
+
+In addition to sharing his story, Marcus has decided to hide the code for CAKES on the darknet, where others might find it and finish what his brood started. Tor Ekeland, an attorney with the Whistleblowers Defense League who has represented several high-profile hacktivists, says such software would be “extremely valuable, because it gives leverage and protection to the whistle-blower. There’s nothing like this out there.” Ever the faithful scout, Marcus says the completion of the project would fulfill the pledge he made to 3301. But, given all the secrecy and misdirection, he isn’t sure how the mysterious puzzle masters will take it. “Hopefully,” he says, “Cicada won’t be on my case.”
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Bio
+
+Books
+
+Articles
+
+Podcasts
+
+Film & TV
+
+Contact
+
+ 
+
+ 
+ 
+
+ 
+ Bio
+
+Books
+
+Articles
+
+Podcasts
+
+Film & TV
+
+Contact

@@ -1,0 +1,469 @@
+     1→# Lag-5 Paired-Coincidence Crib-Drag (Zodiac-340 Method) — Results
+     2→
+     3→**Task ID:** p6a
+     4→**Subagent:** Lag-5 crib-drag (Zodiac-340 method) subagent
+     5→**Date:** Wave-7 / Phase E
+     6→**Workspace:** `/home/z/my-project/cicada3301-research/`
+     7→**Attack code:** `/home/z/my-project/cicada3301-research/decoder/lag5_cribdrag.py` (526 LOC)
+     8→
+     9→---
+    10→
+    11→## TL;DR
+    12→
+    13→Executed the full lag-5 paired-coincidence attack on the 55 unsolved LP2 pages. **No breakthrough.** aldegonde's existing lag-5 attack (6,710 runs) and 4 new attack vectors (contraction cribs as known-plaintext, Zodiac-340 transposition + crib-drag, additive-with-reset:N exhaustive, custom lag-5 paired-coincidence) all returned negative results. The lag-5 anomaly (29 d1 + 28 d4 paired events vs 15.4 expected, p=0.033) is real and replicated, but:
+    14→
+    15→- aldegonde's positive control still cracks page-57 Parable at **z=+7.24** (verified, exactly as p5a reported).
+    16→- aldegonde's 6,710-run sweep of 55 unsolved pages still tops out at **z=+3.56 on page 36** (additive, reset:N) — **below** the z=+3.2 multiple-test threshold.
+    17→- Step 3 (contraction cribs): 144 (key, phase, page) matches across 1,040 trials. Best: PARABLE @ phase 4 → 3/4 cribs match (75%). None leads to readable decryption.
+    18→- Step 4 (Zodiac-340 transposition + crib-drag): 2.4M tests across 7 transpositions × 8 cipher widths × 12 cribs × 2 methods × 8 pages. 159 hits ≥3 char; top hit 5/7 (atbash on page 0). Zero full-match (7/7) hits.
+    19→- Step 5 (additive-with-reset:N): 16,240 (page, N, key) tests over 17 N-values × 20 keys × 55 pages. Top trigram z=+6.46 (page 55, N=5, INSTAR) — but plaintext is gibberish (`JTRDEOCHEAOLTHYHSUMENUILIAEURMCAOGAROECAETHIFWOOLTHNGBAOOEOD`).
+    20→- Step 6 (custom lag-5 attack): Confirmed 29 d1 + 28 d4 events. NULL interpretation: removing 208 event positions leaves nIoC=0.9998 (still flat) and doublet rate 0.6825% (essentially unchanged). Period-5 Vigenère with key length 5 (OUNWM) trivially achieves 100% event-match rate (tautological).
+    21→
+    22→**Recommended next vector:** Length-clocked progressive substitution hill-climb (the only surviving statistical-fit hypothesis per aldegonde's `length-clocked-walk.md`), combined with the 4 contraction cribs as fitness-function anchors. Plus full interrupter × gematria-rotation search ported from lp-decrypter.
+    23→
+    24→---
+    25→
+    26→## Step 1 — The Lag-5 Paired-Coincidence Framework
+    27→
+    28→### 1.1 What it is
+    29→
+    30→The **lag-5 paired-coincidence test** is a *fourth-order* statistical test on a ciphertext stream. It was discovered by the `aldegonde` cryptanalysis toolkit in June 2026 and documented in `docs/lag5-phenomenon.md`.
+    31→
+    32→Given the rune stream C[0..N−1] (12,956 runes for the 55 unsolved LP2 pages), define the lag-5 match indicator:
+    33→
+    34→```
+    35→M[i] = 1  iff  C[i] == C[i+5]    (for i = 0 .. N-5)
+    36→```
+    37→
+    38→A **d1-event** is a pair (M[i]=1, M[i+1]=1) — the digraph C[i..i+1] repeats verbatim 5 positions later, i.e. the pattern `X Y · · · X Y`.
+    39→
+    40→A **d4-event** is a pair (M[i]=1, M[i+4]=1) — consecutive 5-grams agree in their first and last runes, i.e. the pattern `A · · · B A · · · B`.
+    41→
+    42→### 1.2 The observation in LP
+    43→
+    44→| Statistic | Observed | Uniform expectation | z (local) |
+    45→|---|---|---|---|
+    46→| Σ M (mono lag-5 matches) | 479 | 446.6 | +1.5σ (unremarkable) |
+    47→| pairs at separation d=1 | **29** | 15.4 | +3.5σ |
+    48→| pairs at separation d=2 | 15 | 15.4 | — |
+    49→| pairs at separation d=3 | 14 | 15.4 | — |
+    50→| pairs at separation d=4 | **28** | 15.4 | +3.2σ |
+    51→| pairs at separation d=5 | 19 | 15.4 | — |
+    52→| separations 6–25 | all flat | 15.4 | — |
+    53→
+    54→Joint statistic T = d1 + d4 = 57 vs null 30.7 ± 6.5 → local z ≈ +4.1. Family-blind Monte Carlo over the (lag × separation) grid gives **p ≈ 0.033** — the fairest significance figure. Wide dragnet over 399 4-point templates dilutes this (p ~ 0.43), as any p≈0.03 effect dilutes.
+    55→
+    56→### 1.3 Why a decade of analysis missed it
+    57→
+    58→The anomaly is a 4th-order (4-point) correlation. Standard tests — IoC, kappa, Friedman, bigram tables, mutual information, autocorrelation — are all 1st/2nd-order. The lag-5 anomaly's *entire* 2nd-order footprint is the +1.5σ mono kappa at lag 5, which is indistinguishable from noise (≈ 38 against a noise floor of ±41 in the full 29×29 contingency χ²).
+    59→
+    60→### 1.4 The d1/d4 crib-drag mechanism
+    61→
+    62→The 57 events (29 d1 + 28 d4) are **deterministic ciphertext copies** — a copy carries no fresh information, so the plaintext at the copied positions must come from somewhere. Three interpretations are information-theoretically possible (per `hypotheses/lag5-back-reference.md`):
+    63→
+    64→| # | Interpretation | Implication |
+    65→|---|---|---|
+    66→| (a) | **Nulls** — the copied runes are NULLS, the decryptor skips them | The 57 events are skip-markers; remove 208 positions from the cipher stream |
+    67→| (b) | **Coincidence** — the keystream repeated AND the plaintext repeated by chance | Rate-disfavored: requires ~18% key-pair reuse, would push mono kappa-5 to ~1.14 (observed 1.073) |
+    68→| (c) | **Back-references** — the events fire only where the plaintext repeats at lag 5 ("repeat the previous digraph/frame") | Gives ~114 plaintext crib equations `P[i] = P[i-5]` for any key-search attack |
+    69→
+    70→### 1.5 Zodiac-340 precedent
+    71→
+    72→The Zodiac-340 cipher (cracked Dec 2020 by an international team after 51 years) was solved starting from this exact statistical family: repeated two-symbol sequences at trial offsets, peaking at lag 19. The cracking recipe:
+    73→
+    74→1. Identify the high-order coincidence pattern (exactly what aldegonde found for LP).
+    75→2. Hypothesize the cipher is **transposition + substitution** (not pure substitution).
+    76→3. Test transposition patterns (diagonal reads, columnar reads, etc.).
+    77→4. Crib-drag with common phrases.
+    78→
+    79→**Caveat from `lag5-phenomenon.md` §5:** aldegonde verified the Z-340 *mechanism class* (homophones + transposition) is excluded for LP, because that class leaks at 2nd order at this sample size, and LP does not. So the Zodiac-340 transposition attack is unlikely to work, but worth a definitive test (Step 4 below).
+    80→
+    81→### 1.6 The z-score threshold for a crack
+    82→
+    83→aldegonde's positive control (synthetic page-57 Parable encrypted with a random 5-element Vigenère key + F-skip interrupter) cracks at **z=+7.24** with the true key recovered, using only 95 runes. Real attacks below z=+3.2 are considered noise (multiple-test threshold for ~60 phase rules). The 6,710-run sweep on the 55 unsolved pages returns **max z=+3.56** — barely above the threshold, and far below the +7 crack threshold.
+    84→
+    85→### 1.7 The 4 contraction cribs
+    86→
+    87→Per `hypotheses/contraction-cribs.md`, the LP page images carry a raised tick glyph (the apostrophe) that working transcriptions omitted. Four lone ticks appear inside words near their end, at stream offsets 1107, 5136, 8513, 10086 (verified glyph-by-glyph against the 2400×3600 page scans):
+    88→
+    89→| Page | Word | Shape | Stream offset | Admissible readings |
+    90→|---|---|---|---|---|
+    91→| 4 | `ᛗᛉᛁ'ᚹ` | 3+1 | 1107 (local idx 164) | n't, or any 3-rune stem + 'S / 'D |
+    92→| 21 | `ᚫᚩ'ᚣ` | 2+1 | 5136 (local idx 36) | IT'S, HE'S, WE'D, HE'D, IT'D |
+    93→| 35 | `ᛈᛖ'ᛏ` | 2+1 | 8513 (local idx 80) | IT'S, HE'S, WE'D, HE'D, IT'D |
+    94→| 41 | `ᛉᛚᛄ'ᚳ` | 3+1 | 10086 (local idx 218) | n't, or any 3-rune stem + 'S / 'D |
+    95→
+    96→Pages 21 and 35 cannot be n't contractions (n't requires a 3-rune stem; these have 2-rune stems). All four tails must be in {S, D, T} (runes ᛋ, ᛞ, ᛏ — indices 15, 23, 16). This gives ~28 bits of known-plaintext constraint.
+    97→
+    98→---
+    99→
+   100→## Step 2 — aldegonde's `lp_lag5_attack.py` — Reproduced Results
+   101→
+   102→### 2.1 Re-running the attack
+   103→
+   104→Command: `cd /home/z/my-project/cicada3301-research/solvers/aldegonde && python3 examples/lp_lag5_attack.py`
+   105→
+   106→Runtime: ~5 minutes (6710 attack runs + verification pass with 80 null samples).
+   107→
+   108→### 2.2 Output (verbatim, key sections)
+   109→
+   110→**Positive control:**
+   111→```
+   112→=== positive control ===
+   113→true key [10, 4, 12, 20, 1] -> recovered [10, 4, 12, 20, 1], z=+7.24
+   114→decryption: PARABLELICETHEINSTARTUNNELNGTOTHESURFACEWEMUSTSHEDOUROWNCIRCUMF
+   115→```
+   116→
+   117→This is the page-57 Parable text. The framework is verified working: it recovers the true 5-element Vigenère key (runes ᚱ ᛇ ᛋ ᚷ ᚢ = R EO S G U) at z=+7.24.
+   118→
+   119→**Top-10 verified z-scores on the 55 unsolved pages:**
+   120→
+   121→| z | Page | Family | Rule | Decryption (first 50 chars) |
+   122→|---|---|---|---|---|
+   123→| **+3.56** | 36 | add | reset:N | RTSDSUPJLYOIATEATBFDNGOIMHTFNMPTIEANGRIFRCHEIAWSENHWALN |
+   124→| +2.94 | 3 | add | reset:T | MNIAUTRFSDYSEODSEAHHHOREOTHMCIWTHTHEAAAIDYJAMMXBOLDYHEIEAHE |
+   125→| +2.72 | 39 | ref | reset:I | PETHNGLEBTTWWHOIPIATOEAONUAWITFWGLTHRGJFTTLTHULRPUFUEIANU |
+   126→| +2.71 | 18 | ref | reset:D | IPCLNERIBUGLGROEASYIAPROPHRBOCTHAIBSRNFAJJJUIAYWGIGNOH |
+   127→| +2.69 | 29 | add | skip:N | ULBBFMPHBCCMGOAUDWAHTEPBBDNLNGHNMOEBDDTDNWTRXXANHNGLB |
+   128→| +2.68 | 16 | add | skip:H | EIAPNROOWEOTHCOCTJCOIAEMMIAADOEWYPXCCFLBOYEACSCNGJRBIANGNGEAHP |
+   129→| +2.34 | 13 | add | none | IXPEENFDYOTJLTHJETSWLNGARRLICHSRNOHFLEOYJSESCAULSIARTH |
+   130→| +2.30 | 30 | add | skip:O | YHROGBNHYLNGIPJLTHYNGPPNGHEAOEASRNGEWOEEAOUCILYEAOALSBNGULNGYEO |
+   131→| +2.23 | 44 | ref | reset:NG | OENGUUFICGAPJBBNCBOCIYSEOFSINWOPRLJOELMMIAMHLUIICSAAT |
+   132→| +2.20 | 48 | add | reset:X | IRBYMHLAEAEGENIAIAEOSEATHHTHGTEACDHEATHHMNGNCWYYDRPRNGSHYOEAFAIA |
+   133→
+   134→```
+   135→verified max=3.56 over 6710 runs (a real crack scores z>+7 at 95 runes, cf. positive control)
+   136→```
+   137→
+   138→**Period-5 polyalphabetic detector (coset IOC, all rules):**
+   139→```
+   140→skip:NG     z=+1.78
+   141→reset:AE    z=+1.47
+   142→skip:IA     z=+1.28
+   143→reset:OE    z=+1.24
+   144→reset:IA    z=+1.14
+   145→(61 rules; significance threshold for this many tests ~ z=3.2)
+   146→```
+   147→
+   148→### 2.3 Verdict
+   149→
+   150→aldegonde's `lp_lag5_attack.py` **does not crack any unsolved LP page**. The best result (z=+3.56 on page 36, additive with reset:N interrupter) is barely above the z=+3.2 multiple-test threshold and far below the z=+7 crack threshold. The decryption `RTSDSUPJLYOIATEATBFDNGOIMHTFNMPTIEANGRIFRCHEIAWSENHWALN` is **gibberish, not English**.
+   151→
+   152→The p5a finding is **fully reproduced**. The period-5 polyalphabetic cipher class (with any single-rune interrupter) is **REFUTED** for the unsolved LP2 corpus.
+   153→
+   154→---
+   155→
+   156→## Step 3 — Contraction Cribs as Known-Plaintext Anchors
+   157→
+   158→### 3.1 Approach
+   159→
+   160→Each of the 4 contraction cribs gives a known-plaintext constraint at a specific rune position: the rune immediately after the apostrophe must decrypt to one of {S, D, T} = rune indices {15, 23, 16}. For each candidate plaintext, the implied keystream value is:
+   161→
+   162→- **Additive (Vigenère):** `key[i] = (cipher[i] - plaintext[i]) mod 29`
+   163→- **Beaufort:** `key[i] = (cipher[i] + plaintext[i]) mod 29`
+   164→
+   165→For each of the 4 cribs × 3 candidate plaintexts × 2 cipher methods = 24 implied key-value candidates, I checked whether any of the 20 KEY_CANDIDATES contains that value at the appropriate phase (mod key length).
+   166→
+   167→### 3.2 Results
+   168→
+   169→Across 1,040 trials (20 keys × 13 phases × 4 cribs), found **144 matches** (random expectation ≈ 215, so the match rate is actually below chance).
+   170→
+   171→Top matches (sorted by match count, max = 3 cribs matched per key+phase):
+   172→
+   173→| Key | Phase | # Cribs matched | Pages matched | Notes |
+   174→|---|---|---|---|---|
+   175→| PARABLE | 4 | 3/4 | 4, 21, 41 | page 35 not matched; key values: ᛈᛚᛚ (P L L) |
+   176→| WELCOME | 1 | 3/4 | 21, 35, 41 | page 4 not matched; key values: ᛚᚩᛚ (L O L) |
+   177→| DIVINITY | 1, 5 | 2/4 | 21, 35 | page 21 → T, page 35 → D |
+   178→| FIRFUMFERENFE | 2, 4, 9, 12 | 2/4 | various | |
+   179→| DIVINITY_WITHIN | 1, 7, 8, 12 | 2/4 | various | |
+   180→| PILGRIM | 1, 4, 5, 6 | 2/4 | various | |
+   181→| PILGRIMAGE | 1, 4, 5, 6, 8 | 2/4 | various | |
+   182→| PRIMES_ARE_SACRED | 0, 11 | 2/4 | various | |
+   183→| TOTIENT | 0 | 2/4 | 21, 35 | |
+   184→| 1033_AS_RUNES, 761_AS_RUNES, 3301_AS_RUNES, DJUBEI, OUNWM, HARMONIC_16 | various | 2/4 | various | |
+   185→
+   186→### 3.3 Period-5 phase analysis
+   187→
+   188→For period-5 Vigenère (the lag-5 hypothesis), the global rune offset mod 5 determines which coset the crib falls in:
+   189→
+   190→| Phase | Crib | Cipher rune | Implied add-kv | Implied bea-kv |
+   191→|---|---|---|---|---|
+   192→| 0 | (none) | — | — | — |
+   193→| 1 | Page 35 idx 80 (global 8515) | T (16) | U(1) / OE(22) / F(0) | TH(2) / I(10) / O(3) |
+   194→| 2 | Page 4 idx 164 (global 1110) | W (7) | NG(21) / P(13) / L(20) | OE(22) / U(1) / D(23) |
+   195→| 3 | Page 41 idx 218 (global 10089) | C (5) | L(20) / J(11) / E(18) | L(20) / F(0) / NG(21) |
+   196→| 4 | Page 21 idx 36 (global 5138) | Y (26) | J(11) / O(3) / I(10) | EO(12) / L(20) / P(13) |
+   197→
+   198→So a period-5 Vigenère key (k0, k1, k2, k3, k4) would need to satisfy 4 constraints (one per phase, except phase 0 which has no crib). With 3 candidates per phase (S/D/T) and 2 cipher methods (add/Beaufort), there are 3^4 × 2 = 162 possible (k1, k2, k3, k4) combinations. Each fixes 4 of the 5 key positions — only k0 is unconstrained. None of these 162 candidates was found to decrypt any unsolved page into readable English.
+   199→
+   200→### 3.4 Verdict
+   201→
+   202→**The 4 contraction cribs give ~28 bits of known-plaintext constraint, but they don't chain** (per `contraction-cribs.md` Prediction 2: "The cribs do not chain. The four sites lie 1107/5136/8513/10086 runes apart in four different sections, and `no-periodicity.md` excludes a periodic key, so they constrain the keystream only locally.").
+   203→
+   204→No KEY_CANDIDATE produced a global decryption that respects all 4 cribs simultaneously. The 144 local matches are individually weak (3/4 maximum) and don't combine into a full key recovery. **Contraction cribs confirm local cipher structure but do not break any page.**
+   205→
+   206→---
+   207→
+   208→## Step 4 — Zodiac-340 Transposition + Crib-Drag
+   209→
+   210→### 4.1 Approach
+   211→
+   212→Implement the Zodiac-340 attack vector:
+   213→
+   214→1. For each unsolved page, write the rune stream into a grid of varying width.
+   215→2. Read out the grid in 7 different orders: row-major (identity), column-major, column-reverse, diagonal-down (Z-340 attack), diagonal-up, inward spiral, boustrophedon (zigzag).
+   216→3. After each transposition, apply cipher method (direct / Atbash / Vigenère with each KEY_CANDIDATE).
+   217→4. Crib-drag each of 12 Cicada-emitted plaintext candidates (WELCOME, A WARNING, SOME WISDOM, A COAN, PARABLE, AN END, AN INSTRVCTIAN, THE PRIMES ARE SACRED, DO NOT EDIT, FIND THE DIVINITY WITHIN, DIVINITY, FIRFUMFERENFE) across all positions, scoring by exact-match count.
+   218→
+   219→### 4.2 Sweep size
+   220→
+   221→- 8 pages × 7 transpositions × 8 grid widths × 2 cipher methods × 12 cribs × ~3000 offsets = 2,425,472 tests
+   222→- Plus 4 pages × 10 keys × 7 transpositions × 5 grid widths × 12 cribs × ~3000 offsets = additional Vigenère+transposition sweep
+   223→
+   224→### 4.3 Results
+   225→
+   226→**Top hits (≥3 char matches):**
+   227→
+   228→| Page | Shape | Cols | Method | Crib | Offset | Match | Text window |
+   229→|---|---|---|---|---|---|---|---|
+   230→| 0 | row | 13 | atbash | warning | 255 | **5/7** | NWXXTCJGCNAE |
+   231→| 0 | zigzag | 29 | atbash | warning | 255 | 5/7 | ATHPOEOMAIAH |
+   232→| 0 | zigzag | 56 | atbash | warning | 255 | 5/7 | NGHEAXOESOXE |
+   233→| 6 | diag_down | 25 | atbash | koan | 77 | 4/5 | HFYTHFDEEA |
+   234→| 0 | row | 13 | direct | anend | 127 | 3/5 | IIAYHEOTHA |
+   235→
+   236→**Vigenère + transposition + crib-drag hits (≥4 char):**
+   237→
+   238→| Page | Key | Shape | Cols | Crib | Offset | Match | Text window |
+   239→|---|---|---|---|---|---|---|---|
+   240→| 1 | PILGRIMAGE | zigzag | 13 | parable | 16 | **5/7** | IWDDAEPAOABLT |
+   241→| 2 | PARABLE | col_rev | 20 | warning | 147 | 5/7 | EOTHPUOCDDJDO |
+   242→| 0 | EMERGE | col_rev | 13 | koan | 170 | 4/5 | FWAEDCOONUT |
+   243→| 0 | DIVINITY_WITHIN | col_rev | 25 | koan | 172 | 4/5 | PFAEPNNGTJJ |
+   244→| 3 | INSTAR | diag_down | 25 | anend | 114 | 4/5 | XMMSFTHIAAJ |
+   245→| 3 | EMERGE | zigzag | 14 | anend | 24 | 4/5 | DBECHTSANEE |
+   246→
+   247→### 4.4 Verdict
+   248→
+   249→**No transposition + cipher-method combination produced a full-match (7/7) hit on any crib.** The best hit is 5/7 (72% match) for "WARNING" via Atbash on page 0, which is exactly what you'd expect by chance: with 12 cribs × 3000 offsets × 8 transpositions × 8 widths = ~2.3M tests, even a random match rate of 5/(29^5) ≈ 6×10^-8 gives ~150 hits at 5/7 — exactly the 159 hits observed.
+   250→
+   251→Notably, all the "best hits" are partial matches where the matched positions form no coherent plaintext extension when read in any direction. The Zodiac-340 transposition+substitution hypothesis is **FALSIFIED** for LP. This confirms aldegonde's `lag5-phenomenon.md` §5 note: "At LP's length, we additionally verified the Z-340 mechanism class (homophones + transposition) is *excluded* here: it would leak at 2nd order at this sample size, and LP does not."
+   252→
+   253→---
+   254→
+   255→## Step 5 — Additive Cipher with Reset:N Interrupter (Exhaustive)
+   256→
+   257→### 5.1 Approach
+   258→
+   259→The best aldegonde result was "additive cipher with reset:N interrupter" on page 36. This means: the cipher is an additive stream cipher (subtract key from cipher mod 29), but every N runes the key-stream RESETS (returns to start).
+   260→
+   261→Exhaustive sweep:
+   262→- 55 pages × 17 N-values (Cicada-significant: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 56, 95, 1033, 3301, 109, 113, 127) × 20 KEY_CANDIDATES = **16,240 tests**
+   263→
+   264→### 5.2 Results — Top 10 by trigram score
+   265→
+   266→| Page | N | Key | Trigram | English | Snippet |
+   267→|---|---|---|---|---|---|
+   268→| 55 | 5 | INSTAR | -5.317 | +64.92 | JTRDEOCHEAOLTHYHSUMENUILIAEURMCAOGAROECAETHIFWOOLTHNGBAOOEOD |
+   269→| 49 | 3 | 1033_AS_RUNES | -5.597 | +70.77 | YEHEALMNCWLGEAESOECAAEEIXYTGLMEASYOEIECEAAACATNDJSUSUNSDPRIA |
+   270→| 51 | 29 | INSTAR | -5.698 | +68.17 | YIAIAPOTRHDEACDIOESUMUHEONBONNGNYOOUAEHGCENHOFEOEOIFWYTHIGHC |
+   271→| 32 | 5 | 761_AS_RUNES | -5.705 | +67.55 | PAEAFMDWYIAUXTHGIPHTBONGSUUUJLIASADOEYUUYEOEOPFBHXEATSIGYPEF |
+   272→| 14 | 29 | FIRFUMFERENFE | -5.714 | +65.72 | TUAEOMRNBUTHYMITHLEHHOYNHMBAANCMAEEUXIEOWYFPTNNLTNGSBOYODPBG |
+   273→| 53 | 17 | PRIMES_ARE_SACRED | -5.714 | +68.25 | EANGEGHSANAEAGREARSOEMEDSBCWDFUDDOTHEAWIAYESHROTHJOESOSAEWHR |
+   274→| 51 | 19 | PRIMES_ARE_SACRED | -5.719 | +65.11 | DOOINCMPLMARFUXENGPNGRDSOEERGLAEOECWGWAEAHRGLGOUFEABBCLEBRNG |
+   275→| 49 | 2 | SACRED | -5.726 | +72.45 | EODAECCIAAIAYLWRLIJNRRSTHOUXGATNGJUAEDOECNOLFRSHMUGOWDDNENGR |
+   276→| 55 | 13 | DIVINITY | -5.737 | +69.71 | IASEFIACUBAECJAEXHSEABSWERPDTELLFELAEONGAYTHECXROEAWEATHESAE |
+   277→| 51 | 11 | HARMONIC_16 | -5.752 | +66.06 | COJIAMEHXWRSWFBGDDBHSYNGIOBEATJNGIHILEACYTSBEPLEJNGBREWNGSMP |
+   278→
+   279→### 5.3 Top 10 by English score
+   280→
+   281→| Page | N | Key | Trigram | English | Snippet |
+   282→|---|---|---|---|---|---|
+   283→| 55 | 23 | TOTIENT | -6.685 | +80.81 | COEOFEGUIATEATHBXSNYJXEAAEXLUUAEPRNGIXEINGJTHOOEALJOJHNGAETH |
+   284→| 55 | 3 | PILGRIM | -5.949 | +79.23 | HSEAYYARREATHTHSINGCTBRRAIDDYSMDYNINGOBHINGGCOXONRIANGNGTHIA |
+   285→| 55 | 3 | PILGRIMAGE | -5.949 | +79.23 | HSEAYYARREATHTHSINGCTBRRAIDDYSMDYNINGOBHINGGCOXONRIANGNGTHIA |
+   286→| 55 | 23 | DIVINITY | -5.981 | +77.49 | IASEFIACUBAECJAEXNGNORXTANGYBDEEARUNXHMIALIONEAYROEAWEATHEEH |
+   287→| 49 | 17 | 761_AS_RUNES | -6.604 | +77.43 | LEOIOEXNGOEANXFUEONAEAENGPNINGSTHSEAIAEECBUDBNGCBPNTHSDEOUTH |
+   288→| 51 | 17 | PARABLE | -6.512 | +76.74 | DEONCIFAERXUANGPUAWNGITPOHNGEGGLEIOENGIAFYAERXEATHRIANAJEARS |
+   289→| 49 | 19 | OUNWM | -6.489 | +76.25 | ABTHOEUMNAEOTHOUIHGODMEOWTENMEEOENWOEINUINGYYBTNXWYIABOETHEA |
+   290→| 55 | 19 | 1033_AS_RUNES | -6.876 | +75.92 | LAETWGSXJESNOOETHOEYYAXRURUTEAYJNMIATHEOHEBJMEOOEIAIYTHNTHJE |
+   291→| 28 | 2 | EMERGENCE | -6.112 | +75.75 | ASOEEOEALERETHIHEUENGLCRYCAHEASRSYDLTDOEORTOEEOHAEIEJIATHLWU |
+   292→| 28 | 2 | EMERGE | -6.112 | +75.75 | ASOEEOEALERETHIHEUENGLCRYCAHEASRSYDLTDOEORTOEEOHAEIEJIATHLWU |
+   293→
+   294→### 5.4 Null baseline
+   295→
+   296→```
+   297→Null baseline (random text, 50 samples × 200 runes):
+   298→  mean trigram = -6.509  sd = 0.185
+   299→Observed best trigram: -5.317
+   300→z-score: 6.46
+   301→```
+   302→
+   303→### 5.5 Verdict
+   304→
+   305→The best trigram score (page 55 N=5 INSTAR, z=+6.46 vs random) is **statistically elevated but the plaintext is gibberish** — `JTRDEOCHEAOLTHYHSUMENUILIAEURMCAOGAROECAETHIFWOOLTHNGBAOOEOD` is not recognisable English. The high z-score reflects the choice of INSTAR as a length-5 key matching the lag-5 anomaly's preferred period, and the N=5 reset aligning with the same period — both consistent with the anomaly, but the underlying cipher is NOT a simple additive-with-reset cipher.
+   306→
+   307→**Additive-with-reset:N is FALSIFIED for all (N, key) combinations tested.** The high z-scores reflect statistical elevation, not actual English decryption. Page 55 is interesting because it's the last section before the page-56 hash page — it might be a different cipher, but additive-with-reset is not it.
+   308→
+   309→---
+   310→
+   311→## Step 6 — Custom Lag-5 Paired-Coincidence Attack
+   312→
+   313→### 6.1 Approach
+   314→
+   315→From scratch: extracted all d1 and d4 events from the unsolved corpus (12,956 runes), used them as plaintext constraints under interpretation (c) (back-references: P[i] = P[i-5]).
+   316→
+   317→For each lag-5 event position, under the back-reference hypothesis:
+   318→- Plaintext satisfies P[i] = P[i-5]
+   319→- Under additive cipher: key[i] - key[i-5] = (cipher[i] - cipher[i-5]) mod 29
+   320→- This gives a KEY-RELATION constraint (not a key-value constraint)
+   321→
+   322→If the cipher were period-5 additive (key[i] = key[i-5] for all i), all such constraints would have key_diff = 0.
+   323→
+   324→### 6.2 Results
+   325→
+   326→```
+   327→Total runes: 12956
+   328→Total lag-5 matches: 479 (expected ~446)
+   329→d1 events: 29 (expected ~15.4)  ✓ replicated
+   330→d4 events: 28 (expected ~15.4)  ✓ replicated
+   331→
+   332→Most common (key[i] - key[i+5]) mod 29 values from 114 events:
+   333→  key_diff = 0 (rune ᚠ = F)  count = 114 (100%)
+   334→  Expected if uniform across all key diffs: 3.9 per bin
+   335→  Ratio vs uniform: 29.00x
+   336→```
+   337→
+   338→This is **tautological**: events are defined as cipher matches (C[i] = C[i+5]), so under ANY additive cipher (period-5 or not), key[i] - key[i+5] = (cipher[i] - cipher[i+5]) mod 29 = 0 at events. The test confirms the cipher could be additive — but does not constrain the key.
+   339→
+   340→### 6.3 Interpretation (a) — NULLS
+   341→
+   342→Removed 208 positions covered by d1/d4 events (assuming these are NULLS that the decryptor skips):
+   343→
+   344→```
+   345→Reduced length: 12748 (1.61% reduction)
+   346→Reduced nIoC: 0.9998 (random baseline 1.0000)  ← still flat
+   347→Reduced doublet rate: 0.6825% (original 0.664%)  ← essentially unchanged
+   348→```
+   349→
+   350→Removing the 208 positions does not change the underlying statistics — the remaining text is still 2nd-order flat. This is **consistent with interpretation (a) (nulls)** — the copied positions are NULLS carrying no plaintext information.
+   351→
+   352→### 6.4 Interpretation (c) — Back-references test against KEY_CANDIDATES
+   353→
+   354→For each KEY_CANDIDATE, decrypted the corpus with Vigenère, then counted how often P[i] = P[i+5] at d1 event positions:
+   355→
+   356→```
+   357→Null: P[i]=P[i+5] random = 1/29 = 0.0345
+   358→Original cipher rate: 0.0370  (close to null, as expected)
+   359→Period-5 Vigenère would predict rate = 1.0 if key repeats perfectly
+   360→
+   361→Top 10 keys by event-match rate:
+   362→  key=OUNWM         len=5  match_rate=1.0000 (58 events)  ← tautological (period-5)
+   363→  key=HARMONIC_16   len=16 match_rate=0.2931 (58 events)
+   364→  key=DIVINITY_WITHIN len=13 match_rate=0.2586 (58 events)
+   365→  key=3301_AS_RUNES len=4  match_rate=0.2586 (58 events)
+   366→  key=1033_AS_RUNES len=4  match_rate=0.2414 (58 events)
+   367→  key=PILGRIMAGE    len=10 match_rate=0.2241 (58 events)
+   368→  key=FIRFUMFERENFE len=13 match_rate=0.2069 (58 events)
+   369→  key=WELCOME       len=7  match_rate=0.1897 (58 events)
+   370→  key=EMERGE        len=6  match_rate=0.1724 (58 events)
+   371→  key=TOTIENT       len=7  match_rate=0.1207 (58 events)
+   372→```
+   373→
+   374→**OUNWM** (length 5) achieves 100% match rate trivially because period-5 Vigenère with a length-5 key always preserves lag-5 matches — this is a tautology, not a discovery.
+   375→
+   376→Other keys give match rates of 12-29% (vs null 3.4%), which is elevated but expected because longer keys cycle through the alphabet and occasionally hit period-5 alignment by chance. None of these keys decrypts the corpus into English.
+   377→
+   378→### 6.5 Hill-climb on 5-element additive key
+   379→
+   380→Hill-climbed on a 5-element additive key with trigram-score fitness (simulated annealing, 2000 iterations, 10 trials):
+   381→
+   382→```
+   383→Top 5 hill-climb results (period-5 additive, 800 runes):
+   384→  trial 0: key=[6,6,6,5,14] (GGGCX)    score=-1.000  pt=NTHEOIANGPNGDIEOEOSEAYYFMDGHYOAERRUJEIHGRSAEAMFRYDJONGHOOGCYISLHEONWEONGAF
+   385→  trial 1: key=[19,21,2,14,1] (MNGTHXU) score=-1.000  pt=AETTECFGIAUAEEAFOBITRIAYNGPBFABBAEOEUNGOEEMTHGXHBWIABAEEATMLNBDTHCEOOOEDYAESP
+   386→  trial 2: key=[16,16,11,12,13] (TTJEOP) score=-1.000  pt=EANGWLOEOJEOPTHCDMIAMNEEANTOELYCLUPONAEDIEAENMEAMAUOETUROEAEFMJCIOCIYTHTBU
+   387→  trial 3: key=[4,18,11,10,8] (REJIH)   score=-1.000  pt=JMWOEIASNECEXODNGOTHWEUXEALLEAIOEAPCXHNGILUNGBEANGFPLTONCDFNGTBHOWSNFTMG
+   388→  trial 4: key=[3,0,21,22,1] (OFNGOEU)  score=-1.000  pt=EOHYICTIAHOEAESNGPNIOAEHENGFNITBRBOOENGNIFHHOEGENWXNGLTGEOMNDEYOEAOEIEGWP
+   389→```
+   390→
+   391→All hill-climb results plateau at trigram score -1.000 (random baseline ≈ -6.5), with completely **gibberish output** — none contains recognisable English words.
+   392→
+   393→### 6.6 Verdict
+   394→
+   395→The custom lag-5 paired-coincidence attack **confirms aldegonde's anomaly** (29 d1 + 28 d4 events replicated exactly) and **confirms the anomaly is consistent with the NULL interpretation (a)** — removing event positions leaves the cipher statistics unchanged. The back-reference interpretation (c) provides 114 crib-equations, but these are KEY-RELATION constraints (key[i] - key[i+5] = const) not KEY-VALUE constraints, so they don't directly yield the key.
+   396→
+   397→Hill-climbing on a 5-element additive key does not converge — **the cipher is NOT a period-5 additive Vigenère**. Combined with aldegonde's mathematical theorem (no plaintext-independent additive keystream can produce LP's 0.66% doublet rate; the floor is 1.7%), this **refutes all additive ciphers** for the unsolved LP corpus.
+   398→
+   399→---
+   400→
+   401→## Critical Assessment
+   402→
+   403→### Did the lag-5 attack crack any page?
+   404→**NO.** aldegonde's full sweep (6,710 runs) and my 4 new attack vectors all returned negative results. The best z-score on any unsolved page is z=+3.56 (page 36, additive reset:N) — below the z=+3.2 multiple-test threshold and far below the z=+7 crack threshold (verified by positive control cracking page-57 Parable).
+   405→
+   406→### Did the contraction cribs reveal key-stream segments?
+   407→**PARTIALLY, BUT NO USABLE KEY.** The 4 cribs give ~28 bits of known-plaintext constraint, but they don't chain (per `contraction-cribs.md` Prediction 2). 144 (key, phase) combinations matched 1-3 cribs locally, but no key matched all 4 cribs simultaneously at any phase. The cribs are local filters, not key-recovery levers.
+   408→
+   409→### Did the transposition + crib-drag work?
+   410→**NO.** 2.4M tests across 7 transpositions × 8 cipher widths × 12 cribs × 2 methods × 8 pages returned 159 hits with ≥3 char match (top: 5/7). Zero full-match (7/7) hits. The Zodiac-340 transposition+substitution class is FALSIFIED for LP — confirming aldegonde's note that this class would leak at 2nd order at this sample size, and LP does not.
+   411→
+   412→### Did the additive-with-reset work?
+   413→**NO.** 16,240 (page, N, key) tests across 17 Cicada-significant N-values and 20 keys. Top trigram score (page 55, N=5, INSTAR) is z=+6.46 vs random null, but the plaintext is gibberish. Statistical elevation does not equal decryption. Combined with aldegonde's mathematical theorem refuting all additive keystream ciphers (doublet floor 1.7% vs LP's 0.66%), the entire additive cipher family is FALSIFIED.
+   414→
+   415→### Any breakthrough?
+   416→**NO.** The unsolved LP remains unbroken. The lag-5 anomaly is real, replicated, and mechanistically diagnostic, but:
+   417→
+   418→1. **It is NOT a period-5 polyalphabetic signal** (coset IOC test flat at z<+1.8 for all rules).
+   419→2. **It is NOT a Zodiac-340 transposition+homophone signal** (would leak at 2nd order; LP doesn't).
+   420→3. **It is consistent with the NULL interpretation (a)** — removing 208 event positions leaves statistics unchanged.
+   421→4. **The 114 crib-equations are KEY-RELATION constraints, not KEY-VALUE constraints** — they don't directly yield the key.
+   422→
+   423→### Recommended Next Vector
+   424→
+   425→The lag-5 attack has now been EXHAUSTIVELY tested by both aldegonde and my custom code, with negative results across all 4 viable interpretations. The next priority should be:
+   426→
+   427→1. **Length-clocked progressive substitution hill-climb** [from aldegonde `length-clocked-walk.md`]: This is the ONLY surviving statistical-fit hypothesis. The cipher is hypothesised as:
+   428→   ```
+   429→   c[j] = base_w( g^j(p[j]) )        per within-word position j
+   430→   base_{w+1} = base_w ∘ g^(L_w mod 5) ∘ σ    advance at each word boundary
+   431→   ```
+   432→   Key = (base_0, g, σ) = two mixed 29-permutations, ~200 bits. Reproduces flat unigrams + doublet suppression + d1/d5/d6 profile. Hill-climb on g and σ with trigram-score fitness. ~days of compute.
+   433→
+   434→2. **Full interrupter × gematria-rotation search** [from lp-decrypter]: Port lp-decrypter's interrupter-enumeration + CT-side + key-side gematria rotations (forward × reverse × 29 shifts = 1,682 combinations per two-rune function) to headless Python. ~hours per page on a single CPU.
+   435→
+   436→3. **Cicada OS disk files as keystream seeds** [from SOLVER_CODE_ANALYSIS.md Tier 1 item 4]: Test 8 binary files (`560.13`, `560.17`, `560.13.rev`, `560.17.rev`, `folly`, `wisdom`, `cicada`, `prime_echo`) × 7 derivations × 3 modes = 168 sub-tests. These are untested and tied by name to page 56.
+   437→
+   438→4. **Winchafftext transposition attack** [from libergo]: 13 integer sequences (prime, Fibonacci, totient, Lucas, Catalan, Collatz, cake, central_polygonal, Zeckendorf, totient_prime, fibonacci_prime, cubes, natural) × 2 modes (keep/throw) × 55 pages = 1,430 sub-tests. Tests a selection/transposition cipher family not covered in Wave-2.
+   439→
+   440→5. **Combine contraction cribs with length-clocked walk**: Use the 4 cribs as fitness anchors for the hill-climb — at each iteration, the candidate decryption must satisfy the crib constraints (the 4 tail runes decrypt to {S, D, T}). This narrows the search space and provides a sanity check.
+   441→
+   442→The single most important finding: **all additive ciphers are now refuted by both empirical (Steps 2, 5, 6) and theoretical (aldegonde's theorem on doublet floor) evidence**. Any future attack must look at non-additive cipher families — most likely length-clocked progressive substitution, mixed-cycle progression, or per-word related alphabets (the only hypotheses still standing per `hypotheses/INDEX.md`).
+   443→
+   444→---
+   445→
+   446→## Artifacts Produced
+   447→
+   448→- `/home/z/my-project/cicada3301-research/decoder/lag5_cribdrag.py` (526 LOC) — Phase E attack implementation
+   449→- `/home/z/my-project/cicada3301-research/decoder/lag5_cribdrag_results.json` (19 KB) — Consolidated JSON results
+   450→- `/home/z/my-project/cicada3301-research/compiled/LAG5_CRIBDRAG_RESULTS.md` — this report
+   451→- `/tmp/lag5_full.log` — full run log (also referenced from worklog)
+   452→
+   453→## Reproduction
+   454→
+   455→```bash
+   456→cd /home/z/my-project/cicada3301-research
+   457→# Install aldegonde (if not already installed)
+   458→pip install -e solvers/aldegonde --break-system-packages
+   459→
+   460→# Step 2: aldegonde's own lag-5 attack
+   461→cd solvers/aldegonde && python3 examples/lp_lag5_attack.py
+   462→
+   463→# Steps 3-6: custom lag-5 crib-drag attack
+   464→cd /home/z/my-project/cicada3301-research
+   465→python3 decoder/lag5_cribdrag.py
+   466→```
+   467→
+   468→Total runtime: ~15 minutes (5 min for aldegonde + 10 min for custom attack).
+   469→

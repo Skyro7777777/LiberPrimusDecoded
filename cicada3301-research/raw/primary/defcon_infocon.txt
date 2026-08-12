@@ -1,0 +1,206 @@
+URL: https://infocondb.org/con/def-con/def-con-31/cracking-cicada-3301-the-future-of-collaborative-puzzle-solving
+TITLE: Cracking Cicada 3301: The Future of Collaborative Puzzle-Solving (DEF CON 31) - InfoconDB
+DESCRIPTION: This talk will explore the ongoing efforts of the CicadaSolvers community to solve Cicada3301’s Liber Primus, a book of elder futhark runes and codes that has challenged cryptographers and puzzle-solvers since 2014. Using our experiences as leaders within the community, we will delve into the cultural significance of the puzzle and discuss the various strategies and techniques employed by members to crack its code, and the story of their struggle to maintain motivation through 9 years of solving one of the most difficult puzzles ever released. Attendees will gain insights into the future of collaborative puzzle-solving and the challenges that the Liber Primus presents for the future of cryptography. This presentation is suitable for anyone interested in cryptography, puzzle-solving, internet mysteries, and the persistence of collaborative communities. No prior technical knowledge or tools are required.
+
+REFERENCES:
+- CicadaSolvers Discord server: https://discord.gg/cicadasolvers-572330844056715284
+- CicadaSolvers Wiki: https://uncovering-cicada.fandom.com/wiki/Uncovering_Cicada_Wiki
+- Previous DEF CON talk from CicadaSolvers member Nox Populi: https://www.youtube.com/watch?v=sVU4k2gRe_Y
+- Article written as a result of our TOR search in 2016: https://arstechnica.com/information-technology/2016/07/malicious-computers-caught-snooping-on-tor-anonymized-dark-web-sites/
+
+InfoconDB
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ InfoconDB
+ 
+ 
+ 
+ 
+
+ 
+ Support
+
+ About
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Home
+
+ 
+ DEF CON
+
+ 
+ DEF CON 31 (2023)
+
+ 
+ 
+ Cracking Cicada 3301: The Future of Collaborative Puzzle-Solving
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Cracking Cicada 3301: The Future of Collaborative Puzzle-Solving
+
+ 
+ 
+ 
+ 
+
+ 
+ Presented at DEF CON 31 (2023),
+ Aug. 10, 2023, 11:30 a.m.
+ (45 minutes).
+ 
+ 
+
+ 
+
+ This talk will explore the ongoing efforts of the CicadaSolvers community to solve Cicada3301’s Liber Primus, a book of elder futhark runes and codes that has challenged cryptographers and puzzle-solvers since 2014. Using our experiences as leaders within the community, we will delve into the cultural significance of the puzzle and discuss the various strategies and techniques employed by members to crack its code, and the story of their struggle to maintain motivation through 9 years of solving one of the most difficult puzzles ever released. Attendees will gain insights into the future of collaborative puzzle-solving and the challenges that the Liber Primus presents for the future of cryptography. This presentation is suitable for anyone interested in cryptography, puzzle-solving, internet mysteries, and the persistence of collaborative communities. No prior technical knowledge or tools are required.
+
+REFERENCES:
+- CicadaSolvers Discord server: https://discord.gg/cicadasolvers-572330844056715284
+- CicadaSolvers Wiki: https://uncovering-cicada.fandom.com/wiki/Uncovering_Cicada_Wiki
+- Previous DEF CON talk from CicadaSolvers member Nox Populi: https://www.youtube.com/watch?v=sVU4k2gRe_Y
+- Article written as a result of our TOR search in 2016: https://arstechnica.com/information-technology/2016/07/malicious-computers-caught-snooping-on-tor-anonymized-dark-web-sites/
+
+ 
+ Presenters:
+
+ 
+ 
+ 
+ Puck
+ 
+ 
+ 
+Puck is a 19-year-old rising junior computer science major and Cicada 3301 puzzle enthusiast. He has been involved in the community for four years, finding inspiration to pursue cryptography and cybersecurity. Puck has focused his work on promoting community solving efforts, mainly in the form of innovative events.
+ 
+
+ 
+ 
+ TheClockworkBird
+ 
+ 
+ 
+TheClockworkBird With a background in anthropology and teaching, TheClockworkBird creates collaborative spaces where people of all skill levels and interests can engage with the puzzle. He has gained a multifaceted understanding of Cicada’s impact on the individual, and the impacts of collaborative puzzle solving on the growth of privacy awareness.
+ 
+
+ 
+ 
+ Taiiwo
+ 
+ 
+ 
+Taiiwo, a CicadaSolvers founding member, with a background in software development, sees the community's work as an example for the future of problem-solving. With a pragmatic, and sceptical approach to the puzzle, he aims to preserve the community so that it can continue to impact the lives of others as immensely as it did for him.
+ 
+
+ 
+ 
+ Artorias
+ 
+ 
+ 
+Artorias is the creator of CicadaSolvers.com, co-host of the CicadaCast podcast, and moderator of r/cicada and the CicadaSolvers discord. Well-versed in the complex history of the Cicada 3301 puzzles, he labors both to document the mystery of Cicada 3301, and to unravel the labyrinth of its interconnected topics.
+ 
+
+ 
+ 
+
+ 
+
+ 
+ Links:
+
+ 
+ 
+ Con Page
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+ Similar Presentations:
+
+ 
+ 
+ DEF CON 29 (2021) / The Agricultural Data Arms Race: Exploiting a Tractor Load of Vulnerabilities In The Global Food Supply Chain.
+
+ 
+ Black Hat USA 2020 Virtual / Breaking Brains, Solving Problems: Lessons Learned from Two Years of Setting Puzzles and Riddles for InfoSec Professionals
+
+ 
+ DEF CON 31 (2023) / Legend of Zelda: Use After Free (TASBot glitches the future into OoT)

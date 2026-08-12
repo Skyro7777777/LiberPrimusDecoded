@@ -1,0 +1,459 @@
+{
+  "M1": {
+    "info": {
+      "H": 136,
+      "W": 10,
+      "rows": 136
+    },
+    "results": [
+      {
+        "config": "boustrophedon",
+        "score": 65.905,
+        "snippet": "EALEAEOJARGSIBOWEACJDIEMRGAHEALGOHXIANGIAPOWRDYCTHIVEOIOETHFCHIONGNIDTAERNGAEPCX"
+      },
+      {
+        "config": "col_major_rev",
+        "score": 65.586,
+        "snippet": "VEAWAYOEARBIAAEDWMEAOOPNGWXVNGVGXRWJRYCCNGNDXDFODOEOEAEIASIAONGSOEFTJOEASPPHGVEA"
+      },
+      {
+        "config": "col_major_rows_rev",
+        "score": 65.267,
+        "snippet": "IAFBLNATHADTHOEFMNGIEATHNGJNGTMAEDLSFRJLNTHRDYOSOAEACRENGJTAEWEAIAFEATHVXDJROEJE"
+      },
+      {
+        "config": "row_major_control",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "reverse_all",
+        "score": 64.629,
+        "snippet": "DTOIAFNFBIPLAEXNWABIATHOEABGIADNGPDDTHSOEWAEFMSDRXNGMIAEGOENDNGEATHWINGNSJNGOEBT"
+      },
+      {
+        "config": "diagonal_z340",
+        "score": 64.469,
+        "snippet": "EAARJEOGWEAOSEALBCIEDIJMGARHXIAHEALNGDYRGOWCIOEEOTHOPVTHONGIFIIACNTAEIHDREAEADNG"
+      },
+      {
+        "config": "col_major",
+        "score": 63.831,
+        "snippet": "EAARWEAIEGAXIADYIOEONGTAEEAEAMHXOEIACTFTHFDEAEOOEJYOEBCNGASPDPAOEEAOEEOTEONGEAFT"
+      },
+      {
+        "config": "spiral",
+        "score": 63.027,
+        "snippet": "EAARWEAIEGAXIADYIOEONGTAEEAEAMHXOEIACTFTHFDEAEOOEJYOEBCNGASPDPAOEEAOEEOTEONGEAFT"
+      }
+    ]
+  },
+  "M2": {
+    "info": {
+      "n_sections": 1,
+      "n_paragraphs": 6,
+      "n_clauses": 28
+    },
+    "results": [
+      {
+        "config": "reverse_word_order_row",
+        "score": 65.745,
+        "snippet": "EALEAEOJASGRIBOWCEAJDIRMEGOGLEAHAHXNGIAIAPOWRDTHCYIVEOIHCFTHOEIODINNGTPAENGRAECX"
+      },
+      {
+        "config": "reverse_row_order_para",
+        "score": 65.267,
+        "snippet": "OETHFCHOINGNIDTAERNGAEPEADEOXCAHEALGOXHIANGDRWOPIAYCTHIEOVIAJEOEALRGSWOBIEACIDJE"
+      },
+      {
+        "config": "reverse_para_order_sec",
+        "score": 65.107,
+        "snippet": "AOETHIABAWNXAELPIBFNFIAOTDJGWWRIFTFLSJLAJRTDGAEEAFXDAEGHTMYPTBOENGJSNNGIWTHEANGD"
+      },
+      {
+        "config": "reverse_within_word",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "reverse_full",
+        "score": 64.629,
+        "snippet": "DTOIAFNFBIPLAEXNWABIATHOEABGIADNGPDDTHSOEWAEFMSDRXNGMIAEGOENDNGEATHWINGNSJNGOEBT"
+      },
+      {
+        "config": "col_major_per_para",
+        "score": 63.991,
+        "snippet": "EAARWEAIEGAXIADYIOEONGTAEEAJGOCDMHHNGRCEOTHINRDEOSBJREAWTHVFINGEOEAILOICDAEXLGPH"
+      },
+      {
+        "config": "z340_per_para",
+        "score": 63.991,
+        "snippet": "EAARJEOGWEAOSEALBCIEDIJMGARHXIAHEALNGDYRGOWCIOEEOTHOPVTHONGIFIIACNTAEIHDREADNGAE"
+      }
+    ]
+  },
+  "M3": {
+    "info": {
+      "n_configs": 39
+    },
+    "results": [
+      {
+        "config": "columnar_k6_fwd",
+        "score": 67.659,
+        "snippet": "EARIEEAIAPEOCIAECPIAGIANGDTHFEOEAJEVDLIAELLEAEOTVDLOETSRYDCFNREODNGECCEOFAVANGHJ"
+      },
+      {
+        "config": "columnar_k6_rev",
+        "score": 67.659,
+        "snippet": "LBJHHOIFNNGXMVEOVAETEDEAPNGWVNGRSDDWBFNGOEBWPJNGECBNSPOEJRXMDIAHOEJAEJXPYSDAEYWW"
+      },
+      {
+        "config": "railfence_decrypt_n9",
+        "score": 67.5,
+        "snippet": "EADAEEAWEAJCSJLJOEMNGRAWBAEOIJGTHWNGOEXRCOJPOIACJTWDREDOEMGIAEOYTBPVBIDFLCTODCEA"
+      },
+      {
+        "config": "railfence_encrypt_n6",
+        "score": 66.862,
+        "snippet": "EAORIATHOAEEIAIAGCEOOOEDAHLNTDRFREANNACEJEAATEJHEAAECWLXBEAXTHOEPAWBMGHNGCIHINGP"
+      },
+      {
+        "config": "columnar_k7_rev",
+        "score": 66.543,
+        "snippet": "REAROWICDEAOESEOIABIFOEPJOIAEOASLXINGAEOELEOFLMCCOWJOEREXAYSJATOPHDAGTHLRJGGBIOE"
+      },
+      {
+        "config": "railfence_decrypt_n6",
+        "score": 66.383,
+        "snippet": "EAODEAEEABCXIANGBDLNGXPEONJICOHDREANGDEOTLTONAEBMAEEAREACEOOEPGMNGLAEANJGEAORPRE"
+      },
+      {
+        "config": "railfence_decrypt_n8",
+        "score": 66.383,
+        "snippet": "EAPEANGEAAEMJYEADTHIAAYOELCEARFWHDXCCJTHFOEPFDAEROORHIEOEODNEAIATHWGEATWFVEAIYEA"
+      },
+      {
+        "config": "columnar_k7_fwd",
+        "score": 66.383,
+        "snippet": "EAGCGXOEOHTDEVGTHCFHEAEAXOEJCREDOEOECNGDTXCFEDGIEAAJNGDOEOEAOEVIAEAELSFOAEGBILAE"
+      },
+      {
+        "config": "columnar_k9_rev",
+        "score": 66.383,
+        "snippet": "SJGOINEAMIAVCESPSWBRHDIFIABXJYCNSOJJMAHAEAEEPEADWWIAIJDBTHMWIAWNGDLWVNGPEHOEBBYO"
+      },
+      {
+        "config": "columnar_k9_fwd",
+        "score": 66.224,
+        "snippet": "EAWEOPOEIDPTIAOTHNEAYVEOIAYLOETAELCSDDONJDICEOFHABJHFMDLFRAEOEEANGOEGNFAOMXIATHD"
+      },
+      {
+        "config": "columnar_k11_fwd",
+        "score": 66.224,
+        "snippet": "EABARIDCVOEOCJJWCOPFTOERCYPFPOEIOHAAELPNGODCSFBNGDPAFAIHWOETEAIAVGFEXVNGWTIDDWDD"
+      },
+      {
+        "config": "columnar_k12_fwd",
+        "score": 66.224,
+        "snippet": "EAIEAPCAEPGNGTHEOJVLELEOVLTRDFRDECFVNGJAEADJLAESAEOEOEBAEALIAHPBFBOEJXOEMNXOEEAT"
+      },
+      {
+        "config": "columnar_k11_rev",
+        "score": 66.064,
+        "snippet": "OGDVIXSIACOEEONREOBDEAFEPFJDNEOIJXEOOETBCOAWBLEATEARDBNWRNGEONEONGIABTHEAOVBMLWC"
+      },
+      {
+        "config": "columnar_k12_rev",
+        "score": 66.064,
+        "snippet": "BHOFNGMEOAEEEANWNGSDBNGBPNGCNPJXDHJJPSAEWCJDJGWAIOAWTHREXABOEORCWANAEMOEFEAOEEOO"
+      },
+      {
+        "config": "columnar_k5_fwd",
+        "score": 65.905,
+        "snippet": "EALOIRLIAOTHOEODAEXENGIAFIAAEGFCYEOPOYOEOEDNGAOHDLWNNGTEADBRCFDREEAEANONPAICSEMJ"
+      },
+      {
+        "config": "columnar_k5_rev",
+        "score": 65.905,
+        "snippet": "EAWCMEAHWCIHINGEOOETHHGVAOIOEFEAOOESOVVCMBNLDNOEEDVOEMPXVSNGMNGOGFSEOJJVNGXMIAHF"
+      },
+      {
+        "config": "columnar_k10_rev",
+        "score": 65.905,
+        "snippet": "WMHCHNGOEHVOOEEAOEOVMNDOEDOEPVNGNGGSJVXIHOEYTPHCYGGJFTTHNGSALDSEXYCROIAOECTHOEAE"
+      },
+      {
+        "config": "railfence_decrypt_n7",
+        "score": 65.745,
+        "snippet": "EAEOPENGNGMWOOEEAVAILDRSNGDNGNGAOEJTHOEEASFXCJFOFEOCNMIEAROPBJHEAOXLXEODAEETSILN"
+      },
+      {
+        "config": "railfence_encrypt_n7",
+        "score": 65.745,
+        "snippet": "EAIEAPCAEPGNGTHEOJVLELEOVLTRDFRDECFVNGJAEADJLAESAEOEOEBABEAHLOIAFHNGPMBEOFAEBEOE"
+      },
+      {
+        "config": "columnar_k10_fwd",
+        "score": 65.586,
+        "snippet": "EAORIATHOAEEIAIAGCEOOOEDAHLNTDRFREANNACEJEAATEJHEAAECWLXBEAXTHOEPABGNGIIPMTTHTFJ"
+      },
+      {
+        "config": "railfence_decrypt_n2",
+        "score": 65.426,
+        "snippet": "EAEAACJDEOPEAOLEARTGBSCWGONBOIOEEANCFIODIJFEVMSRNGDAWHEAEAEOLPGROOXOHJIAANGOEDEO"
+      },
+      {
+        "config": "railfence_depth_cnt2",
+        "score": 65.426,
+        "snippet": "EAEAACJDEOPEAOLEARTGBSCWGONBOIOEEANCFIODIJFEVMSRNGDAWHEAEAEOLPGROOXOHJIAANGOEDEO"
+      },
+      {
+        "config": "railfence_decrypt_n3",
+        "score": 65.267,
+        "snippet": "EAPWEAALSAJOEDOEONFJEAXCSLYEAAERGOEGOEOOESVAERWWAVOOEOIABJWEOIVMDEAXABCEOYCINGAE"
+      },
+      {
+        "config": "railfence_encrypt_n4",
+        "score": 65.267,
+        "snippet": "EARIEEAIAPEOCIAECPIAGIANGDTHFEOEAJEVDLIAELLEAEOTVDLOETSRYDCFNREODNGECCEOFAVANGHJ"
+      },
+      {
+        "config": "railfence_encrypt_n5",
+        "score": 65.267,
+        "snippet": "EASDEADTHCTEOPIAOENGIHEOAAEVBAEPNEOTELXDRETFWADJMCEASVGLJEASAAECJFTAEBWAEMDOEAEI"
+      },
+      {
+        "config": "railfence_encrypt_n8",
+        "score": 65.267,
+        "snippet": "EACXEOTEGCHEAOECEOECDXFDIANGOEAVELFAEBLHWDIAPAEAIOHIVDAEOEMEOFBOFDPLOVEONGSNXRNG"
+      },
+      {
+        "config": "railfence_depth_cnt3",
+        "score": 65.267,
+        "snippet": "EAPWEAALSAJOEDOEONFJEAXCSLYEAAERGOEGOEOOESVAERWWAVOOEOIABJWEOIVMDEAXABCEOYCINGAE"
+      },
+      {
+        "config": "railfence_encrypt_n2",
+        "score": 64.948,
+        "snippet": "EAJEARSOICDERAEAGXIADWPYTHEOITHCONGITRAEEAEOCOEPTHSIAIAXGIAOEIAYANGCGDIBTHCHFSOE"
+      },
+      {
+        "config": "railfence_encrypt_n3",
+        "score": 64.948,
+        "snippet": "EAEASIDREAXDPTHICNGTAEEOOPSIAGOEYNGGITHHSEOOAJAEOEVEOBLABEPPLNIEOCTVEEALRXTDPRME"
+      },
+      {
+        "config": "railfence_encrypt_n9",
+        "score": 64.948,
+        "snippet": "EADDCEOIANGHAVAPEOEXRTWDMEAVLEAACFAEWMOEIAAIJNGRFHDXHTAEBFDLOEWOEMRDTBOEAEOEEOCN"
+      },
+      {
+        "config": "columnar_k3_rev",
+        "score": 64.948,
+        "snippet": "JLSBCJRHGHDOYIIFONTNGEAXOMTHVIAEOIAVYAECTIECDSEAEPANSGOEWIAVBNGEARBSHDPDOEWIBEFT"
+      },
+      {
+        "config": "columnar_k4_fwd",
+        "score": 64.948,
+        "snippet": "EAEASIDREAXDPTHICNGTAEEOOPSIAGOEYNGGITHHSEOOAJAEOEVEOBLABEPPLNIEOCTVEEALRXTDPRME"
+      },
+      {
+        "config": "columnar_k3_fwd",
+        "score": 64.788,
+        "snippet": "EAEORWIIEGEAOIARPCEOOECIIAEAEDCOEPNGIATGIAIADNGODFTHFFNEOXEAOEJYEVVJDEOLMIAOEYLT"
+      },
+      {
+        "config": "columnar_k4_rev",
+        "score": 64.788,
+        "snippet": "EOGBIMHONGOCVFIDNGDEAMNGHEOIATHAEOTHEFYEAXLNYOWJXNGMMSYDDRFBNGDNGAENGBPEOPCDNGDV"
+      },
+      {
+        "config": "railfence_decrypt_n5",
+        "score": 64.469,
+        "snippet": "EADIVPAOEEOAXNEOTTHBCJEAEOIABEOOEOEOOEEHOEEANGEEAMCYNGEAFPLBTHJFDTHRNGTOSIAEOSGV"
+      },
+      {
+        "config": "columnar_k8_fwd",
+        "score": 64.15,
+        "snippet": "EASDEADTHCTEOPIAOENGIHEOAAEVBAEPNEOTELXDRETFWADJMCEASVGLJEASAAECJFTAEBWAEMDOEAEI"
+      },
+      {
+        "config": "railfence_decrypt_n4",
+        "score": 63.991,
+        "snippet": "EAGCLDFAIAPSOIAJOEEAJTVEOIABLCTHEAYGANDLAOJOEAERNGNRFBGCOTIOSGFDVTWDSGNTHOIDAEWF"
+      },
+      {
+        "config": "railfence_depth_cnt4",
+        "score": 63.991,
+        "snippet": "EAGCLDFAIAPSOIAJOEEAJTVEOIABLCTHEAYGANDLAOJOEAERNGNRFBGCOTIOSGFDVTWDSGNTHOIDAEWF"
+      },
+      {
+        "config": "columnar_k8_rev",
+        "score": 63.672,
+        "snippet": "GIHNGCFDDMHIAAETHFEALYWXMSDRBDAEBEOCNGVEANDJJSNDHEAJIABPAWAEGGCTRDTIGSDAXFRCAIAY"
+      }
+    ]
+  },
+  "M4": {
+    "info": {
+      "n_configs": 31
+    },
+    "results": [
+      {
+        "config": "best_columnar_col_k6_off0",
+        "score": 67.659,
+        "snippet": "EARIEEAIAPEOCIAECPIAGIANGDTHFEOEAJEVDLIAELLEAEOTVDLOETSRYDCFNREODNGECCEOFAVANGHJ"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'S')_P4_key[0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'S')_P5_key[0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'S')_P7_key[0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'S')_P13_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'S')_P29_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'D')_P4_key[0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'D')_P5_key[0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'D')_P7_key[0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'D')_P13_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'D')_P29_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'T')_P4_key[0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'T')_P5_key[0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'T')_P7_key[0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'T')_P13_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'S', 'T')_P29_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'S')_P4_key[0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'S')_P5_key[0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'S')_P7_key[0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'S')_P13_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'S')_P29_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'D')_P4_key[0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'D')_P5_key[0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'D')_P7_key[0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'D')_P13_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'D')_P29_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'T')_P4_key[0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'T')_P5_key[0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'T')_P7_key[0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'T')_P13_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      },
+      {
+        "config": "crib_('S', 'S', 'D', 'T')_P29_key[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",
+        "score": 64.948,
+        "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+      }
+    ]
+  }
+}

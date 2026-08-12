@@ -1,0 +1,823 @@
+{
+  "step3": {
+    "contraction_cribs": [
+      {
+        "page": 4,
+        "local_idx": 164,
+        "cipher_rune": "\u16b9",
+        "cipher_letter": "W"
+      },
+      {
+        "page": 21,
+        "local_idx": 36,
+        "cipher_rune": "\u16a3",
+        "cipher_letter": "Y"
+      },
+      {
+        "page": 35,
+        "local_idx": 80,
+        "cipher_rune": "\u16cf",
+        "cipher_letter": "T"
+      },
+      {
+        "page": 41,
+        "local_idx": 218,
+        "cipher_rune": "\u16b3",
+        "cipher_letter": "C"
+      }
+    ],
+    "key_candidate_matches": [
+      {
+        "key": "DIVINITY",
+        "phase": 1,
+        "page": 21,
+        "local_idx": 36,
+        "cipher_letter": "Y",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 1,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 2,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "S",
+        "method": "add",
+        "key_val_at_pos": 1,
+        "key_rune_at_pos": "\u16a2"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 3,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 4,
+        "page": 4,
+        "local_idx": 164,
+        "cipher_letter": "W",
+        "plaintext": "T",
+        "method": "bea",
+        "key_val_at_pos": 23,
+        "key_rune_at_pos": "\u16de"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 5,
+        "page": 21,
+        "local_idx": 36,
+        "cipher_letter": "Y",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 5,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 6,
+        "page": 4,
+        "local_idx": 164,
+        "cipher_letter": "W",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 1,
+        "key_rune_at_pos": "\u16a2"
+      },
+      {
+        "key": "DIVINITY",
+        "phase": 7,
+        "page": 21,
+        "local_idx": 36,
+        "cipher_letter": "Y",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 1,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 0,
+        "key_rune_at_pos": "\u16a0"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 2,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "S",
+        "method": "add",
+        "key_val_at_pos": 1,
+        "key_rune_at_pos": "\u16a2"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 2,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 4,
+        "page": 21,
+        "local_idx": 36,
+        "cipher_letter": "Y",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 4,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 0,
+        "key_rune_at_pos": "\u16a0"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 8,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "S",
+        "method": "add",
+        "key_val_at_pos": 19,
+        "key_rune_at_pos": "\u16d7"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 9,
+        "page": 4,
+        "local_idx": 164,
+        "cipher_letter": "W",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 1,
+        "key_rune_at_pos": "\u16a2"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 9,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 0,
+        "key_rune_at_pos": "\u16a0"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 10,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 11,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 0,
+        "key_rune_at_pos": "\u16a0"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 12,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "FIRFUMFERENFE",
+        "phase": 12,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "INSTAR",
+        "phase": 0,
+        "page": 21,
+        "local_idx": 36,
+        "cipher_letter": "Y",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "INSTAR",
+        "phase": 4,
+        "page": 35,
+        "local_idx": 80,
+        "cipher_letter": "T",
+        "plaintext": "D",
+        "method": "bea",
+        "key_val_at_pos": 10,
+        "key_rune_at_pos": "\u16c1"
+      },
+      {
+        "key": "EMERGENCE",
+        "phase": 0,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "EMERGENCE",
+        "phase": 3,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "EMERGENCE",
+        "phase": 6,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "EMERGENCE",
+        "phase": 7,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "EMERGENCE",
+        "phase": 8,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "S",
+        "method": "add",
+        "key_val_at_pos": 19,
+        "key_rune_at_pos": "\u16d7"
+      },
+      {
+        "key": "EMERGE",
+        "phase": 0,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      },
+      {
+        "key": "EMERGE",
+        "phase": 3,
+        "page": 41,
+        "local_idx": 218,
+        "cipher_letter": "C",
+        "plaintext": "T",
+        "method": "add",
+        "key_val_at_pos": 18,
+        "key_rune_at_pos": "\u16d6"
+      }
+    ]
+  },
+  "step4": {
+    "transposition_cribdrag_hits": 159,
+    "top_zodiac_hits": [
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 13,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 14,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 15,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 19,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 20,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 25,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 29,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "row",
+        "ncols": 56,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      },
+      {
+        "page": 0,
+        "shape": "zigzag",
+        "ncols": 14,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCHWGOEW"
+      },
+      {
+        "page": 0,
+        "shape": "zigzag",
+        "ncols": 25,
+        "method": "atbash",
+        "crib": "warning",
+        "offset": 255,
+        "match": 5,
+        "crib_len": 7,
+        "text_window": "NWXXTCJGCNAE"
+      }
+    ],
+    "vigenere_transposition_hits": 7,
+    "top_v_hits": [
+      {
+        "page": 1,
+        "key": "PILGRIMAGE",
+        "shape": "zigzag",
+        "ncols": 13,
+        "crib": "parable",
+        "offset": 16,
+        "match": 5,
+        "crib_len": 7,
+        "text": "IWDDAEPAOABLT"
+      },
+      {
+        "page": 1,
+        "key": "PILGRIMAGE",
+        "shape": "zigzag",
+        "ncols": 14,
+        "crib": "parable",
+        "offset": 19,
+        "match": 5,
+        "crib_len": 7,
+        "text": "HIADDAEPAOABL"
+      },
+      {
+        "page": 2,
+        "key": "PARABLE",
+        "shape": "col_rev",
+        "ncols": 20,
+        "crib": "warning",
+        "offset": 147,
+        "match": 5,
+        "crib_len": 7,
+        "text": "EOTHPUOCDDJDO"
+      },
+      {
+        "page": 0,
+        "key": "EMERGE",
+        "shape": "col_rev",
+        "ncols": 13,
+        "crib": "koan",
+        "offset": 170,
+        "match": 4,
+        "crib_len": 5,
+        "text": "FWAEDCOONUT"
+      },
+      {
+        "page": 0,
+        "key": "DIVINITY_WITHIN",
+        "shape": "col_rev",
+        "ncols": 25,
+        "crib": "koan",
+        "offset": 172,
+        "match": 4,
+        "crib_len": 5,
+        "text": "PFAEPNNGTJJ"
+      },
+      {
+        "page": 3,
+        "key": "INSTAR",
+        "shape": "diag_down",
+        "ncols": 25,
+        "crib": "anend",
+        "offset": 114,
+        "match": 4,
+        "crib_len": 5,
+        "text": "XMMSFTHIAAJ"
+      },
+      {
+        "page": 3,
+        "key": "EMERGE",
+        "shape": "zigzag",
+        "ncols": 14,
+        "crib": "anend",
+        "offset": 24,
+        "match": 4,
+        "crib_len": 5,
+        "text": "DBECHTSANEE"
+      }
+    ]
+  },
+  "step5": {
+    "top_trigram": [
+      {
+        "page": 55,
+        "N": 5,
+        "key": "INSTAR",
+        "trigram": -5.316582164756136,
+        "english": 64.91980146290491,
+        "snippet": "JTRDEOCHEAOLTHYHSUMENUILIAEURMCAOGAROECAETHIFWOOLTHNGBAOOEOD"
+      },
+      {
+        "page": 49,
+        "N": 3,
+        "key": "1033_AS_RUNES",
+        "trigram": -5.597027692593821,
+        "english": 70.76691729323308,
+        "snippet": "YEHEALMNCWLGEAESOECAAEEIXYTGLMEASYOEIECEAAACATNDJSUSUNSDPRIA"
+      },
+      {
+        "page": 51,
+        "N": 29,
+        "key": "INSTAR",
+        "trigram": -5.697646344326606,
+        "english": 68.17399267399267,
+        "snippet": "YIAIAPOTRHDEACDIOESUMUHEONBONNGNYOOUAEHGCENHOFEOEOIFWYTHIGHC"
+      },
+      {
+        "page": 32,
+        "N": 5,
+        "key": "761_AS_RUNES",
+        "trigram": -5.704900461029843,
+        "english": 67.54508611955421,
+        "snippet": "PAEAFMDWYIAUXTHGIPHTBONGSUUUJLIASADOEYUUYEOEOPFBHXEATSIGYPEF"
+      },
+      {
+        "page": 14,
+        "N": 29,
+        "key": "FIRFUMFERENFE",
+        "trigram": -5.713975224489021,
+        "english": 65.72327044025157,
+        "snippet": "TUAEOMRNBUTHYMITHLEHHOYNHMBAANCMAEEUXIEOWYFPTNNLTNGSBOYODPBG"
+      },
+      {
+        "page": 53,
+        "N": 17,
+        "key": "PRIMES_ARE_SACRED",
+        "trigram": -5.71413548254765,
+        "english": 68.2459916733103,
+        "snippet": "EANGEGHSANAEAGREARSOEMEDSBCWDFUDDOTHEAWIAYESHROTHJOESOSAEWHR"
+      },
+      {
+        "page": 51,
+        "N": 19,
+        "key": "PRIMES_ARE_SACRED",
+        "trigram": -5.719323872194655,
+        "english": 65.10601976639713,
+        "snippet": "DOOINCMPLMARFUXENGPNGRDSOEERGLAEOECWGWAEAHRGLGOUFEABBCLEBRNG"
+      },
+      {
+        "page": 49,
+        "N": 2,
+        "key": "SACRED",
+        "trigram": -5.725591937237653,
+        "english": 72.45061728395062,
+        "snippet": "EODAECCIAAIAYLWRLIJNRRSTHOUXGATNGJUAEDOECNOLFRSHMUGOWDDNENGR"
+      },
+      {
+        "page": 55,
+        "N": 13,
+        "key": "DIVINITY",
+        "trigram": -5.737058178044671,
+        "english": 69.71428571428572,
+        "snippet": "IASEFIACUBAECJAEXHSEABSWERPDTELLFELAEONGAYTHECXROEAWEATHESAE"
+      },
+      {
+        "page": 51,
+        "N": 11,
+        "key": "HARMONIC_16",
+        "trigram": -5.752472169223908,
+        "english": 66.06043956043956,
+        "snippet": "COJIAMEHXWRSWFBGDDBHSYNGIOBEATJNGIHILEACYTSBEPLEJNGBREWNGSMP"
+      }
+    ],
+    "top_english": [
+      {
+        "page": 55,
+        "N": 23,
+        "key": "TOTIENT",
+        "trigram": -6.685181442691541,
+        "english": 80.80944222349135,
+        "snippet": "COEOFEGUIATEATHBXSNYJXEAAEXLUUAEPRNGIXEINGJTHOOEALJOJHNGAETH"
+      },
+      {
+        "page": 55,
+        "N": 3,
+        "key": "PILGRIM",
+        "trigram": -5.949395849738283,
+        "english": 79.23048153342684,
+        "snippet": "HSEAYYARREATHTHSINGCTBRRAIDDYSMDYNINGOBHINGGCOXONRIANGNGTHIA"
+      },
+      {
+        "page": 55,
+        "N": 3,
+        "key": "PILGRIMAGE",
+        "trigram": -5.949395849738283,
+        "english": 79.23048153342684,
+        "snippet": "HSEAYYARREATHTHSINGCTBRRAIDDYSMDYNINGOBHINGGCOXONRIANGNGTHIA"
+      },
+      {
+        "page": 55,
+        "N": 23,
+        "key": "DIVINITY",
+        "trigram": -5.981083783965525,
+        "english": 77.48582474226804,
+        "snippet": "IASEFIACUBAECJAEXNGNORXTANGYBDEEARUNXHMIALIONEAYROEAWEATHEEH"
+      },
+      {
+        "page": 49,
+        "N": 17,
+        "key": "761_AS_RUNES",
+        "trigram": -6.604004070857185,
+        "english": 77.4251290877797,
+        "snippet": "LEOIOEXNGOEANXFUEONAEAENGPNINGSTHSEAIAEECBUDBNGCBPNTHSDEOUTH"
+      },
+      {
+        "page": 51,
+        "N": 17,
+        "key": "PARABLE",
+        "trigram": -6.512022371966826,
+        "english": 76.74023723843796,
+        "snippet": "DEONCIFAERXUANGPUAWNGITPOHNGEGGLEIOENGIAFYAERXEATHRIANAJEARS"
+      },
+      {
+        "page": 49,
+        "N": 19,
+        "key": "OUNWM",
+        "trigram": -6.48910767064657,
+        "english": 76.25095503967088,
+        "snippet": "ABTHOEUMNAEOTHOUIHGODMEOWTENMEEOENWOEINUINGYYBTNXWYIABOETHEA"
+      },
+      {
+        "page": 55,
+        "N": 19,
+        "key": "1033_AS_RUNES",
+        "trigram": -6.875865625019501,
+        "english": 75.91795532646049,
+        "snippet": "LAETWGSXJESNOOETHOEYYAXRURUTEAYJNMIATHEOHEBJMEOOEIAIYTHNTHJE"
+      },
+      {
+        "page": 28,
+        "N": 2,
+        "key": "EMERGENCE",
+        "trigram": -6.1124171169650525,
+        "english": 75.75368731563421,
+        "snippet": "ASOEEOEALERETHIHEUENGLCRYCAHEASRSYDLTDOEORTOEEOHAEIEJIATHLWU"
+      },
+      {
+        "page": 28,
+        "N": 2,
+        "key": "EMERGE",
+        "trigram": -6.1124171169650525,
+        "english": 75.75368731563421,
+        "snippet": "ASOEEOEALERETHIHEUENGLCRYCAHEASRSYDLTDOEORTOEEOHAEIEJIATHLWU"
+      }
+    ]
+  },
+  "step6": {
+    "d1_count": 29,
+    "d4_count": 28,
+    "zero_count": 114,
+    "total_events": 114,
+    "best_keys": [
+      {
+        "key": "OUNWM",
+        "event_match_rate": 1.0,
+        "tested": 58,
+        "key_len": 5
+      },
+      {
+        "key": "HARMONIC_16",
+        "event_match_rate": 0.29310344827586204,
+        "tested": 58,
+        "key_len": 16
+      },
+      {
+        "key": "DIVINITY_WITHIN",
+        "event_match_rate": 0.25862068965517243,
+        "tested": 58,
+        "key_len": 13
+      },
+      {
+        "key": "3301_AS_RUNES",
+        "event_match_rate": 0.25862068965517243,
+        "tested": 58,
+        "key_len": 4
+      },
+      {
+        "key": "1033_AS_RUNES",
+        "event_match_rate": 0.2413793103448276,
+        "tested": 58,
+        "key_len": 4
+      }
+    ],
+    "hill_climb_top5": [
+      {
+        "trial": 0,
+        "key": [
+          6,
+          6,
+          6,
+          5,
+          14
+        ],
+        "score": -1,
+        "key_letters": "GGGCX"
+      },
+      {
+        "trial": 1,
+        "key": [
+          19,
+          21,
+          2,
+          14,
+          1
+        ],
+        "score": -1,
+        "key_letters": "MNGTHXU"
+      },
+      {
+        "trial": 2,
+        "key": [
+          16,
+          16,
+          11,
+          12,
+          13
+        ],
+        "score": -1,
+        "key_letters": "TTJEOP"
+      },
+      {
+        "trial": 3,
+        "key": [
+          4,
+          18,
+          11,
+          10,
+          8
+        ],
+        "score": -1,
+        "key_letters": "REJIH"
+      },
+      {
+        "trial": 4,
+        "key": [
+          3,
+          0,
+          21,
+          22,
+          1
+        ],
+        "score": -1,
+        "key_letters": "OFNGOEU"
+      }
+    ]
+  }
+}

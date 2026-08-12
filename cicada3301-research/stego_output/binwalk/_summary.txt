@@ -1,0 +1,95 @@
+=== 17.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 20.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 23.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 25.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 32.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 40.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 44.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 50.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 56.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 57.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 71.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+422           0x1A6           Copyright string: "Copyright Artifex Software 2011"
+
+=== 00.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+
+=== 03.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+
+=== 08.jpg ===
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+

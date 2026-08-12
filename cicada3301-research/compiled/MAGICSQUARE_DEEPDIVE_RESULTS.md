@@ -1,0 +1,357 @@
+# MAGIC-SQUARE DEEP DIVE + CROSS-PAGE CHAINED-KEY SCHEDULES — RESULTS
+## Cicada 3301 Liber Primus — Phase E (Task ID p6b)
+**Subagent:** Magic-square deep dive + cross-page chain
+**Total tests run:** 1,029 (Part A: 756, Part B: 219, Part C: 18, Part D: 36)
+**Random baseline:** 5,400 random-primer control samples (max = 74.18, 99.9th pctile = 73.56)
+**Random Hill-5 baseline:** 95 invertible random 5×5 matrices (max = 72.77)
+
+---
+
+## 0. EXECUTIVE SUMMARY — DID ANY MAGIC-SQUARE-BASED KEY PRODUCE ENGLISH?
+
+**NO.** Across 1,029 tests spanning 14 magic-square derivations × 9 chapters × 3 cipher modes (Part A), 4 cross-page chain types × 9 primers (Part B), 10 prime-index recurrence formulae (Part C), and 4 Hill-cipher key matrices (Part D), **NO test produced recognisable English plaintext or any score outside the random-noise band.**
+
+### Random baseline comparison (the critical insight)
+| Sample set | Min | Max | Mean | 99th pct | 99.9th pct |
+|---|---|---|---|---|---|
+| **Random 25-rune primers × 9 chapters × 3 modes (5,400 samples)** | 57.53 | **74.18** | 66.21 | 71.67 | 73.56 |
+| **Random invertible 5×5 Hill matrices × Cross (95 samples)** | 55.79 | **72.77** | 65.70 | 72.77 | n/a |
+| Authentic Cicada plaintext (solved page 01, Atbash) | — | 88.36 | — | — | — |
+| Authentic Cicada plaintext (solved page 05, direct) | — | 80.33 | — | — | — |
+
+**Implication:** Our Part A top score (75.13) is only **0.95 points above the random max** (74.18) — well within the noise band one expects when running 756 tests. For perspective, the random 99.9th-percentile is 73.56, so a 75.13 would be exceeded by pure chance roughly once per 1,000 random samples — but we ran 756 tests, so seeing a 75.13 is *expected under the null hypothesis*. **No magic-square derivation produces signal above the noise floor.**
+
+---
+
+## 1. PART A — EXHAUSTIVE MAGIC-SQUARE-KEY TESTING (14 derivations × 9 chapters × 3 modes × 2 squares = 756 tests)
+
+### The two verified magic squares (see verify_zeckendorf.py)
+
+**Page 5 magic square (Some Wisdom), magic constant = 1033 (prime, 174th prime):**
+```
+272  138  341  131  151
+366  199  130  320   18
+226  245   91  245  226
+ 18  320  130  199  366
+151  131  341  138  272
+```
+Cell values 18 = ANALOG (1 rune, decimal 18). All 25 cells verified to sum to 1033 in every row, column, and both diagonals.
+
+**Page 16 magic square (An Instruction), magic constant = 3301 (= Cicada's number, prime, 464th prime):**
+```
+434  1311  312  278   966
+204   812  934  280  1071
+626   620  809  620   626
+1071  280  934  812   204
+966   278  312  1311  434
+```
+Both squares verified to have 180° rotational symmetry (a[i][j] = a[4-i][4-j]).
+
+### The 14 derivations tested
+For each square, the following derivations were generated as Vigenère/autokey primers:
+1. `01_row_mod29` — row-major cell values mod 29 → rune sequence (25 runes)
+2. `02_col_mod29` — column-major cell values mod 29 → rune sequence
+3. `03_spiral_in_mod29` — spiral inward (top-left, right, down, left, up, …)
+4. `04_spiral_out_mod29` — spiral outward (center first, expanding)
+5a. `05a_main_diag_mod29` — main diagonal cell values mod 29 (5 runes, cycled)
+5b. `05b_anti_diag_mod29` — anti-diagonal cell values mod 29 (5 runes, cycled)
+6. `06_decimal_digits` — cell values as decimal digits → runes (75 runes per square)
+7. `07_decimal_digits_rev` — same as 6 but reversed per cell
+8. `08_mod29_rep100` — row-major mod 29, repeated to fill 100 runes
+9. `09_zeck_indices` — Zeckendorf decomposition's Fibonacci indices as runes
+10. `10_xor_pos` — cell values XOR'd with (row*5+col)
+11. `11_minus_pos_mod29` — (cell value − position) mod 29
+12. `12_diff_squares` — (page_16 cell − page_5 cell) mod 29
+13. `13_product_mod29` — (page_16 cell × page_5 cell) mod 29
+14. (Hill-cipher matrix — handled in Part D)
+
+Each derivation × each chapter × 3 cipher modes (Vigenère no-skip, autokey-plaintext, autokey-ciphertext) = 14 × 9 × 3 = 378 tests per square × 2 squares = **756 tests**.
+
+### Top 20 Part A results
+| Rank | Score | Square | Chapter | Derivation | Cipher | Snippet |
+|---|---|---|---|---|---|---|
+| **1** | **75.13** | page16 | Wing_Tree | 06_decimal_digits | vigenere | SIOEMEOTHDOEWETCTHIXXPCNVWRNGAREANFOEJDTEOHMDJAECTHAPECJRLEE |
+| 2 | 73.80 | page5 | Mobius | 04_spiral_out_mod29 | vigenere | TBLANBTALJIANGAAHFXOEGWALNGMTHIPIAGEAVNGFTHPXIONEOHALMFOTIHE |
+| 3 | 73.58 | page5 | Hollow | 05b_anti_diag_mod29 | autokey_pt | EEBOENGPAEOEYGIBEARVXTHBLLWFITAVIANEAAEHINGFOEAGSOWTHAVHANRB |
+| 4 | 72.57 | page5 | Mobius | 01_row_mod29 | autokey_pt | NHEADEAEONGASJIAYYYWRAYRWALNGMTHCEFYAETHVMEOLITHEOIAIAYJEONJ |
+| 5 | 72.36 | page16 | Cross | 08_mod29_rep100 | autokey_pt | TTHAESYEIADAEEAVIHLDHGDJNGDNGNOMHJTHIAPJISJJHAPLLMMNGPTFAEAE |
+| 6 | 72.20 | page16 | Cuneiform | 09_zeck_indices | autokey_pt | WNGNDTDMEAPNOEXBAOEDEOENWFWHNGYITHADHXSTHLEAJDYOHNYEOTHIGAEW |
+| 7 | 72.14 | page16 | Cross | 09_zeck_indices | autokey_pt | VIASTOEHATCEXHAEAEWLEOETHIOERTYHOTHJRMEAVXXEABFAARTHOAIACEAY |
+| 8 | 72.06 | page5 | Cross | 11_minus_pos_mod29 | autokey_ct | RTIALRGHOEOEBCMPTHTHOJORDBSTHITHNGNGEOTOEEONGSEOWXCFYJPIATHA |
+| 9 | 71.84 | page5 | Spiral_Branches | 06_decimal_digits | autokey_ct | IATHBAEOSOERDEOJAEWWIAFEOILMJNPTHYBARINGOITHEVMHDPAETSAVNGMR |
+| 10 | 71.80 | page5 | Cuneiform | 04_spiral_out_mod29 | autokey_pt | BEJAERNGNGIAIAEAONLSRTLSAVRYVJAEYEAYNWGOJNITLNGAHHEOFOENGEOX |
+| 11 | 71.43 | page16 | Cross | 05a_main_diag_mod29 | autokey_ct | THNGOWRMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOP |
+| 12 | 71.43 | page16 | Cross | 05b_anti_diag_mod29 | autokey_ct | GENGPYRMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOP |
+| 13 | 71.40 | page16 | Cross | 03_spiral_in_mod29 | autokey_ct | TTHAESYNGIEATLAERAERDCAEDNGJOOEOIANGNGNGEOTOEEONGSEOWXCFYJPI |
+| 14 | 71.34 | page5 | Cross | 05a_main_diag_mod29 | autokey_ct | REOXWARMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOP |
+| 15 | 71.18 | page5 | Cross | 05a_main_diag_mod29 | autokey_pt | REOXWASSSHTHOGMDNOMIBPFMNGNGCWIAODBCEOEWNGLDNGATYSGEVEOYCPDN |
+| 16 | 71.11 | page5 | Cross | 11_minus_pos_mod29 | autokey_pt | RTIALRGHOEOEBCMPTHTHOJORDBSTHITHOVYAEGTHEAHNGLTYFGXIAANDNGYN |
+| 17 | 71.04 | page5 | Cross | 05b_anti_diag_mod29 | autokey_ct | NWXTHFRMJEOLEADCTXBRANJYPTHIAAERHOEGRCOEYSTPAEEVEANGOBJNNGOP |
+| 18 | 70.92 | page16 | Wing_Tree | 06_decimal_digits | autokey_ct | SIOEMEOTHDOEWETCTHIXXPCNVWRNGAREANFOEJDTEOHMDJAECTHAPECJRLEE |
+| 19 | 70.91 | page16 | Mobius | 03_spiral_in_mod29 | autokey_pt | NGAEANGAEOFHBDEAOENGEOPNGAECIXVFAVTOETHFEAEAJOEGIHNGBEONGNIR |
+| 20 | 70.89 | page16 | Cross | 10_xor_pos | autokey_ct | TODTVNGFEARHASEOTHPDOEGOETHJJMYIANGNGEOTOEEONGSEOWXCFYJPIATH |
+
+### Part A statistical summary
+- **Total tests:** 756
+- **Score range:** 58.35 — 75.13
+- **Mean:** 66.43 (essentially identical to random baseline 66.21)
+- **Tests scoring > 70:** 37 (≈4.9%)
+- **Tests scoring > 72:** 7 (≈0.9% — close to the random-baseline rate of ~1%)
+- **Tests scoring > 73:** 3 (random baseline rate ~0.4% — slight excess, but the top score is still well within the random maximum of 74.18)
+
+### Per-derivation leaderboard (top score per (square, derivation))
+| Rank | Square | Derivation | Max | Mean |
+|---|---|---|---|---|
+| 1 | page16 | 06_decimal_digits | 75.13 | 65.98 |
+| 2 | page5 | 04_spiral_out_mod29 | 73.80 | 66.68 |
+| 3 | page5 | 05b_anti_diag_mod29 | 73.58 | 66.43 |
+| 4 | page5 | 01_row_mod29 | 72.57 | 66.62 |
+| 5 | page16 | 08_mod29_rep100 | 72.36 | 66.47 |
+| 6 | page16 | 09_zeck_indices | 72.20 | **67.54** (highest mean) |
+| 7 | page5 | 11_minus_pos_mod29 | 72.06 | 66.56 |
+| 8 | page5 | 06_decimal_digits | 71.84 | 65.86 |
+| 9 | page16 | 05a_main_diag_mod29 | 71.43 | 66.59 |
+| 10 | page16 | 05b_anti_diag_mod29 | 71.43 | 66.52 |
+| 11 | page16 | 03_spiral_in_mod29 | 71.40 | 66.07 |
+| 12 | page5 | 05a_main_diag_mod29 | 71.34 | 66.99 |
+| 13 | page16 | 10_xor_pos | 70.89 | 67.37 |
+| 14 | page16 | 04_spiral_out_mod29 | 70.86 | 67.31 |
+| 15 | page5 | 09_zeck_indices | 70.84 | 66.56 |
+| 16 | page5 | 13_product_mod29 | 70.82 | 66.56 |
+| 17 | page16 | 13_product_mod29 | 70.82 | 66.56 |
+| 18 | page5 | 02_col_mod29 | 70.79 | 66.97 |
+| 19 | page5 | 07_decimal_digits_rev | 70.71 | 65.61 |
+| 20 | page16 | 07_decimal_digits_rev | 70.40 | 66.74 |
+| 21 | page5 | 12_diff_squares | 70.14 | 65.62 |
+| 22 | page16 | 12_diff_squares | 70.14 | 65.62 |
+| 23 | page5 | 10_xor_pos | 69.98 | 66.07 |
+| 24 | page16 | 02_col_mod29 | 69.74 | 66.07 |
+| 25 | page16 | 01_row_mod29 | 69.36 | 66.86 |
+| 26 | page5 | 03_spiral_in_mod29 | 69.21 | 66.13 |
+| 27 | page5 | 08_mod29_rep100 | 69.19 | 65.69 |
+| 28 | page16 | 11_minus_pos_mod29 | 68.72 | 65.98 |
+
+### Verdict
+**No magic-square derivation produces recognisable English.** The top score (75.13) is 0.95 above the random-baseline maximum (74.18) — this is *not* a meaningful signal because:
+- The random 99.9th-percentile is 73.56.
+- Running 756 tests means we should expect ~0.76 random samples above the 99.9th percentile.
+- One score (75.13) at 0.95 above the random max is consistent with the random-noise hypothesis.
+
+Note that the p5d best of 74.03 (page16_mod29 vigenere on Branches) does NOT appear in the new top 20 — that derivation now scores 69.36 (rank 25), suggesting p5d's "winning" derivation was itself a noise-tail result, not a robust signal.
+
+---
+
+## 2. PART B — CROSS-PAGE CHAINED-KEY SCHEDULES (219 tests)
+
+### Chain types tested
+- **Chain A** (plaintext feed-forward): primer P0 → decrypt page 0 → primer = plaintext(page 0) for page 1 → ... (9 primers × 5 steps × 2 modes = 90 tests)
+- **Chain B** (additive mod 29): primer = (P0 + plaintext(page 0)) mod 29 for page 1 → ... (9 primers × 5 steps × 1 mode = 45 tests)
+- **Chain C** (single long stream): one primer runs across the concatenated 3,000-rune unsolved corpus prefix. Used long primers (parable text, magic-square digit-sequences, Zeckendorf indices). (13 primers × 3 modes = 39 tests)
+- **Chain D** (each chapter uses different primer derived from previous chapter's plaintext): 9 primers × 5 steps × 1 mode = 45 tests
+
+### Top 10 Part B results
+| Rank | Score | Chain | Primer | Step | Chapter | Snippet |
+|---|---|---|---|---|---|---|
+| 1 | 71.44 | A_autokey_pt | PILGRIM | step 3 | Mobius | WLVOVLIATHAEEAENIEOEAYYOELSEWBSLDJIPWEATHLTNGANGIOEXXXXNGHTB |
+| 2 | 71.25 | A_autokey_pt | P5_row_mod29 | step 3 | Mobius | NHEADEAEONGASJIAYYYWRAYRWALNGMTHCEFYAETHVMEOLITHEOIAIAYJEONJ |
+| 3 | 69.92 | A_autokey_pt | PILGRIM | step 4 | Mayfly | BXTSTHRREAEVAIEOPNGVIAJCPFSEVVGEAWOENGCIAJTHMSCTNMTHAEBOEPEN |
+| 4 | 69.89 | A_vigenere | DIVINITY | step 2 | Branches | SYMRGEEANGIAERXSXISVMIOFAMAERJNGIAWWYEOTHRAIASAENSNLIVTHMSYI |
+| 5 | 69.89 | B_vigenere | DIVINITY | step 2 | Branches | SYMRGEEANGIAERXSXISVMIOFAMAERJNGIAWWYEOTHRAIASAENSNLIVTHMSYI |
+| 6 | 69.89 | D_vigenere | DIVINITY | step 2 | Branches | SYMRGEEANGIAERXSXISVMIOFAMAERJNGIAWWYEOTHRAIASAENSNLIVTHMSYI |
+| 7 | 69.85 | A_vigenere | FIRFUMFERENFE | step 1 | Spirals | CPIACTCRCXOWOENGXFLMXEOPEORJGDONGOEERIAYWSHTHFXTHJIOEVSEODDY |
+| 8 | 69.85 | D_vigenere | FIRFUMFERENFE | step 1 | Spirals | CPIACTCRCXOWOENGXFLMXEOPEORJGDONGOEERIAYWSHTHFXTHJIOEVSEODDY |
+| 9 | 69.67 | A_vigenere | PILGRIM | step 2 | Branches | AEYFHJEAECJHEALXCPTHRDWOMNGAETHNGBEOEOWOEONGRGAXSMHOEJIAVLDI |
+| 10 | 69.67 | B_vigenere | PILGRIM | step 2 | Branches | AEYFHJEAECJHEALXCPTHRDWOMNGAETHNGBEOEOWOEONGRGAXSMHOEJIAVLDI |
+
+### Critical observation about chain types B and D
+Note the identical scores for chain types A, B, and D at step 2 (Branches, primer DIVINITY, score 69.89). This is because at step 2, the primer has already drifted far enough from P0 that chains B (additive) and D (replace-with-plaintext) both reach the same Branches step using effectively the same derived primer. The chains are degenerate at this point — they're all essentially "decrypt Branches with primer = (something derived from chapter 0 and 1 plaintext, which itself is gibberish)".
+
+### Chain C (single long stream) results
+| Chain | Primer | Score | Snippet |
+|---|---|---|---|
+| C_vigenere | P5_zeck_full | 69.59 | THEAPNGYEOATRMPLDOECDLYIAJDOEAYHAEHMEONTHTHSYTHLDFDOTAENGNTI |
+| C_autokey_pt | P5_digits_full | 69.38 | PVTTHOJAAEXAESLRYIOMDIPDHEANSCBDWLIRMYRTCHIAOSWNGEONGIJVNGNG |
+| C_autokey_pt | P16_zeck_full | 69.38 | VIASTOEHATCEXHAEAEWLEOETHIOERTYHOTHJRMEAVXXEABFAARTHOAIACEAY |
+| C_autokey_pt | P5_zeck_full | 65.82 | THEAPNGYEOATRMPLDOECDLYIAJDOEAYHAEHMEONTHTHSYTHLDFDOTAENGNTI |
+
+The "THEAP" prefix in two C_vigenere results is interesting (it has the right shape of English capital "THE AP...") but does not continue to readable text.
+
+### Verdict
+**Cross-page chained keys do NOT unlock the cipher.** All scores cluster around the random baseline (66-69), with the top 71.44 being barely above. The chain hypothesis is structurally plausible but operationally fails: if chapter 0 doesn't decrypt to English, every subsequent chapter's "derived primer" is also gibberish, and the chain propagates noise rather than signal.
+
+**Specifically:**
+- Chain A fails because no primer breaks chapter 0; the chain inherits noise.
+- Chain B fails for the same reason (B reduces to A when no plaintext is recovered).
+- Chain C fails — long primers (parable, magic-square digit sequences) produce same noise-floor scores as short primers.
+- Chain D fails because it's a special case of A where each step re-derives the primer.
+
+---
+
+## 3. PART C — PRIME-INDEX RECURRENCE RECONSTRUCTION
+
+### Goal
+Find a recurrence of the form `a[i][j] = c1·prime(idx1) + c2·prime(idx2) + c3·fib(idx3)` that *generates* the page-16 magic square. If found, use the parameters as a primer key.
+
+### Tests run (per square)
+
+| Test | Formula | Best match (page 16) | Best match (page 5) |
+|---|---|---|---|
+| 1 | a[i][j] = prime(i·5+j+offset) | offset=−10, **1/25** cells | offset=−10, **1/25** cells |
+| 2 | a[i][j] = prime(i·5+j+offset) + fib(k) | offset=27, **3/25** cells | offset=22, **3/25** cells |
+| 3 | a[i][j] = prime(i+offset) + prime(j+offset) | offset=91, **2/25** cells | offset=2, **1/25** cells |
+| 4 | a[i][j] = fib(i+oi) + fib(j+oj) + prime(i·j+op) | oi=1, oj=5, op=27, **1/25** cells | oi=4, oj=7, op=17, **2/25** cells |
+| 5 | a[i][j] = c1·prime(i·5+j+off) + c2·fib(i+j+1) | c1=3, c2=53, off=−5, **2/25** cells | c1=1, c2=25, off=29, **2/25** cells |
+| 6 | a[i][j] = prime(fib(i+1)·5 + j) | **0/25** cells | **0/25** cells |
+| 7 | a[i][j] = prime(fib(i+j+1)) | **0/25** cells | **0/25** cells |
+
+### Structural properties confirmed
+- **180° rotational symmetry** (a[i][j] = a[4−i][4−j]): **VERIFIED** for both squares.
+- **Zeckendorf term-count distribution:**
+  - Page 16: {3 terms: 11 cells, 4 terms: 14 cells} — narrow distribution (already noted in p2b verification).
+  - Page 5: {2 terms: 5, 3 terms: 6, 4 terms: 6, 5 terms: 8} — broader (less suggestive of deliberate construction).
+- **Distinct Fibonacci indices used in Zeckendorf decompositions:**
+  - Page 16: indices 3-16 (14 distinct Fibs: 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987) — restricted subset of 16 available Fibs ≤ 1311.
+  - Page 5: indices 1, 3-13 — also restricted but smaller range.
+
+### Best prime-index primer applied as Vigenère/autokey
+The best-matching prime-index formula (Test 1, offset=−10, 1/25 match) was used to build a primer:
+- Primer = `prime(i·5+j−10) mod 29` for each cell of page-16 square (25 runes).
+- Tested as Vigenère + autokey-plaintext on each chapter.
+
+| Rank | Score | Chapter | Mode | Snippet |
+|---|---|---|---|---|
+| 1 | 71.48 | Spirals | autokey_pt | LJEOHNGCTHTAEJTEOCJDJTHAEXEOYWTDIAVIAANGCRSEOTHTHOEXMRAEGAEO |
+| 2 | 69.59 | Mayfly | vigenere | VAWNGGXDGIBIIPEOOSSEAETHPCJTIAJEOWHIGEABVYHAETHDOETHSHGIAYSI |
+| 3 | 68.48 | Mayfly | autokey_pt | VAWNGGXDGIBIIPEOOSSEAETHPCJTIAIBFTRNGCJLNIATHAIAEFXTHIAXDEOG |
+| 4 | 68.39 | Spiral_Branches | autokey_pt | FNMYGDAEHAPXACWNGNGCEATHCLHHMSMSSNGBJLAEIAOEXXLINYEOTHFATHIA |
+| 5 | 67.91 | Cuneiform | autokey_pt | NGTHEOIFCOEEODBYAEDAEMIAETEAAEIISNGOEOESAEAJOETHYPNGOEREXOEY |
+
+All within random-noise band (mean 66.21, max 74.18).
+
+### Verdict
+**No simple prime-index recurrence formula was found that generates either magic square.** The best match was 3/25 cells (Test 2: `a[i][j] = prime(i·5+j+27) + fib(k)`). This is essentially zero signal — random chance would give ~1/25 match per cell formula on average, so 3/25 is a slight but not significant excess.
+
+The CicadaSolvers claim that page-16 is "the value array for a prime-index recurrence relation of pseudo-Fibonacci form" remains UNVERIFIED. Possible interpretations:
+1. The recurrence is more sophisticated than any formula tested here (e.g., involves product of primes, nested indices, or 2D coordinate transforms).
+2. The "recurrence" is metaphorical — the square is constructed using prime and Fibonacci *themes* but not a closed-form formula.
+3. The Zeckendorf structure (every cell decomposes into 3-4 non-consecutive Fibs) is the *real* hidden structure, but the formula linking cells to each other is not a recurrence — it's the construction recipe.
+
+### A note on the mod-29 structure
+Page 5 mod 29 distinct values: {1, 4, 6, 11, 13, 14, 15, 18, 22, 23, 25} (11 values).
+Page 16 mod 29 distinct values: {0, 1, 6, 9, 11, 17, 19, 22, 26, 27, 28} (11 values).
+Only 4 shared values: {1, 6, 11, 22}. The mod-29 residue sets are NOT related by any simple shift, scale, or affine transform — confirmed by computing the ratio (page16/page5 mod 29) which varies cell-by-cell (range 0–24), though the ratio matrix itself is also 180°-symmetric.
+
+---
+
+## 4. PART D — HILL-CIPHER 5×5 MATRIX TESTS (36 tests)
+
+### Setup
+Both squares were tested as 5×5 Hill-cipher key matrices over Z_29.
+- Page 5 square as key: determinant mod 29 = 3 (inverse = 10, since 3·10 = 30 ≡ 1 mod 29) → **INVERTIBLE**.
+- Page 16 square as key: determinant mod 29 = 10 (inverse = 3, since 10·3 = 30 ≡ 1 mod 29) → **INVERTIBLE**.
+
+Both squares are valid Hill-cipher keys. Each was tested in both decrypt direction (treating the square as the encryption key) and encrypt direction (treating the square as the decryption key — i.e., encrypting the ciphertext, equivalent to using the inverse as the decryption key).
+
+### Top 10 Part D results
+| Rank | Score | Square | Chapter | Direction | Snippet |
+|---|---|---|---|---|---|
+| 1 | 72.35 | page5 | Mayfly | hill5_decrypt | BYCSTNFNGLEAIHEOWDMGCYXEOHYIALAEWLTHYOVOEEFWOECPEASTVEOWADTH |
+| 2 | 70.81 | page16 | Cuneiform | hill5_encrypt | MOEEIAEWTNGRNGTHREOCIABEBCTHOWMCCPMCGVOEOEIAVEOVAENGBMEATFCI |
+| 3 | 70.61 | page5 | Cuneiform | hill5_encrypt | OEYLSTHOGHVEOEARJELGMNGYDAERASEORGDHNGOEELTTEAJNGMCOEASTRHJD |
+| 4 | 70.21 | page5 | Hollow | hill5_decrypt | NGTHEOWOSOEFNGRRFYXTLXCPSEONGLLEAEEOINWOAESCEAPLPOTHJACMEOCS |
+| 5 | 70.20 | page5 | Cross | hill5_encrypt | GNGTHBPANGSDRAEBFAETHXNINGAEAETHFTHPTHOEMOCPAXJOENTRWEOFITME |
+| 6 | 69.91 | page5 | Wing_Tree | hill5_encrypt | WTIIWBNVTHMXEOEOGSIDWREAEASEYVPYPAEEHAGVNGEAEALEANGWCMTHEOAT |
+| 7 | 69.03 | page16 | Cross | hill5_decrypt | NBJTHNNGSORSFJEADTHIINOMJRTNRPCIJTHEAVBMDEOJNGBIEOLEOELPOECO |
+| 8 | 68.59 | page16 | Mayfly | hill5_encrypt | EOAPNAEAOTHIAAEIOTHAPFWBMHTYEAVIAGJCYTHRBFIXPREAETHTHPEACYAE |
+| 9 | 68.39 | page16 | Branches | hill5_encrypt | MOEISNGPIAHEAWRXGTHLGXRALAYHBNEATPENGLCDEOVEACANTALTAEGAECAJ |
+| 10 | 67.37 | page16 | Mobius | hill5_encrypt | HBHDEOLJCIAEOHEOJICSNYFEAYYBGXNNGALRRIASEOJEASEOASWCEOINGTHY |
+
+### Hill-5 random baseline comparison
+| Sample | Top score |
+|---|---|
+| **Magic squares (page5, page16) — top Hill score** | **72.35** |
+| **Random 5×5 invertible matrices (95 samples, Cross chapter)** | **72.77** |
+
+The top magic-square Hill-5 score (72.35) is **below** the random max of 72.77. The magic squares are NOT functioning as meaningful Hill-cipher keys — the scores are entirely within the random-noise band.
+
+### Verdict
+The Hill-5 hypothesis fails. Even though both magic squares are *mathematically* invertible (non-zero determinant mod 29), neither square produces English plaintext when applied as a Hill decryption key, in either direction.
+
+---
+
+## 5. CRITICAL ASSESSMENT — DID ANY MAGIC-SQUARE KEY PRODUCE ENGLISH?
+
+**NO.**
+
+The exhaustive evidence:
+
+| Hypothesis | Tests | Top score | Random baseline max | Verdict |
+|---|---|---|---|---|
+| Part A: 14 magic-square derivations × 9 chapters × 3 modes × 2 squares | 756 | **75.13** | 74.18 | Top score is 0.95 above random max — **within noise** |
+| Part B: 4 cross-page chain types × 9 primers × 5 steps | 219 | **71.44** | 74.18 | Top score is below random max — **pure noise** |
+| Part C: Prime-index recurrence formulas + primer derived from best formula | 18 + 7 formula tests | **71.48** | 74.18 | Top score well below random max — **no signal** |
+| Part D: Hill-cipher 5×5 with both squares as key, both directions | 36 | **72.35** | 72.77 | Top score below random Hill max — **no signal** |
+| **Total** | **1,029** | — | — | **No breakthrough** |
+
+### Random-baseline reference
+We ran 5,400 control tests with random 25-rune primers (200 primers × 9 chapters × 3 modes). The maximum random score was 74.18, with mean 66.21 and stdev 2.30. The 99.9th percentile is 73.56. Our Part A top score (75.13) is just 0.95 above the random maximum — this is **expected** under the null hypothesis given we ran 756 tests (expected ~0.76 samples above 99.9th pctile). **Statistically, the top magic-square result is indistinguishable from random.**
+
+For comparison, authentic Cicada plaintext (verified from solved pages 01 and 05) scores **80.33-88.36** — well above the random-noise ceiling of 74.18. None of our 1,029 magic-square-based tests approached this range.
+
+### Why the magic-square hypothesis fails (speculative)
+The 5×5 magic squares on LP1 pages 5 and 16 are genuinely interesting mathematical objects (verified: 180° rotational symmetry, narrow Zeckendorf term-count distribution on page 16, prime magic constants 1033 and 3301). They appear designed with intent. But "designed with intent" ≠ "this is a decryption key."
+
+Most likely interpretations:
+1. **The squares are a check / sanity test, not a key.** They may exist as a "trap" or "bait" that hints at prime/Fibonacci structure without being operational keys. The page-16 square literally displays the Cicada number 3301 — a brand-stamp, not necessarily a key.
+2. **The squares' role is informational, not cryptographic.** They might be calibration marks indicating "this book uses Prime-Fibonacci meshing in the underlying math" — not a primer for Vigenère/Hill. The 2015 PGP message's GP-sum factorization (11570 = 2·5·13·89 = product of first 4 Fibonacci primes) supports this: the *structure* matters, the *square itself* may not be a key.
+3. **The key derivation uses both squares together in a way we haven't tried.** We did test the cell-by-cell difference and product mod 29 (derivations 12 and 13). Both scored in the random band. More elaborate cross-square combinations (matrix product, Kronecker product, etc.) are possible but unlikely to differ.
+4. **The squares may be relevant only for unsolved LP1 page 5 (where they appear as marginalia) and not for the LP2 pages we tested.** LP1 page 5 itself is already directly solvable (direct translation); the square is decorative/instructional on that page, not a key.
+
+### Most promising lead from this deep dive
+Despite the negative overall result, one observation is worth recording for future work:
+
+**The page-16 mod-29 square has 11 distinct residues {0, 1, 6, 9, 11, 17, 19, 22, 26, 27, 28}, not a uniform distribution over Z_29.** If this is a deliberately constructed key schedule, the residues encode some information. Specifically:
+- Index 0 (rune ᚠ = F): appears once (cell [1][1] = 812, 812 mod 29 = 0).
+- Indices 1, 6, 9, 11, 17, 19, 22, 26, 27, 28: each appears 2-3 times.
+- Indices 2-5, 7-8, 10, 12-16, 18, 20-21, 23-25: never appear.
+
+This is *not* the random distribution we'd expect from 25 random integers mod 29 (which would have ~13-14 distinct values with most appearing 1-2 times). The page-16 residues show **deliberate concentration** on a specific subset. The subset {0, 1, 6, 9, 11, 17, 19, 22, 26, 27, 28} may encode information we haven't yet decoded (e.g., specific rune indices that spell something when interpreted correctly).
+
+**Recommended next step:** Treat the mod-29 residues of the page-16 square (in row-major order) as a 25-rune index into a lookup table of meaningful LP1 vocabulary — and see if the residue sequence spells out anything when read with the Gematria Primus.
+
+---
+
+## 6. ARTIFACTS PRODUCED
+
+| File | Description |
+|---|---|
+| `/home/z/my-project/cicada3301-research/compiled/MAGICSQUARE_DEEPDIVE_RESULTS.md` | This report |
+| `/home/z/my-project/cicada3301-research/decoder/magicsquare_deeptest.py` | Test harness (4 parts, 1,029 tests) |
+| `/home/z/my-project/cicada3301-research/decoder/magicsquare_deeptest_results.json` | Raw JSON results for all 4 parts |
+
+---
+
+## 7. CONCLUSIONS
+
+### What this wave definitively established
+1. **The page-5 and page-16 magic squares are NOT Vigenère/autokey primer keys** in any of the 14 derivations tested (mod 29, decimal digits, Zeckendorf indices, XOR-position, diff, product, spiral read, diagonal read). Top score 75.13 is within the random noise band (random max = 74.18 over 5,400 control samples).
+2. **Cross-page chained keys do NOT work** under any of the 4 chain types (plaintext-feedforward, additive, single-long-stream, derive-per-chapter). All chains break because no primer decrypts chapter 0 to English.
+3. **No simple prime-index recurrence formula generates either square.** Best match was 3/25 cells (Test 2: prime offset + Fibonacci term). The CicadaSolvers claim is unverified under all tested formulations.
+4. **Neither magic square is a meaningful Hill-cipher 5×5 key.** Both are mathematically invertible (det mod 29 ≠ 0), but applying them as Hill keys produces scores (top 72.35) below the random Hill baseline max (72.77).
+5. **The 5,400-sample random baseline (max=74.18, 99.9th pct=73.56) calibrated our english_score() function.** Future hypothesis tests should compare against this baseline; the prior p5d top score of 74.03 is now known to be **within random noise** — not a "promising lead" as previously reported.
+
+### What was learned
+- The random baseline for english_score on 200-char text with 9-chapter × 3-mode structure is **mean=66.21, max=74.18 over 5,400 samples**. Any single test scoring below ~74 must be considered noise. Authentic Cicada plaintext scores 80+.
+- The Hypothesis F lead from p5d (score 74.03 on Branches with page16_mod29 vigenere) was a noise-tail result — the same derivation now scores 69.36 (rank 25 out of 756 Part A tests).
+- The magic squares are elegant mathematical objects but do not function as cipher keys in the ways tested.
+
+### Recommended next-wave priorities (in order)
+1. **Image steganography (Phase B)** — the actual JPEG images of unsolved LP2 pages may carry data via Outguess or LSB that the transcribed runes cannot represent. This remains the largest unexplored vector.
+2. **Two-rune digraphic ciphers** beyond Playfair/Hill-5 — the lp-decrypter repo hint "functions of two runes" may indicate a non-standard digraphic.
+3. **LP2-specific keys** derived from LP2 marginalia (e.g., the Cross on Cross page, the Spiral on Spirals page, the Mayfly on Mayfly page). Each chapter's emblem may be the chapter-specific key.
+4. **Lookup-table interpretation of page-16 mod-29 residues** (the 11 distinct residues observed above) — these may index into LP1 vocabulary rather than being cipher shifts.
+5. **Accept that the cipher may not be classical.** After ~2,400+ classical-attack tests (waves 1-5 + alt-hypothesis + magic-square deep dive), the null hypothesis is increasingly likely. Either (a) the cipher is a custom construction we haven't identified, (b) the message is in a non-English language, or (c) the message is image-based, not rune-based.
+
+---
+
+*Report ends. All 1,029 test results preserved in `magicsquare_deeptest_results.json`. Pushing to GitHub pending.*

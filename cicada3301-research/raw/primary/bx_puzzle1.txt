@@ -1,0 +1,1599 @@
+URL: https://www.boxentriq.com/guides/cicada-3301-first-puzzle-walkthrough
+TITLE: Cicada 3301 First Puzzle Walkthrough
+DESCRIPTION: Walks through Cicada 3301’s first puzzle step by step, showing how each decoding layer reveals the next clue.
+
+Cicada 3301 First Puzzle Walkthrough | Boxentriq
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Navigation
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ My Saved Items
+ 0
+ 
+ 
+ 
+ 
+ 
+ Colors:
+ System theme
+ 
+ 
+ 
+ 
+
+ System theme
+ 
+ 
+ 
+ 
+
+ Light theme
+ 
+ 
+ 
+ 
+
+ Dark theme
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ Featured Links
+
+ 
+ 
+ 
+ Contact
+ 
+ 
+ 
+
+ About
+ 
+ 
+
+ 
+
+ 
+ Categories
+
+ 
+ 
+ 
+ 
+
+ Guides
+ 
+ 
+ 
+ 
+ 
+ Overview
+ Cicada 3301 First Puzzle Walkthrough
+ Beginner's Guide to Ciphers and Code-Breaking
+ Cicada 3301 Liber Primus
+ Cryptic Crosswords
+ Kryptos Cipher Solutions
+ Resources for Puzzle Solvers
+ The Zodiac Ciphers
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Alphabets & Symbols
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Analysis
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Audio Tools
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Ciphers
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Encodings
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Hash Functions
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Image Tools
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Math
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Steganography
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Text & Word Tools
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Puzzles
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ Site Info
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Navigation
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Search results
+ 0 results
+ 
+
+ Back
+ 
+
+ No matching pages found.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ Boxentriq logo
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ ← Guides
+ 
+
+ 
+ 
+ 
+ Home
+ 
+
+ 
+ Guides
+ 
+
+ Cicada 3301 walkthrough
+
+ 
+
+ 
+
+ 
+ Cicada 3301 First Puzzle Walkthrough
+
+ Walks through Cicada 3301’s first puzzle step by step, showing how each decoding layer reveals the next clue.
+
+ 
+ 
+ On this page
+ Start
+ Introduction
+ The Invitation
+ The Quest for the Holy Grail
+ The Phone Call
+ The Countdown
+ Across the Globe
+ Into The Dark
+ The RSA puzzle
+ The MIDI puzzle
+ The End
+
+ 
+
+ 
+ 
+ #CTF
+ #Hidden Messages
+ #Cicada 3301
+ 
+
+Introduction
+
+ This is a detailed and complete walkthrough/solution/writeup of the first Cicada 3301 puzzles and links to the tools you need to decode it. The Cicada 3301
+ is describes as one of the eeriest and strangest unsolved mysteries of the internet.
+
+SPONSORED VIDEOS
+nextstay
+
+CC
+
+SettingsOffArabicChineseEnglishFrenchGermanHindiPortugueseSpanish
+Font ColorwhiteFont Opacity100%Font Size100%Font FamilyArialText ShadownoneBackground ColorblackBackground Opacity50%Window ColorblackWindow Opacity0%
+WhiteBlackRedGreenBlueYellowMagentaCyan
+100%75%50%25%
+200%175%150%125%100%75%50%
+ArialGeorgiaGaramondCourier NewTahomaTimes New RomanTrebuchet MSVerdana
+NoneRaisedDepressedUniformDrop Shadow
+WhiteBlackRedGreenBlueYellowMagentaCyan
+100%75%50%25%0%
+WhiteBlackRedGreenBlueYellowMagentaCyan
+100%75%50%25%0%
+
+Video Muted
+
+ Puzzlers are still working on solving the Cicada 3301 Liber Primus ("First Book" in Latin), a book of encrypted runes. Here is a detailed guide about 
+ Liber Primus and solutions.
+
+ Cicada 3301 has been described as "the most baffling and enigmatic mystery on the Internet" and was listed as one of the
+ "top 5 eeriest, unsolved mysteries of the internet" by Washington Post. On three occasions, Cicada 3301 has posted
+ spectacular puzzles on the internet and dark web, with the stated intent of "recruiting intelligent individuals".
+
+ There has been much speculation and theories about Cicada 3301, including that they are recruitment tools for the NSA, MI6,
+ Illuminati, a cult or a hacker group. Many first thought Cicada 3301 was an Alternate Reality Game, but still
+ very few known where this rabbit hole leads to. Those who do have disappeared from the internet.
+
+ The last public, and verified, communications from Cicada 3301 was in April 2017:
+
+ 
+ 
+ Beware false paths. Always verify PGP signature from 7A35090F. 3301
+ 
+ 
+
+The Invitation
+
+ On January 5th, 2012, a mysterious image was posted on 4chan's /x/ - Paranormal board:
+
+ 
+ 
+ Cicada 3301 original 4chan invitation
+
+ 
+ There was indeed a message hidden in this image. You can download the image and try yourself with Boxentriq's Binary Analysis tool.
+ See the screenshot below:
+ 
+
+ 
+ 
+ Text extracted from the 4chan invitation
+
+ 
+ 
+
+ 
+ The text about TIBERIVS CLAVDIVS CAESAR indicates that the following text is a Caesar Cipher. Indeed, you can use Boxentriq's Caesar Cipher decoder
+ to solve it:
+ 
+
+ 
+ Decoded Caesar Cipher text
+
+ To decode it, you will have to set the Shift to 4 and the Language to "Custom". It will then give a link to an Imgur image:
+ https://i.imgur.com/m9sYK.jpg. This image
+ however looks like a dead end:
+
+ 
+ Cicada 3301 decoy image
+
+ 
+ Still it contains two keywords that hints on how to get the REAL message out: guess and out. This indicates that you should use
+ the steganography tool OutGuess. If you use OutGuess, you get a much more interesting message:
+ 
+
+Here is a book code. To find the book, and more information, go to https://www.reddit.com/r/a2e7j6ic78h0j/
+
+1:20
+2:3
+3:5
+4:20
+5:5
+6:53
+7:1
+8:8
+9:2
+10:4
+11:8
+12:4
+13:13
+14:4
+15:8
+16:4
+17:5
+18:14
+19:7
+20:31
+21:12
+22:36
+23:2
+24:3
+25:5
+26:65
+27:5
+28:1
+29:2
+30:18
+31:32
+32:10
+33:3
+34:25
+35:10
+36:7
+37:20
+38:10
+39:32
+40:4
+41:40
+42:11
+43:9
+44:13
+45:6
+46:3
+47:5
+48:43
+49:17
+50:13
+51:4
+52:2
+53:18
+54:4
+55:6
+56:4
+57:24
+58:64
+59:5
+60:37
+61:60
+62:12
+63:6
+64:8
+65:5
+66:18
+67:45
+68:10
+69:2
+70:17
+71:9
+72:20
+73:2
+74:34
+75:13
+76:21
+
+Good luck.
+
+3301
+
+ 
+ This message tells you that the numbers are a book cipher (also called a book code). A book cipher consists of numbers that references
+ pages, paragraphs, lines, words or letters in a book. To decode it, you will need access to the book. The quest continued on Reddit.
+ 
+
+The Quest for the Holy Grail
+
+The forum on Reddit ("Subreddit") contained this image in the header, and also had the title a2e7j6ic78h0j7eiejd0120. 
+
+ 
+ Cicada 3301 Subreddit Header
+
+It also contained a lot of lines of text, and two images:
+
+ 
+ Cicada 3301 Subreddit Welcome Image (original)
+
+ Using OutGuess on the welcome image gives this text:
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+- From here on out, we will cryptographically sign all messages with this key.
+
+It is available on the mit keyservers. Key ID 7A35090F, as posted in a2e7j6ic78h0j.
+
+Patience is a virtue.
+
+Good luck.
+
+3301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJPBRz7AAoJEBgfAeV6NQkP1UIQALFcO8DyZkecTK5pAIcGez7k
+ewjGBoCfjfO2NlRROuQm5CteXiH3Te5G+5ebsdRmGWVcah8QzN4UjxpKcTQRPB9e
+/ehVI5BiBJq8GlOnaSRZpzsYobwKH6Jy6haAr3kPFK1lOXXyHSiNnQbydGw9BFRI
+fSr//DY86BUILE8sGJR6FA8Vzjiifcv6mmXkk3ICrT8z0qY7m/wFOYjgiSohvYpg
+x5biG6TBwxfmXQOaITdO5rO8+4mtLnP//qN7E9zjTYj4Z4gBhdf6hPSuOqjh1s+6
+/C6IehRChpx8gwpdhIlNf1coz/ZiggPiqdj75Tyqg88lEr66fVVB2d7PGObSyYSp
+HJl8llrt8Gnk1UaZUS6/eCjnBniV/BLfZPVD2VFKH2Vvvty8sL+S8hCxsuLCjydh
+skpshcjMVV9xPIEYzwSEaqBq0ZMdNFEPxJzC0XISlWSfxROm85r3NYvbrx9lwVbP
+mUpLKFn8ZcMbf7UX18frgOtujmqqUvDQ2dQhmCUywPdtsKHFLc1xIqdrnRWUS3CD
+eejUzGYDB5lSflujTjLPgGvtlCBW5ap00cfIHUZPOzmJWoEzgFgdNc9iIkcUUlke
+e2WbYwCCuwSlLsdQRMA//PJN+a1h2ZMSzzMbZsr/YXQDUWvEaYI8MckmXEkZmDoA
+RL0xkbHEFVGBmoMPVzeC
+=fRcg
+-----END PGP SIGNATURE-----
+
+ This is VERY important information, since there are many imposters pretending to be Cicada 3301. This PGP (GnuPG) key
+ is how to verify their autenticity. Only real messages from Cicada 3301 are signed with this key ID: 7A35090F.
+ Using this ID, their public key can be downloaded from the MIT keyserver.
+
+ The second image on the Subreddit looked like this:
+
+ 
+ 
+ Cicada 3301 Subreddit Problems Image (original)
+
+ 
+ It is a stereogram image, containing an image which looks similar to a Holy Grail. It also
+ contains a OutGuess hidden text:
+ 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+The key has always been right in front of your eyes.
+
+This isn't the quest for the Holy Grail. Stop making 
+it more difficult than it is. 
+
+Good luck.
+
+3301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJPCBl3AAoJEBgfAeV6NQkPo6EQAKghp7ZKYxmsYM96iNQu5GZV
+fbjUHsEL164ZLctGkgZx2H1HyYFEc6FGvcfzqs43vV/IzN4mK0SMy2qFPfjuG2JJ
+tv3x2QfHMM3M2+dwX30bUD12UorMZNrLo8HjTpanYD9hL8WglbSIBJhnLE5CPlUS
+BZRSx0yh1U+wbnlTQBxQI0xLkPIz+xCMBwSKl5BaCb006z43/HJt7NwynqWXJmVV
+KScmkpFC3ISEBcYKhHHWv1IPQnFqMdW4dExXdRqWuwCshXpGXwDoOXfKVp5NW7Ix
+9kCyfC7XC4iWXymGgd+/h4ccFFVm+WWOczOq/zeME+0vJhJqvj+fN2MZtvckpZbc
+CMfLjn1z4w4d7mkbEpVjgVIU8/+KClNFPSf4asqjBKdrcCEMAl80vZorElG6OVIH
+aLV4XwqiSu0LEF1ESCqbxkEmqp7U7CHl2VW6qv0h0Gxy+/UT0W1NoLJTzLBFiOzy
+QIqqpgVg0dAFs74SlIf3oUTxt6IUpQX5+uo8kszMHTJQRP7K22/A3cc/VS/2Ydg4
+o6OfN54Wcq+8IMZxEx+vxtmRJCUROVpHTTQ5unmyG9zQATxn8byD9Us070FAg6/v
+jGjo1VVUxn6HX9HKxdx4wYGMP5grmD8k4jQdF1Z7GtbcqzDsxP65XCaOYmray1Jy
+FG5OlgFyOflmjBXHsNad
+=SqLP
+-----END PGP SIGNATURE-----
+
+ In the Subreddit were also many text lines, which looked like encrypted text:
+
+Ukbn Txltbz nal hh Uoxelmgox wdvg Akw; hvu ogl rsm ar sbv ix jwz
+mjotukj; mul nimo vaa prrf Qwkkb aak kau ww Ukpsf, ogq Kzpox vvl luf
+yh Qsrjfa, hvu Ktp hzs lbn ph Kipsy; ttv Sdmehpfjsf tad igr
+rcbkfgaplvj am uswrerwptk la hox cazkwn. Agk wx wm fhpwln ds ztov
+djoa mnwdl ers t wcjhxe au Crdjiy'l vsxhkv, talfw ktf nppe. Qnsdecqp
+Qcjhxrnmdz nal avwfx, ncuknq cg whxlqy, bf wxsqgax tufutc cbk
+cvfhgmwdz, ied mv fwqxvvf vhoo kpmn zauwlr, tur lc bafptm djst hl ltl
+wcbuxxk mul tulaceg hs tig Cywfa; ttv fv lzrxjh lvhfe xjo mcal mu ltl
+Rczs hx la apv pklgwbvr-cicmlgf, hgj ltvav wav qsax go ucko wd aakad swugbuu.
+Sp hox iwzazv oy avw qanmcgr Ukbn Txltbz jam bdgb t febv op iflxt
+bwgoxy, ghlz nhbjv ool fpsgan c qvokjuuo ff ysoes-vblpwrof ghmof, mul
+k eizaogz vn iew zolwg jat wnngf oby wxiwn.
+Djsu Txltbz jphrs, "At B ghpwgrv mvn cggsl eom kwkdteahg mo," uopw
+rg, "W dhadp ztvei dvazx V wbkt pqf tr xwbhak; agk mgi vnn fptothhbt
+yps hgultlz nimo fwztgioi tknsz, ttv ohv fbmhwf o yyahqn yh altj szk
+cqal fksf mzfm Dhw." Sbw ghf Mixi klgz la ztvei. Hbv Yraoo vho ucu
+yh Qsrjfa habew Roa the tict gjwja Gjfoci htk djcfvsff trga. "P,
+dqc, dbrd thdv tal ugcw gamg wrkqo ak hdvuzsxk hg ax," fajf Kkk.
+"Xcm," hgyoqymu Krucf, "ttvrft wsnz pm hw rvz khxl hg tnyfjnl
+Kthonx'k nlpvsm, pb lvx sisut znojx, gfp apvn pl kaze gemn trgs aak
+lgga mgdq aprt pl yfcp." Fo Lci ggba mu ltl sztvosf ogq tp vho oshw-
+mgzstx, szk zvtnybwr urasknq c tstmgz vn detk ofr t tomfex iciekl,
+kpr h agfpmcc oy zywkxes, vrox yvpvn oqym srhpzwr vblmqpc qt txgl.
+Djsu mnwk hbv tal qgzebpt cnn dsntt la kzznd avw axnd. "Oqw," ccwk
+Ucw, "pm ok fpuv fhy mgi mb gjxe wg af lzgdf." "Spnhu," gsww Bwbkn,
+"nq hoha hmf bf Ktp hzs mnlf vhkv wz aok pbm." "Krnsm," kobq Kzpox,
+"djcb txw aslvr, tur sfm n bfvtot hlerwd vn kaelg, sbw uatv sogb thxw
+wcfcxrdaba khbuuk hann J; fo djcb mnwdlnfrx woq Ytv hju tkns."
+"Lgupg zzkzmcf," jbclv Hjajp, "wsvv aak tqzb khta hzcn xnpyecv." "W
+gkzs wu ka," hvjwxysv Yraoo.
+"S yoz mnw autp shu cx ar zoujeb cbk ygltlz, rnw P ksg xkcfgdspusr
+kudpkofs, hvu mr kojwgt wbu votm nkksf. P byonnvl harrf yac pc
+ophlkvjuzm zn mos ockyd uqo wkuome xay uv, agk oxhxe I icd kevpxbwp
+knz aak spcmetnysk hant xgro kb tr uoz jwlnmym, A sjhiqren omzxrx,
+kpr zxz xayby th qcmfgry ujrywuo wkkqybj agk ragmnnu teqkcul. Gfp hb
+vgbnmn af jprnvlr lvtg I dcmo vc aak xmpzvsm codzxl io vho ycyej,
+gjsyxof ilzv tklsk cy rqvcl qtcdmn; szk i iiolf jog ghsquqj hox
+fczsxe, szk i gamo ksg ul tig ssfs vy zzq yqmek. Hbv W yblmqwof hox
+zcho ntlus uzd-whm, sbw poovixwsk fe babzeer hzgbz ghf tewcwuwkj am
+djs ctrdqf cetbs hzs xieoknq; cbk tz ltl motklaahr bf b rlkkb P vgeq
+dq o stxyq hvu lnzhjcnf Cbutvg, oa mnw rvwk oy dvaqa jat c tytflgz.
+Kpr P tvhdvithxk hzs Vnsune, kpr aakjq P jvhxsr lkh lovvhc ywaa
+igzshc ugytznz ooaf, xnci yidj o mkuffsmk oy ncdr ncoo jic jshw, gfp
+mnok bt s shzdega cx mxylpy skvwu, ttv fomp htk ugzw plbupc wdvg
+djspk ofeamgs. Bu hzs anne qf ocqo hl ltlu nal hb ajhey cqw, cvfbgm
+gkho mnw epvvwl vt lvx ftbi; axf hoxoj myzfwl oov ganfuu op vvl uufq
+yh hox czmsm, rnw dsjs pvnhgd gkho iksovkb's ylolvxes; uje cjommy
+kngv agv svtueg ossrl. Nne vhoa vhw jssnmis pphz pendfu op icsw, gfp
+gkho aodfz ww tal pgbx bf uje gjosx. Gfp apvy plfw gabouknq vvlbx vmnovrl.
+"Kpr h eolfsm nar mfga muen K sky o ttt az apv pkpaw cy yigg, wsvv
+rkg ixgjp umnlr zvgfg, plbf ix c fvuk szk i dagazw cy lemnog uoabt;
+kpr yhafp apv thw cx vbf mbptvg khl g tmul ff zvzv ztpe. Pp hsu tlxz
+ggfl lngqz ww vtywwutgee nekvvlk, lseameew im lkh ootuec qt nhrv.
+Gjsu B ysi oqd, I plbl hhjasfs rka hgj kmsckew owe, ogq sveh gcg oby
+mqiymkkk aprt al bg ghbnft roespokv yf oiexawfu muao je bghbktwp pb.
+Kpr ox cwza ezta ts lcpnreu trg Qhlzdq. Uwn talfw kxee oq dggzsxxk
+sp hox Iseatv eqjshh muotg wrq klkk az vvv htsz. Sbw ghfte S uod
+pqiy-ttv-fdmetr koegxys, fobbqwkxxazn artbu ol o pvneqw. Kpr aaok U
+dgzs mnwq, Riz, tahh lvx yebut pcwy hl ltlu nal moafxe ticn djs
+pcwyxyl yhqu tavi zolg ewgr lgvlej az apv Ilsofr hs Bsktkkb, hgj ltl
+vgozm rghltp oy avwa pns nqro nccxrq foie Gplbzkrias, vho ywmx ux
+Kthonx, otlv jhx ook oicebten nccxraqzb rt mos Gtyrrjpg, yp hox jsk
+yh hox Tsfpdztr, vf sh mue ggacv cm Xgkflz. Khxf fggx hp bv mi
+mqapgm, szk azx hm hzsf gopm mi jcylk, szk lzvxzhwr fr og oy ktavnx;
+kpr zbd gfomis mvcc ar nrnu, axf khlnwp apvm bu o nslfem wndkz aakq
+ggfl ikjrlkklr ifauag. Aof trg hobxv epf jpklov qebtiu uzqb aak
+dcpsxy szk xieihfwr frau. Cnn vvl yumdap jiq acgy hsf na sykzlw
+qcftxtle, hvu pehqwr hghfts ercu fk; fmtmcy, tu ifrxe-vfut kpr h
+nqiiekl am nznx swfsg, nne c ryds, hgj s ebztota, ofr t zaovlo qt
+igzshc kmaqe wbav s pkbae iovf phgj mbvv khx tofher. Aof trgm weguqk
+mwgobufe iwkh ulbwomu aof abqiuw sw, ipby chcsjwgts ph rof zpgkf; mul
+S uoa wuoz. Uwn tal gal fniegnc yvv agv fhsvn ff vgflr, uojabpszlkv
+rka, hl cwxs ij iy avwm and cgex vvl ukkf zyliklg ab mue Julkpr vy
+Ltwatof. Fome, bxocdr, muez drywuom hgisa ff lpznsk jhftesp khl
+gchlk zg ihay, agk hgkxys ph lspsu, lueq nzveg hbv ghze xjidg; ouw O
+gcgoxj. Szk qe a ephlzx jhjne djs ttt kma lfwg ac lvx gacne. Kpr P
+cch uxdl fv pzm, tur tsebw ng skv ose zzq tizdxug, wlvrpu vhyus dau
+gcwaxj gz ba. Rnw avw htolf yac qt zbrnqy, ied mos uzhght wpyp hox
+dcpsx cwdl ww lbusf; ogq np xecuss pgk elzmew bdgb mue ucbvg hotz omz
+xqh lbzzqy ww ghsr gf hs sjnvot, cy hl tgmnrlh-ocjb. Tad pwr wgoa
+gcg ikumsob ko nz. Ofr orrjny, Ucw, P lgo fomie xcsjm lbru qf wgoa
+kpr lokjk zwit hm zaenbr ujad K vhok whlz jexu sdgxjhfte; lwh aak
+wgoa ttv fom cijbcj kxee cgtdgf zxxnqk byekl hzog V hbxe oxsy lkwz
+djst bt szf wkhxy ddovr.
+"Ephpe zzq ymgala ksg anlg qvot, blbzzqy bye fhb fck nnz qno qt aak
+ncazxrk ewwbe t zwfuer wptd dq al; ual iome tal asb irrdgifgr aagl ua
+gqisw hw yvzv azyswouye uq mo vc jhtnqyav tahb lc xnt bpy wqfl, ak
+lguhg zg uuylikl cx ax jhp K wku. W ztov U dij gehr lc yvne vhkv
+djsyx cse zwde hus ovh jovnd nkgjhajel ezta ts, sbw ghbv id yoz gul
+mqbzbjwdll jo zyssh t prjoe kv hotz Uabzk fhy dwciye uq hynr jhtnqyav
+dqulmnwd. 'Jpzeyaoab,' lnie vho oou, 'pk oabtu htcs loexee vo djsl
+cqcuxx, tga ev fxhfwr mb djutetp aakw pbzznz avq fxcatv; nyy,
+rqklokj, il ezle kwkqhhrtg.' Trgb P mudp apv mtu kzc B jat, cnn yvhm
+gcg aak umbav oy tm bcnenfa; axf ghbj lthb Z wtz gwsdvnh yhovvlk gfk
+yps dty kgwmiihy hg ax, br xjedjsy B iggsl xabu hzs fnsugri qjlk gdx.
+Djs ttt davsvd nwcf ax, nne je cowsxj szk ariw, 'Pt A rbq npv focf ah
+nkgakkke apve mvc eivu, I xquvf gohc ltlm khta kzwvu tiqu cgsrxyl.'
+Ercu mnae P jvctts sbqvovu axf gvkxgimcc, agk kzsg ghf oax rsyvkahll
+sv, vl lgap, 'Pn khhb kgieqetv rkvvlk zzma Q jhhbzv gabw ujeo vvf
+nkghwbszaixe moof havnf cdfcbatmw, U dqcl wv gg. Gereq jebg hv-
+xkuom, gfp pv khx tcjbbag bticg shkrq, mul kadl hzs kbae wpgcfkl
+djfvnmz fom maessq iggim vhyw fltizqzb khx dcgr murpwgr yvpvn ltvc
+mcallz zuapvr. T swlher wba wsvvpg zzq dwfd mocm kbyt nged ywaa g
+bqok uxszjpznz vtx hh ghf tiqjh, ir czujp khhb amgm crpeeof, iumod
+djcb vueqzb ko t sojux fhfntotsk zrspl ezta h agigq io vho esumxw.
+Kpr aaum iptk sxl o tztpk ncn yh uyxgl eaikukl cf har tpr op vvl
+wqiuw. Nw uz vft ltodzxe io uijg hott liv ww tal awb hs tiks gqfsw.
+Rg vhl hmf vvv fhvh; sbw bnf gyo kb aak euklce hm vag ybrfjekf. Ouw
+rg vhl g uxbj ff bycf, ogq iu ks mgfatof foik talfw okr np vwy osu bt
+djs dhxdp dpf whbzv bhg fjpd djspk hmdkme ig avsh vyuc. Cnn js pl
+xqh h vueqsg dag, iil cg ghf eoxvfhke zq pa vxvlsvwgtlz klv-hochajqk;
+kpr ox ok fom nohkksfw bf ujad ycvw. Gfp apfu ppzl gxr a ujoeuouw
+gkzk ttayhtj gkhnabz nrpwnn jwt. Btigpzv oy owe har wba oev cm mnw
+qnokx, gfp om nies fwdel tp vhog pybkxxf, ied ppzd dhvnu qud vvl kusp
+la kobiz fowl sahzl tbad ujad yvpvn ltvc rrm pb iixft ph.'
+"Kpr shty elmdew avsh gvgiv ty os. Hgj ltl vvxm tcjbbag J cryus hgj
+osipivwp tgjeem, ofr fbuoven om ohxkq, hvu pkvqwswrd tvrkkuom zzdvcxh
+djs ctrdqf bf tal kgcw; nne K fynzvpkv fom trhzg-jctq wikcr vvl fgf
+rcr whoffll fum ac es, mvlm ct vgbnmn A myzzvxk ol har gmcdo. Cbk
+djsyx cse P byrxl haaxf mpte kuhvgoktll rt mos fifoes qf gkzk ttayhtj
+djoa B hwtltu, tahb lvx zao jan uopw O ktvccd ul. Ofr mue cnamm ahg
+gcg aakjq, zqktbuu mdha tig tyr cm mnw yvced. Abuw cy ftbvubg oz mnw
+wcb otj lasl de mool vx jat, K fywbk aoe fv mocxlr tm ynr uje
+nggjkohfpwe hx oov ubieo oe yh vpf. Gk rvz khx pfgb vyuc yhsev aak
+wcb otj lasl de phg s pnedfp fyt hdh swz, P id cxyhswg, Xaj, vhkv wa
+gqisw hw m omrvr dsauag fpt fywf dtxjuvzj th swxh; tad ujic yoz bt
+djs ieguw tie's ahbv. Ogq hf qnva gwhqw fv uv ig hbkkxe tp oy
+awszmogzz. Byeg P okyxq hjo wrch whcwd om yeek cnsk ghpue kpwttrk.
+'S ywse yzad byex, swlher mbp,' skkr ox. Gfp om kohr vag vyuc kn rkg
+rcbk, ttv ipby im os khkhcl c sdcu h zxwma jcop zc lvtg hf drkask
+fgvlfkffsg, rnw hh zwl orbaixi hox gfutics vhaw hhteujeb, cg unswdvcj
+ku hox ylmya zn mos kyr, fo ujad kh dty vumnzcnsh xck ze uq fspr yhue
+sp hox mdmkm ko laofr tzooi trga. Aakjq dmie llfhsggs, bpd ntonhtk,
+kpr kbbwdz afrmz cx ogvmbns. Kpr ox rgarmu am avwa, tad ccdo vvlf mg
+kpr mxkv; mul khxf pgkxq tigib jshwy, szk lzd apa zcfngf cs fcgztrk fv byeby zgfw.
+"Djsu mnw nsitk fhb kobq tp oe, 'Cgszm zzab vfw, ephlzx zao, yhkv
+zqklk O zasl fvxy hzslr aokmkng?' Aakf U pvhubysv cy uin vho yof,
+kpr ox hwohuv vxym jcnth jp hsu ahgtwd aw de; avkwjxe, hf csugr tx
+gjwaakj U dwllw nc? Sbw jhfp I dqzk aoe iow Z wtz ofr puau K sywuom,
+rg rpkkufll de. 'Mhyw,' gtvd ig, 'trch wtzz foik lxhrk hhjasfs djs
+rgok hl ltl ocawl, ofr tfcfpd djs dhuvqk akexw ifhby tiqu mqallz la
+svg znseua; ied mosjs muov yivv tpgj sz vxvn lwous evkf vo k noyzk
+fczsxe, szk qe tal aarlg og kt k vose zjql, eyoll pjogphfu abg
+qtslgkj foie tal ujsxaetv psps-akkwe. Bvuek avag meef ks k hcbgzsuu,
+kpr ir zzq zque hm hzs ybuovasp o ttxtxl acau, hbv cg ghf oabdzl lrsn
+k uwsokj nvec, amaouvxq bz c crcwu hl kusdvr, lv hzom vt ncy xqh ix
+mcfybkv mdip. Ttrs lvx ooxn axf hokuo m iwnlybz gt pntft uzqb aak
+cnoi, ttv fowl wbsh zste a nkgrvm wxgd am byugksj, gh ghbv trqi dbrl
+djwud zzma pvaolb sbw rasvh kts akkensqeg pphz wmf fvty. Gkho mnw
+djiuwkj fomie ppzd qhze b uhyysy lu kqcmie mool wm jimn bo uqhkiw
+zqgzbhdq mwi tals lc xadvte sv ouw rahl. Ied mos kvhjes yivn pl hl
+rcwslzgzla; rnw htlsk ghf uhyysy, mnw ilikhxy kaze oedqmo hopk, hmf
+oxsyr rwmm byam dok iibn uje dtsl podx oime ulsf qterjgd kyof ue ltl
+cjcdxx. Ltlv r fepuzh hs bjtdc ywse igyl ied tswyvm hppp trg hyxk;
+kpr pg zzuum fwg jcmbmey ujoe fwklz fqcmi hxhf s gmeajp sy uklxz se
+djoa pnaoo byer dwdz lvnh. Cnn ch aak eatmet mocm okg mput ngzpznlqk
+gkho mnw evvx oy avw pbedt, vhyw kpez zqhz r mnyamfbag bpd
+mqawegazpvx chtwfu mbwbtdc vvlx gdauo khx codzxl. Aof trqi dbrl elm
+k mbpznl gwwe a vvod-pencl jobus, jeultll zn usouy orlwgt, kpr dbzz m
+zgbuht gr itrcd swfsg hppp hsu zhgiw; mul ye ppzd fbqe vpty vvlx zg
+opqvntlqy byex dwlv mue vvmyuh zikwp. Pn khhb tdsxft gtow jwt ak
+gkzs hbwdaibe mosw, ogq ig vhyw oibjwea byekl, ok gnee bu trqi hkz s
+wqiumkv wuqxhm, os owey lfcvo vvlx uf rvwk. Agk wx habu eqsd pca
+pkbk mxggitv ig avsh tqvfptets, aaum zlmuela bgh lrel kt nwfpgm ltl
+bgga hl ltf tzfx.' 
+"Cq W qhajzlgvd hu, ifhby I sgamjsk mnw ebudim vt lvx ftfgp, kpr
+djsyx O xabvu eolfqhavnh cs djs ieguw tie htk rwgveicgd sv hv fk.
+Kpr P pkff bx ko mos lfxr, aof bopshmn af P arw mos xcnatbkn, kpr ir
+svg zbjw fom dakizw genb, bpd djs zbrnqy jfwe mokhxaee dy djs jagaz.
+Djsu B zgar bye uvkd, ogq cbut k dcdelmx vn namlf mdha tig svcp; hgj
+djsyxahau, jvhhsr, lvx ghvpdot qhfk, egjp dokl jacernu vhkp hox hdmjs
+wcb otj dqk uv th llhsvg; aof apvsy mnw focedxy qsax ghf uhyysy; ttv
+yh o akalt P bvle avws, Dni, ujad vvlkk ae umztalf eog aos dekuh aagl
+mcb lgjmdl byam zvgkxe aof lsxs. Mhx faa wee hm hzclr hbklcvcuxy
+gqisw hw eawgpxk, saharr ca trg tsxyz ay jp tal gcwg, hnukl sv vhw
+bgojakv fom sogl. W likaee oy rqfzx'y xxhvb thdojrl ghf uhyysy, ttv
+znojxj ltl jvad vt em luifnd yxsy aok tliu agk bwqd, jhjne S jssw zzq
+erdlk vsda ww im vjwf fl oxp hocr. Hgj ltba Z wbavkhhbd uje cjcdxx.
+Gjsu B rgarmu og avw hkre ujebg khl tgf h aznzss dsts uqqn sv, ouw
+djsu mnw erg sevhaw qeras, cnn ywaa zzma, jvhhsr lvx oisfs vkuomkv
+ercu mnw fymv, agk gsbz. Nne vrenm, Rto, A zldvr alojr tay nglyfm
+osihe zg foik, ebavwf urfpte yt gpgiw. Mul nhxu W ool zotv crcftxj
+gkho eokflvznz ac lvx oisfs, vq, o tnxegyqeg ovwus pns igabf hokumso
+djs ctrdqf, igpkvouvbag ng axf ghrofs, 'Vp, Bnbnvl, kant ics ltcbznl
+djsl aoltlz? Nhta snwe uawg I nqbl mu ltlm, khta hzcn fhpwlnuh hvz
+
+ The question is which cipher method has been used and how to find the key.
+
+ It was discovered that the key was literaly
+ "in front of your eyes". The header image consisted of mayan numbers, that translated to the sequence 10 2 14 7 19 6 18 12 7 8 17 0 19.
+ Comparing it with the title, it was found that 10 = a, 14 = e, etc. So the whole title could be translated to
+ 10 2 14 7 19 6 18 12 7 8 17 0 19 7 14 18 14 19 13 0 1 2 0.
+
+ The text lines were found to be a Vigenère cipher. The numbers can be translated to a
+ Vigenère key by letting 0 = A, 1 = B, etc. You can do this using Boxentriq's letters to numbers tool,
+ which gives you the key kcohtgsmhirathosotnabca.
+
+ Now you can decode the texts, line by line, using Boxentriq's Vigenère cipher tool. You can see
+ the result in the screenshot below:
+
+ 
+ Cicada 3301 Subreddit Text decoded
+
+ 
+ Here is the whole text:
+ 
+
+King Arthur was at Caerlleon upon Usk; and one day he sat in his
+chamber; and with him were Owain the son of Urien, and Kynon the son
+of Clydno, and Kai the son of Kyner; and Gwenhwyvar and her
+handmaidens at needlework by the window. And if it should be said
+that there was a porter at Arthur's palace, there was none. Glewlwyd
+Gavaelvawr was there, acting as porter, to welcome guests and
+strangers, and to receive them with honour, and to inform them of the
+manners and customs of the Court; and to direct those who came to the
+Hall or to the presence-chamber, and those who came to take up their lodging.
+In the centre of the chamber King Arthur sat upon a seat of green
+rushes, over which was spread a covering of flame-coloured satin, and
+a cushion of red satin was under his elbow.
+Then Arthur spoke, "If I thought you would not disparage me," said
+he, "I would sleep while I wait for my repast; and you can entertain
+one another with relating tales, and can obtain a flagon of mead and
+some meat from Kai." And the King went to sleep. And Kynon the son
+of Clydno asked Kai for that which Arthur had promised them. "I,
+too, will have the good tale which he promised to me," said Kai.
+"Nay," answered Kynon, "fairer will it be for thee to fulfill
+Arthur's behest, in the first place, and then we will tell thee the
+best tale that we know." So Kai went to the kitchen and to the mead-
+cellar, and returned bearing a flagon of mead and a golden goblet,
+and a handful of skewers, upon which were broiled collops of meat.
+Then they ate the collops and began to drink the mead. "Now," said
+Kai, "it is time for you to give me my story." "Kynon," said Owain,
+"do thou pay to Kai the tale that is his due." "Truly," said Kynon,
+"thou are older, and art a better teller of tales, and hast seen more
+marvellous things than I; do thou therefore pay Kai his tale."
+"Begin thyself," quoth Owain, "with the best that thou knowest." "I
+will do so," answered Kynon.
+"I was the only son of my mother and father, and I was exceedingly
+aspiring, and my daring was very great. I thought there was no
+enterprise in the world too mighty for me, and after I had achieved
+all the adventures that were in my own country, I equipped myself,
+and set forth to journey through deserts and distant regions. And at
+length it chanced that I came to the fairest valley in the world,
+wherein were trees of equal growth; and a river ran through the
+valley, and a path was by the side of the river. And I followed the
+path until mid-day, and continued my journey along the remainder of
+the valley until the evening; and at the extremity of a plain I came
+to a large and lustrous Castle, at the foot of which was a torrent.
+And I approached the Castle, and there I beheld two youths with
+yellow curling hair, each with a frontlet of gold upon his head, and
+clad in a garment of yellow satin, and they had gold clasps upon
+their insteps. In the hand of each of them was an ivory bow, strung
+with the sinews of the stag; and their arrows had shafts of the bone
+of the whale, and were winged with peacock's feathers; the shafts
+also had golden heads. And they had daggers with blades of gold, and
+with hilts of the bone of the whale. And they were shooting their daggers.
+"And a little way from them I saw a man in the prime of life, with
+his beard newly shorn, clad in a robe and a mantle of yellow satin;
+and round the top of his mantle was a band of gold lace. On his feet
+were shoes of variegated leather, fastened by two bosses of gold.
+When I saw him, I went towards him and saluted him, and such was his
+courtesy that he no sooner received my greeting than he returned it.
+And he went with me towards the Castle. Now there were no dwellers
+in the Castle except those who were in one hall. And there I saw
+four-and-twenty damsels, embroidering satin at a window. And this I
+tell thee, Kai, that the least fair of them was fairer than the
+fairest maid thou hast ever beheld in the Island of Britain, and the
+least lovely of them was more lovely than Gwenhwyvar, the wife of
+Arthur, when she has appeared loveliest at the Offering, on the day
+of the Nativity, or at the feast of Easter. They rose up at my
+coming, and six of them took my horse, and divested me of my armour;
+and six others took my arms, and washed them in a vessel until they
+were perfectly bright. And the third six spread cloths upon the
+tables and prepared meat. And the fourth six took off my soiled
+garments, and placed others upon me; namely, an under-vest and a
+doublet of fine linen, and a robe, and a surcoat, and a mantle of
+yellow satin with a broad gold band upon the mantle. And they placed
+cushions both beneath and around me, with coverings of red linen; and
+I sat down. Now the six maidens who had taken my horse, unharnessed
+him, as well as if they had been the best squires in the Island of
+Britain. Then, behold, they brought bowls of silver wherein was
+water to wash, and towels of linen, some green and some white; and I
+washed. And in a little while the man sat down to the table. And I
+sat next to him, and below me sat all the maidens, except those who
+waited on us. And the table was of silver, and the cloths upon the
+table were of linen; and no vessel was served upon the table that was
+not either of gold or of silver, or of buffalo-horn. And our meat
+was brought to us. And verily, Kai, I saw there every sort of meat
+and every sort of liquor that I have ever seen elsewhere; but the
+meat and the liquor were better served there than I have ever seen
+them in any other place.
+"Until the repast was half over, neither the man nor any one of the
+damsels spoke a single word to me; but when the man perceived that it
+would be more agreeable to me to converse than to eat any more, he
+began to inquire of me who I was. I said I was glad to find that
+there was some one who would discourse with me, and that it was not
+considered so great a crime at that Court for people to hold converse
+together. 'Chieftain,' said the man, 'we would have talked to thee
+sooner, but we feared to disturb thee during thy repast; now,
+however, we will discourse.' Then I told the man who I was, and what
+was the cause of my journey; and said that I was seeking whether any
+one was superior to me, or whether I could gain the mastery over all.
+The man looked upon me, and he smiled and said, 'If I did not fear to
+distress thee too much, I would show thee that which thou seekest.'
+Upon this I became anxious and sorrowful, and when the man perceived
+it, he said, 'If thou wouldest rather that I should show thee thy
+disadvantage than thine advantage, I will do so. Sleep here to-
+night, and in the morning arise early, and take the road upwards
+through the valley until thou reachest the wood through which thou
+camest hither. A little way within the wood thou wilt meet with a
+road branching off to the right, by which thou must proceed, until
+thou comest to a large sheltered glade with a mound in the centre.
+And thou wilt see a black man of great stature on the top of the
+mound. He is not smaller in size than two of the men of this world.
+He has but one foot; and one eye in the middle of his forehead. And
+he has a club of iron, and it is certain that there are no two men in
+the world who would not find their burden in that club. And he is
+not a comely man, but on the contrary he is exceedingly ill-favoured;
+and he is the woodward of that wood. And thou wilt see a thousand
+wild animals grazing around him. Inquire of him the way out of the
+glade, and he will reply to thee briefly, and will point out the road
+by which thou shalt find that which thou art in quest of.'
+"And long seemed that night to me. And the next morning I arose and
+equipped myself, and mounted my horse, and proceeded straight through
+the valley to the wood; and I followed the cross-road which the man
+had pointed out to me, till at length I arrived at the glade. And
+there was I three times more astonished at the number of wild animals
+that I beheld, than the man had said I should be. And the black man
+was there, sitting upon the top of the mound. Huge of stature as the
+man had told me that he was, I found him to exceed by far the
+description he had given me of him. As for the iron club which the
+man had told me was a burden for two men, I am certain, Kai, that it
+would be a heavy weight for four warriors to lift; and this was in
+the black man's hand. And he only spoke to me in answer to my
+questions. Then I asked him what power he held over those animals.
+'I will show thee, little man,' said he. And he took his club in his
+hand, and with it he struck a stag a great blow so that he brayed
+vehemently, and at his braying the animals came together, as numerous
+as the stars in the sky, so that it was difficult for me to find room
+in the glade to stand among them. There were serpents, and dragons,
+and divers sorts of animals. And he looked at them, and bade them go
+and feed; and they bowed their heads, and did him homage as vassals to their lord.
+"Then the black man said to me, 'Seest thou now, little man, what
+power I hold over these animals?' Then I inquired of him the way,
+and he became very rough in his manner to me; however, he asked me
+whither I would go? And when I told him who I was and what I sought,
+he directed me. 'Take,' said he, 'that path that leads towards the
+head of the glade, and ascend the wooded steep until thou comest to
+its summit; and there thou wilt find an open space like to a large
+valley, and in the midst of it a tall tree, whose branches are
+greener than the greenest pine-trees. Under this tree is a fountain,
+and by the side of the fountain a marble slab, and on the marble slab
+a silver bowl, attached by a chain of silver, so that it may not be
+carried away. Take the bowl and throw a bowlful of water upon the
+slab, and thou wilt hear a mighty peal of thunder, so that thou wilt
+think that heaven and earth are trembling with its fury. With the
+thunder there will come a shower so severe that it will be scarce
+possible for thee to endure it and live. And the shower will be of
+hailstones; and after the shower, the weather will become fair, but
+every leaf that was upon the tree will have been carried away by the
+shower. Then a flight of birds will come and alight upon the tree;
+and in thine own country thou didst never hear a strain so sweet as
+that which they will sing. And at the moment thou art most delighted
+with the song of the birds, thou wilt hear a murmuring and
+complaining coming towards thee along the valley. And thou wilt see
+a knight upon a coal-black horse, clothed in black velvet, and with a
+pennon of black linen upon his lance; and he will ride unto thee to
+encounter thee with the utmost speed. If thou fleest from him he
+will overtake thee, and if thou abidest there, as sure as thou art a
+mounted knight, he will leave thee on foot. And if thou dost not
+find trouble in that adventure, thou needest not seek it during the
+rest of thy life.' 
+"So I journeyed on, until I reached the summit of the steep, and
+there I found everything as the black man had described it to me.
+And I went up to the tree, and beneath it I saw the fountain, and by
+its side the marble slab, and the silver bowl fastened by the chain.
+Then I took the bowl, and cast a bowlful of water upon the slab; and
+thereupon, behold, the thunder came, much more violent than the black
+man had led me to expect; and after the thunder came the shower; and
+of a truth I tell thee, Kai, that there is neither man nor beast that
+can endure that shower and live. For not one of those hailstones
+would be stopped, either by the flesh or by the skin, until it had
+reached the bone. I turned my horse's flank towards the shower, and
+placed the beak of my shield over his head and neck, while I held the
+upper part of it over my own head. And thus I withstood the shower.
+When I looked on the tree there was not a single leaf upon it, and
+then the sky became clear, and with that, behold the birds lighted
+upon the tree, and sang. And truly, Kai, I never heard any melody
+equal to that, either before or since. And when I was most charmed
+with listening to the birds, lo, a murmuring voice was heard through
+the valley, approaching me and saying, 'Oh, Knight, what has brought
+thee hither? What evil have I done to thee, that thou shouldst act
+
+ This text is from Thomas Bulfinch's Mythology, a classic work based on the Mabinogion tales about King Arthur and the knights of the round table,
+ and their hunt for the holy grail. This is the original text.
+
+ Using this text, you can now decode the book cipher using Boxentriq's Book Cipher tool:
+
+ 
+ Cicada 3301 Mabinogion Book Cipher Decoded
+
+ What confused many solvers a bit were that the text containted double spaces in some places. It was easy to miss the double spaces if you
+ copy-pasted the text from the subreddit, which resulted in getting some characters wrong from the book cipher. Some therefore believed that
+ full stops (.) should be filtered out, which you shouldn't do.
+
+ A phone number!
+
+The Phone Call
+
+ This phone number, 2143909608, is no longer working, but here is a recording of the message you would get:
+
+ Cicada 3301 phone message at +1 2143909608:
+ 
+ Your browser does not support the
+ audio element.
+ 
+
+Here is a transcript of the message:
+
+ 
+ Very good. You have done well. There are three prime numbers associated with the original final.jpg image. 3301 is one of them. You will have to find the other two. Multiply all three of these numbers together and add a .com to find the next step. Good luck. Goodbye.
+ 
+
+ Looking at the image posted on 4chan, it had no obvious prime numbers, but the size is 509 x 503 pixels. It happens that both 509 and 503 are prime numbers.
+ Therefore the total number is 509 x 503 x 3301 = 845145127.
+
+ The website 845145127.com is no longer available, but it showed an image of a cicada and a countdown:
+
+The Countdown
+
+Applying OutGuess on the image revealed a text:
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+You have done well to come this far.
+
+Patience is a virtue.
+
+Check back at 17:00 on Monday, 9 January 2012 UTC.
+
+3301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJPCKDUAAoJEBgfAeV6NQkPf9kP/19tbTFEy+ol/vaSJ97A549+
+E713DyFAuxJMh2AY2y5ksiqDRJdACBdvVNJqlaKHKTfihiYW75VHb+RuAbMhM2nN
+C78eh+xd6c4UCwpQ9vSU4i1Jzn6+T74pMKkhyssaHhQWfPs8K7eKQxOJzSjpDFCS
+FG7oHx6doPEk/xgLaJRCt/IJjNCZ9l2kYinmOm7c0QdRqJ+VbV7Px41tP1dITQIH
+/+JnETExUzWbE9fMf/eJl/zACF+gYii7d9ZdU8RHGi14jA2pRjc7SQArwqJOIyKQ
+IFrW7zuicCYYT/GDmVSyILM03VXkNyAMBhG90edm17sxliyS0pA06MeOCjhDGUIw
+QzBwsSZQJUsMJcXEUOpHPWrduP/zN5qHp/uUNNGj3vxLrnB+wcjhF8ZOiDF6zk7+
+ZVkdjk8dAYQr62EsEpfxMT2dv5bJ0YBaQGZHyjTEYnkiukZiDfExQZM2/uqhYOj3
+yK0J+kJNt7QvZQM2enMV7jbaLTfU3VZGqJ6TSPqsfeiuGyxtlGLgJvd6kmiZkBB8
+Jj0Rgx/h9Tc4m9xnVQanaPqbGQN4vZF3kOp/jAN5YjsRfCDb7iGvuEcFh4oRgpaB
+3D2/+Qo9i3+CdAq1LMeM4WgCcYj2K5mtL0QhpNoeJ/s0KzwnXA+mxBKoZ0S8dUX/
+ZXCkbOLoMWCUfqBn8QkQ
+=zn1y
+-----END PGP SIGNATURE-----
+
+Time went by, and the solvers waited with greatest anticipation, but still they were a bit shocked at what came next.
+
+Across the Globe
+
+Suddenly the message hidden in the image changed. It now contained what looked like coordinates, spread across the globe:
+
+52.216802, 21.018334
+48.85057059876962, 2.406892329454422
+48.85030144151387,2.407538741827011
+47.664196, -122.313301
+47.637520, -122.346277
+47.622993, -122.312576
+37.5196666666667, 126.995
+33.966808, -117.650488
+29.909098706850486 -89.99312818050384
+25.684702, -80.441289
+21.584069, -158.104211
+- -33.90281, 151.18421
+36.0665472222222, -94.1726416666667
+37.577070, 126.813122
+
+ The location were spread out over the world in California, Australia, Hawaii, South Korea, Poland, and other places. Visiting these exact locations
+ there were real posters with an image of a cicada and a QR-code:
+
+ 
+ Cicada 3301 QR poster in Warsaw
+
+ Obviously Cicada 3301 were a resourcesful organization, capable of placing posters around the world. Either they had members worldwide, or they did
+ a lot of travelling to spread out these posters. This puzzle was no longer only an online thing.
+
+ Puzzlers collaborated to visit the locations and take photos. They found there were two variants of posters, containing QR codes.
+ They contained new book ciphers, as well as a warning not to share too much.
+
+First message:
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+ 
+In twenty-nine volumes, knowledge was once contained.
+How many lines of the code remained when the Mabinogion paused?
+Go that far in from the beginning and find my first name.
+ 
+1:29
+6:46
+the product of the first two primes
+2:37
+14:41
+17:3
+27:40
+the first prime
+2:33
+1:1
+7:45
+17:29
+21:31
+12:17
+the product of the first two primes
+22:42
+15:18
+24:33
+27:46
+12:29
+25:66
+7:47
+ 
+You've shared too much to this point. We want the best, 
+not the followers. Thus, the first few there will receive
+the prize.
+ 
+Good luck.
+ 
+3301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+ 
+iQIcBAEBAgAGBQJPB1luAAoJEBgfAeV6NQkP9oAP+gLu+FsRDf3aRcJtBkCOU2MX
+r/dagOTvCKWtuV+fedy0enWUZ+CbUjXOr98m9eq2z4iEGqKd3/MBXa+DM9f6YGUE
+jPum4wHtQDSJlZMazuYqJOVZGw5XmF25+9mRM6fe3H9RCiNDZpuXl3MzwdivYhcG
+B5hW14PcdHHteQf3eAUz+p+s06RDs+q1sNGa/rMQIx9QRe71EJwLMMkMfs81kfJC
+tCt21+8ud0Xup4tjUBwul7QCcH9bqKG7cnR1XWsDgdFP6a4x9Jl2/IUvp1cfeT7B
+YLS9W3lCM8thMemJr+ztQPZrpDlaLIitAT2L0B3f/k4co89v5X2I/toY8Z3Cdvoi
+hk0AdWzMy/XLDgkPnpEef/aFmnls53mqqe9xKAUQPMrI73hiJ+5UZWuJdzCpvt+F
+BjfQk15EJoUUW16K2+mBA1cSd+HJlnkslUTsjkq0E36XKChP+Cvbu/p6DLUMM2Xl
++n3iospCkkHR9QDcHzE4Rxg9A435yHqqJ/sL2MXG/CY8X4ec6U0/+UCIF9spuv8Y
+7w66D05pI2u9M/081L7Br0i0Mpdf9fDblO/6GksskccaPkMQ3MRtsL+p9o6Dnbir
+6Z2wH2Kw1Bf0Gfx4VcpHBikoWJ5blCc6tfvT+qXjVOZjWAL7DvReavSEmW1/fubN
+C3RWcjeI4QET2oKmV2NK
+=LWeJ
+-----END PGP SIGNATURE-----
+
+Second message:
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+ 
+A poem of fading death, named for a king
+Meant to be read only once and vanish
+Alas, it could not remain unseen.
+ 
+1:5
+152:24
+the product of the first two primes
+14:13
+7:36
+12:10
+7:16
+24:3
+271:22
+10:7
+13:28
+12:7
+86:17
+93:14
+the product of the first two primes
+16:7
+96:4
+19:13
+47:2
+71:22
+75:9
+77:4
+ 
+You've shared too much to this point. We want the best, 
+not the followers. Thus, the first few there will receive
+the prize.
+ 
+Good luck.
+ 
+3301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+ 
+iQIcBAEBAgAGBQJPB/nmAAoJEBgfAeV6NQkPEnEQAKl5qtb3ZE5vs+c08KuzAi4a
+tQEE71fvb65KQcX+PP5nHKGoLd0sQrZJw1c4VpMEgg9V27LSFQQ+3jSSyan7aIIg
+SDqhmuAcliKwf5ELvHM3TQdyNb/OnL3R6UvavhfqdQwBXCDC9F0lwrPBu52MJqkA
+ns93Q3zxec7kTrwKE6Gs3TDzjlu39YklwqzYcUSEusVzD07OVzhIEimsOVY+mW/C
+X87vgXSlkQ69uN1XAZYp2ps8zl4LxoaBl5aVtIOA+T8ap439tTBToov19nOerusB
+6VHS192m5NotfQLnuVT4EITfloTWYD6X7RfqspGt1ftb1q6Ub8Wt6qCIo6eqb9xm
+q2uVzbRWu05b0izAXkHuqkHWV3vwuSfK7cZQryYA7pUnakhlpCHo3sjIkh1FPfDc
+xRjWfnou7TevkmDqkfSxwHwP5IKo3r5KB87c7i0/tOPuQTqWRwCwcWOWMNOS7ivY
+KQkoEYNmqD2Yz3Esymjt46M3rAuazxk/gGYUmgHImgcu1zzK7Aq/IozXI7EFdNdu
+3EoRJ/UL9Y0l0/PJOG5urdeeTyE0b8bwgfC2Nk/c8ebaTkFbOnzXdAvKHB03KEeU
+PtM6d6DngL/LnUPFhmSW7K0REMKv62h9KyP/sw5QHTNh7Pz+C63OO3BsFw+ZBdXL
+hGqP6XptyZBsKvz2TLoX
+=aXFt
+-----END PGP SIGNATURE-----
+
+ Later, the website changed again, and contained a list of numbers. Someone found that if you
+ typed in http://thewebsite/thenumber.jpg, it would also show you the poster (without any need for you to physically travel there).
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+ 
+162667212858
+414974253863
+598852142735
+876873892385
+935691396441
+316744223127
+427566844663
+644169769482
+889296759263
+963846244281
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+ 
+iQIcBAEBAgAGBQJPDRkvAAoJEBgfAeV6NQkPVuMP/3ZyAgwsko/B2T9Ew1yqAKVy
+K9//wIWCRvMyZ4k79ApqvOJAlezgHTsAM8XG/I71bAG+2wMOXNJfTj/SFONEEbS5
+BOp9UP7LHn1j3NKoESrDzsKd+u3oHoNnhs628aLrc8uDqbn/6DNUnObu5Tn3unu0
+zZ3NjSs/A5QQX8O56RsK81eSJ2fifbr4NYfHBeUTeVe17nsr48WQI7qc9UVWlPsM
+91FWsvhX+WohX8DyFWJmtz0lLvmh3jN+oE8WFPTVbcVCM+eiDt0TqkUNlmq/fxbd
+X2Sbs8zMxDXNQWrw58TcSC6oLfXSXZnjh8uTMwrQ0tNdRXHDndgPiurXz62XjVjf
+4AhSXBoXF9CHTOyGGEqvfNvFMKyz968iMZDXDNBrM8pkxx1xBHhAnoEznVpeMhII
++IfBTnV8x9lSNgFhmham5eEZlWvqRidqes8EAriqGA6uZokCq7X1IeMHo52ACWmP
+2bJsCV5wZDc52c3JnwKe+cAcbsA4OWCNEH29lAsgFw5079BP8lkpY3AH2+8kqs0X
+QvqsaMuUq5ZHEaZMgdD0VKYlRrKdhOiDjtJVxoXk1b7YBOV8dZZBXJbEIbTvaof4
+yhgUObovx/VFGmsenp+j3nBCxgEO22SgNW3B3pN0yuIMCqccWEZ1nME/QOwLa85n
+HOmElIXvK13Q9m545RtP
+=Q1Fy
+-----END PGP SIGNATURE-----
+
+ The second book cipher was broken first. It was found that the book used was
+ Agrippa (A Book of the Dead) by William Gibson. The
+ poem, which came on a 3.5 inch disk with the book, was programmed to encrypt itself after a single use. The decrypted text was:
+
+ 
+ sq6wmgv2zcsrix6t.onion
+ 
+
+Later, also the first book was found. It was Encyclopaedia Britannica, 11th Edition, Volume 6, Slice 3 "Chitral" to "Cincinnati".
+
+Into The Dark
+
+ If you are familiar with the dark web, you will recognize that this is an address on the TOR network. The dark web is a kind of
+ "internet underground", which requires specific software and configurations to access. Identities and locations stay anonymous,
+ and cannot be tracked. This is where the puzzle went "off the grid".
+
+ These were the instruction that met the people arriving here:
+
+Congratulations!
+
+Please create a new email address with a public, free web-based service. Once you've never used before, and enter it below. We recommend you do this while still using tor, for anonymity.
+
+We will email you a number within the next few days (in the order in which you arrived at this page). Once you've received it, come back to this page and append a slash and then the number you recieved to this url. (For example, if you recieved "3894894230934209", then you would go to "[http:// http://sq6wmgv2zcsrix6t.onion/3894894230934209]")
+
+3301
+
+ What happened after isn't possible to verify, but some emails have leaked. Here is what happened next.
+
+The RSA puzzle
+
+ The first people who provided an email address on the dark web site were sent an email with another test:
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+This message will only be displayed once.
+
+Here is a message that has been encrypted with RSA (the Crypt::RSA Perl module available in CPAN) :
+
+- -----BEGIN COMPRESSED RSA ENCRYPTED MESSAGE-----
+Version: 1.99
+Scheme: Crypt::RSA::ES::OAEP
+
+eJwBzQAy/zEwADE4OABDeXBoZXJ0ZXh0B4KeBtKjJ7hGKC7/zqyzxUoFDTzRuU4+TLFUrw9qDGjk
+YI3fjyMn3G/w9WcfkZMGHdGRicbpTsDO3/oqmVtZpmIDY2HPOeWIZChuLfMDwT3FTUkDjQpsq390
+OJ90pArd1JRxdIZtnCvnVy/vg+1MjAFH3ta+CuAwHsIY/3lGOKTin1+5M30BKh7NOQMmBcJ8/RuL
+TfXMGQT01QVMeAGq6vORk3iw39KOLRU3Lcn1804G1/zd2mdFWvEMaTbu/F+7
+=0KfiT9PUe6QkwJXoM36Ukw==
+- -----END COMPRESSED RSA ENCRYPTED MESSAGE-----
+
+Here is the public key used to encrypt it. Note that it has a low bit modulus and is therefore breakable:
+
+$VAR1 = bless( {
+ 'e' => 65537,
+ 'n' => '7467492769579356967270197440403790283193525917787433197231759008957255433116469460882489015469125000179524189783',
+ 'Version' => '1.99',
+ 'Identity' => 
+ }, 'Crypt::RSA::Key::Public' );
+
+The encrypted message is a number. Break the decryption key, then come back to this same URL and enter the 
+decrypted message to continue. Each person who has come this far has received a unique message encrypted 
+with a unique key. You are not to collaborate. Sharing your message or key will result in not receiving 
+the next step.
+
+There is a second chance to get your own RSA message and key. Follow the "Numbers dot TK" hint to find it.
+
+There are many fake messages out there. Only messages signed with public key ID 7A35090F are valid. 
+
+Good luck.
+
+3301 
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJPEi5PAAoJEBgfAeV6NQkPV58P/0vBho7MrgWy4V4v2CGcq3gU
+OfNQ+k/z3TRvJZamGqM0bJbYgaHyG6mekf4v7o68b6v7Riir3maljP0snKV6Wv6j
+Ea8tzLZGonrgIJSSH4Ri3Ce9JiX4FGgNf8kY/3MahW5+TPoJGOmugfAf51XrUafH
+xTGK6aa9VQoQgg4Hxig8+BQAcNOGBvrnLu2MX4e+K8877YzNhymPNQGiKa/vm/gv
+BZN8S5tP9JYbSxZIU9EY5/Ny1c7Rb4uWJfmVm0EuKhx4gnVTuo7DXmZh0bcSmgk+
+BPsg/mLdFVKMNaf8Znam4Lg7oGby6fg7duwNcRBtH242oDZi7Ar2PaULDeaEhVS9
+Z29zFPGNpwDc8E7hecbfBzlLARkiMOApgORfBeTVP7c3p38efg+24v7Rp26J61Qf
+qtppmijeO+BuytVm8XlmGLoMvL8NlCx/9ghTnaQN1hBWT/WpCPRCLC0F982zvfzC
+Zhu0lPouHYdB9QYRuUcMQP03UcZNyFsdmw1epVLfL3QP9TzDoeLBopu/gHNARUzp
+Icx7rqme633XCldmnLn91CMGBOMGLQGdC+z16e9zQGYuliE/SfB66Kebz2f8ZBpK
+Dqw5Riu8BQAPMK1kt9evb7L/a7TZD5ISlh253ES9Tmi8/Nxot7hGMuHXFvEdajyK
+qwcTZ2vegt8Tu6Hb7199
+=S6GG
+-----END PGP SIGNATURE-----
+
+ To solve this, you need to break an RSA key. You will need to factorize the big number (with 112 digits), n, into two prime numbers.
+ This is far from easy.
+
+ Factoring big numbers requires advanced mathematics. Luckily, there are publicly available open source projects that can be used:
+
+ MSieve
+
+ CADO-NFS
+
+ Both options make use of the Number Field Sieve (NFS) algorithm. On a modern computer, you should be able to factorize the number n
+ in less than an hour. You will get these prime factors:
+
+p = 94424081139901371883469166542407095517576260048697655243
+q = 79084622052242264844238683495727691663247340251867615781
+
+ Now you can continue the calculations to get the secret exponent, d, by using
+ Boxentriq's big number calculator and
+ Boxentriq's modular multiplicative inverse calculator.
+
+phi = (p-1)(q-1) = 7467492769579356967270197440403790283193525917787433197058250305765111796388761610844354228288301399878958918760
+d = 65537-1 (mod phi) = 6095845029215954627034931303907142169470229688202235204684671759588136716587612454316830292189081535500929599993
+
+Now that you have the secret key, d, you can use the Crypt::RSA Perl module to decrypt the message in the email.
+
+The MIDI puzzle
+
+The next puzzle received by email was this text, and a piece of music (Cicada 3301 MIDI file).
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+This song is your own path
+Another stop on the road toward enlightenment
+Follow it, and share not 
+
+Let the Chorus be your guide to the depths :
+
+ Let the Priests of the Raven of dawn, 
+ no longer in deadly black, with hoarse note 
+ curse the sons of joy. Nor his accepted 
+ brethren, whom, tyrant, he calls free lay the 
+ bound or build the roof. Nor pale religious 
+ letchery call that virginity, that wishes 
+ but acts not. 
+
+ For every thing that lives is Holy.
+
+Good luck.
+
+3301
+- -----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+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
+=yk7h
+- -----END PGP MESSAGE-----
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJPGOY0AAoJEBgfAeV6NQkP7KQQAJ7qfuZgtthyD6hXiPvrYXCl
+Dnbj4viLPeiwVC/dYHn76yixqImr4+gzWEGzr+MrNpaPRBtCxu7kmBtwuyNHoqlz
+KINmTLuwjpLkU/VBi02b17Z5UbCguEn8ZZDq8HFJgl3I8teQOBpmNorfsR0+CmjM
+btuLdiZkLS0f9LS4mCivnlJmr6ULIwiAh7KaCQbj3s908raMQL+uIg6GXort1ilo
+sppcEaykOHUmz+cxG2xpOD1KVt/IqSawimB3xfveCcLyRRfRQp4ACyL+eBiTzuT9
+IJ9NmCrE3OcFtzJa0S2JjlOI5x1h70GEl1D/rpTu3zOR6I3YF68RufIxtnfpDsx3
+6OORSR0kWVO1fVAotL3QfPxq6cjsy5Q+Gm5QeAvI+e5k2lGIL83d3JS23s0IjopS
+gJWHwwIF5q9uHrg8oPIJkYkc1Dxzrvgc5DcHsYo+KQxWYsPhjh7nQp8hl0KpK8Q/
+I8yFg3afBfH1ci15HifKVwAJGtrki3+NkPDw7IuwFDtW6NCd4SJ6XQv9fw7NyYQk
+/qxbiOrz4yD7MOY9tKapdDMc5B4jIBaGULoKiMqk4KBHc05Z8I4yqaCfWI0BfijJ
+VvKgLCx8mLillkKKH8A+f4CG191MKd0LwfrWNDCC62e5vWRaulV0coR2DTrCFFDA
+FZL1IQd0u3QtmG5aRBhi
+=kTmp
+-----END PGP SIGNATURE-----
+
+ The MIDI file is a form of musical cryptogram. Analyzing the MIDI file shows
+ that it has two tracks (providing two different messages). Each message has fewer than 26 combinations of pitch and tone length,
+ which is a hint that each combination of pitch and tone length could represent one letter.
+
+ This can be solved in different ways. This is a short Python program that converts a track from the MIDI file into a text
+ cryptogram. It uses the open source MIDI parser mido,
+ which you will need to install before running the program.
+
+import mido
+
+def getNotes(filename, track):
+ result = ''
+ for msg in mido.MidiFile(filename).tracks[track]:
+ if msg.type == 'note_off':
+ result += f'{msg.note} {msg.time}\r\n'
+ return result
+
+def notesToSingleLetters(msg):
+ result = ''
+ letters = list('abcdefghijklmnopqrstuvwxyz')
+ dict = {}
+ for line in msg.splitlines():
+ if line in dict:
+ result += dict[line]
+ else:
+ letter = letters.pop(0)
+ result += letter
+ dict[line] = letter
+ return result
+
+print(notesToSingleLetters(getNotes('cicada-3301-2012-midi-song.midi', 1)))
+
+ You can then break this cryptogram using Boxentriq's substitution cipher tool:
+
+ 
+ Cicada Midi File decoded
+
+The End
+
+ What happened to the people who completed the MIDI puzzle? This is still unknown, apart from some leaked emails and testimonials that
+ cannot be verified.
+
+After a month, the image on the subreddit changed:
+
+ 
+ The end of the 2012 puzzle
+
+Then nothing was heard from Cicada until January 2013, when their next puzzle started.
+
+Learn more about the mysteries at the Uncovering Cicada fandom.
+
+ 
+ See also:
+ Guides | Gematria Primus | Cicada totient | Baconian cipher | Liber Primus | Resources | Spectrograms 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+ © 2026 Johan Åhlén AB. All rights reserved.
+
+ 
+ Boxentriq Version 2.0.238 · Last update Jul 30, 2026
+ 
+ 
+
+ 
+ Resources |
+ Cookie Policy |
+ Privacy Policy |
+ Sitemap |
+ Contact |
+ About
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+✕Do not sell or share my personal information.
+You have chosen to opt-out of the sale or sharing of your information from this site and any of its affiliates. To opt back in please click the "Reenable Personalization" link.
+
+ 
+This site collects information through the use of cookies and other tracking tools. Cookies and these tools do not contain any information that personally identifies a user, but personal information that would be stored about you may be linked to the information stored in and obtained from them. This information would be used and shared for Analytics, Ad Serving, Interest Based Advertising, among other purposes.
+
+ 
+For more information please visit this site's Privacy Policy.
+CANCEL
+CONTINUE
+
+Information from your device can be used to personalize your ad experience. 
+
+Do not sell or share my personal information.
+A Raptive Partner Site

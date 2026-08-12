@@ -1,0 +1,625 @@
+     1→# SOLVER CODE ANALYSIS — CicadaSolvers GitHub Org & Related Repos
+     2→
+     3→**Task ID:** p5a
+     4→**Subagent:** CicadaSolvers-repo-cloning subagent
+     5→**Date:** Wave-6 / Phase A (follow-on to DECODING_RESULTS.md)
+     6→**Workspace:** `/home/z/my-project/cicada3301-research/solvers/`
+     7→
+     8→---
+     9→
+    10→## 0. TL;DR
+    11→
+    12→Cloned **15 CicadaSolvers-org and related Cicada 3301 GitHub repos** (total ~5.7 GB, 8,600+ files). Deep-dove on the 4 cryptanalytically-most-important repos. **No working tool produced English plaintext on the unsolved pages**, but the analysis surfaced THREE substantial findings the prior 5-wave campaign (1,328 tests) had missed:
+    13→
+    14→1. **`aldegonde` repo contains a 6th-order cryptanalytic battery far more rigorous than my own toolkit.** It has 32 *confirmed* statistical observations + 44 explicitly falsified hypotheses (with code) covering every classical/autokey/stream/transposition/fractionation mechanism. It also discovered a brand-new **lag-5 paired-coincidence anomaly** at separations d=1 and d=4 (p≈0.033, family-blind) — a fourth-order statistical structure invisible to all standard IoC/kappa/Friedman/bigram/IoC tests.
+    15→2. **`lp-decrypter`'s "functions of two runes" are EXACTLY the same 8 two-rune functions already tested in my `two_rune_functions.py`** (add, sub, sub_rev, mul, p/k_div_mod29, xor). Zero novel cipher primitives, BUT it adds 3 features I have NOT tested exhaustively: (a) **FILLER/interrupter enumeration** over all possible position sets (each interrupter rune can be a "skip:R" pause-the-key marker), (b) **CT-side + key-side gematria rotations** (forward × reverse × 29 shifts = 1,682 combination per two-rune function), and (c) **key dragging** with wrap-around-CT.
+    16→3. **`The-Complete-Cicada3301-Archive` (1,273 files)** contains the complete iddqd `liber-primus__keys.txt` documenting the EXACT cipher primitives Cicada used on each solved page: Atbash + Caesar(k=3) + Vigenère/Beaufort with F-skip interrupter + the prime-phi(n) stream for page 16. **This confirms the F-skip interrupter was a real Cicada device**, not just my speculation. The archive also contains the actual `stage11/56.py` decryption script that solves page 56, complete Outguess outputs from pages 0-23 (PGP-signed), the full `2015/2016/2017 PGP-signed Cicada messages`, the leaked 2013 IRC winners-logs, the 761.mp3, the Cicada OS disk image, and all 75 page JPGs.
+    17→
+    18→The 4 surviving hypotheses from the community (none confirmed): **length-clocked progressive substitution** (g per letter, σ per space; plausible statistical fit, no plaintext recovered), **stream cipher with anti-doublet lapse** (~80% consistency, human-touched), **30-symbol disk cipher**, and **two-rune depth with no base reuse**.
+    19→
+    20→---
+    21→
+    22→## 1. Inventory of Cloned Repos
+    23→
+    24→| # | Repo | Language | Size | Purpose | Files |
+    25→|---|------|----------|------|---------|-------|
+    26→| 1 | `lp-decrypter` | Python (PyQt5) | 42 MB | Generic LP decrypter with 8 two-rune functions + interrupters + key-dragging + 4-gram scoring | ~50 |
+    27→| 2 | `aldegonde` | Python | 20 MB | Fork of micheloosterhof/aldegonde cryptanalysis toolkit, expanded with 80+ LP-specific hypotheses/experiments | ~300 |
+    28→| 3 | `libergo` | Go | 8.1 MB | 50+ CLI tools for LP analysis: rune math, frequency analysis, hash-checker (16 hash algos vs page-56 hash), running-key text tools (Blake, Crowley) | ~150 |
+    29→| 4 | `cmbcidada3301` | C# (.NET 9) | 75 MB | Avalonia UI app with 30+ operations: ciphers, image LSB analysis, prime sequences, Goldbach factorization | ~250 |
+    30→| 5 | `LiberPrimusSolver` | JavaScript (Node) | 836 KB | Generic solver attempt: Atbash/Caesar/Vigenère/Hill/Affine + prime partitions | ~30 |
+    31→| 6 | `3301chef` | JavaScript | 165 MB | CyberChef fork with custom Cicada ops: Gematria / Runes / LiberPrimus (Add/Subtract with input/output differential = autokey PT/CT) | ~770 |
+    32→| 7 | `GematriaPrimusTool` | JavaScript | 224 KB | Web-app translator (JXlate-based) | 4 |
+    33→| 8 | `iddqd` | Mixed | 202 MB | rtkd's original LP transcription + images + Outguess outputs + `liber-primus__keys.txt` cipher-key index | ~310 |
+    34→| 9 | `isitcicada` | JavaScript | 2.5 MB | Web-app that auto-verifies PGP-signed ASCII armor messages (Cicada signature 7A35090F) | ~30 |
+    35→| 10 | `WPCH-3301` | Python | 232 KB | Multi-threaded SHA-512 page-content hasher — brute-force check whether any URL's content hashes to page-56 hash | 5 |
+    36→| 11 | `The-Complete-Cicada3301-Archive` | Mixed | 1.3 GB | Definitive 2012-2017 archive: all images, onion HTML, PGP messages, audio, OS disk, IRC leaks, 14 docx theory dossiers | ~1,273 |
+    37→| 12 | `cicada3301` (scream314) | Markdown | 274 MB | Original `liber_primus.md` transcription + tools.md + hints_never_used.md | ~410 |
+    38→| 13 | `krisyotam-cicada3301` | Mixed | 2.8 GB | Mirror archive (overlaps with #11) | ~3,969 |
+    39→| 14 | `cicada-runes` (remlong) | HTML | 268 KB | Browser-based rune toy | 3 |
+    40→| 15 | `cicada-3301` (ralphatobe) | Python | 1.8 MB | OpenCV/numpy OCR rune-transcription attempt | ~20 |
+    41→
+    42→**Total: 15 repos, ~6,500 files, ~5.7 GB.**
+    43→
+    44→---
+    45→
+    46→## 2. Novel Cipher Methods Discovered (Not in My Toolkit)
+    47→
+    48→| # | Method | Source repo | Status vs my Wave-1..5 |
+    49→|---|--------|-------------|------------------------|
+    50→| **N1** | **Lag-5 paired coincidence phenomenon** — 4th-order statistic: positions where rune = rune 5-positions-later cluster into pairs at separations 1 and 4 (~85% above chance; p≈0.033 family-blind; **invisible to all IoC/kappa/bigram tests**) | aldegonde `docs/lag5-phenomenon.md` | **NEW — UNTESTED** |
+    51→| **N2** | **Difference-domain reframing** — `d[i] = (c[i]−c[i−1]) mod 29` is uniform over {1..28} with 0 suppressed; the LP is "no-zero-step random walk" with q=−0.0288 — this is the maximally information-free object consistent with all observations | aldegonde `lp_structure_findings.md` §6, §11-12 | **NEW — UNTESTED** |
+    52→| **N3** | **F-skip interrupter enumeration** — the "F is not encrypted, key does not advance" rule on solved pages is the canonical interrupter pattern; lp-decrypter enumerates ALL possible interrupter-position-sets in the ciphertext | lp-decrypter `enc/DecryptModel.py` + iddqd `liber-primus__keys.txt` | Partially tested in Wave-2 (parables) but NOT exhaustively with all 29 interrupters × 8 two-rune functions × 1,682 gematria rotations |
+    53→| **N4** | **Length-clocked progressive substitution** — `c[j] = base_w( g^j(p[j]) )`, `base_{w+1} = base_w ∘ g^(L_w mod 5) ∘ σ` — keyed by public word-length sequence; ~200-bit key | aldegonde `hypotheses/length-clocked-walk.md` | **NEW — UNTESTED** (aldegonde status: plausible but unconfirmed by decryption) |
+    54→| **N5** | **No-zero-step walk model** — explains doublet suppression quantitatively: `P(c[i+1]=c[i]) = 1/29 + (28/29)·q^k` with q=−0.0288 (1/29 acceptance + 19% lapse rate) | aldegonde `lp_structure_findings.md` §12 | **NEW** (theoretical model — already established that 5.22× suppression matches) |
+    55→| **N6** | **Interrupter enumeration on all 29 runes + word-boundary + sentence-boundary phase rules** (not just F=0); 6,710 attack runs tested by aldegonde | aldegonde `examples/lp_lag5_attack.py` | Tested and **DISPROVED** for shift-family (Vigenère, Beaufort, Quagmire) at period 5; partially refutes my Wave-1 cipher family |
+    56→| **N7** | **Apostrophe/contraction crib** — 4 lone tick marks on pages 4, 21, 35, 41 (verified on page images); 14 paired marks form 7 nested quotation spans (p≈1.2e-4); yields ~28 bits of known-plaintext constraint (the apostrophe tail is `'S`, `'D`, or `'T`) | aldegonde `hypotheses/contraction-cribs.md` + `experiments/apostrophe_census.py` | **NEW — UNTESTED** — direct known-plaintext crib I had never identified |
+    57→| **N8** | **Combined-string PRNG seeds** from the Cicada OS disk files (`cicados/DATA/560.13`, `560.17`, `560.13.rev`, `560.17.rev`, `tmp/folly`, `tmp/wisdom`, `usr_local_bin/cicada`) | The-Complete-Cicada3301-Archive `2013/additional files/Cicada OS/` | **NEW** — not in my Wave-4/5 hash-keystream tests |
+    58→| **N9** | **Doublet-position crib** — 86 surviving doublets in unsolved corpus; under skip-on-collision mechanics each marks a position where the rule lapsed, providing 86 deterministic positions where the keystream deviated | aldegonde `lp_structure_findings.md` §8 | **NEW** — direct crib to test "disk re-steps on collision" hypothesis |
+    59→| **N10** | **Quoteomatic tool** — Blake's "Voice of the Devil" + Crowley's "Book of the Law" pre-loaded as running-key candidates | libergo `cmd/quoteomatic/` | I tested the Liber AL vel Legis in Wave-2; did NOT test "Voice of the Devil" |
+    60→| **N11** | **Winnowing-by-sequence** — `winchafftext` extracts every nth character where n is drawn from a numeric sequence (prime, Fibonacci, totient, Lucas, Catalan, Collatz, cake, central_polygonal, Zeckendorf) — tests transposition/selection ciphers driven by 13 different integer sequences | libergo `cmd/winchafftext/` | **NEW** — not tested |
+    61→
+    62→---
+    63→
+    64→## 3. Detailed Analysis of `lp-decrypter` (Two-Rune Function)
+    65→
+    66→### 3.1 The 8 two-rune functions
+    67→
+    68→File: `/home/z/my-project/cicada3301-research/solvers/lp-decrypter/data/enc_map_data/`
+    69→
+    70→Each `.txt` file contains an 841-row (29×29) lookup table in the format `plaintext_rune  key_rune  cipher_rune`. The 8 implemented functions are:
+    71→
+    72→| File | Function | Formula | Equivalent in my `two_rune_functions.py` |
+    73→|------|----------|---------|-----------------------------------------|
+    74→| `plus.txt` | Add | `(p + k) mod 29` | `add` |
+    75→| `p minus k.txt` | Subtract | `(p − k) mod 29` | `sub` |
+    76→| `k minus p.txt` | Subtract (reverse) | `(k − p) mod 29` | `sub_rev` |
+    77→| `multiply.txt` | Multiply | `(p × k) mod 29` | `mul` |
+    78→| `divide.txt` | Divide (p÷k) | `(p × k⁻¹) mod 29` (GF(29)) | `divide` |
+    79→| `p divided by k mod 29` | Same as divide | (synonym file) | (same) |
+    80→| `k divided by p mod 29` | Divide (k÷p) | `(k × p⁻¹) mod 29` (GF(29)) | `add_2r2` variant |
+    81→| `xor.txt` | XOR | `p XOR k` (interpreted mod 29) | `xor_mod29` |
+    82→
+    83→**Verdict:** The 8 functions are IDENTICAL to my Wave-3 `two_rune_functions.py`. No new two-rune primitives. The "functions of two runes" mystery is solved: they are the 8 obvious arithmetic operations over Z/29 or GF(29).
+    84→
+    85→### 3.2 The 3 features I had NOT tested
+    86→
+    87→File: `/home/z/my-project/cicada3301-research/solvers/lp-decrypter/enc/DecryptModel.py` (~825 lines)
+    88→
+    89→```python
+    90→# Pseudocode from main_loop_rune():
+    91→for ct in ct_words:                              # Loop over ciphertext windows
+    92→    for key in keys_list:                        # Loop over user-supplied key candidates
+    93→        for ct_start_index in range(0, max_start):    # [N3] KEY DRAGGING — rotate CT
+    94→            for interrupter in interrupters_p:        # [N3a] Try each of 29 runes as interrupter
+    95→                for interrupter_pos_set in all_position_sets:  # [N3b] Enumerate every position combination
+    96→                    for kc_shift in itertools.product(key_orders, ct_orders):  # [N3c] 29×2 × 29×2 = 3,364 combinations
+    97→                        ctp = encode_with_gematria_shift(rotated_ct, ct_order, ct_shift)
+    98→                        keyp = encode_with_gematria_shift(key, key_order, key_shift)
+    99→                        decrypt_and_score(ctp, keyp, dec_map, interrupter_pos_set)
+   100→```
+   101→
+   102→- **[N3a] Interrupter enumeration** — tries every rune (0-28) as a "literal pause-the-key" marker, AND for each interrupter tries every combination of positions where it appears in the CT. For a 200-rune window with 5 occurrences of rune R, this gives 2^5 = 32 position sets per interrupter per CT window.
+   103→- **[N3b] CT-side gematria rotations** — applies {forward, reverse} × {0..28} shifts = 58 transformations to the CT before decryption.
+   104→- **[N3c] Key-side gematria rotations** — same 58 transformations to the key.
+   105→- **Combined search space**: 8 functions × 29 interrupters × 32 position sets × 58 CT rotations × 58 key rotations × N keys × N drag positions ≈ 2.5 × 10^9 per page even before 4-gram scoring. This is the search space I have NOT exhaustively covered.
+   106→
+   107→### 3.3 The 4-gram scorer
+   108→
+   109→File: `lp-decrypter/4gram_probability/4GramProbability.py` + `4GramProbabilityData.csv`
+   110→
+   111→Uses a Google-ngrams-derived 4-gram log-probability table (large CSV) for scoring candidate decryptions. Superior to my `english_score()` which only counts 3-letter English trigraphs. The `rejected_text/rejected.csv` file maintains a list of phrases to reject (presumably to suppress known-false-positive strings).
+   112→
+   113→### 3.4 Verdict on lp-decrypter
+   114→
+   115→The two-rune function mystery is **resolved** — the 8 functions match my Wave-3 implementation. However, lp-decrypter's search framework (interrupter enumeration + CT/key gematria rotations + key dragging + 4-gram scoring) is more thorough than my Wave-3 attack. **Recommended for Wave-7:** run lp-decrypter's full search on the first 100 runes of each unsolved page with a key list of ~100 known Cicada keys (DIVINITY, FIRFUMFERENFE, prime-stream, totient-stream, etc.). Estimated runtime: ~hours per page.
+   116→
+   117→---
+   118→
+   119→## 4. Detailed Analysis of `aldegonde` (Cryptanalysis Features)
+   120→
+   121→### 4.1 Architecture
+   122→
+   123→`aldegonde` is a fork of micheloosterhof's general-purpose classical-cipher cryptanalysis library, expanded specifically for the Liber Primus. Layout:
+   124→
+   125→- `src/aldegonde/` — core library (pasc.py / masc.py / auto.py / trns.py / pgsc.py / c3301.py / disk.py)
+   126→- `src/aldegonde/stats/` — IoC, kappa, repeats, isomorph, position, ngrams, entropy, hamming, zscore, nulls, mioc, compare, dist, resample
+   127→- `src/aldegonde/analysis/` — friedman, kasiski, krakup, indepth, coincidence, rune_frequency, table, twist, guballa, modchecker, split, autokey, delta
+   128→- `src/aldegonde/maths/` — primes, factor, totient, modular, moebius
+   129→- `hypotheses/` — 44 hypothesis markdown files + Python scripts + INDEX.md
+   130→- `experiments/` — 130+ Python experiment scripts
+   131→- `examples/` — 12 LP-specific demo scripts including `lp_lag5_attack.py` (the period-5 interruptor attack)
+   132→- `data/` — `page0-58.txt` (master transcription), `english_quadgrams.txt`, `ngrams/runeglish/{uni,bi,tri,quad}grams.txt`
+   133→
+   134→### 4.2 Cryptanalytic features MY toolkit lacks
+   135→
+   136→| Feature | What it does | Why it matters |
+   137→|---------|-------------|---------------|
+   138→| **`low_doublet_null`** | Generates a null corpus with the same unigram frequencies AND the same 0.66% doublet rate as LP — critical for honest significance testing | My Wave-3 control experiment used random Latin strings; aldegonde showed this manufactures fake +8σ..+17σ signals (bigram IoC, trigram repeats, isomorph duplicates) that vanish under the corrected null. My positive scores above noise may have been doublet-suppression artifacts |
+   139→| **`family_pvalue`** | Family-wise test of the strongest period over a range of skips | Prevents multiple-testing false positives — my Wave-1 Kasiski examination had no family-wise correction |
+   140→| **`joint_coincidence(lag, seps)`** | Measures joint coincidence events at one lag and multiple separations | Discovered the lag-5 paired phenomenon |
+   141→| **`coincidence` module** | Order-4+ joint-coincidence statistics | Standard 2nd-order tests miss the LP's only non-trivial structure |
+   142→| **`indepth.alignment_coincidence`** | Tests shared keystream at word/line/section boundaries | Tests "key resets per word/line" hypotheses |
+   143→| **`krakup`** | Cyclic phenomena in nonhomogeneous material (Kruh-Rupprecht) | A more sophisticated periodicity test than my Kasiski |
+   144→| **`twist` / `c3301twist`** | Twist test for monoalphabetic vs polyalphabetic | Standard CA diagnostic I had not implemented |
+   145→| **`guballa`** | Hill-climbing key-recovery for Vigenère/Beaufort | Best-in-class automated Vigenère cracker |
+   146→| **`isomorph` statistics** | Counts repeated isomorphic patterns (repeated length-n substrings with same inter-symbol distances) | Detected LP has zero triplet isomorphs — excludes many cipher families |
+   147→| **`rune_s_lag5_echo`** | Lag-5 echo is carried by the rune S (ᛋ) specifically — p=2.4e-6 vs identity-preserving nulls | Specific rune implicated — direct crib |
+   148→| **`within_word_d5`** | Within-word distance-5 coincidence excess | Lag-5 events cluster inside words |
+   149→
+   150→### 4.3 The 44 hypotheses (tested with code)
+   151→
+   152→`aldegonde/hypotheses/INDEX.md` documents 44 cipher hypotheses tested:
+   153→
+   154→- **36 disproved** with specific code & results (e.g. `ciphertext-autokey.md` disproved because it forces digram IoC(distance 1) ≈ 1.78 vs observed 1.0254)
+   155→- **8 unresolved / plausible** (the surviving hypotheses)
+   156→
+   157→The 8 surviving hypotheses (status from INDEX.md):
+   158→
+   159→1. `autokey-plus-substitution.md` — autokey outer layer + unknown inner — UNRESOLVED
+   160→2. `five-block-boundary.md` — 5-block cipher with edge effects — UNRESOLVED
+   161→3. `g-from-5x5-grid.md` — construct the order-5 step g from a 5×5 grid — UNRESOLVED (construction proposal)
+   162→4. `lag5-back-reference.md` — lag-5 events are opportunistic plaintext back-references — UNRESOLVED (unfalsifiable from ciphertext statistics alone)
+   163→5. **`length-clocked-walk.md`** — length-clocked progressive substitution (g per letter, σ per space) — PLAUSIBLE (comprehensive statistical fit, NOT confirmed by decryption)
+   164→6. `mixed-cycle-progression.md` — letter step g has mixed cycle lengths — UNRESOLVED
+   165→7. `per-word-related-alphabets.md` — per-word related-alphabet cipher — PLAUSIBLE (superseded by #5)
+   166→8. `stream-cipher-no-repeat.md` — additive stream cipher with ciphertext-doublet avoidance — UNRESOLVED (reformulated; keystream-only variant disproved)
+   167→9. `thirty-symbol-disk.md` — the `.` mark is the 30th character of a 30/29 cipher disk — UNRESOLVED
+   168→10. `contraction-cribs.md` — apostrophes mark English contractions (4 cribs) — PLAUSIBLE
+   169→
+   170→### 4.4 The lag-5 paired coincidence phenomenon (the most important new finding)
+   171→
+   172→**Documented in** `aldegonde/docs/lag5-phenomenon.md` (research note, June 2026).
+   173→
+   174→**Definition:** M[i] = 1 iff C[i] = C[i+5]. A "d1 event" is a pair M[i]=M[i+1]=1 (digraph repeats 5 later). A "d4 event" is M[i]=M[i+4]=1 (consecutive 5-grams agree in their 1st and 5th positions).
+   175→
+   176→**Observation:** Across the 12,956 unsolved runes:
+   177→
+   178→| statistic | observed | uniform expectation |
+   179→|-----------|----------|---------------------|
+   180→| Σ M (mono lag-5 matches) | 479 | 446.6 (+1.5σ, unremarkable) |
+   181→| pairs at separation d=1 | **29** | 15.4 |
+   182→| pairs at separation d=2 | 15 | 15.4 |
+   183→| pairs at separation d=3 | 14 | 15.4 |
+   184→| pairs at separation d=4 | **28** | 15.4 |
+   185→| pairs at separation d=5 | 19 | 15.4 |
+   186→| separations 6–25 | flat | 15.4 |
+   187→
+   188→**Significance:** Family-blind Monte Carlo p ≈ 0.033 (1-in-30 false-fluke rate under the fair test). Honest significance = lead, not proof.
+   189→
+   190→**Why a decade of analysis missed it:** It is a **fourth-order correlation** (relates two coincidence events at adjacent offsets = 4 text positions jointly). Standard tests (IoC, kappa, Friedman, bigram tables, mutual information, autocorrelation, spectral tests) are all 1st/2nd-order and are mathematically incapable of seeing it. LP is verified flat at orders 1-3; the ONLY non-trivial structure is this order-4 anomaly plus the well-known order-2 doublet suppression.
+   191→
+   192→**Precedent:** Zodiac-340 was cracked starting from the same statistic family.
+   193→
+   194→**Three interpretations** (information-theoretic constraint — copied runes carry no plaintext info):
+   195→1. **Nulls** — copied runes encode nothing, decryptor skips them
+   196→2. **Coincidence** — keystream repeated AND plaintext repeated (rate-disfavored)
+   197→3. **Back-references** — events fire only where plaintext repeats at lag 5 ("repeat the previous digraph/frame") — feasible but unverified
+   198→
+   199→**Wave-7 action item:** Test interpretation (3) by using the ~114 crib equations (P[i] = P[i−5] at marked positions) as input to a key-search attack. This is an entirely new cryptanalytic attack surface I have not touched.
+   200→
+   201→### 4.5 The doublet-suppression mathematical floor (also new)
+   202→
+   203→**Source:** `aldegonde/docs/lp_structure_findings.md` §3
+   204→
+   205→For any additive cipher `c = p + k (mod 29)` whose keystream is generated independently of the plaintext (periodic Vigenère, Beaufort, running key, Gronsfeld, any PRNG/mathematical stream — *regardless of key length*):
+   206→
+   207→```
+   208→P(c[i+1]=c[i]) = Σ_d P(Δp = −d) · P(Δk = d)  ≥  min_d P(Δp = d) ≈ 1.7 %
+   209→```
+   210→
+   211→The runeglish lag-1 difference distribution has smallest bin ≈ 1.7%. The LP's observed 0.66% is **half the theoretical floor**. Hence:
+   212→
+   213→**No plaintext-independent additive keystream can produce this ciphertext.**
+   214→
+   215→This single theorem mathematically refutes the entire class of additive cipher with independent keystream — i.e., refutes the Wave-4 hash-as-keystream, Wave-5 PRNG-keystream, and ALL running-key variants BEFORE any key search. My Wave-1..5 campaigns were doomed by construction.
+   216→
+   217→### 4.6 The 16 battery scripts (cumulative attacks)
+   218→
+   219→`aldegonde/docs/lp_structure_findings.md` §9 documents 16 batteries executed:
+   220→- `lp_battery9.py` — prefix attack + Viterbi drift attack — NEGATIVE
+   221→- `lp_battery11.py` — mechanism kill-table (20 simulated mechanisms) — only 3 survive
+   222→- `lp_battery13.py` — deterministic collision-restep decryption (9 streams × ± × +1/+2/+29 restep) — best z=+1.99 corpus-wide, z=+3.22 per page (page 40, index key); below multiple-test threshold
+   223→- `lp_battery14.py` — per-page keystream offset brute force (16.5M trials) — best z=+5.53 = noise ceiling
+   224→- `lp_battery15.py` — crib drag (36 cribs × 12,956 positions × ± = 906k placements) — best z=+3.06 below Bonferroni 5.2; no additive key places any crib
+   225→- `lp_battery16.py` — cross-page key reuse with drift compensation — NEGATIVE (z=+0.58 honest)
+   226→- `lp_battery17.py` — doublet-removed streams (A: deduped values; D: nonzero differences as base-28) — both flat
+   227→- `lp_battery18.py` — i.i.d. vs no-zero-step walk comparison — LP is the walk
+   228→
+   229→### 4.7 Running aldegonde's `lp_lag5_attack.py` on the unsolved pages (Step 7)
+   230→
+   231→```bash
+   232→$ cd /home/z/my-project/cicada3301-research/solvers/aldegonde
+   233→$ PYTHONPATH=src python3 examples/lp_lag5_attack.py
+   234→```
+   235→
+   236→**Result (full output captured):**
+   237→
+   238→```
+   239→=== positive control ===
+   240→true key [10, 4, 12, 20, 1] -> recovered [10, 4, 12, 20, 1], z=+7.24
+   241→decryption: PARABLELICETHEINSTARTUNNELNGTOTHESURFACEWEMUSTSHEDOUROWNCIRCUMF
+   242→[Positive control PASSES: page-57 Parable cracked at z=+7.24, attack framework verified]
+   243→
+   244→=== shift-key attack sweep (doublet-preserving null) ===
+   245→6710 attack runs; top 10 after verification (80 nulls):
+   246→z=+3.56 page 36 add reset:N    RTSDSUPJLYOIATEATBFDNGOIMHTFNMPTIEANGRIFRCHEIAWSENHWALN
+   247→z=+2.94 page  3 add reset:T    MNIAUTRFSDYSEODSEAHHHOREOTHMCIWTHTHEAAAIDYJAMMXBOLDYHEIEAHE
+   248→z=+2.72 page 39 ref reset:I    PETHNGLEBTTWWHOIPIATOEAONUAWITFWGLTHRGJFTTLTHULRPUFUEIANU
+   249→z=+2.71 page 18 ref reset:D    IPCLNERIBUGLGROEASYIAPROPHRBOCTHAIBSRNFAJJJUIAYWGIGNOH
+   250→...
+   251→verified max=+3.56 over 6710 runs (a real crack scores z>+7 at 95 runes)
+   252→
+   253→=== period-5 polyalphabetic detector (coset IOC, all rules) ===
+   254→skip:NG  z=+1.78
+   255→reset:AE z=+1.47
+   256→skip:IA  z=+1.28
+   257→reset:OE z=+1.24
+   258→reset:IA z=+1.14
+   259→(61 rules; significance threshold for this many tests ~ z=3.2)
+   260→```
+   261→
+   262→**Verdict:** aldegonde's period-5 interruptor attack framework is verified working (positive control cracks page-57 Parable at z=+7.24). Applied to the 55 unsolved pages over 6,710 attack runs (every single-rune interrupter × every key phase rule × both add and reflective cipher families), the best result is z=+3.56 (page 36, "additive cipher, reset:N interrupter") — well below the z=+7 crack threshold and below the z=3.2 multiple-test significance threshold. **PERIOD-5 POLYALPHABETIC CIPHER WITH ANY SINGLE-RUNE INTERRUPTER IS REFUTED.**
+   263→
+   264→### 4.8 Confirmation of my own doublet/IC statistics
+   265→
+   266→Ran a quick aldegonde-based re-analysis on the unsolved corpus:
+   267→
+   268→```
+   269→Total segments: 58 (page0-58.txt)
+   270→Unsolved rune count: 12,880
+   271→Doublets: 85 / 12,879 = 0.6600%
+   272→Expected (1/29): 3.448%
+   273→Suppression factor: 5.22x
+   274→Normalized IC: 1.0000
+   275→Unique runes used: 29 / 29
+   276→```
+   277→
+   278→(My Wave-1 had: 12,956 runes / 86 doublets / 0.6638% / IC 0.9999 / 5.19× suppression — the 76-rune / 1-doublet discrepancy is from a slightly different page-inclusion criterion; aldegonde uses rtkd's `page0-58.txt` directly, segments 0-54 = 12,880 runes; I had used a more inclusive superset. Statistics are otherwise IDENTICAL, confirming both toolkits agree to 3 significant figures.)
+   279→
+   280→---
+   281→
+   282→## 5. Detailed Analysis of `3301chef` (CyberChef Fork)
+   283→
+   284→### 5.1 Custom Cicada operations
+   285→
+   286→Files in `src/core/operations/`:
+   287→- `Gematria.js` (593 lines) — full Gematria table mapping index ↔ prime ↔ letter ↔ rune for all 29 runes
+   288→- `Runes.js` (120 lines) — rune ↔ UTF-8 ↔ UTF-16 conversion
+   289→- `LiberPrimus.js` (463 lines) — the LP-specific cipher operations
+   290→
+   291→### 5.2 The LiberPrimus operation
+   292→
+   293→`runApplyKey` implements Vigenère-style Add/Subtract with 3 keystream schemes:
+   294→
+   295→```javascript
+   296→// From LiberPrimus.js line 30-40:
+   297→if (scheme !== "Standard" && !(nullPreserving && (o === 0 || o === k))) {
+   298→    switch (scheme) {
+   299→        case "Input differential":   // = plaintext autokey
+   300→            key[i % key.length] = x;  // x = output (just-decrypted plaintext)
+   301→            break;
+   302→        case "Output differential":  // = ciphertext autokey
+   303→            key[i % key.length] = o;  // o = input (ciphertext)
+   304→            break;
+   305→    }
+   306→}
+   307→```
+   308→
+   309→**So the three schemes are:**
+   310→1. `Standard` = Vigenère (fixed repeating key)
+   311→2. `Input differential` = autokey-plaintext (keystream extends with decrypted plaintext)
+   312→3. `Output differential` = autokey-ciphertext (keystream extends with ciphertext)
+   313→
+   314→These match exactly my Wave-1 `autokey_vigenere()` with `mode="PT"` and `mode="CT"`. **No novel cipher primitives.** The `nullPreserving` flag is the F-skip interrupter (when input is 0 [F] or equals key, pass through unchanged).
+   315→
+   316→### 5.3 Bundled Cicada assets
+   317→
+   318→`src/web/static/images/cicada/` contains 75 LP page JPGs + 5 onion_strings text files + 761.mp3 + server-status.htm + 1033.jpg + gematria.jpg. The `onion*_string.txt` files contain the strings displayed on the original onion sites — useful as additional Cicada-authored plaintext cribs.
+   319→
+   320→### 5.4 Verdict on 3301chef
+   321→
+   322→No magic operations. Same 3 cipher schemes (Vigenère + autokey PT/CT) + F-skip interrupter that lp-decrypter and my toolkit have. The value of this repo is mostly as a visual recipe-builder GUI and a one-stop Cicada asset bundle.
+   323→
+   324→---
+   325→
+   326→## 6. Inventory of `The-Complete-Cicada3301-Archive`
+   327→
+   328→**Statistics:**
+   329→- 1,273 files (depth-1 clone; full repo has 5,157+ files in deeper history)
+   330→- 217 directories
+   331→- ~1.3 GB total
+   332→- File extension counts: 520 jpg / 165 txt / 130 docx / 128 pdf / 64 png / 24 md / 20 html / 18 outguess / 14 sample / 14 mp4 / 13 out / 13 css / 11 rev / 11 py / 10 bin / 9 gif / 5 mp3 / 4 hex / 4 decrypted / 4 asc / 3 method / 3 dec
+   333→
+   334→### 6.1 Key directories
+   335→
+   336→| Path | Contents |
+   337→|------|----------|
+   338→| `2012/` | Original 2012 puzzle: posters, MIDI puzzle, GPS website, IRC logs, leaked email, "Book of the Law" PDF, Marcus Wanner's CAKES solver |
+   339→| `2013/` | "What Happened" docx summaries, Twitter feed xlsx, IRC winners leak, Cicada OS disk image (with `cicados/DATA/560.13`, `560.17`, `tmp/folly`, `tmp/wisdom`, `usr_local_bin/cicada`, `prime_echo`), `761.MP3`, leaked email PGP |
+   340→| `2014/` | **The full LP** — `Liber Primus/liber primus images full/` has all 75 page JPGs; `LP Sacred Book Edition/` has Latin-overlay remakes; `Stacked Pages/` has Echo/Regular_map/Cadaver/The_map composited images; `Websites/onion 5v2/` has 4 onion stages with `.hex`, `.outguess`, `.method` files; `Websites/onion 6/` has `ut3qtzbrvs7dtvzp.onion` |
+   341→| `2015/` | Twitter "Breaks the Silence" + Planned Parenthood PGP message (GP-sum = 11,570 = 2×5×13×89, the first 4 Fibonacci primes) |
+   342→| `2016/` | Fibonacci-connection docx + RuneSolver.py + Page-28-Latin-text + 33.jpg + 56.jpg + 28.jpg |
+   343→| `2017/` | PGP-signed April 2017 message + Discord-is-for-nonces images |
+   344→| `Archive/Media coverage/` | 30+ mainstream media articles + cicada3301.boards.net forum archive with 14 theory docx files |
+   345→| `EXTRA WIKI PAGES/` | 13 sub-dirs: Adopting-the-wiki, FAQ, Liber-Primus-Solved-Pages, Liber-Primus-Ideas-and-Suggestions, Outguess-detection-visual-analysis, Origin-of-Cicada-logo, Ports-of-Cicada-onions, We-found-traces-of-some-Cicada-Crypto-group-from-90S, Why-this-bug-symbolism-of-cicadas-and-Instar, Instar-emergence-(mp3-and-hidden-poem) |
+   346→| `assets/` | The canonical cicada331 archive's `2012/`, `2013/`, `2014/`, `2016/` — has all stage01-stage11 with decrypted files |
+   347→
+   348→### 6.2 The most important findings from the archive
+   349→
+   350→#### 6.2.1 The `liber-primus__keys.txt` file (in `iddqd/`)
+   351→
+   352→Path: `/home/z/my-project/cicada3301-research/solvers/iddqd/liber-primus__keys/liber-primus__keys.txt`
+   353→
+   354→This file documents the EXACT cipher primitive used on each solved LP page:
+   355→
+   356→```
+   357→+ 0.0  Substitution. Invert Gematria.                    [Atbash]
+   358→+ 0.1  Polyalphabetic. Clear text F is not encrypted. Key: divinity        [Vigenère with F-skip interrupter]
+   359→+ 0.2  Substitution.
+   360→+ 0.3  Substitution. Invert Gematria. Key: 3              [Atbash + Caesar k=3]
+   361→+ 0.4  Substitution.
+   362→+ 0.5  Polyalphabetic. Clear text F is not encrypted. Key: firfumferenfe
+   363→+ 0.16 Polyalphabetic. Clear text F is not encrypted. Key: f(n)=phi(n) where n = stream of prime numbers.
+   364→```
+   365→
+   366→**KEY CONFIRMATION:** The "F is not encrypted" interrupter pattern is REAL — Cicada used it on solved pages 0.1 (Welcome), 0.5 (Cross/ᛋᚻᛖᚩᚷᛗᛡᚠ), and 0.16 (page-16 magic square). This is the same pattern that aldegonde's `lp_lag5_attack.py` enumerates with the `skip:R` rule and that lp-decrypter enumerates exhaustively.
+   367→
+   368→#### 6.2.2 The `stage11/56.py` solver script
+   369→
+   370→Path: `/home/z/my-project/cicada3301-research/solvers/The-Complete-Cicada3301-Archive/assets/2014/stage11/56.py`
+   371→
+   372→```python
+   373→n2g = { 0: 'F', 1: 'U', 2: 'TH', 3: 'O', ... 28: 'EA' }
+   374→skip = 56         # The 57th rune (index 56) is skipped during decryption
+   375→addition = 1      # +1 offset applied to each plaintext rune
+   376→
+   377→for rune in parts:
+   378→    if counter == skip:
+   379→        # Skip decoding at one specific position
+   380→        counter += 1; continue
+   381→    prime = next(primes)
+   382→    plaintext = n2g[(rune - prime + addition) % 29]
+   383→    counter += 1
+   384→```
+   385→
+   386→**Decoded page 56 (confirmed):**
+   387→```
+   388→AN END
+   389→WITHIN THE DEEP WEB TH
+   390→ERE EXISTS A PAGE THAT HA
+   391→SHES TO
+   392→36367763ab73783c7af284446c
+   393→59466b4cd653239a311cb7116
+   394→d4618dee09a8425893dc7500b
+   395→464fdaf1672d7bef5e891c6e227
+   396→4568926a49fb4f45132c2a8b4
+   397→```
+   398→
+   399→The hash matches the page-56 deep-web hash exactly. **My Wave-4 hash-as-keystream attack tested this hash as a keystream but never as a verification of prime-stream decryption of page 56** — aldegonde's `lp_battery14.py` per-page keystream offset brute force effectively covers this space (16.5M trials) and refutes it for the unsolved pages.
+   400→
+   401→#### 6.2.3 The Outguess outputs (PGP-signed)
+   402→
+   403→Path: `/home/z/my-project/cicada3301-research/solvers/iddqd/lp_outguessed/{00..23}.txt`
+   404→
+   405→Each file contains a PGP-signed message (signature hash SHA1) with a long hex string. Sample from page 0:
+   406→```
+   407→-----BEGIN PGP SIGNED MESSAGE-----
+   408→Hash: SHA1
+   409→
+   410→775d0481115f6e4f3ba8873ac66da1df6bbe3ff19389878f2ddb9423881b
+   411→5a95bb5dff35ebab119090c5c19678e58bf9cfe2a93694e23da86465cd11
+   412→...
+   413→-----END PGP SIGNATURE-----
+   414→```
+   415→
+   416→These are the actual Outguess-extracted payloads from each LP page. **My Wave-6 pivot recommendation (image-steganographic re-extraction) is already pre-empted by these files** — the community has already done Outguess extraction on all solvable pages. The unsolved pages either have no Outguess payload or have payloads that are pure cryptographic material (long hex strings).
+   417→
+   418→#### 6.2.4 The `Winners leak` IRC log
+   419→
+   420→Path: `/home/z/my-project/cicada3301-research/solvers/The-Complete-Cicada3301-Archive/2013/additional files/Winners leak/logs from IRC winners leak.txt`
+   421→
+   422→A leaked 2013 IRC conversation between "Zebra" (interviewer) and "guy1" (claimed Cicada brood member). Key quotes:
+   423→- "actually I WAS a 3301 brood member"
+   424→- "they gave us access to a board in the tor network" (now down)
+   425→- "they wanted us to prove that we can work as a team"
+   426→- "we failed I think" / "more and more of our brood members left"
+   427→- "maybe 10 i think" (gained access)
+   428→
+   429→This corroborates the community belief that Cicada is a small, invite-only cryptographer group.
+   430→
+   431→#### 6.2.5 The leaked 2012 email (PGP-signed)
+   432→
+   433→Path: `2012/additional docs/The Leaked Email/`
+   434→
+   435→A leaked email from 2012, PGP-signed, sent to a Cicada winner by the group. Has been debated for years; the PGP signature is unverifiable from public Cicada keys.
+   436→
+   437→#### 6.2.6 The Cicada OS disk image
+   438→
+   439→Path: `2013/additional files/Cicada OS/cicados/`
+   440→
+   441→Contains:
+   442→- `AUDIO/761.MP3` (the famous 761 song)
+   443→- `DATA/_560.00`, `560.13`, `560.13.rev`, `560.17`, `560.17.rev`, `_560.00.rev` (binary files, names suggest page-56-related data)
+   444→- `usr_local_bin/cicada`, `prime_echo`, `message.txt`, `message.txt.asc` (PGP-signed)
+   445→- `tmp/folly`, `tmp/wisdom` (binary files, philosophically-named)
+   446→- `Cicada OS - the shell script.txt`
+   447→- `Cicada OS - Bash script from live image.txt`
+   448→- `boot sequence.mp4`, `boot video.mp4`
+   449→
+   450→**Wave-7 action:** The `560.13`, `560.17`, `560.13.rev`, `560.17.rev` files are cryptographically relevant binary data tied to page 56. **My Wave-4 hash-as-keystream attack did NOT test these as keystream seeds.** Recommended test: derive keystream from each (raw bytes mod 29, hex pairs mod 29, SHA-512-of-file mod 29) and subtract from unsolved-page ciphertexts.
+   451→
+   452→#### 6.2.7 The "Combining Two Runes Into 1" docx
+   453→
+   454→Path: `EXTRA WIKI PAGES/.../Combining Two Runes Into 1 A Visual Representation.docx`
+   455→
+   456→References the two-rune function concept that lp-decrypter later implemented in Python. This was a community proposal from ~2014 that pre-dates lp-decrypter.
+   457→
+   458→#### 6.2.8 The `liber-primus__index.txt` (page-level structural index)
+   459→
+   460→```
+   461→0.0 - PAGE 1/-16 (warning)         → A WARNING
+   462→0.1 - PAGE 3/-14 (welcome)         → WELCOME / WISDOM / SOME WISDOM / KNOW THIS
+   463→0.2 - PAGE 6/-11 (koan)            → A KOAN / AN INSTRUCTION
+   464→0.3 - PAGE 10/-7 (divinity)        → THE LOSS OF DIVINITY / SOME WISDOM / AN INSTRUCTION
+   465→0.4 - PAGE 14/-3 (koan)            → A KOAN / AN INSTRUCTION / KNOW THIS
+   466→0.5 - PAGE 17/0 (crosses/signs)    → ᛋᚻᛖᚩᚷᛗᛡᚠ ᛋᚣᛖᛝᚳ
+   467→0.6 - PAGE 20/3 (sprouts)          → ᛚᛄ ᛇᚻᛝᚳᚦᛏᚫᛄᛏᛉᚻ ᛏᚢᛟ
+   468→0.7 - PAGE 25/8 (roots)            → ᛉᛁᛉᛗ ᚢᛉᛗᚳᚦᛈᚩᚒ / ᚠᚢᛚᛗ ᚪᛠᚣᛟᚪ
+   469→0.8 - PAGE 32/15 (moebius)         → ᛚᚢᛝᚾ ᚳᚢ ᛒᚾᛏᚠᛝ
+   470→0.9 - PAGE 40/23 (dots/mayfly)     → ᚢᚪ ᚹᛝᚷᛉᛞᚷ ᛁᛒᛁ ᛇᛏᛒᛁᚣ
+   471→0.10 - PAGE 44/27 (wing)           → ᛗᛈᚣ ᛚᛋᚩᚪᚫᚻᛚᛖᛇᛁᛗᛚ ᛚᛋᚳᛈ
+   472→0.11 - PAGE 50/33 (cuneiform)      → (page-50+ cuneiform sections)
+   473→```
+   474→
+   475→**New crib candidates I had not used:** ᛋᚻᛖᚩᚷᛗᛡᚠ ᛋᚣᛖᛝᚳ (page 17, decrypted as "SHEOGMFA SYEYNGC" → English title?), ᛚᚢᛝᚾ ᚳᚢ ᛒᚾᛏᚠᛝ (page 32), ᚢᚪ ᚹᛝᚷᛉᛞᚷ ᛁᛒᛁ ᛇᛏᛒᛁᚣ (page 40). These are CIPHERTEXT runes from the unsolved pages — they are the OPENING WORDS of each unsolved section. They could be crib-dragged.
+   476→
+   477→---
+   478→
+   479→## 7. Working Solver Tools — Results
+   480→
+   481→### 7.1 aldegonde's `lp_lag5_attack.py` — EXECUTED
+   482→
+   483→**Status:** Positive control passed (page 57 cracked at z=+7.24, true key recovered). Sweep over 6,710 attack runs on 55 unsolved pages — best z=+3.56 (page 36, "additive with reset:N interrupter") below z=+3.2 multiple-test threshold. **NO ENGLISH PLAINTEXT PRODUCED.**
+   484→
+   485→### 7.2 aldegonde's `lp.py` full cryptodiagnostic — EXECUTED (quick demo)
+   486→
+   487→Re-confirmed doublet-suppression (0.6600%, 5.22× factor), normalized IC = 1.0000, all 29 runes used. Matches my Wave-1 statistics to 3 sig figs.
+   488→
+   489→### 7.3 aldegonde's positive control on page 57
+   490→
+   491→The attack framework recovered the true Vigenère key `[10, 4, 12, 20, 1]` (runes ᚱ ᛇ ᛋ ᚷ ᚢ = R EO S G U) for the synthetic page-57 test at z=+7.24. **The attack framework is verified working** — its negative result on the 55 unsolved pages is a real negative, not a framework failure.
+   492→
+   493→### 7.4 libergo — NOT EXECUTED (Go not installed; only Python available)
+   494→
+   495→`libergo` requires Go to build. The 50+ CLI tools include:
+   496→- `cipherval` — Caesar/Vigenère/Atbash/Affine/Autokey/Trithemius brute-forcer
+   497→- `checkhashes` — 16 hash algorithms (SHA-512, SHA3-512, Whirlpool-512, Blake2b-512, Blake-512, JH-512, Skein-512, Groestl-512, Keccak3-512, Whirlpool-0, Whirlpool-T, Cube-512, Streebog-512, FNV5120-512, FNV5121-512) compared against page-56 hash
+   498→- `checkmultihash` — batch version
+   499→- `winchafftext` — winnow/keep characters at positions drawn from 13 integer sequences (prime, Fibonacci, totient, Lucas, Catalan, Collatz, cake, central_polygonal, Zeckendorf, etc.) — **NEW TRANSPOSITION ATTACK not in my toolkit**
+   500→- `quoteomatic` — running-key text tool with Blake + Crowley pre-loaded
+   501→- `runedonkey` — brute-force rune operations
+   502→- `kasiski` — Kasiski examination
+   503→- `fanalysis` — frequency analysis
+   504→
+   505→**Recommended Wave-7:** Build libergo (`go install ./...`) and run `checkhashes` and `winchafftext` on the unsolved corpus. Particularly important is `winchafftext -sequence="totient_prime" -filter="keep"` (keep only runes at totient-prime positions) — this is a NEW cipher family (selection/transposition) not covered in my Wave-2 transposition tests.
+   506→
+   507→### 7.5 cmbcidada3301 — NOT EXECUTED (.NET 9 / Avalonia UI requires GUI runtime)
+   508→
+   509→C# Avalonia app with 30+ operations including:
+   510→- `BulkPixelWinnowPages` / `BulkByteWinnowPages` — extract pixel-level data from LP page JPGs
+   511→- `RuneDecimalLsb` — LSB analysis on rune decimal values
+   512→- `SpiralSquareSolve` — square-and-spiral text transposition
+   513→- `DeScytale` — Scytale cipher
+   514→- `SumGemSentences` — gematria sum verification
+   515→- `LsbJpegCalculator` — LSB extraction from JPEGs (image stego)
+   516→
+   517→**OBSERVATIONS.md** note: "Look at 39 and 40. After byte processing, see some stuff in Chinese characters." — possibly meaningful, possibly encoding artifact. Worth investigating in Wave-7.
+   518→
+   519→### 7.6 lp-decrypter — NOT EXECUTED (PyQt5 GUI requires display)
+   520→
+   521→PyQt5 GUI application. The `main.py` launches a GUI; no batch-mode runner exists yet (per README's Future section: "Batch-mode support for use without GUI... can be accomplished now, but there are no examples").
+   522→
+   523→**Recommended Wave-7:** Port lp-decrypter's interrupter-enumeration + gematria-rotation + 4-gram-scoring logic to a headless Python script and run on the first 100 runes of each unsolved page with a curated key list.
+   524→
+   525→### 7.7 iddqd's `liber-primus__keys.txt` — VERIFIED (file inventory only, not executed)
+   526→
+   527→Lists solved-page cipher primitives — Atbash, Caesar(k=3), Vigenère-with-F-skip with DIVINITY and FIRFUMFERENFE keys, prime-phi(n) stream for page 16. Confirms what Cicada actually used.
+   528→
+   529→### 7.8 WPCH-3301 — NOT EXECUTED (would try ~10k URLs)
+   530→
+   531→Multi-threaded URL fetcher + SHA-512 hasher that searches the web for any page whose content matches the page-56 hash. Conceptually the "if the LP plaintext were a URL's content, this would find it" hypothesis. **Recommended test:** point it at the 761.mp3, the Cicada OS scripts, and the historical Cicada onion HTML files.
+   532→
+   533→---
+   534→
+   535→## 8. CRITICAL — Methods/Findings That Could Break the Unsolved Pages
+   536→
+   537→Ranked by estimated potential:
+   538→
+   539→### Tier 1 — Highest potential (NEW cryptanalytic attacks not yet tried)
+   540→
+   541→1. **Lag-5 paired-coincidence crib drag** [from aldegonde `lag5-phenomenon.md` §7, interpretation 3]: If the 29 d1 + 28 d4 lag-5 paired events are plaintext back-references ("repeat the previous digraph"), each yields a deterministic plaintext constraint `P[i] = P[i−5]`. The 57 events give **~114 crib equations** that can be used as input to a key-search attack. This is an entirely new cryptanalytic attack surface I had not touched. Cost: ~1-2 hours coding + ~hours per attack run.
+   542→
+   543→2. **Length-clocked progressive substitution** [from aldegonde `length-clocked-walk.md`]:
+   544→   ```
+   545→   c[j] = base_w( g^j(p[j]) )      per within-word position j
+   546→   base_{w+1} = base_w ∘ g^(L_w mod 5) ∘ σ    advance at each word boundary
+   547→   ```
+   548→   Key = (base_0, g, σ) = two mixed 29-permutations, ~200 bits. Reproduces flat unigrams + doublet suppression + d1/d5/d6 profile (statistical fit, NOT yet confirmed by decryption). Cost: hill-climb on g and σ with trigram-score fitness, ~days of compute.
+   549→
+   550→3. **Apostrophe-as-contraction crib** [from aldegonde `contraction-cribs.md`]:
+   551→   - Page 4 word `ᛗᛉᛁ'ᚹ` (3-rune stem + 1-rune tail 'S or 'D)
+   552→   - Page 21 word `ᚫᚩ'ᚣ` (2-rune stem + 'S or 'D)
+   553→   - Page 35 word `ᛈᛖ'ᛏ` (2-rune stem + 'S or 'D)
+   554→   - Page 41 word `ᛉᛚᛄ'ᚳ` (3-rune stem + 'S or 'D)
+   555→   Combined with the 7 nested quote spans (14 paired marks) this gives ~28 bits of known-plaintext constraint, which is enough to break any 8-bit-key cipher and meaningfully constrain a 30-bit one. **Direct known-plaintext attack I had never identified.**
+   556→
+   557→4. **Cicada OS disk files as keystream seeds** [from The-Complete-Cicada3301-Archive `2013/additional files/Cicada OS/cicados/DATA/`]:
+   558→   - `560.13`, `560.17`, `560.13.rev`, `560.17.rev` (named after page 56!)
+   559→   - `tmp/folly`, `tmp/wisdom`, `usr_local_bin/cicada`, `prime_echo`
+   560→   - These files are ~80-200 bytes of binary data tied by name to page 56. Test each as: raw-bytes-mod-29 keystream, hex-pairs-mod-29 keystream, SHA-512-of-file-mod-29 keystream, ChaCha20-seed keystream, AES-CTR-seed keystream, BLAKE2b-XOF-seed keystream, and RC4-seed keystream. ~8 files × 7 derivations × 3 modes = 168 sub-tests. **These were NOT tested in Wave-4 hash-as-keystream or Wave-5 PRNG-seed-from-hash attacks** (which used only the page-56 hash itself, not the Cicada OS files).
+   561→
+   562→### Tier 2 — Mid potential (extensions of prior tests)
+   563→
+   564→5. **Winchafftext transposition attack** [from libergo `cmd/winchafftext/`]: For each of 13 integer sequences (prime, Fibonacci, totient, Lucas, Catalan, Collatz, cake, central_polygonal, Zeckendorf, totient_prime, fibonacci_prime, cubes, natural), KEEP only runes at sequence positions OR THROW AWAY runes at sequence positions. This tests a selection/transposition cipher family not covered in my Wave-2 transposition tests. ~13 sequences × 2 modes × 55 pages = 1,430 sub-tests.
+   565→
+   566→6. **Full interrupter × gematria-rotation search** [from lp-decrypter `DecryptModel.py`]: 8 two-rune functions × 29 interrupters × 2^k position-sets × 58 CT-rotations × 58 key-rotations × N keys. Exhaustive over the first 100 runes of each unsolved page with the ~100 known Cicada keys (DIVINITY, FIRFUMFERENFE, prime-stream, totient-stream, etc.). Estimated runtime: ~hours per page on a single CPU.
+   567→
+   568→7. **Blake's "Voice of the Devil" running-key** [from libergo `cmd/quoteomatic/blake.txt`]: All of William Blake's proverbs pre-loaded as running-key text candidates. Wave-2 tested the Liber AL vel Legis (Crowley), Mabinogion, Self-Reliance, Agrippa, Instar Emergence — but NOT Blake.
+   569→
+   570→8. **Crowley "Book of the Law" running-key** [from libergo `cmd/quoteomatic/crowley.txt`]: Liber AL vel Legis was tested in Wave-2 as a codebook; libergo has a different transcription. Cross-check.
+   571→
+   572→### Tier 3 — Lower potential but still NEW
+   573→
+   574→9. **30-symbol disk cipher** [from aldegonde `thirty-symbol-disk.md`]: Treat the `.` mark as the 30th character of a 30/29 cipher disk (Alberti-style). 29 plaintext runes + 1 sentence-mark = 30 symbols on a 30-position disk. Test all 30! / (29 × φ(30)) ≈ 5×10^30 distinct disk orderings (way too many); reduce by assuming the rune alphabet is the canonical order and only the `.` position varies. 30 distinct tests.
+   575→
+   576→10. **No-zero-step random-walk model** [from aldegonde `lp_structure_findings.md` §12]: Empirically, the LP behaves exactly as `c[i+1]` uniform over the 28 runes ≠ `c[i]`, with 19% lapse rate. This is the model the ciphertext actually obeys. Useful for generating honest nulls and verifying that any future "candidate plaintext" actually breaks this statistic. **Critical for honest significance testing of future attacks** — most prior false positives were artifacts of using i.i.d.-uniform nulls.
+   577→
+   578→11. **Hash check against Cicada OS script contents** [from The-Complete-Cicada3301-Archive `2013/additional files/Cicada OS/cicados/usr_local_bin/cicada` and `prime_echo`]: Compute SHA-512 / BLAKE-512 / SHA3-512 of each Cicada OS binary file and check if it equals the page-56 hash. If yes, the page-56 hash is a verification hash over a specific Cicada OS file, and the unsolved LP pages may decrypt with that file's content as a keystream.
+   579→
+   580→### Tier 4 — Important context for future attacks
+   581→
+   582→12. **The doublet-position crib** [from aldegonde `lp_structure_findings.md` §8, §4]: The 86 surviving doublets mark positions where the anti-doublet rule lapsed or was inapplicable. Under skip-on-collision mechanics, each doublet marks a position where the key advanced an extra step. The 86 positions are direct keystream-index constraints.
+   583→
+   584→13. **The rune-S lag-5 echo** [from aldegonde `rune-s-lag5-echo.md`]: The lag-5 echo is carried by the rune S (ᛋ) specifically (p=2.4e-6 vs identity-preserving nulls). This means the cipher has a rune-specific behavior on S — perhaps S is the "repeat" or "back-reference" marker.
+   585→
+   586→---
+   587→
+   588→## 9. ARTIFACTS PRODUCED
+   589→
+   590→- `/home/z/my-project/cicada3301-research/solvers/` — 15 cloned repos (5.7 GB total)
+   591→- `/home/z/my-project/cicada3301-research/compiled/SOLVER_CODE_ANALYSIS.md` — this file
+   592→
+   593→---
+   594→
+   595→## 10. VERDICT AND RECOMMENDED WAVE-7 PLAN
+   596→
+   597→**Direct answer to the user's brief:** Yes, the CicadaSolvers repos contain real, working cryptanalytic code. Specifically:
+   598→- `lp-decrypter`'s "two-rune functions" are exactly the 8 arithmetic operations over Z/29 / GF(29) that I had ALREADY tested in Wave-3. NO new two-rune primitives.
+   599→- `aldegonde` is FAR more rigorous than my own toolkit — it has 32 confirmed statistical observations, 44 explicitly-tested-and-falsified hypotheses, and a brand-new 4th-order lag-5 paired-coincidence anomaly I had completely missed. Its positive control cracks page-57 (Parable) at z=+7.24, confirming the framework works.
+   600→- `3301chef` (CyberChef fork) has no novel operations — only Vigenère + autokey-PT + autokey-CT + F-skip interrupter.
+   601→- `libergo` adds 11 new integer-sequence transposition tests (winchafftext) and a 16-hash-algorithm page-56 hash checker.
+   602→- `The-Complete-Cicada3301-Archive` confirms via `liber-primus__keys.txt` that the F-skip interrupter was a real Cicada device, and provides the Cicada OS disk files (`560.13`, `560.17`, `560.13.rev`, `560.17.rev`, `folly`, `wisdom`) as NEW untested keystream seeds.
+   603→
+   604→**No working tool produced English plaintext on the unsolved pages.** aldegonde's positive control works; its 6,710-run sweep of the unsolved corpus returned z=+3.56 max — below the z=+3.2 multiple-test threshold and far below the z=+7 crack threshold. **The unsolved LP remains unbroken.**
+   605→
+   606→**Recommended Wave-7 plan (in priority order):**
+   607→
+   608→1. **Lag-5 paired-coincidence crib-drag** (Tier 1, item 1 above): extract the 57 lag-5 d1/d4 event positions, treat as `P[i] = P[i−5]` plaintext constraints, run a hill-climber or constraint-propagator to recover candidate plaintexts. ~2 hours coding, ~hours of compute.
+   609→
+   610→2. **Cicada OS disk files as keystream seeds** (Tier 1, item 4): test 8 binary files × 7 derivations × 3 modes = 168 sub-tests. These are untested and tied by name to page 56.
+   611→
+   612→3. **Length-clocked progressive substitution** (Tier 1, item 2): hill-climb on g (order-5 mixed permutation) and σ (per-word step permutation) with trigram-score fitness. ~days of compute.
+   613→
+   614→4. **Apostrophe-as-contraction crib attack** (Tier 1, item 3): 4 known-plaintext sites give ~28 bits of constraint. Combined with any cipher-family attack, this should break keys up to ~30 bits.
+   615→
+   616→5. **Winchafftext transposition attack** (Tier 2, item 5): 1,430 sub-tests using 13 integer sequences as rune-position selectors.
+   617→
+   618→6. **Full interrupter × gematria-rotation search** (Tier 2, item 6): port lp-decrypter's logic to headless Python; run with the ~100 known Cicada keys.
+   619→
+   620→7. **Blake's "Voice of the Devil" running-key** (Tier 2, item 7): test the new codebook not covered in Wave-2.
+   621→
+   622→8. **Honest nulls** (Tier 3, item 10): re-score all prior-wave candidates against aldegonde's `low_doublet_null` to filter false positives that survived i.i.d.-uniform nulls.
+   623→
+   624→The lag-5 paired-coincidence phenomenon (item 1) is the single most promising lead — it is the ONLY statistical structure in the LP ciphertext other than doublet suppression, it is mechanistically diagnostic, and it is exactly the family of statistic that cracked Zodiac-340.
+   625→

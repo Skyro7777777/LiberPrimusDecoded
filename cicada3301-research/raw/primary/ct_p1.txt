@@ -1,0 +1,583 @@
+URL: https://connortumbleson.com/2021/02/15/the-cicada-3301-mystery-puzzle-3-part1
+TITLE: The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 1
+DESCRIPTION: In 2012 the Cicada 3301 mystery began and 2014 kicked off another puzzle to solve. This is puzzle 3 (2014) / Part 1.
+
+The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ Home
+ 
+
+ Tags
+ 
+
+ About
+ 
+
+ Slides
+ 
+
+Dark
+
+ Search
+
+ 
+
+ 
+
+ 
+
+ Ramblings of a Tampa engineer
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Cicada 3301
+ 
+
+ The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 1
+
+ 
+ 5 years ago
+ 11 min read
+ 
+
+ 
+
+ 
+
+ 
+ 
+ Photo by Michael Herren / UnsplashAnother year struck and after two years of puzzles from Cicada (Puzzle 1 and Puzzle 2). Every new day of 2014 was anxious to see if another puzzle awaited.
+Sure enough, January 6 of 2014 a new image showed up on the Twitter account which was involved in Puzzle 2.
+@1231507051321 - 1:59am - Jan 6, 2014We knew the pattern at this point and it was off to outguess to see what was hidden beneath.
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+The work of a private man
+who wished to transcend,
+He trusted himself,
+to produce from within.
+
+1:2:3:1
+3:3:13:5
+45:5:2:3
+20:3:20:5
+8:3:8:6
+48:5:14:2
+21:13:4:1
+25:1:7:4
+15:9:3:4
+1:1:16:3
+4:3:3:1
+8:3:26:4
+47:3:3:5
+3
+13:2:5:4
+1:4:16:4
+.
+o
+n
+i
+o
+n
+
+Good luck.
+
+3301
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJSyjguAAoJEBgfAeV6NQkPsgAP/A3tMC3lpyFNAc/sj+Izu15S
+CzUjZJMe20Gu9UMNokQ2UJabktv9w0GMyK17TrMkUcU+ZpjdzGNqKoE2ETVxLmD/
+uBZtR5PnF9EE3D08tJUPN1vSrYNkYk+9zcaUJZMPNgYNCt/CACutPwrOci9i9FDO
+7BIpnhGqT3ZruqrSwO2Y73LJI1xxUt1XUqh1NQ+fJeAFMRkJBZZazkxRlgk3GGsF
+fLrcEKrS+KBipV1EQaaKxjISc9hc2c1TfxE66evlkN+zLcoyDcYuyruNM5wiZzgM
+2uR58c+xgWQgG5UuLFClfvjDxUvDkrKt4mzEeaYSUm1MsYueuYklz4ydlg5Mf6l2
+p1WyAxO52XfXVUZASk6VmaEQ0WjODTXvLeFTxUSDoKDMkvxDVxX6wGkufS9JwakB
+nTZizZ8Ypv8GcNCuNNGd6gZ1Vk2MYntggXdX8INd0Itcd3QnLqbBnATDOinDxlOs
+5zTrtyTHNaxxDagPfAbU1jMXM0aHd7PFAzjjp7kgCTWqMyBch+8Vt80bjkdL9iw8
+Q3hxuanq8mh6nUGc+tNe0UfqKHEbE+jWIezYqgawJB0M9R5OhxWE+E+jPXtZKkXQ
+JHYndPDrrsV8q27b7p0KN0+oblTkjqsItIAuLu7FNd0B4xb1jjp1Sbh7WJdZ/rbi
+mCO0vN/obU9qK1Vfapy0
+=6Gxk
+-----END PGP SIGNATURE-----Another book code which took a quick Google search to identify this was an essay written by Ralph Waldo Emerson.
+Self Reliance (1841)This book code worked a bit differently working off 4 numbers, which corresponded to:
+Paragraph #
+Sentence #
+Word #
+Letter #
+
+After following this you'd end up with another onion URL and the next puzzle had just begun.
+auqgnxjtvdbll3pv.onion
+This onion simply had one image present, which appeared to be some sort of collage of various paintings thrown together. It was discovered these were various paintings of William Blake.
+Image found on auqgnxjtvdbll3pv.onionRunning outguess over this image resulted in a new type of puzzle.
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Welcome.
+
+Good luck.
+
+3301
+
+e = 65537
+n = 75579125746085351644267182920580212556413102071876330957950694457000592\
+ 10248050757270234679993673844203148013173091173786572116639
+
+- -----BEGIN COMPRESSED RSA ENCRYPTED MESSAGE-----
+Version: 1.99
+Scheme: Crypt::RSA::ES::OAEP
+
+eJwBswBM/zEwADE2MgBDeXBoZXJ0ZXh0LE2jxJS1EzMc80kOK+hra1GKnXgQKQgVitIy8NgA7kxn
+2u8jNQDvlu0uymNNiu6XVCCn66axGH0IZ9w4Af3K/yRgjObsfA1Q7QqpXNALJ9FFPgYl5rh07cBP
+M9kbSH6DynU/5cYgQod2KymjWcIvKx3FkjV4UOGakDnBf1eQp1uwvn3KxDVwTyzPqbMnZvOA06Ec
+AfKtyz1hEK/UBXkeMeVrnV5SQQ==
+=yTUshDMKN65aPaKAR0OU8g==
+- -----END COMPRESSED RSA ENCRYPTED MESSAGE-----
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJSyly/AAoJEBgfAeV6NQkPHhUP/R7nuYiTMw+3sbe0xV+4rmiN
+liSDmW6ibOK4UTkZDTeAS5kAKIjxCC3DwWi0lXqBGZyabojWHM2wRwYLOhvfKvgg
+DgPnW1BSZ/R67GaUy0CM/vtZOtktBeIdntlZamk9DpW5bQ311c7N9dy6uWc8+hOM
+umkcnT7u799zESazFgCeDSOw0cFgHDiG9UTAQxbe+NsXY/NKm4N0WAtgWmdte5ym
+dU8ImpmXWg8NChdn49UtuAACi8s8tcI/lHj1Yjh+AQRbO2+Ozn9eSxUAQ1TsXSgt
+30jKmXI5ss4WHS16nYsS97BUbo4oX3NBXaCjSZb7fKO9CRJBo3gm2R8/NcIMIkEc
+GlQ/7rCQWHXA0MC+415ut5dcJf2ihwid81c1xsDyqQdfhEsWE/wVnK7Ujje+BgcO
+ybBHl8ejJzWhZkCvesHOmIo1RLEanxlGUC5jcRLqImrT7A9CrO+EVFW16EZpvzug
+Tsopo56+JbIFiIzAq+CGujHgDZnoHJFtB574utjOnZz9xzsVZ3lirQyAFOGauH+g
+K+XxjXjY8tT5lppAgmF3zWKqha7NoV+9FgFl2q2SS9ue+s4Joyn5PYKnICJeze3i
+K9BZ7gIT694s4dLEzu6kGaRyuNmx8qaoDs0kjvEB5pI+1buGuNAysHQWIDyY3DWb
+CjJ1AnBLY0ObxaMbWMR/
+=d5E8
+-----END PGP SIGNATURE-----This signed message included an encrypted message as well as some plain text information. 
+The plain text portion had both an e and n number. Since it was obviously hinted to us with an encrypted RSA message - we know this is the exponent (e) and modulus (n).
+Those two handed out together basically make up the public key of the ever popular RSA algorithm. If we want to decrypt the message we need the private key corresponding to this public key.
+Lets quickly talk about how to break this assuming we cannot find the private key. This breaks down to having to find what two primes equal n or 7557912574608535164426718292058021255641310207187633095795069445700059210248050757270234679993673844203148013173091173786572116639 which is quite a number. It comes down to 130 digits which is an insane length of a number.
+Though, not very secure as machines have gotten pretty good so they can effectively in a few hours answer that question - what primes make up that number? 
+Now before you freak out. Modern RSA is known as RSA-2048 which stands for 2048 binary digits or 617 length digit number. If you think that number above of 130 digits is a lot - try breaking the modern algorithm at 617 digits. It would take hundreds of thousands of years with current tech to even come close with RSA-2048.
+So I decided to use the docker image rsacrack, which basically put a wrapper around cado-nfs. This would be the tool leveraged to accomplish our task of finding two large primes for a large number (RSA-432). So I grabbed my laptop started the task and let it run.
+ibotpeaches@foundation$ time docker run -it b4den/rsacrack 755791257460853516442671829205802125564131020718763309579506944570005921024805075727023467999367384420314801317309117378657211663
+[] pubkey.e: 6553
+[] pubkey.n: 755791257460853516442671829205802125564131020718763309579506944570005921024805075727023467999367384420314801317309117378657211663
+[] Key looks like 432 bit
+[] Using cadonfs to compute prime
+[] results are: [u'97513779050322159297664671238670850085661086043266591739338007321', u'77506098606928780021829964781695212837195959082370473820509360759', 65537L
+[] Key extraction done
+-----BEGIN RSA PRIVATE KEY----
+MIIBDAIBAAI3AK50gkj06lhiMbT/iIsA+l1l517rgOiDK25eRHiXDIgpO0NuKFHO3U/5YHNaIjM
+YqZZ4ilSnwIDAQABAjZtP5cLOxy6RpvcPh3y9qTS8mrnHVH3yZTcI/lwoIubRaCJaifErsBrjIv
+e7LQ1fgyRo+c8hECHADtCvlDTZS6NNntQIAKTebM9nwGSpu4imfXoxkCHAC8aCngGxUhK0bNdTn
+h4An2V1NmuWt2dhy0ncCGwcXfSAieOKBt851ZR3Jj1gA/Yd59zPLwxw4uAIbNsOR69rhfdX5eVH
+4QFynOdXzrhchHsl3IjkAhsmGCSA2T0fTd6T+mJ7XHMpxqj9oFdz93zmJLk=‌
+-----END RSA PRIVATE KEY-----
+
+real 717m2.977
+user 0m1.752
+sys 0m0.245It took my computer roughly 12 hours to do it, but it successfully cracked the corresponding primes. We now had both p and q:
+97513779050322159297664671238670850085661086043266591739338007321
+77506098606928780021829964781695212837195959082370473820509360759
+
+Now we still have to decrypt this and we were given a hint where to start.
+Scheme: Crypt::RSA::ES::OAEP
+Now probably dated, but the double colon instantly points me to Perl packages. We could easily find that referenced Encryption Scheme (ES) and package it belongs to.
+Now we will probably need to install this package to both decrypt and put our keys into a usable format. I haven't touched Perl in almost a decade so it was time to dust off cpan and remember how this all works.
+cpan
+install Crypt::RSA
+...
+Appending installation info to /usr/local/lib/x86_64-linux-gnu/perl/5.22.1/perllocal.pod
+ VIPUL/Crypt-RSA-1.99.tar.gz
+ /usr/bin/make install -- OK
+cpan[2]>Now, write up a quick program looking at the documentation for this plugin.
+use Crypt::RSA;
+
+my $algo = new Crypt::RSA;
+my $keychain = new Crypt::RSA::Key;
+
+my ($public, $private) = $keychain->generate(
+ 'q' => '97513779050322159297664671238670850085661086043266591739338007321',
+ 'p' => '77506098606928780021829964781695212837195959082370473820509360759',
+ 'e' => '65537'
+);
+
+$encrypted = "
+-----BEGIN COMPRESSED RSA ENCRYPTED MESSAGE-----
+Version: 1.99
+Scheme: Crypt::RSA::ES::OAEP
+
+eJwBswBM/zEwADE2MgBDeXBoZXJ0ZXh0LE2jxJS1EzMc80kOK+hra1GKnXgQKQgVitIy8NgA7kxn
+2u8jNQDvlu0uymNNiu6XVCCn66axGH0IZ9w4Af3K/yRgjObsfA1Q7QqpXNALJ9FFPgYl5rh07cBP
+M9kbSH6DynU/5cYgQod2KymjWcIvKx3FkjV4UOGakDnBf1eQp1uwvn3KxDVwTyzPqbMnZvOA06Ec
+AfKtyz1hEK/UBXkeMeVrnV5SQQ==
+=yTUshDMKN65aPaKAR0OU8g==
+-----END COMPRESSED RSA ENCRYPTED MESSAGE-----
+";
+
+print $algo->decrypt(
+ Cyphertext => $encrypted,
+ Key => $private,
+ Armour => 1,
+);Basically, we start with our imports and creating a few helper variables. We now need to initialize the private key so we can decrypt the message via the API given from this package. It requires 3 parameters, one of which we already had (e) then the two primes we solved from cracking the key above - p and q.
+Now we needed to pass our encrypted message to our algorithm using our private key, as well as throwing the armored flag because we are looking at an ASCII iteration of the message (commonly used when traversing network). Now all we have left is to execute it.
+➜ perl cicada3301_p3.pl 
+cu343l33nqaekrnw.onion
+Another onion we go.
+This onion had an empty page with a collection of random hexadecimal characters.
+<!--Patience is a virtue-->
+634292ba49fe336edada779a34054a335c2ec12c8bbaed4b92dcc05efe98f76abffdc2389bdb9de2cf20c009acdc1945ab095a52609a5c219afd5f3b3edf10fcb25950666dfe8d8c433cd10c0b4c72efdfe12c6270d5cfde291f9cf0d73cb1211140136e4057380c963d70c76948d9cf6775960cf98fbafa435c44015c5959837a0f8d9f46e094f27c5797b7f8ab49bf28fa674d2ad2f726e197839956921dab29724cd48e1a81fc9bab3565f7513e3e368cd0327b47cf595afebb78d6b5bca92ba021cd6734f4362a0b341f359157173b53d49ea5dff5889d2c9de6b0d7e8c615286ce596bfa83f50b6eeabd153aaf50cd75f39929ba11fb0f8e8d611442846The characters on this page kept growing every few minutes larger and larger. At some point it just stopped and folks began rapidly trying to decode this blob of text.
+Then the entire page went away. In its place was a massive 3 megabyte collection of text and a new comment.
+<!--761-->
+....full file
+Continuing our pattern from the previous puzzles, we can assume this file needs a quick conversion back to binary. So back to xxd we go.
+xxd -r -p cu343l33nqaekrnw.onion.txt cu343l33nqaekrnw.onion.binRun binwalk over that and nothing. So take a peek via a hex editor.
+00000000 00 27 00 1f ff ef b5 b9 b6 b9 ff fe fe ff ff fe 
+00000010 ff fe ff ff 00 24 ff bc ff fe fe fe fe fe fe feAfter doing enough Halo 3 screenshot injecting you start recognizing magic (first few bytes of a file) of images. It's a bit flipped JPEG. I'm half reaching there, but anytime you see 00 then non 00, then another 00 that hints at a variety of file headers. For example, JPEG normally is FF D8 FF.
+So back to Perl we go, leveraging unpack/pack to bit flip this.
+perl -pe 'BEGIN{$/=\1} $_ = pack("C", unpack("C", $_) ^ 0xFF)' < onion.bin > onion.flippedSo now binwalk worked.
+➜ binwalk onion.flipped 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01
+168876 0x293AC JPEG image data, JFIF standard 1.01
+1228573 0x12BF1D QNX IFS
+It looks like 2 images with a file system image in the 3rd location. Lets ask binwalk to extract those two.
+binwalk -D 'jpeg image:jpeg' onion.flipped Now this 3rd item is not making sense. So off to the hex editor we go.
+ghex - ubuntuScrolling to the bottom of the file we see the magic header of the JPEG file, but its reversed. It appears cicada put the 3rd image into the file reversed. We can't trust binwalk here, because it doesn't know where the reversed start point of a JPEG file is.
+Like most unix tools, we have cat which just outputs a file, but there is also tac which as the name suggests is just cat backwards. Lets read the file line by line with xxd to non-binary, pipe the output to tac and then reverse it back to binary.
+< onion.flipped xxd -p -c1 | tac | xxd -p -r > onion.reversed➜ binwalk onion.reversed
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01
+I'm sure there is a less strange way to do that, but we basically just flipped the entire file to make the extraction easier. Now we ask binwalk to extract that one and collect our images.
+One thing we should immediately check is if these jpeg files can be handled by outguess.
+➜ for file in *.jpg; do outguess -r $file $file.out; done;
+Reading 1.jpg....
+Extracting usable bits: 154283 bits
+Steg retrieve: seed: 163, len: 2899
+Reading 2.jpg....
+Extracting usable bits: 1025122 bits
+Steg retrieve: seed: 115, len: 2899
+Reading 3.jpg....
+Extracting usable bits: 158963 bits
+Steg retrieve: seed: 94, len: 2899
+
+Outguess #1, Outguess #2, Outguess #3
+We are in luck. Now lets just double check these validate from Cicada to ensure we decoded them properly.
+➜ for file in *.out; do gpg2 -d $file | grep 'Good'; done;
+gpg: Signature made Mon 06 Jan 2014 10:16:41 PM EST using RSA key ID 7A35090F
+gpg: Good signature from "Cicada 3301 (845145127)" [unknown]
+
+gpg: Signature made Mon 06 Jan 2014 10:16:48 PM EST using RSA key ID 7A35090F
+gpg: Good signature from "Cicada 3301 (845145127)" [unknown]
+
+gpg: Signature made Mon 06 Jan 2014 10:16:44 PM EST using RSA key ID 7A35090F
+gpg: Good signature from "Cicada 3301 (845145127)" [unknown]
+Now we have 3 decoded files and the start of a book that is runic in nature. I guess lets start to decode these runes and see what we find. With a bit of research we find these are runic characters that all have a matching unicode character. We must finally have a use for this decoding chart we discovered in Puzzle 2!
+Chart discovered from Puzzle 2 in 2013It seems some runes can be decoded to multiple characters or even different combination of characters. So lets just slowly start with the first few letters of - ᚱ ᛝᚱᚪᛗᚹ. We will put the characters in brackets like [C|K] if we don't know which one to put.
+ᚱ ᛝᚱᚪᛗᚹ - R [NG|ING]RAMW
+
+Nothing looks too much like a word there. If you read it backwards it looks kinda like a word, but not enough. Maybe lets try reversing our entire decoding progress. So instead lets order these runes in order of the numeric values from 2 to 109, then reverse it so we pick the opposite character than we'd normally do. It seems sane to try this because this image was reversed in the payload we got from the onion above. Lets build a little tool to make this easier as its getting tough to do this manually.
+➜ php cicada app:translate
+
+ Enter a sentence to translate:
+ > ᚱ ᛝᚱᚪᛗᚹ
+
+ Reverse the translation? (y/n) [n]:
+ > y
+
+A WARN[NG|ING]
+https://github.com/iBotPeaches/cicada_3301
+Wow - that is starting to make sense. Commonly a reversed decoding is also known as an atbash cipher, so it seems we've found the cipher for this page. Lets run this entire thing through now.
+A WARN[NG|ING] BELIEUE NOTH[NG|ING] FROM
+THI[S|Z] BOO[C|K]EX[C|K]EPT WHAT YOU
+[C|K]NOW TO BE TRUE TE[S|Z]T THE [C|K]
+NOWLEDGE FIND YOUR TRUTH EX
+PERIEN[C|K]E YOUR DEATH DO NOT EDIT O
+R [C|K]HA[NG|ING]E THI[S|Z] BOO[C|K] OR THE ME[S|Z][S|Z]AGE
+[C|K]ONTAINED WITHIN EITHER THE WO
+RD[S|Z] OR THEIR NUMBER[S|Z] FOR ALL I
+[S|Z] [S|Z]A[C|K]REDNow lets run this through manually and fix-up the characters that could be either-or and fix the split up words.
+A WARNING
+BELIEVE NOTHING FROM THIS BOOK
+EXCEPT WHAT YOU KNOW TO BE TRUE
+TEST THE KNOWLEDGE
+FIND YOUR TRUTH
+EXPERIENCE YOUR DEATH
+DO NOT EDIT OR CHANGE THIS BOOK
+OR THE MESSAGE CONTAINED WITHIN
+EITHER THE WORDS OR THEIR NUMBERS
+FOR ALL IS SACREDWow - guess this is the beginning of a large book for more challenges and puzzles. At this point we've exhausted our runes - lets head back to the data hidden within the images (outguess) and take another look.
+If all these images started together, maybe we were meant to merge them back?
+We could dump the message of each signed payload and reverse it back to binary.
+➜ gpg < 1.jpg.out | xxd -r -p > 1.bin
+➜ gpg < 2.jpg.out | xxd -r -p > 2.bin
+➜ gpg < 3.jpg.out | xxd -r -p > 3.binWe know the exclusive or (xor) operation loves being used after doing puzzle 2. So lets just XOR all these files together. The helper python code we used in puzzle 2 can't take 3 files, so lets just merge 1 & 2, then merge that with 3.
+➜ python2 xor.py 1.bin 2.bin 1-2.bin 
+➜ python2 xor.py 1-2.bin 3.bin merged.bin 
+➜ binwalk merged.bin 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+--------------------------------------------------------------
+0 0x0 PGP armored data, signed message
+155 0x9B PGP armored data,
+xor.py
+Wow. The merged file was detected as another PGP message.
+➜ strings merged.bin 
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+IDGTK UMLOO ARWOE RTHIS UTETL HUTIA TSLLO 
+UIMNI TELNJ 7TFYV OIUAU SNOCO 5JI4M EODZZ 
+Good luck.
+3301
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+iQIcBAEBAgAGBQJSy23PAAoJEBgfAeV6NQkPeJwP/0IoafJ1SbmhD+KNbL5I2EdH
+jgPRnZNrKCyMpWFSIw1qs6ujuw6VnW/rfnOD+df4kpzoAwEFfZDcRnBVsvIzOJ31
+Txj9jXD22ki/CNRY88NyIzW9fjKs+iOylsa7Tx+6PBb3ndoYNEwnQwLIq3K4S3kQ
+tgMzE3LiVq2pQwqFNdN+zGqcq7POEs0GmnL1aNpqU+Wrba4gSfoWwQBWUDv3S/s8
+vY0hEqhWNd76wphig6hH6OyIaX/t1eYfcsSYhzAE5oKKahGr1E7cX1GBpHCIr1WM
+ZwNaGVArQAkyEzT++tmF01O9h218CiTUFoBM/Zxyra7vxI2UOYS/pLonuV+eXARY
+YfPHaZZxfk3bUWXcxioRukFSY2+xNdPfuBIT8rcJqa1kPJOzeZVC/IcwHA2mmG4l
+3ltiVcDnQrZgz6Im3/ugFg8bqW12qqZ6XizRP3EXm4EnyhpfKZnXKPLEOvPKCj6j
+1kYCrLmGtTTPFx79fZfryGXQIEAmipRbjVS5sVbUCfgmqUagmdU6v9VI53n6+r0J
+b2amxREA+2MflkEoVJUaLQJ1rKZLFFJ9J17zUaXKMllsDBWXJS4Mb54o2+8bkEcM
+3cP+16XV9pf2wZBkJE0AwoXI4L8JEyjNZZcGSLy8BojlAupX3Fg9KKt71XXrm9FD
+tuBhMYWo/TDz+4UzLB+I
+=57tj
+-----END PGP SIGNATURE-----Now at this point - this is a random collection of letters in groups of 5. Commonly in a transposition cipher you group letters kinda like the above and use a key to shift them into position. In this case though we had no key, which points to perhaps a column based transposition cipher. This means that instead of an explicit key you normally pass along a string of numbers that correspond to the proper way to orientate the columns.
+
+2,8,9,1,12,13,11,4,5,7,3,0,6,10
+What was discovered is that simply brute forcing a column based cipher until human words appear worked. You have to clean up the spacing, but you get:
+GOOD WORK
+ULTIMATE TRUTH IS THE ULTIMATE ILLUSION 
+JOIN US AT FV7LYUCMEOZZD5J4ONIOThis message forgot the closing n of onion, but presumably the effort required to include it was too much. So we were off to another onion - fv7lyucmeozzd5j4.onion.
+At this point we are only a few puzzles into the 2014 challenge and we haven't really even discussed the Liber Primus book briefly shown above. The problem is after this point the puzzle becomes less linear. While all puzzles up to this point worked generally in a linear fashion which made it easier to blog about.
+Check back for Puzzle 3 Part 2 where we learn more about the Liber Primus.
+Puzzle 1 (2012)
+Puzzle 1 - Extra (2012)
+Puzzle 2 (2013)
+Puzzle 3 - Part 1 (2014) - You are here
+Puzzle 3 - Part 2 (2014)
+Puzzle 3 - Part 3 (2014)
+Puzzle 3 - Part 4 (2014)
+
+ 
+
+ 
+ 
+ Read more posts by this author
+ 
+
+ 
+ 
+ 
+
+ 
+ Connor Tumbleson
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ The link has been copied!
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ Newer Post
+
+ Project: Panda Love Clan Site
+
+ 
+
+ 
+ 
+ 
+
+ 
+ Older Post
+
+ GameStop, Robinhood & 2021
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ © 2026 Connor Tumbleson. All Right Reserved.
+ Published with Ghost.
+ 
+
+ 
+
+ 
+ You’ve successfully subscribed to Connor Tumbleson
+
+ Welcome back! You’ve successfully signed in.
+
+ Great! You’ve successfully signed up.
+
+ Success! Your email is updated.
+
+ Your link has expired
+
+ Success! Check your email for magic link to sign-in.
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Please enter at least 3 characters
+ 
+ 0
+ Results for your search
+ 
+
+ 
+
+ 
+ 
+ May we suggest a tag?
+
+ Personal
+ Apktool
+ Travel
+ Technology
+ Random
+ Tampa
+ Food
+ Developer
+ Security
+ Health
+ Halo
+ Ingress
+ Sports
+ History
+ Coronavirus
+ Pi-hole
+ Video Games
+ Movies
+ Ghost Blog
+ Scam
+
+ 
+ May we suggest an author?
+
+ Connor Tumbleson
+
+ 
+
+ 
+
+ 
+ Connor Tumbleson.
+ Ramblings of a Tampa engineer

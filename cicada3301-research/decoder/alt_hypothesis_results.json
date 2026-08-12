@@ -1,0 +1,4557 @@
+{
+  "A": [
+    {
+      "chapter": "Hollow",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 72.74,
+      "snippet": "JABEAIJAESFGFSMTYCNGOEJFLAOBEAPEPDSELANCEACWIRPMTHEOPAAHEANGROEBOBMSIANGSEHMPEEA"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "atbash",
+      "score": 71.07,
+      "snippet": "IARNGWOEXCOEEJETEOJETHFOEPOSNGNFTBTNGLEOEFJIATHLTHWNGIAAPAEVEAVFCGYNDMXCYIATDRBP"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 70.5,
+      "snippet": "YVJIAEOASMEAICTAENGSOTOEAMVBNOAEEIBEANFXONONGIASSCXEAEGEOBTHEAATHOIAHOTEEOWCNGNG"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 70.22,
+      "snippet": "NGNGHIEASOEDMEABIAHNCVNGCOYTOEATNGHORMOENGEOLTAPORRNGEAAEAVRLYDFHEAONFAEEOEVEOMO"
+    },
+    {
+      "chapter": "Cross",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 70.13,
+      "snippet": "NGIABOEYNJODEAVEAHOEFOTHVIDATTHGTGWVLGIRCATHASRNGREOXAEETHCLWMIAEHEOEOOGEABRGDBE"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "prime_stream",
+      "score": 69.78,
+      "snippet": "FOEOSAETHWBBENCCROEOEARWPEATAIAOIAYBTXAEXYHDOSRSOFNTNWONGREAGMEAVAEEAVJAYSONEATH"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 69.76,
+      "snippet": "GEAETYPNJVOPTEATHEOGAGLEJFFCGNDANPEMIEOCEFSVRAWFNGLEOMEEAFEOEOCCVIBWAENNGEBPWEOI"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 69.76,
+      "snippet": "GEAETYPNJVOPTEATHEOGAGLEJFFCGNDANPEMIEOCEFSVRAWFNGLEOMEEAFEOEOCCVIBWAENNGEBPWEOI"
+    },
+    {
+      "chapter": "Cross",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 69.65,
+      "snippet": "THPXHEEANIATHEOIOGOEPRPMHTIAEIAAEEAEAVXMATJOEFAGJDLSBXNGTHDEYDBOMOAELFAESHYESFMI"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "atbash_shift3",
+      "score": 69.57,
+      "snippet": "JVIOEYVXOESTHINGVNGVNGLTHGVAEBMEBCOJWBNBRFDOOEWYVAEOEEPOEFEAVNGRIASNGXMYTHAEEAFW"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "direct_translate",
+      "score": 69.33,
+      "snippet": "LVNGNCVBNTFNGIVIVOEAEJFAEVGXEOPXYEALAXOEXIATHHEANACVGNPENTHOVIIARTIBEOCFGOTHAIPH"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 69.33,
+      "snippet": "VXONGCADBGEAVEOIATSMWFVTHWYTHEFAAYJJFPNGBMEIANAEEYWOENGVIIAYXCIAIAHIHEALRXGVEPOA"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 69.1,
+      "snippet": "GEAETYPNJARAFTHEOADOWTHEOIABEAJOOGIAPEXROJDLTHEOXXAAOLYEXROEEOLXOEJNGEWPYTPTOMCX"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 68.98,
+      "snippet": "MOOELXPAWRTHNEONGFBIAALFXVTHEAEAENBEOAETIBRNDVAFRXNGDRAFTHBAEIAOEAECBIAGDRCSEFTH"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "direct_translate",
+      "score": 68.92,
+      "snippet": "VAWNGGXDGIBIEOTBIYEAGSAEPWMEAEOJEOWHIGEABVYHYNGWVRSOIAFIAEADOETHMCNXDTHEREOCAJSO"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "atbash",
+      "score": 68.81,
+      "snippet": "RNWCVYXENVCSWIANGRNEORWWYVNGPLEDOSOOEAENERIAEEONGAEEATHIAEOBYBFIDMFDFIAAEIAXCNGL"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 68.61,
+      "snippet": "LVHHLSTHIANGOEWXMAEFXWOEEREABTHEAIATHPWSMTEAAEAAEWIAYPGIEONJJHEHTHOETHLXIGHAEIAF"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 68.24,
+      "snippet": "IANGJFLAGSTHSXBYAERYHTNGNGPJYACIEAEAEARLTHOENGJAVEOBSAEGIAOERVVDIAESXXBHEGDFNSVN"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 68.18,
+      "snippet": "LLBNRJBLEOJEOIEOMICTWEHIDOFOTHWESHWRGBHCEAGOEIAEOLVGXOXAAEJNGJEIAYJEASOEWEAEANGY"
+    },
+    {
+      "chapter": "Cross",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 68.16,
+      "snippet": "NGIABOEYNJONGTBJAENGANTHMIEODEASEOAYTXGEOAEPIALHSYFSJDEAYOHEAAEXHXLTCWWTABEARYME"
+    },
+    {
+      "chapter": "Cross",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 68.16,
+      "snippet": "NGIABOEYNJONGTBJAENGANTHMIEODEASEOAYTXGEOAEPIALHSYFSJDEAYOHEAAEXHXLTCWWTABEARYME"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "atbash_shift3",
+      "score": 68.13,
+      "snippet": "JLMDIYFSGLSBDSVNTEIAAECOEWAEMIOEATHCOEXOREOECWTEOXRORNGEAXIAOEJOIAJJPXAOEDEOTHNX"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 68.13,
+      "snippet": "NGNGHIEASOEDMEABIAHVTCTHOEAMNGHCAWAEBIAVJYCNECVLEONGEOXEASTOTOENFRJXWLANGGFCXEOI"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 68.13,
+      "snippet": "NGNGHIEASOEDMEABIAHVTCTHOEAMNGHCAWAEBIAVJYCNECVLEONGEOXEASTOTOENFRJXWLANGGFCXEOI"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 68.01,
+      "snippet": "FEASYCRAEMLACYMEOEEAESTHEATHGIAOEFVAAXDRYRRTHIFAEEAVHPVVIOEBJRVPRXCPWIIAYVYIAIEO"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 68.01,
+      "snippet": "FEASYCRAEMLACYMEOEEAESTHEATHGIAOEFVAAXDRYRRTHIFAEEAVHPVVIOEBJRVPRXCPWIIAYVYIAIEO"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 67.91,
+      "snippet": "VNLPENGIAPEEOFONNJVIANGNGEOEEAEXIEPWLWIENNGJJEONYXLCMCEAOEXXIAFMDGGRMCVAFVTHPTHA"
+    },
+    {
+      "chapter": "Cross",
+      "method": "direct_translate",
+      "score": 67.79,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEONTHNEWBASOEEOINGVNAEGITHHBNIAPBNEOJTHANGYXBDPEIAFXGFSP"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 67.79,
+      "snippet": "ANBDYEOXNGSNXPOGBOAEEOEWJEOFPTHTNIAVDNJJIAHYJBHYIARPCIHEOVRFTHOENGTHEANGOTMEOEOH"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "direct_translate",
+      "score": 67.73,
+      "snippet": "LJEOHNGCTHTAEJTXHTVOESPRGYNAGEONGNWFYNBEAIAPNYASMBIAEAIAIOBRNLEARLLEBWNHMFOEBNGR"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 67.59,
+      "snippet": "WTHPRXPAEXEAHOEOXXYRYMIAIHTHLEABOILTHOCWEGNFSIALMXMVSBIATJNGVDBOXHTIREANRFXATHGF"
+    },
+    {
+      "chapter": "Cross",
+      "method": "atbash_shift3",
+      "score": 67.57,
+      "snippet": "TDPEAAEEORTHTCPIYFLAEGTHLNEAOEFOEPAXWTNMNGIVOEGAENGFDXOEREXOEMLFWICBXHEPRTHBAETH"
+    },
+    {
+      "chapter": "Cross",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 67.46,
+      "snippet": "NGIABOEYNJOFEFEEAEOPGIOOEVIAWLOOEWGTHEOPIVODNGVLBMIAAEHEBJEAIOXSDPYHJTHTOHBNGEON"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "prime_stream",
+      "score": 67.46,
+      "snippet": "MEABOAEVLDVLOMYPEAAENNGPTSMJRVJNEAEARHDCEAOBNGOWYFOEAAEXAPWXIAIAHNGOEJIALLPIOEDO"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 67.45,
+      "snippet": "HWHSEOXRLNGCTIANGHXSXWLOENSXTHOAEIAIAOEBDBAMVXEXSOBDAEBIGEAESIADILMSODHTHAESBHDN"
+    },
+    {
+      "chapter": "Branches",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 67.43,
+      "snippet": "XFIMFAMTIAADBNATEAPNWTWRAERYMREOYYWAEAOEBMTEOREAWSEAYIAEODDEOIMJYMOTBACCIFOTHMTP"
+    },
+    {
+      "chapter": "Branches",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 67.33,
+      "snippet": "LFPNNGROHHOTHWEEAFTHLOOTDAEOOEIAAEPINGJDMNVEAJGIOEYNNJSAPLMBNGAENGGSINGNGRNGWMDA"
+    },
+    {
+      "chapter": "Branches",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 67.33,
+      "snippet": "LFPNNGROHHOTHWEEAFTHLOOTDAEOOEIAAEPINGJDMNVEAJGIOEYNNJSAPLMBNGAENGGSINGNGRNGWMDA"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 67.25,
+      "snippet": "TXSTHEOWNGIIAEOHCCWOELRPDSODJAEGVMSFDLIANGTPNTHYOYVBOEIAAEOENGOELAEEOEASEYTHVEFE"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 67.21,
+      "snippet": "MOOELXPAWRTHNEONGMITSRDNMTHEOEHEOBMMJFIAENGNGJRAEATHDSLRIAGHSIHAELTHNAEIAIASBBNG"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 67.21,
+      "snippet": "MOOELXPAWRTHNEONGMITSRDNMTHEOEHEOBMMJFIAENGNGJRAEATHDSLRIAGHSIHAELTHNAEIAIASBBNG"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 67.06,
+      "snippet": "LVHHLSTHIANGOEWXMTLESEOXGHCGYEOONYAEYHIAEANNLBAYMWDEAYLOEAFLJEASLIXBGMHVAERHNGSA"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 67.06,
+      "snippet": "LVHHLSTHIANGOEWXMTLESEOXGHCGYEOONYAEYHIAEANNLBAYMWDEAYLOEAFLJEASLIXBGMHVAERHNGSA"
+    },
+    {
+      "chapter": "Branches",
+      "method": "direct_translate",
+      "score": 67.05,
+      "snippet": "XIXMVXMCTHPOBIANTEAXPRYOCEAMNGGXLVNGITOJFNGSLNDOMEOAERDWTJTHYTHSAEYESXOEBEAREOPN"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "direct_translate",
+      "score": 66.89,
+      "snippet": "FNMYGDAEHAPXYHEOEAOETNGEALITTHFMACEDCTROEGEANAEBVEBVTHFOEGSOEIPOEXSBWJBYMVEARIVO"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 66.88,
+      "snippet": "VNLPENGIAPAEBOEOEOLLIAAEGDJEONGJINGIANATONNNNNXNOEFINMAELWVSXCHREAMAEONGIOEFRXYN"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 66.88,
+      "snippet": "VNLPENGIAPAEBOEOEOLLIAAEGDJEONGJINGIANATONNNNNXNOEFINMAELWVSXCHREAMAEONGIOEFRXYN"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 66.86,
+      "snippet": "WGBXBIEAESHEOCFOENGGAEMMALCNGTTHXVIAXITHNFVOBRATHLORVXNXYTHAVXSWHXJATHTHTNGWIAHH"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "atbash_shift3",
+      "score": 66.83,
+      "snippet": "IFMNGTHYNMHXCRCVCOEFIAPEONGMHIAABXDYLRWOEAOEEOTHMNGMWEATXNSLEPELEAAVOIAEOYEASSTH"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 66.8,
+      "snippet": "NGNGHIEASOEDMEABIAHNAYNGRPYIAEGWNBTJAENDGMYYAEAECAEATIARMIAWRREAPEAOEAGAEGMYENGO"
+    },
+    {
+      "chapter": "Branches",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 66.78,
+      "snippet": "LFPNNGROHBOEIAYAYDEOFVNCAEEOLWOEIDIATJYJCSVXEAEAWFHEOREOIAOEHEOXGJTHMTHREOAESPHS"
+    },
+    {
+      "chapter": "Branches",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 66.76,
+      "snippet": "VSIAPDVLNGEAPTPMJYVITEADEFCHTHBBAEOELAYYNLDIOELNGMLIPXPPNGMVIANGEIWPBLTHOWDIAWHA"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "atbash_shift3",
+      "score": 66.67,
+      "snippet": "VWAIAEBHAENGXNGMSXNGCOAETGEAEOOMLMADNGAEOXVCDCIAVIATEARTHROHNFEOYOEBHFPIAMYWLTNV"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 66.58,
+      "snippet": "WXGJYRWNOORVMPOBAEOJADDTJTHVEOXTMBVOEAEAEEOCBPOOEWTHBOEJIMNEOONGNGEONGEAAFTHOMOV"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 66.57,
+      "snippet": "WXGJYRWNNOEOLIOTLEECPYMNTHPCYJAOTFCMXVEJVTHTXGMOGNGOEETTWNTAHAETHOEFSYNGLEOONGJL"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 66.55,
+      "snippet": "YLLEAAELVEOOEMLFNGFXAETHVEASNGAEIASMRAEEJXIAAELBVIAMEAHHWAEHONEASGWFYDWFVSJMCOEO"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 66.55,
+      "snippet": "YLLEAAELVEOOEMLFNGFXAETHVEASNGAEIASMRAEEJXIAAELBVIAMEAHHWAEHONEASGWFYDWFVSJMCOEO"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 66.48,
+      "snippet": "HWHSEOXRRTNJSEOYOEOEOEOEOWPMVJXJIASITIIAYXRMAEFXIAEJIAYTYSFTHPGLRPNGCGEAEOEOOHAE"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "prime_stream",
+      "score": 66.43,
+      "snippet": "MNHTHJOESIAOEOSWYOPEASJAEDEOEFCOHDBHVEAOHCIRSWDNGPNGEONBHIXSAEAIAEOTHDTFFOEFHLVV"
+    },
+    {
+      "chapter": "Branches",
+      "method": "prime_stream",
+      "score": 66.29,
+      "snippet": "PHIPLTHOTNXTHITAEEACXJAEXEXREEOOEEAVNAEFTHEOEYTROBAEEAPAEWJEAFYBGYAEWWTHBHCWIAWT"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 66.27,
+      "snippet": "BFOYEDCEIXPDOEEONGTXOENGOVSOXMMNGOEWNGNIANGLSMFIAOEOABHFFAEJIAXJCNEEORROEWAEGEAJ"
+    },
+    {
+      "chapter": "Branches",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 66.23,
+      "snippet": "XFIMFAMTIAADBNNGAXEOXYXVIINGBXIYNGNYOOEAEOGLLDOESEOAXDEEOOEOEYPSSOEEXAOEEAASOPOV"
+    },
+    {
+      "chapter": "Branches",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 66.23,
+      "snippet": "XFIMFAMTIAADBNNGAXEOXYXVIINGBXIYNGNYOOEAEOGLLDOESEOAXDEEOOEOEYPSSOEEXAOEEAASOPOV"
+    },
+    {
+      "chapter": "Cross",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 66.19,
+      "snippet": "SIAXOCFIAJJHNNGTTOBOEDNGAODCLYTHSPNYEOEAEAIAFDYNGALOEDCVWBJTHGEJAGFXSCILTHAIALNG"
+    },
+    {
+      "chapter": "Branches",
+      "method": "atbash",
+      "score": 66.19,
+      "snippet": "XEXNIAXNDYSAEJVMEOFXSATHAEDFNWOEXHIAWEEOAEBEAWPHMCAENTOACNGEOBYTHYPOTHIPXGJFATSW"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 66.16,
+      "snippet": "VXONGCADBGEAVEOIATAEDWVLTHAEVLIAFPAEJXOCHSCAEBEANGDCOEVFOENGEODIACOIAJRNGOETHAEE"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 66.11,
+      "snippet": "BFOYEDCCSIEGTHDRTJAEONAEYOEFGAETDVLWTGEMFTSHPOEAVHLIAMWEANGCJSFNTXWAEIBPRYAEANGR"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "direct_translate",
+      "score": 66.03,
+      "snippet": "AMNGDIATHXIMIADPNGVWAMTANGNGTHIAWSHICAEPAEGOMIAEOTWOFYVTJTHJEAECNEACEAEROVXDWHBN"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 65.94,
+      "snippet": "LVHHLSTHIANGOEWXMAEMIWNGEARIPPMIAPOEGWJAEPOEVRXLEODIIIATHEOERMLFDREVOLENEACTHAEP"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 65.86,
+      "snippet": "IANGJFLAGSAEAESIAGGLDGHONGRGOIVGXTVCAXHVAOEAWSIATTHLXDNAESTHJLEPNGOGCHXXOAYAGSXF"
+    },
+    {
+      "chapter": "Cross",
+      "method": "atbash",
+      "score": 65.82,
+      "snippet": "PLIAEOENVEAPTHIWDYBOEOEABGAEMYMINGJRPGTEWIAMOOEEYLJMVSJMTBYRWTHXJCSIVEAXOEEAPSEO"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 65.82,
+      "snippet": "YVJIAEOASMTHVSREAGXAENGOOAEBEAHNEJHYLTOELCBEOEABXEAOEDBIABVOEVWSIIADJITHLPEAWNLE"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 65.82,
+      "snippet": "YVJIAEOASMTHVSREAGXAENGOOAEBEAHNEJHYLTOELCBEOEABXEAOEDBIABVOEVWSIIADJITHLPEAWNLE"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 65.82,
+      "snippet": "LLBNRJBLEOJEOIEOILEAEIIAEEOTHAEOPAEYETAPOXNIAMMNGCLTHNEOEANPEAEOVIASTFPEORIGXIAG"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 65.82,
+      "snippet": "LLBNRJBLEOJEOIEOILEAEIIAEEOTHAEOPAEYETAPOXNIAMMNGCLTHNEOEANPEAEOVIASTFPEORIGXIAG"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 65.82,
+      "snippet": "WGBXBIEATHIEOWOELJEAEOPRWCMWTHEANWNGNPOESPWGOEAGDJIAAPXWAIARHBAELNEGNANNYXAESSRE"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "prime_stream",
+      "score": 65.78,
+      "snippet": "EJOEXCLHWSNGBCEAGOYSOCYDSGYEABTHITHSLOIABOEATHHNGRFPRTAJMFCNGAEODVCYNGAETHTRIATH"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 65.74,
+      "snippet": "MOOELXPAWRTHNEONGFWDAMIXEOIAINAELIANOAEAERNTHMEASBEOXRAENRFBTDEARFAEFSIWDBJNGVVS"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 65.7,
+      "snippet": "GEOEAEIAEOGGADIAYWAAEOATVEAESIEOOBHNGBIONBOEAEGTHAAEPDDLNGNGOEASNYLNGAEOEIEAJNHR"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 65.7,
+      "snippet": "JABEAIJAEEAAIAOICHFNNGNGJTDIAIADTEAETHSIAEOTLNGOEOCRLEOHRIAJWJEALXWIANGDFIAMAEOO"
+    },
+    {
+      "chapter": "Cross",
+      "method": "prime_stream",
+      "score": 65.67,
+      "snippet": "XGXYAEWJJOEIABXDEDEOAEIAOIEEWHNDTHCDYTHAEVHGLAOEIIPOJAAXCNGHEANGLGEAEAEOJEXAXIAE"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 65.67,
+      "snippet": "YLLEAAELVEOAEEAFVAENPPNJHSFAEPMBOYOMEFIVPCNHXIEOTHWCMFWIAFRELIAVSNRMHEASXOEVOIAJ"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "direct_translate",
+      "score": 65.66,
+      "snippet": "NGTHEOIFCOEEODBYIAYVYNTHREMIEODRWXBHCJIAANWNMFEOIEOAOSBOETJPEPJOWVEANGWMCOTTFVJD"
+    },
+    {
+      "chapter": "Branches",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 65.57,
+      "snippet": "LFPNNGROHJPMHGCPLOFXEYFSEAEGFTHRNGABXCFMJEAXGEXEOGOEAOEIOEBXAEOEVRHOEYHNGGOHCEAR"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "atbash",
+      "score": 65.52,
+      "snippet": "NSTHHPAEROLHITENHHPDSMLOEIAVLIAJEACBIAJIEOEASOSYANHDJOETHNFJOMYNEAVFDJOEOEAIBAAE"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "atbash_shift3",
+      "score": 65.27,
+      "snippet": "THOEEOCAEHGDWEBCDMOEAPSIOJNGSFTHEOWYPHYSIANAEOOEGXVPXVFTHNAETNNGENBTXALXCEOVOIAN"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "atbash",
+      "score": 65.22,
+      "snippet": "EAMNTHOECOLRSXTHLTFAEIEOWFHEEOYEANRDICDEOAGOEFMOJIAIJIAYEAGOEPGESGXPJNGBJTHNIAFA"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "atbash",
+      "score": 65.15,
+      "snippet": "HBTLWDYEOOBEOXLEOIAGPSAOETHMROETWMNGEATHMJFVSMTHRPNJVFVEAEJAMHFAHHIJNGMLNEAGJWAR"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "prime_stream",
+      "score": 65.15,
+      "snippet": "LFHRMOEGDVEAELSBNSTHTHIWAENGEAOIAVTHEPSBIEXGXEAEXLYEAEAFNGRDABJYEAEORLFIMPAXPIEY"
+    },
+    {
+      "chapter": "Branches",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 64.78,
+      "snippet": "VSIAPDVRTOHRRHEOEOJCFOEAOETHTGNGAEHCTHFYMRPIENYPSEASSXIOAEOJTVSDOEEOOGTPIMVEAYMN"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 64.74,
+      "snippet": "FEASYCRAEMLACYMEOFBNGJBOVMNGYOFEOCVTHDEAVNGTWEOOEBEPTEAHVNGXEASIALCAETHVHOTCCTHP"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 64.73,
+      "snippet": "ANBDYEOXNGSNXPOGIAWAEMEOWFTEOETHCRWEBGDAEMDGAEVJOAEJNAOESEOBOEOERIAAENBNNISTHGXS"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "atbash",
+      "score": 64.72,
+      "snippet": "WYTEEADGTCJTHVTHIATHMYAINETCANGXJLDBVRMNGMNEATETRAEPJGEOBSISBAENGIAFWNGNDAEEOEOE"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "direct_translate",
+      "score": 64.68,
+      "snippet": "MPYLSOAAEHLEEOIMLLSCPNHGVIAHVBFDJVBEIAEFPAEPTHRMLCBGYMEABAENTHMFIAEACBGAEFEJROPB"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 64.62,
+      "snippet": "GEOEAEIAEOGMMIAOEXIAPVVBEOEAJACFIAETHGCEJLNGTRLJTHCNGSFEANOEOXJMFHOEYBHIIALEOLEB"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "prime_stream",
+      "score": 64.56,
+      "snippet": "DBBBBMIANGYEAOEGIBMVMXTNWJOGGAASRBSNGEOYWMWSANEADIEODTANGCOECOLTRBYDSATHCNGYEAOP"
+    },
+    {
+      "chapter": "Cross",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 64.52,
+      "snippet": "THPXHEEANXWHSSSRJLEAJMBVIAAEPEAEANGGLONGXPXIPIANGTTFTHWWWRDOEYHNCCEOJDGOFEGTHAEF"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 64.43,
+      "snippet": "GEAETYPNJEXAEIJEAMNGFTHAEENJYIFBEATNEOHGRCWEOFPNAXEODMFNYLHIAMOXGLTOMWTTOEPDIAOR"
+    },
+    {
+      "chapter": "Cross",
+      "method": "autokey_FIRFUMFERENFE_plaintext",
+      "score": 64.41,
+      "snippet": "SIAXOCFIAJJHNNGTTPNGOEAJANGIADFYLVJDFBEAYNJTHGPJWGSIAAEEEOOFFEHSWJHSOENBJGFYCVOE"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 64.34,
+      "snippet": "IANGJFLAGSFWAEBBLIEOHDBNVTHWWPRTIAAEVJIASYHNLTHDSVOEXWPGATAOIOEIALEOAPNROEWGPRBP"
+    },
+    {
+      "chapter": "Cuneiform",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 64.34,
+      "snippet": "IANGJFLAGSFWAEBBLIEOHDBNVTHWWPRTIAAEVJIASYHNLTHDSVOEXWPGATAOIOEIALEOAPNROEWGPRBP"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "autokey_PARABLE_plaintext",
+      "score": 64.22,
+      "snippet": "WTHPRXPNNOOIDONGPEOIDEODBJDTHIAYPEOSSSVVFYJNFETIATHTVOEABJEEOOBNGVGEYCTHHNGJOWMA"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 64.16,
+      "snippet": "VNLPENGIAPAHTHMDEAOEXFEVHFVLEOAENGSPRJIAEABJFMOEMLVFITGIAHSRAEEHHEODYWCXAECATHNE"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 64.02,
+      "snippet": "ANBDYEOXNGSNXPOVYLMSCNGOIANIASMIANGPATOVGGNOIAWOEAEYFYJPWINCLEAAAEOPVAEMEEABOFXV"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 64.02,
+      "snippet": "ANBDYEOXNGSNXPOVYLMSCNGOIANIASMIANGPATOVGGNOIAWOEAEYFYJPWINCLEAAAEOPVAEMEEABOFXV"
+    },
+    {
+      "chapter": "Hollow",
+      "method": "atbash_shift3",
+      "score": 64.02,
+      "snippet": "WEOIHRFBNGEORHEIVAWEOSWIIFRATDNGYGEGAEEAEONGWPEASAEATHCVSLFLOPYOEOYOPIAEAVBHADXI"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 63.98,
+      "snippet": "WXGJYRWNTWNTHWWDFCAEXSRYOTHEVJYEAFMTHDLAEIABJLRICTHBLBEOYEANGEAFRWCADJASVEAAEWYO"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 63.98,
+      "snippet": "WXGJYRWNTWNTHWWDFCAEXSRYOTHEVJYEAFMTHDLAEIABJLRICTHBLBEOYEANGEAFRWCADJASVEAAEWYO"
+    },
+    {
+      "chapter": "Cross",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 63.86,
+      "snippet": "SIAXOCFIAJJHNNGTTHVTHAEEANGOEXCPFEEBXJOEJLNGEOCWYIPHWCIAEOIANDWPSNGHXWMPBHFAETHJ"
+    },
+    {
+      "chapter": "Cross",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 63.86,
+      "snippet": "SIAXOCFIAJJHNNGTTHVTHAEEANGOEXCPFEEBXJOEJLNGEOCWYIPHWCIAEOIANDWPSNGHXWMPBHFAETHJ"
+    },
+    {
+      "chapter": "Spirals",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 63.54,
+      "snippet": "YVJIAEOASMCFRGTJEAGMTHBNGEOEDPYHCVOBXJTGRTHYIAGTHEFSEPHTHXNGOEFGIBVPIAENSNTHEARY"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "prime_stream",
+      "score": 62.99,
+      "snippet": "EAWSLAEJNMTHXPMYEAJNEXPTGMNGVLGNSYIAATHPFODIAHAEOXJXPWIAEAAEEAXPTGYOEGRHJFNYBMHA"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 62.63,
+      "snippet": "AEOAEIGOEHEAEOBOETHRYEONGOBLWRNEGCPYOEMTHEOJPYEAWDDVLLOENGIADEOAEEAHARJHWREALIPA"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "autokey_PARABLE_ciphertext",
+      "score": 62.57,
+      "snippet": "TXSTHEOWHSDBLXTLHCTHALHJPPPIAAEXHWOTXIAVISLVYAEJTHOERCCYCNJOENGNTHXVRRCSJYEAPAEN"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "autokey_DIVINITY_plaintext",
+      "score": 62.36,
+      "snippet": "YLLEAAELVEOMNVJCMFIGTHEAXAETXTHWEOIAXAHFLWSRDRVAXDLCMXHWEWMOEXTHTHIDIAIPEFOEFMIB"
+    },
+    {
+      "chapter": "Branches",
+      "method": "atbash_shift3",
+      "score": 62.34,
+      "snippet": "BNGBEOVBEOYFEEAXROESOBEIACEAYOEOIAEBJVINGSEALTHITJOEHEAEOMGIAHASLFCFTGCPTBNXOIAM"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "vigenere_FIRFUMFERENFE_noskip",
+      "score": 62.22,
+      "snippet": "VXONGCADBGEAVEOIABFOEEACAEAEAOVMEOOEEOYRICNBEOOEMBNGEVDJOYIIAIMROEMTNRMTHBXEOTLO"
+    },
+    {
+      "chapter": "Mayfly",
+      "method": "vigenere_FIRFUMFERENFE_fskip",
+      "score": 62.22,
+      "snippet": "VXONGCADBGEAVEOIABFOEEACAEAEAOVMEOOEEOYRICNBEOOEMBNGEVDJOYIIAIMROEMTNRMTHBXEOTLO"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 61.66,
+      "snippet": "LLBNRJBLEOJEOIEOMFVTGEAHNGMXLOPTIAIAEAOOEEYAEDTAEIHTHSXEAAEARVOEJENJNJONGJYVEADF"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "vigenere_DIVINITY_noskip",
+      "score": 61.51,
+      "snippet": "AEOAEIGOEHEAXIBTHVNRDNGAEOEAEAAEXVXLTMXVXLAFAMRSYCINMAHAEIOECWAEAOENPVCATAETMTHX"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "vigenere_DIVINITY_fskip",
+      "score": 61.51,
+      "snippet": "AEOAEIGOEHEAXIBTHVNRDNGAEOEAEAAEXVXLTMXVXLAFAMRSYCINMAHAEIOECWAEAOENPVCATAETMTHX"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "atbash_shift3",
+      "score": 61.51,
+      "snippet": "EOECJTEAWGDJPMNGEOJJTYEOEDAEVRDVXTHHLVXPNGGTHEGEFIAEOJYXAECEOOXGOEFEOTHROYXAEGTH"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "method": "autokey_DIVINITY_ciphertext",
+      "score": 61.09,
+      "snippet": "AEOAEIGOEHEAEWNGNGATAEAWXAYIATIWOEAERLSCFMINHFMXEOXSNACRIPBAIACRXPOHFBNGYDIEPCIA"
+    },
+    {
+      "chapter": "Mobius",
+      "method": "atbash",
+      "score": 60.81,
+      "snippet": "HIAWMDIAJMEOEAWEIAEIAGOBEAOIAOEXTSXTHFHRXGXVYLFMRDIAOEMSIMYAEIAEVAEOEJTDEAOEAEYR"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 60.69,
+      "snippet": "FEASYCRAEMLACYMEOMPNGIIAOEOSOBOJEOGSCEACTHAEEOWAEIAGPEAWYPEPNDVBCPYFGNBRPSGDYHHA"
+    },
+    {
+      "chapter": "Branches",
+      "method": "autokey_FIRFUMFERENFE_ciphertext",
+      "score": 60.64,
+      "snippet": "XFIMFAMTIAADBNAGXAEOMWIAOSTRHCRTHWYEOGHAOEAEEAONEOELSBLAETMTGOENGOEWGMIEAIEOOEIT"
+    }
+  ],
+  "B": [
+    {
+      "codebook": "self_reliance",
+      "mode": "pair_idx_first_letter",
+      "score": 71.72,
+      "snippet": "FASULIEOFTTOHTRIAPVTHOHEITAIOGTTIBTFATUCATSPETITGWMHAIOMNFTPWLSIAENSRPSENDSWSUPH"
+    },
+    {
+      "codebook": "liber_al",
+      "mode": "pair_idx_first_letter",
+      "score": 70.92,
+      "snippet": "OFRNMMVAIOSTTBSRHSPMFTFSTSMLJMTBITSMCIAITSLITISUABOKCWTSSSTHVLYAITIISTHPINATTSIW"
+    },
+    {
+      "codebook": "agrippa",
+      "mode": "pair_idx_first_letter",
+      "score": 67.18,
+      "snippet": "TRKTAVATBAASTTTNPAJATWTIIRBLWOTITTRTAIGATMCDABAWRATOTWETTAWOAARGTPGPWACBMOOWHTCI"
+    },
+    {
+      "codebook": "mabinogion",
+      "mode": "single_idx_first_letter",
+      "score": 66.94,
+      "snippet": "TIEBGGTTTOESCTOGATOOBTTTECOKTOTLSMTAGLTIOTTFOTTOTKSOPOEFETTPGTTFSTFMSOSPTOIOMGBF"
+    },
+    {
+      "codebook": "agrippa",
+      "mode": "single_idx_first_letter",
+      "score": 65.88,
+      "snippet": "CADOTCHACEDJDBATMAAMOTBTDDAACMADJATMTDBAATHHATAABAJEOAHHDHAOTACHEAHAJEJOHEAAATOH"
+    },
+    {
+      "codebook": "self_reliance",
+      "mode": "single_idx_first_letter",
+      "score": 65.03,
+      "snippet": "EBFEFSFTEIFREGEFETEWERGRFSETEWTWRPREFWGBERFPERTEGTRIGEEPFFTGFTEPOTPPRIRGFIBEPFEP"
+    },
+    {
+      "codebook": "mabinogion",
+      "mode": "pair_idx_first_letter",
+      "score": 64.65,
+      "snippet": "MTLSPOCOAHITOIMCADQTYHYAHDYCOPFISIDCCFBANCIACIBAWWITTIDBTWUIFVOGAHPIWFGTGDAPIAAO"
+    },
+    {
+      "codebook": "liber_al",
+      "mode": "single_idx_first_letter",
+      "score": 46.35,
+      "snippet": "MLSLFHRLMDSMTVCFCLCPLJVJSOTPMPMTMAJCFTVLTJRMTJMCVPMDMTCMSRLMFLMMMLMAMDMMRDLTAFLM"
+    },
+    {
+      "codebook": "lp1_solved_runes",
+      "mode": "single_idx_first_letter",
+      "score": 46.0,
+      "snippet": "\u16a3\u16bb\u16aa\u16aa\u16c4\u16ab\u16de\u16b1\u16a3\u16ab\u16aa\u16a3\u16b9\u16b1\u16e1\u16c4\u16ab\u16b1\u16e1\u16d6\u16aa\u16d6\u16b1\u16d6\u16aa\u16c1\u16e0\u16c4\u16a3\u16d6\u16c1\u16c1\u16a3\u16dd\u16d6\u16ab\u16c4\u16c1\u16b1\u16bb\u16e0\u16d6\u16de\u16d7\u16e0\u16d6\u16c1\u16e1\u16b1\u16c4\u16a3\u16ab\u16ab\u16e0\u16c8\u16d7\u16aa\u16de\u16b1\u16ab\u16c4\u16b1\u16a3\u16d7\u16b9\u16b1\u16d7\u16dd\u16a3\u16ab\u16a3\u16ab\u16de\u16ab\u16bb\u16e0\u16dd\u16c4\u16aa\u16d7"
+    },
+    {
+      "codebook": "lp1_solved_runes",
+      "mode": "pair_idx_first_letter",
+      "score": 46.0,
+      "snippet": "\u16cb\u16a9\u16a2\u16de\u16de\u16c1\u16a3\u16a3\u16de\u16ab\u16a3\u16c1\u16d7\u16c4\u16d7\u16a9\u16b3\u16ab\u16a2\u16df\u16b1\u16a0\u16b1\u16cb\u16cb\u16dd\u16c9\u16ab\u16c8\u16ab\u16bb\u16de\u16d6\u16e1\u16dd\u16a2\u16da\u16be\u16da\u16ab\u16e0\u16e0\u16be\u16e1\u16d7\u16dd\u16c4\u16d7\u16d6\u16c1\u16da\u16d2\u16da\u16c1\u16d6\u16de\u16aa\u16c1\u16b3\u16d6\u16ab\u16b3\u16a9\u16a9\u16d2\u16a6\u16d7\u16ab\u16a3\u16da\u16ab\u16dd\u16e0\u16a0\u16c4\u16b1\u16d6\u16d6\u16c9\u16b1"
+    },
+    {
+      "codebook": "instar_emergence",
+      "mode": "single_idx_first_letter",
+      "score": 43.21,
+      "snippet": "DMETS??LD?E?TIOS?LO?TSISEWA?D?CO?TS?SOIMAS?FASCOI???TA?FE?LTSLDFWLFT???T??MATSTF"
+    },
+    {
+      "codebook": "mabinogion",
+      "mode": "pair_word_idx_letter_pos",
+      "score": 10.12,
+      "snippet": "?A?T??A?A??D????O??E??????????G?SO????G????RIO???????????C??D???????????????E???"
+    },
+    {
+      "codebook": "self_reliance",
+      "mode": "pair_word_idx_letter_pos",
+      "score": 9.72,
+      "snippet": "?S?F??SNE???????A??G??????????F?OR????T????TTI?E?????????E??L???????????????R???"
+    },
+    {
+      "codebook": "liber_al",
+      "mode": "pair_word_idx_letter_pos",
+      "score": 9.41,
+      "snippet": "?E?R??ETC???????A?????????????F?ME?????????I?D?N???O?????T????????????????T?E???"
+    },
+    {
+      "codebook": "agrippa",
+      "mode": "pair_word_idx_letter_pos",
+      "score": 8.1,
+      "snippet": "?I?H??AAM???????I?????????????T?EI??????????YE?T?????????D??G??????????M?A??E???"
+    },
+    {
+      "codebook": "instar_emergence",
+      "mode": "pair_word_idx_letter_pos",
+      "score": 2.8,
+      "snippet": "?R????E????????N???????C??????S?WI?????????E???N?????????T??R???????????????R???"
+    },
+    {
+      "codebook": "lp1_solved_runes",
+      "mode": "pair_word_idx_letter_pos",
+      "score": 0.5,
+      "snippet": "???\u16de????\u16ab?????????????????????\u16c4?\u16b9????????????\u16ab???????????\u16b9??????????????????????"
+    },
+    {
+      "codebook": "instar_emergence",
+      "mode": "pair_idx_first_letter",
+      "score": -3.0,
+      "snippet": "?????????????????????????????T??????????????????????????????????????????????????"
+    }
+  ],
+  "C": [
+    {
+      "chapter": "Cross",
+      "n_words": 73,
+      "first_5_prime_sums": [
+        347,
+        315,
+        160,
+        122,
+        41
+      ],
+      "first_5_decimal_sums": [
+        96,
+        85,
+        44,
+        33,
+        14
+      ],
+      "prime_count": 17,
+      "prime_pct": 23.3,
+      "small_factor_count": 57,
+      "ascii_mod128_first_60": "[; z)37\\?SFArj~@C9?j?@\"??,w0#.j?bFE@Po3m?'0V?? z-9Qa$s5O!?,?",
+      "ascii_mod256_first_60": "[;?z)3???SF??j~@C????@\"??,w0#.???FE@Po?m?'0??? ???Qa$s5???,?",
+      "first_5_coord_pairs": [
+        [
+          96,
+          85
+        ],
+        [
+          44,
+          33
+        ],
+        [
+          14,
+          156
+        ],
+        [
+          52,
+          61
+        ],
+        [
+          39,
+          25
+        ]
+      ]
+    },
+    {
+      "chapter": "Spirals",
+      "n_words": 100,
+      "first_5_prime_sums": [
+        110,
+        487,
+        145,
+        124,
+        395
+      ],
+      "first_5_decimal_sums": [
+        31,
+        138,
+        39,
+        38,
+        107
+      ],
+      "prime_count": 16,
+      "prime_pct": 16.0,
+      "small_factor_count": 86,
+      "ascii_mod128_first_60": "ng?|?.Ib\"=O??2?%g/:LRL?+;??IHM~\"?Qc?_<^eZQ-Of (?lQ@o?,~vt`xx",
+      "ascii_mod256_first_60": "n??|???b\"=O??2?%g?:???????????~\"?Qc?_????Q?Of ??l?@o??~vt?xx",
+      "first_5_coord_pairs": [
+        [
+          31,
+          138
+        ],
+        [
+          39,
+          38
+        ],
+        [
+          107,
+          114
+        ],
+        [
+          123,
+          92
+        ],
+        [
+          81,
+          161
+        ]
+      ]
+    },
+    {
+      "chapter": "Branches",
+      "n_words": 63,
+      "first_5_prime_sums": [
+        196,
+        250,
+        195,
+        156,
+        157
+      ],
+      "first_5_decimal_sums": [
+        57,
+        74,
+        52,
+        42,
+        43
+      ],
+      "prime_count": 8,
+      "prime_pct": 12.7,
+      "small_factor_count": 56,
+      "ascii_mod128_first_60": "DzC??#0vtN?\\!?!(;v(??W??1H???|B??%&?|Ha?1?P&<M?1YL>5?L?a4?`?",
+      "ascii_mod256_first_60": "???????v?N??????;v(??W??1????|???%???H??1????????L>5????4?`?",
+      "first_5_coord_pairs": [
+        [
+          57,
+          74
+        ],
+        [
+          52,
+          42
+        ],
+        [
+          43,
+          117
+        ],
+        [
+          50,
+          32
+        ],
+        [
+          67,
+          22
+        ]
+      ]
+    },
+    {
+      "chapter": "Mobius",
+      "n_words": 72,
+      "first_5_prime_sums": [
+        184,
+        16,
+        230,
+        68,
+        324
+      ],
+      "first_5_decimal_sums": [
+        51,
+        6,
+        63,
+        22,
+        83
+      ],
+      "prime_count": 14,
+      "prime_pct": 19.4,
+      "small_factor_count": 59,
+      "ascii_mod128_first_60": "8?fDDF-v?1/`m?&$ifv(;sN2L0G?*gTh[YR%PY#??}}?kq{?cg5n(?B`#3S?",
+      "ascii_mod256_first_60": "???DD??v?1/?m?&?ifv??????????gTh[?R?PY????}?kq{??g?n(??`#???",
+      "first_5_coord_pairs": [
+        [
+          51,
+          6
+        ],
+        [
+          63,
+          22
+        ],
+        [
+          83,
+          60
+        ],
+        [
+          112,
+          101
+        ],
+        [
+          38,
+          16
+        ]
+      ]
+    },
+    {
+      "chapter": "Mayfly",
+      "n_words": 75,
+      "first_5_prime_sums": [
+        100,
+        268,
+        123,
+        295,
+        522
+      ],
+      "first_5_decimal_sums": [
+        25,
+        77,
+        37,
+        81,
+        141
+      ],
+      "prime_count": 13,
+      "prime_pct": 17.3,
+      "small_factor_count": 62,
+      "ascii_mod128_first_60": "d?{'?wI#%LQb?\\h:?d???A1'NarU\"u5d64zWU)]=?Yv{OPMT??f_n9(b??Q@",
+      "ascii_mod256_first_60": "d?{'?wI??LQ??\\???????A??Na???u??6?z?U??=?Yv{?P?T????n?????Q?",
+      "first_5_coord_pairs": [
+        [
+          25,
+          77
+        ],
+        [
+          37,
+          81
+        ],
+        [
+          141,
+          35
+        ],
+        [
+          25,
+          112
+        ],
+        [
+          48,
+          85
+        ]
+      ]
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_words": 71,
+      "first_5_prime_sums": [
+        217,
+        710,
+        182,
+        205,
+        63
+      ],
+      "first_5_decimal_sums": [
+        58,
+        194,
+        53,
+        60,
+        17
+      ],
+      "prime_count": 11,
+      "prime_pct": 15.5,
+      "small_factor_count": 61,
+      "ascii_mod128_first_60": "YF6M???g+?(?\"czhF,?2Fj'M?QU??<,4&?g?(?y\\eE4nfufW<P;??o?QFO??",
+      "ascii_mod256_first_60": "???????g+???\"?zhF??2Fj???????<????????y?????f?f?<?;??????O??",
+      "first_5_coord_pairs": [
+        [
+          58,
+          194
+        ],
+        [
+          53,
+          60
+        ],
+        [
+          17,
+          35
+        ],
+        [
+          45,
+          25
+        ],
+        [
+          13,
+          40
+        ]
+      ]
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_words": 73,
+      "first_5_prime_sums": [
+        125,
+        170,
+        466,
+        317,
+        160
+      ],
+      "first_5_decimal_sums": [
+        35,
+        49,
+        120,
+        88,
+        46
+      ],
+      "prime_count": 21,
+      "prime_pct": 28.8,
+      "small_factor_count": 54,
+      "ascii_mod128_first_60": "}*R= ?~0dJ?L`+?{|??x% &tHN8w?A4?F)+`?&29h`N?!{L/~Q'?`~Y2&%?%",
+      "ascii_mod256_first_60": "}??=???0dJ??`+??????%??t?N8w??4??????&29h?N??{L/????`~Y2&%?%",
+      "first_5_coord_pairs": [
+        [
+          35,
+          49
+        ],
+        [
+          120,
+          88
+        ],
+        [
+          46,
+          39
+        ],
+        [
+          67,
+          16
+        ],
+        [
+          28,
+          22
+        ]
+      ]
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_words": 76,
+      "first_5_prime_sums": [
+        102,
+        333,
+        313,
+        224,
+        247
+      ],
+      "first_5_decimal_sums": [
+        28,
+        88,
+        85,
+        61,
+        65
+      ],
+      "prime_count": 11,
+      "prime_pct": 14.5,
+      "small_factor_count": 66,
+      "ascii_mod128_first_60": "fM9`w*xf\\Z?Jt?Do>?d{*x?~;%l?+I>MAarH6tS?~)6fySlnD8?X?(=D:??4",
+      "ascii_mod256_first_60": "fM9????f\\Z?J?????????x?~?%??+I>M?arH6?S?~??fySln???????D:???",
+      "first_5_coord_pairs": [
+        [
+          28,
+          88
+        ],
+        [
+          85,
+          61
+        ],
+        [
+          65,
+          48
+        ],
+        [
+          66,
+          28
+        ],
+        [
+          164,
+          24
+        ]
+      ]
+    },
+    {
+      "chapter": "Hollow",
+      "n_words": 66,
+      "first_5_prime_sums": [
+        97,
+        500,
+        508,
+        235,
+        286
+      ],
+      "first_5_decimal_sums": [
+        24,
+        135,
+        135,
+        61,
+        80
+      ],
+      "prime_count": 14,
+      "prime_pct": 21.2,
+      "small_factor_count": 52,
+      "ascii_mod128_first_60": "at|k?,?GJULq=D'?e??X?HCL)CO?U[?J>?%?J5,6?a:G2qr6??^rv2??Tm?l",
+      "ascii_mod256_first_60": "a????,??JU?q?D??e??X??CL??O?????>?%?J???????2qr6???rv2??Tm?l",
+      "first_5_coord_pairs": [
+        [
+          24,
+          135
+        ],
+        [
+          135,
+          61
+        ],
+        [
+          80,
+          15
+        ],
+        [
+          72,
+          53
+        ],
+        [
+          21,
+          26
+        ]
+      ]
+    }
+  ],
+  "D": [
+    {
+      "ordering": "largest_first",
+      "cipher": "autokey_DIVINITY_ct",
+      "score": 69.7,
+      "snippet": "GEAETYPNJARAFTHEOADOWTHEOIABEAJOOGIAPEXROJDLTHEOXXAAOLYEXROE"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "autokey_DIVINITY_ct",
+      "score": 69.46,
+      "snippet": "NGIABOEYNJOFEFEEAEOPGIOOEVIAWLOOEWGTHEOPIVODNGVLBMIAAEHEBJEA"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "autokey_DIVINITY_ct",
+      "score": 69.46,
+      "snippet": "NGIABOEYNJOFEFEEAEOPGIOOEVIAWLOOEWGTHEOPIVODNGVLBMIAAEHEBJEA"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "vigenere_DIVINITY",
+      "score": 69.26,
+      "snippet": "LFPNNGROHHOTHWEEAFTHLOOTDAEOOEIAAEPINGJDMNVEAJGIOEYNNJSAPLMB"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "vigenere_DIVINITY",
+      "score": 68.95,
+      "snippet": "GEAETYPNJVOPTEATHEOGAGLEJFFCGNDANPEMIEOCEFSVRAWFNGLEOMEEAFEO"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "vigenere_DIVINITY",
+      "score": 68.83,
+      "snippet": "VNLPENGIAPAEBOEOEOLLIAAEGDJEONGJINGIANATONNNNNXNOEFINMAELWVS"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "vigenere_DIVINITY",
+      "score": 68.83,
+      "snippet": "VNLPENGIAPAEBOEOEOLLIAAEGDJEONGJINGIANATONNNNNXNOEFINMAELWVS"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "autokey_DIVINITY_pt",
+      "score": 68.8,
+      "snippet": "NGIABOEYNJODEAVEAHOEFOTHVIDATTHGTGWVLGIRCATHASRNGREOXAEETHCL"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "autokey_DIVINITY_pt",
+      "score": 68.8,
+      "snippet": "NGIABOEYNJODEAVEAHOEFOTHVIDATTHGTGWVLGIRCATHASRNGREOXAEETHCL"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "direct",
+      "score": 68.38,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEONTHNEWBASOEEOINGVNAEGITHHBNIAPBNEO"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "direct",
+      "score": 68.38,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEONTHNEWBASOEEOINGVNAEGITHHBNIAPBNEO"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "autokey_parable_pt",
+      "score": 68.36,
+      "snippet": "TXSTHEOWBXHAEAMTHMBTHNGBEOMVWPNIAHTHTCMSFOEJDLEEAJBTHXTJEAOX"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "vigenere_parable",
+      "score": 67.86,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIAEASNII"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "vigenere_parable",
+      "score": 67.86,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIAEASNII"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "autokey_parable_ct",
+      "score": 67.79,
+      "snippet": "VSIAPDVXNGHXSNEAWPIAEFITHAEMVVXIABEAOASEAJCTYPLRTHRAEISFRSWE"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "autokey_parable_pt",
+      "score": 67.67,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIAEASNII"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "autokey_parable_pt",
+      "score": 67.67,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIAEASNII"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "atbash",
+      "score": 67.59,
+      "snippet": "RNWCVYXENVCSWIANGRNEORWWYVNGPLEDOSOOEAENERIAEEONGAEEATHIAEOB"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "atbash",
+      "score": 67.59,
+      "snippet": "RNWCVYXENVCSWIANGRNEORWWYVNGPLEDOSOOEAENERIAEEONGAEEATHIAEOB"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "vigenere_DIVINITY",
+      "score": 67.54,
+      "snippet": "NGIABOEYNJONGTBJAENGANTHMIEODEASEOAYTXGEOAEPIALHSYFSJDEAYOHE"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "vigenere_DIVINITY",
+      "score": 67.54,
+      "snippet": "NGIABOEYNJONGTBJAENGANTHMIEODEASEOAYTXGEOAEPIALHSYFSJDEAYOHE"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "autokey_DIVINITY_pt",
+      "score": 67.41,
+      "snippet": "VNLPENGIAPEEOFONNJVIANGNGEOEEAEXIEPWLWIENNGJJEONYXLCMCEAOEXX"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "autokey_DIVINITY_pt",
+      "score": 67.41,
+      "snippet": "VNLPENGIAPEEOFONNJVIANGNGEOEEAEXIEPWLWIENNGJJEONYXLCMCEAOEXX"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "direct",
+      "score": 67.18,
+      "snippet": "AMNGDIATHXIMIADPNGVWAMTANGNGTHIAWSHICAEPAEGOMIAEOTWOFYVTJTHJ"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "direct",
+      "score": 67.18,
+      "snippet": "AMNGDIATHXIMIADPNGVWAMTANGNGTHIAWSHICAEPAEGOMIAEOTWOFYVTJTHJ"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "prime_stream",
+      "score": 67.1,
+      "snippet": "DBBBBMIANGYEAOEGIBMVMXTNWJOGGAASRBSNGEOYWMWSANEADIEODTANGCOE"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "prime_stream",
+      "score": 67.1,
+      "snippet": "DBBBBMIANGYEAOEGIBMVMXTNWJOGGAASRBSNGEOYWMWSANEADIEODTANGCOE"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "vigenere_parable",
+      "score": 67.09,
+      "snippet": "VSIAPDVXNGHXSNEAWPIAEFITHAEMVVXIABEAOASEAJCTYPLRTHRAEISFRSWE"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "autokey_parable_ct",
+      "score": 67.08,
+      "snippet": "TXSTHEOWBXHAEAMTHMBTHNGBEOMVWPNIAHTHTCMSFOEJDLEEAJBTHXTJEAOX"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "direct",
+      "score": 66.85,
+      "snippet": "FNMYGDAEHAPXYHEOEAOETNGEALITTHFMACEDCTROEGEANAEBVEBVTHFOEGSO"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "autokey_DIVINITY_ct",
+      "score": 66.79,
+      "snippet": "LFPNNGROHBOEIAYAYDEOFVNCAEEOLWOEIDIATJYJCSVXEAEAWFHEOREOIAOE"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "autokey_parable_ct",
+      "score": 66.62,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIAEASNII"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "autokey_parable_ct",
+      "score": 66.62,
+      "snippet": "THPXHEEANNCNGFMTNGTHLNCWGTHFOELIASVNGPRYNBVXLBOPETDJIAEASNII"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "autokey_parable_pt",
+      "score": 66.33,
+      "snippet": "VSIAPDVXNGHXSNEAWPIAEFITHAEMVVXIABEAOASEAJCTYPLRTHRAEISFRSWE"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "autokey_parable_pt",
+      "score": 66.31,
+      "snippet": "JABEAIJAEMNOECJOLIANONGLCLOEEEATDTHDAICEAMSMFAEIABTHXISIABEA"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "autokey_parable_pt",
+      "score": 66.31,
+      "snippet": "JABEAIJAEMNOECJOLIANONGLCLOEEEATDTHDAICEAMSMFAEIABTHXISIABEA"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "direct",
+      "score": 66.13,
+      "snippet": "XIXMVXMCTHPOBIANTEAXPRYOCEAMNGGXLVNGITOJFNGSLNDOMEOAERDWTJTH"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "vigenere_parable",
+      "score": 66.12,
+      "snippet": "TXSTHEOWBXHAEAMTHMBTHNGBEOMVWPNIAHTHTCMSFOEJDLEEAJBTHXTJEAOX"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "atbash",
+      "score": 66.02,
+      "snippet": "PLIAEOENVEAPTHIWDYBOEOEABGAEMYMINGJRPGTEWIAMOOEEYLJMVSJMTBYR"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "atbash",
+      "score": 66.02,
+      "snippet": "PLIAEOENVEAPTHIWDYBOEOEABGAEMYMINGJRPGTEWIAMOOEEYLJMVSJMTBYR"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "prime_stream",
+      "score": 65.6,
+      "snippet": "PHIPLTHOTNXTHITAEEACXJAEXEXREEOOEEAVNAEFTHEOEYTROBAEEAPAEWJE"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "atbash",
+      "score": 65.53,
+      "snippet": "XEXNIAXNDYSAEJVMEOFXSATHAEDFNWOEXHIAWEEOAEBEAWPHMCAENTOACNGE"
+    },
+    {
+      "ordering": "normal_chapter_order",
+      "cipher": "prime_stream",
+      "score": 65.31,
+      "snippet": "XGXYAEWJJOEIABXDEDEOAEIAOIEEWHNDTHCDYTHAEVHGLAOEIIPOJAAXCNGH"
+    },
+    {
+      "ordering": "fibonacci",
+      "cipher": "prime_stream",
+      "score": 65.31,
+      "snippet": "XGXYAEWJJOEIABXDEDEOAEIAOIEEWHNDTHCDYTHAEVHGLAOEIIPOJAAXCNGH"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "atbash",
+      "score": 65.1,
+      "snippet": "EAMNTHOECOLRSXTHLTFAEIEOWFHEEOYEANRDICDEOAGOEFMOJIAIJIAYEAGO"
+    },
+    {
+      "ordering": "prime",
+      "cipher": "autokey_DIVINITY_pt",
+      "score": 64.69,
+      "snippet": "LFPNNGROHJPMHGCPLOFXEYFSEAEGFTHRNGABXCFMJEAXGEXEOGOEAOEIOEBX"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "autokey_DIVINITY_ct",
+      "score": 64.53,
+      "snippet": "VNLPENGIAPAHTHMDEAOEXFEVHFVLEOAENGSPRJIAEABJFMOEMLVFITGIAHSR"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "autokey_DIVINITY_ct",
+      "score": 64.53,
+      "snippet": "VNLPENGIAPAHTHMDEAOEXFEVHFVLEOAENGSPRJIAEABJFMOEMLVFITGIAHSR"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "autokey_DIVINITY_pt",
+      "score": 64.23,
+      "snippet": "GEAETYPNJEXAEIJEAMNGFTHAEENJYIFBEATNEOHGRCWEOFPNAXEODMFNYLHI"
+    },
+    {
+      "ordering": "largest_first",
+      "cipher": "prime_stream",
+      "score": 63.55,
+      "snippet": "EAWSLAEJNMTHXPMYEAJNEXPTGMNGVLGNSYIAATHPFODIAHAEOXJXPWIAEAAE"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "autokey_parable_ct",
+      "score": 62.76,
+      "snippet": "JABEAIJAEMNOECJOLIANONGLCLOEEEATDTHDAICEAMSMFAEIABTHXISIABEA"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "autokey_parable_ct",
+      "score": 62.76,
+      "snippet": "JABEAIJAEMNOECJOLIANONGLCLOEEEATDTHDAICEAMSMFAEIABTHXISIABEA"
+    },
+    {
+      "ordering": "reverse",
+      "cipher": "vigenere_parable",
+      "score": 62.69,
+      "snippet": "JABEAIJAEMNOECJOLIANONGLCLOEEEATDTHDAICEAMSMFAEIABTHXISIABEA"
+    },
+    {
+      "ordering": "smallest_first",
+      "cipher": "vigenere_parable",
+      "score": 62.69,
+      "snippet": "JABEAIJAEMNOECJOLIANONGLCLOEEEATDTHDAICEAMSMFAEIABTHXISIABEA"
+    }
+  ],
+  "E": [
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page_digits",
+      "primer": "\u16a6\u16b9",
+      "cipher": "vigenere_noskip",
+      "score": 71.56,
+      "snippet": "BGAPPAEOEEGPTCHEOEPPIAJTHGEAEALGDSOENGREAITODOEJEJATHEOEIASE"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9",
+      "cipher": "vigenere_noskip",
+      "score": 71.56,
+      "snippet": "BGAPPAEOEEGPTCHEOEPPIAJTHGEAEALGDSOENGREAITODOEJEJATHEOEIASE"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "nth_fib",
+      "primer": "\u16a6\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 71.52,
+      "snippet": "EONTHIEARLVJEONGCGRIAREFHOYAEOEAEPEWEOXIATHCNAEOLHESXRIANGGT"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "nth_fib",
+      "primer": "\u16a9\u16b3\u16a6\u16b1\u16b3\u16b9\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 70.95,
+      "snippet": "EYIGAIAXNESOEOEMOEDRFFPEOTHNETHONIFTHGAELRFVTAIGWBAEOEOLEOGG"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "nth_fib",
+      "primer": "\u16bb\u16b7\u16a6\u16b7\u16b9\u16b3\u16b9\u16a2\u16a6\u16b9\u16a6",
+      "cipher": "autokey_plaintext",
+      "score": 70.66,
+      "snippet": "TPMBLYWNBLNGYHJMROENSRVIVEAREGEOTIANGCOEEJLFYRLCHNGHIAFJJTHX"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "nth_fib",
+      "primer": "\u16a6\u16bb\u16b7\u16b3\u16b9",
+      "cipher": "autokey_plaintext",
+      "score": 70.25,
+      "snippet": "EATVTEASWCDEACJDNGTHDANGRJPAWHFEAEOVTHGFCFATHYTWGTHETLDAEIWT"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "nth_fib",
+      "primer": "\u16a6",
+      "cipher": "autokey_plaintext",
+      "score": 69.89,
+      "snippet": "EOEMEOTHFTNTHXFHHOEFSIAGFYEOEODEOGVEAIAJGOECHVAEEATOXPSEOIAC"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page_base29",
+      "primer": "\u16e1",
+      "cipher": "vigenere_noskip",
+      "score": 69.6,
+      "snippet": "NGSEAOEBCYIAIOELXEONGOEOEBWSJIHOFIOMTHAEPOMLEOIATHSIASRGNGOE"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "nth_fib",
+      "primer": "\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 69.18,
+      "snippet": "XDAHIANGGDNGCPHYCGFAERWSBNGIEAMBFALTHIFNGNFAEIFTHGJIAFPRCWRI"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page_digits",
+      "primer": "\u16a6\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 68.8,
+      "snippet": "EANGCERJNGOHXHNXXHDYOPOEJRBAEIHIRGWRAESIAACAECIATHEOVAIAAYLL"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 68.8,
+      "snippet": "EANGCERJNGOHXHNXXHDYOPOEJRBAEIHIRGWRAESIAACAECIATHEOVAIAAYLL"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page_repeated_20",
+      "primer": "\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 68.66,
+      "snippet": "GTHGJOEGJYDCANMVHLGCAEEYOOEHEAFODWTSWPINGVNSPCGTMBCDROERSJAT"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "nth_fib",
+      "primer": "\u16a2\u16a0\u16a6\u16a9\u16a9\u16b1\u16a2\u16b3\u16b3",
+      "cipher": "vigenere_noskip",
+      "score": 68.61,
+      "snippet": "EANBDOMAOMEOXACNATHPJLEAEWPIAEAXMRENGTHPFNGVDHAESIASPFYANGGP"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page_base29",
+      "primer": "\u16a2\u16ab",
+      "cipher": "vigenere_noskip",
+      "score": 68.56,
+      "snippet": "DDLIAYGPXETHOEBLCGEAELDAELGYJXEONNABAITHDNEABWSJTHRAECSSVSIA"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page_digits",
+      "primer": "\u16a9\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 67.94,
+      "snippet": "EEANWYTHMNLXDADIADGEAVSTWNLVRJXCTHHANGGRGTYNWNNGFEOXMPHISIHF"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 67.94,
+      "snippet": "EEANWYTHMNLXDADIADGEAVSTWNLVRJXCTHHANGGRGTYNWNNGFEOXMPHISIHF"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16b9\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 67.94,
+      "snippet": "EATHTIARWIARBSINOETHMITYJEODEARHVSTROWVPYNGOETHBOSPSTHBTIACM"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "nth_prime",
+      "primer": "\u16bb\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 67.93,
+      "snippet": "OENGXFNGXTHNGHAETHTXVAEAEOIEOSVNGEWDREOMWTNGVNAEEAVOEGHIAWCL"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page_repeated_20",
+      "primer": "\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1",
+      "cipher": "autokey_plaintext",
+      "score": 67.91,
+      "snippet": "MSTMOEIANGXDENTYTHLXEOMBTHTJBOEIVEAJMWYTOEHRRLYMVPSPDVVEOBEA"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "nth_prime",
+      "primer": "\u16bb\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 67.8,
+      "snippet": "OENGEAEIAJSOTHXTHNHXTHDLOWOECRJAERHRRFWIAAENIAECEEEAIAAEEOAA"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page_digits",
+      "primer": "\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 67.79,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEONTHNEWBASOEEOINGVNAEGITHHBNIAPBNEO"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 67.79,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEONTHNEWBASOEEOINGVNAEGITHHBNIAPBNEO"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page_base29",
+      "primer": "\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 67.79,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEONTHNEWBASOEEOINGVNAEGITHHBNIAPBNEO"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16be",
+      "cipher": "vigenere_noskip",
+      "score": 67.79,
+      "snippet": "PVPIFCEAEVRTHHYFSMPROBTHAEIAILYPJFEONWTHTHEAEOXJHXTHIJTOXGWI"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16b9\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 67.47,
+      "snippet": "EATHTAEEALAVNGEOWDWCAETHJPLNGBNNEAEAEONGRJLRNVNGEAAEHEXFJXFA"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page_base29",
+      "primer": "\u16de",
+      "cipher": "vigenere_noskip",
+      "score": 67.46,
+      "snippet": "WVPIAEOLFEOTDTEOEDTOCEONGTHMPAECEBEPXTEOCDWOXOIAPWINGNRGRCFE"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "nth_fib",
+      "primer": "\u16bb\u16b7\u16a6\u16b7\u16b9\u16b3\u16b9\u16a2\u16a6\u16b9\u16a6",
+      "cipher": "vigenere_noskip",
+      "score": 67.37,
+      "snippet": "TPMBLYWNBLNGCSEAVBXNDMXFMVPTHOFEEODEAVJROEEOAEJFTHIAMEAHCFCN"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "nth_prime",
+      "primer": "\u16b3",
+      "cipher": "autokey_plaintext",
+      "score": 67.13,
+      "snippet": "SAETNGFCYMGCJOCJMOEOVOODSNYSGORAEVHNMHCROETHPGJTEOSAHNAXGOEJ"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "nth_fib",
+      "primer": "\u16b7\u16a2\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 67.0,
+      "snippet": "XFNGORVJHTDLIANVTAJDAVFPEOWPYOEMAHNGXNGVHOEHAEAFGOEOEOVOANIA"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page_base29",
+      "primer": "\u16a2\u16c4",
+      "cipher": "vigenere_noskip",
+      "score": 66.98,
+      "snippet": "EAIAESCEOAYDTHPSWVIANGBCLBMEASLEAHDDBEORCOJCBHXTMBGFLEAJCRNG"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page_digits",
+      "primer": "\u16a9\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 66.83,
+      "snippet": "EEADJGDTEWEAMEAWTHMWEOYGOERMMXBFFHCOOENGTSOERWHORNGEADEEAIAE"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page_base29",
+      "primer": "\u16a2\u16b1",
+      "cipher": "autokey_plaintext",
+      "score": 66.76,
+      "snippet": "LIANGEOHOEXMNIABFNVBHXAERDGEBSMEAIANWTHLOEEXLCNWVCDIANGMVYIT"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page_digits",
+      "primer": "\u16b1\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 66.74,
+      "snippet": "AENSYTHDNGHLPIYREOAOXTBEATIEOTHAEMLCXDVTFOETHEACAEPVXBYTHAEO"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page_repeated_20",
+      "primer": "\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 66.74,
+      "snippet": "AENSYTHDNGHLPIYREOAOXTBEATIEOTHAEMLCXDVTFOETHEACAEPVXBYTHAEO"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16a0\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 66.56,
+      "snippet": "EPDMSFDAECMENNMBMSTHEONCCVAWVXEADHFBSNAEYEOAEIVRTMCXCYTIABOE"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page_digits",
+      "primer": "\u16b3\u16b1",
+      "cipher": "vigenere_noskip",
+      "score": 65.94,
+      "snippet": "MSTMOEIANGXDENTYTHLXEOMBTIAOEOIRCVLNLTHIASCLPEAJOIAAENGYJWYW"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page_repeated_20",
+      "primer": "\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1\u16b3\u16b1",
+      "cipher": "vigenere_noskip",
+      "score": 65.94,
+      "snippet": "MSTMOEIANGXDENTYTHLXEOMBTIAOEOIRCVLNLTHIASCLPEAJOIAAENGYJWYW"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16a9\u16b9",
+      "cipher": "vigenere_noskip",
+      "score": 65.83,
+      "snippet": "LEACNYIANGNTTDLAEIAMHEAYBTOJLYGJIWTHRYNGTHGGEOEANOJNGAEXXSSH"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16a0\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 65.62,
+      "snippet": "EPDTHTHNOEDEAIAAPEOAWHLIACEIVEOBWEFOECJHEOWTHPOEJEOLLNGEAFPE"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "nth_fib",
+      "primer": "\u16a6",
+      "cipher": "vigenere_noskip",
+      "score": 65.57,
+      "snippet": "ENIGMOFXDNXEOGXEALPJTHRAWOERIMWCIAAWSYAEJWAOEPBSAEYAEHVSTHWE"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "nth_prime",
+      "primer": "\u16b3",
+      "cipher": "vigenere_noskip",
+      "score": 65.53,
+      "snippet": "SGWOTFYJLGJNOJAEBIHEAVNGRMVWTRTHANGREODOEHRNGMIXEOOEDOECIAEO"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "nth_fib",
+      "primer": "\u16a2\u16a0\u16a6\u16a9\u16a9\u16b1\u16a2\u16b3\u16b3",
+      "cipher": "autokey_plaintext",
+      "score": 65.49,
+      "snippet": "EANBDOMAOMXCNXNNHSYWDJAEWOENGRIAIAAEONNJVTHVJVCNGNGFFEAJCIVV"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page_digits",
+      "primer": "\u16b1\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 65.48,
+      "snippet": "AENDBEOGPTHJJOSCYDGAIYEDNGOEIWNBAEVIAREFRGAOVXFRBYXOHOWMODML"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page_digits",
+      "primer": "\u16b3\u16b1",
+      "cipher": "autokey_plaintext",
+      "score": 65.46,
+      "snippet": "MSTHHAEDETVJOETHEAEAHAEJLPVHVMGAETHXOJIXAEEDNGVYTHMCPAPGOCEA"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16a9\u16b9",
+      "cipher": "autokey_plaintext",
+      "score": 65.42,
+      "snippet": "LEACMVFOJDXSREOSOEYTJNGOEALLCTDEONGJEAGPIVAENEATVPHTHTHNLXTH"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page_base29",
+      "primer": "\u16a2\u16b1",
+      "cipher": "vigenere_noskip",
+      "score": 65.42,
+      "snippet": "LIAJGEAVNGHOEPAEDAEYAECVFBSNHOEFGITRRWYLHOHSEAHNHDEAXPNGEOIN"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page_digits",
+      "primer": "\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 65.32,
+      "snippet": "GTHGJOEGJYDCANMVHLGCAEEAYLJPIAGEOOEPTHHAONGPWEOVSAJRBAESEAHO"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page_repeated_20",
+      "primer": "\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 65.32,
+      "snippet": "GTHGJOEGJYDCANMVHLGCAEEAYLJPIAGEOOEPTHHAONGPWEOVSAJRBAESEAHO"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page_base29",
+      "primer": "\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 65.32,
+      "snippet": "GTHGJOEGJYDCANMVHLGCAEEAYLJPIAGEOOEPTHHAONGPWEOVSAJRBAESEAHO"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page_base29",
+      "primer": "\u16de",
+      "cipher": "autokey_plaintext",
+      "score": 65.27,
+      "snippet": "WBMTHRIPOEBFITHXOWMNYEWGVEITHNORRGFEAEEOXDOEEEONGDNEJTEOJJLE"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 65.24,
+      "snippet": "BHNCETHEAPOEHPJCPIAMEOIVONVSVDMIDWEAEGDXSMXXXTHYPYTPWITHTHOI"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page_digits",
+      "primer": "\u16a2\u16b3",
+      "cipher": "autokey_plaintext",
+      "score": 65.23,
+      "snippet": "MAETHPOBXNGTHHMTHJHMXGYDEAWWWCGNLMFCXBFITHIAYJIADOEOGVEOHMAJ"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9\u16a6\u16b9",
+      "cipher": "autokey_plaintext",
+      "score": 65.14,
+      "snippet": "BGAPPAEOEEGPTCHEOEPPIAJTHLFGXACAJBIAXEOIIAWTFIATHFPMXLOEVTHH"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "nth_fib",
+      "primer": "\u16b7\u16a2\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 65.07,
+      "snippet": "XFNGACNOERWWBODOEIAEAOPVOEBCNGAHOETHLIAOEDANGRWTATHHIEAIAEAX"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16be\u16bb\u16b9",
+      "cipher": "autokey_plaintext",
+      "score": 64.81,
+      "snippet": "XEAIAENGLBRDGVBJAEIEXRVRECVCFTHTMSLAELGIPCFFEOBNNIFFOVTHAEAE"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page_digits",
+      "primer": "\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 64.78,
+      "snippet": "GRINNGOEYHDMPRDSVIATYWMPNGWEONYBOIADTFOHNGFSCRMPGGMXNIAEOENB"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page_base29",
+      "primer": "\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 64.78,
+      "snippet": "GRINNGOEYHDMPRDSVIATYWMPNGWEONYBOIADTFOHNGFSCRMPGGMXNIAEOENB"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page_base29",
+      "primer": "\u16a2\u16c4",
+      "cipher": "autokey_plaintext",
+      "score": 64.77,
+      "snippet": "EAIALEASAIPXFFYHSLBIAEADFYIMNGIIAXWRTVFOOEOGGMJJWGDAEGYFEOEN"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "nth_fib",
+      "primer": "\u16a2\u16be\u16b7\u16b1\u16a2\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 64.64,
+      "snippet": "ERLTXAGNGBRRBRIAOTJBNJCMMIEAMEOIRVTHIAGFNGEAJIAWTHEOLNWIRXEA"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "nth_prime",
+      "primer": "\u16a6\u16b3\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 64.61,
+      "snippet": "OEXLNGOEVEOCEAEEEOMAEGOEXSOETLFOEGPONOLEODVTHBCDTIASCIAEAAAE"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page_digits",
+      "primer": "\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 64.51,
+      "snippet": "BDEMTHOEABHOPVWNNGVXEACVAEPJABRCTHIAEAIWNGGWTHAFSRPXXPYGJOET"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page_base29",
+      "primer": "\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 64.51,
+      "snippet": "BDEMTHOEABHOPVWNNGVXEACVAEPJABRCTHIAEAIWNGGWTHAFSRPXXPYGJOET"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page_digits",
+      "primer": "\u16a6\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 64.49,
+      "snippet": "EANGHFIAXAENGXAEAETLVMAENIGSWNGEOWFREOOAEWINGWNMEAWOEFHRWEAL"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "nth_fib",
+      "primer": "\u16a9\u16b3\u16a6\u16b1\u16b3\u16b9\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 64.22,
+      "snippet": "EYIGAIAXDYWLOEATOEOAPSLDNJNDEAYXAEFEVIIADFDNTHXHNGBEAWNEAING"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 64.2,
+      "snippet": "EEANWYTHMNLXDADIADGEAVSTNGPXYIEOIAEAXYRFSNSPVJAAEOMVLEORPXRT"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page_digits",
+      "primer": "\u16a2\u16b3",
+      "cipher": "vigenere_noskip",
+      "score": 64.17,
+      "snippet": "MAELRRAETRSALCFCFBAGEALFVPWEONAEDMMPBPOEVOIARDFFVHHBRVIAFCYE"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3",
+      "cipher": "vigenere_noskip",
+      "score": 64.17,
+      "snippet": "MAELRRAETRSALCFCFBAGEALFVPWEONAEDMMPBPOEVOIARDFFVHHBRVIAFCYE"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "nth_fib",
+      "primer": "\u16a6\u16bb\u16b7\u16b3\u16b9",
+      "cipher": "vigenere_noskip",
+      "score": 64.14,
+      "snippet": "EATVTEAEOSFCIHRIEOOALFIEJEAPDCNRVOORLJAEMGESTHDTHWYOEOEAELBB"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16be\u16bb\u16b9",
+      "cipher": "vigenere_noskip",
+      "score": 64.06,
+      "snippet": "XEAIAECIMOEXBIXROEOEAALOSTHFDTHBIANBXPROLNGVECVDVTFMGTFRRVSP"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page_base29",
+      "primer": "\u16e1",
+      "cipher": "autokey_plaintext",
+      "score": 63.99,
+      "snippet": "NGNGCSFONGRRTTHIFMVMAENRCOOIAFHOEACEOEHNNVACHBAEGIANGEAGJATH"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page_digits",
+      "primer": "\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 63.96,
+      "snippet": "BHNCETHEAPOEHPJCPIAMEOIVODGNGONEGRYDGXAEAIGDNGEOTXAAEAWFXVGB"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 63.96,
+      "snippet": "BHNCETHEAPOEHPJCPIAMEOIVODGNGONEGRYDGXAEAIGDNGEOTXAAEAWFXVGB"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page_base29",
+      "primer": "\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 63.96,
+      "snippet": "BHNCETHEAPOEHPJCPIAMEOIVODGNGONEGRYDGXAEAIGDNGEOTXAAEAWFXVGB"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "nth_fib",
+      "primer": "\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 63.94,
+      "snippet": "XWBTHCEYEAXAEBLRVICAEAINGTHHVHBGTDXNGJNLFHACNVWTHYEOTHJIVDLA"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "nth_fib",
+      "primer": "\u16a6\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 63.94,
+      "snippet": "EONEOEEAPBRFEOVTAEHXIAEOEOTHAEVRYEMCEOMEALHSVIIALPMWOEVEIATH"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "nth_prime",
+      "primer": "\u16b1\u16b9",
+      "cipher": "autokey_plaintext",
+      "score": 63.85,
+      "snippet": "TDCSFSBDEAGOERHGOETOAYVRCIWOWDNGYOBMYHCFDNVAEFINONGOEYHPMLYM"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page_base29",
+      "primer": "\u16a2\u16ab",
+      "cipher": "autokey_plaintext",
+      "score": 63.61,
+      "snippet": "DDIAFFTHXHCMEDOWRBSEANOEEONSIAFIIASEIBOETHBOEVISYBONIAWPAIAR"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 63.54,
+      "snippet": "SHEOGMIAFSYENGCTHJGAEFJOEBVPGEOBMAFAEDETEAIAMIILSFHXWCNGOETT"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9\u16a6\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 63.51,
+      "snippet": "EANGCERJNGOHXHNXXHDYOPOEXSXIHFLRFAEIAMOTEXFEDHMFEBNGIAHMOEGN"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "nth_prime",
+      "primer": "\u16b1\u16b9",
+      "cipher": "vigenere_noskip",
+      "score": 63.31,
+      "snippet": "TDBTHVDPTHEOOEBOYOYSNGRAEEYEAICNWOENGTBISILIAVATHLIAYEACGXTH"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "nth_prime",
+      "primer": "\u16a2\u16be",
+      "cipher": "autokey_plaintext",
+      "score": 63.22,
+      "snippet": "PVVEFAEMNEORLPWAENOCIEATREAVYCBSPGYIGVDLNGFBDSAEYFWDFOEJNSOE"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "nth_fib",
+      "primer": "\u16a2\u16be\u16b7\u16b1\u16a2\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 63.15,
+      "snippet": "ERLTXADTTHTBRNIXTXYEOFTHTHFMWNGJAEOEOFHEOGANGEOTWIAOJMAEJTHA"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page_repeated_20",
+      "primer": "\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0\u16b1\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 62.99,
+      "snippet": "AENSYTHDNGHLPIYREOAOXTBEAAVVCIAAEOYIAIAMFIJAEANFTHDTFYTHYOEA"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "nth_prime",
+      "primer": "\u16a6\u16b3\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 62.97,
+      "snippet": "OEXLVPJPYHXYCWRTHBSXWGWANGFLTIXNOJYFHPAIMNGYPHFBHJXOBRTHNGAO"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page_base29",
+      "primer": "\u16cb",
+      "cipher": "vigenere_noskip",
+      "score": 62.77,
+      "snippet": "CSGDMSTHDVXGASASWIAEXISLEAYIAEAJPCNEAWEAEOTOEPDNMSLDIAODTBSA"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page_base29",
+      "primer": "\u16cb",
+      "cipher": "autokey_plaintext",
+      "score": 62.49,
+      "snippet": "CAEAEPNGNHVSXWOIAEOERNGMISSLDEAMWNGEAAEERIBXDCRLXTMMDAXBSSAO"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page_repeated_20",
+      "primer": "\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3\u16a2\u16b3",
+      "cipher": "autokey_plaintext",
+      "score": 62.08,
+      "snippet": "MAELRRAETRSALCFCFBAGEALJIDHNEIACFDBXOETHLROAEXMAESCNLNGHAEIR"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page_digits",
+      "primer": "\u16a6\u16b9",
+      "cipher": "autokey_plaintext",
+      "score": 61.82,
+      "snippet": "BGNXGEEWMPEAEAJLNFGCWRVTHFAEHCNAXTTVTHNDLMCDYIOEIEOWDMAENNGT"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page_digits",
+      "primer": "\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 61.46,
+      "snippet": "SOEAEWEALWOEOERXWIARWEAYOHXELJIALTVDNGVJEAOEHVAJEAOCEOYVEOCR"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page_base29",
+      "primer": "\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 61.46,
+      "snippet": "SOEAEWEALWOEOERXWIARWEAYOHXELJIALTVDNGVJEAOEHVAJEAOCEOYVEOCR"
+    }
+  ],
+  "F": [
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page16_mod29",
+      "primer": "\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df",
+      "cipher": "vigenere_noskip",
+      "score": 74.03,
+      "snippet": "AEOYHROTHWEOWOTENGDOESXIARPWJHAAYOEJSISDDWSTNGOVPNGAXWEOMENG"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page16_digits",
+      "primer": "\u16a2\u16a0\u16b9\u16a2\u16a6\u16bb\u16a0\u16be\u16a9\u16b1\u16bb\u16a2\u16a6\u16a6\u16a0\u16b1\u16be\u16b7\u16b7\u16a6",
+      "cipher": "autokey_plaintext",
+      "score": 73.9,
+      "snippet": "EANEOAERSAEEANGNGAEGIEAEANISYNGVRGAEREAGYXEALIAEOWFFSTHRYTYA"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page16_mod29",
+      "primer": "\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1",
+      "cipher": "autokey_plaintext",
+      "score": 70.5,
+      "snippet": "OEJSNRNGFTIVOERHOENGNGAECIIAHAEAONOEYEOIDNGEGCITORXWOEJIINTC"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6",
+      "cipher": "autokey_plaintext",
+      "score": 70.43,
+      "snippet": "EAVBAFNGNGODCPNGWJAETHBPPYNGNEAWFIAOTHAENGAYJIYNGEORRYHTHAFA"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page16_mod29",
+      "primer": "\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2",
+      "cipher": "autokey_plaintext",
+      "score": 70.02,
+      "snippet": "YAEBMSYCIALNNGVOENGVXSRRNGJIPHOEREOTHOTHNTAEEASIANGNIOENWYAT"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page5_digits",
+      "primer": "\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6",
+      "cipher": "vigenere_noskip",
+      "score": 69.13,
+      "snippet": "OESTOEMVNNEAOEEOEOECBBXBMMIAOEGWWCRAIACFJHBTVNCVAENGFHIYIIAS"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page16_digits",
+      "primer": "\u16a2\u16a0\u16b9\u16a2\u16a6\u16bb\u16a0\u16be\u16a9\u16b1\u16bb\u16a2\u16a6\u16a6\u16a0\u16b1\u16be\u16b7\u16b7\u16a6",
+      "cipher": "vigenere_noskip",
+      "score": 68.86,
+      "snippet": "MVXHOOEBFPAEPNEAHVETCDDFGWJJGYMBLGNGEOAETHRMOEOFGTHEOTVTHDIA"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page16_digits",
+      "primer": "\u16a6\u16bb\u16a0\u16a2\u16a0\u16b9\u16a2\u16b7\u16a6\u16b7\u16b7\u16a6\u16a0\u16bb\u16a0\u16be\u16b7\u16a6\u16a0\u16b7",
+      "cipher": "autokey_plaintext",
+      "score": 68.61,
+      "snippet": "MDEONFIANGGNGJLAEYOEYFAETHEPLEJAWTAETHPFWEAEOXEOMRINGEARXROE"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page16_digits",
+      "primer": "\u16a6\u16b9\u16bb\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb\u16a2\u16a6\u16be\u16a9\u16b1\u16a6\u16bb\u16a0\u16a2\u16a0",
+      "cipher": "vigenere_noskip",
+      "score": 68.44,
+      "snippet": "ERREASEAFTNGOSEOEAPYLWPOGATHTYGSWWAEEHSMANWEAXMSLLERYSRCEOIA"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6",
+      "cipher": "vigenere_noskip",
+      "score": 68.28,
+      "snippet": "EAVBAFNGNGODCPNGWJAETHBPPYMTHXFDBLFBSRJONGOIAHOENEABNEAFDLTH"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page16_digits",
+      "primer": "\u16a2\u16a0\u16b9\u16a2\u16a6\u16bb\u16a0\u16be\u16a9\u16b1\u16bb\u16a2\u16a6\u16a6\u16a0\u16b1\u16be\u16b7\u16b7\u16a6",
+      "cipher": "vigenere_noskip",
+      "score": 68.09,
+      "snippet": "EANEOAERSAEEANGNGAEGIEAEANISYMINVIAJAAESMYSTHLGAFMJEABBDVIAX"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page16_mod29",
+      "primer": "\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2",
+      "cipher": "vigenere_noskip",
+      "score": 67.86,
+      "snippet": "YAEBMSYCIALNNGVOENGVXSRRNGSENGYHAIATHGFRGVEOGDPARXJTHJRBFWNG"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 67.46,
+      "snippet": "MAELHYEASOXAETNOENAENGAHEAAJIDRTSJAEGEAIAPNGEGTRVAEIMAESNTHD"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page16_mod29",
+      "primer": "\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7",
+      "cipher": "vigenere_noskip",
+      "score": 67.4,
+      "snippet": "SENGBHRYEAOETGSTHAWDIEATHSEOVIAVAEIOEDEATHHHPPIDNSDVDEAYAYPX"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page16_digits",
+      "primer": "\u16a2\u16a9\u16a2\u16a2\u16b1\u16a9\u16b1\u16b1\u16a9\u16b1\u16a2\u16a9\u16a2\u16a2\u16a9\u16a2\u16a6\u16a6\u16b9\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 67.22,
+      "snippet": "FNGGLTHJMTHWPNNSTWAEYRHBPSPHIFOECVYYMTHXMEOFBEAPLFMMMIAGENGC"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page16_mod29",
+      "primer": "\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 67.2,
+      "snippet": "TTHAESYEIADAEEAVIHLDHGDJNGRONNGNGBEAEAAEAAMNGIATRTHWEOCAEHHE"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page5_digits",
+      "primer": "\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6",
+      "cipher": "autokey_plaintext",
+      "score": 67.15,
+      "snippet": "OESTOEMVNNEAOEEOEOECBBXBMEATJXAEWVAEWEODXYCWVEEABRPSTLRVSNGF"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page16_mod29",
+      "primer": "\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df",
+      "cipher": "autokey_plaintext",
+      "score": 67.12,
+      "snippet": "OTHJHSSREAXXCYIYAOEXRTPDWPIAYGCHSEORLEVETEOLEAGDLSFPYEOAEDHA"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page16_digits",
+      "primer": "\u16a6\u16b9\u16bb\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb\u16a2\u16a6\u16be\u16a9\u16b1\u16a6\u16bb\u16a0\u16a2\u16a0",
+      "cipher": "autokey_plaintext",
+      "score": 67.07,
+      "snippet": "ERREASEAFTNGOSEOEAPYLWPOGHCLWYOENLHDDCFXTEMJEOPNOEHLPIHPVYCE"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page16_digits",
+      "primer": "\u16a6\u16bb\u16a0\u16a2\u16a0\u16b9\u16a2\u16b7\u16a6\u16b7\u16b7\u16a6\u16a0\u16bb\u16a0\u16be\u16b7\u16a6\u16a0\u16b7",
+      "cipher": "autokey_plaintext",
+      "score": 67.02,
+      "snippet": "EOTHXEVWEEAFWYSIAVTMHJRLLOXVLEAAENGVXPVCIPTHWNCOEOTIAAPAJAIB"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page16_digits",
+      "primer": "\u16a9\u16a2\u16a6\u16a6\u16b9\u16bb\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb\u16a2\u16a6\u16be\u16a9\u16b1\u16a6\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 66.96,
+      "snippet": "TEOAEHASMTHEEHTHEEJEOVJVNGDGNFGTHINGOEEONTNGWEVATHVEOAEXAEBF"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page16_mod29",
+      "primer": "\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df",
+      "cipher": "autokey_plaintext",
+      "score": 66.83,
+      "snippet": "THRAEAODCXRJYYBPROOCEOYHHEACRLEODVFVIANGDCTYWIASTATEOEAEEAMB"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 66.78,
+      "snippet": "EHAEMWVOEMGTPJTHESMXTHEOHWVFYFEASDNGWAETINLEAEOOEEOVOXMRNRAP"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page16_digits",
+      "primer": "\u16a9\u16a2\u16a6\u16a6\u16b9\u16bb\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb\u16a2\u16a6\u16be\u16a9\u16b1\u16a6\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 66.75,
+      "snippet": "TEOAEHASMTHEEHTHEEJEOVJVCCEAAEVOEHDBNVPINDLINGJDVEEOIIABPOES"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page16_digits",
+      "primer": "\u16a2\u16a9\u16a2\u16a2\u16b1\u16a9\u16b1\u16b1\u16a9\u16b1\u16a2\u16a9\u16a2\u16a2\u16a9\u16a2\u16a6\u16a6\u16b9\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 66.73,
+      "snippet": "FNGGLTHJMTHWPNNSTWAEYRHBEOREIAHHHOCGCAETFDWAMFOEOEOTHYAEAAMM"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9",
+      "cipher": "vigenere_noskip",
+      "score": 66.7,
+      "snippet": "PCPEIAPETHDJAESAETHXIAJCODTHFIAEECPBOEMOXVRIALEOEOHLTHXJAVOE"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9\u16a2\u16a2\u16b3",
+      "cipher": "autokey_plaintext",
+      "score": 66.57,
+      "snippet": "LEAJNYYLCNGSMAEAEIAEHEAOBXMPEOAIBYOPAEHEAPNLJVNOEIACMOOEEOEA"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 66.11,
+      "snippet": "MGJWPOFIDWJPFSAENGXIOCWOPEAEAENYGMIAREAEOBBEOXEOXIASEAJXHWOV"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page16_mod29",
+      "primer": "\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1",
+      "cipher": "vigenere_noskip",
+      "score": 66.0,
+      "snippet": "OEJSNRNGFTIVOERHOENGNGAECIIAOTHEOEOCNGXAESTNGIOEWEAOCWOTOPBF"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page16_digits",
+      "primer": "\u16a6\u16bb\u16a0\u16a2\u16a0\u16b9\u16a2\u16b7\u16a6\u16b7\u16b7\u16a6\u16a0\u16bb\u16a0\u16be\u16b7\u16a6\u16a0\u16b7",
+      "cipher": "vigenere_noskip",
+      "score": 65.96,
+      "snippet": "EOTHXEVWEEAFWYSIAVTMHJRLVYEAENGEAPXEASRXOOFEONENBVJEOARTGINA"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page16_mod29",
+      "primer": "\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df",
+      "cipher": "autokey_plaintext",
+      "score": 65.94,
+      "snippet": "AEOYHROTHWEOWOTENGDOESXIARHOETHJBOEOPEXWFXMGEAFGJMAYIXTLAOOE"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page16_mod29",
+      "primer": "\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df",
+      "cipher": "vigenere_noskip",
+      "score": 65.9,
+      "snippet": "OTHJHSSREAXXCYIYAOEXRTPNFDGGTHJMEFIAFVHWNAESIAYFEIAIARPMTIAD"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page5_digits",
+      "primer": "\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9\u16a2\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7",
+      "cipher": "autokey_plaintext",
+      "score": 65.65,
+      "snippet": "EABCMEAEOOEOTHTWJSEONAELRPMXMXNPEAMRGDEABTHEBEOGBDJMAEEETEAN"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page16_mod29",
+      "primer": "\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1",
+      "cipher": "vigenere_noskip",
+      "score": 65.41,
+      "snippet": "THMPYCXHSEXSLSAMTHEITHVOELITHEAIWEOEOAGIJCYIANMIAOLIAATHEAPE"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page16_digits",
+      "primer": "\u16a6\u16bb\u16a0\u16a2\u16a0\u16b9\u16a2\u16b7\u16a6\u16b7\u16b7\u16a6\u16a0\u16bb\u16a0\u16be\u16b7\u16a6\u16a0\u16b7",
+      "cipher": "vigenere_noskip",
+      "score": 65.15,
+      "snippet": "MDEONFIANGGNGJLAEYOEYFAETHEPHRDOWWTTHOCNGOENEANIDIIGOEASTOEN"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page16_digits",
+      "primer": "\u16a2\u16a0\u16b9\u16a2\u16a6\u16bb\u16a0\u16be\u16a9\u16b1\u16bb\u16a2\u16a6\u16a6\u16a0\u16b1\u16be\u16b7\u16b7\u16a6",
+      "cipher": "autokey_plaintext",
+      "score": 65.1,
+      "snippet": "MVXHOOEBFPAEPNEAHVETCDDJCFRINGNEAWEAVPSMVMEORVJMVNNHBOERDJYL"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "page_num": 40,
+      "derivation": "page16_mod29",
+      "primer": "\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1",
+      "cipher": "autokey_plaintext",
+      "score": 64.56,
+      "snippet": "THMPYCXHSEXSLSAMTHEITHVELOCACTMFNMAEEIATYLSSFFYIAYCBMAEOEVDY"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page16_mod29",
+      "primer": "\u16b7\u16e0\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7",
+      "cipher": "autokey_plaintext",
+      "score": 64.44,
+      "snippet": "AAEHSPYXCIJLXEAGPSJHAEMEJJPEAXIATHIAEASXEAPOESPJJSRNGXVPVNGA"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page16_digits",
+      "primer": "\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb\u16a2\u16a6\u16be\u16a9\u16b1\u16a6\u16bb\u16a0\u16a2\u16a0\u16b9\u16a2\u16b7",
+      "cipher": "autokey_plaintext",
+      "score": 64.41,
+      "snippet": "SPSNGIAIAGNBELNMOEWDMNDSGEEOSBIRAEHACYPYOVEADOENGYJXSEAVIASL"
+    },
+    {
+      "chapter": "Spirals",
+      "page_num": 3,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 64.37,
+      "snippet": "MGJWPOFIDWJPFSAENGXIOCAERDCRMWVIAOERTLYHHAENGXETOEIAYTHVSIAW"
+    },
+    {
+      "chapter": "Mobius",
+      "page_num": 15,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2",
+      "cipher": "vigenere_noskip",
+      "score": 64.37,
+      "snippet": "MAELHYEASOXAETNOENAENGAHEAAFVPJCEOAOEELNNGGYYWIAGDRFVHEOIWFY"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page5_digits",
+      "primer": "\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9\u16a2\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3",
+      "cipher": "autokey_plaintext",
+      "score": 64.25,
+      "snippet": "PVTTHOJYYXAEPLRDNRMIAWBMHSWSAELIAVYEAMBWFNGTEOALIAVEOGTHPNGP"
+    },
+    {
+      "chapter": "Branches",
+      "page_num": 8,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9",
+      "cipher": "autokey_plaintext",
+      "score": 64.14,
+      "snippet": "PCPEIAPETHDJAESAETHXIAJCODMFSVDOEAEEWIXVWNSDRSGFPMYAIVJIARNG"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page5_digits",
+      "primer": "\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9\u16a2\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7",
+      "cipher": "vigenere_noskip",
+      "score": 64.1,
+      "snippet": "EABCMEAEOOEOTHTWJSEONAELRPMJFBYCNJRFNOIATAEAEWEMCATHHVAEOEAE"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page16_mod29",
+      "primer": "\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7\u16e0\u16e0\u16b7\u16df",
+      "cipher": "vigenere_noskip",
+      "score": 64.1,
+      "snippet": "THRAEAODCXRJYYBPROOCEOYLXGOEIOFISCIADFMTPVPRMCCIAGAECDSEAWJT"
+    },
+    {
+      "chapter": "Mayfly",
+      "page_num": 23,
+      "derivation": "page16_mod29",
+      "primer": "\u16b7\u16e0\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7",
+      "cipher": "vigenere_noskip",
+      "score": 63.92,
+      "snippet": "AAEHSPYXCIJLXEAGPSJHAEMWHLOEMDOGHRTVFMFYNDBAIATRNGWIMOEOEAEF"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page16_digits",
+      "primer": "\u16b1\u16a9\u16b1\u16a2\u16a9\u16a2\u16a2\u16a9\u16a2\u16a6\u16a6\u16b9\u16bb\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb",
+      "cipher": "autokey_plaintext",
+      "score": 63.9,
+      "snippet": "JCXTHOEYYXATXYOECFDFWXNGRBWSELIAVIAAEAEAHRAEEOIADAECIGTHLNGP"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page16_digits",
+      "primer": "\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb\u16a2\u16a6\u16be\u16a9\u16b1\u16a6\u16bb\u16a0\u16a2\u16a0\u16b9\u16a2\u16b7",
+      "cipher": "vigenere_noskip",
+      "score": 63.57,
+      "snippet": "SPSNGIAIAGNBELNMOEWDMNDSEOAENGCSRTHRDROETHVJIDEAESVDDLEATWDI"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "page_num": 27,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3\u16a2\u16bb\u16a2\u16b3\u16a2\u16a2\u16a9\u16a2\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 63.52,
+      "snippet": "EHAEMWVOEMGTPJTHESMXTHEOHMIACHVFAIBABGTNGIIEADVDXNGSYTGTHNJO"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page5_digits",
+      "primer": "\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9\u16a2\u16a2\u16b3\u16a2\u16a2\u16bb\u16a6\u16a6\u16b7\u16a6\u16b1\u16b3",
+      "cipher": "vigenere_noskip",
+      "score": 63.32,
+      "snippet": "PVTTHOJYYXAEPLRDNRMIAWBVTHFHSEATNGXNGWNLOEWDFHIAOSTHAEEOXVJH"
+    },
+    {
+      "chapter": "Cuneiform",
+      "page_num": 33,
+      "derivation": "page5_digits",
+      "primer": "\u16a2\u16a9\u16a2\u16a2\u16a9\u16bb\u16a6\u16b9\u16a6\u16a6\u16b9\u16a6\u16a2\u16a9\u16bb\u16a2\u16a9\u16a2\u16a2\u16b3",
+      "cipher": "vigenere_noskip",
+      "score": 63.25,
+      "snippet": "LEAJNYYLCNGSMAEAEIAEHEAOBXNNOEORGSVONLOEHRVEYJNWDFXTMHNGTJRV"
+    },
+    {
+      "chapter": "Hollow",
+      "page_num": 54,
+      "derivation": "page16_mod29",
+      "primer": "\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2\u16be\u16d2\u16df\u16b7",
+      "cipher": "autokey_plaintext",
+      "score": 62.82,
+      "snippet": "SENGBHRYEAOETGSTHAWDIEATHSGPGMWRPGOYMLVAOVHRXNGYTLJNWECAENGS"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page16_mod29",
+      "primer": "\u16e0\u16b7\u16df\u16d2\u16be\u16a2\u16a0\u16b7\u16d7\u16e1\u16d2\u16c4\u16a3\u16c4\u16d2\u16e1\u16d7\u16b7\u16a0\u16a2",
+      "cipher": "autokey_plaintext",
+      "score": 62.65,
+      "snippet": "TTHAESYEIADAEEAVIHLDHGDJNGTWGDNGEMVMDJFPISBFTLTVTHNGMAELOEIE"
+    },
+    {
+      "chapter": "Cross",
+      "page_num": 0,
+      "derivation": "page16_digits",
+      "primer": "\u16b1\u16a9\u16b1\u16a2\u16a9\u16a2\u16a2\u16a9\u16a2\u16a6\u16a6\u16b9\u16bb\u16be\u16b7\u16b7\u16a6\u16a0\u16b1\u16bb",
+      "cipher": "vigenere_noskip",
+      "score": 60.31,
+      "snippet": "JCXTHOEYYXATXYOECFDFWXEAGIAHSGTNGXLIOPNGOMRIIAFPGDEOXHJHVOEM"
+    }
+  ],
+  "G": [
+    {
+      "primer0": "PARABLE",
+      "method": "autokey_plaintext_chain",
+      "score": 70.72,
+      "snippet": "EIAIAFOGOEEDEAGJTHDBETHDAEMTPYIPOEHOEITHOEGGIAEOSVARFPWAETXLINGBIGOELSJXLXLDJSIA"
+    },
+    {
+      "primer0": "INSTAR",
+      "method": "vigenere_chain",
+      "score": 70.06,
+      "snippet": "SEONNGIMNSPVNHAESTHYYMCXOEAEJLOEGAEAEIAMTOELHGLPNNGVWWXFTEOSPNGDDCBRWTHXHAENOETC"
+    },
+    {
+      "primer0": "DIVINITY",
+      "method": "vigenere_chain",
+      "score": 70.0,
+      "snippet": "EAPASAAELPTHEOSSFDVMPEODEOTHOEOEFAESTHGNLEAPDOJXJLDSCPONHIAYYMIWGOIANGHAEGXLEADN"
+    },
+    {
+      "primer0": "DIVINITY",
+      "method": "autokey_plaintext_chain",
+      "score": 68.93,
+      "snippet": "EAPASAAELPTHEOSSFDVMPEODEOTHOEOEFAESTHGNLEAPDOJXJLDSCPONHIAYYMIFLAECDNGTAEGWXWBI"
+    },
+    {
+      "primer0": "FIRFUMFERENFE",
+      "method": "autokey_plaintext_chain",
+      "score": 68.1,
+      "snippet": "CPIACTCRCXOWOENGFBVOEEOEJCJVGSVHAEGYNGETHETHWLJREOJEOVTHNGLXRNTHDLOESTHEOORDTOEF"
+    },
+    {
+      "primer0": "INSTAR",
+      "method": "autokey_plaintext_chain",
+      "score": 65.45,
+      "snippet": "SEONNGIMNSPVNHAESTHYYMCXOEAEJLOEGAEAEIAMTOELHGLPNNGVWWXFTEOSPNGDPNGJEAHIAIADAELX"
+    },
+    {
+      "primer0": "FIRFUMFERENFE",
+      "method": "vigenere_chain",
+      "score": 63.97,
+      "snippet": "CPIACTCRCXOWOENGFBVOEEOEJCJVGSVHAEGYNGETHETHWLJREOJEOVTHNGLXRNTHPGGBPBNIAYJLVVCL"
+    },
+    {
+      "primer0": "PARABLE",
+      "method": "vigenere_chain",
+      "score": 63.31,
+      "snippet": "EIAIAFOGOEEDEAGJTHDBETHDAEMTPYIPOEHOEITHOEGGIAEOSVARFPWAETXLINGBYLGEOFEIAJGWMMJE"
+    }
+  ],
+  "H": [
+    {
+      "chapter": "Cross",
+      "n_delims": 82,
+      "mapping": "plus_65_to_letter",
+      "score": 53.77,
+      "first_30_vals": null,
+      "first_60_ascii": "DEDEDEDHHHHDDDBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": ".-.-.-.***"
+    },
+    {
+      "chapter": "Branches",
+      "n_delims": 73,
+      "mapping": "plus_65_to_letter",
+      "score": 51.83,
+      "first_30_vals": null,
+      "first_60_ascii": "DDDDDDDEDEDHHHHBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Hollow",
+      "n_delims": 74,
+      "mapping": "plus_65_to_letter",
+      "score": 51.75,
+      "first_30_vals": null,
+      "first_60_ascii": "DEDHHHHDEDBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": ".-.****.-."
+    },
+    {
+      "chapter": "Spirals",
+      "n_delims": 161,
+      "mapping": "plus_65_to_letter",
+      "score": 51.25,
+      "first_30_vals": null,
+      "first_60_ascii": "DEDEDHHHHBBBBBBBBBBBBBBBBBBBBHHHHDDDDBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": ".-.-.****\u2022"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_delims": 81,
+      "mapping": "plus_65_to_letter",
+      "score": 51.25,
+      "first_30_vals": null,
+      "first_60_ascii": "DDDDDDEDEDHHHHBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": "......-.-."
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_delims": 83,
+      "mapping": "plus_65_to_letter",
+      "score": 51.12,
+      "first_30_vals": null,
+      "first_60_ascii": "DDDDDDDEDEDHHHHBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Mobius",
+      "n_delims": 84,
+      "mapping": "plus_65_to_letter",
+      "score": 51.06,
+      "first_30_vals": null,
+      "first_60_ascii": "DDDDDDDDEDEDHHHHBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": "........-."
+    },
+    {
+      "chapter": "Mayfly",
+      "n_delims": 84,
+      "mapping": "plus_65_to_letter",
+      "score": 51.06,
+      "first_30_vals": null,
+      "first_60_ascii": "DDDDEDEDHHHHBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": "....-.-.**"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_delims": 78,
+      "mapping": "plus_65_to_letter",
+      "score": 48.73,
+      "first_30_vals": null,
+      "first_60_ascii": "DEDHHHHBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "first_10_delims": ".-.****\u2022\u2022\u2022"
+    },
+    {
+      "chapter": "Cross",
+      "n_delims": 82,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        3,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.-.-.***"
+    },
+    {
+      "chapter": "Cross",
+      "n_delims": 82,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        3,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.-.-.***"
+    },
+    {
+      "chapter": "Cross",
+      "n_delims": 82,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        3,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.-.-.***"
+    },
+    {
+      "chapter": "Cross",
+      "n_delims": 82,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "#$#$#$#''''###!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": ".-.-.-.***"
+    },
+    {
+      "chapter": "Cross",
+      "n_delims": 82,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        46,
+        46,
+        46,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": ".-.-.-.****...??????????????????????????????????????????????",
+      "first_10_delims": ".-.-.-.***"
+    },
+    {
+      "chapter": "Spirals",
+      "n_delims": 161,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        7
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.-.****\u2022"
+    },
+    {
+      "chapter": "Spirals",
+      "n_delims": 161,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        7
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.-.****\u2022"
+    },
+    {
+      "chapter": "Spirals",
+      "n_delims": 161,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        7
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.-.****\u2022"
+    },
+    {
+      "chapter": "Spirals",
+      "n_delims": 161,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "#$#$#''''!!!!!!!!!!!!!!!!!!!!''''####!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": ".-.-.****\u2022"
+    },
+    {
+      "chapter": "Spirals",
+      "n_delims": 161,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        42
+      ],
+      "first_60_ascii": ".-.-.****????????????????????****....???????????????????????",
+      "first_10_delims": ".-.-.****\u2022"
+    },
+    {
+      "chapter": "Branches",
+      "n_delims": 73,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Branches",
+      "n_delims": 73,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Branches",
+      "n_delims": 73,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Branches",
+      "n_delims": 73,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "#######$#$#''''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Branches",
+      "n_delims": 73,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": ".......-.-.****?????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Mobius",
+      "n_delims": 84,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "........-."
+    },
+    {
+      "chapter": "Mobius",
+      "n_delims": 84,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "........-."
+    },
+    {
+      "chapter": "Mobius",
+      "n_delims": 84,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "........-."
+    },
+    {
+      "chapter": "Mobius",
+      "n_delims": 84,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "########$#$#''''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": "........-."
+    },
+    {
+      "chapter": "Mobius",
+      "n_delims": 84,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": "........-.-.****????????????????????????????????????????????",
+      "first_10_delims": "........-."
+    },
+    {
+      "chapter": "Mayfly",
+      "n_delims": 84,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "....-.-.**"
+    },
+    {
+      "chapter": "Mayfly",
+      "n_delims": 84,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "....-.-.**"
+    },
+    {
+      "chapter": "Mayfly",
+      "n_delims": 84,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "....-.-.**"
+    },
+    {
+      "chapter": "Mayfly",
+      "n_delims": 84,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "####$#$#''''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": "....-.-.**"
+    },
+    {
+      "chapter": "Mayfly",
+      "n_delims": 84,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        46,
+        46,
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": "....-.-.****????????????????????????????????????????????????",
+      "first_10_delims": "....-.-.**"
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_delims": 81,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "......-.-."
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_delims": 81,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "......-.-."
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_delims": 81,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": "......-.-."
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_delims": 81,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "######$#$#''''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": "......-.-."
+    },
+    {
+      "chapter": "Wing_Tree",
+      "n_delims": 81,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": "......-.-.****??????????????????????????????????????????????",
+      "first_10_delims": "......-.-."
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_delims": 83,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_delims": 83,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_delims": 83,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_delims": 83,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "#######$#$#''''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Cuneiform",
+      "n_delims": 83,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        46,
+        45,
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": ".......-.-.****?????????????????????????????????????????????",
+      "first_10_delims": ".......-.-"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_delims": 78,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****\u2022\u2022\u2022"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_delims": 78,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****\u2022\u2022\u2022"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_delims": 78,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****\u2022\u2022\u2022"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_delims": 78,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "#$#''''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": ".-.****\u2022\u2022\u2022"
+    },
+    {
+      "chapter": "Spiral_Branches",
+      "n_delims": 78,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": ".-.****?????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****\u2022\u2022\u2022"
+    },
+    {
+      "chapter": "Hollow",
+      "n_delims": 74,
+      "mapping": "ordinal_0_to_11",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        3,
+        4,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****.-."
+    },
+    {
+      "chapter": "Hollow",
+      "n_delims": 74,
+      "mapping": "ordinal_mod10",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        3,
+        4,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****.-."
+    },
+    {
+      "chapter": "Hollow",
+      "n_delims": 74,
+      "mapping": "mod29_rune",
+      "score": -4.0,
+      "first_30_vals": [
+        3,
+        4,
+        3,
+        7,
+        7,
+        7,
+        7,
+        3,
+        4,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "first_60_ascii": "????????????????????????????????????????????????????????????",
+      "first_10_delims": ".-.****.-."
+    },
+    {
+      "chapter": "Hollow",
+      "n_delims": 74,
+      "mapping": "plus_32_printable",
+      "score": -4.0,
+      "first_30_vals": null,
+      "first_60_ascii": "#$#''''#$#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "first_10_delims": ".-.****.-."
+    },
+    {
+      "chapter": "Hollow",
+      "n_delims": 74,
+      "mapping": "raw_byte_direct",
+      "score": -4.0,
+      "first_30_vals": [
+        46,
+        45,
+        46,
+        42,
+        42,
+        42,
+        42,
+        46,
+        45,
+        46,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226,
+        8226
+      ],
+      "first_60_ascii": ".-.****.-.??????????????????????????????????????????????????",
+      "first_10_delims": ".-.****.-."
+    }
+  ]
+}

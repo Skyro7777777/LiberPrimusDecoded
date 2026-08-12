@@ -1,0 +1,2970 @@
+{
+  "all_results": {
+    "17": {
+      "page_id": "17",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "17",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "f499a967e98c767fe0cf0e6a72a18886b6a5c3fb2d44fa524f435cf979d741b47bbd77d133c2aea5b2ba64ea19381f335ba785c4196bea878e09739da8e7bf39",
+          "blake2b": "62ce7dcd779ccbb2f2e65577b90855ec5e46fb7ce52aa8a387cf5a0d62168b12603cfde062213609fa29a75dee06d726397b2972f08c4cf7fe4b265e97d588ce",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "17",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "f499a967e98c767fe0cf0e6a72a18886b6a5c3fb2d44fa524f435cf979d741b47bbd77d133c2aea5b2ba64ea19381f335ba785c4196bea878e09739da8e7bf39",
+          "blake2b": "62ce7dcd779ccbb2f2e65577b90855ec5e46fb7ce52aa8a387cf5a0d62168b12603cfde062213609fa29a75dee06d726397b2972f08c4cf7fe4b265e97d588ce",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "17",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "762d615d09496032fc9be173e5143f3ab95f9fd3032d48c0dcb625928dcca6df687a1fadc89304334c7e2dc3173ac5d7e52303f3f490a0b0b1f1c28203f40cd4",
+          "blake2b": "21efc6b89bb5d1c1bb24decf8483b7f31a2126b27a8f8584d6488b4f231295273f9ee6713b4bce2370fd82276fceab8729bb908854f7d93de2fc7b6f297a5f2c",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "17",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "a71be7a93b8feae8cc00485fe97f3943744bd397c7ede4c3032f920a4f6867bcfde4070fe8ba421d9b7f9675abad7df490edf88c1d9d1c7c3241fe11246c6e5b",
+          "blake2b": "27a7151b20de91424b31919f5f0ffe290f80b9a0ce72e96067c797c618a1ecbede471ea4f421f3d15475bf0175896ec89fd42e6216e20e8dda842925241bcac6",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "fc0d51e5e5730690148ebef59d6c25faffc9a95ad83138269b60da45b46c447fd61e2f41b9027c3e1dc2e8c89e977d876e5572939f49ecd8eecf8b054668f8e1",
+          "blake2b": "8573166b88097e4df0fbb12dfe1b651286b4d0443a9a8a9276de315b4ed6eee20409c425791c8b076de2d3c5833f50276b7789763db1e8bd42e6506a83e7a566",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "fc0d51e5e5730690148ebef59d6c25faffc9a95ad83138269b60da45b46c447fd61e2f41b9027c3e1dc2e8c89e977d876e5572939f49ecd8eecf8b054668f8e1",
+          "blake2b": "8573166b88097e4df0fbb12dfe1b651286b4d0443a9a8a9276de315b4ed6eee20409c425791c8b076de2d3c5833f50276b7789763db1e8bd42e6506a83e7a566",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "6877e1cb78c1aa4249664f13c01cf1be76a8894a80104151ce3bb431fac0dad862b6f086d7292e20ba78512d6b7cecc0f503d8e1cb4612a14ace59de4f3eb36b",
+          "blake2b": "e53fb6a415fe6cf782c7eb2c433ced157d95f1c94c037b65fbf745a1dfad61339871839a9e724c20afef3c31eefccd0b2a104ff11207cdd649b6daead6eb9b10",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "95f9a33beab741c971f47cc018a51bc71370f5ea987828547f3541a550208271465cf50cfe97d451d395828cb2b9d5ec3e47dfe2ccb592787947836f59fb6864",
+          "blake2b": "0d36a44638f784a3f0f185e02bd9f5856c93f5521f077e4601fbea983126c19e40ed681f9534e65e6e07cd443fe1fa6d0aff59cd876ce9d11d1553091345ebaa",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4a0a1e11bcd7292dbfac0c62563a307252f15f0f12eef279c5b43b7528a72a57dca83bca970dce90bb74c5995c37a2be2bbef79fb554576ee641c981954e022d",
+          "blake2b": "53f89385855c06e0eebcc7995164ea5c2876fe1fc1d754d211d51c9e83793f8e345d62bdcf426d0143000239ec3672169585a36ee1e00e21eca2073c6ea32a1a",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4a0a1e11bcd7292dbfac0c62563a307252f15f0f12eef279c5b43b7528a72a57dca83bca970dce90bb74c5995c37a2be2bbef79fb554576ee641c981954e022d",
+          "blake2b": "53f89385855c06e0eebcc7995164ea5c2876fe1fc1d754d211d51c9e83793f8e345d62bdcf426d0143000239ec3672169585a36ee1e00e21eca2073c6ea32a1a",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "7d0886b9e52a500779732d3252fcbde24430e7d505e94d6b914f2af3446fd49eb2ca9b75f08cbdc10967814c68600affe734fb6e32ce274a1295a899b8a5bde1",
+          "blake2b": "91c3c086967494eecec99a52b3734013474e2d9cbeaa2253771d9d464436e5e4e8a6aa7b7f0ad0e7d1f6eee0e64b556a9f7b8a22fcfecc977c335587a66b6e32",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "17",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "dbc0437e34bb67a82ba879e6869a31c2aa72071cd0461540041f9e8b31e62d7a3e8f3e842f7b99268d22aa4091ce081742aa0ed45aa025c1d0d33334d43ef936",
+          "blake2b": "d57fc7b1ad4ec980f7a0b56a5c6b49e8b440cfd135abdf1fdbc2efc095067dbacec35a6dd0f9acb2abf4af3d2fc415b67a9183318efb2fb0b8862124af40fdd9",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "20": {
+      "page_id": "20",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "20",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "f535d5ab60d3be5775f64e49900b4709d37df164e67e69576bf83720db0be466dae2952aba25ed34abd50d56e535ae85d9635e96bedb942f797c09b2fcccd1dd",
+          "blake2b": "d5b83dc8ccda84eff21ffcce72702f06686f680dacbe3e6675f05b2124ac6d8bb8264581366fcf697dc157b6c36c5c5de224102c27c061e389f9066fb25566d9",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "20",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "f535d5ab60d3be5775f64e49900b4709d37df164e67e69576bf83720db0be466dae2952aba25ed34abd50d56e535ae85d9635e96bedb942f797c09b2fcccd1dd",
+          "blake2b": "d5b83dc8ccda84eff21ffcce72702f06686f680dacbe3e6675f05b2124ac6d8bb8264581366fcf697dc157b6c36c5c5de224102c27c061e389f9066fb25566d9",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "20",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 812169,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "7399ac8d20e92211d9ed9ea22b85783c10c4b1937a0ce56b7821ada17f8bb4946f5f1fe35a35ea157c7e65d2ab15fc8ad90a319845f1310dd50ec730651c1566",
+          "blake2b": "00a6a686a8ddf88db055150812a5d68a0a3d25ba8012913d8caedcf9f1fced7df6d0da9b14f8849c3f87c6fc62c2fd5d6e20631c9b863b03c06cf6e95d219695",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "20",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "03b222240a8539b37863059877cd7a2fefdf4a0167608fed74444fbc8b96e75ad31936fad0f3d7987dba5bec07acde7b9c058ca12217695aed4a443769410119",
+          "blake2b": "f7c2bbaeaf0058d7663f4444678694da1cd392c59047b1b23f1c7533eda050afe0b60f133018637a4a16b7095ce68b625caca5d4319332146b16b6fca5993076",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "79ede8a0f53df0076b6f3d10fe3aa1c525b903ec81a1d0dce4d6629e8cb9fd4e42e20a47a2ee9ac4a13fb9e16107485c0455c0748a87cadcb06239614845351c",
+          "blake2b": "7c2ee52ca56ca23cdf7347a1d8643f0afe8c2401b30ef957c9929b494773af1b06ee8065aeb5204c7a65dd407db6bcad4c1e0f1469783724486745e6fe3054b7",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "79ede8a0f53df0076b6f3d10fe3aa1c525b903ec81a1d0dce4d6629e8cb9fd4e42e20a47a2ee9ac4a13fb9e16107485c0455c0748a87cadcb06239614845351c",
+          "blake2b": "7c2ee52ca56ca23cdf7347a1d8643f0afe8c2401b30ef957c9929b494773af1b06ee8065aeb5204c7a65dd407db6bcad4c1e0f1469783724486745e6fe3054b7",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "0836cf0ed9e13ff24b7dec7e6313b63578c0e7cd917fa477cef97d7c67fd5f5f9e6998e1ca5ba15df14b77fcac2702da8040883509936101ed45c0b8079fd9c4",
+          "blake2b": "f56fd3b6027fd03d536635dcfec3440657c1a77dea8bff4575dd68b92d695bdd8b5f3921713f60272da50519b489359720cb3635811478b907d6d28b95b8ecbc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "400f69363765fddf79c97bbe2cb81f442c9fc35a95a4658520f3b9fb5a94a9c72dfdacb965c46e4109b04f9c5dcb5a782b0396a448564c0f7e980ec2917e6985",
+          "blake2b": "91ea8a4b7e8b9c754fabe3f34639ba79297710ecab35c5a8a299a0e14185f0ed34a465ec84e7395b8e77a5d6e219bc50eb3326b60b980abbc10104588e54b89b",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "2865eed3cd7754a5c598157bc58a874ed4054d0b28de70bf2fad76e6ae083f2002a79a52b3bb4f938b8e14f2aad095c811976c2455d8ec9634a5444c80f91928",
+          "blake2b": "5e2c1688605eb65504618a54e708823063aacbb8ee27ac5a74127bae814d806e47d965484ed753ee406645437e3bd4afb2f060b800f82b0eae6d7ecc83009268",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "2865eed3cd7754a5c598157bc58a874ed4054d0b28de70bf2fad76e6ae083f2002a79a52b3bb4f938b8e14f2aad095c811976c2455d8ec9634a5444c80f91928",
+          "blake2b": "5e2c1688605eb65504618a54e708823063aacbb8ee27ac5a74127bae814d806e47d965484ed753ee406645437e3bd4afb2f060b800f82b0eae6d7ecc83009268",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "bdaddb8c025146cdad105fe953f802d810ae88e1ea89996361cfe531b0d6d8041263f61f39a225b65feae2b5ee842202bff685f5b4379b555285eed3c422ee70",
+          "blake2b": "be2a760682de64a13cd4f18fe822992ce1b39c0a565b6800f7d049d7ba5df64e4a0e4ffcba8fe37212ffb3f85ac268e6f00f53fbbe0c305d1166cc532f7d2402",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "20",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "568874df94114c68e5522704257734c31345d609c6b98f27516c3389018540edd06f70a6b1cec38aa46eb63c57b2c5427eb347607a862c142ce907c609f650b8",
+          "blake2b": "70b5d5350d8a80c2974404aa8e337e5be2f35a12204e7bda8eae955dd8a8018217059bc1758b2ff0823293245b27a6475cd0a588a586e2477f84b6cc1b5b746e",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "23": {
+      "page_id": "23",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "23",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "22d0f911ba800d7ba5ea2ad6ebcc5bdaafe3c9a027ac7c522158af5783e368c950f66783964fbb47ef2fd5dac5627951a28b2e30800976d659bcc0c74cc844ae",
+          "blake2b": "7de10caa9d92213dbf2fdd6a6a081d2bc70d73a034d04dd94f97d8137d7dffc7a11525dd49af55b443133a29264668120178154d348be2b3e8a92808135b9e7e",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "23",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "22d0f911ba800d7ba5ea2ad6ebcc5bdaafe3c9a027ac7c522158af5783e368c950f66783964fbb47ef2fd5dac5627951a28b2e30800976d659bcc0c74cc844ae",
+          "blake2b": "7de10caa9d92213dbf2fdd6a6a081d2bc70d73a034d04dd94f97d8137d7dffc7a11525dd49af55b443133a29264668120178154d348be2b3e8a92808135b9e7e",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "23",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "64c37bcc0542cf6efdf109f8771e27e5fa68b7de975613f3d995772331631a13039b9d5fe4fc92b11c4ea86bf1e7a8e828475a51c1bd7c3cdf3cca30ff69244e",
+          "blake2b": "a996ab9d68cdea715a53402cdf6a6c8de4297deb7be4816be253ca75970aaddf5b8dce4a804cb509a629c3914279050619e586a3e33ff9ff9a39626912beaebe",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "23",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "25339a0444353681aca34e9398c1850c9843d61927475ea938bb9f6a1fa775e169e548d84de05a72b2962d2203fdfbd145cbc61d541173918241da62d070014b",
+          "blake2b": "5cd4b7bcd5f0e0cf18b8c9da68f11b1a02977671d099b174bf5a59dcccc02af20b42c76f1ee99d944bf18690d72d0bc9c163e643a511e0de992ae25fe1ae571a",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "d1d673e4e8f08ead7dbafa5a184188938ed2cdc6901b4923596bee608d227889ea20d0427035e71db4756ed9cda0b3b8e937d4b2c1202e5231e4f75b1b33063b",
+          "blake2b": "43b9c1a35a6c34d1c1242a3bd0cdf6ec6c8ca444587c814618430a1caf632b87e49ac4e49ef36982e5878857110c02e4def1969ddd2aca3a67964aa2f527622c",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "d1d673e4e8f08ead7dbafa5a184188938ed2cdc6901b4923596bee608d227889ea20d0427035e71db4756ed9cda0b3b8e937d4b2c1202e5231e4f75b1b33063b",
+          "blake2b": "43b9c1a35a6c34d1c1242a3bd0cdf6ec6c8ca444587c814618430a1caf632b87e49ac4e49ef36982e5878857110c02e4def1969ddd2aca3a67964aa2f527622c",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "87f29a5fb69f8fde44575870a13f76c6aa71da572d56f19dfe636909e5b365b8faf56288a98e5c4ee495ca09b80f9df72483582a6ad6e8f408a46a1b4fd4f963",
+          "blake2b": "c676f443e92689593584e8a6f1ccb2d597d824162893a4ad6f185e30e5e4221eb3677efc1f1b5bc536139372c94f20d6adc740380e07aef7a93034dd52e6f8c9",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "11e63a1e21d82e095ed20c204281f4023a601f1e26d762389630a475763c1c245cc38f4dfaf7316df491a2328ba5efc4a119a0fa10d543936ef1651d9cbae1df",
+          "blake2b": "08fa09420e9ee24060acb03008c3b4c600f9461976484c92bc70e9a4d5444449904b74d83f26078ff493ccfa24655aff26b2098a7d092e518da2e5169751106a",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c9420f18580b97f6b94f9fb6b28d03ac28f84993d696a537c3a630e6c4109309d7a78746d56304162b0ca469669493e2f93239c2ff9296355bbbc309a5e17406",
+          "blake2b": "5ca63bd0d241fd69754eaff65a753a77bf3fe26dfd0697cd0633d0a358bf635b51f0a95011ac231f7d53bd1e5438a01b9e0e445120b8424506d05aeada3c2374",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c9420f18580b97f6b94f9fb6b28d03ac28f84993d696a537c3a630e6c4109309d7a78746d56304162b0ca469669493e2f93239c2ff9296355bbbc309a5e17406",
+          "blake2b": "5ca63bd0d241fd69754eaff65a753a77bf3fe26dfd0697cd0633d0a358bf635b51f0a95011ac231f7d53bd1e5438a01b9e0e445120b8424506d05aeada3c2374",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "42201d7927e88ad0fb43a390f694162f5084986b04c3e2711cd1f1dd783173cd8221620cfadb000f96071ac390f1b099cfb588a33e2920d28997a421053f70ea",
+          "blake2b": "6961d7ca9b21add5c143ba2dbe9029450534fba7efe4240a9a8510363df88b27c022646a8025d8c02329311f9020b4f56b79624c865ba99254555bbe7fceb257",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "23",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4a51aac01a8a966f5a39209707ee10fc07c49b5ef2d94533ac49e4de8e8687abb8d7d12e838b3d7f9fc630f716a724aeaa1207a03b1619e2250304691f36de66",
+          "blake2b": "a767fc9b51f84c40eacad5e67a8b2f7472c3d22987a8c6dfd5758af71c08252d6bbeae00fbedcff346c442a2cd99c266dc14969d54a4d3fa9077a7ad2f85424b",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "25": {
+      "page_id": "25",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "25",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "b68d384209fcb5b4e84b6a8bf29e1432b99596a176764647c441203476b9d4d0f375ad2c3613c1935c86d5f9f2e334b6225cf2886a0d3c8f56c2087840e8f5c0",
+          "blake2b": "4aba6ed6adb043eed969411d722627530c7f027e33e69c77c30d77580f8a02d82ecb7526d39b485359cea14b12414e8438194bfa3bc794c76c48f750394232bd",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "25",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "b68d384209fcb5b4e84b6a8bf29e1432b99596a176764647c441203476b9d4d0f375ad2c3613c1935c86d5f9f2e334b6225cf2886a0d3c8f56c2087840e8f5c0",
+          "blake2b": "4aba6ed6adb043eed969411d722627530c7f027e33e69c77c30d77580f8a02d82ecb7526d39b485359cea14b12414e8438194bfa3bc794c76c48f750394232bd",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "25",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 271513,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [
+            {
+              "offset": 274569,
+              "string": "_xbolSq!eNx"
+            }
+          ],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4db112060ebd9ef29fb7f2b996512fd0a16a256eb2b09de8a167a9b0f456d6cfcf99d9634761f1f2e0ad2eb0c75e23fd8db5c6d0d3fd9c27451586114b271c92",
+          "blake2b": "bdb86215543d66c00126f2723f5003132b6e9e56f5e600595b5e2f3e07eb111468730b03bf81ff8f55925698966c511e95f155572b107148bdee664856885c28",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "25",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "1d2449394d5fde5a31ab897e3559b897d3d73a3ba58c934a34b872d83539260a1d4dcfa292188eb1baec1c3a32a429b1bd7624a55f2797b821f7cd5b8fcd98d9",
+          "blake2b": "030188549c4369fc778711a436110e431eeb993ef85894e7eac270c7650a555116cb0ce7c809c8c4c5c9ce0e19ae47d0fbbdba7c9ebe1cf8b7aedb7716b8ddbf",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "01dc3d60103e8a17dfd434679f7e49df040acf62bbc44d278ca4aee30fa45e39c7c0c10828a4237eeebb3e408656c0d81d94fd76018035e40183c33224ab6ae3",
+          "blake2b": "eae9a1c526ab2c19c746f6ad64cd48394490c0c52aefca6e058aa399cb806b7eb3f65635e2c78758bae5087376f72b695c91521d63c621031436ada80b147c6b",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "01dc3d60103e8a17dfd434679f7e49df040acf62bbc44d278ca4aee30fa45e39c7c0c10828a4237eeebb3e408656c0d81d94fd76018035e40183c33224ab6ae3",
+          "blake2b": "eae9a1c526ab2c19c746f6ad64cd48394490c0c52aefca6e058aa399cb806b7eb3f65635e2c78758bae5087376f72b695c91521d63c621031436ada80b147c6b",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "16b2a5c365abb90166ee544c2ccf6c26897ebfb03add7d5732df16df4945186e02791a8f01c5a0e72bed9b58a9dda8c500543b3b374b471aaaf7051e6d79b553",
+          "blake2b": "a3e4f8776e8dbcd570f24ed6f51c058cbdeeb43d962b7930d43ffb0a01845c5c701982e485381b6e6ec2c8847d6102a72b09733ed840304612bdd95200ecfcfa",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "10182de37559b3801bd555e28b0dd85d0e4dc48e4a253bfc3c59f3e1706e82ff54a7024311264acecfc911615f9d93ebb12302bd9048aeba9978e4e834d50634",
+          "blake2b": "0711da053c8ba23c6bfb25b10095f7393671afb9afba0d32ec0c57c69ecc9f4ead7740d2cce1a2e499adc7c87301b53cee620aac37641a1b2fd4a6ef731ca22c",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c84540a8565f09ad28af3804cf59be87456c2d634d5c3f963a38b6d87f854af9d63ccbbfd6ccdc796d85ce8d1ab985eadd23a96eece79f3dceda57d0c79f1f75",
+          "blake2b": "e2d75cd42b95c8c68deb66919e434de953a339da924b77c52dcca38837ac9d3db25ec4abf8259fbb7c5a35c71e6424c0eecc1d0f4049bd01246a96bd37209b8d",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c84540a8565f09ad28af3804cf59be87456c2d634d5c3f963a38b6d87f854af9d63ccbbfd6ccdc796d85ce8d1ab985eadd23a96eece79f3dceda57d0c79f1f75",
+          "blake2b": "e2d75cd42b95c8c68deb66919e434de953a339da924b77c52dcca38837ac9d3db25ec4abf8259fbb7c5a35c71e6424c0eecc1d0f4049bd01246a96bd37209b8d",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "77d746c3382a8cb27b3fe5394ca9e4e1167f2bbf6f9484183c00d2a9ccc46e89c9ba61678e518b86932ee77042156f794244322afc973bc5fec4e2e1525a225e",
+          "blake2b": "b0b3dff6355779dbf897768f646e41030982ef5f9bc48afef656eae13d7fbb64788439e4582ca6f0a1abfa48a61a55aa0f78eeb6b1f75f17ca6fcdc8157b50cc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "25",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "d234920d2a1157076acdaf5970a134712b16b7092aac26cd5f863935804e2880c42c06e9c5951ca616270cce49b04b16f9589642ccce625a8216f8842e1a9da0",
+          "blake2b": "56ad0b5ab8353f118fa263b6ae2f31fbf00789662572a237ee0b1ac33c9fa26bd92e4297218f153cb2ed899c27e27474ac366cedc61ada402c38df9c866c0b0d",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "32": {
+      "page_id": "32",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "32",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "beef93d41d9dcde3360ef107aa3a29cafce3610a77aa9d00a09c0808c4a064c2411750c16498c7d6f549055ab7ba78101119c2739fb1c7755477b478bdeabb15",
+          "blake2b": "6345fcfdac188d190f460aef644cac83464addad5ca55605298dd50dfbcdf8eabb34890a03103bd0af9e22ffd110d07fb99dd2db76c59f0d643f3e171062a96a",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "32",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "beef93d41d9dcde3360ef107aa3a29cafce3610a77aa9d00a09c0808c4a064c2411750c16498c7d6f549055ab7ba78101119c2739fb1c7755477b478bdeabb15",
+          "blake2b": "6345fcfdac188d190f460aef644cac83464addad5ca55605298dd50dfbcdf8eabb34890a03103bd0af9e22ffd110d07fb99dd2db76c59f0d643f3e171062a96a",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "32",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 831801,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "fac11ee3f24db6419eb1b244faefc78e1d7d5ccdd3cbce8d70288843a7d3feb30f463de53bf5e5621078030efb47ac0757c891e345d9ddb155632be04dc51f43",
+          "blake2b": "753a0f23d7321349d3d1da4886619bb787c25e562be841ae2402b355954d38b426b841a001f62d344f5ec10a561712870189a4fc66ef2f1268ca093db88e34bd",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "32",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "320cefca8dd8512222e6b0759ab937f1e05d301962e07ca8467a58cc2c114f8181e30243f2e356733a4948c37c8c58467e86d6b6a9ee9097152ee1c4e62fd500",
+          "blake2b": "cdf8bb0f454a22a80774b1ba281dbae861a96fc39400ced8762d1cc2783f144c8e698f8afb8166da5f3abf054a4d3049413992f9484ad7f7548709e7134c0859",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "55b8e95b08e90ab34b6a78281de927dad89ce67387891d6151f37c8a34a627586dfe4f71d5a6dc7238fd45d3a75862d718dcdec0ca7f4ee6b7158ac862966baf",
+          "blake2b": "a1218e87a8e2cf409dcdc166d72c8eaa70351b2ad53df737e828f8b8ff9997a2e7c0da6fb71e62c6fa52aa1f24590c7eb47bd021057300b57b72a89c29cdaed8",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "55b8e95b08e90ab34b6a78281de927dad89ce67387891d6151f37c8a34a627586dfe4f71d5a6dc7238fd45d3a75862d718dcdec0ca7f4ee6b7158ac862966baf",
+          "blake2b": "a1218e87a8e2cf409dcdc166d72c8eaa70351b2ad53df737e828f8b8ff9997a2e7c0da6fb71e62c6fa52aa1f24590c7eb47bd021057300b57b72a89c29cdaed8",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "f7c59d611ace2fa18aa7fb254ef3b2c3f12260ff78cddf6f9e95e4bf3f37eeb83d0b6bf6ef0422caafa0696bc2f39aef066b0cf94dba997efadf43041c8ab668",
+          "blake2b": "c0aa6b76029ac6eb93ce37794899b0bbedca4d5874d974bffd0912522db907c6915aa46775b3930eb909ae5cf2c700d64d0649b577003fe999a8280ba168d691",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "b9684fc0fab78348706e63aedec9dc4d59eaede852d5810ba533ad1fc7d74b8964ecb5e2e4092089637a430f7f8679339a67e1c651652ff75108b53f056a3f37",
+          "blake2b": "caf6d97626bf09b16ad7d532dc4ac880865f28729a75b8813bddcdfd3ce5df8d16a61a5ff6e8e604d17c430817a42e9b18906401c618c1a306a7b91075615047",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "be756fce1f5ba109e61236d36c2d0ed0a90dcb6b859bc236af535f702d2fcba688f1c0eb79e36d241d3d5d03fbb556a0b4533762445d6eb08eab3a85f6d81c2a",
+          "blake2b": "790a82b8f98ed98db42ef8222ee2424efd30a7f917d39e057f243919920fbeefced77cb257c37f467e48a5c3135614a90dea037154f2b89c29852ad2a88d1aa3",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "be756fce1f5ba109e61236d36c2d0ed0a90dcb6b859bc236af535f702d2fcba688f1c0eb79e36d241d3d5d03fbb556a0b4533762445d6eb08eab3a85f6d81c2a",
+          "blake2b": "790a82b8f98ed98db42ef8222ee2424efd30a7f917d39e057f243919920fbeefced77cb257c37f467e48a5c3135614a90dea037154f2b89c29852ad2a88d1aa3",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "1e86481ed86cc45c9b427193d6ae20ed71d6758346be10c89f40040e748d4cfbd3282541e17d7ab9c9e92372cac69f1d25fd28a22515f4fa5614c61e3b15e694",
+          "blake2b": "4711243cca215f0c8fbd429ec7942f071b7dad217dfd86acbb9d1ec59e35d4a3dbda0856bcf6cc1deadb2b36218b1bcca0c71f27917630d9cb5a3aa77f560ffc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "32",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "822b300e7690dfd03f709dccb31461e1fadd8366e128d76b6e1356ad351844506ab2ce5c9c5a3f74635e153d034488a90f3578a0b99f5d171c7283c1a60ebfde",
+          "blake2b": "5c0a0dad41d89a6e8fa48a27aeceb064cdbca26916e15d2940f26d94d5bae4481c460f98017e483244ce69d80f03217518e2b709470212aa324af7e85bc80af4",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "40": {
+      "page_id": "40",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "40",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c6212a9790633edbc87a3abeee94f07f9f6848460038758a1370bdd306ca8b6c8dc5acc1b9c536f993218741484b4fe62a8753154239cf7300d3fafaf60f94db",
+          "blake2b": "081fdfe6e3b1c917aa8e7b1423aa3e0fced909975b17d8f616027e8a497c5dca0d174d507bf9308fa88625171c181d6fa95b61c6c557883757cc1398062b2461",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "40",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c6212a9790633edbc87a3abeee94f07f9f6848460038758a1370bdd306ca8b6c8dc5acc1b9c536f993218741484b4fe62a8753154239cf7300d3fafaf60f94db",
+          "blake2b": "081fdfe6e3b1c917aa8e7b1423aa3e0fced909975b17d8f616027e8a497c5dca0d174d507bf9308fa88625171c181d6fa95b61c6c557883757cc1398062b2461",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "40",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 817385,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8e1747b309a09fd83a964610a7cfe87bfabd3bd1931173798d6caf2352cbb1df9402dd765683d6399bf2c97d8de05e59c272218fb451d89f42e0109b2285715b",
+          "blake2b": "2590c90d883f7572384bcf13c9bf94925f694310810c0adc8d421e2afd5332d9c126a6653eb09599ae682af96dc6564c8f736cbdaf7e6ecaeca32a41889d91e0",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "40",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "cb4f3629d4977f3ccceb8b3077f863c80db146510a83b4101b09a23474aa75f62aceb88f9ebcdc76ebbac97e8d3ee3910224c4eaf886fd9ea566464dc9899288",
+          "blake2b": "effbe9235663d4fcc016834283b3ed05f4016bb85526dafebf7594ece8be52ae33842080998ca56e31cac38a09100a03c38f1193b303083c946690c12eaaa03d",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "7b072ceca00a5398c4e4627bd132e49e2d73edae414c39f9d626ce75115b7ace26e7f409f4f21ab37abe71747e80933c87b175cfae6c56ac0b21e3b363d7839a",
+          "blake2b": "18f7e1775fa5b61b88c625ffa024278fce081c4d2bdee80ddeaf8cf1f455a79fc430be661f6c0a2dabde17d3a2cffdd8731179b94edb0090e49d02f5137f48b0",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "7b072ceca00a5398c4e4627bd132e49e2d73edae414c39f9d626ce75115b7ace26e7f409f4f21ab37abe71747e80933c87b175cfae6c56ac0b21e3b363d7839a",
+          "blake2b": "18f7e1775fa5b61b88c625ffa024278fce081c4d2bdee80ddeaf8cf1f455a79fc430be661f6c0a2dabde17d3a2cffdd8731179b94edb0090e49d02f5137f48b0",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "62102702b40a3072f7be5dc0b8459b8382dc3628d204a9bcb453e8666767f5f667fa6799e14f2d2c2e02be04b4f8a4df03cdf2b15f41a37a40b9f228765aaeba",
+          "blake2b": "8712fd8ee452f2ef6e9d09db6d1146609b6b4291f58e13c9c670047871e96d5fd0073102b5f3b7c4f558706e6e85c2339824c3ebb7e9a466b6188b64e811c42b",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "490ec56f2014cb5f2a9259a70fc6186122a1555c97670be4502d577c801c480cb3df758aee862f2f8fc914a20a3c0c0ce289de262621ef12da3e66f0b3dd06da",
+          "blake2b": "31807749afabda3edfebf7ebe7086d8e0cc849accec5e97ed9d07e71c71403cfab1103e6142ad50d40f3157a16fd9bfa84edcef85cfaced822d82681fc697fa8",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "940c328aca4985f119741bec81879ed105026cddf8e349b1764518c6f7304e25d30d4d9b0c52fd37ee471fc5f337b657b11ba4130892e08a93ab62a6ab3740e4",
+          "blake2b": "c59b71a9b11d89310b5d32ef04dad354b94bd49ef8d3c8dea8f1e236d4b370d78c17b9539d695252a37605c985f2804db45ed0d104a7cc82fbf98814af61db27",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "940c328aca4985f119741bec81879ed105026cddf8e349b1764518c6f7304e25d30d4d9b0c52fd37ee471fc5f337b657b11ba4130892e08a93ab62a6ab3740e4",
+          "blake2b": "c59b71a9b11d89310b5d32ef04dad354b94bd49ef8d3c8dea8f1e236d4b370d78c17b9539d695252a37605c985f2804db45ed0d104a7cc82fbf98814af61db27",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c2b8ddd8f03ccaab2c7bfe3e5567d660a6453e972c0c86f2a3e177c53c1b5150e013848dfdbd49605287c3d93d21c3827e82990f07ceb848756413d73158f2aa",
+          "blake2b": "016f2b834a0f5caafa6996ec6f2d5ad2bf5a01350422de6a488aff93103d995af9e83a272a4ad9aadb8079597c8020a68b646032204b10440f07af5b15f9d691",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "40",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "2aeb6ae968c8f4dc1a5fb300e747c3b9c8b67fc4aabb80ed5afa5c1bc16f9cce84ea9a84b526d22c5c0d7d1dd39f52b7d806771cb102cfa6258f87d5c819b863",
+          "blake2b": "9a1390d131071e56e6c19aa5b612f69395eba3e75825be7288c5a8d628c1fe839f8b8e6a4173130e3ae56c4a030fb5f7164920a98e3b53a5b2aa84c1e42b8c2b",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "44": {
+      "page_id": "44",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "44",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "051c4395bd8d846f514f55073e01f9a4aafeebd8cac69ffb430457599aa0f0baaa8afa3a4cc0790192958b99f9a9a85e3f3e7ed4f583b7fc87b408e0ff960d73",
+          "blake2b": "0cc5d894006daa703f0c0fe23e01f188fc087525f8bd4e2770c9ab311935007e15e890c6e35d3b58575db42304866dd0937bb88872a33d17e57d02f4607fc006",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "44",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "051c4395bd8d846f514f55073e01f9a4aafeebd8cac69ffb430457599aa0f0baaa8afa3a4cc0790192958b99f9a9a85e3f3e7ed4f583b7fc87b408e0ff960d73",
+          "blake2b": "0cc5d894006daa703f0c0fe23e01f188fc087525f8bd4e2770c9ab311935007e15e890c6e35d3b58575db42304866dd0937bb88872a33d17e57d02f4607fc006",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "44",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 524167,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "17b805ef2c30c45f3aaeb3880ede010abf6139cfde2aa325af501f5aa6b3f7246b10e323a4fc3235bc5e7a1bf5975ebd668b6bafe950ca7328fd0d874227b96a",
+          "blake2b": "69162690538226db0497d4ee794acbf6a4da9cd3998da9bb98f71a75f5d604c9624b15c65b55442a71ce13e25b3ca8d5a716efb7ed6e9916ff595985f92e09ff",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "44",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "13c891be4608434caae4ffe5f8c0336256aa8eb8c24666f46bbb42fc536c8f5a704c801c60d8d7c2307b97f79dc399f912f44742f347b01a22b9a0f4049b86e3",
+          "blake2b": "7c7f873a8871bec8e03e52d950912c45fe751cc99e46dbeed4f5fc8fd2c08ac6dce77d7c5d54263e106e5a55d66576a4703432809dea0b50695f72b0a9785cb4",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "46947e3c4ec37b65acaa52b9f78faea3a6c8534f72fcacc080c060bdef1636437d2ebca7a1ae282711a0147fd1b211de1dd900544bf468c6818f6685ebf6ea92",
+          "blake2b": "74cc88937f6c27ebc7eafc17e92de99d3bbfb058d48bd7296f10042954dd24fcc094e93963dd7bb52b08ed012b37645934b8508424bd18365053787bd6a5ba10",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "46947e3c4ec37b65acaa52b9f78faea3a6c8534f72fcacc080c060bdef1636437d2ebca7a1ae282711a0147fd1b211de1dd900544bf468c6818f6685ebf6ea92",
+          "blake2b": "74cc88937f6c27ebc7eafc17e92de99d3bbfb058d48bd7296f10042954dd24fcc094e93963dd7bb52b08ed012b37645934b8508424bd18365053787bd6a5ba10",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "89bf966016ec204a8d6aaae212cb9f100a2a7be824615b77fe696409d217ebd988e19962991304e0fb267ab39571526496d555755928e3521519b00d307a7621",
+          "blake2b": "5097e31b92e6953d6fe643762273a70ec29f5207bdaee9aba4c722074ee05293136a43495e4b039f96b1eb801608e585aff440740f496247b304d9c33ef1e837",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "1120e4bd51b81fb0c0ba89aeb99b45ca2fc4b6ef8f52a4e9eb424321e16b74309cb6acde6be3ac29006abfd60f9f62959a875752791ab3fc8c139832418e734e",
+          "blake2b": "a8319f2c4f69b9d6743dffe48e91eae2e2074571fe8fe0b7c9f9fb2ed9716f849283e6258f8e5d98c92b64bdd80b416f5fe7430e3171014990a8a10f207d71ee",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "62b09ff27ad1060af31d47e80d20655bbf982275833f1458e74a29702e385c4eaea6f666ded8975e5cf0be446107d27a71d0800e020f4d2406f740fbe1dc8f5a",
+          "blake2b": "50f264d03c61329648036d3a87d862b86d5025e17d65898f656efc64894918fa0ede68860ca9fc97494ca90a64673c892bdd35ddca18bea11b133f32e67290c9",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "62b09ff27ad1060af31d47e80d20655bbf982275833f1458e74a29702e385c4eaea6f666ded8975e5cf0be446107d27a71d0800e020f4d2406f740fbe1dc8f5a",
+          "blake2b": "50f264d03c61329648036d3a87d862b86d5025e17d65898f656efc64894918fa0ede68860ca9fc97494ca90a64673c892bdd35ddca18bea11b133f32e67290c9",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "1b9a5e179853f7ce548649253bb087301cce7b82af05e099c245a2fb30012017fd1d58c88c8cca4f2eb01f2fc75cfd052fd17c61708a1b6f65bbdae008d0810d",
+          "blake2b": "3e14198f9af2ae3a60ce65d0180d735d7a2009d4d8da23ea1bdfe5cf277c4cc41372c09c8f38a9b4c232effa56446b75fda13f340a6e42117a1ef65f6ddd6511",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "44",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "01b5b7cb6c31bf61036f43f1fb014f1dd6e8b600672608aae52b8f5052eaf623d2c81ec72891ed312bc95dfd93badc3d294398ad778cd2ca78f9b0d4461c61bf",
+          "blake2b": "6a061fac59e8f72f97722909e449d758aa44a247f7433ea1144618c9b3b80f83ba59a8e94f9a6ab376343de73b2950b98bcd0cbeb118ccb5daecf46a6866afcb",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "50": {
+      "page_id": "50",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "50",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9f2995c5bec0964626b5d9672dc45925838c88ff5942017a80a0c17ffe6535968ed9a112099b4436ebb46f901e5d47756519cfab7d67000d8e396d92183b01a2",
+          "blake2b": "c36a5e6469fd2ea312e334ebdc34eb2899ba5bea8fee5f67cd6bbb32c3b51a83bb152a620509b6fc0f1656bf083f39196d0477b2f32eb8bad663d2315bd3bf40",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "50",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9f2995c5bec0964626b5d9672dc45925838c88ff5942017a80a0c17ffe6535968ed9a112099b4436ebb46f901e5d47756519cfab7d67000d8e396d92183b01a2",
+          "blake2b": "c36a5e6469fd2ea312e334ebdc34eb2899ba5bea8fee5f67cd6bbb32c3b51a83bb152a620509b6fc0f1656bf083f39196d0477b2f32eb8bad663d2315bd3bf40",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "50",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c0ff8967026757830a32fe4d6785ca9f2ba05df2455415abeebab8b56b9bb8210ddbfdc775b6b43bd6d92195f158e358a7b97ec8997dcdf8d5c10a4e63e481e0",
+          "blake2b": "01f07850885a1c0c0ae53a47d50d3cdac26c40edf8a6a806dae9c4f90e02d424f1c05137afad6a48c16b5ceab815792f3881a40ca9dfc133cdda1897b96c394f",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "50",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "a3af0d8313208abf5e813e0555dd18bd09c8459387c14b2afd296eb18f57166c88b53111158a72940d030fe57e7e4cd85f9bfaac28235b865984e7684a7243c6",
+          "blake2b": "0257b1050e2387b98cfba85a3f2570d0276e4158136f9e9d87ee074fc5d574358070e3ad8f5856de24d870a47654801eb7411efbc804e6328ef7c908b4f91265",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8a930e14fb94ca8fd4c137a95a1600541dd02eaf916b0d692923b60cd22bcfaa8896686a13cd002d0aa92c5c26b7541226d9f55e141b369f3e851b99544c227c",
+          "blake2b": "ae52be1c1a1361af255b3e02838d19fec46a5dc0b0e3c7baffa11e189c0559fba6f7e5d486f47fc90708fa252aa31fba957dbbca070aee060590436d0b48362e",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8a930e14fb94ca8fd4c137a95a1600541dd02eaf916b0d692923b60cd22bcfaa8896686a13cd002d0aa92c5c26b7541226d9f55e141b369f3e851b99544c227c",
+          "blake2b": "ae52be1c1a1361af255b3e02838d19fec46a5dc0b0e3c7baffa11e189c0559fba6f7e5d486f47fc90708fa252aa31fba957dbbca070aee060590436d0b48362e",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9d1fcf9d0670d1c488741067a47aa26af2375584b5989fd2f1e7905926b312340bfee33acc06b921c5985f7c68fbc69c29bb6fd4eb4c1ddf93c3478611c5f2be",
+          "blake2b": "e14606d875649e07fd46ec82969c904077a0216102399704c03450679c151e91e13c0d3f5cfeafa77eb56cb3da155bc451b0c44b9d396cce165856423a2a9589",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085c616d8d0446d67e5a4d9cccbd50ad0fb1e749c7554de5598ea9fe557437b52884b24007bd084b821268c279c0222cca9444a2c99a5cafe607d096c4b4981c",
+          "blake2b": "c190d2f55716d436bfea8524f83e6599ddf78786a4ce3a86f57985dd3a339dc2eff8b67aaf80f9aca500186fcf5b0eb4e0b000791dfee1cf141363bc78f28f1d",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "ba0a8ae096dcfe089fecc3061214d92f130336db72bb5fc605c7dc79f4f26309a92e70cf0f56247d9b438f36917f5a91bb004e8f9d4cc7c287090b8f64215f5d",
+          "blake2b": "538fb0900a65d7effb68c466336f0d23c81573fe396474abdcece2bb30a05fc92ae0f2947bc9d80036d03d26484231e3e7430f9a9abd0990f22d353da6bde767",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "ba0a8ae096dcfe089fecc3061214d92f130336db72bb5fc605c7dc79f4f26309a92e70cf0f56247d9b438f36917f5a91bb004e8f9d4cc7c287090b8f64215f5d",
+          "blake2b": "538fb0900a65d7effb68c466336f0d23c81573fe396474abdcece2bb30a05fc92ae0f2947bc9d80036d03d26484231e3e7430f9a9abd0990f22d353da6bde767",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "d4b399dab5e602e03592e6c025b1079eb81a0cfdaca170a00596cc41125efe7a9d314a8fcf3b43a6095834a2d405824eb7e94bdae960a03beffe60e1e41f8051",
+          "blake2b": "9886eff23d410c7fec4b101d8e29e5910d580c83a8764a4c7873ec30ccadd9b7aab1dfb2b77625fdeb85ccb2969ba762dd1f172713c5631568a7535f3762cf36",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "50",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "7e78073bfb7ff1478ffc1716a3bf3a033032d458a12c5a3d1ab90503b488ba2c27f0b526673fa661463c459f1248508b2898cecaa118e5fed1e9d0cd053d77c8",
+          "blake2b": "e472ff0c913bb7c82af6b4081ef7c983f314238656d6fab4dc79323ee77eed73b4e91b32d2ecae46038631e00a568e76ace319bf2ba444c978d8c6c86047fe49",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "56": {
+      "page_id": "56",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "56",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "d857053117e07fb0913ba86274470f3e26159b3fd83415ef1f22ca25622b856c6ea77aa2ef185508d6f836a169807ef4b63c4c9a94faa20b99eaec04fcc089cb",
+          "blake2b": "73efcca5926ccd1080c9927723a9ffecf68e271735de2b1b4256c7a4b01cecb2feab9a6518b670122739ea0ab721ae0346bdfb34f757d0fad04a87564f60e6d7",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "56",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "d857053117e07fb0913ba86274470f3e26159b3fd83415ef1f22ca25622b856c6ea77aa2ef185508d6f836a169807ef4b63c4c9a94faa20b99eaec04fcc089cb",
+          "blake2b": "73efcca5926ccd1080c9927723a9ffecf68e271735de2b1b4256c7a4b01cecb2feab9a6518b670122739ea0ab721ae0346bdfb34f757d0fad04a87564f60e6d7",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "56",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "0af532687fd044cf4dd1a34189f86d9358cee0428a0e03c92ab4802ed00b0ab04a27a8e61464395c6809368e396109978e28aea33c0327cc413a51779f226f43",
+          "blake2b": "7da3c8c1af1ba28fa7a7df32b9487c92bbab7357e9a0073af665648907fad4020603d9d9d17fecea659887fad35c1da2a14e79e2bc0cd52b29c2dafa5e420176",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "56",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "493313089a7e7410d9f3067e64576360437c7be45f248c269baad7b387da0c3388cb440ee129bbccc6fd4f586f86e84d094895c6c11b0d6e917eb4910728caf3",
+          "blake2b": "598997b680ec8d13d1a138a416700b556fd3612abc656f8b5052d38da0b5f51dbff5414cbf92c390e2762f074bcfa3427a45c3ee1a2825cccae27ec928684434",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "bd15ff8edb1dfce829c5c1c858fcea5730fd5a6d6bec8b83715f8ffb7e770253dd280f712668797d0b900b5a368cfdd6304dd0d436528a4d853c5b0fb9126e52",
+          "blake2b": "078c753c32228563b43d93bb661d5dc8a9ddd1d18500f8ed082e23db73c40f3fbdcac3ff07f2e15ec000cce9ccca73e8dc68f061bdc23ede0afe32d7a5577b98",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "bd15ff8edb1dfce829c5c1c858fcea5730fd5a6d6bec8b83715f8ffb7e770253dd280f712668797d0b900b5a368cfdd6304dd0d436528a4d853c5b0fb9126e52",
+          "blake2b": "078c753c32228563b43d93bb661d5dc8a9ddd1d18500f8ed082e23db73c40f3fbdcac3ff07f2e15ec000cce9ccca73e8dc68f061bdc23ede0afe32d7a5577b98",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4cab67e21a6057e3dc3815b085124080cf727746a1c0684311a3128a28646d8de0400d39fa152016b87afd9687115cbd8f79c75fa21109bc3a364b5ce4c0ca96",
+          "blake2b": "7b4d35d3a5bda3dae8f61f49512c91bbd42123a75fa433eef920b6d6a17a90d9d8a48ccf60a2c481aac54c78da2c4de2e3ed933af7c442527781c76c4d976520",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "e37701d90e0807535ca7503c7e96ae261ce90cc19fc6914e126ed5d131647a599292cd7e29bdc52c720dcbaf48d1a19af3f99bbf5da4dc0bf0cd7661cf60c4b9",
+          "blake2b": "32d631f386fdbb68907c7857beecf303632e4985d1213d1c9b2ed43a7457c853e1152b8e21e0e87ee8e797da170b44a8995579c66319c389e5cddffe4793284d",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8c208143465a08b00ffb9e01468ea3f9e8576d9c378e4872c1d085b4cba6f6a328de5333321034e8e01a4d8f68f9934735eb5082702557b892d1f17f960a19e4",
+          "blake2b": "5ceaa1c14c2c78ff966c428d6ff749506f393fe4a25984f0348a145799c7b417ed951010ddbea5435504b59808d8a174d625476ae764d55b4d111da8d59374ed",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8c208143465a08b00ffb9e01468ea3f9e8576d9c378e4872c1d085b4cba6f6a328de5333321034e8e01a4d8f68f9934735eb5082702557b892d1f17f960a19e4",
+          "blake2b": "5ceaa1c14c2c78ff966c428d6ff749506f393fe4a25984f0348a145799c7b417ed951010ddbea5435504b59808d8a174d625476ae764d55b4d111da8d59374ed",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "17135d0777ef37bfe5c7805682b96df12c843c2ee7f755537392aaf68d1ed680a40e0b501812fa0463df2a90baf418c4b2a60d0f91347fcd53b0e431eddcf1a5",
+          "blake2b": "96c9b8ae716c15eb949b66e27beba66f2cd34b47cb7e715eb053ad29364fcbdfef907e10ff1137919313e5dc467a8f37af241d7af053582be3fa30854357ff13",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "56",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9db7176406a09e52e8f33106c0e9f73918f33bda5f3d959d6d2d7204484e7bf0047421d6a544751dc17df39e6294698f3df5aa20cade1f42726e363463322833",
+          "blake2b": "d1923ec74046ff998a5b065f5c2080dcfbb9055cfea0b2128ecb0d86428bf900c4d11bc30385a53753ac6208fc2a085c8d585ff0777526475013c4be1050ffa0",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "57": {
+      "page_id": "57",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "57",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "5ca3b89ac46944e973346565df5931be6bed67b1b732462a7146e4508dab2fe962caf7f6b6bf7efc2d5b342e77a1451b38cfb1ce4a6bc2bf45a4168261c7dd04",
+          "blake2b": "3de030d7a566db6a0d221ebcb2715f6dd2deac9c4f65404e40e9b33a2b356c061db8d50d5f55e2bc7fad6bc866fcb0f27285854c9e4e6c78cb9186908956fc3d",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "57",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "5ca3b89ac46944e973346565df5931be6bed67b1b732462a7146e4508dab2fe962caf7f6b6bf7efc2d5b342e77a1451b38cfb1ce4a6bc2bf45a4168261c7dd04",
+          "blake2b": "3de030d7a566db6a0d221ebcb2715f6dd2deac9c4f65404e40e9b33a2b356c061db8d50d5f55e2bc7fad6bc866fcb0f27285854c9e4e6c78cb9186908956fc3d",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "57",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 391426,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4725d25552dedd6c2c8ddc771b906663a3f04d721d4d5e4098d513c54a31727e239a66042f32c0652b716592b30d875276b5e0b6313ee3854141657c662cfb2f",
+          "blake2b": "a877ae8792a99e54353f9eedbc8bfc2ac223664eec44c658276bb2957d8a601561929de08b743217c0c7da9837ab180c1684c01acc8d13a783e1643d04d0eb98",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "57",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "82c96a793b2ab8e2c4449e24aa2e3f25830a0f557cb0059e7fdf21f8ba6791f0065d4d17a91dda82e96296b3a9f10c9a82216be0883afaf71aef37f0e39501de",
+          "blake2b": "1880505251a08b00f601abd00ecaeceba0ae2ef8a4fd2cec8773353e7e81754c39879c8c5456a8a43c7c9ee196102418c34f7293adfbbd112c0a7453b28698a0",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c696f67788766e046cc74ebee3d839b243d02ce76f6d7a87c873d4f338008c8aca470dc44d686d96f9826db4b5d1406e10c6f6a436f5faca446148cd19344267",
+          "blake2b": "1077df1fc0a51df0b7509e3eab411facf0567741c41aedb751b50002fc35267f2273fd7e65e8b1f76c686653e3fed6b5d406026f827a7c46e8bb9c978f05bc28",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "c696f67788766e046cc74ebee3d839b243d02ce76f6d7a87c873d4f338008c8aca470dc44d686d96f9826db4b5d1406e10c6f6a436f5faca446148cd19344267",
+          "blake2b": "1077df1fc0a51df0b7509e3eab411facf0567741c41aedb751b50002fc35267f2273fd7e65e8b1f76c686653e3fed6b5d406026f827a7c46e8bb9c978f05bc28",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "b9ebd8fa71624f7c9e045cc64e4c42678dd8dd1a4ddf84aa4563e7e6cf8558dd317d83a092aeb71db5f6caeb67bd06bc093a246917bf114701c5bd141166e8e9",
+          "blake2b": "286f11b26d5981987dc81b385779ad82c003b5f31d9bccb906f870c03433f347fcb2945de79e08f13b32277aa64d1e336984acebb79bc090da4cbbb2c458732e",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "111168334c0be31b6e7e29ff5471afc679a08a8613f317de231a6220ff25f98c431f28c261ca7cbed35e0706cc4a586462a461ef5614f993d4234f06c0e1052d",
+          "blake2b": "5c58643da973a39d1e06225b297a15b1f22975de9b1fdc2b728369d3a4a286b853e27a2deee2f04457f187100bb2092a8c0e798d672244007a5eb6c0d7cf8a2c",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4ef1f17a0d604b5c3237a73da37067ae71e56cd0b104060aafd65ef248235794d1c30d1107d18b9cdba407a45799bc484265c53318735ac53be11791a6dd0bd8",
+          "blake2b": "e9e4fbeaa5042cd8a7286b78c0f728f702d900d542eca378df87221957565acce30a4837453ac6541cd472d5d08adebcee6902139b7daeabb34042dbc6906c3a",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "4ef1f17a0d604b5c3237a73da37067ae71e56cd0b104060aafd65ef248235794d1c30d1107d18b9cdba407a45799bc484265c53318735ac53be11791a6dd0bd8",
+          "blake2b": "e9e4fbeaa5042cd8a7286b78c0f728f702d900d542eca378df87221957565acce30a4837453ac6541cd472d5d08adebcee6902139b7daeabb34042dbc6906c3a",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "689cbb66e23d490e5ce1367bd5b37bc1df5d084c54a742ce618a945237c243e87b97427b48aba7a7d74a64cfb449aa44c8e75cab2de62b3c368795ffe4c1bf70",
+          "blake2b": "be4c3d778506247264ef809f8311a1ae86ae867a31b3fd376871c2b05218265891964acffc8c5c6e2b015ed03ce73dcf61c9b5c9a1e7676e34bf01b7a60d9848",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "57",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "6b604edcca295498cb23a8a1d8eca49cc72e2597d3009b28f0e98d11fa8c879ef692c940c1e12609c81f6a88c685d554103aecfeb83fba9eed8ae1ecb8252f20",
+          "blake2b": "daed2e1c11c800879115e54ddbfb658f30c5deafdf58c1591c4cd145b743ec8b4ed7cdeddeaef6c5a0b79242f0d1cbbc7f398887ca6bd7f6d9466e1c006e1129",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "71": {
+      "page_id": "71",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "71",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "44f1510d8efcb46329c884205ab368463979f5d715f31474d1d7392713620ad88126745fe361becacb11c60b7e7c4f225868f115c1eb9d5f18d255ffc09f609b",
+          "blake2b": "ac5f84529a8d8c014ecffa9be77536727940237c6fb7fca6f6bb0b3a6c915f655c680d6182d0fde88359aaccf757798ed5b3751b6cd1771bdbed9e68ef201e72",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "71",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "44f1510d8efcb46329c884205ab368463979f5d715f31474d1d7392713620ad88126745fe361becacb11c60b7e7c4f225868f115c1eb9d5f18d255ffc09f609b",
+          "blake2b": "ac5f84529a8d8c014ecffa9be77536727940237c6fb7fca6f6bb0b3a6c915f655c680d6182d0fde88359aaccf757798ed5b3751b6cd1771bdbed9e68ef201e72",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "71",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 391426,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "6d83fb573d2e7da2453ae68907bc1a25c6da0c05d4ce9607d50e4f9136d59d9b29f2518646aed460c94907e4b325107a41b33813d9e87e1e04804840964cff30",
+          "blake2b": "9622cd1e7a692bcd8ed37c7e932724207ba989dd2a0873fb7af026612f4f72dd55c7ed4190c1f07e2b71a60d5fb6087c3cf9d4356081dc49818fc1817acd28dd",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "71",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "5bde0541b0241656d8b5be3691046f92623691ef430d2e030fc3ce69e5d393ff8fabbca44e5d5af4c7e3f39733053debda2fc772336401b5f24dd8085c00d93a",
+          "blake2b": "2c0854b683ff5dd8da49f409901f1fc52c711557094ed8df46b13660bcff76e1e5f71d6099b9f11d8c3e9db2f9a55851ad29cdce3b57701c25fb0ba8cd8c3c5b",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "121807760d0ac74e8d160bd7d2d2f19ef63159c19279eb9f2950f532cde6f27bf253d960a8c6d11879ef6b1f39993977f13c9236147392eaa050b6881132f2e3",
+          "blake2b": "b09f4f10c640b4aa465ad26a9b98f1430fc016706db2ce65ba0a00d31759735fabebd5146bc30f90e64158c7beafd525ec9c092690fc46b51b954f36d84a4bc7",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "121807760d0ac74e8d160bd7d2d2f19ef63159c19279eb9f2950f532cde6f27bf253d960a8c6d11879ef6b1f39993977f13c9236147392eaa050b6881132f2e3",
+          "blake2b": "b09f4f10c640b4aa465ad26a9b98f1430fc016706db2ce65ba0a00d31759735fabebd5146bc30f90e64158c7beafd525ec9c092690fc46b51b954f36d84a4bc7",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "a50363455ef271f6a92619079c7cc398bd9ed4cf1041fb95a34896776d0f61f1d0359589fb32abedb76d595f61446cfccb35d77146bbbae4a459c784910c6db4",
+          "blake2b": "1159e3a1ffa12f8d3e30c4afeaf808d83e346396ef6e4bd22c5ce4cf2dc18b46d99fe2cd0d51cacca0a88e9e520845a1438ba7976799f9e49d33da14df1edbdd",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "60609ba55466a98a2f072d9306bc78276e0ec14f63b1f982b1cc8ecc9eb51740effb9f2217d37d5a502ee7478b31acd61ff79f617832f19d64c3f59115a42c90",
+          "blake2b": "9a43baa55489424ccabd974e1a2622d7e12a30a059cf23eb690b06560f69c412f26c8b3638bb5508b32f963934d4d48a2b3ec3b68e649cb115d8990a3024d34e",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "11227d6140eed2d2c001ec9202af2d0bcc57c6ff1234512cbc7318a4b999511191af8b7b440da8a2c6d4d4756af045ca85fb4140512da1b1899190588742ca72",
+          "blake2b": "a3eea494dd166bd124901a1f5b942c638adcd9bde4cf9e037daad2c7d8060d432d9a926f37153038612e619b4dcc2a9a16d9d56a3bdeceed162877f5384d10da",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "11227d6140eed2d2c001ec9202af2d0bcc57c6ff1234512cbc7318a4b999511191af8b7b440da8a2c6d4d4756af045ca85fb4140512da1b1899190588742ca72",
+          "blake2b": "a3eea494dd166bd124901a1f5b942c638adcd9bde4cf9e037daad2c7d8060d432d9a926f37153038612e619b4dcc2a9a16d9d56a3bdeceed162877f5384d10da",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "caac6b5ea5bba04d891af14d5e10db9ce0d1360acb226eade7acebff24a9de20eef35647def66a6911556bf38a6b8c47c1bca3e99bec34922792dd465f5bec42",
+          "blake2b": "561817dbfa4a9807afc99327931316873d0e6bbec40fee0cb91a888a1c7b84f64303218c48e89b227e9f2ff8b935cf14677ad068012b9af6c666a6722d911289",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "71",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "0abf85c5029881659d99aba3aa5de5d2590135e8e16d0cb747e9e0059d8e3b57c4dea7225237e84e3e2aa39bed86053ebc5a59be4f6094713bb87a6d44fb8760",
+          "blake2b": "6ecd65f3d2db93b9eed22cdc46de2ad60f904a2dcc642a14caf69e12aa7eb4eeee95dad72aec2f2887b7f5edfc7132815247123c402b1ec6a26cbe6a26ac9733",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "00": {
+      "page_id": "00",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "00",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "20b1fb664d24ba04c1e533a62242190612edf9e5cc362fef6482ad7e1ccbcba1580173bc22d3c16d168b8eeee7aa4cb7029dd77e823e446b296b2296d7c2a0d5",
+          "blake2b": "a3dc276c777abab576b9f921f4b246f5f37b684d7fdc39a2059f7f3d058725840a4793d134d169e2db4a6322c8347a5371dc699433dff5e76403daceedd5abbd",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "00",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "20b1fb664d24ba04c1e533a62242190612edf9e5cc362fef6482ad7e1ccbcba1580173bc22d3c16d168b8eeee7aa4cb7029dd77e823e446b296b2296d7c2a0d5",
+          "blake2b": "a3dc276c777abab576b9f921f4b246f5f37b684d7fdc39a2059f7f3d058725840a4793d134d169e2db4a6322c8347a5371dc699433dff5e76403daceedd5abbd",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "00",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "2c1e9fa2753f62574b4edf84af6d841219420fcb6147fd6357b5b9cb04084b75ab055746a16853d003e0dd9cb1a3d072fa6ec89d5be25dd142d7979ed4fee19d",
+          "blake2b": "8c5f42ea022128b518ba7639bc1cc199b4cf8799166978138fac23d7b898ef668025a79c66b5a45608189b4dffbda2ed1d93e08a0fd5e05ceef1d79aec432ce9",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "00",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "ecf609b0cda8d345cbb00872d8dc2d9c151dc228df2bca19a5106f2a57b85d57e116fb5e2f4ac9b3ee329df9a05780d8eae518942bbde829919767b23039e66e",
+          "blake2b": "d669a773584759b806ff3cd411ad8765bf23d733c739c58d8d45d9851c747a90a2f276372b8533368c9818fc7ce429dfddd4b187d2cf490cc7e0cdc1364765ea",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "00",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "085cd9a019394c7911f210ed6aaabe6f938578eb2eb9f8fcefbba193f676a2cfe0ed2d9fd052de565fc88c85d8fca7e60f2d81c6b0ce2f597cb1d1d74e4191d4",
+          "blake2b": "c4bf908645946510db56e238cdf4489c52b9033f931ea2712ab77f4b56e04dd902066cc41c21d655b94d777d3134ca8742627c79a25229d5a6184fb0b1a38bf2",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "03": {
+      "page_id": "03",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "03",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 519896,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "5c446b414b5b2d64ff093ff86898d59bdbe6be59e41c9b77a722ce340515b241fb11352b339bbbbaa6af95f242a0022ad074fb882158285259fd7aeb96d8d10b",
+          "blake2b": "41b3533fbd95725d70bc36c226d6242e3c96611eb36c401b0e9793c91d1dd950439987d59819149ea348d8710f2d57f45ad779215569a5610eda1cba681a2aa9",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "03",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 519896,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "5c446b414b5b2d64ff093ff86898d59bdbe6be59e41c9b77a722ce340515b241fb11352b339bbbbaa6af95f242a0022ad074fb882158285259fd7aeb96d8d10b",
+          "blake2b": "41b3533fbd95725d70bc36c226d6242e3c96611eb36c401b0e9793c91d1dd950439987d59819149ea348d8710f2d57f45ad779215569a5610eda1cba681a2aa9",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "03",
+          "size_bytes": 1080000,
+          "magic_matches": [
+            {
+              "offset": 900576,
+              "label": "GZIP"
+            }
+          ],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "2e39bf5b797847c82c025c26070c4575495e0f305d2471c244edeea912e95eec7ddf5f9d1dcf0573160724fb64c9988522d46943c7e6e1b93546673236d7e4b9",
+          "blake2b": "003612af13558022b4873ebc0fb3407ebf1dfa06f6f83a21256eb88bb83a74e702a3a15d18d677c7b09e542b90cd6d9eea81670041bb17547b9fd7eca336a222",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "03",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "3a72088ba7aa796751f47b41349f9379928f130d952330808b9a4b4d417d0c275b98ce34852b8ffbed7a8a8915910cb6032332e8fc6a36e8348d14971e9fe4cf",
+          "blake2b": "a0d4b465fbbf16f759424b2cfc4888fb4fb1e99194d82fa5f3954f3a05fea75b149008845a84cbec42f51a2b899d5a0a2de2f858004d4992868a1289773334f1",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8b40c6263bfc868ec9a1396b286bc3266e5919d24d1b6b094f57a1a8fcb9fc46b4143bac90f85c5c162c91518555955595312d5afb6a12df518d38bbad26371c",
+          "blake2b": "1b08c285decf03c6e020e3dff277522501bebf107de1ba69e730815068e1dd78856d9610c307bf3a827ad920b02b81a0e7fd9914f0123f89aaa946d18f96a767",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "8b40c6263bfc868ec9a1396b286bc3266e5919d24d1b6b094f57a1a8fcb9fc46b4143bac90f85c5c162c91518555955595312d5afb6a12df518d38bbad26371c",
+          "blake2b": "1b08c285decf03c6e020e3dff277522501bebf107de1ba69e730815068e1dd78856d9610c307bf3a827ad920b02b81a0e7fd9914f0123f89aaa946d18f96a767",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "3d897ec1e1ccb6605f150259a959159dd22949f9b968d08e623be29aef43a9e0d7942e418b218bd8ac492eb555105a3b0f36cdeacfb8a11f487ff9dc8473951f",
+          "blake2b": "e6b5aafeb16a9cbaea156d603325a0309aacb457c23a34d13ebdc86586f03ff80eb75d8d9ef7bc1bb6ae6b264ad60e1692831d3630cae403fb417d6a6358d9ab",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "dafae4b0df629feed60d7d5c38a6ddf39c4cabd3f583f1e1e0a4047c8d32cab7e4078f387943ac2967a2bb1964ae3d1e3f131b70faba02809c013b4ce0e35fd3",
+          "blake2b": "c1e2f57dc49c1a1e48c46f9dccba282aa7cf4a5ed3f410cfafabfa2ba85207465954e4a81be6056050c98a624309205ce518ffca005888a4a1bd35db64e29207",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "147925904b4585e5650ce80ce6286335367531610bf877b1ac1757bef685cbd1f6f38e47e8b5a627b47401bf59e08a9d6948bdc522a03b92c263de17e52c513d",
+          "blake2b": "486059063256058b42e3b99b86f52399cf6272c88b7017b27c7fb4c0faf4ba8588c1f12a5cbe3aae3400f00add0bb6973cf276f4b6808946f4beaf4b6227fee3",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "147925904b4585e5650ce80ce6286335367531610bf877b1ac1757bef685cbd1f6f38e47e8b5a627b47401bf59e08a9d6948bdc522a03b92c263de17e52c513d",
+          "blake2b": "486059063256058b42e3b99b86f52399cf6272c88b7017b27c7fb4c0faf4ba8588c1f12a5cbe3aae3400f00add0bb6973cf276f4b6808946f4beaf4b6227fee3",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "aa447367c8bc6abd9da37efa846f3588d3b6e224b5000855e52adc1b75d750b10b74d9e7561dbcc3898477ed8ff9d124930de432d331d82941f11ae11f4bf357",
+          "blake2b": "d2671a055ad959cd5b2d56121f09f4b1603eb423f457fa3dc310694413c53dffae0e75dc1d157be0e7cb9c3a89295acc2f15547bf2059bf432a90afde359e393",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "03",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "69d9d6c8414b4e4d20bba3246a8550f0dd29d4d2bd4832db9b4f484b070144a3b9ce980e40fc973badadf11778e2167037569b0e5843252dbdb578de12f76415",
+          "blake2b": "f3659be6099f76dbdd7902956c8cf4d1080dc0667bf9adf0d9ab4309c132274bb3a02356e9b6098af730782e0496ca2b611a91f6628530b599b93d4c5e90bd09",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    "08": {
+      "page_id": "08",
+      "y_shape": [
+        450,
+        300,
+        8,
+        8
+      ],
+      "cb_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "cr_shape": [
+        225,
+        150,
+        8,
+        8
+      ],
+      "streams": [
+        {
+          "name": "Y_abs_LSB",
+          "page_id": "08",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "60e04382daf901cf44b61b1aaefaa192c7af637c75ce002d359261ea20a50d9d3878da269b5481e4c00904961b6f8919ef96cf14958b56729c945e9c48e19434",
+          "blake2b": "7f8c59371dbdf5175d214dac0c35f98ed8d1aa2132c2b355ca80cd2dd562a2cba452fdb26ccff5504c0d817083b7540d22907193fa9e351d86415e871bb02082",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_offset_LSB",
+          "page_id": "08",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "60e04382daf901cf44b61b1aaefaa192c7af637c75ce002d359261ea20a50d9d3878da269b5481e4c00904961b6f8919ef96cf14958b56729c945e9c48e19434",
+          "blake2b": "7f8c59371dbdf5175d214dac0c35f98ed8d1aa2132c2b355ca80cd2dd562a2cba452fdb26ccff5504c0d817083b7540d22907193fa9e351d86415e871bb02082",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_low_byte_bits",
+          "page_id": "08",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "a7629a1b1cdadec6070604b0972c6b3cb00d96b0def82936624a5116ba3640fa00c9726b1e4cea351c9408193d2bb246d7345cac2e635a6a68c4810b26c67587",
+          "blake2b": "e0b5692294fba45160941c95d7b5ffbc40c571921aa4d24476945671e1dd91dc0ae6c47c9efbc06d6841ed01b8a76b10f7c9a5e59b9269bfa1b09d424685d543",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Y_parity_LSB",
+          "page_id": "08",
+          "size_bytes": 1080000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "e89507758558aed7f9443128be31aa55b82d85b2d3b0770c98f8b31d78d224850818281fd3b522d5036ab7cd2f77bb3cb448a93dab3caca3c2b657f252ca6396",
+          "blake2b": "bed6440173a197e3fde6d26544f4a61c86404753088e27984136eac5c11174533248497ad3a78d05e67316b880c0d9a8eaadbf799065c7973626bb3158b614bc",
+          "matches_page56": false,
+          "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+        },
+        {
+          "name": "Cb_abs_LSB",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "ce6887edcd8473a4c27986d57de79f1a91b14676d9657c9c89772ffeb2c2dc9c8b7e05778c48fdb55c89c7a0db1e1056e0f6596538839ee05585a74077c18c2c",
+          "blake2b": "39f871d7d5edbd6cd7a15cca29213aec2d8cf642159efac7d8b948c5551dd3fd1f623d33025b9e6e8f7d93417fc163c2c54b8cb4f4990a1794331141630fc505",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_offset_LSB",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "ce6887edcd8473a4c27986d57de79f1a91b14676d9657c9c89772ffeb2c2dc9c8b7e05778c48fdb55c89c7a0db1e1056e0f6596538839ee05585a74077c18c2c",
+          "blake2b": "39f871d7d5edbd6cd7a15cca29213aec2d8cf642159efac7d8b948c5551dd3fd1f623d33025b9e6e8f7d93417fc163c2c54b8cb4f4990a1794331141630fc505",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_low_byte_bits",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "ce6887edcd8473a4c27986d57de79f1a91b14676d9657c9c89772ffeb2c2dc9c8b7e05778c48fdb55c89c7a0db1e1056e0f6596538839ee05585a74077c18c2c",
+          "blake2b": "39f871d7d5edbd6cd7a15cca29213aec2d8cf642159efac7d8b948c5551dd3fd1f623d33025b9e6e8f7d93417fc163c2c54b8cb4f4990a1794331141630fc505",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cb_parity_LSB",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "684044ddefb868b969f973494249a995d6c7f6648cc574d1f38042fa4bc27cac0811f1381b00046612a173b7d8d5b09edc63100514dd502813a1c9315b2f3014",
+          "blake2b": "33805c4ff6ba708dc3f04196f900bda856f380a78485771bd76c3cfc1e5c14d98c40338da9f98ec84ff3f51e6771056fac70a97e4458fea6f6c4167d95b142ab",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_abs_LSB",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9d63f4e59f34838d1a9595a12d5f81db06b151a62e5f24ea81563bce20a9c1229a02e9355518445ed10bfc3dd925af43b9306080f3ee1a047b9c47b89ba61612",
+          "blake2b": "704f3637d6ab9bdb66f575c439c73ab8959dd1cbef48fa2ddbd43d5ab4504bee5edba22a5b81cb7f58bee91e7c82090a7336a3abe62486c2bb9837094e69a4bc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_offset_LSB",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9d63f4e59f34838d1a9595a12d5f81db06b151a62e5f24ea81563bce20a9c1229a02e9355518445ed10bfc3dd925af43b9306080f3ee1a047b9c47b89ba61612",
+          "blake2b": "704f3637d6ab9bdb66f575c439c73ab8959dd1cbef48fa2ddbd43d5ab4504bee5edba22a5b81cb7f58bee91e7c82090a7336a3abe62486c2bb9837094e69a4bc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_low_byte_bits",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9d63f4e59f34838d1a9595a12d5f81db06b151a62e5f24ea81563bce20a9c1229a02e9355518445ed10bfc3dd925af43b9306080f3ee1a047b9c47b89ba61612",
+          "blake2b": "704f3637d6ab9bdb66f575c439c73ab8959dd1cbef48fa2ddbd43d5ab4504bee5edba22a5b81cb7f58bee91e7c82090a7336a3abe62486c2bb9837094e69a4bc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "name": "Cr_parity_LSB",
+          "page_id": "08",
+          "size_bytes": 270000,
+          "magic_matches": [],
+          "ascii_strings": [],
+          "pgp_matches": [],
+          "urls": [],
+          "hashes": [],
+          "sha512": "9d63f4e59f34838d1a9595a12d5f81db06b151a62e5f24ea81563bce20a9c1229a02e9355518445ed10bfc3dd925af43b9306080f3ee1a047b9c47b89ba61612",
+          "blake2b": "704f3637d6ab9bdb66f575c439c73ab8959dd1cbef48fa2ddbd43d5ab4504bee5edba22a5b81cb7f58bee91e7c82090a7336a3abe62486c2bb9837094e69a4bc",
+          "matches_page56": false,
+          "preview": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    }
+  },
+  "hits": [
+    {
+      "page": "20",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "20",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 812169,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "7399ac8d20e92211d9ed9ea22b85783c10c4b1937a0ce56b7821ada17f8bb4946f5f1fe35a35ea157c7e65d2ab15fc8ad90a319845f1310dd50ec730651c1566",
+        "blake2b": "00a6a686a8ddf88db055150812a5d68a0a3d25ba8012913d8caedcf9f1fced7df6d0da9b14f8849c3f87c6fc62c2fd5d6e20631c9b863b03c06cf6e95d219695",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "25",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "25",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 271513,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [
+          {
+            "offset": 274569,
+            "string": "_xbolSq!eNx"
+          }
+        ],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "4db112060ebd9ef29fb7f2b996512fd0a16a256eb2b09de8a167a9b0f456d6cfcf99d9634761f1f2e0ad2eb0c75e23fd8db5c6d0d3fd9c27451586114b271c92",
+        "blake2b": "bdb86215543d66c00126f2723f5003132b6e9e56f5e600595b5e2f3e07eb111468730b03bf81ff8f55925698966c511e95f155572b107148bdee664856885c28",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "32",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "32",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 831801,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "fac11ee3f24db6419eb1b244faefc78e1d7d5ccdd3cbce8d70288843a7d3feb30f463de53bf5e5621078030efb47ac0757c891e345d9ddb155632be04dc51f43",
+        "blake2b": "753a0f23d7321349d3d1da4886619bb787c25e562be841ae2402b355954d38b426b841a001f62d344f5ec10a561712870189a4fc66ef2f1268ca093db88e34bd",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "40",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "40",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 817385,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "8e1747b309a09fd83a964610a7cfe87bfabd3bd1931173798d6caf2352cbb1df9402dd765683d6399bf2c97d8de05e59c272218fb451d89f42e0109b2285715b",
+        "blake2b": "2590c90d883f7572384bcf13c9bf94925f694310810c0adc8d421e2afd5332d9c126a6653eb09599ae682af96dc6564c8f736cbdaf7e6ecaeca32a41889d91e0",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "44",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "44",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 524167,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "17b805ef2c30c45f3aaeb3880ede010abf6139cfde2aa325af501f5aa6b3f7246b10e323a4fc3235bc5e7a1bf5975ebd668b6bafe950ca7328fd0d874227b96a",
+        "blake2b": "69162690538226db0497d4ee794acbf6a4da9cd3998da9bb98f71a75f5d604c9624b15c65b55442a71ce13e25b3ca8d5a716efb7ed6e9916ff595985f92e09ff",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "57",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "57",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 391426,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "4725d25552dedd6c2c8ddc771b906663a3f04d721d4d5e4098d513c54a31727e239a66042f32c0652b716592b30d875276b5e0b6313ee3854141657c662cfb2f",
+        "blake2b": "a877ae8792a99e54353f9eedbc8bfc2ac223664eec44c658276bb2957d8a601561929de08b743217c0c7da9837ab180c1684c01acc8d13a783e1643d04d0eb98",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "71",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "71",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 391426,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "6d83fb573d2e7da2453ae68907bc1a25c6da0c05d4ce9607d50e4f9136d59d9b29f2518646aed460c94907e4b325107a41b33813d9e87e1e04804840964cff30",
+        "blake2b": "9622cd1e7a692bcd8ed37c7e932724207ba989dd2a0873fb7af026612f4f72dd55c7ed4190c1f07e2b71a60d5fb6087c3cf9d4356081dc49818fc1817acd28dd",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "03",
+      "stream": "Y_abs_LSB",
+      "findings": {
+        "name": "Y_abs_LSB",
+        "page_id": "03",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 519896,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "5c446b414b5b2d64ff093ff86898d59bdbe6be59e41c9b77a722ce340515b241fb11352b339bbbbaa6af95f242a0022ad074fb882158285259fd7aeb96d8d10b",
+        "blake2b": "41b3533fbd95725d70bc36c226d6242e3c96611eb36c401b0e9793c91d1dd950439987d59819149ea348d8710f2d57f45ad779215569a5610eda1cba681a2aa9",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "03",
+      "stream": "Y_offset_LSB",
+      "findings": {
+        "name": "Y_offset_LSB",
+        "page_id": "03",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 519896,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "5c446b414b5b2d64ff093ff86898d59bdbe6be59e41c9b77a722ce340515b241fb11352b339bbbbaa6af95f242a0022ad074fb882158285259fd7aeb96d8d10b",
+        "blake2b": "41b3533fbd95725d70bc36c226d6242e3c96611eb36c401b0e9793c91d1dd950439987d59819149ea348d8710f2d57f45ad779215569a5610eda1cba681a2aa9",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    },
+    {
+      "page": "03",
+      "stream": "Y_low_byte_bits",
+      "findings": {
+        "name": "Y_low_byte_bits",
+        "page_id": "03",
+        "size_bytes": 1080000,
+        "magic_matches": [
+          {
+            "offset": 900576,
+            "label": "GZIP"
+          }
+        ],
+        "ascii_strings": [],
+        "pgp_matches": [],
+        "urls": [],
+        "hashes": [],
+        "sha512": "2e39bf5b797847c82c025c26070c4575495e0f305d2471c244edeea912e95eec7ddf5f9d1dcf0573160724fb64c9988522d46943c7e6e1b93546673236d7e4b9",
+        "blake2b": "003612af13558022b4873ebc0fb3407ebf1dfa06f6f83a21256eb88bb83a74e702a3a15d18d677c7b09e542b90cd6d9eea81670041bb17547b9fd7eca336a222",
+        "matches_page56": false,
+        "preview": "8000000000000000800000000000000080000000000000008000000000000000"
+      }
+    }
+  ]
+}

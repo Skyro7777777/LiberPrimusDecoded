@@ -1,0 +1,89 @@
+URL: https://www.cicadasolvers.com/tools
+TITLE: Tools – CicadaSolvers
+DESCRIPTION: 
+
+Tools – CicadaSolvers
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+Skip to content
+Cicada Solvers
+
+Your Headquarters for Everything Cicada 3301
+
+CicadaSolvers
+
+ 
+ 
+ 
+ 
+ 
+ Quickstart
+Wiki
+Walkthroughs
+Media
+Archive
+Tools
+Communications
+Art & Lit
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+Tools
+
+Liber Primus Viewer – A multi-tab viewer of the Liber Primus 2 (LP2)
+
+Deep Web Hash Checker – Hash any string you want and compare it to the deep web hash
+
+Rune Calculator – Advanced rune calculator with numeric information
+
+Is it prime? – A prime number checker
+
+Is It Cicada? – A PGP verification tool
+
+3301 Hash Alert – A FireFox and Tor extension for checking the deep web hash
+
+Gematria Web Tools – Cicada specific Cyberchef instance
+PGP Checker
+Outguess in javascript
+Rune frequency tools
+Mortlach’s LP Decrypter
+Taiiwo’s LP Python Wrapper
+Multi 512-bit hasher by tweqx
+DWH browser extension alarm by tweqx
+Crashdemons’ GP Prime View
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+Visit our other website:
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+Beware False Paths.  Always verify PGP from 7A35090F.|
+
+Sitemap

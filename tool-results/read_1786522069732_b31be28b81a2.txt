@@ -1,0 +1,825 @@
+     1→from itertools import combinations
+     2→from .gematria import gematria
+     3→from PyQt5.QtCore import *
+     4→from data.data import data
+     5→import itertools
+     6→from text_ranking.FourGramTextScore import FourGramTextScore
+     7→from text_ranking.WordMatch import WordMatch
+     8→import time
+     9→from collections import namedtuple
+    10→
+    11→# TODO these all need to be tidied up and rationalized
+    12→''' These namedTuples are used to store labelled data '''
+    13→DecryptionSetup = namedtuple('DecryptionSetup', 'keys_runeglish key_lengths ct_rune_words '
+    14→                                                'ct_rune_chars ct_lengths ct_rot ct_rune_word_len '
+    15→                                                'dec_map interrupters interrupters_p  '
+    16→                                                'ct_use_gematria_forward ct_use_gematria_reverse '
+    17→                                                'ct_gematria_forward_shifts '
+    18→                                                'ct_gematria_reverse_shifts '
+    19→                                                'key_use_gematria_forward '
+    20→                                                'key_use_gematria_reverse '
+    21→                                                'key_gematria_forward_shifts '
+    22→                                                'key_gematria_reverse_shifts '
+    23→                                                "undefined_answers_are_all "
+    24→                                                "use_reverse_keys "
+    25→                                                "wrap_key_around_ct "
+    26→                                                "score_reversed_decryption")
+    27→EncryptionData = namedtuple('EncryptionData', 'method k_shift c_shift ciphertext key interrupter '
+    28→                                              'interrupter_pos_set ct_start_index')
+    29→AnswerData = namedtuple('AnswerData', 'decryption score decryption_string encryptiondata')
+    30→
+    31→
+    32→class DecryptModel(QObject):
+    33→    '''
+    34→        This class takes the data held in data and passed to main_loop_rune
+    35→
+    36→
+    37→        Functions loop over all settings, decrypting cipher-text with keys,
+    38→        different interrupters, geaatria order/rotations, key offsets in ct, ..
+    39→
+    40→        Resulting plaintext  is scoring and ranked based on its similarity to english (converted
+    41→        to runes).
+    42→
+    43→        (set through the gui, but should work independent of GUI)
+    44→        TODO When things have settled, this will need lots of refactoring to make get/set data
+    45→        more convenient and intuitive.
+    46→    '''
+    47→    decrypt_finished = pyqtSignal()     # signals for worker threads
+    48→    decrypt_progress = pyqtSignal()
+    49→
+    50→    def __init__(self):
+    51→        super(DecryptModel, self).__init__()
+    52→        self.data_obj = data()          # data obj allows access to data across multiple classes
+    53→        self.data = self.data_obj.data
+    54→        self.gem = gematria()           # gematria object for encoding and converting to runes
+    55→        self.previous_decryption_data = {}
+    56→        self.previous_decryption_results = {}
+    57→        ''' this object scores 4grams '''
+    58→        self.fourgram_textscore = FourGramTextScore()
+    59→        ''' this object compares list of chars to words in a dict, and fins the numbe of 
+    60→        different chars '''
+    61→        self.wordmatch = WordMatch()
+    62→        self.score_rejected_phrases = {}
+    63→        # with open(os.path.join(os.getcwd(), 'data', 'rejected_text', "rejected.csv"), 'r',
+    64→        #           encoding="utf8") as f:
+    65→        #     reader = csv.reader(f)
+    66→        #     for row in reader:
+    67→        #         self.score_rejected_phrases[tuple(row)] = True
+    68→        self.score_rejected_phrases = {}
+    69→        self.ans_already_considered = {}
+    70→        self.previous_decryption_data = {}
+    71→        self.previous_decryption_results = {}  # self.current_int = None  # self.current_keyrot =
+    72→        # None  # self.current_ctrot = None
+    73→
+    74→    def main_loop_rune(self, dec_data, progress_callback):
+    75→        '''
+    76→            called by the Worker
+    77→            this is the main loop run(e), it uses parameters set in dec_data
+    78→            this data is further processed, and then we loop all options
+    79→            TODO very likely this can be made neater, cleaner and faster
+    80→            answers are added to self.data["answers]
+    81→        '''
+    82→        print("\nMAIN_LOOP_RUNE")
+    83→
+    84→
+    85→        time_start = time.time()
+    86→        # for now reset these here,
+    87→        self.score_rejected_phrases = {}
+    88→        self.ans_already_considered = {}
+    89→        self.previous_decryption_data = {}
+    90→        self.previous_decryption_results = {}
+    91→        # OPTIONS
+    92→        undefined_answers_are_all = dec_data.undefined_answers_are_all
+    93→        wrap_key_around_ct = dec_data.wrap_key_around_ct
+    94→        score_reversed_decryption = dec_data.score_reversed_decryption
+    95→
+    96→        # make a local copy for ease ..
+    97→        keys_runeglish = dec_data.keys_runeglish
+    98→        ''' if use_reverse_keys then add reversed text to keylist '''
+    99→        if dec_data.use_reverse_keys:
+   100→            keys_runeglish.append(keys_runeglish[::-1])
+   101→
+   102→        # key_lengths = [len(x) for x in keys_runeglish]
+   103→        # # key_lengths = dec_data.key_lengths # TODO can calculate here
+   104→        # ct_rune_words = dec_data.ct_rune_words
+   105→        # ct_rune_chars = dec_data.ct_rune_chars  # TODO can calculate here
+   106→        # ct_lengths = dec_data.ct_lengths  # TODO can calculate here
+   107→        # ct_rot = dec_data.ct_rot  # TODO can calculate here
+   108→        # ct_rune_word_len = dec_data.ct_rune_word_len  # TODO can calculate here
+   109→        # #dec_map = dec_data.dec_map
+   110→        # #interrupters = dec_data.interrupters
+   111→        # #interrupters_p = dec_data.interrupters_p  # TODO can calculate here
+   112→        # ct_use_gematria_reverse = dec_data.ct_use_gematria_reverse
+   113→        # ct_use_gematria_forward = dec_data.ct_use_gematria_forward
+   114→        # ct_gematria_forward_shifts = dec_data.ct_gematria_forward_shifts
+   115→        # ct_gematria_reverse_shifts = dec_data.ct_gematria_reverse_shifts
+   116→        # key_use_gematria_forward = dec_data.key_use_gematria_forward
+   117→        # key_use_gematria_reverse = dec_data.key_use_gematria_reverse
+   118→        # key_gematria_forward_shifts = dec_data.key_gematria_forward_shifts
+   119→        # key_gematria_reverse_shifts = dec_data.key_gematria_reverse_shifts
+   120→
+   121→        '''' which Gematria order / rotation to apply to each ct'''
+   122→        ct_order_shift_list = []
+   123→        if  dec_data.ct_use_gematria_forward:
+   124→            for i in dec_data.ct_gematria_forward_shifts:
+   125→                ct_order_shift_list.append(["forward", i])
+   126→        if dec_data.ct_use_gematria_reverse:
+   127→            for i in dec_data.ct_gematria_reverse_shifts:
+   128→                ct_order_shift_list.append(["reverse", i])
+   129→        '''' which Gematria order / rotation to apply to keys'''
+   130→        key_order_shift_list = []
+   131→        if dec_data.key_use_gematria_forward:
+   132→            for i in  dec_data.key_gematria_forward_shifts:
+   133→                key_order_shift_list.append(["forward", i])
+   134→        if dec_data.key_use_gematria_reverse:
+   135→            for i in dec_data.key_gematria_reverse_shifts:
+   136→                key_order_shift_list.append(["reverse", i])
+   137→
+   138→        # TODO use this signal to emit decrypting loop status, counters, etc ..
+   139→        progress_callback.emit(1)
+   140→        ''' all answers will go in here for now, but this needs to change '''
+   141→        self.answers = []
+   142→        ''' count how many iterations we are doing '''
+   143→        ct_key_counter = 0
+   144→        ct_start_index_counter = 0
+   145→        interrupter_counter = 0
+   146→        interrupter_pos_set_counter = 0
+   147→        kc_shift_counter = 0
+   148→        counter = 0
+   149→        ''' Loop over each CT '''
+   150→        #print(list(itertools.product(dec_data.ct_rune_words, keys_runeglish)))
+   151→        # input()
+   152→        # for ct,key in ct_rune_words:
+   153→        for ct_key in itertools.product(dec_data.ct_rune_words, keys_runeglish):
+   154→            ct_key_counter += 1
+   155→            print("\nct_key_counter = ", ct_key_counter)
+   156→            print("ct_key", ct_key)
+   157→            ct = ct_key[0]
+   158→            key = ct_key[1]
+   159→            ct_rune_char = self.flatten(ct)
+   160→            ct_length = len(ct_rune_char)
+   161→
+   162→            ct_rune_word_len = [len(x) for x in ct]
+   163→            print("ct_rune_char =", ct_rune_char)
+   164→            print("ct_length =", ct_length)
+   165→            print("ct_rune_word_len =", ct_rune_word_len)
+   166→            ''' Loop over each KEY '''
+   167→            # for key in keys_runeglish:
+   168→            key_length = len(key)
+   169→            print("key_length =", key_length)
+   170→            ''' KEY DRAGGING '''
+   171→            ''' rotate CT so that each rune takes a turn as the first rune the key is applied 
+   172→            to, use the data entry wrap_key_around_ct is an option to see how far to rotateright 
+   173→            if using an entire cipher text it might be worth setting this to true'''
+   174→            if dec_data.wrap_key_around_ct:
+   175→                max_ct_start_index = ct_length
+   176→            else:
+   177→                max_ct_start_index = ct_length - key_length
+   178→            print("max_ct_start_index = ", max_ct_start_index)
+   179→            for ct_start_index in range(0, max_ct_start_index):
+   180→                ct_start_index_counter += 1
+   181→                print("ct_start_index_counter = ", ct_start_index_counter)
+   182→                print("ct_start_index =", ct_start_index)
+   183→
+   184→                rotated_ct = ct_rune_char[ct_start_index:] + ct_rune_char[:ct_start_index]
+   185→                print("rotated_ct =", rotated_ct)
+   186→                ''' for each rotated CT we need to get enough CT to apply the key, 
+   187→                WITH interrupters. Therefore we call this function to crop the CT    
+   188→                '''
+   189→                rot_crop_ct = self.crop_ct_to_keylen_with_interrupter(rotated_ct, key_length)
+   190→                print("rot_crop_ct =", rot_crop_ct)
+   191→                rot_crop_ct_p = self.flatten([self.gem.rune_to_pos(c) for c in rot_crop_ct])
+   192→                print("rot_crop_ct_p =", rot_crop_ct_p)
+   193→                ''' CIPHER TEXT INTERRUPTERS, WORTH THINKING ABOUT '''
+   194→                ''' Are interrupters always encoded as 'normal' forward unshifted gematria? 
+   195→                So far that is 
+   196→                true, but need  it be? This definition of interrupters we'll call 
+   197→                "canonical". We will 
+   198→                find every possible combination of every interrupter Not all interrupter 
+   199→                runes in the CT ARE interrupters, they just could be, therefore, 
+   200→                we find all possible sets of each interrupter position in the CT'''
+   201→                ''' stands for cannonical_interrupter_position_sets '''
+   202→                # cannonincal_interrutper_position_sets = {}
+   203→                # for i in interrupters_p:
+   204→                #     cannonincal_interrutper_position_sets[
+   205→                #         i] = self.get_all_interrupter_position_lists(rot_crop_ct_p, i)
+   206→                # print("cannonincal_interrutper_position_sets ",
+   207→                #       cannonincal_interrutper_position_sets)
+   208→                for interrupter in dec_data.interrupters_p:
+   209→                    interrupter_counter += 1
+   210→                    print("interrupter_counter = ", interrupter_counter)
+   211→                    print("interrupter = ", interrupter)
+   212→                    interrupter_r = self.gem.pos_to_rune(interrupter)
+   213→                    print("interrupter_r = ", interrupter_r)
+   214→                    interrupter_pos_sets = self.get_all_interrupter_position_lists(rot_crop_ct_p,
+   215→                                                                               interrupter)
+   216→                    print("interrupter_pos_sets = ", interrupter_pos_sets)
+   217→                    for interrupter_pos_set in interrupter_pos_sets:  # #range(0,
+   218→                        interrupter_pos_set_counter += 1
+   219→                        print("interrupter_pos_set_counter = ", interrupter_pos_set_counter)
+   220→                        print("interrupter_pos_set =", interrupter_pos_set)
+   221→
+   222→                        for kc_shift in itertools.product(key_order_shift_list,
+   223→                                                          ct_order_shift_list):
+   224→                            kc_shift_counter += 1
+   225→                            print("kc_shift_counter = ", kc_shift_counter)
+   226→                            k_shift = kc_shift[0]
+   227→                            c_shift = kc_shift[1]
+   228→                            print("k_shift, c_shift = ", k_shift, c_shift)
+   229→                            # convert the key an dct to position numbers based on gem
+   230→                            # order and shift
+   231→                            # convert the
+   232→                            keyp = tuple(self.gem.encode_as_position(key, k_shift[0], k_shift[1]))
+   233→                            print("keyp = ", keyp)
+   234→
+   235→                            ''' for the CT force any CT interrupters to be encoded in forward gematria '''
+   236→                            ctp = self.gem.encode_as_position_with_interrupter(rot_crop_ct, c_shift[0], c_shift[1],
+   237→                                                                    interrupter, interrupter_pos_set)
+   238→                            ''' use this method to encode interrupter according to shift '''
+   239→                            #ctp = self.gem.encode_as_position(rot_crop_ct,
+   240→                            # c_shift[0], c_shift[1])
+   241→                            # print("ctp = ", ctp)
+   242→                            # ctp = self.gem.encode_as_position(rot_crop_ct,c_shift[0], c_shift[1])
+   243→                            # print("ctp = ", ctp)
+   244→                            #ciphertext = tuple(self.getCipherRunes(ctp, interrupter, key_length))
+   245→                            #print("ciphertext = ", ciphertext)
+   246→                            counter += 1
+   247→                            # print("counter = ", counter)
+   248→                            # d THE DFECRYPTIO NFUCNTION
+   249→                            ans_to_check = self.decrypt_and_get_ans_to_score(interrupter_pos_set,
+   250→                                                                             ctp, keyp, interrupter,
+   251→                                                                             dec_data.dec_map)
+   252→                            # print("ans_to_check = ", ans_to_check)
+   253→                            # print("len(ans_to_check) = ", len(ans_to_check))
+   254→                            # print("ans_to_check = ", ans_to_check)
+   255→                            # if ans_to_check is not []:
+   256→                            #     for ans in ans_to_check:
+   257→                            #         # if ans already done, reject
+   258→                            #         print("ans = ", ans_to_check)
+   259→                            #         if self.new_answer_to_score(tuple(ans)):
+   260→                            #             print("score_ans, ans = ", ans)
+   261→                            # print("try scoree")
+   262→                            self.score_ans_to_check(ans_to_check=ans_to_check, k_shift=k_shift,
+   263→                                                    c_shift=c_shift, interrupter=interrupter,
+   264→                                                    interrupter_pos_set=interrupter_pos_set,
+   265→                                                    ct_start_index=ct_start_index,
+   266→                                                    ct_rune_word_len=ct_rune_word_len,
+   267→                                                    ct_length=ct_length, ct=ct, key=key)
+   268→                            #print("k_shift = {}, c_shift {}".format(k_shift, c_shift))
+   269→        # self.answers.sort(key=lambda x: x[1])
+   270→        # print("sort ans")
+   271→        self.answers.sort(key=lambda x: x.score.score_per_ngram)
+   272→        self.answers.reverse()  # EncryptionData = namedtuple('EncryptionData',
+   273→                        # 'method k_shift c_shift  # ciphertext  # interrupter
+   274→                        # interrupter_pos_set')  # AnswerData = namedtuple('AnswerData',
+   275→                        # 'decryption score  # decryption_string encryptiondata')  # for i,
+   276→                        # entry in enumerate(self.answers):  #     print("entry == ",
+   277→                        # entry.decryption)  #     f = self.flatten( entry.decryption)  #
+   278→                        # #print("Checking ", f)  #     f2= []  #     for item in f:  #
+   279→                        # if item == "_":  #             f2.append(item)  #         else:  #
+   280→                        # #f2.append(self.gem.pos_to_eng_dict_f[item])  #             f2.append(
+   281→                        # self.gem.pos_to_eng(item))  #  #     t2 = []  #     for entry in
+   282→                        # self.ragged_partition(f2, self.ct_rune_word_len[0]):  #
+   283→                        # t2.append("".join(entry))  #     self.answers[i].decryption_string = "
+   284→                        # ".join(t2)  # print(i, entry[1], self.answers[i][-1])
+   285→        # TODO this won't work when threads are fully implemented
+   286→        self.data["answers"] = self.answers
+   287→        # print("Answer check:")
+   288→        # for ans in self.answers:
+   289→        #     dec = [x for x in ans.decryption if x is not '_']
+   290→        #     print("dec = ", dec)
+   291→        #     score = self.fourgram_textscore.get_pos_phrase_log_prob_with_min_count(dec, self.data[
+   292→        #         "4gram_count_cut"], self.data["four_gram_log_prob_min"], self.data[
+   293→        #                                                                                "min_score_per_4gram_gradient"],
+   294→        #                                                                            self.data[
+   295→        #                                                                                "min_score_per_4gram_offset"])
+   296→        #
+   297→        #     print("ciphertext = ", ans.encryptiondata.ciphertext)
+   298→        #     print("decryption = ", ans.decryption)
+   299→        #     print("ct_word_len = ", [len(x) for x in ans.encryptiondata.ciphertext])
+   300→        #     print("interrupter = ", ans.encryptiondata.interrupter)
+   301→        #     print("interrupter_pos_set = ", ans.encryptiondata.interrupter_pos_set)
+   302→        #     # self.get_decryptions_in_words_string(decryption_in_words, ct_rune_word_len, interrupter,
+   303→        #     #                             interrupter_pos_set)
+   304→        #     print(score)
+   305→        print("\nRUN FINIHSED\n")
+   306→        print("COUNTER RESULTS")
+   307→        print("counter = ", counter)
+   308→        print("kc_shift_counter = ", kc_shift_counter)
+   309→        print("ct_start_index_counter = ", ct_start_index_counter)
+   310→        print("ct_key_counter = ", ct_key_counter)
+   311→        print("interrupter_pos_set_counter = ", interrupter_pos_set_counter)
+   312→        print("interrupter_counter = ", interrupter_counter)
+   313→        print("ans count ", len(self.answers))
+   314→        # TODO put these back in
+   315→        #       print("self.decryptDataRepeats ", self.decryptDataRepeats)
+   316→        #       print("self.decryptAnswerRepeats ", self.decryptAnswerRepeats)
+   317→        # print("self.iPosSetsTotal ", self.iPosSetsTotal)
+   318→        # print( "self.answers ", self.answers[0:2]  )
+   319→        # print("self.decryptAnswerRepeats ", self.decryptAnswerRepeats)
+   320→        # print("self.decryptDataRepeats ", self.decryptDataRepeats)
+   321→        print("main_loop finished ", time.time() - time_start)
+   322→
+   323→    def crop_ct_to_keylen_with_interrupter(self, ct, keylen):
+   324→        '''
+   325→            Crop the CT so that it is just long enough to apply the key, with all possible
+   326→            passed interrupters. This is used so that when a very long CT is passed we don't get
+   327→            interrupters for the whole CT, just the part that the key can be applied to.
+   328→        :param ct: ct to crop
+   329→        :param keylen: number of runes in key
+   330→        :return: the cropped CT
+   331→        '''
+   332→        # use normal gematria position for interrupters
+   333→        ct_p = self.gem.encode_as_position(ct,'forward',0)
+   334→        ct_p_len = len(ct_p)
+   335→        ct_out = ct[:keylen]
+   336→        ct_out_max_count = max([ct_out.count(x) for x in set(ct_out)])
+   337→        while 1:
+   338→            ''' check if keylength + max count == length of return text (then we can return) '''
+   339→            ''' check if keylength + max count > length of passed ct (then we must return) '''
+   340→            ''' else add to the return list '''
+   341→            if keylen + ct_out_max_count == len(ct_out):
+   342→                return ct_out
+   343→            elif keylen + ct_out_max_count > ct_p_len:
+   344→                return ct_out
+   345→            else:
+   346→                ct_out = ct[:keylen + ct_out_max_count]
+   347→                ct_out_max_count = max([ct_out.count(x) for x in set(ct_out)])
+   348→
+   349→    def decrypt_ct_key(self, cipher_runes, key_runes, interrupter, interrupter_pos, decrypt_map):
+   350→        '''
+   351→            The main decryption function, passed data is all in numbers
+   352→            TODO: write a version for ct and pt to get keys
+   353→        :param cipher_runes: list in numbers,
+   354→        :param key_runes: list(tuple) in numbers,
+   355→        :param interrupter: interrupter run in number (normal gematria enforced?)
+   356→        :param interrupter_pos: list(tuple) interrupter position in CT, NB not all CT interrupter
+   357→        runes are interrupters
+   358→        :param decrypt_map: dictionary giving ()
+   359→        :return: (decrytped runes (list), TRUE or FALSE) flag if decryption passed test)
+   360→        '''
+   361→        print("\nDECRYPT_CT_KEY")
+   362→        print("cipher_runes = ",  cipher_runes )
+   363→        print("key_runes = ",  key_runes )
+   364→        print("interrupter = ",  interrupter )
+   365→        print("interrupter_pos = ",  interrupter_pos )
+   366→        # print("decrypt_map = ",  decrypt_map )
+   367→        # print("type(cipher_runes) = ",  type(cipher_runes) )
+   368→        # print("type(key_runes) = ",  type(key_runes) )
+   369→        # print("type(interrupter) = ",  type(interrupter) )
+   370→        # print("type(interrupter_pos) = ",  type(interrupter_pos) )
+   371→        # print("type(decrypt_map) = ",  type(decrypt_map) )
+   372→        # TODO types are all confused here, lists  / tuples, meh
+   373→        # TODO: write a version where not all plaintext interrupters cause an interruption ?
+   374→        interrupter_tuple = tuple([interrupter])
+   375→        answer = []
+   376→        ''' result of chekcing if interrupter found in non-interrupter position '''
+   377→        no_interrupter_in_decrypt = True
+   378→        ''' OOB flags and counters, keep track of list indexes '''
+   379→        int_fin = True if interrupter_pos == () else False
+   380→        key_fin = False
+   381→        int_index = 0
+   382→        key_index = 0
+   383→        for i, rune in enumerate(cipher_runes):
+   384→            ''' check if this is an interrupter position '''
+   385→            if i in interrupter_pos:
+   386→                answer.append(interrupter_tuple)
+   387→                int_index += 1 # OOB check stuff
+   388→                if int_index == len(interrupter_pos):
+   389→                    int_fin = True
+   390→            else:
+   391→                if key_index == len(key_runes):
+   392→                    # print("key_index ==  len(key_runes) BREAK")
+   393→                    break
+   394→                # answer.append(decrypt_map[(cipher_runes[i], key_runes[key_index])])
+   395→                answer.append(
+   396→                    self.decrypt_a_char(cipher_runes[i], key_runes[key_index], decrypt_map))
+   397→                '''we "DEFINE" where interrupters are. If decrypted rune is the interrupter 
+   398→                rune, then that breaks this scheme, and result is rejected '''
+   399→                if answer[-1] == interrupter_tuple:
+   400→                    no_interrupter_in_decrypt = False
+   401→                    # print("interrupter in decryption BREAK")
+   402→                    break
+   403→                ''' key index  OOB checks '''
+   404→                key_index += 1
+   405→                if key_index == len(key_runes):
+   406→                    key_fin = True
+   407→            '''  finished check '''
+   408→            if key_fin:
+   409→                if int_fin:
+   410→                    # print("key_fin == int_fin  BREAK")
+   411→                    break
+   412→        print("answer = ", answer)
+   413→        return (answer, no_interrupter_in_decrypt)
+   414→
+   415→    def decrypt_and_get_ans_to_score(self, interrupter_pos_set, ct_rune_p, keyp, interrupter,
+   416→                                     dec_map):
+   417→        '''
+   418→            gets the decrypted test, then gets all rotations and shifts of the decrypted text
+   419→            TODO as usual, rationalize all data structures, I/O
+   420→        :param interrupter_pos_set: the position of the interrutpers for this setup
+   421→        :param ct_rune_p:  the cipher text (as list / tuple of numbers)
+   422→        :param keyp:  the cipher text (as list / tuple of numbers)
+   423→        :param interrupter: the interrupter (in canonical position)
+   424→        :param k_shift: k_shift parameters (f, r and number)
+   425→        :param c_shift: ct_shift parameters (f, r and number)
+   426→        :param rotation: current rotation index, used when scoring
+   427→        :param ct_rune_word_len:
+   428→        :param ct_length:
+   429→        :param dec_map:
+   430→        :return:
+   431→        '''
+   432→        #print("\nDECRYPT_AND_GET_ANS_TO_SCORE")
+   433→        self.saving_fails = True
+   434→        # keep a record of what input data has been attempted
+   435→        # TODO make these tuples from when first create din main_loop_rune ????
+   436→        dataToDecrypt = (tuple(ct_rune_p), tuple(keyp), interrupter, interrupter_pos_set)
+   437→        # print(dataToDecrypt)
+   438→        ans_to_check = []
+   439→        if self.new_data_to_decrypt(tuple(dataToDecrypt)):
+   440→            ''' function returns decryption runes from look up table, can be more than 1 ans 
+   441→            for each CT rune, and a TRUE or FALSE, if the ans "WAS_GOOD" see decrypt_ct_key '''
+   442→            decryption = self.decrypt_ct_key(ct_rune_p, keyp, interrupter,
+   443→                                             tuple(interrupter_pos_set), dec_map)
+   444→
+   445→
+   446→            ''' if the decryption was good ( bad would be something "impossible" like a plaintext 
+   447→            rune is an interrupter in a position where one is not allowed '''
+   448→            #print("decryption = ", decryption)
+   449→            if decryption[1]:
+   450→                ans_to_check = self.get_decryptions_to_keep(decryption,interrupter,
+   451→                                                            interrupter_pos_set)
+   452→                if False in ans_to_check:
+   453→                    print("!!FALSE!!", ans_to_check)
+   454→        # print("type(ans_to_check) = ", type(ans_to_check))
+   455→        # print("len(ans_to_check) = ", len(ans_to_check))
+   456→        # print("decrypt_and_get_ans_to_score ans_to_check = ", ans_to_check)
+   457→        # print("\ndecrypt_and_get_ans_to_score FIN")
+   458→        return ans_to_check
+   459→
+   460→    def getCipherRunes(self, runes, interrupter, key_length):
+   461→        '''
+   462→        :param runes:
+   463→        :param interrupter:
+   464→        :param key_length:
+   465→        :return:
+   466→        '''
+   467→        i = 0
+   468→        # a = len([char for char in runes[0:key_length+i] if char != interrupter ]) < key_length
+   469→        # print(a)
+   470→        while len([char for char in runes[0:key_length + i] if char != interrupter]) < key_length:
+   471→            i += 1
+   472→        return runes[0: key_length + i]
+   473→
+   474→    def get_all_sublists(self, my_list):
+   475→        ''' all tuples, probably itertools function for this  '''
+   476→        subs = []
+   477→        for i in range(0, len(my_list) + 1):
+   478→            temp = [tuple(x) for x in combinations(my_list, i)]
+   479→            if len(temp) > 0:
+   480→                subs.extend(tuple(temp))
+   481→        #     print("temp = ", temp)
+   482→        # print("subs = ", subs)
+   483→        return subs
+   484→
+   485→    def get_all_interrupter_position_lists(self, runes, interrupter):
+   486→        '''
+   487→        :param runes: list of runes
+   488→        :param interrupter: interrupter runes
+   489→        :return: all possible combinations of possible positions for interrutper in runes
+   490→        '''
+   491→        # print("get_all_interrupter_position_lists = ")
+   492→        # print("runes = ", runes)
+   493→        # print("interrupter = ", interrupter)
+   494→        interrupter_indexes = []
+   495→        for index, rune in enumerate(runes):
+   496→            if rune == interrupter:
+   497→                interrupter_indexes.append(index)
+   498→        # print("interrupter_indexes = ", interrupter_indexes)
+   499→        return self.get_all_sublists(interrupter_indexes)
+   500→
+   501→    # Returns the rotated list
+   502→    def rightRotate(self, lists, num):
+   503→        output_list = []
+   504→        # Will add values from n to the new list
+   505→        for item in range(len(lists) - num, len(lists)):
+   506→            output_list.append(lists[item])  # Will add the values before
+   507→        # n to the end of new list
+   508→        for item in range(0, len(lists) - num):
+   509→            output_list.append(lists[item])
+   510→        return output_list
+   511→
+   512→    def getDecryptionsInWords(self, decryption, rotateIndex, wordlen, ctLen):
+   513→        '''
+   514→            convert main_loop decryption to letters and words
+   515→        '''
+   516→        # print("getDecryptionsInWords")
+   517→        decryption2 = decryption
+   518→        # print("decryption2 = ", decryption2)
+   519→        ''' we pad right with _ char, so when we split into words we can see word lengtsh mroe 
+   520→        clearly, thats why we pass in the full CT length, not the ct_crop_rot length '''
+   521→        decryption2 += ['_'] * (ctLen - len(decryption))
+   522→        # print("decryption22 = ", decryption2)
+   523→        # print("rotateIndex = ", rotateIndex)
+   524→
+   525→        decryption2 = self.rightRotate(decryption2, rotateIndex)
+   526→        # print("decryption23 = ", decryption2)
+   527→        # print(decryption2[rotateIndex:] + decryption2[:rotateIndex])
+   528→        # print(decryption2[-rotateIndex:] + decryption2[:-rotateIndex])
+   529→        # print("wordlen = ", wordlen)
+   530→        ''' now the ct is rotated back to its original position and length (with blanks) split 
+   531→        into words  '''
+   532→        decryption3 = []
+   533→        for length in wordlen:
+   534→            decryption3.append(decryption2[:length])
+   535→            del decryption2[:length]
+   536→        # print("decryption3= ", decryption3)
+   537→        return decryption3
+   538→
+   539→    def ragged_partition(self, list, wordlen):
+   540→        decryption3 = []
+   541→        for length in wordlen:
+   542→            decryption3.append(list[:length])
+   543→            del list[:length]
+   544→        # print(decryption3)
+   545→        return decryption3
+   546→
+   547→    def decrypt_a_char(self, c, k, dec_map):
+   548→        return dec_map.get((c, k), [False])
+   549→
+   550→    # def get_decryptions(self, ct, key, dec_map):
+   551→    #     d = [self.decrypt_a_char(c, k, dec_map) for c, k in zip(ct, key)]
+   552→    #     if [False] in d:
+   553→    #         return [False]
+   554→    #     return [p for p in
+   555→    #             itertools.product(*[self.decrypt_a_char(c, k, dec_map) for c, k in zip(ct, key)])]
+   556→
+   557→    def new_data_to_decrypt(self, dataToDecrypt):
+   558→        # print("dataToDecrypt = ", dataToDecrypt)
+   559→        # print("type(dataToDecrypt) = ", type(dataToDecrypt))
+   560→        # print("type(self.previous_decryption_data) = ", type(self.previous_decryption_data))
+   561→        self.saving_repeated_data_to_decrypt = True
+   562→        if dataToDecrypt in self.previous_decryption_data:
+   563→            print("dataToDecrypt  is not new ")
+   564→            #self.decryptDataRepeats += 1  # print("dataToDecrypt in previous_decryption_data" )
+   565→            return False
+   566→        else:
+   567→            if self.saving_repeated_data_to_decrypt:
+   568→                self.previous_decryption_data[dataToDecrypt] = True
+   569→        return True
+   570→
+   571→    def new_answer_to_score(self, ans):
+   572→        saving_repeated_data_to_decrypt = True
+   573→        if ans in self.ans_already_considered:
+   574→            # todo used to have global variable counting here
+   575→            #            self.ansToScoreRepeats += 1  # print("dataToDecrypt in
+   576→            #            previous_decryption_data" )
+   577→            return False
+   578→        else:
+   579→            if saving_repeated_data_to_decrypt:
+   580→                self.ans_already_considered[ans] = True
+   581→        return True
+   582→
+   583→    def get_decryptions_to_keep(self, decryption,interrupter, interrupter_pos_set):
+   584→        # print("\nGET_DECRYPTIONS_TO_KEEP")
+   585→        decryptions_to_keep = []
+   586→
+   587→        if False in decryption:
+   588→            print("FALSE!!", decryption)
+   589→
+   590→        ''' here the decryption result is expanded to give all possible plaintexts 
+   591→        NB: some decryption maps can give more than one answer for the same key and ct  '''
+   592→        decryption2 = [p for p in itertools.product(*list(decryption[0]))]
+   593→        # print("get_decryptions_to_keep decryption2 = ", decryption2)
+   594→        for item in decryption2:
+   595→            # print("get_decryptions_to_keep item = ", item)
+   596→            ''' each decryption could be the plaintext rotated, inverted, so get all possible 
+   597→            shifts of the decryption to score '''
+   598→            for decrypt in self.gem.get_all_shifts(item):  # loop here to rotate all plaintext
+   599→                ''' get_all_shifts will have replaced the interrupters, so put them back '''
+   600→                ''' this is probably a bit sketchy and could cause crashes ... or wrong output  '''
+   601→                for pos in interrupter_pos_set:
+   602→                    if pos < len(decrypt):
+   603→                        decrypt[pos] = interrupter
+   604→                    elif pos == len(decrypt):
+   605→                        decrypt.append(interrupter)
+   606→                    else:
+   607→                        pass
+   608→
+   609→                decryptions_to_keep.append(list(decrypt))
+   610→
+   611→                # print("get_decryptions_to_keep decrypt = ", decrypt)
+   612→                # todo kept a list of repeated hits here, for monitoring, but lost it
+   613→                # if tuple(decrypt) in self.previous_decryption_results:
+   614→                #     pass
+   615→                # #     self.decryptAnswerRepeats += 1
+   616→                # else:
+   617→                #     ''' add these results to previous_decryption_results'''
+   618→                #     self.previous_decryption_results[tuple(decrypt)] = True
+   619→                #     # add to return list
+   620→                #     decryptions_to_keep.append(list(decrypt))
+   621→        # print("decryptions_to_keep = ", decryptions_to_keep)
+   622→        return decryptions_to_keep
+   623→
+   624→    def score_ans_to_check(self, ans_to_check, k_shift, c_shift, interrupter,
+   625→                           interrupter_pos_set, ct_start_index, ct_rune_word_len, ct_length, ct,
+   626→                           key):
+   627→        '''
+   628→            score the answers, by getting log probability score and then comparing to cribwords
+   629→            we pass in various parameters to be kept as meta data with the ans to keep
+   630→        :param ans_to_check: ans reults
+   631→        :param k_shift:
+   632→        :param c_shift:
+   633→        :param rotated_ct:
+   634→        :param interrupter:
+   635→        :param interrupter_pos_set:
+   636→        :param ct_start_index:
+   637→        :param ct_rune_word_len:
+   638→        :param ct_length:
+   639→        :return: just updates global ans dict
+   640→        '''
+   641→        # print("\nSCORE_ANS_TO_CHE")
+   642→        if ans_to_check is not []:
+   643→            for ans in ans_to_check:
+   644→                # if ans already done, reject
+   645→                if self.new_answer_to_score(tuple(ans)):
+   646→                    # print("score_ans, ans = ", ans)
+   647→                    # self.score_ans(ans, k_shift, c_shift, rotated_ct, interrupter,
+   648→                    #                interrupter_pos_set, ct_start_index, ct_rune_word_len,
+   649→                    #                ct_length)
+   650→                    # def score_ans(self, ans, k_shift, c_shift, ciphertext, interrupter,
+   651→                    # interrupter_pos_set,
+   652→                    #               rotation, ct_rune_word_len, ct_length):
+   653→                    # print("\nSCORE_ANS")
+   654→                    # ScoreResults is namedtuple('ScoreResults', 'total_score score_per_ngram
+   655→                    # min_score_count
+   656→                    # ngram_count')
+   657→                    # TODO dis-entagle this from data dict
+   658→
+   659→                    score = self.fourgram_textscore.get_pos_phrase_log_prob_with_min_count(ans, self.data[
+   660→                        "4gram_count_cut"], self.data["four_gram_log_prob_min"],
+   661→                        self.data["min_score_per_4gram_gradient"],
+   662→                        self.data["min_score_per_4gram_offset"])
+   663→
+   664→                    # print("score = ", score)
+   665→                    # check if score should be rejected
+   666→                    if score.rejected:
+   667→                        # print("reject score")
+   668→                        self.ans_already_considered[tuple(score)] = True
+   669→                    else:
+   670→                        print("score ok, get decryptedd words")
+   671→                        print("ans = ", ans)
+   672→                        print("score = ", score)
+   673→
+   674→                        #trackign a big, wer ethe sae m printed words gets different scores ...
+   675→
+   676→                        decryption_in_words = self.getDecryptionsInWords(ans, ct_start_index,
+   677→                                                                         ct_rune_word_len,
+   678→                                                                         ct_length)
+   679→                        print("decryption_in_words = ", decryption_in_words)
+   680→                        ''' Get the decrypted words  where we know all the characters. we're 
+   681→                        going to check these words against ones a criblist. The check is:
+   682→                        
+   683→                            criblist_word - decrypted_word (as gematria forward position)
+   684→                            compare number of zeros to word length
+   685→                            if there are enough zeros accept the answer 
+   686→                        This helps cut noise by a lot - its a great sieve
+   687→                        however, we know there are typos, maybe uncommon words, so configure 
+   688→                        it appropriately  '''
+   689→                        # TODO needs neatening up
+   690→                        decryption_full_words = [x for x in decryption_in_words if "_" not in x]
+   691→                        print("decryption_full_words = ", decryption_full_words)
+   692→                        word_distances = []
+   693→                        for w in decryption_full_words:
+   694→                            word = tuple(w)
+   695→                            wl = len(word)
+   696→                            if wl == 1:
+   697→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   698→                                    "1_rune_char_dif"])
+   699→                            elif wl == 2:
+   700→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   701→                                    "2_rune_char_dif"])
+   702→                            elif wl == 3:
+   703→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   704→                                    "3_rune_char_dif"])
+   705→                            elif wl == 4:
+   706→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   707→                                    "4_rune_char_dif"])
+   708→                            elif wl == 5:
+   709→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   710→                                    "5_rune_char_dif"])
+   711→                            elif wl == 6:
+   712→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   713→                                    "6_rune_char_dif"])
+   714→                            elif wl == 7:
+   715→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   716→                                    "7_rune_char_dif"])
+   717→                            elif wl == 8:
+   718→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   719→                                    "8_rune_char_dif"])
+   720→                            elif wl == 9:
+   721→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   722→                                    "9_rune_char_dif"])
+   723→                            elif wl == 10:
+   724→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   725→                                    "10_rune_char_dif"])
+   726→                            elif wl == 11:
+   727→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   728→                                    "11_rune_char_dif"])
+   729→                            elif wl == 12:
+   730→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   731→                                    "12_rune_char_dif"])
+   732→                            elif wl == 13:
+   733→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   734→                                    "13_rune_char_dif"])
+   735→                            elif wl == 14:
+   736→                                d = self.wordmatch.is_word_char_dif_good_enough(word, self.data[
+   737→                                    "14_rune_char_dif"])
+   738→                            else:
+   739→                                d = [[True]]  # dummy value, no 15+ rune word dict
+   740→                            word_distances.append(d)
+   741→                        print("word_distances = ", word_distances)  # input()
+   742→                        if all([x[-1] for x in word_distances]):
+   743→                            # EncryptionData = namedtuple('EncryptionData', 'method k_shift c_shift
+   744→                            # ciphertext interrupter interrupter_pos_set')
+   745→                            # AnswerData = namedtuple('AnswerData', 'decryption score
+   746→                            # decryption_string
+   747→                            # encryptiondata')
+   748→                            # TODO  ahh self.data should nto be here, much tidying possible ;)
+   749→
+   750→                            ed = EncryptionData(method=self.data["enc_map_name"], k_shift=k_shift,
+   751→                                                c_shift=c_shift, ciphertext=ct, key=key,
+   752→                                                interrupter=interrupter,
+   753→                                                interrupter_pos_set=interrupter_pos_set,
+   754→                                                ct_start_index=ct_start_index)
+   755→                            # print("ed = ", ed)
+   756→
+   757→                            decryption_string = self.get_decryptions_in_words_string(
+   758→                                decryption_in_words, ct_rune_word_len, interrupter,
+   759→                                interrupter_pos_set)
+   760→
+   761→                            ad = AnswerData(decryption=ans, score=score,
+   762→                                            decryption_string=decryption_string, encryptiondata=ed)
+   763→                            # print("ad = ", ad)
+   764→                            # self.answers.append([ans, score, word_distances, k_shift, c_shift,
+   765→                            # ciphertext,
+   766→                            # interrupter, interrupter_pos_set,
+   767→                            # decryption_in_words])
+   768→                            self.answers.append(ad)
+   769→                else:
+   770→                    pass  # print("self.new_answer_to_score(tuple(ans)) == FALSE")  # anscounter
+   771→                    # += 1  #  # print("Last Answer = ",answers[-1])  # input()  #
+   772→                    # self.answers.append([ans, score, word_distances, k_shift, c_shift,
+   773→                    # ciphertext,  # interrupter, interrupter_pos_set,  #
+   774→                    # decryption_in_words])  # self.anscounter += 1  # print("Last Answer = ",
+   775→                    # answers[-1])  # input()  # print("\nSCORE_ANS_TO_CHE FIN")
+   776→
+   777→    def get_decryptions_in_words_string(self, decryption_in_words, ct_rune_word_len, interrupter,
+   778→                                        interrupter_pos_set):
+   779→        print("\nGET_DECRYPTIONS_IN_WORDS_STRING")
+   780→        # decryption_full_words = [x for x in decryption_in_words if "_" not in x]
+   781→        f = self.flatten(decryption_in_words)
+   782→        print("Checking ", f)
+   783→        print("interrupter ", interrupter, self.gem.pos_to_eng(interrupter))
+   784→        print("interrupter_pos_set ", interrupter_pos_set)
+   785→
+   786→        f2 = []
+   787→        for i, rune in enumerate(f):
+   788→            if rune == "_":
+   789→                f2.append(rune)
+   790→            elif i in interrupter_pos_set:
+   791→                print(i, " is an interrutper")
+   792→                f2.append(self.gem.pos_to_eng(interrupter))
+   793→            else:
+   794→                # f2.append(self.gem.pos_to_eng_dict_f[item])
+   795→                f2.append(self.gem.pos_to_eng(rune))
+   796→
+   797→        #
+   798→        # ther is abug in this funciton
+   799→        # if there are interrutpers, we have to inlcud ethem#
+   800→        # by thsi stage we are workgin in nromal geamtrai positions
+   801→        # so its failry easy apart from the interrupter_pos_set
+   802→        # is the position in ct, so does not inldue the "_" cahr
+   803→
+   804→        # Checking ['_', '_', '_', '_', '_', 18, 6, 1, 15, 1, 20, 23, 18, 4, 27, 4, 20, 21, 17, '_']
+   805→
+   806→        # f2 = []
+   807→        # for item in f:
+   808→        #     if item == "_":
+   809→        #         f2.append(item)
+   810→        #     else:
+   811→        #         # f2.append(self.gem.pos_to_eng_dict_f[item])
+   812→        #         f2.append(self.gem.pos_to_eng(item))
+   813→        t2 = []
+   814→        for entry in self.ragged_partition(f2, ct_rune_word_len):
+   815→            t2.append("".join(entry))
+   816→        print("t2 = ", t2)
+   817→        return "  ".join(t2)  # decrypt_and_get_ans_to_score
+   818→
+   819→    def print_output(self, s):
+   820→        if self.should_print:
+   821→            print(s)
+   822→
+   823→    def flatten(self, li):
+   824→        return sum(([x] if not isinstance(x, list) else self.flatten(x) for x in li), [])
+   825→

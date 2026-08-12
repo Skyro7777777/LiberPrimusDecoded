@@ -1,0 +1,404 @@
+{
+  "model1": [
+    {
+      "key": "DIVINITY",
+      "variant": "advance",
+      "score": 67.19446893787575,
+      "snippet": "EXVTHEIAYGYOEWFEOEPYXAAEIAEDWIAMCTHRIAEEOPDYOEOBIESPSRPEONGMAIATHNJEAFPWSDJSOEOW"
+    },
+    {
+      "key": "DIVINITY",
+      "variant": "reset",
+      "score": 67.19446893787575,
+      "snippet": "EXVTHEIAYGYOEWFEOEPYXAAEIAEDWIAMCTHRIAEEOPDYOEOBIESPSRPEONGMAIATHNJEAFPWSDJSOEOW"
+    },
+    {
+      "key": "FIRFUMFERENFE",
+      "variant": "advance",
+      "score": 66.61326653306614,
+      "snippet": "EAAJEOEALOCXBPIALEACNGCOEXSFBSEAMJYDXHNODRWOPIATANGGHYGNGVEARWPLNGNIDIANGFBNGNIC"
+    },
+    {
+      "key": "FIRFUMFERENFE",
+      "variant": "reset",
+      "score": 66.61326653306614,
+      "snippet": "EAAJEOEALOCXBPIALEACNGCOEXSFBSEAMJYDXHNODRWOPIATANGGHYGNGVEARWPLNGNIDIANGFBNGNIC"
+    },
+    {
+      "key": "INSTAR",
+      "variant": "advance",
+      "score": 67.73567134268538,
+      "snippet": "EOHAAEEORNJLOEAPGEAVXTHOREMFPRAEJHIRBJXAIADREJMTDAEXDEIAAEVROEFEOFVXVNBCNYREABMI"
+    },
+    {
+      "key": "INSTAR",
+      "variant": "reset",
+      "score": 67.73567134268538,
+      "snippet": "EOHAAEEORNJLOEAPGEAVXTHOREMFPRAEJHIRBJXAIADREJMTDAEXDEIAAEVROEFEOFVXVNBCNYREABMI"
+    },
+    {
+      "key": "EMERGENCE",
+      "variant": "advance",
+      "score": 69.55967935871743,
+      "snippet": "ALWHATIAFNEXEANGMAECEGFVSBCENVTPAEMDBBIAVYWNGHTPVONGVRPJTMXNGTHMLRIANGFBNGNOEBGH"
+    },
+    {
+      "key": "EMERGENCE",
+      "variant": "reset",
+      "score": 69.55967935871743,
+      "snippet": "ALWHATIAFNEXEANGMAECEGFVSBCENVTPAEMDBBIAVYWNGHTPVONGVRPJTMXNGTHMLRIANGFBNGNOEBGH"
+    },
+    {
+      "key": "EMERGE",
+      "variant": "advance",
+      "score": 68.87847695390782,
+      "snippet": "ALWHATIAFNEXEANGITLRNGFVSTHETHOEXFYAEMNORXBPDHHTPGHYGRPJTMXNGTHMLRIANGFBNGNOEBGH"
+    },
+    {
+      "key": "EMERGE",
+      "variant": "reset",
+      "score": 68.87847695390782,
+      "snippet": "ALWHATIAFNEXEANGITLRNGFVSTHETHOEXFYAEMNORXBPDHHTPGHYGRPJTMXNGTHMLRIANGFBNGNOEBGH"
+    },
+    {
+      "key": "PARABLE",
+      "variant": "advance",
+      "score": 68.15647294589178,
+      "snippet": "RFTBRAETEIATEOYMITYIIADANTHFPRAEJHYLWVCSEXANPNGESBGSIAWCIPSOEVEMOIAEOLHEOFREABMI"
+    },
+    {
+      "key": "PARABLE",
+      "variant": "reset",
+      "score": 68.15647294589178,
+      "snippet": "RFTBRAETEIATEOYMITYIIADANTHFPRAEJHYLWVCSEXANPNGESBGSIAWCIPSOEVEMOIAEOLHEOFREABMI"
+    },
+    {
+      "key": "DIVINITY_WITHIN",
+      "variant": "advance",
+      "score": 64.72965931863727,
+      "snippet": "EXVTHEIAYGYOEWFEOEPYXJEOYAEOEGYERVRIAEEOFIPNMRTANGNJFNPOELAEEAOEFCOEDWMEYXEGEPTH"
+    },
+    {
+      "key": "DIVINITY_WITHIN",
+      "variant": "reset",
+      "score": 64.72965931863727,
+      "snippet": "EXVTHEIAYGYOEWFEOEPYXJEOYAEOEGYERVRIAEEOFIPNMRTANGNJFNPOELAEEAOEFCOEDWMEYXEGEPTH"
+    },
+    {
+      "key": "PILGRIM",
+      "variant": "advance",
+      "score": 65.83206412825652,
+      "snippet": "OEECGOEXFTHJYOEWFNSYIIAHNDSETHOEXFYIRBJRXBPDHPNGEFTHLFTAEDEATHEAGJEAFPYEOLHEOFEP"
+    },
+    {
+      "key": "PILGRIM",
+      "variant": "reset",
+      "score": 65.83206412825652,
+      "snippet": "OEECGOEXFTHJYOEWFNSYIIAHNDSETHOEXFYIRBJRXBPDHPNGEFTHLFTAEDEATHEAGJEAFPYEOLHEOFEP"
+    },
+    {
+      "key": "PILGRIMAGE",
+      "variant": "advance",
+      "score": 63.92805611222445,
+      "snippet": "OEECGOEXFTHJYOEWFNSSEATEOPIABJASWOEMRIAWVBIAVYWNGOEVIAFTHLFIAWCIPYROLNGCOSDJSOHO"
+    },
+    {
+      "key": "PILGRIMAGE",
+      "variant": "reset",
+      "score": 63.92805611222445,
+      "snippet": "OEECGOEXFTHJYOEWFNSSEATEOPIABJASWOEMRIAWVBIAVYWNGOEVIAFTHLFIAWCIPYROLNGCOSDJSOHO"
+    },
+    {
+      "key": "WELCOME",
+      "variant": "advance",
+      "score": 66.69446893787575,
+      "snippet": "DMGWDSVOEOBPIALITOTRFVSSMODSVIAJCHTHCSEXANMIAANGDEONGBYAFOFWTHMLRIAEYXEGICDAETHE"
+    },
+    {
+      "key": "WELCOME",
+      "variant": "reset",
+      "score": 66.69446893787575,
+      "snippet": "DMGWDSVOEOBPIALITOTRFVSSMODSVIAJCHTHCSEXANMIAANGDEONGBYAFOFWTHMLRIAEYXEGICDAETHE"
+    },
+    {
+      "key": "SACRED",
+      "variant": "advance",
+      "score": 65.9120641282565,
+      "snippet": "ALWHATSBYPNDTPMSEATPXEATHGMITHBXLXEOGEANEOHEONGFYGHYGEAHGJXBAYXSEAJNGFBNGNICDAET"
+    },
+    {
+      "key": "SACRED",
+      "variant": "reset",
+      "score": 65.9120641282565,
+      "snippet": "ALWHATSBYPNDTPMSEATPXEATHGMITHBXLXEOGEANEOHEONGFYGHYGEAHGJXBAYXSEAJNGFBNGNICDAET"
+    },
+    {
+      "key": "PRIMES_ARE_SACRED",
+      "variant": "advance",
+      "score": 67.19486973947896,
+      "snippet": "NCNGOENVSBYNGBTHARIGMWFVSLFPRAEJHNODBCSEXANOJHYEABYEONGMAIAPLOLNGCVVNYVEAMHIVIXR"
+    },
+    {
+      "key": "PRIMES_ARE_SACRED",
+      "variant": "reset",
+      "score": 67.19486973947896,
+      "snippet": "NCNGOENVSBYNGBTHARIGMWFVSLFPRAEJHNODBCSEXANOJHYEABYEONGMAIAPLOLNGCVVNYVEAMHIVIXR"
+    },
+    {
+      "key": "TOTIENT",
+      "variant": "advance",
+      "score": 66.25286573146292,
+      "snippet": "EXVTHEISBYIADHVEOEDWASTVMXIAEIAEOEAEMEEOWBLTYJIESWNIAWEONGMAIAXNGEOFVXFNBCNYAELN"
+    },
+    {
+      "key": "TOTIENT",
+      "variant": "reset",
+      "score": 66.25286573146292,
+      "snippet": "EXVTHEISBYIADHVEOEDWASTVMXIAEIAEOEAEMEEOWBLTYJIESWNIAWEONGMAIAXNGEOFVXFNBCNYAELN"
+    },
+    {
+      "key": "1033_AS_RUNES",
+      "variant": "advance",
+      "score": 63.567254509018035,
+      "snippet": "AENGHNAEBOCXWOBIAETHWLHBEOGNGCAEBOFJCYLDRWOPIADTHEAWNIAWOETHFCHFWEGWLSAERNGAEPAE"
+    },
+    {
+      "key": "1033_AS_RUNES",
+      "variant": "reset",
+      "score": 63.567254509018035,
+      "snippet": "AENGHNAEBOCXWOBIAETHWLHBEOGNGCAEBOFJCYLDRWOPIADTHEAWNIAWOETHFCHFWEGWLSAERNGAEPAE"
+    },
+    {
+      "key": "761_AS_RUNES",
+      "variant": "advance",
+      "score": 67.91607214428858,
+      "snippet": "NGBRCNGPIAFNGTHTNNGIARBCBEOEAETHOEXFYPWLXBIAVYWNGAERVOCDONGVEARWAEOSORBSEYXEGOEB"
+    },
+    {
+      "key": "761_AS_RUNES",
+      "variant": "reset",
+      "score": 67.91607214428858,
+      "snippet": "NGBRCNGPIAFNGTHTNNGIARBCBEOEAETHOEXFYPWLXBIAVYWNGAERVOCDONGVEARWAEOSORBSEYXEGOEB"
+    },
+    {
+      "key": "3301_AS_RUNES",
+      "variant": "advance",
+      "score": 67.25486973947896,
+      "snippet": "IADIJIAMVOEORFXWEACNOEISTVOAHEALGOPWAELVRFIAYCTHNJFNMEAYTHCOILHNOEPOEVEOEIEADEOX"
+    },
+    {
+      "key": "3301_AS_RUNES",
+      "variant": "reset",
+      "score": 67.25486973947896,
+      "snippet": "IADIJIAMVOEORFXWEACNOEISTVOAHEALGOPWAELVRFIAYCTHNJFNMEAYTHCOILHNOEPOEVEOEIEADEOX"
+    },
+    {
+      "key": "29_AS_RUNES",
+      "variant": "advance",
+      "score": 66.63406813627255,
+      "snippet": "MSTHOMJTHRPIADHVYOVXTHTBTHYOEGYERVCEAAEMXAIADREAOFVONGVPOELAEEAVHEOFVXXTAEOTRYNG"
+    },
+    {
+      "key": "29_AS_RUNES",
+      "variant": "reset",
+      "score": 66.63406813627255,
+      "snippet": "MSTHOMJTHRPIADHVYOVXTHTBTHYOEGYERVCEAAEMXAIADREAOFVONGVPOELAEEAVHEOFVXXTAEOTRYNG"
+    },
+    {
+      "key": "DJUBEI",
+      "variant": "advance",
+      "score": 64.44925851703407,
+      "snippet": "JWDAJOSBYYOEWFCJEAEOFBEOEGMITHBXRIARIAEOOEAENGTHTAERVOEAPOEEONGMAIANTIIAEAEOSHTR"
+    },
+    {
+      "key": "DJUBEI",
+      "variant": "reset",
+      "score": 64.44925851703407,
+      "snippet": "JWDAJOSBYYOEWFCJEAEOFBEOEGMITHBXRIARIAEOOEAENGTHTAERVOEAPOEEONGMAIANTIIAEAEOSHTR"
+    },
+    {
+      "key": "OUNWM",
+      "variant": "advance",
+      "score": 65.19086172344689,
+      "snippet": "NGBRCNGPXTAERFXWIARVXTHJEOYTNGCAEBOFPWEEOTYFAEGLWSEOWNIAWPOELAEEAAEOTHMLRPAOLAEO"
+    },
+    {
+      "key": "OUNWM",
+      "variant": "reset",
+      "score": 65.19086172344689,
+      "snippet": "NGBRCNGPXTAERFXWIARVXTHJEOYTNGCAEBOFPWEEOTYFAEGLWSEOWNIAWPOELAEEAAEOTHMLRPAOLAEO"
+    },
+    {
+      "key": "HARMONIC_16",
+      "variant": "advance",
+      "score": 66.15286573146292,
+      "snippet": "YOENIYEAEIAWCVSHOEEAWLHTBTHCLRATTHEAPWYLNGTHCVJAEYCTHWNIAWEIAAEVRVHMWHNGHDTHMDJO"
+    },
+    {
+      "key": "HARMONIC_16",
+      "variant": "reset",
+      "score": 66.15286573146292,
+      "snippet": "YOENIYEAEIAWCVSHOEEAWLHTBTHCLRATTHEAPWYLNGTHCVJAEYCTHWNIAWEIAAEVRVHMWHNGHDTHMDJO"
+    }
+  ],
+  "model2": [
+    {
+      "variant": "v1_single_rune_to_letter",
+      "score": 71.06055276381909,
+      "snippet": "BTEVBFNGOBRHIBNIMENGNGTEBFGRNESRMNBRESINAIVWIOAANERIRLIMTHNRHEBMVNNBRONGEHAROWSE",
+      "output_len": 200
+    },
+    {
+      "variant": "v2_pair_to_letter",
+      "score": 71.22222222222223,
+      "snippet": "EWOTLHRIGNTIORNHIWCSLDEETODCHSEAETTNVVYCHVHEVANARNLCFORTHIDFGTDOCYYLOVVHBDDCVWID",
+      "output_len": 100
+    },
+    {
+      "variant": "v3_pair_to_pt_position",
+      "score": 71.22222222222223,
+      "snippet": "EWOTLHRIGNTIORNHIWCSLDEETODCHSEAETTNVVYCHVHEVANARNLCFORTHIDFGTDOCYYLOVVHBDDCVWID",
+      "output_len": 100
+    },
+    {
+      "variant": "v4_gematria_sum_per_word",
+      "score": 60.841628959276015,
+      "snippet": "EBVGNOBETRHBEEOLHGOHPHCHBHILRINHNGENPOAGHRMNEASHVOIV",
+      "output_len": 52
+    }
+  ],
+  "model3": [
+    {
+      "mapping": "canonical",
+      "variant": "v1_advance",
+      "score": 66.63366733466934,
+      "snippet": "ALWHATFTHJOEAPGAVGMWXSFOELRATTHEAIRDBMFOEANDOEVIAGHYGEIAAEVREAGBCGMEONGFBNGNSIEA"
+    },
+    {
+      "mapping": "canonical",
+      "variant": "v2_periodic",
+      "score": 66.63366733466934,
+      "snippet": "ALWHATFTHJOEAPGAVGMWXSFOELRATTHEAIRDBMFOEANDOEVIAGHYGEIAAEVREAGBCGMEONGFBNGNSIEA"
+    },
+    {
+      "mapping": "identity",
+      "variant": "v1_advance",
+      "score": 68.3972745490982,
+      "snippet": "IADIJIAMOCXGTHTNIARNOEIBEOGDWIAMCTHPWYLOEOGTHEOYAERVNJFNNGVEARWTHNLHNOESAOLAEOEA"
+    },
+    {
+      "mapping": "identity",
+      "variant": "v2_periodic",
+      "score": 68.3972745490982,
+      "snippet": "IADIJIAMOCXGTHTNIARNOEIBEOGDWIAMCTHPWYLOEOGTHEOYAERVNJFNNGVEARWTHNLHNOESAOLAEOEA"
+    },
+    {
+      "mapping": "fib_mod29",
+      "variant": "v1_advance",
+      "score": 68.03647294589179,
+      "snippet": "IADIJIAMOCXGTHTNIARNOEIBEOCDWIAMCTHPWYLOEOGTHEOYAERVNJFNNGVEARWTHNLHNOESAOLAEOIA"
+    },
+    {
+      "mapping": "fib_mod29",
+      "variant": "v2_periodic",
+      "score": 68.03647294589179,
+      "snippet": "IADIJIAMOCXGTHTNIARNOEIBEOCDWIAMCTHPWYLOEOGTHEOYAERVNJFNNGVEARWTHNLHNOESAOLAEOIA"
+    },
+    {
+      "mapping": "primes_mod29",
+      "variant": "v1_advance",
+      "score": 66.71366733466934,
+      "snippet": "AENGHNAEBVOEORFXWAETHWLHSTVRNGCAEBOFJCAELVRFIADTHEAWNIAWMEAYTHCFWEGWLPOEVEOEIYNG"
+    },
+    {
+      "mapping": "primes_mod29",
+      "variant": "v2_periodic",
+      "score": 66.71366733466934,
+      "snippet": "AENGHNAEBVOEORFXWAETHWLHSTVRNGCAEBOFJCAELVRFIADTHEAWNIAWMEAYTHCFWEGWLPOEVEOEIYNG"
+    },
+    {
+      "mapping": "reverse",
+      "variant": "v1_advance",
+      "score": 65.9720641282565,
+      "snippet": "ALWHATFTHJOEAPGAVGMWXSFVLRATTHEAIRDBMFOEANDOEVIAGHYGEIAAEVREAGBCGMEONGFBNGNDEWNF"
+    },
+    {
+      "mapping": "reverse",
+      "variant": "v2_periodic",
+      "score": 65.9720641282565,
+      "snippet": "ALWHATFTHJOEAPGAVGMWXSFVLRATTHEAIRDBMFOEANDOEVIAGHYGEIAAEVREAGBCGMEONGFBNGNDEWNF"
+    },
+    {
+      "mapping": "all_zero",
+      "variant": "v1_advance",
+      "score": 64.91086172344689,
+      "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+    },
+    {
+      "mapping": "all_zero",
+      "variant": "v2_periodic",
+      "score": 64.91086172344689,
+      "snippet": "EAAJEOEALRGSWOBIEACIDJEMRGAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPEA"
+    },
+    {
+      "mapping": "rand_trial_0",
+      "variant": "v1_advance",
+      "score": 66.37326653306613,
+      "snippet": "YOENIYETHRPCVSHYOHNGNTBTHOOEGYERVEOGAEMNGTHCVJAEAOFHIEAHLFIAOGVHMWHNGXDTHMDJAELN"
+    },
+    {
+      "mapping": "rand_trial_0",
+      "variant": "v2_periodic",
+      "score": 66.37326653306613,
+      "snippet": "YOENIYETHRPCVSHYOHNGNTBTHOOEGYERVEOGAEMNGTHCVJAEAOFHIEAHLFIAOGVHMWHNGXDTHMDJAELN"
+    },
+    {
+      "mapping": "rand_trial_1",
+      "variant": "v1_advance",
+      "score": 68.01687374749498,
+      "snippet": "YOENIYETHRPCVSHYOHNGNTBTHTHOEGYERVEOGAEMNGTHCVJAEAOFHIEAHLFIAOGVHMWHNGXDTHMDJAMH"
+    },
+    {
+      "mapping": "rand_trial_1",
+      "variant": "v2_periodic",
+      "score": 68.01687374749498,
+      "snippet": "YOENIYETHRPCVSHYOHNGNTBTHTHOEGYERVEOGAEMNGTHCVJAEAOFHIEAHLFIAOGVHMWHNGXDTHMDJAMH"
+    },
+    {
+      "mapping": "rand_trial_2",
+      "variant": "v1_advance",
+      "score": 68.01687374749498,
+      "snippet": "YOENIYETHRPCVSHYOHNGNTBTHTHOEGYERVEOGAEMNGTHCVJAEAOFHIEAHLFIAOGVHMWHNGXDTHMDJAMH"
+    },
+    {
+      "mapping": "rand_trial_2",
+      "variant": "v2_periodic",
+      "score": 68.01687374749498,
+      "snippet": "YOENIYETHRPCVSHYOHNGNTBTHTHOEGYERVEOGAEMNGTHCVJAEAOFHIEAHLFIAOGVHMWHNGXDTHMDJAMH"
+    },
+    {
+      "mapping": "rand_trial_3",
+      "variant": "v1_advance",
+      "score": 66.07286573146293,
+      "snippet": "EAAJEOEALRGSWOBIEACIDJEMRRAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPYN"
+    },
+    {
+      "mapping": "rand_trial_3",
+      "variant": "v2_periodic",
+      "score": 66.07286573146293,
+      "snippet": "EAAJEOEALRGSWOBIEACIDJEMRRAHEALGOXHIANGDRWOPIAYCTHIEOVIOETHFCHOINGNIDTAERNGAEPYN"
+    },
+    {
+      "mapping": "rand_trial_4",
+      "variant": "v1_advance",
+      "score": 65.93206412825651,
+      "snippet": "ALWHATFTHJOEAPGAVGMWXSFRLRATTHEAIRDBMFOEANDOEVIAGHYGEIAAEVREAGBCGMEONGFBNGNYNGIE"
+    },
+    {
+      "mapping": "rand_trial_4",
+      "variant": "v2_periodic",
+      "score": 65.93206412825651,
+      "snippet": "ALWHATFTHJOEAPGAVGMWXSFRLRATTHEAIRDBMFOEANDOEVIAGHYGEIAAEVREAGBCGMEONGFBNGNYNGIE"
+    }
+  ]
+}

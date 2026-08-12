@@ -1,0 +1,333 @@
+URL: https://www.vtmag.vt.edu/sum15/ology.html
+TITLE: Marcus Wanner: Coder, creator | Virginia Tech Magazine
+DESCRIPTION: Virginia Tech Magazine, the university's flagship publication, forges stronger relationships among alumni, donors, and friends of Virginia Tech. The magazine highlights the vibrancy of a university positioned on the leading edge of technology, service, learning, research, and scholarship and showcases the achievements of alumni, faculty and staff, and students. Through a rich array of feature stories, alumni profiles, and university and alumni news, the magazine captures and transmits the broad impact of Virginia Tech while serving as an intellectually rigorous venue that illuminates and informs the diverse lives of the Hokie Nation.
+
+Marcus Wanner: Coder, creator | Virginia Tech Magazine
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Summer 2015
+
+ Archives
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Contact
+
+ Search
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Ology
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Rising sophomore Marcus Wanner, seen here with the Virginia Bioinformatics Institute's supercomputer, Shadowfax, is applying his experience in cryptography and computer security to genomic research. Photo by Jim Stroup.
+ 
+
+ 
+ 
+ 
+ 
+ Coder, creator
+
+ by Steven Mackay
+
+ 
+
+It was an enigmatic puzzle that only the nimblest intellects would take on: a series of highly complicated cryptographic mindbenders containing prime numbers, riddles, and treks through assorted fantasy novels.
+
+And Virginia Tech rising sophomore Marcus Wanner solved it—in 2012, when he was a home-schooled 15-year-old in Copper Hill, Virginia.
+
+The exercise, which first appeared on the underground website 4Chan, was created by a secretive group that identified itself as Cicada 3301. Claiming to be in search of those skilled at deciphering cryptography, the group may have been a loose network of tech-savvy, free-speech activists looking for new members or perhaps a pool of programmers just having fun. Now all but silent, the group was not, from all reports, a corporation or government.
+
+As one of only a handful of people in the world to have solved the puzzle—all of whom were subsequently invited to collaborate on an online project related to Internet privacy—Wanner was featured in a story about Cicada 3301 in an early-January edition of Rolling Stone magazine.
+
+The Cicada puzzle long behind him and the online project abandoned, Wanner, who's majoring in computer science, held two jobs on campus last year: serving as a computer coder for the university's Learning Enhanced Watershed Assessment System Lab, which monitors nearby Stroubles Creek; and providing high-performance computer coding support for genomic researchers at the Virginia Bioinformatics Institute (VBI).
+
+"Marcus is a unique student in that he realizes he is here to learn and not to show off his excellent programming skills," said Zalman Vaksman, a post-doctorate research fellow at VBI. "He is willing to work on projects in areas where he is less comfortable, which is why he wanted to go into bioinformatics (biology and genomics). ... He is already overcoming this and learning a new problem-solving approach ... [which] makes him far more valuable as a future colleague than others with equivalent skills."
+
+Q&A
+ 
+
+What drew you to the Cicada 3301 puzzle? 
+
+I have friends who enjoy puzzles such as this. I was drawn to the 3301 puzzle specifically because it was low-level file format and networking stuff, very minimal and clean from a technical perspective. With most Internet puzzles, if you dig deep enough, you can see some messy, behind-the-scenes clutter, which really kills the mystery for me; but 3301 managed to avoid any of this as far as I can tell. So for me, it was clear that the person running the puzzle had a very high degree of competence, and I was interested in being involved with whatever they were recruiting for.
+
+At the Virginia Bioinformatics Institute, how is your work in cracking genetic codes assisting researchers? 
+
+Many diseases can be predicted or treated using an individual's genetic information. The group I'm part of at VBI studies the genetic differences between individuals and between different cells in the same individual. This information often has applications to new medical diagnostics and treatments.
+
+The project I'm working on is an idea that combines my background in cryptography and computer security with the genomic focus of Skip Garner's lab [Garner, a professor, is director of the Medical Informatics and Systems division]. In order for a person's genetic-sequence data to be useful in research or medicine, it must be processed using a software pipeline, which takes about eight hours to run on VBI's supercomputer, Shadowfax.
+
+Due to the sensitive nature of genetic material, health care providers are more or less required to use in-house computer equipment rather than cloud resources. I'm investigating a way to cryptographically protect genetic data from a cyberattack while it is going through the pipeline so that organizations with access to sequencing technology, but not computational resources, can safely outsource the computational effort to the cloud. Hopefully, this security technique will have the potential to reduce end-user cost and wait time for state-of-the-art medical care.
+
+Both of your employers are dedicated to good causes: curing genetic diseases and tracking water quality. Were you drawn to the causes or the challenges?
+
+One of the reasons I came to Virginia Tech was the opportunity to apply my skills to useful research while a student. I had no initial interest in water quality or health care before I started, but as I have worked with people who have a real passion for each subject matter, and seeing the real data and its implications, I have become excited about the research. None of us is singlehandedly going to change the world, but we are trying to come as close as we can.
+
+What are your post-graduation plans?
+
+I want to do software security engineering, with an emphasis on secure application and protocol design. After I graduated from high school, I took a year off school to work full-time as a software developer at [optical communications company] JDS Uniphase Corp. on Internet-testing handsets for service technicians. This summer, [I'm] working with NetApp Inc. in Durham, North Carolina, doing security-related work on cloud back-end software.
+
+What's your favorite computer-tech-themed film, both in regard to accuracy and guilty-pleasure inaccuracy?
+
+"Blade Runner" (1982) is at the top of my list right now. It includes some comical, but soon to be very real, interpretations of the implications of genetic engineering. And, of course, there's the classic "zoom and enhance image" forensics sequence, where Harrison Ford, as a detective, uses a voice-command computer to zero in on various points within a still photograph. The film itself is really beautiful, both visually and musically, and contains just enough computer inaccuracies to be amusing, but not annoying. Keep an eye out for the video payphone!
+
+What was your first computer, and what did you use it for? 
+
+I started with a really old Dell Dimension 9600 when I was 11. I don't really game much; I used to have some consoles, but I find writing code more interesting. I started out creating simple 3-D games and then branched out into programming, computer networking, and data processing. I wrote a chat program, an explosion shockwave simulator, and a laser data-streaming system. They were all really crude and not that useful, but I had fun and learned a lot.
+
+Steven Mackay is the College of Engineering's communications manager. 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Around the Drillfield
+
+ 
+ 
+ 
+ Athletics
+ 
+
+ 
+ Corps of Cadets
+ 
+
+ 
+ How Tech Ticks
+ 
+
+ 
+ Moment
+ 
+
+ 
+ Ology
+ 
+
+ 
+ Philanthropy
+ 
+
+ 
+ Question
+ 
+
+ 
+ What's In It?
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ Features Summer 2015
+
+ 
+ 
+ 
+ Cancer Under Attack
+ 
+
+ 
+ In Transit
+ 
+
+ 
+ Teacher, President
+ 
+
+ 
+ Math and Melons
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Current Edition
+
+ Archives
+
+ Contact the Editor
+
+ Submit a class note/photo
+
+ Update your address
+
+ 
+
+ 
+
+ 
+ 
+ Follow Virginia Tech
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Advertise in Virginia Tech Magazine
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Produced by University Relations
+ 
+
+ 
+ Equal Opportunity Statement
+ 
+ 
+ 
+ © 2015 Virginia Polytechnic Institute and State University
+ 
+
+ 
+
+ 
+ 
+ Top

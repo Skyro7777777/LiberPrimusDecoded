@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.reddit.com/r/netsec/comments/6qdrd0/pdf_materials_and_presentations_from_def_con_25",
+    "name": "PDF materials and presentations from DEF CON 25 (2017)",
+    "snippet": "To download all the PDFs from DEF CON 25 presentations: Here's the updated slides , the PDF on the media server is old balls. nice amount of ...",
+    "host_name": "www.reddit.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://defcon.org/html/defcon-33/dc-33-schedule.html",
+    "name": "DEF CON® Hacking Conference - Talk Schedule",
+    "snippet": "Main Speaking Tracks · Track 1. Ghosts in the Machine Check - Conjuring Hardware Failures for Cross-ring Privilege Escalation · Track 2. Continued · Track 3. Read more",
+    "host_name": "defcon.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://defcon.org/html/links/dc-archives/dc-33-archive.html",
+    "name": "DEF CON® Hacking Conference - DEF CON 33 Archive",
+    "snippet": "Talks & Materials. Presentation Slides and Extras. Check out all the original and updated presentation slides , white papers, and accompanying files we received! Read more",
+    "host_name": "defcon.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.classcentral.com/course/youtube-def-con-31-war-stories-cracking-cicada-3301-taiiwo-artorias-puck-theclockworkbird-360580",
+    "name": "Cracking Cicada 3301: A Journey Through the Liber",
+    "snippet": "Join a fascinating conference talk from DEF CON 31 where four community leaders from CicadaSolvers share their nine-year journey attempting to crack one of the ...",
+    "host_name": "www.classcentral.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20program.pdf",
+    "name": "DEF CON 33 program.pdf",
+    "snippet": "Apr 15, 2025 — Find this year's presentation materials, music, white papers, slides , and more plus leech files from all the past DEF CON conferences and the ...",
+    "host_name": "media.defcon.org",
+    "rank": 4,
+    "date": "Apr 15, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://defcon.outel.org/defcon31/dc31.csv",
+    "name": "csv - DEF CON.outel.org",
+    "snippet": "we'll walk you through how we, four high school students and cybersecurity noobs … useful reverse engineering strategies, tips for working with a government ...",
+    "host_name": "defcon.outel.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.cicadasolvers.com/media",
+    "name": "Media – CicadaSolvers",
+    "snippet": "Cicada Solvers . Your Headquarters for Everything Cicada 3301. CicadaSolvers · Quickstart · Wiki · Walkthroughs · Media · Archive · Tools · Communications. Media. Read more",
+    "host_name": "www.cicadasolvers.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/richeeta/DEFCON33-Siriously-Leaky",
+    "name": "richeeta/DEFCON33-Siriously-Leaky: Slides and PoCs for",
+    "snippet": "This repo contains my slide deck and demo videos for my DEF CON 33 main stage presentation on overlooked attack surfaces across Apple's ecosystem. I will ... Read more",
+    "host_name": "github.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

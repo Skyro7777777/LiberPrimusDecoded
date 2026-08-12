@@ -1,0 +1,79 @@
+{
+  "corpus_runes": 8739,
+  "window_runes": 505,
+  "window_words": 134,
+  "results": [
+    {
+      "model": "M1_gematria_shift",
+      "alphabet": "identity",
+      "score": 66.713,
+      "snippet": "EADNNASEOPNGIAOEGIAAFJDIRRBAEEVLJAENGEANGNGXJLOEBYIATHIAPXTHISDLAYRIHAAWIANTOGOE"
+    },
+    {
+      "model": "M1_gematria_shift",
+      "alphabet": "DIVINITY-derived",
+      "score": 68.109,
+      "snippet": "CXIOEODFVNMXIAMOEIANXAFFPMOSRAHROESYEOBYEANGVXAEAESGWAOREONPSLYEOOEPDRHSTHCNGNGS"
+    },
+    {
+      "model": "M1_gematria_shift",
+      "alphabet": "FIRFUMFERENFE-derived",
+      "score": 67.295,
+      "snippet": "EAXWJNTHOEDTHOTHIANGTHWVNGHTTEAVEVLNDMOAEMISOEAMEAEOEOMSLDNGHGXNPSBDOENFMAEJECHO"
+    },
+    {
+      "model": "M1_gematria_shift",
+      "alphabet": "parable-derived",
+      "score": 66.55,
+      "snippet": "SFWAHTHGWTHEADWEANGYSMDCAFOEOSCANCEJTHATHJPWTFEAENGAAEJEBAEOEYEAAETHTOOSTHNXFOMI"
+    },
+    {
+      "model": "M2_atbash_prime",
+      "alphabet": "identity",
+      "score": 65.005,
+      "snippet": "EADNNASOREONGNGSTHNHLWNGDNRNGRDXEAAIOOIAMEAVAECENGEAATMNMFINSMYOEABMRACXOHYLXTHO"
+    },
+    {
+      "model": "M2_atbash_prime",
+      "alphabet": "DIVINITY-derived",
+      "score": 64.764,
+      "snippet": "CXIOEODDCGECIAIAVSNXALFNGCSNGTHLRFIAJSMWWWVIDFCFHPRXDCRIXOHOEEOXEAMFNIAONGAEMWHI"
+    },
+    {
+      "model": "M2_atbash_prime",
+      "alphabet": "FIRFUMFERENFE-derived",
+      "score": 65.528,
+      "snippet": "EAXWJNTHDTHXEHMVRWGOENGDNGATHDEIJRFAMEJRSIAVIOEHAEFFOERXOCRJSDHTHEOXFMFIEAROEAEE"
+    },
+    {
+      "model": "M2_atbash_prime",
+      "alphabet": "parable-derived",
+      "score": 65.445,
+      "snippet": "SFWAHTHNTHIAOHGTHRDGGLDHAETHWBILCVDMMJOSWTHJAHCVFPOPDRONXONOEJPIAEEAHIAONGYLWHIA"
+    },
+    {
+      "model": "M3_length_clocked",
+      "alphabet": "identity",
+      "score": 67.44,
+      "snippet": "EADNNASIAEAWIAOEGIASLAWDFFPXTHXRANCSHYMLFTHYGMBALIAEATAGXJSBJBIAXXYEYRLDIAEGWYMO"
+    },
+    {
+      "model": "M3_length_clocked",
+      "alphabet": "DIVINITY-derived",
+      "score": 66.47,
+      "snippet": "CXIOEODRREOOIAJOLDIAIYOTHSTRTGAEICSXBLXBIOJAOEFAEORMIANBXBMPMFTSIAEYIJAREOYEOEOT"
+    },
+    {
+      "model": "M3_length_clocked",
+      "alphabet": "FIRFUMFERENFE-derived",
+      "score": 67.616,
+      "snippet": "EAXWJNTHAREOTHYITHBOEYNAETHTHPXTHXRANCSHBBOEXEDJANGEAATHVEYHTPBBJBIAXXYEYRJNGEON"
+    },
+    {
+      "model": "M3_length_clocked",
+      "alphabet": "parable-derived",
+      "score": 66.919,
+      "snippet": "SFWAHTHRCPRIAJOLAEFEOEARRBTOSCANCSAOBGPEOEOAEDFAEORNGFJMSMNGPEEASXYEYLYNGAEHCEOP"
+    }
+  ]
+}

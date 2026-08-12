@@ -1,0 +1,771 @@
+URL: https://connortumbleson.com/2024/06/03/the-cicada-3301-mystery-puzzle-3-solve-part-3
+TITLE: The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 3
+DESCRIPTION: We pick up where we left off in the January 2014 puzzle - this is Part 3
+
+The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 3
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ Home
+ 
+
+ Tags
+ 
+
+ About
+ 
+
+ Slides
+ 
+
+Dark
+
+ Search
+
+ 
+
+ 
+
+ 
+
+ Ramblings of a Tampa engineer
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Cicada 3301
+ 
+
+ The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 3
+
+ 
+ 2 years ago
+ 16 min read
+ 
+
+ 
+
+ 
+
+ 
+ 
+ Photo by Shannon Potter / UnsplashWe pick up where we left off in the January 2014 puzzle - this is Part 3.
+💡
+If you missed Part 1 or Part 2 of the 2014 Puzzle - head on back to catch up.
+
+We ended the last part after successfully discovering another onion after a long process of a Vigenère cipher on Liber Primus book pages. So we went off to the URL and got an odd little HTML page.
+</head><body><!--3301-->
+bf1d5574ca36efd524e6c34c26cbd628b19aa835aceb94ea7f2ca7f33d1b8f51476bc597d4bf9ad5111d8f39ef5351b3b090bce47f023002fe69928e79f6f8147f6fe051f2f159041f932f5190308d7441fc3cecead0851662d3217485827e640a4183fa5bc8cef5ff7d1473d2746a37fbc8b94318ff0d3aeb467017c0ea5cb33b3e6967453986e1450b35ad47861f679cf7db5a6c170bcfb67544983ec1e36b27ee8c5721da39d27dbfa0cdc15ba3cbaa425e8a8b96b81ab665f3ebc41563a0e9270695d3d68887cfab2c07b290718307f764afba684b17fcfd71323f64206e5fa378b4ee89e80885733080065dd34a5c838898906b8d43de9f1d8eb6922bad
+<hr>
+<address>Apache Server at 127.0.0.1 Port 5243</address>
+</body>
+</html>It almost felt broken with mismatched tags, but now that we've seen it a few times - this has to be a pattern. The page starts as a little payload with an HTML comment that calls out something Cicada 3301 related, then some point later it changes.
+This data which appears to be consistent as a 512 character string prior to the real onion, must be utilized somehow. At the moment we will just collect those strings and organize them with the Cicada number associated with the payload for later processing. Just as we expected after a quick offline/online shift of the onion it changed - this time packing a much larger payload.
+1f8b0808a4c8e2520003646174612e6f757400ecfd65545c5db72e8a169a
+e0c12d40d020c1dd09c1ddb580e0eeee24b8bb6b702778e1047702145eb8
+17ee0e87f75bfbb67bdadef7b6b3cf9ff3add5ce7a5a9b3565688d31677f
+7a9fa38f315f175ed7011f6424a42500306f88838903005e9701df0070b0
+ffe09f5fb837c023c2ff83f78888088848ef919191de232121a362a022a3
+// snippedfull file
+I'm sure you know the pattern at this point - lets convert back to binary and run binwalk over this.
+➜ xxd -p -r file file.bin
+➜ binwalk file.bin
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------
+0 0x0 gzip compressed data, has original file name: "data.out", from Unix, last modified: 2014-01-24 20:10:12It appeared the downloaded stream of bytes was actually a gzipped blob of contents. So lets just decompress this file and see what we have.
+➜ mv file.bin archive.gz
+➜ gzip -d archive.gz 
+➜ binwalk archive 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01
+823807 0xC91FF JPEG image data, JFIF standard 1.01
+Binwalk detected two images, but it didn't parse the the 2nd half of the file. I'm guessing much like the other puzzle some images are reversed.
+➜ perl -0777pe '$_=reverse' archive > archived.rev
+➜ binwalk archived.rev
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01
+638805 0x9BF55 JPEG image data, JFIF standard 1.01
+Sure enough that was it - we have 4 images hidden within this blob. We can follow the same pattern we did in the past with using dd to extract the chunks of these images hidden within. A quick visit with a hex editor we can find the trailer (FF D9) of the images to record the length of each respective image.
+Regular File - 0 start, 0xC91FF length.
+Regular File - 0xC91FF start, 0x1922D9 ending.
+Reversed File - 0 start, 0x9BF55 length.
+Reversed File - 0x9BF55 start, 0x14CDB6 ending.
+
+➜ dd if=archive of=1.jpg bs=1 count=$((0xC91FF))
+823807+0 records in
+823807+0 records out
+823807 bytes (824 kB, 804 KiB) copied, 2.54258 s, 324 kB/s
+➜ dd if=archive of=2.jpg bs=1 skip=$((0xC91FF)) count=$((0x1922D9 - 0xc91FF))
+823514+0 records in
+823514+0 records out
+823514 bytes (824 kB, 804 KiB) copied, 2.54878 s, 323 kB/s
+splitting images on regular file.
+➜ dd if=archived.rev of=3.jpg bs=1 count=$((0x9BF55))
+638805+0 records in
+638805+0 records out
+638805 bytes (639 kB, 624 KiB) copied, 1.94638 s, 328 kB/s
+➜ dd if=archived.rev of=4.jpg bs=1 skip=$((0x9BF55)) count=$((0x14CDB6 - 0x9BF55))
+724577+0 records in
+724577+0 records out
+724577 bytes (725 kB, 708 KiB) copied, 2.20165 s, 329 kB/ssplitting images on reversed file.
+Sure enough we got 4 images that look like more pages of a book.
+
+Our first check before we figure out these runes should be running outguess against these images.
+➜ for file in *.jpg; do outguess -r $file $file.out; done;
+Reading 1.jpg....
+Extracting usable bits: 800881 bits
+Steg retrieve: seed: 41408, len: 58152
+Reading 2.jpg....
+Extracting usable bits: 804376 bits
+Steg retrieve: seed: 41408, len: 58152
+Reading 3.jpg....
+Extracting usable bits: 578114 bits
+Steg retrieve: seed: 38, len: 140
+Reading 4.jpg....
+Extracting usable bits: 704507 bits
+Steg retrieve: seed: 41408, len: 58152We do get a successful disassembly on every file, but 3 of the files have the same unknown blob of data. Binwalk has no idea what it could be, but one of the files is in plaintext.
+The 3rd image (technically page 8 of Liber Primus) we find this message hidden within.
+For those who have fallen behind:
+
+TL BE IE OV UT HT RE ID TS EO ST PO SO YR 
+SL BT II IY T4 DG UQ IM NU 44 2I 15 33 9M
+
+Good luck.
+
+3301This looks like another grouping of characters that are part of a transposition cipher - more than likely another column based one. The key to shift by might be discoverable, but much like we did in a previous puzzle. We can just write something to brute-force columns and look for human readable words.
+The first challenge with any column based cipher is to figure out how many columns you need. I'm not sure we can trust Cicada here with 14 columns of text between 2 rows with 2 characters per group. Our safest bet is to assume a rectangle and use any divisor that divides evenly. So our options are: 1, 2, 4, 7, 8, 14, 28 for key length.
+A column of 1 is clearly not it and 2 you can check visually - so we will start with 4 then move onward to 7 and 8. For those unaware what I mean - if we used an interface based tool we are simply moving columns around much like this animation below. It should help visually understand how the column indexes can be moved around to correct the demo puzzle.
+An example solve for "THISISATEST"Our script took a bit to write, but it seemed to generate some human like words when ran.
+➜ php cicada app:bruteforce-column-key
+
+ Enter a sentence to bruteforce:
+ > TL BE IE OV UT HT RE ID TS EO ST PO SO YR SL BT II IY T4 DG UQ IM NU 44 2I 15 33 9M
+
+Sentence: TLBEIEOVUTHTREIDTSEOSTPOSOYRSLBTIIIYT4DGUQIMNU442I15339M
++---------+-----------+
+| Key (4) | Plaintext |
++---------+-----------+
++---------+----------------------------------------------------------+
+| Key (7) | Plaintext |
++---------+----------------------------------------------------------+
+| 0623145 | TOBELIEVETHUTRISTSDEOTROSPOYSIBTLIIYQ4DTGUI2NUM44IM53139 |
+| 0625143 | TOBELIEVETRUTHISTODESTROYPOSSIBILITYQ4UTGDI2N4M4UIM59133 |
++---------+----------------------------------------------------------+GitHub script
+The last item appears to say TO BELIEVE TRUTH IS TO DESTROY POSSIBILITY, then some random characters. This key corresponded to aligning the columns in 0, 6, 2, 5, 1, 4, 3 order.
+The characters at end could be another onion site, which if extracted with a .onion tacked on end becomes q4utgdi2n4m4uim9133.onion - however it is invalid. The last 4 numbers at end don't really follow the pattern. We know the ports used have commonly been like 52xx, so maybe that's a port? If we remove it and just use: q4utgdi2n4m4uim.onion it works.
+We could jump onward to another onion, but we haven't figured out what these 4 pages of the book say. So lets start with just iterating through all our previously written scripts and see if they work. We will start with the first line and run through the below commands we've since written - ᚹ ᚣᛠᚹᛟ ᚹ ᛇᚹᛟ ᚻᛈᚣᛝᚻᛈᚻ ᛋᛠ.
+Direct translation - Failed.php cicada app:translate (GitHub)
+
+Reversed translation - Failed.php cicada app:translate (GitHub)
+
+XOR with Puzzle 2 files - Failed.php cicada app:bruteforce-xor (GitHub)
+
+Brute-force Vigenère Key w/ word-lists - Failed.php cicada app:bruteforce-vigenere (GitHub)
+
+Brute-force Column based Key - Failedphp cicada app:bruteforce-column-key (GitHub)
+
+Unfortunately we had no luck - one thing we are missing though is a rotation based cipher that works off runes instead of text. I took the direct/reversed translation and rotated them through all 26 shifts, but nothing looked like English.
+So lets build two new scripts that works roughly like.
+Start with rune to English letter translation.
+Perform permutation on the phrase to permute any decoding that could be multiple characters.
+Do one of the following:Find the character (ie TH) in the runic mapping and shift 1-26 in the runic alphabet (f, u, th ...)
+Once corresponding English character is identified shift 1-26 in the English alphabet (a, b, c ...)
+
+ThenLook for human readable words from the word-lists.
+
+Run it again with the reversed translation instead of direct.
+
+So after writing that script - we had mixed success. When shifting via human letters we found 0 results that resembled English words. However, shifting via runic indexes gave us 25+ results to review.
+php cicada app:bruteforce-rotation-cipher --runic-shiftThis appears to be generating an English like string as we permute the different iterations the string can have. Lets slow this down and see how this worked.
+We started with ᚹ ᚣᛠᚹᛟ.
+We converted that back into English from the reversed Gematria Primus to become [NG|ING] THF[NG|ING]G.
+We took the first permutation of that - NG THFNGG.
+We exploded those back into runes - NG, TH, F, NG, G.
+We took first Rune/Character (NG) at index 21 of the Gematria Primus.
+We took the successful rotation number (3) and shifted +3 to become 24.
+We asked for the Rune/Character at 24 - which was ᚪ (A).
+We moved down the string keeping shift constant to get A [C|K]OAN
+Since we went back to Runes - we have to re-permute, so we get:A KOAN
+A COAN
+
+A Koan is a term for a story in Buddhism based cultures. We know from the upcoming word DECIDED that our shifts change between K and C depending on the word. Cicada always says "stay true to the book" - however we can't be sure if the decoding was meant to become constant in terms of resolving C and K. For such a small string decoded we can use the permutation that makes the most sense with grammar.
+Now that we know the pattern we don't have to brute-force it anymore. We just need a script that takes a sentence, direction and rotation number. So lets load up the entire page from the book.
+➜ php cicada app:rotation-cipher --runic-shift --rotation=3
+
+ Enter a sentence to translate:
+ > ᚹ ᚣᛠᚹᛟ ᚹ ᛇᚹᛟ ᚻᛈᚣᛝᚻᛈᚻ ᛋᛠ ᚫᛠ ᚹᛟᚻ ᛏᛋᚢᚻᚳ ᚪᛝᚠ ᚹ ᛇᚹᛏᛋᛈᛡ ᛞᛈ ᚪᛈᛟᛋ ᛋᛠ ᚠᛈ ᚻᛠᛠᛡ ᛠᚦ ᚠᛈ ᛇᚹᛏᛋᛈᛡ ᚪᛞᛠ ᚹᛡᛈ ᚳᛠᚢ ᚪᛞᛠ ᚪᛝᛏᛞᛈᛏ ᛋᛠ ᛏᛋᚢᚻᚳ ᛞᛈᛡᛈ ᚹᛏᚣᛈᚻ ᚠᛈ ᛇᚹᛏᛋᛈᛡ ᚠᛈ ᛏᛋᚢᚻᛈᛟᛋ ᛋᛠᛄᚻ ᚠᛈ ᛇᚹᛏᛋᛈᛡ ᛞᛝᛏ ᛟᚹᛇᛈ ᚠᚹᛋ ᛝᛏ ᛟᛠᛋ ᚪᛞᛠ ᚳᛠᚢ ᚹᛡᛈ ᚠᚹᛋ ᛝᛏ ᛠᛟᛄᚳ ᚪᛞᚹᛋ ᚳᛠᚢ ᚹᛡᛈ ᚣᚹᛄᛄᛈᚻ ᚪᛞᛠ ᚹᛡᛈ ᚳᛠᚢ ᚪᛞᛠ ᚪᛝᛏᛞᛈᛏ ᛋᛠ ᛏᛋᚢᚻᚳ ᛞᛈᛡᛈ ᛞᛈ ᚹᛏᚣᛈ
+
+A [C|K]OAN A MAN DE[C|K]IDED TO GO AND [S|Z]TUDY WITH A MA[S|Z]TER HE WENT TO THE DOOR OF THE MA[S|Z]TER WHO ARE YOU WHO WI[S|Z]HE[S|Z] TO [S|Z]TUDY HERE A[S|Z][C|K]ED THE MA[S|Z]TER THE [S|Z]TUDENT TOLD THE MA[S|Z]TER HI[S|Z] NAME THAT I[S|Z] NOT WHO YOU ARE THAT I[S|Z] ONLY WHAT YOU ARE [C|K]ALLED WHO ARE YOU WHO WI[S|Z]HE[S|Z] TO [S|Z]TUDY HERE HE A[S|Z][C|K]E
+We are now rolling - hopefully the next 3 pages follow this exact form of decoding. I'm guessing they do because the first page/chunk ends in a partial word of "aske" which I'm sure will become "asked" when the next page is solved.
+Thankfully all 4 pages do have the same exact decoding, which end up telling an interesting tale.
+A Koan
+
+A Man decided to go and study with a master. He went to the door of the master.
+
+"Who are you who wishes to study here?" - asked the master.
+
+The student told the master his name.
+
+"That is not who you are, that is only what you are called. Who are you who wishes to study here?" - he asked again.
+
+The man thought for a moment and replied - "I am a professor".
+
+"That is what you do, not who you are" - replied the master.
+
+"Who are you who wishes to study here?"
+
+Confused, the man thought some more.
+
+Finally, he answered - "I am a human being".
+
+"That is only your species not who you are, who are you who wishes to study here?" asked the master again.
+
+After a moment of thought the professor replied - "I am a conscious inhabitant of an arbitrary body."
+
+"That is merely what you are, not what who you are - who are you who wishes to study here?"
+
+The man was getting irritated, "I am" he started, but could not think of anything else to say so he trailed off.
+
+After a long pause the master replied - "Then you are welcome to come study"After the story (Koan) an instruction was injected at the end.
+An Instruction
+Do four unreasonable things each dayOn first inspection it doesn't look like we have anything here so we might as well just go onward to the onion we discovered in the outguess data on page 8.
+So back off to q4utgdi2n4m4uim.onion we went.
+This web page started off with a rather large signed PGP message.
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+4944330300000000002c5449543200000013000000496e746572636f6e6e
+// snipped
+555555
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJS2dL9AAoJEBgfAeV6NQkPkKMP/AyOipTsnGC50Ch2Mtomw87Yfull file (GitHub)
+So of course we extract the payload and convert it back to binary. Before I can run binwalk over the binary - my computer automatically detects it as an audio file.
+➜ xxd -p -r pre pre.bin
+➜ file pre.bin 
+pre.bin: Audio file with ID3 version 2.3.0, contains: MPEG ADTS, layer III, v1, 192 kbps, 44.1 kHz, JntStereo
+
+We can leverage ffprobe to dump out the metadata from this song to see if anything is hiding.
+Input #0, mp3, from 'pre.mp3':
+ Metadata:
+ title : Interconnectedness
+ artist : 3301
+ Duration: 00:04:37.16, start: 0.000000, bitrate: 192 kb/s
+ Stream #0:0: Audio: mp3, 44100 Hz, stereo, fltp, 192 kb/s
+Interconnectedness by 3301
+0:00/277.159125
+1×
+
+Another interesting Cicada song that probably packs secrets within while producing a real nature guitar heavy melodic tune.
+However, before the investigation could continue the (q4utgdi2n4m4uim) onion updated and the payload was replaced - this time packing an image. So our focus is pulled away from the audio file to this image.
+➜ binwalk post.html 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------
+0 0x0 JPEG image data, JFIF standard 1.01Thankfully Tinyeye exists which finds this image almost instantly and tells us: Francisco de Goya y Lucientes - Portrait of Andrés del Peral.
+With another image though we have to try outguess immediately.
+➜ outguess -r q4utgdi2n4m4uim.jpg q4utgdi2n4m4uim.jpg.bin
+Reading q4utgdi2n4m4uim.jpg....
+Extracting usable bits: 222054 bits
+Steg retrieve: seed: 212, len: 12683
+
+➜ binwalk q4utgdi2n4m4uim.jpg.bin 
+
+DECIMAL HEXADECIMAL DESCRIPTION
+-----------------------------------------
+0 0x0 bzip2 compressed data, block size = 900k
+So we have some compressed data hiding within the file, but you can briefly see some image artifacts so before we take a look at that compressed data lets review this image.
+FotoForensics confirms our suspicion that we have some additional packed images within this image.
+There doesn't seem to be any consistent technique though to reveal all the subset images at once. As we mess with filters we see:
+Cicada logo in top left
+Person in top right
+Numbers in bottom left
+Numbers in bottom right
+
+An example of adapting some layers to reveal a person and cicada logo. At this point though we've spent enough time messing with an image - lets look at the packed outguess data.
+Once we decompress the bzip2 file (bzip2 -d) we find a signed message packed within.
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Very good. You have done well to come this far.
+
+ffd8ffe000104a46494600010101004800480000fffe0013437265617465
+// snipped
+ONION
+
+Good luck.
+
+3301
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)full file (GitHub)
+This message appears to have 3 different hex payloads spaced apart in this message. If we extract that text into their own chunk files and reverse them back to binary we get.
+➜ xxd -p -r chunk1 chunk1.bin
+➜ xxd -p -r chunk2 chunk2.bin
+➜ xxd -p -r chunk3 chunk3.bin
+
+➜ file chunk1.bin 
+chunk1.bin: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, comment: "Created with GIMP", progressive, precision 8, 163x79, components 3
+
+➜ file chunk2.bin
+chunk2.bin: JPEG image data, JFIF standard 1.01, resolution (DPI), density 150x150, segment length 16, comment: "LEAD Technologies Inc. V1.01", progressive, precision 8, 197x173, components 3
+
+➜ file chunk3.bin
+chunk3.bin: MPEG ADTS, layer III, v2, 24 kbps, 24 kHz, JntStereoSo it appears we have 2 new images and a new audio file hiding within this message which was hidden within the original image. So if we were to visualize this signed message it was packed roughly as depicted below.
+With the two images being:
+chunk 1chunk 2and the audio file:
+
+Chunk 3
+0:00/3.096
+1×
+
+So now we have 3 new artifacts and paired with this text below seems like another complex book code on initial inspection.
+3PI:6:1:3 
+LML:1:1:1
+3
+ETOATS:19:9:1
+...AF:5:3:1
+AMO:13:10:1
+CC:8:6:1
+CBIA:3:7:2
+CFAF:5:23:6
+SPR:1:8:1
+7
+C[1]:4:5:3
+AWDV:6:2:1
+C[2]:2:17:5
+SC:3:17:1
+AOGS:2:8:1
+ONIONThe challenge with this presumed book code is onion is not part of it. This was a helpful static string we could previously use to ensure our decoding was working. Otherwise you just have a random group of letters/numbers that hopefully resolve as a valid website.
+Starting with the first equation that seems to be written as Bew(y) = 3 x so we start with a basic Wikipedia search for BEW. One result has:
+Bew (mathematical logic), a mathematical provability formula introduced by Kurt Gödel.
+
+It seems this is theorem for incompleteness. So lets look up the eye image on Tinyeye and see what we find.
+What we see as common is "escher" on a few of the results. So with a quick Google search of "eye escher" and we find Eye (1946) by Maurits Cornelis Escher.
+So at this point we just have to make sense of this tiny audio file. There is no metadata attached, but we are in 2024 now. I can just upload this audio file to a service (aha-music) and get it detected.
+Sure enough within seconds the results come back: Johann Sebastian Bach: Trio Sonata in G major, BWV 1039 - I. Adagio.
+So now we have:
+Equation - Gödel's Incompleteness Theorem
+Eye - Painting (Eye) by Maurits Cornelis Escher
+Audio - Bach BMV 1039
+
+So I googled all 3 of those things together and find a Medium blog titled - Why Gödel, Escher, Bach is the most influential book in my life.
+It clicks just like that - this is how we were supposed to find the book. All these items have authors and those authors combined result in this book published in 1999.
+We have to discover what this book code means. If we look at the first few lines we get:
+3PI:6:1:3 
+LML:1:1:1The final 3 numbers have to be some form of paragraph, word, letter, line or something. The first chunk is the complicated part.
+Unsure of legality of attaching a PDF of the Gödel, Escher, Bach: An Eternal Golden Braid book - so please find that on your own.
+
+If we take another look at the table of contents we can start to make some assumptions.
+
+If we see "3PI" can we assume that means "Thee-Part Invention"? Likewise maybe "LML" is "Little Harmonic Labyrinth"?
+Lets try and match up all the prefixes:
+3PI - Three-Part Invention
+LML - Little Harmonic Labyrinth
+3
+ETOATS - Edifying Thoughts of a Tobacco Smoker
+...AF - Ant Fugue
+AMO - A Mu Offering / A Musico-Logical Offering
+CC - Crab Canon
+CBIA - Canon by Intervallic Augmentation
+CFAF - Chromatic Fantasy, And Fued
+SPR - Six-Part Ricercar
+7
+C[1] - Contracrostipunctus / Contrafactus
+AWDV - Aria with Diverse Variations
+C[2] - Contrafactus / Contracrostipunctus
+SC - Sloth Canon
+AOGS - Air on G's String
+
+This might work out, but we have a few codes that resolve to a few different possibilities. If we go under that assumption we have a few possibilities of the book code meaning:
+<chapter>-<paragraph>-<line>-<letter>
+<chapter>-<paragraph>-<word>-<line>
+<chapter>-<line>-<word>-<line>
+
+So before I even attempt to brute-force these combinations - there are no paragraphs. It seems every section is dialog between two people. For example if put the first 6 lines of the 3PI section we get.
+
+ 
+ Three-Part Invention (First 6 lines)
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ ACHILLES: What is that strange flag down at the other end of the track? It reminds me
+somehow of a print by my favourite artists M.C. Escher.
+TORTOISE: That is Zeno’ s flag
+ACHILLES: Could it be that the hole in it resembles the holes in a Mobian strip Escher once
+drew? Something is wrong about the flag, I can tell.
+TORTOISE: The ring which has been cut from it has the shape of the numeral for zero, which
+is Zeno´s favourite number.
+ACHILLES: The ring which hasn´t been invented yet! It will only be invented by a Hindu
+mathematician some millennia hence. And thus, Mr. T, mt argument proves that such a
+flag is impossible.
+TORTOISE: Your argument is persuasive, Achilles, and I must agree that such a flag is indeed
+impossible. But it is beautiful anyway, is it not?
+
+ 
+So reviewing the book code (3PI:6:1:3) we can jump to line 6, word 1, letter 3. This gives us u. As we encounter AMO we have 2 possibilities, but "A Musico-Logical Offering" is not two people speaking so the book code does not work. This makes it more obvious a pattern has developed that each chapter is dialog between characters.
+So if we continue the book code we get:
+
+ 
+ code
+
+ character
+
+ 
+
+ 
+ 3PI:6:1:3
+
+ u
+
+ 
+
+ 
+ LML:1:1:1
+
+ t
+
+ 
+
+ 
+ 3
+
+ 3
+
+ 
+
+ 
+ ETOATS:19:9:1
+
+ q
+
+ 
+
+ 
+ ...AF:5:3:1
+
+ t
+
+ 
+
+ 
+ AMO:13:10:1
+
+ z
+
+ 
+
+ 
+ CC:8:6:1
+
+ b
+
+ 
+
+ 
+ CBIA:3:7:2
+
+ r
+
+ 
+
+ 
+ CFAF:5:23:6
+
+ v
+
+ 
+
+ 
+ SPR:1:8:1
+
+ s
+
+ 
+
+ 
+ 7
+
+ 7
+
+ 
+
+ 
+ C[1]:4:5:3
+
+ d / v
+
+ 
+
+ 
+ AWDV:6:2:1
+
+ t
+
+ 
+
+ 
+ C[2]:2:17:5
+
+ v / d
+
+ 
+
+ 
+ SC:3:17:1
+
+ z
+
+ 
+
+ 
+ AOGS:2:8:1
+
+ p
+
+ 
+
+ 
+ ONION
+
+ onion
+
+ 
+
+A bit lost on two of them as they could be either or. So we build the following onions:
+ut3qtzbrvs7dtvzp.onion
+ut3qtzbrvs7vtdzp.onion
+
+Sure enough it was the first one and we had a new onion! The puzzle continued on, but this post has hits its limit. At this point we will have to pick back up in Part 4 as we review a new onion.
+Puzzle 1 (2012)
+Puzzle 1 - 2nd Chance (2012)
+Puzzle 2 (2013)
+Puzzle 3 - Part 1 (2014)
+Puzzle 3 - Part 2 (2014)
+Puzzle 3 - Part 3 (2014) - You are here.
+Puzzle 3 - Part 4 (2014)
+
+ 
+
+ 
+ 
+ Read more posts by this author
+ 
+
+ 
+ 
+ 
+
+ 
+ Connor Tumbleson
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ The link has been copied!
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ Newer Post
+
+ the non-stop hustle
+
+ 
+
+ 
+ 
+ 
+
+ 
+ Older Post
+
+ Travel Blog: Chicago (3)
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ © 2026 Connor Tumbleson. All Right Reserved.
+ Published with Ghost.
+ 
+
+ 
+
+ 
+ You’ve successfully subscribed to Connor Tumbleson
+
+ Welcome back! You’ve successfully signed in.
+
+ Great! You’ve successfully signed up.
+
+ Success! Your email is updated.
+
+ Your link has expired
+
+ Success! Check your email for magic link to sign-in.
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Please enter at least 3 characters
+ 
+ 0
+ Results for your search
+ 
+
+ 
+
+ 
+ 
+ May we suggest a tag?
+
+ Personal
+ Apktool
+ Travel
+ Technology
+ Random
+ Tampa
+ Food
+ Developer
+ Security
+ Health
+ Halo
+ Ingress
+ Sports
+ History
+ Coronavirus
+ Pi-hole
+ Video Games
+ Movies
+ Ghost Blog
+ Scam
+
+ 
+ May we suggest an author?
+
+ Connor Tumbleson
+
+ 
+
+ 
+
+ 
+ Connor Tumbleson.
+ Ramblings of a Tampa engineer

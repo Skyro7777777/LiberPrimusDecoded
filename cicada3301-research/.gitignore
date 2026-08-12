@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+node_modules/
+.env
+*.log
+tool-results/
+solvers/
+images/
+# Exclude large binary stego outputs but keep JSON summaries + small text/bin
+stego_output/outguess/*.bin
+stego_output/outguess_keyed/*.bin
+stego_output/outguess_ec/*.bin
+stego_output/binwalk_extract/
+stego_output/icc/*.bin
+stego_output/*.bin
+stego_output/*.jpg
+stego_output/*.png
