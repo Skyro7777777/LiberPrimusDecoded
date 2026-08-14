@@ -823,3 +823,30 @@ Stage Summary:
 - Best page0 keyed alphabet: E,TH,A,D,OE,R,J,F,I,W,S,G,EO,AE,N,Y,EA,T,L,O,H,P,V,B,X,M,C,NG,IA
 - W identity did NOT outperform prior runs (prior reference -18817 used different sample/params); current run essentially at quadgram-floor (~-20/quadgram) — hill-climber cannot escape local optima
 - Artifacts: /home/z/my-project/cicada3301-research/decoder/long_hillclimb_W_full.json, long_hillclimb_W_page0.json, /tmp/hc_W_full.log, /tmp/hc_W_page0.log
+
+---
+Task ID: p8e
+Agent: Page 50.jpg deep dive subagent
+Task: Exhaustive attack on the most promising unsolved page (91 runes)
+Work Log:
+- Read unsolved_pages.json: page 50.jpg confirmed at 91 runes
+- Verified long_hillclimb.py and first_diff_masc.py available
+- Ran 3 parallel Quagmire III hill-climbers (NG, W, TH; 100 restarts × 50k iters each)
+- Best score: TH identity at -1057.3 (per-rune -11.6), primer=R
+- Ran extended TH run (200 restarts × 100k iters) — got -1084.9 (no improvement)
+- Ran first-difference MASC attack (50 restarts × 50k) — score -1189.4 (worse than Quagmire III)
+- Crib-dragged 50 Cicada phrases at every position — max propagation 5/7 constraints, no high-confidence match
+- Tested all 29 primers with best TH alphabet — confirmed primer only affects char 0; hill-climber's choice optimal
+- Identified 9 stable alphabet positions (4,9,10,17,18,20,23,25,28) across all 3 identity candidates — strong attractor signal
+- Wrote compiled/PAGE50_DEEPDIVE.md (full report)
+- Saved all artifacts to decoder/deep_50_*.json
+- Committed and pushed to GitHub (commit 9bf1add)
+
+Stage Summary:
+- Best scores: NG=-1091.4, W=-1121.6, TH=-1057.3 (best), first-diff+MASC=-1189.4
+- No breakthrough: page 50.jpg is NOT cracked
+- Crib matches: NONE produced consistent high-propagation constraints
+- English plaintext: NONE emerged (best plaintext has fragments like "DOFMINOMY", "WOOLITEMP", "PONTHAT" but no coherent English)
+- Per-rune gap: -11.6 vs target -5.0 → 2.3× off from true English
+- Hill-climber is stuck at strong local minimum (stable attractor across all identities)
+- Artifacts: compiled/PAGE50_DEEPDIVE.md, decoder/deep_50_*.json (6 files)
