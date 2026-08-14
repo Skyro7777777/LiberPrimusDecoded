@@ -850,3 +850,30 @@ Stage Summary:
 - Per-rune gap: -11.6 vs target -5.0 → 2.3× off from true English
 - Hill-climber is stuck at strong local minimum (stable attractor across all identities)
 - Artifacts: compiled/PAGE50_DEEPDIVE.md, decoder/deep_50_*.json (6 files)
+
+---
+Task ID: p8f
+Agent: D4 magic square symmetry analysis subagent
+Task: Exhaustive D4 symmetry + prime-index + Hill-5 analysis of magic squares
+Work Log:
+- Read WEB_LOCATION_RESULTS.md (Echo446's claim: page-16 magic square "literally contains its own solution" via 180° rotational symmetry around prime 809)
+- Read PRIME_FIB_VERIFICATION.md (Zeckendorf reconstruction context)
+- Loaded unsolved LP2 corpus (13 pages, 12,956 runes total; first 300 used as CT for Vigenère/autokey tests)
+- Built d4_symmetry_analysis.py: 8 D4 elements × 2 squares × multiple interpretations = 296 tests
+- Step 1: D4 × 3 cipher modes (Vigenère no-skip, autokey-PT, autokey-CT) × row-major + spiral-in readings = 96 tests. Top: 71.97 (page5 d4_d autokey_pt), below random-primer max 74.18. NO SIGNAL.
+- Step 2: Prime-index interpretation. Verified page-16 has exactly ONE prime (809, 140th, at center [2][2]) — Echo446's structural claim VERIFIED. Page-5 has 3 primes (131, 151, 199) but center = 91 = 7×13 (composite). Prime-index-derived primers fail to decrypt LP2 (top 68.99).
+- Step 3: Gematria-Primus letter readings (V mod 29 → rune → Latin) for all 8 D4 × 3 reading orders = 48 tests. Top: 68.84 (page5 spiral). No English words.
+- Step 4: 809-center analysis. KEY FINDING: (V − 809) mod 29 produces a PALINDROMIC 25-rune sequence (mechanical consequence of 180° symmetry). Direct read scores 81.01; best Caesar shift (+19) scores 84.71. Random palindromic baseline (1000 samples): max=96.22, 99th pctile=88.24 → 84.71 is WITHIN NOISE. As Vigenère/autokey primer on LP2, scores 63.56–67.27 (pure noise).
+- Step 5: Hill-5 cipher. All 8 D4 transforms of both squares are invertible mod 29 (det=10 for page-16, det=3 for page-5 — group-theoretic invariant). Top Hill-5 score: 72.55 (page5 d4_h/v encrypt), below prior random 5×5 Hill max of 72.77. NO SIGNAL.
+- Step 6: Page-5 parallel analysis. (V − 91) mod 29 produces palindromic sequence; best Caesar +20 → 74.76 (within noise). Top Hill-5: 72.55.
+- Wrote compiled/D4_MAGIC_SQUARE_RESULTS.md (217 lines)
+- Committed and pushed to GitHub (commit 9bf1add — files added alongside p8e artifacts)
+
+Stage Summary:
+- D4 symmetry × English: NO interpretation produced English. Top score 84.71 (page16 (V−809) Caesar+19) is within random-palindrome noise band.
+- 809-center analysis: Revealed that (V − 809) mod 29 produces a palindromic 25-rune sequence (architecturally elegant but cryptographically inert). Score 84.71 is below random-palindrome 99th pctile (88.24).
+- Hill-5: Both squares invertible mod 29 but decryption produces pure noise (top 72.55, below random Hill max 72.77).
+- u/Echo446's claim verdict: PARTIALLY VERIFIED (structural) / NOT VERIFIED (functional). The 180° symmetry around sole prime 809 is real and verified; the "literally contains its own solution" claim is NOT — exhaustive 296-test cryptanalysis found no English, no meaningful message, no working cipher primer.
+- Most promising interpretation: NONE as cipher solution. Two structural observations have independent mathematical interest (the (V−809) palindrome and D4 determinant invariance), but neither leads to a cipher break.
+- Cumulative verdict: 1,325 total magic-square tests (1,029 prior deepdive + 296 D4) have produced ZERO signal above noise. DROP magic-square-as-cipher-key hypothesis.
+- Artifacts: compiled/D4_MAGIC_SQUARE_RESULTS.md (217 lines); decoder/d4_runs/d4_symmetry_analysis.py (496 lines); decoder/d4_runs/d4_results.json (296 results).
