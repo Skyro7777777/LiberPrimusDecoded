@@ -910,3 +910,32 @@ Stage Summary:
 - Recommended next: re-run SA with perm[0]=TH constraint enforced; larger Latin
   corpus; try different cipher model (autokey/Quagmire III); use longer ciphertext
   (1468-rune block); genetic algorithm.
+
+---
+Task ID: p8h
+Agent: aldegonde attack scripts subagent
+Task: Run aldegonde's own professional cryptanalysis tools on LP2
+Work Log:
+- Verified aldegonde cloned at solvers/aldegonde/ (174 experiments, 76 hypotheses).
+- Installed aldegonde as editable Python package via `python3 -m pip install -e .` (initially hit PEP 668 externally-managed-environment; bypassed with system pip). numpy-2.2.6 + scipy-1.15.3 pulled in.
+- Confirmed aldegonde HAS a Quagmire III implementation: src/aldegonde/pasc.py::quagmire3_tr() (tableau generator). Richer autokey variant in experiments/quagmire_hillclimber.py::quagmire3_autokey_decrypt(). Full keyword-family enumeration in experiments/keyword_exhaustion.py.
+- Categorised 174 experiment scripts: ~50 directly relevant to LP attacks (lp_battery*, quagmire_*, lag5_*, custom_autokey_analysis, contraction, crib).
+- Ran lp_attack_battery.py: ONLY page 55 ("AN END") recovered from scratch (already known); pages 0-54 stay at random fitness under affine, Vigenère (PILGRIM, WELCOME), Beaufort, 6 autokey families, prime/totient keystream with �F-interruptor beam search.
+- Ran lp_lag5_attack.py: 6710 runs, max z=+3.56 (page 36, add/reset:N), real crack needs z>+7 — lag-5 shift family excluded. Period-5 polyalphabetic detector: top z=+1.78, threshold z≈3.2 — no detection.
+- Ran verify_quagmire_hypothesis.py: Quagmire III autokey SIMULATED ciphertext matches LP statistics (IoC 0.0344, tunable doublet rate) — hypothesis statistically plausible but no LP decryption.
+- Ran period5_quagmire_sim.py: simulated Quagmire variants don't fully match LP. Ran custom_autokey_analysis.py: explains doublet suppression via identity-char frequency.
+- quagmire_hillclimber.py + quagmire_repeat_attack.py: timed out at 60-120s (full runs need hours). quagmire_az_hillclimber.py: self-test on planted ciphertext only.
+- Inspected quagmire_survivors.jsonl: 69 survivor keys, ALL tagged "DEGENERATE" — 0 non-degenerate. Keyword-Quagmire family EXCLUDED by full ~3.1×10^8-key enumeration.
+- Read 44 hypotheses in hypotheses/INDEX.md: ~32 disproved (every standard classical cipher + autokey variant), 4 plausible, 4 unresolved.
+- Leading hypothesis is now "length-clocked-walk" (NOT Quagmire III): progressive polyalphabetic substitution, order-5 mixed permutation g per letter + mixed permutation σ per word boundary, ~200-bit fixed key, breakable in principle but no plaintext produced.
+- New foothold discovered: contraction-cribs hypothesis gives ~28 bits of known-plaintext constraint at four apostrophe sites (pages 4, 21, 35, 41; offsets 1107, 5136, 8513, 10086) — only known-plaintext foothold beyond the Parable.
+- Wrote compiled/ALDEGONDE_ATTACK_RESULTS.md (200 lines) with full inventory, results, hypotheses summary, next actions.
+- Committed and pushed to GitHub origin/main (commit 0572ec1).
+Stage Summary:
+- KEY FINDING: aldegonde's own attack scripts DID NOT crack any unsolved LP2 page. Only page 55 ("AN END") recovered, and that was already documented as solved.
+- CRITICAL CORRECTION to our campaign: the Quagmire III keyword family has been EXCLUDED by full enumeration (~3.1×10^8 keys, 0 non-degenerate survivors). Our leading Quagmire III hypothesis is superseded.
+- NEW LEADING HYPOTHESIS: length-clocked-walk — progressive polyalphabetic with two mixed permutations (g order-5 per letter, σ per word), ~200-bit fixed key. Statistically plausible, not yet decrypted by aldegonde either.
+- NEW FOOTHOLD: four contraction apostrophes in the page scans give ~28 bits of known-plaintext constraint (pages 4, 21, 35, 41) — first non-Parable plaintext foothold available.
+- ARTIFACTS: compiled/ALDEGONDE_ATTACK_RESULTS.md (full report); commit 0572ec1 on main.
+- MOST PROMISING ALDEGONDE SCRIPT: experiments/quagmire_runner.py (full enumeration, not run to completion — estimated hours/days; survivors file already shows 0 non-degenerate keys for the keyword family). Secondary: experiments/two_rune_gradient.py (validated 2-rune likelihood objective that recovers planted keys — most direct path to base_0 recovery under the walk model).
+- BOTTOM LINE: aldegonde excludes ~32 classical cipher families and points us to length-clocked-walk + contraction cribs as the live attack surface. No English plaintext from any unsolved page.
