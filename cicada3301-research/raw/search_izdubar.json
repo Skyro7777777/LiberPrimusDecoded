@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.reddit.com/r/cicada",
+    "name": "Cicada 3301 Mystery",
+    "snippet": "The Wounding of Izdubar, a picture from Red Book, was the key to solving Liber Primus. Liber Primus was going to be solved.",
+    "host_name": "www.reddit.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/How_the_solved_pages_of_the_Liber_Primus_were_solved",
+    "name": "How the solved pages of the Liber Primus were solved",
+    "snippet": "The Gematria values themselves currently have not been useful in solving the Liber Primus. Calculations are done modulo 29, so if a value goes over 28 or under ...",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://connortumbleson.com/2024/12/23/the-cicada-3301-mystery-puzzle-3-solve-part-4",
+    "name": "The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4",
+    "snippet": "Now it appears we have 4 more pages of this Liber Primus book extracted. Pages 10, 11, 12 and 13 of the Liber Primus. Of course we should ...",
+    "host_name": "connortumbleson.com",
+    "rank": 2,
+    "date": "Dec 22, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/krisyotam/cicada3301",
+    "name": "krisyotam/cicada3301: Complete Cicada 3301 archive —",
+    "snippet": "Comprehensive archive of all known Cicada 3301 materials: three puzzle rounds the complete Liber Primus, 5,157 files across 37 directories. ...",
+    "host_name": "github.com",
+    "rank": 3,
+    "date": "Aug 10, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@shaikhsaimaaz10/liber-primus-the-puzzle-that-baffled-the-internet-bfdfcdc2efc1",
+    "name": "Liber Primus, the Puzzle that Baffled the Internet",
+    "snippet": "The puzzles stopped. The website went cold. Liber Primus remains unfinished. And yet, the whispers never died. Some believe Cicada was a ghost ...",
+    "host_name": "medium.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/mystery/comments/1pc7hfr/the_cicada_3301_mystery",
+    "name": "The Cicada 3301 Mystery",
+    "snippet": "To this day, huge portions of Liber Primus remain unsolved. Some pages have been decoded, but many appear to use entirely new methods of ...",
+    "host_name": "www.reddit.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.quora.com/Has-the-Liber-Primus-been-solved",
+    "name": "Has the Liber Primus been solved?",
+    "snippet": "Has the Liber Primus been solved?",
+    "host_name": "www.quora.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.boxentriq.com/guides/cicada-3301-liber-primus",
+    "name": "Cicada 3301 Liber Primus Guide",
+    "snippet": "It is a book of Gematria Primus runes, with some pages solved and many pages still unsolved. Community sources differ in page numbering, but modern solver ...",
+    "host_name": "www.boxentriq.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

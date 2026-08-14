@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://github.com/topics/cicada-solvers",
+    "name": "cicada-solvers",
+    "snippet": "Liberprimus-gpu is a research workbench for future CUDA-accelerated Liber Primus cryptanalysis experiments. python c cryptography cryptanalysis research ... Read more",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/topics/liberprimus",
+    "name": "liberprimus · GitHub Topics",
+    "snippet": "Liberprimus-gpu is a research workbench for future CUDA-accelerated Liber Primus cryptanalysis experiments. python c cryptography cryptanalysis research ...",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/cicada/comments/kp5nhq/january_2021_update",
+    "name": "January 2021 Update : r/cicada",
+    "snippet": "Current progress: 2 out of 58 pages solved in the current step of Liber Primus . A page within the deep web to find. No progress since 2014. In ... Read more",
+    "host_name": "www.reddit.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/Frequency_Analysis_Unsolved_Pages",
+    "name": "Frequency Analysis Unsolved Pages - Uncovering Cicada Wiki",
+    "snippet": "Liber Primus does not utilize some of the more highly suggested ciphers that often immediately get shot down, but also to give you the data and help interpret ...",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.cryptool.org/download/ctb/CTB-Chapter_CUDA_Tutorial-Cryptanalysis_of_Classical_Ciphers_Using_Modern_GPUs_and_CUDA_en.pdf",
+    "name": "CUDA Tutorial – Cryptanalysis of Classical Ciphers Using",
+    "snippet": "Section 3 provides the concept of GPU threads and analyzes how modern GPUs could be beneficial in terms of performing automatic cryptanalysis on classical. Read more",
+    "host_name": "www.cryptool.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net/publication/350410121_CUDA_Tutorial_-_Cryptanalysis_of_Classical_Ciphers_Using_Modern_GPUs_and_CUDA",
+    "name": "(PDF) CUDA Tutorial - Cryptanalysis of Classical Ciphers",
+    "snippet": "Mar 26, 2021 — 1. Setup the CUDA device and initialize a seed for each thread of the GPU . · 2. Make a local copy of the encrypted text inside each thread. · 3. Read more",
+    "host_name": "www.researchgate.net",
+    "rank": 5,
+    "date": "Mar 26, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.boxentriq.com/guides/cicada-3301-liber-primus",
+    "name": "Cicada 3301 Liber Primus Guide",
+    "snippet": "This guide distinguishes verified Cicada messages from community analysis and uses source links for reproduced transcriptions and known solve methods.",
+    "host_name": "www.boxentriq.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.cicadasolvers.com/quickstart",
+    "name": "Liber Primus Cryptanalysis Briefing",
+    "snippet": "Experienced Cryptographers seeking a no-fluff primer on LP. Goal: Rapid familiarization with the structure and framework of LP, as well as current challenges,",
+    "host_name": "www.cicadasolvers.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

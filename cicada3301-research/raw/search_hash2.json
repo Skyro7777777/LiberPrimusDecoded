@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.reddit.com/r/cicada/comments/cubqu8/page_56_and_the_hashes_might_be_onto_something",
+    "name": "Page 56 and the Hashes (Might be onto something) : r/cicada",
+    "snippet": "The first hash and the third hash are SHA - 512 (HMAC) we know the hashes used with a key that leads to a site on the deep web . and the hashes ...",
+    "host_name": "www.reddit.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://uncovering-cicada.fandom.com/wiki/PAGE_56",
+    "name": "PAGE 56 - Uncovering Cicada Wiki - Fandom",
+    "snippet": "The hash has a length of 512 bits . The hashing algorithm is not known, but potential candidates are SHA - 512 , BLAKE - 512 or BLAKE2b. It is not known what is ... Read more",
+    "host_name": "uncovering-cicada.fandom.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.cicadasolvers.com/deep-web-hash",
+    "name": "Deep Web Hash",
+    "snippet": "The hash has a length of 512 bits . The hashing algorithm is not known, but potential candidates are SHA - 512 , BLAKE - 512 or BLAKE2b.",
+    "host_name": "www.cicadasolvers.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://addons.mozilla.org/en-US/firefox/addon/3301-hash-alarm",
+    "name": "3301 Hash Alarm – Get this Extension for Firefox (en-US)",
+    "snippet": "Apr 14, 2021 — This add-on hashes all requests your browser makes, in an attempt to match the deep web hash , a 512 - bits number referenced in 3301's book, \" ... Read more",
+    "host_name": "addons.mozilla.org",
+    "rank": 3,
+    "date": "Apr 14, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/lipeeeee/gematria",
+    "name": "lipeeeee/gematria: 3301 Cryptography Tool",
+    "snippet": "The full hash is: ( 512 bits) SHA-512, BLAKE-512 or BLAKE2b ) produces the full hash. The hash can also be a unique file identifier for deep web applications",
+    "host_name": "github.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://connortumbleson.com/2024/12/23/the-cicada-3301-mystery-puzzle-3-solve-part-4",
+    "name": "The Cicada 3301 Mystery (Puzzle 3 Solve) - Part 4",
+    "snippet": "Dec 22, 2024 — common 512 character tiny string prior to this one. Lets dump the hexadecimal characters - convert to binary and run binwalk. Cicada triggered ...",
+    "host_name": "connortumbleson.com",
+    "rank": 5,
+    "date": "Dec 22, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://monokro.me/cicada-3301-has-the-illumination-been-concealed",
+    "name": "Cicada 3301: Has The Illumination Been Concealed?",
+    "snippet": "Feb 21, 2026 — It is the duty of every pilgrim to seek out this page . If we look at that briefly, it could be seen as a SHA - 512 : 512 bits , 128 hex characters. Read more",
+    "host_name": "monokro.me",
+    "rank": 6,
+    "date": "Feb 21, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/@corlissS/tryhackme-cicada-3301-vol-1-thm-14421b0dc078",
+    "name": "TryHackMe — Cicada-3301 Vol:1 (THM) | by Corlis",
+    "snippet": "Tells us that it's most likely sha - 512 . Answer: SHA512 . What is the Link from the hash ? https://md5hashing.net/ hash / sha512 ... We can use this ... Read more",
+    "host_name": "medium.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

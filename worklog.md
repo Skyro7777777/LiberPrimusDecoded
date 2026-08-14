@@ -733,3 +733,46 @@ Stage Summary:
   * raw/github_{cicada-solvers_org,LiberPrimusSolver,liberprayground,cicada-library}.json (GitHub activity)
   * raw/search_{quagmire_2025,breakthrough_2025b,cicadasolvers_2025,defcon_transcript,page0_solved,2025_2026,firstdiff,defcon_detailed,defcon_yt,reddit_2025,github_recent,liberprimussolver,aldegonde_2025,aldegonde_details,red_runes}.json (15 search result files)
 - RECOMMENDED NEXT STEP: Implement Quagmire III ciphertext-autokey attack with keyword's first rune constrained to {NG, W, TH}. Hill-climb the tableau permutation + remaining keyword letters, fitness against the 86 doublet positions (which under this hypothesis mark positions where the identity char appears in plaintext). Also: pull aldegonde's corrected transcription (data/page0-58.txt) and re-run our cipher-class tests against it; pull aldegonde's experiments/ scripts (lp_battery9.py, lp_battery11.py, lp_battery13.py, lp_battery14.py, lp_battery15.py) to see what specific Quagmire variants have already been tried and refuted.
+
+---
+Task ID: p8c
+Agent: TH hill-climb + per-page attack subagent
+Task: Run TH hill-climber + attack smallest unsolved pages
+Work Log:
+- Verified long_hillclimb.py and quadgrams.txt both present
+- Inspected unsolved_pages.json: 13 pages total; smallest 3 by rune count = 32.jpg (9), 50.jpg (91), 56.jpg (121)
+- Launched TH corpus hill-climb (identity=TH pos=2, 100 restarts, 30k iter, sample=1500, seed=256) via setsid bash wrapper
+- Launched per-page W hill-climbs for 32.jpg, 50.jpg, 56.jpg (50 restarts, 20k iter, sample=500, seed=42)
+- TH corpus process was killed prematurely after only ~2 restarts (best saved=-29284.97 from restart 0); orchestrator's parallel NG attack reached restart 36 with best=-28474.5 (also no break)
+- 32.jpg completed all 50 restarts very fast (9 runes -> 4s total): best=-45.05, primer=EO, pt="ANDSEVERS"
+- 50.jpg ran 40 restarts in 31s: best=-1125.2, primer=J, pt="TFEETHYRCARBOXIFYEASEVYEALARSTIMIDOCVSOEAVALIAMLAHALNGPIPHIMORTHELIEHEMVEOVATELILAFEWENTVNGSCELTMY"
+- 56.jpg ran 40 restarts in 28s: best=-1605.8, primer=F, pt="ISIALINABILYFERSSIGAOFINERFSOHETETOCCHSHONTHFALILBVTSWEARAPSNGVNLERPVTTACMPLOVMWAIARPROMCCYGELTPXTHOFVEYCAVRIABIAIFDARROOOWOWWSTH"
+- Artifacts saved: long_hillclimb_TH_full.json, hillclimb_32.jpg_W.json, hillclimb_50.jpg_W.json, hillclimb_56.jpg_W.json
+Stage Summary:
+- Best TH corpus score: -29284.97 (1-2 restarts only; far below -3000 break threshold; no breakthrough)
+- Best per-page scores: 32.jpg=-45.05, 50.jpg=-1125.2, 56.jpg=-1605.8
+- All 3 per-page scores technically exceed -3000 absolute threshold, BUT this is a FALSE POSITIVE: the -3000 threshold was calibrated for the full 12956-rune corpus. Per-rune quadgram log-prob is still in the -12 to -13 range (random-text territory; true English would be ~-5 to -7 per quadgram). NO genuine break.
+- Best plaintext snippet (50.jpg): "TFEETHYRCARBOXIFYEASEVYEALARSTIMIDOCVSOEAVALIAMLAHALNGPIPHIMORTHELIEHEMVEOVATELILAFEWENTVNGSCELTMY" — contains fragments like CARBO/EASE/TIMID/VALIA/FEWENT but no coherent English
+- Most promising page: 50.jpg (91 runes) — best per-rune score (-12.8/quadgram), most English-like fragments, smallest non-trivial page
+- No artifacts indicate a true break; TH identity hypothesis remains unconfirmed; recommend further long-running TH/NG/W corpus attacks with >1000 restarts
+
+---
+Task ID: p8a
+Agent: Long hill-climb NG subagent
+Task: Run Quagmire III hill-climber (NG identity) for 4+ minutes
+Work Log:
+- Read worklog tail (confirmed Quagmire III autokey context, identity candidates = {NG, W, TH}).
+- Verified decoder toolkit (long_hillclimb.py, 12.4 KB) and Runeglish quadgrams (7.5 MB, 464496 entries) exist.
+- Initial parallel setsid launch of full+page0 runs failed silently (processes died after ~3s, likely sandbox killed non-direct-children).
+- Fell back to sequential foreground runs with `timeout` wrapper:
+  * FULL corpus: timeout 150, 60 restarts × 30000 iters × sample 1500, seed 42 → completed 36 restarts in 130s before SIGTERM.
+  * PAGE0 (17.jpg): timeout 90, 40 restarts × 40000 iters × sample 729, seed 137 → completed 36 restarts in 89s.
+- A parallel TH-identity run by another subagent (seed 256) was competing for CPU throughout.
+- Both JSON artifacts saved successfully.
+Stage Summary:
+- FULL corpus (NG, 1500-sample): best_score = -28474.50, primer=EA, 36/60 restarts. Keyed alpha = [I,TH,A,R,H,G,P,O,S,T,L,J,E,AE,IA,EA,C,D,X,OE,N,F,Y,V,B,M,EO,W,NG]. Plaintext gibberish: "NERETHMADHWSIAAENDWAEJHXBNGEONBXPRRBETHMRNDLTHTOCHJOBEAMFRV..."
+- PAGE0 (NG, 729-sample): best_score = -13080.50, primer=EA, 36/40 restarts. Keyed alpha = [OE,V,Y,M,T,IA,P,EA,A,TH,S,AE,E,I,W,X,H,D,L,G,J,F,O,B,N,R,C,EO,NG]. Plaintext gibberish: "JVRRTYSDITSICREHCAELEFNGFOEOAETLSXCVENDTHDWEAXSWAEHIWEHIAGRIEN..."
+- NO BREAK. Both scores are ~10× below the -3000 break threshold. Notably both converged on primer=EA (possibly meaningful, possibly coincidental).
+- The plaintext contains many valid rune-letters but no recognizable English/Runeglish words — consistent with the hill-climber being stuck in a local optimum far from the true key.
+- Artifacts: /home/z/my-project/cicada3301-research/decoder/long_hillclimb_NG_full.json, long_hillclimb_NG_page0.json
+- RECOMMENDED NEXT STEP: (1) Compare against W and TH identity runs (parallel subagents). (2) If none of {NG,W,TH} break -3000, the swap-only hill-climber is insufficient for the 29! space — escalate to simulated annealing (with temperature schedule) or a genetic algorithm with crossover, OR reconsider whether the cipher is truly Quagmire III autokey vs. one of the other 18 mechanisms aldegonde surveyed (S2 stream+reroll, post-encryption deletion, etc.). (3) Try seeding the hill-climber from a known-word crib (e.g. "WISDOM", "TRUTH", "PRIMUS") rather than random restarts.
