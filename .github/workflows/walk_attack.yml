@@ -13,12 +13,6 @@ on:
         required: true
         default: '14400'
         type: string
-  push:
-    branches:
-      - main
-    paths:
-      - 'decoder/batch_walk_attack.py'
-      - '.github/workflows/walk_attack.yml'
 
 jobs:
   attack:
@@ -44,16 +38,16 @@ jobs:
 
       - name: Clone aldegonde for n-gram data
         run: |
+          cd cicada3301-research
           mkdir -p solvers
           cd solvers
           git clone --depth 1 https://github.com/cicada-solvers/aldegonde.git 2>&1 | tail -3
           echo "Aldegonde cloned"
-          # Verify n-gram data exists
           ls -la aldegonde/src/aldegonde/data/ngrams/runeglish/quadgrams.txt
 
       - name: Run batch ${{ matrix.batch-id }}
         run: |
-          cd decoder
+          cd cicada3301-research/decoder
           echo "Starting batch ${{ matrix.batch-id }}..."
           python3 batch_walk_attack.py \
             --batch-id ${{ matrix.batch-id }} \
@@ -67,16 +61,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: batch-${{ matrix.batch-id }}-results
-          path: decoder/batch_${{ matrix.batch-id }}_results.json
-          retention-days: 30
-
-      - name: Upload log artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: batch-${{ matrix.batch-id }}-log
-          path: |
-            decoder/batch_${{ matrix.batch-id }}_results.json
+          path: cicada3301-research/decoder/batch_${{ matrix.batch-id }}_results.json
           retention-days: 30
 
   aggregate:
@@ -98,7 +83,6 @@ jobs:
           echo "=== Aggregating batch results ==="
           ls -la batch-results/
           
-          # Find the best score across all batches
           python3 -c "
           import json, os, glob
           
@@ -130,7 +114,6 @@ jobs:
           print(f'\n=== BEST RESULT: Batch {best_batch} score={best_score:.1f} ===')
           print(f'Plaintext (first 500 chars): {best_pt[:500]}')
           
-          # Save aggregated results
           agg = {
               'best_batch': best_batch,
               'best_score': best_score,
@@ -149,17 +132,11 @@ jobs:
           path: aggregated_results.json
           retention-days: 90
 
-      - name: Check for breakthrough
+      - name: Commit results to repo
         run: |
-          if [ -f aggregated_results.json ]; then
-            SCORE=$(python3 -c "import json; print(json.load(open('aggregated_results.json'))['best_score'])")
-            echo "Best score: $SCORE"
-            # Check if score exceeds threshold (adjust as needed)
-            THRESHOLD="-60000"
-            if python3 -c "exit(0 if float('$SCORE') > float('$THRESHOLD') else 1)"; then
-              echo "::warning::POTENTIAL BREAKTHROUGH! Score $SCORE exceeds threshold $THRESHOLD"
-              echo "::set-output name=breakthrough::true"
-            else
-              echo "No breakthrough yet (score $SCORE vs threshold $THRESHOLD)"
-            fi
-          fi
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          cp aggregated_results.json cicada3301-research/decoder/aggregated_results.json
+          git add cicada3301-research/decoder/aggregated_results.json
+          git commit -m "CI: Aggregated walk attack results ($(date -u '+%Y-%m-%d %H:%M'))" || echo "Nothing to commit"
+          git push

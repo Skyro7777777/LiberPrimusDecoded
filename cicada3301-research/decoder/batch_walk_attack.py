@@ -18,8 +18,9 @@ from typing import List, Tuple, Dict, Optional
 
 # Setup paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+RESEARCH_DIR = os.path.dirname(SCRIPT_DIR)  # cicada3301-research/
 sys.path.insert(0, SCRIPT_DIR)
-sys.path.insert(0, os.path.join(SCRIPT_DIR, "..", "solvers", "aldegonde", "experiments"))
+sys.path.insert(0, os.path.join(RESEARCH_DIR, "solvers", "aldegonde", "experiments"))
 
 # Import gematria primus toolkit
 from gematria_primus import (
@@ -32,7 +33,7 @@ try:
     from first_diff_masc import quadgram_score, QUADGRAMS
 except ImportError:
     # Fallback: load quadgrams directly
-    QUADGRAMS_PATH = os.path.join(SCRIPT_DIR, "..", "solvers", "aldegonde",
+    QUADGRAMS_PATH = os.path.join(RESEARCH_DIR, "solvers", "aldegonde",
                                   "src", "aldegonde", "data", "ngrams", "runeglish", "quadgrams.txt")
     def load_ngrams(path):
         grams = {}
@@ -224,7 +225,7 @@ def load_corpus_with_word_boundaries():
     - - = line-break within a word (join, don't split)
     - \n, space = formatting (ignore)
     """
-    lp_path = os.path.join(SCRIPT_DIR, "..", "raw", "liber_primus.txt")
+    lp_path = os.path.join(RESEARCH_DIR, "raw", "liber_primus.txt")
     if not os.path.exists(lp_path):
         print(f"WARNING: {lp_path} not found, using period-5 word lengths", file=sys.stderr)
         ct_decs = load_corpus()
