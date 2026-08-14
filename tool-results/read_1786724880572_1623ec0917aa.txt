@@ -1,0 +1,1123 @@
+     1→#!/usr/bin/env python3
+     2→"""
+     3→length_clocked.py — Non-additive substitution + length-clocked progressive attacks
+     4→on Cicada 3301's unsolved Liber Primus pages.
+     5→
+     6→Task ID: p6c (Phase E / Wave 7)
+     7→Subagent: Non-additive substitution attack subagent
+     8→
+     9→Attack surface: the non-additive substitution family — the ONLY remaining viable
+    10→cipher family after 2,500+ tests across 6 waves conclusively refuted:
+    11→  - additive ciphers (Vigenère, autokey, stream, hash-keystream, PRNG) — aldegonde's
+    12→    theorem: additive family has 1.7% doublet floor; LP has 0.66% → IMPOSSIBLE.
+    13→  - digraphic (Playfair, Hill, two-rune) — all in noise band.
+    14→  - image steganography, magic squares, transposition+substitution.
+    15→
+    16→The aldegonde team formalized the candidate cipher in
+    17→  solvers/aldegonde/hypotheses/length-clocked-walk.md
+    18→  solvers/aldegonde/hypotheses/per-word-related-alphabets.md
+    19→  solvers/aldegonde/hypotheses/mixed-cycle-progression.md
+    20→  solvers/aldegonde/experiments/length_clocked_cipher.py
+    21→
+    22→Model (length-clocked progressive substitution):
+    23→  c[j] = base_w( g^(j mod 5)( p[j] ) )                              [within word]
+    24→  base_{w+1} = base_w ∘ g^((L_w - 1) mod 5) ∘ σ                       [word step]
+    25→  Key = (base_0, g, σ): three permutations on 0..28; g has order 5.
+    26→
+    27→This script implements:
+    28→  Step 2 — 5 f-variants × 20 π_0 candidates = 100 tests.
+    29→  Step 3 — Hill-climbing (simulated annealing) on the substitution table.
+    30→  Step 4 — Per-word alphabet derived from previous word's plaintext.
+    31→  Step 5 — Contraction cribs as key-recovery anchors.
+    32→  Step 6 — Word-level frequency analysis.
+    33→  Step 7 — Bigram substitution hill-climbing.
+    34→
+    35→Output: writes /home/z/my-project/cicada3301-research/decoder/nonadditive_results.json
+    36→        (consumed by NONADDITIVE_RESULTS.md).
+    37→"""
+    38→from __future__ import annotations
+    39→import json, os, sys, math, random, time, re
+    40→from collections import Counter, defaultdict
+    41→from pathlib import Path
+    42→from itertools import permutations
+    43→
+    44→# ============================================================================
+    45→# CONSTANTS
+    46→# ============================================================================
+    47→M = 29
+    48→RUNES = "ᚠᚢᚦᚩᚱᚳᚷᚹᚻᚾᛁᛄᛇᛈᛉᛋᛏᛒᛖᛗᛚᛝᛟᛞᚪᚫᚣᛡᛠ"
+    49→LETTERS = ["F","U","TH","O","R","C","G","W","H","N","I","J","EO","P","X","S","T","B","E","M",
+    50→           "L","NG","OE","D","A","AE","Y","IA","EA"]
+    51→# Cicada solved-page runes use ᛁ (U+16C1). Some aldegonde data uses ᛂ (U+16C2) — normalize.
+    52→RUNE_NORMALIZE = {"ᛂ": "ᛁ"}  # short-twig lagr → standard I
+    53→R2I = {}
+    54→for i, r in enumerate(RUNES):
+    55→    R2I[r] = i
+    56→
+    57→DECODER_DIR = Path(__file__).resolve().parent
+    58→ALDEGONDE_DIR = DECODER_DIR.parent / "solvers" / "aldegonde"
+    59→RESULTS_JSON = DECODER_DIR / "nonadditive_results.json"
+    60→
+    61→# Contraction cribs (from aldegonde contraction-cribs.md):
+    62→#   page 4  word ᛗᛉᛁ'ᚹ  stream offset 1107 → rune ᚹ (idx 7)  at offset+3 = 1110 → plaintext ∈ {S,D,T} = {15,23,16}
+    63→#   page 21 word ᚫᚩ'ᚣ  stream offset 5136 → rune ᚣ (idx 26) at offset+2 = 5138 → plaintext ∈ {S,D,T}
+    64→#   page 35 word ᛈᛖ'ᛏ   stream offset 8513 → rune ᛏ (idx 16) at offset+2 = 8515 → plaintext ∈ {S,D,T}
+    65→#   page 41 word ᛉᛚᛄ'ᚳ stream offset 10086 → rune ᚳ (idx 5)  at offset+3 = 10089 → plaintext ∈ {S,D,T}
+    66→# Note: aldegonde's data file uses ᛁ (idx 10) at page-41 position 2, while the
+    67→# doc uses ᛄ (idx 11). We accept either (transcription ambiguity I/J).
+    68→CRIB_PLAINTEXT_SET = {15, 23, 16}  # S, D, T runes
+    69→CRIB_PATTERNS = [
+    70→    ("page4",  "ᛗᛉᛁᚹ",   3),    # offset 1107, rune-after-apostrophe at +3
+    71→    ("page21", "ᚫᚩᚣ",    2),    # offset 5136, rune-after-apostrophe at +2
+    72→    ("page35", "ᛈᛖᛏ",     2),    # offset 8513, rune-after-apostrophe at +2 (2nd occurrence)
+    73→    ("page41", "ᛉᛚ?ᚳ",    3),    # offset 10086, rune-after-apostrophe at +3 (? = ᛁ or ᛄ)
+    74→]
+    75→# aldegonde-documented stream offsets (for picking the right occurrence)
+    76→CRIB_TARGET_OFFSETS = {
+    77→    "page4": 1107, "page21": 5136, "page35": 8513, "page41": 10086,
+    78→}
+    79→
+    80→
+    81→def _crib_pattern_to_regex(pattern: str):
+    82→    """Convert a crib pattern (with ? for any rune) to a compiled regex over runes."""
+    83→    import re as _re
+    84→    # Build character class for runes
+    85→    runes_class = _re.escape(RUNES)
+    86→    pat = pattern.replace("?", f"[{runes_class}]")
+    87→    return _re.compile(pat)
+    88→
+    89→# 20 key candidates from gematria_primus.KEY_CANDIDATES (loaded lazily)
+    90→KEY_CANDIDATES_NAMES = [
+    91→    "DIVINITY","FIRFUMFERENFE","INSTAR","EMERGENCE","EMERGE","PARABLE",
+    92→    "DIVINITY_WITHIN","PILGRIM","PILGRIMAGE","WELCOME","SACRED","PRIMES_ARE_SACRED",
+    93→    "TOTIENT","1033_AS_RUNES","761_AS_RUNES","3301_AS_RUNES","29_AS_RUNES",
+    94→    "DJUBEI","OUNWM","HARMONIC_16",
+    95→]
+    96→
+    97→# ============================================================================
+    98→# CORPUS LOADING
+    99→# ============================================================================
+   100→def _rune_to_idx(r: str) -> int | None:
+   101→    r = RUNE_NORMALIZE.get(r, r)
+   102→    return R2I.get(r)
+   103→
+   104→
+   105→def load_corpus():
+   106→    """Load the unsolved LP2 corpus as a list of words (each a list of rune indices 0..28).
+   107→
+   108→    Uses aldegonde's lp_section_data (pre-split by red-rune art), sections 0-15
+   109→    (section 16 is the solved Parable, excluded).
+   110→    """
+   111→    sys.path.insert(0, str(ALDEGONDE_DIR))
+   112→    sys.path.insert(0, str(ALDEGONDE_DIR / "src"))
+   113→    from lp_section_data import lp_sections_by_red_runes
+   114→    words: list[list[int]] = []
+   115→    for sec_idx, sec in enumerate(lp_sections_by_red_runes):
+   116→        if sec_idx == 16:  # Parable (solved)
+   117→            continue
+   118→        for w in sec:
+   119→            iw = []
+   120→            for ch in w:
+   121→                ri = _rune_to_idx(ch)
+   122→                if ri is not None:
+   123→                    iw.append(ri)
+   124→            if iw:
+   125→                words.append(iw)
+   126→    return words
+   127→
+   128→
+   129→def load_scorer():
+   130→    """Load runeglish quadgram log-probabilities from aldegonde's data files.
+   131→
+   132→    Returns a function score(rune_idx_list) -> float (higher = more English-like).
+   133→    """
+   134→    quad_path = ALDEGONDE_DIR / "src" / "aldegonde" / "data" / "ngrams" / "runeglish" / "quadgrams.txt"
+   135→    quad = {}
+   136→    with open(quad_path) as f:
+   137→        for line in f:
+   138→            parts = line.split()
+   139→            if len(parts) != 2:
+   140→                continue
+   141→            gram, count = parts[0], int(parts[1])
+   142→            if len(gram) != 4:
+   143→                continue
+   144→            idxs = tuple(R2I.get(c) for c in gram)
+   145→            if None in idxs:
+   146→                continue
+   147→            quad[idxs] = count
+   148→    total = sum(quad.values())
+   149→    log_total = math.log10(total)
+   150→    # log-prob lookup; floor at log10(0.01/total) for unseen quadgrams
+   151→    floor = math.log10(0.01 / total)
+   152→
+   153→    # Precompute as dict for fast lookup
+   154→    quad_log = {k: math.log10(v) - log_total for k, v in quad.items()}
+   155→
+   156→    def score(idxs: list[int]) -> float:
+   157→        if len(idxs) < 4:
+   158→            return -100.0
+   159→        s = 0.0
+   160→        for i in range(len(idxs) - 3):
+   161→            q = tuple(idxs[i:i+4])
+   162→            s += quad_log.get(q, floor)
+   163→        return s / max(1, len(idxs) - 3)  # normalize per-quadgram
+   164→
+   165→    return score, quad_log, floor
+   166→
+   167→
+   168→def idx_to_letters(idxs: list[int]) -> str:
+   169→    return "".join(LETTERS[i] for i in idxs)
+   170→
+   171→
+   172→# ============================================================================
+   173→# PERMUTATION UTILITIES
+   174→# ============================================================================
+   175→def identity() -> list[int]:
+   176→    return list(range(M))
+   177→
+   178→
+   179→def compose(a: list[int], b: list[int]) -> list[int]:
+   180→    """(a ∘ b)[i] = a[b[i]]"""
+   181→    return [a[b[i]] for i in range(M)]
+   182→
+   183→
+   184→def inverse(p: list[int]) -> list[int]:
+   185→    inv = [0] * M
+   186→    for i, x in enumerate(p):
+   187→        inv[x] = i
+   188→    return inv
+   189→
+   190→
+   191→def powers(p: list[int], upto: int) -> list[list[int]]:
+   192→    out = [list(range(M))]
+   193→    for _ in range(1, upto):
+   194→        out.append(compose(p, out[-1]))
+   195→    return out
+   196→
+   197→
+   198→def is_order5(p: list[int]) -> bool:
+   199→    """Check that p^5 == identity."""
+   200→    pp = list(range(M))
+   201→    for _ in range(5):
+   202→        pp = compose(p, pp)
+   203→    return pp == list(range(M))
+   204→
+   205→
+   206→def random_permutation(rng: random.Random) -> list[int]:
+   207→    p = list(range(M))
+   208→    rng.shuffle(p)
+   209→    return p
+   210→
+   211→
+   212→def random_order5(rng: random.Random) -> list[int]:
+   213→    """Random permutation with order 5: five 5-cycles + 4 fixed points.
+   214→    (29 = 5*5 + 4, so order-5 requires 5 disjoint 5-cycles + 4 fixed.)"""
+   215→    perm = list(range(M))
+   216→    rng.shuffle(perm)
+   217→    g = list(range(M))
+   218→    # First 25 runes form 5 5-cycles (5 columns of a 5x5 grid)
+   219→    for col in range(5):
+   220→        cells = [perm[row * 5 + col] for row in range(5)]
+   221→        for row in range(5):
+   222→            g[cells[row]] = cells[(row + 1) % 5]
+   223→    # Last 4 runes are fixed points
+   224→    return g
+   225→
+   226→
+   227→def rotate_permutation(p: list[int], k: int) -> list[int]:
+   228→    """Rotate a permutation's outputs by k: new[i] = (p[i] + k) % M."""
+   229→    return [(p[i] + k) % M for i in range(M)]
+   230→
+   231→
+   232→def atbash_permutation() -> list[int]:
+   233→    """Permutation that maps i -> (M-1-i)."""
+   234→    return [(M - 1 - i) for i in range(M)]
+   235→
+   236→
+   237→# ============================================================================
+   238→# KEY CANDIDATE → PERMUTATION
+   239→# ============================================================================
+   240→def key_candidate_to_perm(name: str, gp_module) -> list[int]:
+   241→    """Convert a named key candidate (a rune string) to a permutation π_0 using
+   242→    keyword-substitution construction:
+   243→
+   244→      1. Take the unique runes of the key in order of first appearance.
+   245→      2. Append the remaining runes in their natural order (0..28).
+   246→      3. π_0[i] = the i-th rune index of this constructed alphabet.
+   247→
+   248→    This is the standard "keyword alphabet" used in classical substitution ciphers.
+   249→    Always returns a valid 29-element permutation (bijective).
+   250→    """
+   251→    if name not in gp_module.KEY_CANDIDATES:
+   252→        return identity()
+   253→    key_runes = gp_module.KEY_CANDIDATES[name]
+   254→    # Step 1: unique runes of key in order of first appearance
+   255→    seen = []
+   256→    seen_set = set()
+   257→    for r in key_runes:
+   258→        ri = R2I.get(r)
+   259→        if ri is not None and ri not in seen_set:
+   260→            seen.append(ri)
+   261→            seen_set.add(ri)
+   262→    # Step 2: append remaining runes in natural order
+   263→    for i in range(M):
+   264→        if i not in seen_set:
+   265→            seen.append(i)
+   266→    # Step 3: π_0[i] = seen[i]
+   267→    if len(seen) != M:
+   268→        return identity()  # fallback (shouldn't happen)
+   269→    return seen
+   270→
+   271→
+   272→# ============================================================================
+   273→# LENGTH-CLOCKED PROGRESSIVE SUBSTITUTION — 5 f-VARIANTS (Step 2)
+   274→# ============================================================================
+   275→# Variant (e) is the aldegonde order-5-g model: base_{w+1} = base_w ∘ g^((L_w-1) % 5) ∘ σ
+   276→# Variants (a)-(d) are simpler evolution rules inspired by the task description.
+   277→
+   278→def f_variant_a(base_w, g, sigma_unused, L_w, pt_unused):
+   279→    """π_{i+1} = π_i rotated by L_i positions (output rotation)."""
+   280→    return rotate_permutation(base_w, L_w % M)
+   281→
+   282→
+   283→def f_variant_b(base_w, g, sigma_unused, L_w, pt_word):
+   284→    """π_{i+1} = π_i composed with shift(plaintext_i mod 29)."""
+   285→    if not pt_word:
+   286→        return base_w
+   287→    s = sum(pt_word) % M
+   288→    shift_perm = [(i + s) % M for i in range(M)]
+   289→    return compose(base_w, shift_perm)
+   290→
+   291→
+   292→def f_variant_c(base_w, g, sigma_unused, L_w, pt_word):
+   293→    """π_{i+1} = π_i XOR'd with the gematria-sum of plaintext_i.
+   294→
+   295→    We treat XOR over GF(29) as a substitution built from the additive shift
+   296→    by the gematria sum (since pure XOR isn't well-defined on 29 symbols).
+   297→    Equivalent to variant B but with a different shift magnitude (sum of
+   298→    prime-values of the runes, mod 29).
+   299→    """
+   300→    if not pt_word:
+   301→        return base_w
+   302→    # Use prime-value sum (gematria-style)
+   303→    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+   304→             73, 79, 83, 89, 97, 101, 103, 107, 109]
+   305→    s = sum(primes[p] for p in pt_word) % M
+   306→    shift_perm = [(i + s) % M for i in range(M)]
+   307→    return compose(base_w, shift_perm)
+   308→
+   309→
+   310→def f_variant_d(base_w, g, sigma_unused, L_w, pt_unused):
+   311→    """π_{i+1} = atbash(π_i) if L_i is prime, else π_i rotated by 1."""
+   312→    def is_prime(n):
+   313→        if n < 2: return False
+   314→        for p in [2,3,5,7,11,13]:
+   315→            if p*p > n: break
+   316→            if n % p == 0: return False
+   317→        return True
+   318→    if is_prime(L_w):
+   319→        return compose(atbash_permutation(), base_w)
+   320→    else:
+   321→        return rotate_permutation(base_w, 1)
+   322→
+   323→
+   324→def f_variant_e(base_w, g, sigma, L_w, pt_unused):
+   325→    """π_{i+1} = π_i ∘ g^((L_i)-th power of base permutation) — the aldegonde model.
+   326→
+   327→    Specifically: base_{w+1} = base_w ∘ g^((L_w - 1) % 5) ∘ σ.
+   328→    Requires g to have order 5 (so g^5 = id)."""
+   329→    if g is None or sigma is None:
+   330→        return base_w
+   331→    gp = powers(g, 5)
+   332→    return compose(compose(base_w, gp[(L_w - 1) % 5]), sigma)
+   333→
+   334→
+   335→F_VARIANTS = [
+   336→    ("a_rotate_by_L",      f_variant_a),
+   337→    ("b_shift_by_pt_sum",  f_variant_b),
+   338→    ("c_shift_by_gematria",f_variant_c),
+   339→    ("d_atbash_if_prime",   f_variant_d),
+   340→    ("e_aldegonde_order5g", f_variant_e),
+   341→]
+   342→
+   343→
+   344→def decrypt_with_evolution(ct_words, base0, g, sigma, f_variant, within_word_g=False,
+   345→                           ginv_cache=None):
+   346→    """Decrypt a list of ciphertext words (each a list of rune indices) using a
+   347→    length-clocked progressive substitution with the given evolution function.
+   348→
+   349→    Args:
+   350→        ct_words: list of list[int], each inner list is a ciphertext word.
+   351→        base0:    initial permutation (π_0), 29-element list.
+   352→        g:        within-word step permutation (only used if within_word_g=True);
+   353→                  if used, must have order 5.
+   354→        sigma:    extra step permutation (only used by variant e).
+   355→        f_variant: the evolution function f(base, g, sigma, L, pt) -> new base.
+   356→        within_word_g: if True, apply g^(j mod 5) within each word (the aldegonde model).
+   357→                       If False, use base_w alone for all positions in word w.
+   358→        ginv_cache: optional precomputed [g^-0, g^-1, g^-2, g^-3, g^-4] for speed.
+   359→
+   360→    Returns:
+   361→        list of list[int]: decrypted plaintext rune indices per word.
+   362→    """
+   363→    base = list(base0)
+   364→    pt_words = []
+   365→    if within_word_g and g is not None:
+   366→        if ginv_cache is not None:
+   367→            ginv = ginv_cache
+   368→        else:
+   369→            gp = powers(g, 5)
+   370→            ginv = [inverse(p) for p in gp]
+   371→    for w in ct_words:
+   372→        L = len(w)
+   373→        binv = inverse(base)
+   374→        if within_word_g and g is not None:
+   375→            pt_w = [ginv[j % 5][binv[c]] for j, c in enumerate(w)]
+   376→        else:
+   377→            pt_w = [binv[c] for c in w]
+   378→        pt_words.append(pt_w)
+   379→        base = f_variant(base, g, sigma, L, pt_w)
+   380→    return pt_words
+   381→
+   382→
+   383→# ============================================================================
+   384→# STEP 2: 5 f-VARIANTS × 20 π_0 CANDIDATES = 100 TESTS
+   385→# ============================================================================
+   386→def step2_variant_sweep(ct_words, scorer, gp_module):
+   387→    """For each (f_variant, π_0 candidate) pair, decrypt the corpus and score.
+   388→
+   389→    Returns a list of dicts: {variant, key_name, score, pt_preview}.
+   390→    """
+   391→    results = []
+   392→    # For variant e, we need a fixed g (order 5) and σ. Use a "natural" choice:
+   393→    #   g = a fixed order-5 permutation derived from DIVINITY's structure (just for testing)
+   394→    #   σ = identity (no extra step)
+   395→    rng = random.Random(3301)
+   396→    g_fixed = random_order5(rng)  # deterministic
+   397→    sigma_identity = list(range(M))
+   398→
+   399→    for variant_name, f_func in F_VARIANTS:
+   400→        for key_name in KEY_CANDIDATES_NAMES:
+   401→            base0 = key_candidate_to_perm(key_name, gp_module)
+   402→            if variant_name == "e_aldegonde_order5g":
+   403→                g = g_fixed
+   404→                sigma = sigma_identity
+   405→                within_g = True
+   406→            else:
+   407→                g = None
+   408→                sigma = None
+   409→                within_g = False
+   410→            try:
+   411→                pt_words = decrypt_with_evolution(ct_words, base0, g, sigma, f_func, within_word_g=within_g)
+   412→                flat = [r for w in pt_words for r in w]
+   413→                score = scorer(flat)
+   414→                preview = idx_to_letters(flat[:60])
+   415→                results.append({
+   416→                    "variant": variant_name,
+   417→                    "key_name": key_name,
+   418→                    "score": float(score),
+   419→                    "pt_preview": preview,
+   420→                    "n_runes": len(flat),
+   421→                })
+   422→            except Exception as e:
+   423→                results.append({
+   424→                    "variant": variant_name,
+   425→                    "key_name": key_name,
+   426→                    "score": -1e9,
+   427→                    "pt_preview": f"<error: {e}>",
+   428→                    "n_runes": 0,
+   429→                })
+   430→    return results
+   431→
+   432→
+   433→# ============================================================================
+   434→# STEP 3: HILL-CLIMBING (SIMULATED ANNEALING) ON THE SUBSTITUTION TABLE
+   435→# ============================================================================
+   436→def step3_hillclimb(ct_words, scorer, n_restarts=8, iters_per_restart=1500,
+   437→                    seed=3301, variant_name="e_aldegonde_order5g",
+   438→                    subset_words=600):
+   439→    """Hill-climb on π_0 (and σ for variant e) using simulated annealing.
+   440→
+   441→    For each restart:
+   442→      - Initialize π_0 randomly (or from a key candidate).
+   443→      - Use a fixed order-5 g (since g is structural, not free).
+   444→      - Optionally also hill-climb on σ.
+   445→      - Score with quadgram log-prob on a subset (first `subset_words` words).
+   446→      - Accept swap if score improves; accept worse with annealing probability.
+   447→
+   448→    Crib bonus: +5 per crib position that decrypts to {S, D, T}.
+   449→
+   450→    Returns list of dicts with best π_0 per restart.
+   451→    """
+   452→    rng = random.Random(seed)
+   453→    # Use the variant e model: within_word_g=True, g=fixed order-5
+   454→    f_func = dict(F_VARIANTS)[variant_name]
+   455→
+   456→    # Use a subset for speed (the full 13k runes is too slow for hill-climbing)
+   457→    subset = ct_words[:subset_words] if len(ct_words) > subset_words else ct_words
+   458→    # Compute crib offsets in the subset
+   459→    crib_positions = find_crib_positions_in_words(ct_words)
+   460→    # Filter to cribs that are within the subset
+   461→    crib_positions_subset = [(wi, j, e) for (wi, j, e) in crib_positions if wi < len(subset)]
+   462→
+   463→    # A small set of structured g candidates (hand-crafted order-5 permutations)
+   464→    # to avoid hill-climbing on g directly (too expensive).
+   465→    g_candidates = [
+   466→        random_order5(random.Random(3301)),    # deterministic random order-5
+   467→        # A second structured g based on gematria-prime ordering
+   468→        _structured_order5_v2(),
+   469→        # A third structured g: rotate-by-5 in 5-cycles
+   470→        _structured_order5_v3(),
+   471→    ]
+   472→
+   473→    results = []
+   474→    for restart in range(n_restarts):
+   475→        # Initialize base0 from a key candidate (cycling through) with random perturbation
+   476→        if restart < len(KEY_CANDIDATES_NAMES):
+   477→            gp_module = sys.modules.get("gematria_primus")
+   478→            if gp_module is None:
+   479→                import importlib
+   480→                sys.path.insert(0, str(DECODER_DIR))
+   481→                gp_module = importlib.import_module("gematria_primus")
+   482→            base0 = key_candidate_to_perm(KEY_CANDIDATES_NAMES[restart], gp_module)
+   483→            for _ in range(5):
+   484→                i, j = rng.randrange(M), rng.randrange(M)
+   485→                base0[i], base0[j] = base0[j], base0[i]
+   486→        else:
+   487→            base0 = random_permutation(rng)
+   488→
+   489→        # Pick a g from the structured candidates (cycle through them)
+   490→        g = list(g_candidates[restart % len(g_candidates)])
+   491→        ginv_cache = [inverse(p) for p in powers(g, 5)]
+   492→        sigma = random_permutation(rng)
+   493→
+   494→        # Score the initial state
+   495→        pt_words = decrypt_with_evolution(subset, base0, g, sigma, f_func,
+   496→                                          within_word_g=True, ginv_cache=ginv_cache)
+   497→        flat = [r for w in pt_words for r in w]
+   498→        cur_score = scorer(flat) + crib_bonus(pt_words, crib_positions_subset)
+   499→
+   500→        best_score = cur_score
+   501→        best_base0 = list(base0)
+   502→        best_g = list(g)
+   503→        best_sigma = list(sigma)
+   504→        best_pt = flat[:]
+   505→
+   506→        T0, T1 = 1.5, 0.03
+   507→        for it in range(iters_per_restart):
+   508→            T = T0 * (T1 / T0) ** (it / iters_per_restart)
+   509→            # Propose: swap 2 elements of base0
+   510→            candidate = list(base0)
+   511→            i, j = rng.randrange(M), rng.randrange(M)
+   512→            if i == j: continue
+   513→            candidate[i], candidate[j] = candidate[j], candidate[i]
+   514→            # Occasionally re-roll sigma (10%)
+   515→            if rng.random() < 0.10:
+   516→                s_new = list(sigma)
+   517→                a, b = rng.randrange(M), rng.randrange(M)
+   518→                s_new[a], s_new[b] = s_new[b], s_new[a]
+   519→            else:
+   520→                s_new = sigma
+   521→
+   522→            pt_words = decrypt_with_evolution(subset, candidate, g, s_new, f_func,
+   523→                                              within_word_g=True, ginv_cache=ginv_cache)
+   524→            flat = [r for w in pt_words for r in w]
+   525→            new_score = scorer(flat) + crib_bonus(pt_words, crib_positions_subset)
+   526→
+   527→            if new_score > cur_score or rng.random() < math.exp((new_score - cur_score) / max(T, 1e-9)):
+   528→                base0, sigma, cur_score = candidate, s_new, new_score
+   529→                if new_score > best_score:
+   530→                    best_score = new_score
+   531→                    best_base0 = list(base0)
+   532→                    best_g = list(g)
+   533→                    best_sigma = list(sigma)
+   534→                    best_pt = flat[:]
+   535→
+   536→        results.append({
+   537→            "restart": restart,
+   538→            "best_score": float(best_score),
+   539→            "best_base0": best_base0,
+   540→            "best_g": best_g,
+   541→            "best_sigma": best_sigma,
+   542→            "best_pt_preview": idx_to_letters(best_pt[:80]),
+   543→            "g_candidate_idx": restart % len(g_candidates),
+   544→        })
+   545→    return results
+   546→
+   547→
+   548→def _structured_order5_v2():
+   549→    """A second structured order-5 permutation: build from prime values.
+   550→    Five 5-cycles over runes 0..24, with runes 25..28 fixed."""
+   551→    perm = list(range(M))
+   552→    rng = random.Random(7777)
+   553→    p = list(range(25))
+   554→    rng.shuffle(p)
+   555→    g = list(range(M))
+   556→    for col in range(5):
+   557→        cells = [p[row * 5 + col] for row in range(5)]
+   558→        for row in range(5):
+   559→            g[cells[row]] = cells[(row + 1) % 5]
+   560→    return g
+   561→
+   562→
+   563→def _structured_order5_v3():
+   564→    """A third structured order-5 permutation: simple rotation in 5-cycles.
+   565→    Cycles: (0,5,10,15,20), (1,6,11,16,21), (2,7,12,17,22), (3,8,13,18,23), (4,9,14,19,24).
+   566→    Runes 25,26,27,28 fixed."""
+   567→    g = list(range(M))
+   568→    for col in range(5):
+   569→        for row in range(5):
+   570→            src = row * 5 + col
+   571→            dst = ((row + 1) % 5) * 5 + col
+   572→            g[src] = dst
+   573→    return g
+   574→
+   575→
+   576→def find_crib_positions_in_words(ct_words):
+   577→    """Find the 4 contraction-crib positions as (word_idx, char_idx_in_word, expected_pt_set).
+   578→
+   579→    Returns list of (word_idx, j_in_word, {S,D,T}).
+   580→    """
+   581→    # Flatten the stream and find each crib pattern
+   582→    flat = [c for w in ct_words for c in w]
+   583→    flat_str = "".join(RUNES[i] for i in flat)
+   584→    positions = []
+   585→    for crib_name, pattern, apostrophe_offset in CRIB_PATTERNS:
+   586→        # Find ALL occurrences (handling ? wildcard via regex)
+   587→        regex = _crib_pattern_to_regex(pattern)
+   588→        occs = [m.start() for m in regex.finditer(flat_str)]
+   589→        if not occs:
+   590→            continue
+   591→        # Pick occurrence closest to aldegonde-documented offset
+   592→        target = CRIB_TARGET_OFFSETS[crib_name]
+   593→        best = min(occs, key=lambda o: abs(o - target))
+   594→        # The rune-after-apostrophe is at position best + apostrophe_offset
+   595→        rune_after_pos = best + apostrophe_offset
+   596→        if rune_after_pos >= len(flat):
+   597→            continue
+   598→        # Convert flat position → (word_idx, j_in_word)
+   599→        cum = 0
+   600→        for wi, w in enumerate(ct_words):
+   601→            if cum <= rune_after_pos < cum + len(w):
+   602→                j_in_word = rune_after_pos - cum
+   603→                positions.append((wi, j_in_word, CRIB_PLAINTEXT_SET))
+   604→                break
+   605→            cum += len(w)
+   606→    return positions
+   607→
+   608→
+   609→def crib_bonus(pt_words, crib_positions):
+   610→    """+5 per crib position that decrypts to a member of {S, D, T}."""
+   611→    bonus = 0.0
+   612→    for wi, j, expected in crib_positions:
+   613→        if wi < len(pt_words) and j < len(pt_words[wi]):
+   614→            if pt_words[wi][j] in expected:
+   615→                bonus += 5.0
+   616→    return bonus
+   617→
+   618→
+   619→# ============================================================================
+   620→# STEP 4: PER-WORD ALPHABET DERIVED FROM PREVIOUS WORD'S PLAINTEXT
+   621→# ============================================================================
+   622→def step4_per_word_plaintext_derived(ct_words, scorer, gp_module):
+   623→    """Test the hypothesis that each word's alphabet is derived from the previous
+   624→    word's decrypted plaintext via a non-additive shift.
+   625→
+   626→    Models tested:
+   627→      (i)   alphabet_i = base_alphabet shifted by sum(plaintext_{i-1}) mod 29
+   628→      (ii)  alphabet_i = base_alphabet shifted by prime-value-sum(plaintext_{i-1}) mod 29
+   629→      (iii) alphabet_i = previous alphabet shifted by sum(plaintext_{i-1}) mod 29 (chained)
+   630→      (iv)  alphabet_i = base_alphabet composed with permutation derived from pt_{i-1}
+   631→
+   632→    For each model, try all 20 base_alphabet candidates.
+   633→    """
+   634→    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+   635→              73, 79, 83, 89, 97, 101, 103, 107, 109]
+   636→    results = []
+   637→
+   638→    def decrypt_model_i(ct_words, base_alphabet, use_primes=False, chained=False):
+   639→        """Decrypt with per-word alphabet derived from previous plaintext."""
+   640→        pt_words = []
+   641→        cur_alpha = list(base_alphabet)
+   642→        for wi, w in enumerate(ct_words):
+   643→            binv = inverse(cur_alpha)
+   644→            pt_w = [binv[c] for c in w]
+   645→            pt_words.append(pt_w)
+   646→            # Compute next alphabet
+   647→            if pt_w:
+   648→                if use_primes:
+   649→                    s = sum(primes[p] for p in pt_w) % M
+   650→                else:
+   651→                    s = sum(pt_w) % M
+   652→                shift_perm = [(i + s) % M for i in range(M)]
+   653→                if chained:
+   654→                    cur_alpha = compose(cur_alpha, shift_perm)
+   655→                else:
+   656→                    cur_alpha = compose(base_alphabet, shift_perm)
+   657→        return pt_words
+   658→
+   659→    models = [
+   660→        ("i_shift_by_pt_sum_base",      lambda w, base: decrypt_model_i(w, base, use_primes=False, chained=False)),
+   661→        ("ii_shift_by_gematria_base",   lambda w, base: decrypt_model_i(w, base, use_primes=True,  chained=False)),
+   662→        ("iii_shift_chained",            lambda w, base: decrypt_model_i(w, base, use_primes=False, chained=True)),
+   663→        ("iv_shift_gematria_chained",    lambda w, base: decrypt_model_i(w, base, use_primes=True,  chained=True)),
+   664→    ]
+   665→
+   666→    for model_name, decrypt_fn in models:
+   667→        for key_name in KEY_CANDIDATES_NAMES:
+   668→            base = key_candidate_to_perm(key_name, gp_module)
+   669→            try:
+   670→                pt_words = decrypt_fn(ct_words, base)
+   671→                flat = [r for w in pt_words for r in w]
+   672→                score = scorer(flat)
+   673→                results.append({
+   674→                    "model": model_name,
+   675→                    "base_alphabet": key_name,
+   676→                    "score": float(score),
+   677→                    "pt_preview": idx_to_letters(flat[:60]),
+   678→                })
+   679→            except Exception as e:
+   680→                results.append({
+   681→                    "model": model_name,
+   682→                    "base_alphabet": key_name,
+   683→                    "score": -1e9,
+   684→                    "pt_preview": f"<error: {e}>",
+   685→                })
+   686→    return results
+   687→
+   688→
+   689→# ============================================================================
+   690→# STEP 5: CONTRACTION CRIBS AS KEY-RECOVERY ANCHORS
+   691→# ============================================================================
+   692→def step5_crib_key_recovery(ct_words, scorer):
+   693→    """Use the 4 contraction cribs as known-plaintext anchors to constrain π_0.
+   694→
+   695→    Each crib gives: at position (word_i, j_in_word), the decryption must be in {S, D, T}.
+   696→    That's 3^4 = 81 combinations of constraints.
+   697→
+   698→    For each combination, we have 4 (ciphertext_rune, plaintext_rune) pairs. These
+   699→    pin 4 entries of π_0. For variant e (within_word_g=True with order-5 g), we have:
+   700→        plaintext[j] = g^-(j mod 5)( base_w^-1( c[j] ) )
+   701→    So base_w^-1(c[j]) = g^(j mod 5)(plaintext[j]).
+   702→
+   703→    For each crib, derive the constraint on base_w at that word. If multiple cribs
+   704→    pin the same base_w entry consistently, we have key recovery.
+   705→
+   706→    This is heavy: 81 combos × structural search. We focus on consistency checking:
+   707→    for each of the 81 plaintext assignments, do the cribs constrain a consistent
+   708→    π_0? If yes, hill-climb from that π_0 seed.
+   709→    """
+   710→    crib_positions = find_crib_positions_in_words(ct_words)
+   711→    if len(crib_positions) < 4:
+   712→        return [{"error": f"only {len(crib_positions)} cribs found, need 4"}]
+   713→
+   714→    results = []
+   715→    pt_options = list(CRIB_PLAINTEXT_SET)  # [15, 23, 16] = S, D, T
+   716→
+   717→    # Enumerate 3^4 = 81 combinations of plaintext assignments at the 4 cribs
+   718→    for combo_idx in range(81):
+   719→        # Decode combo_idx into 4 base-3 digits
+   720→        digits = []
+   721→        x = combo_idx
+   722→        for _ in range(4):
+   723→            digits.append(x % 3)
+   724→            x //= 3
+   725→        # Each digit picks one of {S, D, T} for the corresponding crib
+   726→        assignments = [pt_options[d] for d in digits]
+   727→
+   728→        # For each crib, compute the constraint: at word wi, position j_in_word,
+   729→        # the decrypted rune must be `assignments[k]`.
+   730→        # For variant e (within_word_g=True), this pins:
+   731→        #   g^((j mod 5))( base_wi^-1( c[wi][j] ) ) = assignments[k]
+   732→        # => base_wi^-1( c[wi][j] ) = g^-(j mod 5)( assignments[k] )
+   733→        # => base_wi[ g^-(j mod 5)( assignments[k] ) ] = c[wi][j]
+   734→        #
+   735→        # For variant a-d (within_word_g=False), this pins:
+   736→        #   base_wi^-1( c[wi][j] ) = assignments[k]
+   737→        # => base_wi[ assignments[k] ] = c[wi][j]
+   738→        # But base_wi evolves from base_0, so we'd need to trace the evolution.
+   739→        # For simplicity, we test only variant e here (the aldegonde model) and
+   740→        # only check consistency of the 4 (c, pt) pairs under a fixed random g.
+   741→
+   742→        # Quick consistency check: do the 4 cribs ever pin the SAME base_w entry?
+   743→        # If so, the constraint must be self-consistent.
+   744→        # For variant e, each crib pins base_wi at word wi (different words → different
+   745→        # base_wi, but all derived from base_0 via the walk). Without knowing g, we
+   746→        # can't directly check. So instead, we use the combo as a hill-climb seed:
+   747→        # start from a random π_0, fix the 4 entries per the combo, then anneal.
+   748→
+   749→        # We'll only do a quick test for combo 0 (all S) and combo 40 (mixed), to
+   750→        # keep the runtime bounded. Full 81-combo hill-climb would be too slow.
+   751→        if combo_idx not in (0, 13, 26, 40, 53, 67, 80):
+   752→            continue
+   753→
+   754→        rng = random.Random(3301 + combo_idx)
+   755→        base0 = random_permutation(rng)
+   756→        g = random_order5(rng)
+   757→        sigma = random_permutation(rng)
+   758→
+   759→        # Apply crib constraints to base0 (approximate: assume all 4 cribs land on
+   760→        # base_0, which is only true if base_wi ≈ base_0 for all crib words. This is
+   761→        # a heuristic — in reality base_wi evolves.)
+   762→        for k, (wi, j, _) in enumerate(crib_positions):
+   763→            # Set base_0[assignments[k]] = ct_words[wi][j]
+   764→            # But this may collide with other cribs. Detect collision.
+   765→            target_pt = assignments[k]
+   766→            target_ct = ct_words[wi][j]
+   767→            # Check no other crib already pinned base_0[target_pt] to a different value
+   768→            ok = True
+   769→            for k2, (wi2, j2, _) in enumerate(crib_positions):
+   770→                if k2 >= k: break
+   771→                if assignments[k2] == target_pt and ct_words[wi2][j2] != target_ct:
+   772→                    ok = False
+   773→                    break
+   774→            if ok:
+   775→                base0[target_pt] = target_ct
+   776→
+   777→        # Hill-climb briefly from this seed
+   778→        f_func = f_variant_e
+   779→        pt_words = decrypt_with_evolution(ct_words, base0, g, sigma, f_func, within_word_g=True)
+   780→        flat = [r for w in pt_words for r in w]
+   781→        best_score = scorer(flat) + crib_bonus(pt_words, crib_positions)
+   782→        best_base0 = list(base0)
+   783→
+   784→        for it in range(800):
+   785→            cand = list(base0)
+   786→            i, j = rng.randrange(M), rng.randrange(M)
+   787→            if i == j: continue
+   788→            cand[i], cand[j] = cand[j], cand[i]
+   789→            pt_words = decrypt_with_evolution(ct_words, cand, g, sigma, f_func, within_word_g=True)
+   790→            flat = [r for w in pt_words for r in w]
+   791→            s = scorer(flat) + crib_bonus(pt_words, crib_positions)
+   792→            if s > best_score:
+   793→                best_score = s
+   794→                best_base0 = list(cand)
+   795→                base0 = cand
+   796→
+   797→        results.append({
+   798→            "combo_idx": combo_idx,
+   799→            "assignments": [LETTERS[a] for a in assignments],
+   800→            "best_score": float(best_score),
+   801→            "best_base0": best_base0,
+   802→            "pt_preview": idx_to_letters(flat[:80]),
+   803→        })
+   804→    return results
+   805→
+   806→
+   807→# ============================================================================
+   808→# STEP 6: WORD-LEVEL FREQUENCY ANALYSIS
+   809→# ============================================================================
+   810→def step6_word_frequency(ct_words):
+   811→    """Compute word-level statistics:
+   812→      - Word-frequency distribution (how often each rune-word repeats).
+   813→      - Word-length distribution (does it match English? Runeglish?).
+   814→      - Word-position correlations.
+   815→    """
+   816→    # Word as a tuple of rune indices → count
+   817→    word_counter = Counter(tuple(w) for w in ct_words)
+   818→    # Length distribution
+   819→    len_dist = Counter(len(w) for w in ct_words)
+   820→
+   821→    # Word-position correlations: does word i's length predict word i+1's first rune?
+   822→    # Compute P(first_rune of word i+1 | length of word i)
+   823→    len_to_next_first = defaultdict(Counter)
+   824→    for i in range(len(ct_words) - 1):
+   825→        L = len(ct_words[i])
+   826→        next_first = ct_words[i+1][0] if ct_words[i+1] else -1
+   827→        len_to_next_first[L][next_first] += 1
+   828→
+   829→    # Most common words
+   830→    top_words = word_counter.most_common(20)
+   831→
+   832→    # Word-length statistics
+   833→    total_words = len(ct_words)
+   834→    avg_len = sum(len(w) for w in ct_words) / total_words
+   835→    # English prose avg word length is ~4.5 chars; runeglish collapses digraphs so ~4.0
+   836→    # The aldegonde docs reference: solved-page LP1 word-length distribution.
+   837→
+   838→    # Repeated-word analysis (beyond chance)
+   839→    n_unique = len(word_counter)
+   840→    n_repeated_types = sum(1 for w, c in word_counter.items() if c > 1)
+   841→    n_singleton = sum(1 for w, c in word_counter.items() if c == 1)
+   842→
+   843→    # Length-distribution comparison with English prose
+   844→    # English prose word-length distribution (approximate, from Brown corpus):
+   845→    english_len_dist = {1: 0.025, 2: 0.135, 3: 0.205, 4: 0.215, 5: 0.155,
+   846→                        6: 0.105, 7: 0.075, 8: 0.045, 9: 0.022, 10: 0.010, 11: 0.005, 12: 0.002}
+   847→    obs_len_dist = {L: cnt / total_words for L, cnt in len_dist.items()}
+   848→    # Chi-squared distance
+   849→    chi2 = 0.0
+   850→    for L, p_exp in english_len_dist.items():
+   851→        p_obs = obs_len_dist.get(L, 0.0)
+   852→        if p_exp > 0:
+   853→            chi2 += (p_obs - p_exp) ** 2 / p_exp
+   854→
+   855→    return {
+   856→        "total_words": total_words,
+   857→        "total_runes": sum(len(w) for w in ct_words),
+   858→        "n_unique_words": n_unique,
+   859→        "n_repeated_types": n_repeated_types,
+   860→        "n_singleton": n_singleton,
+   861→        "top_20_words": [
+   862→            {"word": "".join(RUNES[r] for r in w), "count": c, "latin": "".join(LETTERS[r] for r in w)}
+   863→            for w, c in top_words
+   864→        ],
+   865→        "length_distribution": dict(sorted(len_dist.items())),
+   866→        "avg_word_length": avg_len,
+   867→        "length_dist_chi2_vs_english": float(chi2),
+   868→        "len_to_next_first_top": {
+   869→            L: cnt.most_common(5)
+   870→            for L, cnt in sorted(len_to_next_first.items())[:8]
+   871→        },
+   872→    }
+   873→
+   874→
+   875→# ============================================================================
+   876→# STEP 7: BIGRAM SUBSTITUTION HILL-CLIMBING
+   877→# ============================================================================
+   878→def step7_bigram_substitution(ct_words, scorer, n_restarts=8, iters_per_restart=2000,
+   879→                              seed=3301, subset_words=600):
+   880→    """Hill-climb on a 29×29 bigram substitution table.
+   881→
+   882→    Each rune-pair (r1, r2) maps to a plaintext-pair (p1, p2) via a lookup table.
+   883→    State: a 29×29 table of plaintext-rune indices.
+   884→    Score: sum of quadgram log-probs over the output stream (treat as a flat stream).
+   885→
+   886→    For each restart:
+   887→      - Initialize table randomly (or as identity).
+   888→      - Hill-climb by swapping two entries in a single row.
+   889→      - Accept if score improves; SA acceptance for worse.
+   890→    """
+   891→    rng = random.Random(seed)
+   892→    # Use a subset for speed
+   893→    subset = ct_words[:subset_words] if len(ct_words) > subset_words else ct_words
+   894→    flat = [c for w in subset for c in w]
+   895→    n_pairs = len(flat) // 2
+   896→    pairs = [(flat[2*i], flat[2*i+1]) for i in range(n_pairs)]
+   897→
+   898→    # Compute crib pair constraints: each crib's rune-after-apostrophe is at a known
+   899→    # flat position; convert to (pair_idx, is_first_in_pair, expected_pt_set).
+   900→    crib_positions = find_crib_positions_in_words(ct_words)
+   901→    # Convert (word_idx, j_in_word) → flat position
+   902→    crib_flat_positions = []
+   903→    cum = 0
+   904→    word_to_start = {}
+   905→    for wi, w in enumerate(ct_words):
+   906→        word_to_start[wi] = cum
+   907→        cum += len(w)
+   908→    for wi, j, pt_set in crib_positions:
+   909→        flat_pos = word_to_start[wi] + j
+   910→        crib_flat_positions.append((flat_pos, pt_set))
+   911→    crib_pair_constraints = []
+   912→    for pos, pt_set in crib_flat_positions:
+   913→        pair_idx = pos // 2
+   914→        is_first = (pos % 2 == 0)
+   915→        crib_pair_constraints.append((pair_idx, is_first, pt_set))
+   916→
+   917→    results = []
+   918→    for restart in range(n_restarts):
+   919→        # Initialize table: alternate between identity-on-first (deterministic)
+   920→        # and full-random init, to diversify the restart seeds.
+   921→        if restart % 2 == 0:
+   922→            table = [[a for _ in range(M)] for a in range(M)]  # identity-on-first
+   923→        else:
+   924→            table = [[rng.randrange(M) for _ in range(M)] for _ in range(M)]
+   925→
+   926→        def score_table(tbl):
+   927→            out = [tbl[p[0]][p[1]] for p in pairs]
+   928→            s = scorer(out)
+   929→            # Crib bonus
+   930→            for pair_idx, is_first, pt_set in crib_pair_constraints:
+   931→                if pair_idx < len(pairs):
+   932→                    p1, p2 = pairs[pair_idx]
+   933→                    pt = tbl[p1][p2]
+   934→                    if pt in pt_set:
+   935→                        s += 5.0
+   936→            return s
+   937→
+   938→        cur_score = score_table(table)
+   939→        best_score = cur_score
+   940→        best_table = [row[:] for row in table]
+   941→        best_out = [table[p[0]][p[1]] for p in pairs]
+   942→
+   943→        T0, T1 = 1.5, 0.03
+   944→        for it in range(iters_per_restart):
+   945→            T = T0 * (T1 / T0) ** (it / iters_per_restart)
+   946→            # Propose: swap two entries in a random row
+   947→            row = rng.randrange(M)
+   948→            a, b = rng.randrange(M), rng.randrange(M)
+   949→            if a == b: continue
+   950→            table[row][a], table[row][b] = table[row][b], table[row][a]
+   951→            new_score = score_table(table)
+   952→            if new_score > cur_score or rng.random() < math.exp((new_score - cur_score) / max(T, 1e-9)):
+   953→                cur_score = new_score
+   954→                if new_score > best_score:
+   955→                    best_score = new_score
+   956→                    best_table = [r[:] for r in table]
+   957→                    best_out = [table[p[0]][p[1]] for p in pairs]
+   958→            else:
+   959→                # Revert
+   960→                table[row][a], table[row][b] = table[row][b], table[row][a]
+   961→
+   962→        results.append({
+   963→            "restart": restart,
+   964→            "best_score": float(best_score),
+   965→            "best_pt_preview": idx_to_letters(best_out[:80]),
+   966→        })
+   967→    return results
+   968→
+   969→
+   970→# ============================================================================
+   971→# MAIN
+   972→# ============================================================================
+   973→def main():
+   974→    print("=" * 72)
+   975→    print("LENGTH-CLOCKED PROGRESSIVE SUBSTITUTION ATTACK")
+   976→    print("Task p6c — Non-additive substitution + length-clocked")
+   977→    print("=" * 72)
+   978→
+   979→    # Load corpus
+   980→    print("\n[0] Loading corpus...")
+   981→    ct_words = load_corpus()
+   982→    n_runes = sum(len(w) for w in ct_words)
+   983→    print(f"  Loaded {len(ct_words)} words, {n_runes} runes total.")
+   984→
+   985→    # Load scorer
+   986→    print("\n[0] Loading runeglish quadgram scorer...")
+   987→    scorer, quad_log, floor = load_scorer()
+   988→    # Sanity: score a known-English fragment (solved page 5 "SOME WISDOM" direct-translate)
+   989→    # Just check the scorer returns finite values
+   990→    test_score = scorer([18, 22, 12, 4, 22, 8, 18, 26, 22, 12])  # SOMEWISDOM-ish
+   991→    print(f"  Scorer OK. Test score on synthetic English: {test_score:.3f}")
+   992→
+   993→    # Load gematria_primus for KEY_CANDIDATES
+   994→    sys.path.insert(0, str(DECODER_DIR))
+   995→    import gematria_primus
+   996→    gp_module = gematria_primus
+   997→
+   998→    # Verify cribs
+   999→    print("\n[0] Verifying contraction cribs...")
+  1000→    crib_positions = find_crib_positions_in_words(ct_words)
+  1001→    print(f"  Found {len(crib_positions)} crib positions (expected 4).")
+  1002→
+  1003→    all_results = {
+  1004→        "task_id": "p6c",
+  1005→        "n_runes": n_runes,
+  1006→        "n_words": len(ct_words),
+  1007→        "cribs_found": len(crib_positions),
+  1008→    }
+  1009→
+  1010→    # Step 2: variant sweep
+  1011→    print("\n[Step 2] Running 5 f-variants × 20 π_0 candidates = 100 tests...")
+  1012→    t0 = time.time()
+  1013→    step2_results = step2_variant_sweep(ct_words, scorer, gp_module)
+  1014→    step2_results.sort(key=lambda r: -r["score"])
+  1015→    print(f"  Done in {time.time()-t0:.1f}s. Top 5:")
+  1016→    for r in step2_results[:5]:
+  1017→        print(f"    {r['variant']:30s} | {r['key_name']:20s} | score={r['score']:.3f}")
+  1018→        print(f"      preview: {r['pt_preview'][:60]}")
+  1019→    all_results["step2_variant_sweep"] = step2_results
+  1020→
+  1021→    # Step 3: hill-climbing on substitution table
+  1022→    print("\n[Step 3] Hill-climbing (simulated annealing) on π_0...")
+  1023→    print(f"  8 restarts × 1500 iters each = 12,000 evaluations (on 600-word subset).")
+  1024→    t0 = time.time()
+  1025→    step3_results = step3_hillclimb(ct_words, scorer, n_restarts=8, iters_per_restart=1500)
+  1026→    step3_results.sort(key=lambda r: -r["best_score"])
+  1027→    print(f"  Done in {time.time()-t0:.1f}s. Top 5 restarts:")
+  1028→    for r in step3_results[:5]:
+  1029→        print(f"    restart={r['restart']:2d} | score={r['best_score']:.3f}")
+  1030→        print(f"      preview: {r['best_pt_preview'][:60]}")
+  1031→    all_results["step3_hillclimb"] = step3_results
+  1032→
+  1033→    # Step 4: per-word alphabet derived from previous plaintext
+  1034→    print("\n[Step 4] Per-word alphabet derived from previous word's plaintext...")
+  1035→    print(f"  4 models × 20 base alphabets = 80 tests.")
+  1036→    t0 = time.time()
+  1037→    step4_results = step4_per_word_plaintext_derived(ct_words, scorer, gp_module)
+  1038→    step4_results.sort(key=lambda r: -r["score"])
+  1039→    print(f"  Done in {time.time()-t0:.1f}s. Top 5:")
+  1040→    for r in step4_results[:5]:
+  1041→        print(f"    {r['model']:30s} | {r['base_alphabet']:20s} | score={r['score']:.3f}")
+  1042→        print(f"      preview: {r['pt_preview'][:60]}")
+  1043→    all_results["step4_per_word_alphabet"] = step4_results
+  1044→
+  1045→    # Step 5: crib-based key recovery
+  1046→    print("\n[Step 5] Crib-based key recovery (sample 7 of 81 combos)...")
+  1047→    t0 = time.time()
+  1048→    step5_results = step5_crib_key_recovery(ct_words, scorer)
+  1049→    step5_results.sort(key=lambda r: -r.get("best_score", -1e9))
+  1050→    print(f"  Done in {time.time()-t0:.1f}s. Top 5 combos:")
+  1051→    for r in step5_results[:5]:
+  1052→        print(f"    combo={r.get('combo_idx',-1):3d} | assignments={r.get('assignments',[])} | score={r.get('best_score',-1e9):.3f}")
+  1053→        print(f"      preview: {r.get('pt_preview','')[:60]}")
+  1054→    all_results["step5_crib_recovery"] = step5_results
+  1055→
+  1056→    # Step 6: word-level frequency analysis
+  1057→    print("\n[Step 6] Word-level frequency analysis...")
+  1058→    step6_results = step6_word_frequency(ct_words)
+  1059→    print(f"  Total words: {step6_results['total_words']}, unique: {step6_results['n_unique_words']}")
+  1060→    print(f"  Avg word length: {step6_results['avg_word_length']:.2f}")
+  1061→    print(f"  Length-dist chi2 vs English: {step6_results['length_dist_chi2_vs_english']:.3f}")
+  1062→    print(f"  Top 5 words:")
+  1063→    for w in step6_results["top_20_words"][:5]:
+  1064→        print(f"    {w['word']:20s} ({w['latin']:20s}) × {w['count']}")
+  1065→    all_results["step6_word_frequency"] = step6_results
+  1066→
+  1067→    # Step 7: bigram substitution hill-climbing
+  1068→    print("\n[Step 7] Bigram substitution hill-climbing...")
+  1069→    print(f"  5 restarts × 1500 iters each = 7,500 evaluations (on 600-word subset).")
+  1070→    t0 = time.time()
+  1071→    step7_results = step7_bigram_substitution(ct_words, scorer, n_restarts=5, iters_per_restart=1500)
+  1072→    step7_results.sort(key=lambda r: -r["best_score"])
+  1073→    print(f"  Done in {time.time()-t0:.1f}s. Top 5 restarts:")
+  1074→    for r in step7_results[:5]:
+  1075→        print(f"    restart={r['restart']:2d} | score={r['best_score']:.3f}")
+  1076→        print(f"      preview: {r['best_pt_preview'][:60]}")
+  1077→    all_results["step7_bigram_substitution"] = step7_results
+  1078→
+  1079→    # Compute total tests
+  1080→    total_tests = (
+  1081→        len(step2_results) +
+  1082→        sum(len(r.get("best_base0", [])) > 0 for r in step3_results) +  # each restart = 1 test
+  1083→        len(step4_results) +
+  1084→        len(step5_results) +
+  1085→        1 +  # word freq analysis = 1 test
+  1086→        len(step7_results)
+  1087→    )
+  1088→    all_results["total_tests"] = total_tests
+  1089→    print(f"\n[Total] {total_tests} tests run.")
+  1090→
+  1091→    # Compute noise baseline comparison
+  1092→    print("\n[Calibration] Random-noise baseline...")
+  1093→    rng = random.Random(42)
+  1094→    random_scores = []
+  1095→    for _ in range(50):
+  1096→        rand_stream = [rng.randrange(M) for _ in range(2000)]
+  1097→        random_scores.append(scorer(rand_stream))
+  1098→    random_scores.sort()
+  1099→    print(f"  Random 50-sample scorer: min={random_scores[0]:.3f}, "
+  1100→          f"median={random_scores[25]:.3f}, max={random_scores[-1]:.3f}")
+  1101→    # Score a known English sample (solved-page text)
+  1102→    # Page 5 "wisdom" plaintext starts with "SOME WISDOM" → S O M E W I S D O M
+  1103→    # rune indices: S=15, O=3, M=19, E=18, W=7, I=10, S=15, D=23, O=3, M=19
+  1104→    english_sample = [15, 3, 19, 18, 7, 10, 15, 23, 3, 19, 7, 8, 18, 13, 22, 12]
+  1105→    eng_score = scorer(english_sample * 50)
+  1106→    print(f"  Synthetic English (SOMEWISDOM repeated): {eng_score:.3f}")
+  1107→    all_results["calibration"] = {
+  1108→        "random_min": float(random_scores[0]),
+  1109→        "random_median": float(random_scores[25]),
+  1110→        "random_max": float(random_scores[-1]),
+  1111→        "english_target": float(eng_score),
+  1112→    }
+  1113→
+  1114→    # Save results
+  1115→    print(f"\n[Save] Writing {RESULTS_JSON}")
+  1116→    with open(RESULTS_JSON, "w") as f:
+  1117→        json.dump(all_results, f, indent=2, default=str)
+  1118→    print("  Done.")
+  1119→
+  1120→
+  1121→if __name__ == "__main__":
+  1122→    main()
+  1123→

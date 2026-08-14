@@ -1,0 +1,485 @@
+     1→     1→---
+     2→     2→type: hypothesis
+     3→     3→---
+     4→     4→# The Cipher: A Length-Clocked Progressive Substitution (g per letter, σ per space)
+     5→     5→
+     6→     6→## Claim
+     7→     7→
+     8→     8→The unsolved Liber Primus ciphertext (sections 0-9 of `data/page0-58.txt`) is a
+     9→     9→**progressive polyalphabetic substitution with a small fixed key**, not a
+    10→    10→per-word one-time pad. The alphabet advances by a fixed **order-5 mixed
+    11→    11→permutation `g`** on every letter, and by a second fixed **mixed permutation
+    12→    12→`σ`** at every word boundary. Per word `w`, at within-word position `j`:
+    13→    13→
+    14→    14→```
+    15→    15→c[j] = base_w( g^(j mod 5)( p[j] ) )
+    16→    16→base_{w+1} = base_w ∘ g^((L_w − 1) mod 5) ∘ σ      (L_w = length of word w)
+    17→    17→```
+    18→    18→
+    19→    19→The sequence of per-word bases is generated **deterministically** from the key
+    20→    20→`(base_0, g, σ)` and the **public word-length sequence** — the word lengths are
+    21→    21→visible in the ciphertext, so they are not secret. Total key: two mixed
+    22→    22→29-permutations (one of order 5), **fixed, ~200 bits, not growing with the
+    23→    23→text.** This is the load-bearing correction to the earlier `free base →
+    24→    24→unbreakable` reading: the base is a keyed generator, so the cipher is breakable
+    25→    25→in principle.
+    26→    26→
+    27→    27→## Status
+    28→    28→
+    29→    29→**Status**: plausible (comprehensive statistical fit; NOT confirmed by
+    30→    30→decryption)
+    31→    31→
+    32→    32→The model reproduces the base fingerprint (flat unigrams, doublet
+    33→    33→suppression, no periodicity) and the d1/d5/d6 profile, and survives the null
+    34→    34→battery (below). Two measured anomalies remain **unexplained by the walk**:
+    35→    35→the cross-word d4 frame face and the rune-S concentration of the echo (see
+    36→    36→"Evidence against / open"). It has **not** been verified by producing
+    37→    37→plaintext — the two mixed permutations have not been recovered. Confidence
+    38→    38→is high on the *shape* (period-5 mixed substitution + per-word mixed step,
+    39→    39→small fixed key), lower on details flagged under "open".
+    40→    40→
+    41→    41→## Mechanism
+    42→    42→
+    43→    43→Two independent "clocks", forced to be independent (see "single permutation
+    44→    44→refuted"):
+    45→    45→
+    46→    46→- **`g` — the letter step.** Order 5 (`g⁵ = id`), a rich mixed permutation
+    47→    47→  (~five 5-cycles + fixed points), tuned **rare-diagonal**: `g(y)` is a rune
+    48→    48→  that rarely precedes `y` in plaintext, so the within-word doublet
+    49→    49→  (`c[i]=c[i-1] ⟺ p[i-1]=g(p[i])`) is held to 0.0063. `g⁵=id` makes positions
+    50→    50→  5 apart share the alphabet → the d5 echo. Non-arithmetic: GF(29)* has order
+    51→    51→  28 and 5∤28, so no shift/multiply/affine map has order 5.
+    52→    52→  **Nor can the period-5 step be a 5-letter VIGENERE** — the obvious
+    53→    53→  simplest reading, and it fails on the doublet rate rather than on
+    54→    54→  order (July 2026, `experiments/sigma_algebraic_floor.py`). Under a
+    55→    55→  shift schedule the alphabet at position j is `base_w ∘ (add s_j)` with
+    56→    56→  s periodic mod 5, so a ciphertext doublet occurs exactly when the
+    57→    57→  plaintext adjacent delta equals one phase-specific value. The rarest
+    58→    58→  adjacent delta in runeglish is **0.0119** (delta = 18), the best
+    59→    59→  5-shift schedule closing to identity (Σs ≡ 0 mod 29, phase-weighted by
+    60→    60→  the real adjacency counts) gives **0.0135**, and even granting all
+    61→    61→  five phases the single rarest delta the floor is 0.0119 — against an
+    62→    62→  observed 0.0063, i.e. **1.9-2.2x too high**. A shift can only dodge
+    63→    63→  doublets by exploiting a rare plaintext delta and English has none
+    64→    64→  rare enough; a mixed permutation dodges per-rune, routing each image
+    65→    65→  to its own rare partner, which is exactly why the cipher needs mixed
+    66→    66→  alphabets rather than a keyword. **A MIXED-alphabet (Quagmire)
+    67→    67→  Vigenere is a different matter and is NOT excluded**: conjugated
+    68→    68→  shifts `K∘(add δ)∘K⁻¹` put the doublet condition on deltas of the
+    69→    69→  transformed plaintext `K⁻¹(p)`, which a free `K` reshapes — jointly
+    70→    70→  optimising `K` and five offsets reaches 0.0017. The 12-keyword sample
+    71→    71→  that once closed the keyword version was superseded by the
+    72→    72→  full-dictionary exhaustion: **12,064 keyword alphabets clear the
+    73→    73→  within-word diagonal** (best 0.0010), so the enumerable-key version
+    74→    74→  is LIVE — see `mixed-alphabet-vigenere.md`. What stands of the tuning
+    75→    75→  rule is narrower: the two exhaustive floor computations (plain
+    76→    76→  shifts, the arithmetic families) show the relation cannot be
+    77→    77→  arithmetic; a merely-mixed alphabet is not excluded — ~1.5% of
+    78→    78→  random mixed alphabets clear the target — it is merely atypical.
+    79→    79→  **A tuned-diagonal-free reformulation is refuted** — advance-4/hold-1
+    80→    80→  (`g4⁴=id`), where the hold exposes 1/5 of plaintext doublets, predicted
+    81→    81→  the doublet rate parameter-free but is DISPROVED by the doublet
+    82→    82→  position-profile test (July 2026): the doublets are positionally flat,
+    83→    83→  not plaintext-double-shaped. The diagonal is genuinely tuned, and the
+    84→    84→  profile adds a key constraint: the diagonal bigram class {(g(y), y)}
+    85→    85→  must itself be positionally near-baseline in plaintext. See
+    86→    86→  `stay-slot-hold.md`, `experiments/doublet_position_profile.py`.
+    87→    87→- **`σ` — the space step.** A second mixed permutation **outside ⟨g⟩** (not a
+    88→    88→  power of `g`), tuned rare-diagonal so the seam doublet is suppressed to
+    89→    89→  0.0079. Being outside ⟨g⟩ is what breaks the walk out of the 5-alphabet
+    90→    90→  cyclic cage and gives flat unigrams + aperiodicity. This is now
+    91→    91→  quantitative (`sigma-power-step.md`): σ = g^k is disproved for every k
+    92→    92→  (identity-census collapse, ~2,500 predicted identical cipher words vs 17
+    93→    93→  observed; DJU-BEI arithmetic forbids k ≠ 1 and periodicity kills k = 1),
+    94→    94→  near-powers fail too, ⟨g,σ⟩ must reach N ≳ 600 bases, and the seam
+    95→    95→  algebra isolates σ exactly: a cross-word doublet ⟺ p_last = σ(p_first),
+    96→    96→  the `g` and length factors cancelling.
+    97→    97→
+    98→    98→**No closed form for the base (probably).** Four words in, the base is
+    99→    99→the raw alternating word `base_0 g^{a₀} σ g^{a₁} σ g^{a₂} σ g^{a₃} σ`,
+   100→   100→which does not simplify. It would if σ normalised ⟨g⟩ (σgσ⁻¹ = g^r),
+   101→   101→giving `base_w = base_0 ∘ g^(Σ aᵢ rⁱ mod 5) ∘ σ^w` — but that caps the
+   102→   102→state at 5·ord(σ), and exhaustive enumeration of the normalizer bounds
+   103→   103→that at 300 bases for a twisted σ (comfortably under the ~600 the
+   104→   104→identity census wants) and 500 for a commuting one (marginal: the
+   105→   105→census figure is itself a 2σ bound, and at 3σ it falls to ~490). So the
+   106→   106→twisted cases are excluded and the commuting case is disfavoured rather
+   107→   107→than dead. See `sigma-power-step.md`.
+   108→   108→
+   109→   109→The `g^((L−1) mod 5)` factor in the transition completes the period-5 cycle at
+   110→   110→the boundary, so the letter-clock effectively runs continuously across the
+   111→   111→space; that is why doublet suppression is boundary-blind. Note the
+   112→   112→period-5-vs-continuous framing is a **reparametrization** (fold `g^(word_start
+   113→   113→mod 5)` into the base), so "does the phase reset per word?" is not observable.
+   114→   114→
+   115→   115→## Evidence for
+   116→   116→
+   117→   117→Clean corpus: sections 0-9, 12,956 runes, words tokenized on `- . & %`; `/` and
+   118→   118→newlines are line wraps (words flow across them).
+   119→   119→
+   120→   120→- **Flat unigrams (IoC 1.00).** The non-abelian walk ⟨g,σ⟩ visits many
+   121→   121→  alphabets → uniform marginal.
+   122→   122→- **Doublet suppression, boundary-blind.** Within-word 0.0063, seam 0.0079 (not
+   123→   123→  significantly different, z=+0.87). Plaintext d1 is itself flat (real prose
+   124→   124→  IoC ~1.0), so the ~5× suppression is entirely cipher-induced — the g/σ
+   125→   125→  rare-diagonals. It is sub-maximal (an order-5 g could reach ~0), i.e. a
+   126→   126→  "mildly rare" wiring.
+   127→   127→- **Period-5 confirmed twice.** d5 echo (elevated coincidence, IoC 1.43,
+   128→   128→  +3.7σ above flat) AND d6 suppression (the phase-1 image of d1: `g⁶ = g¹`
+   129→   129→  under period 5; permutation null p=0.016). d6 pins the period at exactly 5,
+   130→   130→  independent of the fragile d10 (2/88 pairs). The d6 deficit is moreover
+   131→   131→  a STRUCTURAL discriminator (July 2026, `mixed-cycle-progression.md`):
+   132→   132→  no "returned-fraction" mechanism — mixed cycle lengths in g, the one
+   133→   133→  classical construction whose correlation rises with distance — can push
+   134→   134→  a cell BELOW background; only an inherited tuned relation (g⁶ = g)
+   135→   135→  does. So d6 is a real structural exclusion of the entire
+   136→   136→  returned-fraction family — but NOT a confirmation of this one: at the
+   137→   137→  LP-implied tuning depth no model reproduces its *depth*, pure order-5
+   138→   138→  included (simulated d6 = 0.0397 vs LP 0.0245, `census_corrected.py`).
+   139→   139→  It discriminates against a family without selecting a member.
+   140→   140→- **d2/d3 at chance; d4 is NOT.** `g²/g³` diagonals sit at chance. d4
+   141→   141→  was originally binned with them but is +1.85σ high and is one of the
+   142→   142→  model's two open cells (see Evidence against).
+   143→   143→- **No periodicity.** No Kasiski, no periodic-IoC (periods ≤600), no period in
+   144→   144→  absolute rune position (k≤40) or word index (k≤49, incl divisors of 1449).
+   145→   145→  Consistent: the walk is clocked by aperiodic word lengths.
+   146→   146→- **Not a rotor machine.** A physical wheel stepping 1/letter reuses its
+   147→   147→  alphabet at the wheel period, but absolute-position coincidence at d=29 is
+   148→   148→  flat (IoC 1.01) and d=20–45 averages 1.00 — no wheel-period echo. And period-5
+   149→   149→  is impossible for a 29-symbol wheel (period is 29 for any step, 29 prime), so
+   150→   150→  the d5 echo needs a *designed* order-5 permutation, not a rotation. Plus the
+   151→   151→  phase resets at word boundaries, which continuous machine stepping cannot do.
+   152→   152→  Enigma/Hebern out; Hagelin/Lorenz are additive (killed by the algebra battery).
+   153→   153→  The model is rotor-*structured* (order-5 letter rotor + per-space rotor) but
+   154→   154→  not a historical machine — a pencil-and-paper progressive substitution.
+   155→   155→  **Refinement (July 2026) — a TWO-WHEEL device does work, provided the
+   156→   156→  letter wheel has 5 positions, not 29.** The obstruction above is
+   157→   157→  specific: anything built from rotations of 29-position wheels has
+   158→   158→  period dividing 29 (prime), hence never 5. But nothing forbids a
+   159→   159→  5-state letter wheel — five pre-wired alphabets `base ∘ g⁰…g⁴`
+   160→   160→  selected in rotation, mechanically "a wheel with five turns". And the
+   161→   161→  space step CAN be an ordinary rotating 29-position mixed disk:
+   162→   162→  simulated with the real length sequence, a mixed-alphabet disk turned
+   163→   163→  a fixed amount per word gives **2,928 distinct bases** (full
+   164→   164→  diversity, far above the ~600 the census wants), has order 29, and
+   165→   165→  does not normalise ⟨g⟩ (even parity is automatic for a 29-cycle, so
+   166→   166→  the once-cited parity condition constrains nothing here). So the architecture is buildable as *5-position letter selector +
+   167→   167→  29-position space disk*, which is a considerably more concrete device
+   168→   168→  than "two arbitrary mixed permutations".
+   169→   169→  **And the wheels CAN be keyword-set.** The full-dictionary exhaustion
+   170→   170→  (`mixed-alphabet-vigenere.md`) finds 12,064 keyword alphabets for the
+   171→   171→  letter wheel inside the required diagonal band and ~130 keyword disks
+   172→   172→  for the space wheel inside the seam rate's 95% CI — so the two-wheel
+   173→   173→  device is compatible with a keyword key, the only enumerable
+   174→   174→  formulation on the table. (Keywords are not special — they clear the
+   175→   175→  band at the same rate random alphabets do — but the family is
+   176→   176→  enumerable, which random permutations are not.)
+   177→   177→- **No algebraic structure anywhere.** Delta, sum, ratio, product, and all 28
+   178→   178→  affine multipliers — within-word AND across the seam — are null beyond the
+   179→   179→  coincidence. So `g` and `σ` are general mixed permutations, not
+   180→   180→  affine/multiplicative/Beaufort. (Two scan "hits", d6-m27 and d5-per-word,
+   181→   181→  survived permutation nulls but failed split-half → overfit, not signal.)
+   182→   182→  **Confirmed constructively by diagonal floors** (July 2026,
+   183→   183→  `experiments/sigma_algebraic_floor.py`): the observed doublet rates ARE
+   184→   184→  the two diagonals, so each arithmetic family can be excluded by
+   185→   185→  computing its minimum achievable diagonal on the relevant plaintext
+   186→   186→  table. For `σ` on the cross-word (final × initial) table every family
+   187→   187→  floors above the observed 0.0079 — additive 0.0207, Beaufort 0.0211,
+   188→   188→  multiplicative and affine 0.0122, inverse `a/x+b` 0.0162 — against an
+   189→   189→  unconstrained-permutation floor of 0.0048. For `g` on the within-word
+   190→   190→  table the same holds (affine floor 0.0101 vs observed 0.0063), which
+   191→   191→  is an independent second reason beyond the order argument. One family
+   192→   192→  needed the order argument after all: the inverse maps DO reach the
+   193→   193→  diagonal (best 0.0038) but the family contains **no element of order
+   194→   194→  5** (orders present: 2, 6, 12, 20, 27, 28, 29, 30, 42, 90, 182, 210),
+   195→   195→  so it cannot supply `g`. Both steps are also only *mildly* rare —
+   196→   196→  0.0063 and 0.0079 sit above their achievable floors, not at them.
+   197→   197→- **Not ciphertext-autokey.** Grouping each rune by its previous ciphertext rune
+   198→   198→  (lag 1, 2, 5) gives within-group IoC 1.02/1.00/1.00 — flat, not the ~1.8 that a
+   199→   199→  ciphertext-driven alphabet would leak (`autokey_test.py`). So the alphabet is
+   200→   200→  not selected by the public ciphertext; the keystream is not public. (A
+   201→   201→  plaintext-autokey with a hidden keystream is not excluded but gives no
+   202→   202→  shortcut, and a plaintext-driven hold would be a small rule, not a keystream.)
+   203→   203→- **No number-sequence running key.** 16 number-theoretic sequences (prime,
+   204→   204→  totient, totient-summatory, Fibonacci, Lucas, tribonacci, triangular, square,
+   205→   205→  cube, Möbius, divisor-sum, prime-gap, prime-count, index) × whole-text /
+   206→   206→  per-word / per-section framings × Vigenère/Beaufort/add leave IoC flat to
+   207→   207→  0.001 (`number_sequence_keys.py`). A pure-shift number key is excluded; this
+   208→   208→  only tests *pure* shifts, so number theory can still live inside the mixed
+   209→   209→  `g`/`σ` construction (e.g. a prime/totient-ordered grid) or the per-word step
+   210→   210→  schedule — blind to ciphertext-only tests, a seed for the attack not a datum.
+   211→   211→- **Single permutation refuted.** Doublet suppression needs a *rich* order-5
+   212→   212→  `g` (~25 runes moving); flatness needs a *large-order* generator; one
+   213→   213→  permutation on 29 runes can't be both. Forces two independent generators.
+   214→   214→- **Base re-key is thorough.** No cross-word d5 echo at any (first-word-length,
+   215→   215→  distance) cell; first letters of adjacent words are independent; the word
+   216→   216→  boundary is a hard cut of the alphabet.
+   217→   217→- **Long words add nothing but the echo** (`long-word-structure.md`). The
+   218→   218→  1,124 words of length ≥ 5 are the only ones exercising `g³`, `g⁴` and
+   219→   219→  the `g⁵ = id` return internally, so a length-dependent or
+   220→   220→  state-accumulating mechanism would show there first. Measured against
+   221→   221→  doublet-aware surrogates: doublet suppression is flat across length
+   222→   222→  classes (0.0066 / 0.0055 / 0.0069), cross-word collisions among long
+   223→   223→  words sit at chance through 4-rune prefixes and 4-rune substrings,
+   224→   224→  positional rune distributions are uniform, and the in-word repeated-
+   225→   225→  bigram excess decomposes ENTIRELY into separation 5 (z = +6.8 there,
+   226→   226→  z = +0.6 excluding it). Nothing accumulates inside a word beyond the
+   227→   227→  period-5 relation.
+   228→   228→- **The first-order channel batteries verify the model's structural
+   229→   229→  predictions at full power (July 2026).** The model makes three sharp
+   230→   230→  claims about pairwise structure, and all three are confirmed:
+   231→   231→  (a) WITHIN WORDS only distance matters — c[j] = base_w(g^(j mod 5)(p[j]))
+   232→   232→  forces every position-pair relation to depend on k−j alone, and the
+   233→   233→  full (j,k) grid is translation-invariant at every distance with no
+   234→   234→  conditional structure (`word-position-pairs.md`); (b) at the SEAM the
+   235→   235→  boundary factors cancel, so the previous word's last rune constrains
+   236→   236→  the next word only through the σ-diagonal at reach 1 — measured: the
+   237→   237→  suppression is confined to reach 1, reaches 2-6 are at chance, the
+   238→   238→  diagonal rate is independent of word length, and the conditional
+   239→   239→  channel is empty at depth 1 and 2 (`seam-channel-clean.md`); (c) the
+   240→   240→  full ADJACENCY matrix is flat in every decomposition — off-diagonal,
+   241→   241→  direction, within-vs-cross-word (identical distributions), and
+   242→   242→  within-word phase (`bigram-ioc.md`, full battery). Every first-order
+   243→   243→  channel of the corpus is closed, and each closure is a prediction of
+   244→   244→  this model rather than a retrofit.
+   245→   245→- **DJU-BEI (`ᛞᛄᚢ·ᛒᛖᛁ`).** A 6-rune, two-word (3+3) refrain that *closes*
+   246→   246→  section 9 and recurs mid-section-6. Same ciphertext ⟹ `base_1477 =
+   247→   247→  base_2926` — a state return of the deterministic walk. Both words length 3,
+   248→   248→  so the step (`g²σ`) matched and the bases stayed synced across both words —
+   249→   249→  which a random per-word key could not produce. Formally
+   250→   250→  `Σ(L−1)=4946 ≡ 1 (mod 5)` over the interval gives `[g] = −1449·[σ]` in the
+   251→   251→  abelianization of ⟨g,σ⟩ — **but this is not a usable filter on concrete
+   252→   252→  permutations.** It is a relation in the abelianization of the *free* group;
+   253→   253→  the real ⟨g,σ⟩ is A₂₉/S₂₉ or a point stabilizer thereof, with |G/G′|
+   254→   254→  measured at 1 or 2 across sampled order-5 `g` and both random and 29-cycle
+   255→   255→  σ. It therefore collapses into the parity condition, and for a Quagmire σ
+   256→   256→  (a 29-cycle, hence even) even that is automatic. See
+   257→   257→  `mixed-alphabet-vigenere.md`. The relation retains force only where the
+   258→   258→  group really is abelian — i.e. under the σ = g^k assumption of
+   259→   259→  `sigma-power-step.md`, where it correctly forces k = 1. The testable
+   260→   260→  content of DJU-BEI for a general key is the state return itself.
+   261→   261→  **What this constraint does and does not pin.** The two "5"s in this
+   262→   262→  model are independent, and only one of them is at work here. The
+   263→   263→  within-word phase `j mod 5` never reaches 5 in a short word — DJU and
+   264→   264→  BEI are 3 runes each, so their ciphertext exercises only `g⁰, g¹, g²`
+   265→   265→  and says nothing directly about `g³` or `g⁴`. The mod-5 arithmetic in
+   266→   266→  the constraint comes instead from `g⁵ = id` making exponents matter
+   267→   267→  only mod 5, applied to the exponent the BASE schedule accumulates
+   268→   268→  across 1,449 word boundaries. So DJU-BEI constrains the base schedule
+   269→   269→  (and hence a relation between g and σ), not g's internal structure.
+   270→   270→  Identifiability gradient generally: `g¹` is exercised by 96.6% of
+   271→   271→  words, `g²` by 80.7%, `g³` by 55.9%, `g⁴` by 38.4%, and the `g⁵ = id`
+   272→   272→  echo only by the 27.5% of words with length ≥ 6 (806 words, 2,073
+   273→   273→  pairs) — the higher powers rest on progressively less data.
+   274→   274→
+   275→   275→## Evidence against / open
+   276→   276→
+   277→   277→- **Partial-vs-full d5 leak is underpowered.** IoC 1.43 vs full-leak ~1.60;
+   278→   278→  point estimate 72% same-alphabet, but the bootstrap CI [1.15,1.72] contains
+   279→   279→  full leak. Position decomposition (`within_word_position_decomposition.py`)
+   280→   280→  shows the echo is **flat over absolute position** (no intra-word drift), so
+   281→   281→  the partial leak is *not* drift — the base is word-locked and the partiality
+   282→   282→  is uniform (σ knocking the leak down by a constant factor). See
+   283→   283→  `d5-partial-alphabet-leak.md`.
+   284→   284→- **The d4/d6 asymmetry: CLOSED (August 2026), it was never an anomaly.**
+   285→   285→  This model does **not** predict d4 ≈ d6. The old argument — g⁴ = g⁻¹ and
+   286→   286→  g⁶ = g "share the same leading-order diagonal algebra" — is the
+   287→   287→  independence approximation (rate depends only on the unigram
+   288→   288→  distribution). The real rate is the g^d diagonal on the *distance-d
+   289→   289→  within-word pair table*, and P₄ ≠ P₆. This is the identical error already
+   290→   290→  retracted for d1 vs d6 in `d5-partial-alphabet-leak.md`; it survived at
+   291→   291→  d4 vs d6 and drove a year of census work.
+   292→   292→
+   293→   293→  Measured on real runeglish word pair-tables
+   294→   294→  (`experiments/d4_d6_prediction.py`), an order-5 g fitted to d1..d4
+   295→   295→  predicts **d4/d6 = 1.25 ± 0.18** (observed 1.67) and **d6 = 0.0333 ±
+   296→   296→  0.0051** (observed 0.0245). Carrying the LP's binomial error — d6 is 31
+   297→   297→  events — that is **z = +1.12 and +1.32**. Nothing.
+   298→   298→
+   299→   299→  Stronger: fitted jointly to d1, d2, d3, d4 **and** d6, a single order-5 g
+   300→   300→  reaches every cell (0.0064 / 0.0345 / 0.0369 / 0.0408 / 0.0247 against
+   301→   301→  0.0064 / 0.0347 / 0.0370 / 0.0410 / 0.0245), stable across seeds. **The
+   302→   302→  d6 depth is reachable.** The earlier "no census reproduces the d6 depth"
+   303→   303→  came from tuning objectives that *minimise* the d1 diagonal
+   304→   304→  (`mechanism_discriminator.tune_g`) rather than match the observed
+   305→   305→  profile, so the matching region of the g-family was never sampled.
+   306→   306→
+   307→   307→  Caveat on what this does and does not establish: a 29-permutation against
+   308→   308→  five scalar cells has ample freedom, so reachability is weak evidence
+   309→   309→  *for* the model. Its whole force is negative — d4/d6 is not evidence
+   310→   310→  against it, and d6 is not an unexplained cell. The g²-diagonal-near-
+   311→   311→  background requirement the simulations surfaced is unaffected. The
+   312→   312→  partial-echo question is untouched and still undecidable (corrected
+   313→   313→  φ5 = 0.85 ± 0.26); d5 remains predicted 0.0565 against observed 0.0492,
+   314→   314→  which is the register/leak question, not a d6 question.
+   315→   315→- **Order-5-g vs stay-slot: SEPARATED (July 2026).** Direct simulation
+   316→   316→  on real runeglish words (`mechanism_discriminator.py`) could not separate
+   317→   317→  them — both reproduce the d5 echo and d1≠d6, and the d1..d6 fit winner
+   318→   318→  flips with the g-tuning seed. The doublet position-profile test now
+   319→   319→  does: stay-slot forces the doublets to be plaintext double letters
+   320→   320→  (start-forbidden, end-heavy), and the observed doublets are positionally
+   321→   321→  flat — stay-slot disproved, tuned order-5-g survives with the new
+   322→   322→  diagonal-class constraint above. What's real beyond period-5 is the
+   323→   323→  **damped rising shoulder** — LP's d2→d5 tracks a half-damped copy of the
+   324→   324→  plaintext's own within-word profile with extra phase-1 suppression, i.e. a
+   325→   325→  partial plaintext leak under the period-5 envelope. See
+   326→   326→  `d5-partial-alphabet-leak.md`.
+   327→   327→- **Continuous-vs-per-section walk: weak.** Page-seam doublets 0/47 favour
+   328→   328→  "continuous" ~3.4:1; DJU-BEI's differing section-offsets argue against
+   329→   329→  per-section reset. But only 9 section boundaries — not provable.
+   330→   330→- **The d4 frame face is not produced by the walk.** Of the lag-5 paired
+   331→   331→  matches, the d1 face (`XY···XY`) is plaintext morphology passing through
+   332→   332→  the `g⁵=id` echo — accounted for. The d4 face ((1st,5th)-of-5 frame,
+   333→   333→  largely cross-word) is BELOW chance in real runeglish plaintext, so the
+   334→   334→  echo cannot pass it through. The July 2026 anatomy
+   335→   335→  (`experiments/d4_frame_anatomy.py`) found no walk-compatible structure
+   336→   336→  in it either (most legs cross one boundary, where alphabet coincidence
+   337→   337→  is impossible given σ ∉ ⟨g⟩; no σ-relation geometry cell enriched), so
+   338→   338→  it stands as a count excess compatible with scan noise rather than
+   339→   339→  as evidence against the model. See `lag5-digraph-structure.md`.
+   340→   340→- **The rune-S echo — resolved, no tension (July 2026).** 11 of the 102
+   341→   341→  within-word d5 pairs echo the single rune S (p=2.4e-6 against a
+   342→   342→  frequency-weighted null). That null is wrong for this model: under the
+   343→   343→  walk the echoed rune is base-scrambled per word, identities are
+   344→   344→  near-uniform and cluster by word, and simulation gives
+   345→   345→  P(max ≥ 11) = 0.08-0.15 (`experiments/rune_s_walk_test.py`) — a
+   346→   346→  1-in-12 event, not a strike. The concentration still refutes
+   347→   347→  identity-preserving mechanisms; the fixed-channel variant is excluded
+   348→   348→  by unigram arithmetic. See `rune-s-lag5-echo.md`.
+   349→   349→- **Keyword-grid keys are excluded.** `experiments/enumerate_keys.py` drove
+   350→   350→  keyword-grid `g` × keyword `σ` through the DJU-BEI/diagonal cascade
+   351→   351→  (`experiments/walk_verifier.py`): 0/480 parity-valid pairs give a state
+   352→   352→  return, and the best keyword-grid `g` diagonal in that scan was 0.023 vs
+   353→   353→  the required 0.0063 — **the diagonal exclusion is RETRACTED** (July 2026,
+   354→   354→  `experiments/g_construction_survey.py`): the scan fixed the four fixed
+   355→   355→  runes as the last four of the keyword order and rotated every column by
+   356→   356→  one; freeing those two parameters lets every ordering and fill tested
+   357→   357→  reach the required band (~2x10⁵ in-band candidates from a single
+   358→   358→  keyword), so the state-return result must be re-run over the corrected
+   359→   359→  family. The retraction is of the letter, not the spirit: a grid-derived
+   360→   360→  `g` has the diagonal distribution of a random order-5 permutation
+   361→   361→  (mean 0.0345 vs 0.0346; 0.17% vs 0.07% at or below 0.0063), so the
+   362→   362→  construction supplies no low diagonal — the family merely contains
+   363→   363→  in-band members at a ~1-in-600 rate because it is large. **Open problem, now inverted**: the structured family is not
+   364→   364→  too poor to supply `g`, it is too RICH to enumerate — ~10⁹-10¹⁰ in-band
+   365→   365→  `g` candidates across plausible keywords and fills, before `σ`, which
+   366→   366→  has no construction proposal and cannot be hill-climbed. The diagonal
+   367→   367→  band is too weak a filter on its own; progress needs the constraints
+   368→   368→  applied JOINTLY (g² near background, positional profile, σ's
+   369→   369→  cross-word diagonal, the DJU-BEI state return — the parity and
+   370→   370→  abelianization shortcuts are vacuous, `mixed-alphabet-vigenere.md`)
+   371→   371→  or a principle that pins the
+   372→   372→  fixed-rune choice and the column rotations. See `g-from-5x5-grid.md`.
+   373→   373→- **Is `g` provably FIXED? No — but the alternatives cost key material
+   374→   374→  without buying anything (July 2026).** What the ciphertext actually
+   375→   375→  requires is local: the composition of the five steps spanning positions
+   376→   376→  j and j+5 *inside one word* must be the identity, and the step relation
+   377→   377→  must be rare-diagonal. Nothing tests whether the same `g` is in force
+   378→   378→  from word to word — the echo is within-word, the seam algebra cancels
+   379→   379→  `g` entirely (a seam doublet is `p_last = σ(p_first)`, no `g` in it),
+   380→   380→  and the base schedule is unobservable. A per-word family `g_w` would
+   381→   381→  be invisible to every battery run here, PROVIDED each `g_w` has order 5
+   382→   382→  and a rare diagonal. What excludes it is design economy rather than
+   383→   383→  statistics: selecting from that family per word is a schedule, i.e. key
+   384→   384→  material growing with the text, which slides the cipher toward an OTP
+   385→   385→  and destroys the small-fixed-key property that makes it readable at all.
+   386→   386→  The natural middle case — a CYCLIC SCHEDULE of five distinct steps
+   387→   387→  `a₁…a₅` with `a₁a₂a₃a₄a₅ = id`, applied in rotation (fixed `g` is the
+   388→   388→  special case `a_i = g`) — preserves the echo exactly at every phase
+   389→   389→  (cyclic rotations of an identity product are conjugates of the
+   390→   390→  identity), but simulation shows it neither helps nor is free: the d1-d8
+   391→   391→  profile matches the fixed-`g` model (d4 0.034 vs LP 0.041, d6 0.031 vs
+   392→   392→  LP 0.025 — the same two failures), and the product constraint leaves
+   393→   393→  only FOUR steps free, forcing the fifth as the inverse of the others'
+   394→   394→  product with an untuned diagonal (~0.013 in the run) that drags the
+   395→   395→  doublet rate up. Fixed `g` tunes one diagonal once and uses it five
+   396→   396→  times. So `g` is fixed by parsimony and tuning economy, not by proof.
+   397→   397→- **`σ`: one or a small keyed set?** Seam suppression proves the space step is
+   398→   398→  a rare-diagonal permutation (not a random re-key) but does not prove there is
+   399→   399→  only *one* `σ`. A small keyed family fits equally; the fully-deterministic
+   400→   400→  single-`σ` version is the simplest, not the confirmed, form.
+   401→   401→- **Not confirmed by decryption.** All of the above is statistical shape.
+   402→   402→
+   403→   403→## Predictions
+   404→   404→
+   405→   405→- The key `(base_0, g, σ)` is small and fixed; decryption is a deterministic
+   406→   406→  function of it and the observable word lengths. A **contiguous crib** of a
+   407→   407→  few words would pin `g` and `σ` and then propagate to the whole corpus —
+   408→   408→  unlike a free-base model, where a crib dies at its own word.
+   409→   409→- Any candidate key must satisfy the DJU-BEI **state return** `base_1477 =
+   410→   410→  base_2926`. This is the full 1,449-step composition and is expensive; the
+   411→   411→  abelianization relation below is NOT a cheap stand-in for it.
+   412→   412→- A single guessed word (e.g. DJU-BEI = a [3,3] phrase such as "OUR OWN") is
+   413→   413→  **not** verifiable — 6 runes under two unknown bases + g is underdetermined.
+   414→   414→- **The 2-rune words are the sharpest available key discriminator
+   415→   415→  (July 2026).** In runeglish `THE` is exactly two runes (`ᚦᛖ`), and
+   416→   416→  2-rune words are a dense, highly concentrated class: in the register
+   417→   417→  corpus they are 22.8% of all tokens and their content is dominated by
+   418→   418→  a handful of function words — THE 16%, TO 15%, OF 13%, IN 7%, IT 5%,
+   419→   419→  HE 5%, BE 4%, AS 4% (top eight = 69%). The LP has **465** 2-rune
+   420→   420→  words, so an English-like plaintext puts roughly **75-108 instances of
+   421→   421→  THE** among them (75 if the 2-rune class has register composition, 108
+   422→   422→  if THE keeps its 3.7% token rate). A 2-rune word needs only `base_w`
+   423→   423→  and `g` to decrypt (`p₀ = base_w⁻¹(c₀)`, `p₁ = g⁻¹(base_w⁻¹(c₁))`), so
+   424→   424→  every candidate key can be scored by decrypting all 465 and counting
+   425→   425→  `ᚦᛖ`: **~75-108 hits for a correct key against 465/812 ≈ 0.6 by
+   426→   426→  chance** — a discriminator of order 100x, far sharper than quadgram
+   427→   427→  fitness. For hill-climbing, the count alone is too peaked to give a
+   428→   428→  gradient; the usable objective is the log-likelihood of the decrypted
+   429→   429→  2-rune words against the whole register distribution above, which
+   430→   430→  awards partial credit for TO, OF, IN … while the key is still wrong.
+   431→   431→  Caveat and cross-check: the LP's 2-rune share is 15.9%, well below the
+   432→   432→  register's 22.8% — the documented short-word deficit
+   433→   433→  (`word-length-keystream-and-boundaries.md`) — so either the plaintext
+   434→   434→  register is unusually short-word-poor, or the boundary question bears
+   435→   435→  on it; the expected-hit range above already spans that uncertainty.
+   436→   436→  **Validated on planted keys** (`experiments/two_rune_gradient.py`):
+   437→   437→  the objective recovers `base_0` exactly and instantly once `g` and `σ`
+   438→   438→  are known, but the landscape over `(g, σ)` fails from both ends —
+   439→   439→  short prefixes keep a wide basin but cannot pin a 29-permutation,
+   440→   440→  long ones discriminate but the basin collapses. So this is a verifier,
+   441→   441→  not a search gradient, and `base_0` should be treated as free rather
+   442→   442→  than as part of the key search. See `no-known-plaintext-foothold.md`.
+   443→   443→
+   444→   444→## Scripts
+   445→   445→
+   446→   446→- `experiments/phase_absorbing_walk.py` — the model: `base_{w+1} = base_w ∘
+   447→   447→  g^((len−1) mod5) ∘ σ`, hits the full battery.
+   448→   448→- `experiments/final_orbit_walk.py` — rate-targeted variant.
+   449→   449→- `experiments/within_word_phase_profile.py` — d1-d10 permutation null (d5
+   450→   450→  echo p=0.001, d6 suppression p=0.016).
+   451→   451→- `experiments/d5_partial_leak.py` — the partial-leak measurement and its
+   452→   452→  underpowered CI.
+   453→   453→- `experiments/stay_slot_cipher.py` — plaintext generator, cipher batteries,
+   454→   454→  permutation tooling.
+   455→   455→
+   456→   456→## Related
+   457→   457→
+   458→   458→- `per-word-related-alphabets.md` — the predecessor model; this note supersedes
+   459→   459→  its "free per-word base" pessimism with the length-clocked deterministic walk.
+   460→   460→- `sigma-power-step.md` — σ is not a power (or near-power) of g; the
+   461→   461→  surviving σ constraints (seam diagonal, group-size floor).
+   462→   462→- `d5-partial-alphabet-leak.md`, `within-word-d5-coincidence.md`,
+   463→   463→  `rune-s-lag5-echo.md` — the d5/d6 structure.
+   464→   464→- `repeated-phrase-dju-bei.md`, `cryptodiagnostics-page0-58.md` — DJU-BEI and
+   465→   465→  the full diagnostic battery.
+   466→   466→
+   467→   467→## Verdict
+   468→   468→
+   469→   469→The mechanism is characterized: a **length-clocked progressive substitution** —
+   470→   470→step `g` (order-5 mixed) per letter, step `σ` (mixed, outside ⟨g⟩) per space,
+   471→   471→base = the running product clocked by the public word lengths. Both steps are
+   472→   472→non-arithmetic mixed permutations, which would be a first for Cicada and
+   473→   473→explains why value-based attacks fail. The key is **small and fixed**, so the
+   474→   474→cipher is breakable in principle — but the barrier is recovering two mixed
+   475→   475→29-permutations, against which every statistical and algebraic shortcut
+   476→   476→tried so far is null. The model does not account for the d4 frame face or
+   477→   477→the rune-S echo; either could falsify or refine it. No hillclimb over
+   478→   478→`(g, σ)` can work — the two-rune objective proved the landscape is a
+   479→   479→delta function (`no-known-plaintext-foothold.md`) — so the realistic
+   480→   480→paths to plaintext are enumeration of structured candidates verified
+   481→   481→per key (the keyword Quagmire family of `mixed-alphabet-vigenere.md`
+   482→   482→is the one enumerable set) or a contiguous crib; a short guessed
+   483→   483→phrase alone cannot verify. Everything here is statistical
+   484→   484→shape, not a confirmed decryption.
+   485→   485→
