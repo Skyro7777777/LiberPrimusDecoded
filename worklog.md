@@ -939,3 +939,30 @@ Stage Summary:
 - ARTIFACTS: compiled/ALDEGONDE_ATTACK_RESULTS.md (full report); commit 0572ec1 on main.
 - MOST PROMISING ALDEGONDE SCRIPT: experiments/quagmire_runner.py (full enumeration, not run to completion — estimated hours/days; survivors file already shows 0 non-degenerate keys for the keyword family). Secondary: experiments/two_rune_gradient.py (validated 2-rune likelihood objective that recovers planted keys — most direct path to base_0 recovery under the walk model).
 - BOTTOM LINE: aldegonde excludes ~32 classical cipher families and points us to length-clocked-walk + contraction cribs as the live attack surface. No English plaintext from any unsolved page.
+
+---
+Task ID: p8i
+Agent: Length-clocked-walk implementation subagent
+Task: Implement and attack the length-clocked-walk cipher model
+Work Log:
+- Read full aldegonde hypothesis docs: length-clocked-walk.md, contraction-cribs.md (4 known-plaintext positions), repeated-phrase-dju-bei.md (DJUBEI repeat analysis)
+- Confirmed aldegonde already had the cipher model in solvers/aldegonde/experiments/length_clocked_cipher.py (self-test passes)
+- Examined existing decoder/length_clocked.py (1123 lines, prior Wave 7 work — broad f-variant sweep, no English found)
+- Created /home/z/my-project/cicada3301-research/decoder/length_clocked_walk.py: focused LengthClockedWalk class with perm_compose, perm_inverse, perm_power, is_order_5, random_order_5_permutation; self-test confirms round-trip encrypt/decrypt on 500 words; wrong-key test confirms cipher is sensitive to base_0
+- Created /home/z/my-project/cicada3301-research/decoder/length_clocked_walk_attack.py: hill-climb on (base_0, g, σ) with quadgram scoring + crib bonus, random restarts; mutation operators preserve order-5 property of g
+- Located all 4 contraction cribs in the LP2 corpus (page 4 = word 242 MXIW; page 21 = word 1158 AEOY; page 35 = word 1912 PET; page 41 = word 2265 XLIC)
+- Analyzed DJUBEI repeat: found at word indices 1462/2894 (1432 words apart; aldegonde docs say 1477/2926 = 1449 apart; small offset from apostrophe-word splitting); sum of (L-1)%5 exponents = 3 mod 5; abelian constraint g^3 ∘ σ^0 ≡ id collapses to parity (automatic for 29-cycle σ) — too weak to pin key
+- Patched aldegonde's keyword_exhaustion.py DICT path (temporarily to /tmp/web2) and downloaded Alice in Wonderland (/tmp/pg1342.txt) to enable aldegonde's own scripts
+- Ran aldegonde's two_rune_gradient.py: validates the 2-rune likelihood objective as a fitness gradient; Stage 1 (g, σ known) gives EXACT base_0 recovery from random init; Stages 2/3 did not converge in 90s
+- Ran aldegonde's quagmire_runner.py: self-test PASSES (base_0 . M_w matches true base_w at all checked indices; gate is base_0-invariant); pilot run tested 20,160 full Quagmire III keys in 40s (504/s); 8 weak DJU-BEI candidates (fp>=6), 0 passed 2-rune LL>-4000 filter — confirms Quagmire III keyword family is excluded
+- Restored keyword_exhaustion.py to original (DICT path back to /usr/share/dict/web2)
+- Wrote /home/z/my-project/cicada3301-research/compiled/LENGTH_CLOCKED_WALK_RESULTS.md (190 lines, full deliverable)
+- Git committed (commit 94457bf) and pushed to GitHub origin/main
+Stage Summary:
+- Cipher model: correctly implemented (round-trip verified; aldegonde's own self-test also passes)
+- Random order-5 g generation: works (g^5 = id asserted for all generated g)
+- Best hill-climb score: -118,116 log-prob sum (≈ -9.06 per quadgram); 1 of 4 cribs matched (page 21 → T) — consistent with chance (P(≥1 match by chance) ≈ 80%); 3 restarts in 60s
+- Aldegonde scripts: two_rune_gradient.py validates fitness objective (EXACT base_0 recovery when g,σ known); quagmire_runner.py pilot excludes 20,160 Quagmire III keys (0 survivors)
+- DJUBEI constraint: collapses to parity (automatic); too weak to pin key
+- BREAKTHROUGH: NONE. The cipher model is real and well-defined but unsolved in 5-min budget. Output is gibberish, not English. The 200-bit key space is too large for naive random-restart hill-climb; aldegonde's 2-rune objective is a usable gradient only when (g,σ) are known. The 4 contraction cribs give ~24 bits of constraint — far short of the ~200 bits needed. Natural next step: multi-hour simulated annealing on (g,σ) with per-key base_0 fit via the validated 2-rune objective (≥10⁶ key evaluations).
+- Artifacts: decoder/length_clocked_walk.py (cipher class), decoder/length_clocked_walk_attack.py (hill-climb), decoder/length_clocked_walk_results.json (full results), compiled/LENGTH_CLOCKED_WALK_RESULTS.md (deliverable)
