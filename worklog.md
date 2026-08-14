@@ -877,3 +877,36 @@ Stage Summary:
 - Most promising interpretation: NONE as cipher solution. Two structural observations have independent mathematical interest (the (V−809) palindrome and D4 determinant invariance), but neither leads to a cipher break.
 - Cumulative verdict: 1,325 total magic-square tests (1,029 prior deepdive + 296 D4) have produced ZERO signal above noise. DROP magic-square-as-cipher-key hypothesis.
 - Artifacts: compiled/D4_MAGIC_SQUARE_RESULTS.md (217 lines); decoder/d4_runs/d4_symmetry_analysis.py (496 lines); decoder/d4_runs/d4_results.json (296 results).
+
+---
+Task ID: p8g
+Agent: Simulated annealing + Latin + keyword alphabets subagent
+Task: SA with larger moves + Latin quadgrams test + direct keyword construction
+Work Log:
+- Verified gematria_primus.py and aldegonde ngrams dir (only english/runeglish, no latin)
+- Read first_diff_masc.py to understand first-difference + MASC cipher model
+- Wrote decoder/simulated_annealing.py implementing all 3 attacks:
+  * Attack 1: SA with 4 move types (swap, segment-reverse len 3-7, rotate, move)
+    Geometric schedule T=2.0->0.01, accept worse with exp(dS/T), 30 restarts x 15k iter
+  * Attack 2: Built Latin quadgrams from embedded corpus (Cicero/Seneca/Vulgate/
+    Thelema, ~3KB -> 2487 unique quadgrams in rune space via Latin->rune mapping)
+  * Attack 3: 30 Cicada keywords -> keyed alphabets, checked F-position vs NG/W/TH
+- Ran on page 50.jpg (91 runes) with identity=TH
+- Wrote compiled/SA_LATIN_RESULTS.md (full report)
+- Git committed and pushed to main
+Stage Summary:
+- SA best score: -1165.2 (WORSE than swap-only HC's -1057). SA found a different
+  local minimum with perm[0]=J instead of TH. The deep local minimum resisted
+  larger neighborhood moves (reversals, rotations).
+- Latin quadgrams: Latin-only HC found a different basin (Latin -1036 vs Runeglish
+  -1642 on same PT), but plaintext is NOT recognisable Latin. Corpus too small
+  (2.5k vs 465k quadgrams) for definitive test.
+- Keyword alphabets: 4 keywords (VOLVNTAS, VERITAS, THELEMITES, LIBERPRIMI)
+  produced F at position 7 (W) matching identity target, but scores (-1500 to
+  -1542) are much worse than HC's -1057 and no readable plaintext.
+- NO BREAKTHROUGH: no English or Latin plaintext from any attack.
+- Artifacts: decoder/simulated_annealing.py, decoder/simulated_annealing_results.json,
+  compiled/SA_LATIN_RESULTS.md
+- Recommended next: re-run SA with perm[0]=TH constraint enforced; larger Latin
+  corpus; try different cipher model (autokey/Quagmire III); use longer ciphertext
+  (1468-rune block); genetic algorithm.
