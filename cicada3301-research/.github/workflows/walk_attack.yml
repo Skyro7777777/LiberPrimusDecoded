@@ -1,0 +1,165 @@
+name: Liber Primus Walk Attack (Batched)
+
+on:
+  workflow_dispatch:
+    inputs:
+      num_batches:
+        description: 'Number of parallel batches'
+        required: true
+        default: '10'
+        type: string
+      duration:
+        description: 'Duration per batch in seconds (max 18000 = 5 hours)'
+        required: true
+        default: '14400'
+        type: string
+  push:
+    branches:
+      - main
+    paths:
+      - 'decoder/batch_walk_attack.py'
+      - '.github/workflows/walk_attack.yml'
+
+jobs:
+  attack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330  # 5.5 hours max (safely under 6-hour limit)
+    strategy:
+      fail-fast: false
+      matrix:
+        batch-id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install sympy
+          echo "Dependencies installed"
+
+      - name: Clone aldegonde for n-gram data
+        run: |
+          mkdir -p solvers
+          cd solvers
+          git clone --depth 1 https://github.com/cicada-solvers/aldegonde.git 2>&1 | tail -3
+          echo "Aldegonde cloned"
+          # Verify n-gram data exists
+          ls -la aldegonde/src/aldegonde/data/ngrams/runeglish/quadgrams.txt
+
+      - name: Run batch ${{ matrix.batch-id }}
+        run: |
+          cd decoder
+          echo "Starting batch ${{ matrix.batch-id }}..."
+          python3 batch_walk_attack.py \
+            --batch-id ${{ matrix.batch-id }} \
+            --num-batches ${{ github.event.inputs.num_batches || '10' }} \
+            --duration ${{ github.event.inputs.duration || '14400' }} \
+            --save-interval 600
+          echo "Batch ${{ matrix.batch-id }} complete"
+
+      - name: Upload results artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-${{ matrix.batch-id }}-results
+          path: decoder/batch_${{ matrix.batch-id }}_results.json
+          retention-days: 30
+
+      - name: Upload log artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-${{ matrix.batch-id }}-log
+          path: |
+            decoder/batch_${{ matrix.batch-id }}_results.json
+          retention-days: 30
+
+  aggregate:
+    needs: attack
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all batch results
+        uses: actions/download-artifact@v4
+        with:
+          path: batch-results
+          pattern: batch-*-results
+          merge-multiple: true
+
+      - name: Aggregate results
+        run: |
+          echo "=== Aggregating batch results ==="
+          ls -la batch-results/
+          
+          # Find the best score across all batches
+          python3 -c "
+          import json, os, glob
+          
+          files = glob.glob('batch-results/batch_*_results.json')
+          if not files:
+              print('No result files found!')
+              exit(1)
+          
+          print(f'Found {len(files)} batch result files')
+          best_score = -1e18
+          best_batch = None
+          best_pt = ''
+          
+          for f in sorted(files):
+              with open(f) as fh:
+                  d = json.load(fh)
+              score = d.get('best_score', -1e18)
+              batch_id = d.get('batch_id', '?')
+              pt = d.get('best_plaintext', '')[:100]
+              trials = d.get('trials_done', 0)
+              duration = d.get('duration_seconds', 0)
+              print(f'  Batch {batch_id}: score={score:.1f} trials={trials} duration={duration:.0f}s')
+              print(f'    plaintext: {pt}')
+              if score > best_score:
+                  best_score = score
+                  best_batch = batch_id
+                  best_pt = d.get('best_plaintext', '')
+          
+          print(f'\n=== BEST RESULT: Batch {best_batch} score={best_score:.1f} ===')
+          print(f'Plaintext (first 500 chars): {best_pt[:500]}')
+          
+          # Save aggregated results
+          agg = {
+              'best_batch': best_batch,
+              'best_score': best_score,
+              'best_plaintext': best_pt[:2000],
+              'total_batches': len(files),
+          }
+          with open('aggregated_results.json', 'w') as f:
+              json.dump(agg, f, indent=2, ensure_ascii=False)
+          print('Saved aggregated_results.json')
+          "
+
+      - name: Upload aggregated results
+        uses: actions/upload-artifact@v4
+        with:
+          name: aggregated-results
+          path: aggregated_results.json
+          retention-days: 90
+
+      - name: Check for breakthrough
+        run: |
+          if [ -f aggregated_results.json ]; then
+            SCORE=$(python3 -c "import json; print(json.load(open('aggregated_results.json'))['best_score'])")
+            echo "Best score: $SCORE"
+            # Check if score exceeds threshold (adjust as needed)
+            THRESHOLD="-60000"
+            if python3 -c "exit(0 if float('$SCORE') > float('$THRESHOLD') else 1)"; then
+              echo "::warning::POTENTIAL BREAKTHROUGH! Score $SCORE exceeds threshold $THRESHOLD"
+              echo "::set-output name=breakthrough::true"
+            else
+              echo "No breakthrough yet (score $SCORE vs threshold $THRESHOLD)"
+            fi
+          fi
