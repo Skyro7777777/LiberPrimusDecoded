@@ -1,0 +1,139 @@
+{
+  "page": "50.jpg",
+  "n_runes": 91,
+  "identity": "TH",
+  "n_latin_quadgrams": 2487,
+  "n_runeglish_quadgrams": 464496,
+  "baseline": {
+    "primer": "G",
+    "score": -1796.898777562817,
+    "pt": "BETHLAIXEOVIAGIWTTHRGAEOBLLTHIOEDHEAANGBWCWYDEABYIYBYCDSVWXIAOEJXDYNTIAHIAEOVATYHRPTXILOEBTMXLOEAEJEOWEAXECIICN"
+  },
+  "sa_best": {
+    "score": -1165.1980248930386,
+    "primer": "AE",
+    "perm": [
+      "J",
+      "T",
+      "L",
+      "W",
+      "Y",
+      "B",
+      "TH",
+      "A",
+      "M",
+      "EO",
+      "E",
+      "F",
+      "EA",
+      "G",
+      "R",
+      "X",
+      "V",
+      "I",
+      "AE",
+      "IA",
+      "D",
+      "OE",
+      "C",
+      "O",
+      "H",
+      "NG",
+      "N",
+      "S",
+      "P"
+    ],
+    "perm_0": "J",
+    "pt_latin": "SAELDHEREATSTHEAVLYTHNGWIDDLECOMPHOEIABANOPINENINBOXTARSCFRONEOVSMSEATHVNMYGVREDCIVIARDCNGFEAAPRAEBEEBEO",
+    "pt_runes": "ᛋᚫᛚᛞᚻᛖᚱᛠᛏᛋᚦᛖᚪᚢᛚᚣᚦᛝᚹᛁᛞᛞᛚᛖᚳᚩᛗᛈᚻᛟᛁᚪᛒᚪᚾᚩᛈᛁᚾᛖᚾᛁᚾᛒᚩᛉᛏᚪᚱᛋᚳᚠᚱᚩᚾᛇᚢᛋᛗᛋᛠᛏᚻᚢᚾᛗᚣᚷᚢᚱᛖᛞᚳᛁᚢᛡᚱᛞᚳᛝᚠᛠᚪᛈᚱᚫᛒᛖᛖᛒᛇ",
+    "improvement_over_baseline": 631.7007526697785
+  },
+  "sa_rescored_latin": {
+    "runeglish": -1165.1980248930386,
+    "latin": -1126.9273405142428,
+    "pt": "SAELDHEREATSTHEAVLYTHNGWIDDLECOMPHOEIABANOPINENINBOXTARSCFRONEOVSMSEATHVNMYGVREDCIVIARDCNGFEAAPRAEBEEBEO"
+  },
+  "latin_hillclimb_best": {
+    "latin_score": -1036.0041930721907,
+    "runeglish_on_same_pt": -1642.560382149832,
+    "primer": "F",
+    "perm_0": "X",
+    "pt": "RDJMOVNCWIABVSPJTHBAEOEAMMJVFRHIOLASESTRIATVTATERYWSNIAFNGNRTEOPIAHIACWOPTHTHEAPNVMFAPGNMFAENGCSINDEVVEEO",
+    "is_latin": true
+  },
+  "keyword_attack": {
+    "n_tested": 30,
+    "top5_by_score": [
+      {
+        "keyword": "PARSIFAL",
+        "perm_0": "P",
+        "f_position": 5,
+        "f_pos_letter": "C",
+        "score": -1482.121725691352,
+        "pt": "TJRPBOWCALLOFNRILESIPPROSTVNGBXIFFFMTNGIMOMIMFTHAFWLSRWTMTHNLVLCABNMVIGNWOPSINEOWPSERCFNGWJFOOFTH"
+      },
+      {
+        "keyword": "VOLVNTAS",
+        "perm_0": "V",
+        "f_position": 7,
+        "f_pos_letter": "W",
+        "score": -1500.4921991604667,
+        "pt": "TJLPBOWCOLSOFNLTSENIPPLOSTVNGBXIFAFMTNGIMOMIMATHOFWLSRWTMTHNLVLCOBNMVTGNWOPSINEOWPSERCFNGWJAOOATH"
+      },
+      {
+        "keyword": "VERITAS",
+        "perm_0": "V",
+        "f_position": 7,
+        "f_pos_letter": "W",
+        "score": -1501.907395052669,
+        "pt": "TJRPBOWCELSOFNRTSEIIPPROSTVNGBXIFAFMTNGIMOMIMATHEFWLSRWTMTHNLVLCEBNMVTGNWOPSINEOWPSERCFNGWJAOOATH"
+      },
+      {
+        "keyword": "THELEMITES",
+        "perm_0": "T",
+        "f_position": 7,
+        "f_pos_letter": "W",
+        "score": -1525.230628513279,
+        "pt": "TJEPBOWCHLSOFNEMSELIPPEOSTVNGBXIFIFMTNGIMOMIMITHHFWLSRWTMTHNLVLCHBNMVMGNWOPSINEOWPSERCFNGWJIOOITH"
+      },
+      {
+        "keyword": "CIRCUMFERENCE",
+        "perm_0": "C",
+        "f_position": 4,
+        "f_pos_letter": "R",
+        "score": -1533.282074209002,
+        "pt": "TJRPBOWCILNOFNRFNEMIPPROSTVNGBXIFEFMTNGIMOMIMETHIFWLSRWTMTHNLVLCIBNMVFGNWOPSINEOWPSERCFNGWJEOOETH"
+      }
+    ],
+    "matched_identity_target": [
+      {
+        "keyword": "VOLVNTAS",
+        "f_position": 7,
+        "target": "W",
+        "score": -1500.4921991604667,
+        "pt": "TJLPBOWCOLSOFNLTSENIPPLOSTVNGBXIFAFMTNGIMOMIMATHOFWLSRWTMTHNLVLCOBNMVTGNWOPSINEOWPSERCFNGWJAOOATH"
+      },
+      {
+        "keyword": "VERITAS",
+        "f_position": 7,
+        "target": "W",
+        "score": -1501.907395052669,
+        "pt": "TJRPBOWCELSOFNRTSEIIPPROSTVNGBXIFAFMTNGIMOMIMATHEFWLSRWTMTHNLVLCEBNMVTGNWOPSINEOWPSERCFNGWJAOOATH"
+      },
+      {
+        "keyword": "THELEMITES",
+        "f_position": 7,
+        "target": "W",
+        "score": -1525.230628513279,
+        "pt": "TJEPBOWCHLSOFNEMSELIPPEOSTVNGBXIFIFMTNGIMOMIMITHHFWLSRWTMTHNLVLCHBNMVMGNWOPSINEOWPSERCFNGWJIOOITH"
+      },
+      {
+        "keyword": "LIBERPRIMI",
+        "f_position": 7,
+        "target": "W",
+        "score": -1542.357909353429,
+        "pt": "TJBPBOWCILMOFNBRMEEIPPBOSTVNGBXIFPFMTNGIMOMIMPTHIFWLSRWTMTHNLVLCIBNMVRGNWOPSINEOWPSERCFNGWJPOOPTH"
+      }
+    ]
+  }
+}
