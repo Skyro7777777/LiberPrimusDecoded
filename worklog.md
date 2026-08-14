@@ -776,3 +776,50 @@ Stage Summary:
 - The plaintext contains many valid rune-letters but no recognizable English/Runeglish words — consistent with the hill-climber being stuck in a local optimum far from the true key.
 - Artifacts: /home/z/my-project/cicada3301-research/decoder/long_hillclimb_NG_full.json, long_hillclimb_NG_page0.json
 - RECOMMENDED NEXT STEP: (1) Compare against W and TH identity runs (parallel subagents). (2) If none of {NG,W,TH} break -3000, the swap-only hill-climber is insufficient for the 29! space — escalate to simulated annealing (with temperature schedule) or a genetic algorithm with crossover, OR reconsider whether the cipher is truly Quagmire III autokey vs. one of the other 18 mechanisms aldegonde surveyed (S2 stream+reroll, post-encryption deletion, etc.). (3) Try seeding the hill-climber from a known-word crib (e.g. "WISDOM", "TRUTH", "PRIMUS") rather than random restarts.
+
+---
+Task ID: p8d
+Agent: Web research + location verification subagent
+Task: Verify Vladivostok + search for new findings + check Reddit/hash
+Work Log:
+- Read LOCATION_DISCOVERY.md (page-16 magic square, (434,1311) ÷ 10 = 43.4°N, 131.1°E → Vladivostok candidate)
+- Read FRESH_RESEARCH_2025B.md (aldegonde Feb-2026 Quagmire III autokey confirmation; first-rune NG/W/TH)
+- Ran 12 parallel z-ai web_search calls covering: Vladivostok, Russia-China border, (43.4, 131.1) coords, aldegonde 2026, LP solved 2026, CicadaSolvers Discord 2026, Reddit solved, hash exact-string, hash general, Echo446, 2012 Russia coords, page-16 magic square solved, "May 2026 Update", Liberprimus-gpu, Izdubar Red Book, recantation full
+- Ran 7 page_reader fetches: 2 Reddit posts (403 blocked), 4 Wayback Machine (JS-only chrome), 1 Google cache (empty), 1 monokro.me (deployment paused), 1 cicadasolvers.com/deep-web-hash (✅ success), 1 uncovering-cicada wiki PAGE_56 (✅ success), 1 uc map of locations (✅ success)
+- Confirmed via uc_map_locations.json that the ONLY Russia coordinate in 2012 Cicada flyer list was 55.793765°N, 37.578608°E = Moscow (~6,400 km west of Vladivostok)
+- Confirmed via cicadasolvers.com/deep-web-hash that page-56 hash is 36367763ab73783c7af284446c59466b4cd653239a311cb7116d4618dee09a8425893dc7500b464fdaf1672d7bef5e891c6e2274568926a49fb4f45132c2a8b4 (128 hex / 512 bits); algorithm unknown; SHA3-512 excluded; never publicly found
+- Identified Reddit user u/Echo446 as author of both 1lc8448 ("Also Solved the Cicada 3301 Page 16 Magic Square") and 1lbrnj3 ("Update on Cicada 3301 Full Correction & Disclosure" — recantation). Echo446's claim that the 5×5 square "literally contains its own solution" via rotational symmetry around prime 809 is the SAME square we extracted Vladivostok coords from; the recantation covered the broader solve claim, not the magic-square observation
+- Discovered new 2026 GitHub repo cicada-solvers/Liberprimus-gpu (CUDA-accelerated cryptanalysis workbench, scaffolding stage) and krisyotam/cicada3301 archive (5,157 files, updated Aug-10-2026)
+- Confirmed uatrav.com Apr-8-2026 article: "There is a theory within CicadaSolvers that the Cicada organization made the Liber Primus unsolvable" — corroborates our Task p6e "structurally unsolvable" finding
+- Dismissed "May 2026 Update!" Reddit hit as false alarm (r/RoadTo56, a Hearts-of-Iron-4 mod subreddit, not Cicada)
+- Wrote compiled/WEB_LOCATION_RESULTS.md (194 lines) with TL;DR table + 4 detailed investigation sections + critical-assessment ranking
+- Committed as "Phase G: Web research + location verification (p8d)" (commit 6860990) and pushed to origin/main
+Stage Summary:
+- (1) Vladivostok: NOT VERIFIED — abandon. Only Russia Cicada coordinate was Moscow 2012, ~6,400 km away. The (434, 1311) ÷ 10 reading is an uncorroborated numerological coincidence.
+- (2) New 2026 findings: No new aldegonde docs since Jul-2026; new Liberprimus-gpu CUDA workbench + krisyotam archive; "LP unsolvable" theory now publicly stated by CicadaSolvers leadership. No cipher breakthrough.
+- (3) Reddit posts: REAL content (u/Echo446), RECANDED broad solve claim; magic-square rotational-symmetry observation around prime 809 NOT specifically retracted — may have independent merit.
+- (4) Page-56 hash: NEVER publicly found; CicadaSolvers confirms algorithm unknown; depends on LP2 being solved first.
+- Most promising lead: re-examine page-16 magic square under D4 group symmetries (8 symmetries) × Gematria-Primus prime mapping (cell ÷ 29 → rune index). This is the only lead with both (a) partial independent corroboration (Echo446 + our coordinate finding) and (b) unexplored analytical surface.
+- Artifacts produced: compiled/WEB_LOCATION_RESULTS.md (194 lines); 21 new raw/ files (search_*, uc_*, wayback_*, reddit_post*, cicadasolvers_hash*, monokro_*, google_cache_*).
+
+---
+Task ID: p8b
+Agent: Long hill-climb W subagent
+Task: Run Quagmire III hill-climber (W identity) for 4+ minutes
+Work Log:
+- Verified long_hillclimb.py and quadgrams.txt present at expected paths
+- Launched two parallel background runs (initial attempt with `&` and `setsid` failed; processes died when bash tool returned)
+- Re-launched both runs inside a single bash invocation with `wait` so both stay alive as children of the tool session
+- Run A (FULL corpus): identity=W, restarts=80, iters=25000, sample=1500, seed=137
+- Run B (page 17.jpg): identity=W, restarts=70, iters=35000, sample=729, seed=256
+- Both ran for ~220s of CPU time (page0 finished in 175s; full timed out after 46/80 restarts)
+- Saved JSON results to long_hillclimb_W_full.json and long_hillclimb_W_page0.json
+Stage Summary:
+- Best corpus (W) score: -28341.97  (46/80 restarts; primer=M)
+- Best page0 (W) score: -13111.19  (70/70 restarts; primer=L)
+- No score exceeded -3000 break threshold — NO BREAK
+- Both plaintexts remain gibberish (no recognizable English/Latin)
+- Best corpus keyed alphabet: TH,OE,H,D,W,G,EA,F,Y,I,V,R,EO,AE,IA,S,M,A,T,P,N,X,O,B,E,J,C,NG,L
+- Best page0 keyed alphabet: E,TH,A,D,OE,R,J,F,I,W,S,G,EO,AE,N,Y,EA,T,L,O,H,P,V,B,X,M,C,NG,IA
+- W identity did NOT outperform prior runs (prior reference -18817 used different sample/params); current run essentially at quadgram-floor (~-20/quadgram) — hill-climber cannot escape local optima
+- Artifacts: /home/z/my-project/cicada3301-research/decoder/long_hillclimb_W_full.json, long_hillclimb_W_page0.json, /tmp/hc_W_full.log, /tmp/hc_W_page0.log
