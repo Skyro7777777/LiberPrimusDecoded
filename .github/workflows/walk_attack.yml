@@ -14,6 +14,11 @@ on:
         default: '14400'
         type: string
 
+# Grant write permissions for the GITHUB_TOKEN
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   attack:
     runs-on: ubuntu-latest
@@ -25,6 +30,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -68,8 +75,13 @@ jobs:
     needs: attack
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: write
+    
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download all batch results
         uses: actions/download-artifact@v4
@@ -95,6 +107,7 @@ jobs:
           best_score = -1e18
           best_batch = None
           best_pt = ''
+          all_results = []
           
           for f in sorted(files):
               with open(f) as fh:
@@ -106,37 +119,55 @@ jobs:
               duration = d.get('duration_seconds', 0)
               print(f'  Batch {batch_id}: score={score:.1f} trials={trials} duration={duration:.0f}s')
               print(f'    plaintext: {pt}')
+              all_results.append(d)
               if score > best_score:
                   best_score = score
                   best_batch = batch_id
                   best_pt = d.get('best_plaintext', '')
           
+          total_trials = sum(d.get('trials_done', 0) for d in all_results)
+          
           print(f'\n=== BEST RESULT: Batch {best_batch} score={best_score:.1f} ===')
           print(f'Plaintext (first 500 chars): {best_pt[:500]}')
+          print(f'\nTotal trials across all batches: {total_trials}')
           
           agg = {
               'best_batch': best_batch,
               'best_score': best_score,
               'best_plaintext': best_pt[:2000],
               'total_batches': len(files),
+              'total_trials': total_trials,
           }
           with open('aggregated_results.json', 'w') as f:
               json.dump(agg, f, indent=2, ensure_ascii=False)
-          print('Saved aggregated_results.json')
+          
+          # Also save all individual results
+          with open('all_batch_results.json', 'w') as f:
+              json.dump(all_results, f, indent=2, ensure_ascii=False)
+          
+          print('Saved aggregated_results.json and all_batch_results.json')
           "
 
       - name: Upload aggregated results
         uses: actions/upload-artifact@v4
         with:
           name: aggregated-results
-          path: aggregated_results.json
+          path: |
+            aggregated_results.json
+            all_batch_results.json
           retention-days: 90
 
       - name: Commit results to repo
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          mkdir -p cicada3301-research/decoder/ci_results
           cp aggregated_results.json cicada3301-research/decoder/aggregated_results.json
-          git add cicada3301-research/decoder/aggregated_results.json
-          git commit -m "CI: Aggregated walk attack results ($(date -u '+%Y-%m-%d %H:%M'))" || echo "Nothing to commit"
-          git push
+          cp all_batch_results.json cicada3301-research/decoder/ci_results/
+          git add cicada3301-research/decoder/aggregated_results.json cicada3301-research/decoder/ci_results/
+          git commit -m "CI: Aggregated walk attack results ($(date -u '+%Y-%m-%d %H:%M'))
+
+          Total trials: $(python3 -c "import json; print(json.load(open('aggregated_results.json')).get('total_trials', 'N/A'))")
+          Best score: $(python3 -c "import json; print(f'{json.load(open(\"aggregated_results.json\"))[\"best_score\"]:.1f}')")
+          Best batch: $(python3 -c "import json; print(json.load(open('aggregated_results.json'))['best_batch'])')" || echo "Nothing to commit"
+          git push || echo "Push failed (may need token config)"
