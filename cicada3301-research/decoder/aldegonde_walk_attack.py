@@ -171,8 +171,15 @@ def recover_base_0_validated(ct_words, g, sigma, table, floor, rng):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Aldegonde validated walk attack")
+    parser.add_argument("--batch-id", type=int, default=0, help="Batch ID")
+    parser.add_argument("--duration", type=int, default=240, help="Duration in seconds")
+    parser.add_argument("--save-interval", type=int, default=60, help="Save every N seconds")
+    args = parser.parse_args()
+    
     print("=" * 60, file=sys.stderr)
-    print("ALDEGONDE VALIDATED WALK ATTACK", file=sys.stderr)
+    print(f"ALDEGONDE VALIDATED WALK ATTACK (Batch {args.batch_id})", file=sys.stderr)
     print("=" * 60, file=sys.stderr)
     
     # Load the LP corpus using aldegonde's own loader
@@ -208,13 +215,14 @@ def main():
     print(f"2-rune table: {len(table)} types, {total_2rune} tokens", file=sys.stderr)
     
     # Run the attack
-    rng = random.Random(42)
+    rng = random.Random(args.batch_id * 1000000 + 42)
     best_overall_score = -1e18
     best_overall_key = None
     best_overall_pt = ""
     
     start = time.time()
-    max_duration = 240  # 4 minutes
+    max_duration = args.duration
+    last_save = start
     
     trial = 0
     while time.time() - start < max_duration:
@@ -247,6 +255,26 @@ def main():
         if trial % 10 == 0:
             elapsed = time.time() - start
             print(f"trial {trial} (t={elapsed:.0f}s) best_quad={best_overall_score:.1f}", file=sys.stderr)
+        
+        # Save periodically
+        now = time.time()
+        if now - last_save > args.save_interval and best_overall_key is not None:
+            result = {
+                "batch_id": args.batch_id,
+                "best_quad_score": best_overall_score,
+                "best_key": {
+                    "base_0": [DEC_TO_LETTER[a] for a in best_overall_key[0]],
+                    "g": [DEC_TO_LETTER[a] for a in best_overall_key[1]],
+                    "sigma": [DEC_TO_LETTER[a] for a in best_overall_key[2]],
+                },
+                "best_plaintext": best_overall_pt[:2000],
+                "trials": trial,
+                "duration": time.time() - start,
+            }
+            save_path = os.path.join(SCRIPT_DIR, "aldegonde_attack_results.json")
+            with open(save_path, "w") as f:
+                json.dump(result, f, indent=2, ensure_ascii=False)
+            last_save = now
     
     # Save results
     result = {

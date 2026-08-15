@@ -1,0 +1,156 @@
+name: Liber Primus Walk Attack v2 (Validated)
+
+on:
+  workflow_dispatch:
+    inputs:
+      num_batches:
+        description: 'Number of parallel batches'
+        required: true
+        default: '10'
+        type: string
+      duration:
+        description: 'Duration per batch in seconds (max 18000 = 5 hours)'
+        required: true
+        default: '14400'
+        type: string
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  attack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        batch-id: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install sympy numpy scipy
+          echo "Dependencies installed"
+
+      - name: Clone aldegonde
+        run: |
+          cd cicada3301-research
+          mkdir -p solvers
+          cd solvers
+          git clone --depth 1 https://github.com/cicada-solvers/aldegonde.git
+          cd aldegonde
+          pip install -e . --break-system-packages 2>&1 | tail -3
+          echo "Aldegonde installed"
+
+      - name: Download prose corpus
+        run: |
+          curl -sL "https://www.gutenberg.org/files/1342/1342-0.txt" -o /tmp/pg1342.txt
+          ls -la /tmp/pg1342.txt
+          echo "Prose corpus downloaded"
+
+      - name: Run validated attack batch ${{ matrix.batch-id }}
+        run: |
+          cd cicada3301-research/decoder
+          export PYTHONPATH=$PWD/../solvers/aldegonde/src:$PYTHONPATH
+          echo "Starting validated batch ${{ matrix.batch-id }}..."
+          python3 aldegonde_walk_attack.py \
+            --batch-id ${{ matrix.batch-id }} \
+            --duration ${{ github.event.inputs.duration || '14400' }} \
+            --save-interval 600
+          echo "Batch ${{ matrix.batch-id }} complete"
+
+      - name: Upload results artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-${{ matrix.batch-id }}-results
+          path: cicada3301-research/decoder/aldegonde_attack_results.json
+          retention-days: 30
+
+  aggregate:
+    needs: attack
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download all batch results
+        uses: actions/download-artifact@v4
+        with:
+          path: batch-results
+          pattern: batch-*-results
+          merge-multiple: true
+
+      - name: Aggregate results
+        run: |
+          echo "=== Aggregating batch results ==="
+          ls -la batch-results/
+          
+          python3 -c "
+          import json, os, glob
+          
+          files = glob.glob('batch-results/*.json')
+          if not files:
+              print('No result files found!')
+              exit(1)
+          
+          print(f'Found {len(files)} batch result files')
+          best_score = -1e18
+          best_batch = None
+          best_pt = ''
+          
+          for f in sorted(files):
+              with open(f) as fh:
+                  d = json.load(fh)
+              score = d.get('best_quad_score', d.get('best_score', -1e18))
+              pt = d.get('best_plaintext', '')[:100]
+              print(f'  {os.path.basename(f)}: score={score:.1f}')
+              print(f'    plaintext: {pt}')
+              if score > best_score:
+                  best_score = score
+                  best_pt = d.get('best_plaintext', '')
+          
+          print(f'\\n=== BEST: score={best_score:.1f} ===')
+          print(f'Plaintext: {best_pt[:500]}')
+          
+          agg = {
+              'best_score': best_score,
+              'best_plaintext': best_pt[:2000],
+              'total_batches': len(files),
+          }
+          with open('aggregated_results.json', 'w') as f:
+              json.dump(agg, f, indent=2, ensure_ascii=False)
+          print('Saved aggregated_results.json')
+          "
+
+      - name: Upload aggregated results
+        uses: actions/upload-artifact@v4
+        with:
+          name: aggregated-results
+          path: aggregated_results.json
+          retention-days: 90
+
+      - name: Commit results to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p cicada3301-research/decoder/ci_results
+          cp aggregated_results.json cicada3301-research/decoder/ci_results/aggregated_$(date -u '+%Y%m%d_%H%M').json
+          git add cicada3301-research/decoder/ci_results/
+          git commit -m "CI v2: Aggregated validated attack results ($(date -u '+%Y-%m-%d %H:%M'))" || echo "Nothing to commit"
+          git push
